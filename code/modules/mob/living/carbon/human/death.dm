@@ -131,12 +131,6 @@
 
 	dizziness = 0
 	jitteriness = 0
-
-	if(ismecha(loc))
-		var/obj/mecha/M = loc
-		if(M.occupant == src)
-			M.go_out()
-
 	dna.species.spec_death(gibbed, src)
 
 	if(SSticker.HasRoundStarted())

@@ -252,7 +252,7 @@
 				break_counter++
 			output += "</div></div>"
 		var/list/long_job_lists = list("Peasants" = GLOB.peasant_positions,
-									"Selfs" = GLOB.serf_positions,
+									"Towners" = GLOB.serf_positions,
 									"Apprentices" = GLOB.apprentices_positions,
 									"Ghost and Other Roles" = list(ROLE_NECRO_SKELETON),
 									"Antagonist Positions" = list(ROLE_VILLAIN, ROLE_WEREWOLF,

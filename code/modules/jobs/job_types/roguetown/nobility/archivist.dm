@@ -20,24 +20,16 @@
 	allowed_patrons = list(/datum/patron/divine/noc)
 
 	outfit = /datum/outfit/job/roguetown/archivist
-	display_order = 19
+	display_order = JDO_ARCHIVIST
 	give_bank_account = 100
 	min_pq = 1
 
 /datum/outfit/job/roguetown/archivist/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(H.dna.species.id == "Dwarf")
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
-		pants = /obj/item/clothing/under/roguetown/tights/black
-	else
-		if(H.gender == FEMALE)
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
-		else
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
-			pants = /obj/item/clothing/under/roguetown/tights/black
 	H.virginity = TRUE
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/archivist
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/lord
+	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/keyring/archivist

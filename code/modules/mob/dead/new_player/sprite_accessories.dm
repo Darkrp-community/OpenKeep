@@ -652,6 +652,23 @@
 	gender = NEUTER
 	specuse = list("elf")
 
+/datum/sprite_accessory/hair/locs
+	name = "Locs"
+	icon_state = "locs"
+	gender = NEUTER
+	specuse = list("human", "elf", "aasimar", "tiefling")
+
+/datum/sprite_accessory/hair/rows_short
+	name = "Braided Rows, Short"
+	icon_state = "rows_short"
+	gender = NEUTER
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+
+/datum/sprite_accessory/hair/rows_long
+	name = "Braided Rows, Long"
+	icon_state = "rows_long"
+	gender = NEUTER
+	specuse = list("human", "elf", "aasimar", "tiefling")
 
 /*
 /datum/sprite_accessory/hair/felfhair_fatherless
@@ -675,7 +692,7 @@
 	specuse = ALL_RACES_LIST
 
 /datum/sprite_accessory/facial_hair/shaved
-	name = "None"
+	name = "Shaved"
 	icon_state = "facial_shaven"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")

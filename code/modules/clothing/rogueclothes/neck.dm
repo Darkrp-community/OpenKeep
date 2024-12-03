@@ -94,7 +94,6 @@
 
 	armor = ARMOR_PADDED
 	prevent_crits = MINOR_CRITICALS
-	armor = ARMOR_LEATHER_GOOD
 	max_integrity = INTEGRITY_WORST
 
 /obj/item/clothing/neck/roguetown/keffiyeh/AdjustClothes(mob/user)
@@ -149,6 +148,7 @@
 	name = "padded coif"
 	desc = "A simple coif made of cloth. Not very effective armor, but may soften weak blows and keeps the head and neck warm."
 	icon_state = "ccoif"
+	dropshrink = 0.8
 	flags_inv = HIDEEARS|HIDEHAIR
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
 	blocksound = SOFTHIT
@@ -186,7 +186,7 @@
 
 	armor = ARMOR_MAILLE
 	body_parts_covered = NECK|HAIR|EARS|HEAD
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_BLUNT
 
 
@@ -221,6 +221,7 @@
 
 	armor = ARMOR_MAILLE_IRON
 	max_integrity = INTEGRITY_STRONG
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 
 /obj/item/clothing/neck/roguetown/gorget/copper
 	name = "neck protector"
@@ -255,7 +256,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
 	body_parts_covered = NECK|EARS|MOUTH|NOSE
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget
@@ -276,7 +277,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = NECK
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STANDARD //Balance consideration, protects more but breaks more easily than a steel chain coif.
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/neck/roguetown/gorget/hoplite // Better than an iron gorget, not quite as good as a steel bevor
@@ -284,7 +285,7 @@
 	desc = "A heavy collar of great age, meant to protect the neck."
 	icon_state = "aasimarneck"
 	smeltresult = null // No bronze ingots yet
-	armor = ARMOR_MAILLE_GOOD
+	max_integrity = INTEGRITY_STRONGER //Aasimar craftsmanship.
 
 
 

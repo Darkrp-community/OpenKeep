@@ -43,7 +43,7 @@
 		set_light(0)
 		return
 	w_class = WEIGHT_CLASS_GIGANTIC
-	set_light(2, 2, "#1b7bf1")
+	set_light(2, 2, 2, l_color =  "#1b7bf1")
 
 /obj/item/roguemachine/merchant/Initialize()
 	. = ..()
@@ -125,6 +125,7 @@
 	var/budget = 0
 	var/upgrade_flags
 	var/current_cat = "1"
+	var/lockid = "merchant"
 
 /obj/structure/roguemachine/merchantvend/Initialize()
 	. = ..()
@@ -135,14 +136,14 @@
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, "#1b7bf1")
+	set_light(1, 1, 1, l_color =  "#1b7bf1")
 	add_overlay(mutable_appearance(icon, "vendor-merch"))
 
 
 /obj/structure/roguemachine/merchantvend/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/roguekey))
 		var/obj/item/roguekey/K = P
-		if(K.lockid == "merchant")
+		if(K.lockid == lockid)
 			locked = !locked
 			playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			update_icon()
@@ -154,7 +155,7 @@
 	if(istype(P, /obj/item/keyring))
 		var/obj/item/keyring/K = P
 		for(var/obj/item/roguekey/KE in K.keys)
-			if(KE.lockid == "merchant")
+			if(KE.lockid == lockid)
 				locked = !locked
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 				update_icon()
@@ -306,8 +307,8 @@
 		contents += "<center>[current_cat]<BR></center>"
 		contents += "<center><a href='?src=[REF(src)];changecat=1'>\[RETURN\]</a><BR><BR></center>"
 		var/list/pax = list()
-		for(var/pack in SSshuttle.supply_packs)
-			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
+		for(var/pack in SSmerchant.supply_packs)
+			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
 			if(PA.group == current_cat)
 				pax += PA
 		for(var/datum/supply_pack/PA in sortList(pax))

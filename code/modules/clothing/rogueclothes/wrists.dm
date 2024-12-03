@@ -14,20 +14,20 @@
 	body_parts_covered = ARMS
 	icon_state = "bracers"
 	item_state = "bracers"
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	resistance_flags = FIRE_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
+	
+	armor = ARMOR_PLATE
+	prevent_crits = ALL_EXCEPT_STAB
+	max_integrity = INTEGRITY_STRONGER
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
 	name = "leather bracers"
 	desc = "Boiled leather bracers typically worn by archers to protect their forearms."
 	icon_state = "lbracers"
 	item_state = "lbracers"
-	armor = list("melee" = 30, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT)
 	resistance_flags = null
 	blocksound = SOFTHIT
 	smeltresult = /obj/item/ash
@@ -36,6 +36,10 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	anvilrepair = null
 	sewrepair = TRUE
+	
+	armor = ARMOR_LEATHER
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/wrists/roguetown/wrappings
 	name = "solar wrappings"
@@ -56,7 +60,9 @@
 	desc = "Stalwart bronze bracers, from an age long past."
 	icon_state = "aasimarwrist"
 	item_state = "aasimarwrist"
-	armor = list("melee" = 70, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0) // Less protection than steel
+
+	armor = ARMOR_PLATE_BAD
+	max_integrity = INTEGRITY_STRONG //Aasimar craftsmanship.
 
 //copper bracers
 
@@ -66,10 +72,11 @@
 	body_parts_covered = ARMS
 	icon_state = "copperarm"
 	item_state = "copperarm"
-	armor = list("melee" = 50, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	smeltresult = /obj/item/ingot/copper
 	blocksound = PLATEHIT
 	resistance_flags = FIRE_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
+	
+	armor = ARMOR_PLATE_BAD
+	max_integrity = INTEGRITY_POOR //Copper.

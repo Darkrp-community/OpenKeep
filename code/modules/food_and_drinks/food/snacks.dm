@@ -86,6 +86,7 @@ All foods are distributed among various categories. Use common sense.
 	var/can_distill = FALSE //If FALSE, this object cannot be distilled into an alcohol.
 	var/distill_reagent //If NULL and this object can be distilled, it uses a generic fruit_wine reagent and adjusts its variables.
 	var/distill_amt = 12
+	var/cooked_smell
 
 /datum/intent/food
 	name = "feed"
@@ -164,16 +165,18 @@ All foods are distributed among various categories. Use common sense.
 		if(cooking < cooktime)
 			cooking = cooking + input
 			if(cooking >= cooktime)
-				return microwave_act(A)
+				return heating_act(A)
 			warming = 5 MINUTES
 			return
 	burning(input)
 
-/obj/item/reagent_containers/food/snacks/microwave_act(atom/A)
+/obj/item/reagent_containers/food/snacks/heating_act(atom/A)
 	if(istype(A,/obj/machinery/light/rogue/oven))
 		var/obj/item/result
 		if(cooked_type)
 			result = new cooked_type(A)
+			if(cooked_smell)
+				result.AddComponent(/datum/component/temporary_pollution_emission, cooked_smell, 20, 5 MINUTES)
 		else
 			result = new /obj/item/reagent_containers/food/snacks/badrecipe(A)
 		initialize_cooked_food(result, 1)
@@ -182,6 +185,8 @@ All foods are distributed among various categories. Use common sense.
 		var/obj/item/result
 		if(fried_type)
 			result = new fried_type(A)
+			if(cooked_smell)
+				result.AddComponent(/datum/component/temporary_pollution_emission, cooked_smell, 20, 5 MINUTES)
 		else
 			result = new /obj/item/reagent_containers/food/snacks/badrecipe(A)
 		initialize_cooked_food(result, 1)
@@ -502,26 +507,6 @@ All foods are distributed among various categories. Use common sense.
 		qdel(src)
 	var/obj/item/I = new path(T)
 	eater.put_in_active_hand(I)
-
-/*
-/obj/item/reagent_containers/food/snacks/microwave_act(obj/machinery/microwave/M)
-	var/turf/T = get_turf(src)
-	var/obj/item/result
-
-	if(cooked_type)
-		result = new cooked_type(T)
-		if(istype(M))
-			initialize_cooked_food(result, M.efficiency)
-		else
-			initialize_cooked_food(result, 1)
-		SSblackbox.record_feedback("tally", "food_made", 1, result.type)
-	else
-		result = new /obj/item/reagent_containers/food/snacks/badrecipe(T)
-		if(istype(M) && M.dirty < 100)
-			M.dirty++
-	qdel(src)
-
-	return result*/
 
 /obj/item/reagent_containers/food/snacks/Destroy()
 	STOP_PROCESSING(SSobj, src)

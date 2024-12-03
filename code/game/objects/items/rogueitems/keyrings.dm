@@ -239,8 +239,8 @@
 /obj/item/keyring/captain
 	keys = list(/obj/item/roguekey/captain, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
 
-/obj/item/keyring/queen
-	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/queen, /obj/item/roguekey/guest)
+/obj/item/keyring/consort
+	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/consort, /obj/item/roguekey/guest)
 
 /obj/item/keyring/guard
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
@@ -249,7 +249,7 @@
 	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
 
 /obj/item/keyring/merchant
-	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/roguekey/mercenary)
+	keys = list(/obj/item/roguekey/shop, /obj/item/roguekey/merchant, /obj/item/roguekey/mercator, /obj/item/roguekey/mercenary)
 
 /obj/item/keyring/mguard
 	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
@@ -268,6 +268,9 @@
 
 /obj/item/keyring/shepherd
 	keys = list(/obj/item/roguekey/inquisition, /obj/item/roguekey/church)
+
+/obj/item/keyring/gravedigger
+	keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard)
 
 /obj/item/keyring/niteman
 	keys = list(/obj/item/roguekey/niteman, /obj/item/roguekey/nitemaiden)
@@ -292,6 +295,12 @@
 
 /obj/item/keyring/armorsmith
 	keys = list(/obj/item/roguekey/armorsmith, /obj/item/roguekey/blacksmith)
+
+/obj/item/keyring/blacksmith
+	keys = list(/obj/item/roguekey/blacksmith_home, /obj/item/roguekey/blacksmith, /obj/item/roguekey/makers_guild)
+
+/obj/item/keyring/mason
+	keys = list(/obj/item/roguekey/mason, /obj/item/roguekey/makers_guild)
 
 /obj/item/keyring/mayor
 	keys = list(/obj/item/roguekey/veteran, /obj/item/roguekey/walls, /obj/item/roguekey/elder, /obj/item/roguekey/butcher, /obj/item/roguekey/soilson, /obj/item/roguekey/manor)

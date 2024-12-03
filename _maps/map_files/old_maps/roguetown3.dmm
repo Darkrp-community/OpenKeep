@@ -834,7 +834,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
 "ada" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -868,7 +868,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "ade" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -1570,7 +1570,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "afl" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -4912,7 +4912,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "apu" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "apv" = (
@@ -9369,7 +9369,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue)
 "aDt" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	icon_state = "rubble2"
 	},
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -10007,21 +10007,21 @@
 	},
 /area/rogue/indoors/town/manor)
 "aFu" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "aFv" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "aFw" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10029,7 +10029,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "aFx" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10047,7 +10047,7 @@
 	icon_state = "chair2";
 	dir = 4
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10058,7 +10058,7 @@
 	icon_state = "largetable";
 	dir = 9
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},

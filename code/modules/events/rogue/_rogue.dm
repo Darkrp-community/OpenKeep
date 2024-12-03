@@ -29,8 +29,8 @@ GLOBAL_LIST_INIT(badomens, list())
 			used = "The Priest has perished! The Ten are weakened..."
 		if("skellysiege")
 			used = "Unwelcome visitors!"
-		if("nolord")
-			used = "The Monarch is dead! We need a new ruler."
+/*		if("nolord")
+			used = "The Monarch is dead! We need a new ruler." */
 		if("sunsteal")
 			used = "The Sun, she is wounded!"
 		if("ascend")

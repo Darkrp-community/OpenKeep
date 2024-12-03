@@ -36,23 +36,23 @@
 
 	// Run this first so that patron gets changed before assigning gear.
 	if(H.patron == /datum/patron/divine/noc)
-		H.patron = GLOB.patronlist[/datum/patron/divine/astrata]
+		H.set_patron(/datum/patron/divine/astrata)
 	if(H.patron == /datum/patron/divine/eora)
-		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
+		H.set_patron(/datum/patron/divine/necra)
 	if(H.patron == /datum/patron/godless)
-		H.patron = GLOB.patronlist[/datum/patron/divine/necra]
+		H.set_patron(/datum/patron/divine/necra)
 	if(H.patron == /datum/patron/divine/pestra)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/dendor)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/malum)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/xylix)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/ravox)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 	if(H.patron == /datum/patron/divine/abyssor)
-		H.patron = GLOB.patronlist[/datum/patron/forgotten]
+		H.set_patron(/datum/patron/forgotten)
 
 	// Now we equip according to patron.
 	switch(H.patron?.name)

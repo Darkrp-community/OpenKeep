@@ -36,7 +36,7 @@
 
 	botched_butcher_results = list(/obj/item/alch/bone = 1) // 50% chance to get if skill 0 in butchery
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1)
-	perfect_butcher_results = list(/obj/item/natural/hide = 1) // chance to get this instead if high level
+	perfect_butcher_results = list(/obj/item/natural/hide = 1) // level 5 butchery bonus
 
 	health = 40
 	maxHealth = 40
@@ -125,8 +125,84 @@
 	if(!stop_automated_movement && wander && !doing)
 		if(ssaddle && has_buckled_mobs())
 			return FALSE
+		if(find_food())
+			return
 		else
 			..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/find_food()
+	if(food > 50 && !eat_forever)
+		return
+	var/list/around = view(1, src)
+	var/list/foundfood = list()
+	if(stat)
+		return
+	for(var/obj/item/F in around)
+		if(is_type_in_list(F, food_type))
+			foundfood += F
+			if(src.Adjacent(F))
+				face_atom(F)
+				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+				qdel(F)
+				food = max(food + 30, 100)
+				return TRUE
+
+	for(var/obj/item/F in foundfood)
+		if(is_type_in_list(F, food_type))
+			var/turf/T = get_turf(F)
+			Goto(T,move_to_delay,0)
+			return TRUE
+	return FALSE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/eat_bodies()
+	var/mob/living/L
+//	var/list/around = view(aggro_vision_range, src)
+	var/list/around = hearers(1, src)
+	var/list/foundfood = list()
+	if(stat)
+		return
+	for(var/mob/living/eattarg in around)
+		if(!(eattarg in enemies)) //Makes a tamed rous not eat people on the floor unless instigated.
+			return
+		if(eattarg.stat != CONSCIOUS)
+			foundfood += eattarg
+			L = eattarg
+			if(src.Adjacent(L))
+				if(iscarbon(L))
+					var/mob/living/carbon/C = L
+					if(attack_sound)
+						playsound(src, pick(attack_sound), 100, TRUE, -1)
+					face_atom(C)
+					src.visible_message(span_danger("[src] starts to rip apart [C]!"))
+					if(do_after(src,100, target = L))
+						var/obj/item/bodypart/limb
+						var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+						for(var/zone in limb_list)
+							limb = C.get_bodypart(zone)
+							if(limb)
+								limb.dismember()
+								return TRUE
+						limb = C.get_bodypart(BODY_ZONE_HEAD)
+						if(limb)
+							limb.dismember()
+							return TRUE
+						limb = C.get_bodypart(BODY_ZONE_CHEST)
+						if(limb)
+							if(!limb.dismember())
+								C.gib()
+							return TRUE
+				else
+					if(attack_sound)
+						playsound(src, pick(attack_sound), 100, TRUE, -1)
+					src.visible_message(span_danger("[src] starts to rip apart [L]!"))
+					if(do_after(src,100, target = L))
+						L.gib()
+						return TRUE
+	for(var/mob/living/eattarg in foundfood)
+		var/turf/T = get_turf(eattarg)
+		Goto(T,move_to_delay,0)
+		return TRUE
+	return FALSE
 
 //What can we attack?
 /mob/living/simple_animal/hostile/retaliate/rogue/CanAttack(atom/the_target)
@@ -367,6 +443,7 @@
 
 //................. UDDER (GOTE).......................//
 /obj/item/gudder
+	name = "gote"
 
 /obj/item/gudder/Initialize()
 	create_reagents(100)
@@ -391,4 +468,18 @@
 		playsound(O, pick('sound/vo/mobs/cow/milking (1).ogg', 'sound/vo/mobs/cow/milking (2).ogg'), 100, TRUE, -1)
 		user.Immobilize(1 SECONDS)
 		user.changeNext_move(1 SECONDS)
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/UnarmedAttack(atom/A)
+	. = ..()
+	if(!is_type_in_list(A, food_type))
+		return
+
+	if(!src.CanReach(A))
+		return
+
+	face_atom(A)
+	playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+	qdel(A)
+	food = max(food + 30, 100)
 

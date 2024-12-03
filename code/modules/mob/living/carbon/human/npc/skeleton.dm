@@ -91,6 +91,12 @@
 
 /mob/living/carbon/human/species/skeleton/npc/peasant/after_creation()
 	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/peasant)
 
 /datum/outfit/job/roguetown/species/skeleton/npc/peasant/pre_equip(mob/living/carbon/human/H)
@@ -137,6 +143,13 @@
 ///////////////////////////////////////////////////////////// EVENTMIN SKELETONGS
 /mob/living/carbon/human/species/skeleton/npc/ambush/after_creation()
 	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/random)
 
 /datum/outfit/job/roguetown/species/skeleton/npc/random/pre_equip(mob/living/carbon/human/H)
@@ -167,6 +180,13 @@
 
 /mob/living/carbon/human/species/skeleton/npc/warrior/after_creation()
 	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_EASYDISMEMBER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
 
 /datum/outfit/job/roguetown/species/skeleton/npc/warrior/pre_equip(mob/living/carbon/human/H)
@@ -270,6 +290,11 @@
 // ====================		SKILLED SKELLY		==========================
 /mob/living/carbon/human/species/skeleton/npc/warrior/skilled/after_creation()
 	..()
+	QDEL_NULL(sexcon)
+	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/species/skeleton/npc/warrior)
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
 	configure_mind()
@@ -285,3 +310,4 @@
 	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
+

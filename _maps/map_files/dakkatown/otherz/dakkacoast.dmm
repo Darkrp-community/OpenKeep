@@ -56,7 +56,7 @@
 /area/rogue/outdoors/beach)
 "dZ" = (
 /obj/structure/bed/rogue/shit,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 8
 	},
 /turf/open/floor/rogue/twig,
@@ -230,7 +230,7 @@
 /area/rogue/outdoors/beach/boat)
 "AZ" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/grabber{
+/obj/effect/landmark/start/stevedore{
 	dir = 4
 	},
 /turf/open/floor/rogue/twig,

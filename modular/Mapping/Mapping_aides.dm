@@ -1,96 +1,130 @@
-/*	..................   Loot spawners   ................... */
-/obj/effect/spawner/roguemap/loot
-	icon_state = "loot"
-	probby = 50
+// ======================================================================
 
-/obj/effect/spawner/roguemap/loot/common
-	spawned = list(
-		/obj/item/roguecoin/copper/pile = 15,
-		/obj/item/rogueweapon/knife/hunting = 10,
-		/obj/item/rogueweapon/knife/dagger = 8,
-		/obj/item/rogueweapon/knife/dagger/steel = 4,
-		/obj/item/rogueweapon/knife/dagger/silver = 2,
-		/obj/item/rogueweapon/sword/iron = 3,
-		/obj/item/rogueweapon/axe/iron = 10,
-		/obj/item/rogueweapon/mace = 5,
-		/obj/item/quiver/arrows = 5,
-		/obj/item/rogueweapon/sword/short = 5,
-		/obj/item/clothing/suit/roguetown/armor/leather = 10,
-		/obj/item/clothing/suit/roguetown/armor/gambeson = 15,
-		/obj/item/clothing/gloves/roguetown/chain/iron = 3,
-		/obj/item/clothing/neck/roguetown/coif = 3,
-		/obj/item/clothing/shoes/roguetown/gladiator = 5
-		)
+/*	..................   Pigflowers   ................... */
+/obj/structure/flora/rogueflower // ausbushes recolored
+	name = "flowers"
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "reedbush_1"
 
-/obj/effect/spawner/roguemap/sewerencounter
-	icon_state = "srat"
-	icon = 'icons/roguetown/mob/monster/rat.dmi'
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 30,
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
-		/obj/item/organ/guts = 5,
-		/obj/item/roguecoin/copper = 5,
-		/obj/effect/gibspawner/generic = 5,
-		/obj/effect/decal/remains/bigrat = 5,
-		/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 2,
-		)
+/obj/structure/flora/rogueflower/reedbush
+	icon_state = "reedbush_1"
 
-/obj/effect/spawner/roguemap/cheapinnroomencounter
-	icon_state = "paperwizard"
-	icon = 'icons/mob/simple_human.dmi'
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 15,
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
-		/obj/item/roguecoin/copper = 50,
-		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
-		)
-
-/obj/effect/spawner/roguemap/ancientskellyguardmaybe
-	icon = 'icons/roguetown/mob/skeleton_male.dmi'
-	icon_state = "z"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/ancient_skeleton_guard = 100
-		)
-
-/datum/component/spawner/ancient_skeleton_guard
-	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/obj/structure/idle_enemy
-	name = ""
-	icon = 'icons/roguetown/mob/skeleton_male.dmi'
-	icon_state = ""
-	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
-	anchored = TRUE
-	layer = BELOW_OBJ_LAYER
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/obj/structure/idle_enemy/ancient_skeleton_guard
-
-/obj/structure/idle_enemy/ancient_skeleton_guard/Initialize()
+/obj/structure/flora/rogueflower/reedbush/Initialize()
+	icon_state = "reedbush_[rand(1, 4)]"
 	. = ..()
-	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
+
+/obj/structure/flora/rogueflower/lavendergrass
+	icon_state = "lavendergrass_1"
+
+/obj/structure/flora/rogueflower/lavendergrass/Initialize()
+	icon_state = "lavendergrass_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ywflowers
+	icon_state = "ywflowers_1"
+
+/obj/structure/flora/rogueflower/ywflowers/Initialize()
+	icon_state = "ywflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/brflowers
+	icon_state = "brflowers_1"
+
+/obj/structure/flora/rogueflower/brflowers/Initialize()
+	icon_state = "brflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ppflowers
+	icon_state = "ppflowers_1"
+
+/obj/structure/flora/rogueflower/ppflowers/Initialize()
+	icon_state = "ppflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/roguegrass/stalky
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "stalkygrass"
+	opacity = FALSE
+
+/obj/structure/flora/roguegrass/stalky/update_icon()
+	dir = pick(GLOB.cardinals)
 
 
-/obj/item/rogueweapon/sword/scimitar/falx
-	name = "falx"
-	desc = "Ancient curved blade for chopping and little else."
-	icon = 'icons/roguetown/weapons/custom.dmi'
-	icon_state = "falx"
-	max_blade_int = 200
-	max_integrity = INTEGRITY_STANDARD
+// ===================================================================================
+/*	..................   Dwarf Outpost   ................... */
+/obj/effect/landmark/map_load_mark/dwarf_outpost
+	name = "Dwarf Outpost"
+	templates = list( "Dwarf_Outpost_1","Dwarf_Outpost_2" )
+
+/datum/map_template/dwarf_outpost_i
+	name = "Dwarf Outpost Orc"
+	id = "Dwarf_Outpost_1"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
+
+/datum/map_template/dwarf_outpost_ii
+	name = "Dwarf Outpost Beastmen"
+	id = "Dwarf_Outpost_2"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
 
 
+/*	..................   Roadblock   ................... */
+/obj/effect/landmark/map_load_mark/hamlet_roadblock
+	name = "Roadblock"
+	templates = list( "roadblock_1","roadblock_2" )
+
+/datum/map_template/roadblock_i
+	name = "Roadblock"
+	id = "roadblock_1"
+	mappath = "_maps/map_files/templates/stonehamlet/roadblock_1.dmm"
+
+/datum/map_template/roadblock_ii
+	name = "No roadblock"
+	id = "roadblock_2"
+	mappath = "_maps/map_files/templates/stonehamlet/roadblock_2.dmm"
+
+/*	..................   Outlaw camp   ................... */
+/obj/effect/landmark/map_load_mark/hamlet_outlaws
+	name = "Outlaw camp"
+	templates = list( "outlawcamp_1","outlawcamp_2" )
+
+/datum/map_template/outlawcamp_i
+	name = "Outlaw camp"
+	id = "outlawcamp_1"
+	mappath = "_maps/map_files/templates/stonehamlet/outlawcamp_1.dmm"
+
+/datum/map_template/outlawcamp_ii
+	name = "Empty outlaw camp"
+	id = "outlawcamp_2"
+	mappath = "_maps/map_files/templates/stonehamlet/outlawcamp_2.dmm"
+
+// ===================================================================================
+/*
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/rags
+
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/sailor
+
+	switch(loadout)
+		if(1)
+			r_hand = /obj/item/natural/stone
+		if(2)
+			r_hand = /obj/item/rogueweapon/knife/stone
+		if(3)
+			r_hand = /obj/item/rogueweapon/mace/woodclub
+*/
+
+// ===================================================================================
 /obj/structure/mineral_door/wood/red/i
 	name = "Room I"
 	lockid = "roomi"
@@ -147,14 +181,9 @@
 /obj/structure/fluff/statue/xylix/frown
 	icon_state = "xylix_frown"
 
-/turf/open/floor/rogue/sandstone
-	icon_state = "sandstone"
-	footstep = FOOTSTEP_STONE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	landsound = 'sound/foley/jumpland/grassland.wav'
 
+
+// ==============================================================
 /obj/effect/spawner/roguemap/xylixlabyrinth
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = "raiseskele"
@@ -348,8 +377,6 @@
 			new /obj/item/clothing/head/roguetown/jester(src)
 
 
-
-
 /*	..................   Spider stuff   ................... */
 /obj/structure/spider/stickyweb/solo
 	icon_state = "stickyweb3"
@@ -389,13 +416,13 @@
 
 
 /*	..................   Various mapping aides   ................... */
-
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
 
-/*	..................   Colony Spider Net   ................... */
-/obj/structure/innocent_net
+// ======================================================================
+/*	..................   Colony Spider Web   ................... */
+/obj/structure/innocent_web
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
@@ -408,27 +435,27 @@
 	debris = list(/obj/item/natural/silk = 1)
 	var/lucky_escape
 
-/obj/structure/innocent_net/Initialize()
+/obj/structure/innocent_web/Initialize()
 	. = ..()
 	icon_state = "innocentweb[rand(1,2)]"
 	return ..()
 
-/obj/structure/innocent_net/attack_hand()
+/obj/structure/innocent_web/attack_hand()
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/attackby(obj/item, /mob/user, params)
+/obj/structure/innocent_web/attackby(obj/item, /mob/user, params)
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+/obj/structure/innocent_web/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
 	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
 	qdel(src)
 
-/obj/structure/innocent_net/Crossed(atom/movable/AM)
+/obj/structure/innocent_web/Crossed(atom/movable/AM)
 	..()
 	if(isliving(AM))
 		var/mob/living/carbon/human/L = AM
@@ -604,6 +631,19 @@
 /obj/effect/decal/shadow_floor/corner
 	icon_state = "shad_floorcorn"
 
+/obj/effect/decal/miasma
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/mob/rotten.dmi'
+	icon_state = "deadite"
+	mouse_opacity = 0
+
+/obj/effect/decal/remains/human/old
+	name = "remains"
+	color = "#d6b3a5"
+
+/obj/effect/decal/remains/human/old/small
+	icon_state = "remainslarva"
 
 
 /obj/structure/fluff/shipssprote
@@ -615,6 +655,8 @@
 	color = "#5a4621"
 	pixel_y = -16
 
+
+// ======================================================================
 /*	..................   Innocent Bush   ................... */
 /obj/structure/innocent_bush
 	name = "bush"
@@ -656,22 +698,7 @@
 
 
 
-/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
-	name = "candle lamp"
-	icon_state = "candle"
-	base_state = "candle"
-	layer = WALL_OBJ_LAYER+0.1
-	light_power = 0.9
-	light_range = 6
-
-
 /*	..................   Misc   ................... */
-/obj/item/roguebin/alt
-	icon_state = "washbin2"
-
-/obj/structure/mirror/alt
-	icon_state = "mirror_alt"
-
 /obj/item/roguestatue/silver/gnome
 	name = "petrified gnome"
 	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
@@ -679,51 +706,186 @@
 	color = "#617163"
 
 
-/*	..................   Areas to play with the music a bit   ................... */
-/area/rogue/indoors/town/bath/redhouse // lets try something different
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
-
-/area/rogue/outdoors/exposed/bath/redhouse
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-
-/area/rogue/indoors/town/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
-
-/area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
+// ====================		NEW WEAPONS		==========================
+/obj/item/rogueweapon/sword/scimitar/falx
+	name = "falx"
+	desc = "Ancient curved blade for chopping and little else."
+	icon = 'icons/roguetown/weapons/custom.dmi'
+	icon_state = "falx"
+	max_blade_int = 200
+	max_integrity = INTEGRITY_STANDARD
 
 
-/*	..................   Traveltiles   ................... */ // these are the ones on centcom, where the actual lair is, to reduce varedits onmap
-/obj/structure/fluff/traveltile/exit_bandit		// mus NOT be a traveltile/bandit child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
-	aportalid = "banditin"
-	aportalgoesto = "banditexit"
+/obj/item/rogueweapon/sword/scimitar/messer/neu
+	icon = 'icons/roguetown/weapons/custom.dmi'
+/obj/item/rogueweapon/sword/scimitar/messer/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -10,"sy" = -8,"nx" = 11,"ny" = -8,"wx" = -7,"wy" = -6,"ex" = 6,"ey" = -7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -80,"wturn" = -60,"eturn" = 71,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 3,"nx" = -1,"ny" = 4,"wx" = -7,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 10,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
-	aportalid = "vampin"
-	aportalgoesto = "vampexit"
+/obj/item/rogueweapon/pick/paxe/neu
+	icon = 'icons/roguetown/weapons/custom.dmi'
+/obj/item/rogueweapon/pick/paxe/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,"sx" = -9,"sy" = 0,"nx" = 12,"ny" = 1,"wx" = -6,"wy" = 0,"ex" = 5,"ey" = -1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/structure/fluff/traveltile/exit_inhumen
-	aportalid = "inhumenin"
-	aportalgoesto = "inhumenexit"
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 0,"nx" = 7,"ny" = 2,"wx" = -2,"wy" = 0,"ex" = 1,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -4,"ny" = -2,"wx" = -3,"wy" = -2,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/woodstaff/aries/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+/obj/item/rogueweapon/polearm/woodstaff/aries/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = -1,"nx" = 8,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -23,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 4,"sy" = -3,"nx" = -3,"ny" = -2,"wx" = -3,"wy" = -1,"ex" = 3,"ey" = -3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
-/obj/structure/fluff/traveltile/to_inhumen_tribe
-	name = "to the Deep Bog"
-	aportalid = "inhumenexit"
-	aportalgoesto = "inhumenin"
+/obj/item/rogueweapon/mace/goden/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/mace/goden/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 1,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -28,"sturn" = 27,"wturn" = 30,"eturn" = -20,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
-/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
-/obj/effect/spawner/roguemap/tollrandom
-	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
-	icon_state = "soultoken_floor"
-	probby = 35
-	color = "#ff0000"
-	spawned = list(
-		/obj/item/underworld/coin = 1,
-		)
+/obj/item/rogueweapon/polearm/halberd/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/polearm/halberd/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/spear/billhook/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+/obj/item/rogueweapon/polearm/spear/billhook/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 4,"nx" = 7,"ny" = 5,"wx" = -2,"wy" = 3,"ex" = 1,"ey" = 3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+/obj/item/rogueweapon/polearm/woodstaff/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+
+
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony // colony spider
+	name = "hairy spider"
+	desc = "The forest canopies hides more than leaves...These creachers make honey from flowers and spin silk from their abdomen, when not consuming prey."
+	icon_state = "spider"
+	icon_living = "spider"
+	icon_dead = "spider-dead"
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+							/obj/item/natural/silk = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 1,
+							/obj/item/natural/silk = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
+							/obj/item/natural/silk = 3)
+
+
+// ==============================================================
+/*	..................   Various mapping aides   ................... */
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken
+	desc = "A long shirt of maille, this one is made for a short man it seems."
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken/Initialize()
+	. = ..()
+	obj_break()
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/battered
+	desc = "A good quality haubergon, but weakened by many blows."
+	max_integrity = INTEGRITY_STANDARD
+
+/obj/structure/roguethrone/statues
+	icon = 'modular/Mapping/icons/96x96.dmi'
+
+/*	..................   For premapped blood skipping timers, diseases etc   ................... */
+/obj/effect/decal/cleanable/blood_neu
+	name = "blood"
+	desc = ""
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "floor1"
+	alpha = 200
+	nomouseover = TRUE
+	nomouseover = TRUE
+	var/wash_precent = 0
+	COOLDOWN_DECLARE(wash_cooldown)
+
+/obj/effect/decal/cleanable/blood_neu/weather_act_on(weather_trait, severity)
+	if(weather_trait != PARTICLEWEATHER_RAIN || !COOLDOWN_FINISHED(src, wash_cooldown))
+		return
+	wash_precent += min(10, severity / 4)
+	alpha = 255 *((100 - wash_precent) * 0.01)
+	if(wash_precent >= 100)
+		qdel(src)
+	COOLDOWN_START(src, wash_cooldown, 15 SECONDS)
+
+/obj/effect/decal/cleanable/blood_neu/Initialize(mapload)
+	. = ..()
+	pixel_x = rand(-5,5)
+	pixel_y = rand(5,5)
+	GLOB.weather_act_upon_list += src
+
+/obj/effect/decal/cleanable/blood_neu/Destroy()
+	GLOB.weather_act_upon_list -= src
+	return ..()
+
+/obj/effect/decal/cleanable/blood_neu/random/Initialize(mapload)
+	. = ..()
+	icon_state = pick("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "splatter1", "splatter2", "splatter3", "splatter4", "splatter5", "splatter6", "gibl1", "gibl2", "gibl3", "gibl4", "gibl5")
+
+/obj/effect/decal/cleanable/blood_neu/tracks
+	icon_state = "tracks"
 

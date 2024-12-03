@@ -62,7 +62,7 @@
 
 /obj/structure/kneestingers/New(loc, obj/item/seeds/newseed, mutate_stats)
 	..()
-	set_light(1.5, 1.5, "#d4fcac")
+	set_light(1.5, 1.5, 1.5, l_color ="#d4fcac")
 	if(icon_state == "glowshroom1" )
 		icon_state = "glowshroom[rand(1,3)]"
 		pixel_x = rand(-4, 4)

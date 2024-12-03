@@ -79,4 +79,3 @@
 
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
-		H.merctype = 7

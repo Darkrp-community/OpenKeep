@@ -1,7 +1,7 @@
 /datum/job/roguetown/merchant
 	title = "Merchant"
 	flag = MERCHANT
-	department_flag = NOBLEMEN
+	department_flag = MERCATOR_GUILD
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	tutorial = "You were born into wealth, learning from before you could talk about the basics of mathematics. Counting coins is a simple pleasure for any person, but youve made it an artform. These people are addicted to your wares and you are the literal beating heart of this economy: Dont let these filthy-covered troglodytes ever forget that."
+	tutorial = "You were born into wealth, learning from before you could talk about the basics of mathematics. With the trade empire of the Mercator guild behind you, life is good! These people are addicted to your wares and you are the literal beating heart of this economy: Dont let these filthy-covered troglodytes ever forget that."
 
 	display_order = JDO_MERCHANT
 	bypass_lastclass = TRUE
@@ -23,8 +23,8 @@
 	outfit = /datum/outfit/job/roguetown/merchant
 	bypass_lastclass = TRUE
 	give_bank_account = 100
-	min_pq = 1
-	selection_color = "#192bc2"
+	min_pq = 0
+	selection_color = "#4657ec"
 
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -55,11 +55,13 @@
 	H.change_stat("strength", -1)
 
 	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 6, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 4, TRUE) // Literally unused skill
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 2, TRUE)

@@ -624,10 +624,6 @@
 			L.toggle_cmode()
 			update_icon()
 
-/atom/movable/screen/act_intent/alien
-	icon = 'icons/mob/screen_alien.dmi'
-	screen_loc = ui_movi
-
 /atom/movable/screen/act_intent/robot
 	icon = 'icons/mob/screen_cyborg.dmi'
 	screen_loc = ui_borg_intents
@@ -1365,10 +1361,6 @@
 	. += mutable_appearance(overlay_icon, "[hud.mymob.gender == "male" ? "m" : "f"]_[hud.mymob.zone_selected]")
 //	. += mutable_appearance(overlay_icon, "height_arrow[hud.mymob.aimheight]")
 
-/atom/movable/screen/zone_sel/alien
-	icon = 'icons/mob/screen_alien.dmi'
-	overlay_icon = 'icons/mob/screen_alien.dmi'
-
 /atom/movable/screen/zone_sel/robot
 	icon = 'icons/mob/screen_cyborg.dmi'
 
@@ -1394,10 +1386,6 @@
 	name = "health"
 	icon_state = "health0"
 	screen_loc = ui_health
-
-/atom/movable/screen/healths/alien
-	icon = 'icons/mob/screen_alien.dmi'
-	screen_loc = ui_alien_health
 
 /atom/movable/screen/healths/robot
 	icon = 'icons/mob/screen_cyborg.dmi'
@@ -1905,19 +1893,6 @@
 	icon = 'icons/mob/rogueheat.dmi'
 	screen_loc = rogueui_fat
 	layer = HUD_LAYER+0.1
-
-/atom/movable/screen/grain
-	icon = 'icons/grain.dmi'
-	icon_state = "grain"
-	name = ""
-	screen_loc = "1,1"
-	mouse_opacity = 0
-	alpha = 50
-//	layer = 20.5
-//	plane = 20
-	layer = 13
-	plane = 0
-	blend_mode = 4
 
 /atom/movable/screen/scannies
 	icon = 'icons/mob/roguehudback2.dmi'

@@ -121,6 +121,9 @@
 	update_icon()
 
 
+/obj/item/roguebin/water/gross
+	name = "wash bin"
+	desc = "A washbin filled with used water."
 /obj/item/roguebin/water/gross/Initialize()
 	. = ..()
 	reagents.add_reagent(/datum/reagent/water/gross,500)
@@ -131,7 +134,3 @@
 	reagents.add_reagent(/datum/reagent/water,500)
 	update_icon()
 
-/obj/item/roguebin/water/gross/Initialize()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/water/gross,500)
-	update_icon()

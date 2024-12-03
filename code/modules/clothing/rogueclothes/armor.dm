@@ -75,6 +75,17 @@
 	body_parts_covered = COVERAGE_FULL
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 
+//................ Crimson Marauder ............... //
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/sea/marauder
+	slot_flags = ITEM_SLOT_ARMOR
+	name = "jinete's linothorax"
+	desc = "A stained leather cuirass bearing the snarling face of a demon. The tiefling nomads of the Crimsonlands shape this armor to hearken to that which their ancestors wore."
+	icon_state = "crimson_armor"
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	armor = ARMOR_LEATHER_GOOD
+	body_parts_covered = CHEST|GROIN|LEGS|VITALS
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	name = "light gambeson"
 	desc = "Thin and the maker skimped on the padding, typically worn by the peasantry to give some protection against cold for the whole body."
@@ -117,7 +128,7 @@
 //................ Arming Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 	name = "arming jacket"
-	desc = "Thick quilted cloth, a gambesson for the discerning knight. it is meant to be used under heavier armor."
+	desc = "Thick quilted cloth, a gambesson for the discerning knight. It is meant to be used under heavier armor."
 	icon_state = "arming"
 	sellprice = VALUE_GAMBESSON+BONUS_VALUE_MODEST
 
@@ -293,7 +304,6 @@
 	desc = "An expertly padded coat made from the finest silks. Long may live the nobility that dons it."
 	icon_state = "bliaut"
 	sleevetype = "shirt"
-	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	armor = ARMOR_LEATHER_BAD
@@ -337,7 +347,7 @@
 	armor_class = AC_LIGHT
 	armor = ARMOR_LEATHER_GOOD
 	body_parts_covered = COVERAGE_TORSO
-	prevent_crits = ALL_EXCEPT_BLUNT
+	prevent_crits = ALL_EXCEPT_BLUNT //This having stab crit protection as a bikini is extremely funny so I will just leave it here.
 
 
 //................ Copper Heart-protector ............... //
@@ -396,6 +406,7 @@
 	armor = ARMOR_MAILLE_IRON
 	body_parts_covered = COVERAGE_TORSO
 	max_integrity = INTEGRITY_STANDARD
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
 
 
 //................ Hauberk ............... //
@@ -428,6 +439,7 @@
 	item_state = "cuirass"
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/steel
+	clothing_flags = CANT_SLEEP_IN
 	boobed = FALSE
 	sellprice = VALUE_STEEL_ARMOR
 
@@ -635,7 +647,7 @@
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_BAD
 	body_parts_covered = COVERAGE_ALL_BUT_LEGS
-	max_integrity = INTEGRITY_STRONGEST
+	max_integrity = INTEGRITY_STRONG
 	prevent_crits = ALL_EXCEPT_STAB
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/Initialize()

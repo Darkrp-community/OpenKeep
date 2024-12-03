@@ -1,0 +1,1682 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"bi" = (
+/obj/structure/bars/pipe{
+	dir = 8
+	},
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"bS" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"ck" = (
+/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"co" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"dk" = (
+/obj/effect/decal/shadow_floor,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"dA" = (
+/obj/structure/fermenting_barrel/random/beer,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"dB" = (
+/obj/structure/stairs/stone{
+	dir = 8
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"dY" = (
+/obj/machinery/light/rogue/oven{
+	fueluse = 0;
+	pixel_y = 32
+	},
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"eB" = (
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"eE" = (
+/obj/effect/decal/cleanable/dirt/cobweb{
+	dir = 1
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"eM" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"fq" = (
+/obj/item/roguebin/water/gross,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"fV" = (
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"fX" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/flint,
+/obj/item/clothing/suit/roguetown/armor/gambeson/heavy,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"gk" = (
+/obj/structure/roguerock,
+/obj/structure/flora/roguegrass/water,
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"gl" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue)
+"gP" = (
+/obj/structure/bars/grille,
+/obj/effect/decal/shadow_floor{
+	dir = 8
+	},
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"hi" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/obj/item/rogueweapon/pick/paxe/neu,
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"hz" = (
+/obj/structure/rack/rogue,
+/obj/item/rogueweapon/pick/paxe/neu,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"ik" = (
+/obj/structure/kneestingers,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"im" = (
+/obj/structure/table/wood/reinf_long{
+	dir = 4
+	},
+/obj/item/reagent_containers/glass/cup/wooden,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"iB" = (
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"iS" = (
+/obj/structure/mineral_door/wood/donjon/stone,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"jt" = (
+/obj/structure/fluff/walldeco/stone,
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/under/catacombs/dwarfoutpost)
+"lb" = (
+/obj/effect/decal/shadow_floor{
+	dir = 6
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"lL" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"mI" = (
+/obj/structure/bars/pipe{
+	dir = 9;
+	icon_state = "pipe"
+	},
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"nQ" = (
+/obj/structure/fluff/psycross/crafted/shrine/malum,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"oe" = (
+/obj/item/ingot/steel,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"oi" = (
+/obj/structure/table/wood/reinforced_alter,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"ou" = (
+/obj/effect/decal/shadow_floor{
+	dir = 5
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"ov" = (
+/obj/structure/mineral_door/wood/donjon/stone,
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"oD" = (
+/obj/structure/bars/pipe{
+	dir = 1;
+	icon_state = "pipe"
+	},
+/turf/closed/wall/mineral/rogue/stone/window/moss,
+/area/rogue/under/catacombs/dwarfoutpost)
+"oX" = (
+/obj/structure/flora/rock/pile,
+/obj/effect/decal/shadow_floor{
+	dir = 9
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"qs" = (
+/obj/item/ingot/steel,
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"qx" = (
+/obj/item/natural/stone,
+/obj/structure/bars/pipe{
+	dir = 1;
+	icon_state = "pipe"
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"qz" = (
+/obj/structure/stairs/stone{
+	dir = 1;
+	icon_state = "stonestairs"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"qW" = (
+/obj/item/roguebin/water/gross,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"rb" = (
+/obj/structure/bars/pipe{
+	dir = 1;
+	icon_state = "pipe"
+	},
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"sn" = (
+/obj/structure/bars/pipe{
+	dir = 1;
+	icon_state = "pipe"
+	},
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/under/catacombs/dwarfoutpost)
+"tq" = (
+/turf/closed/wall/mineral/rogue/decostone/cand,
+/area/rogue/under/catacombs/dwarfoutpost)
+"tz" = (
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"tI" = (
+/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena,
+/obj/item/clothing/cloak/cape/silk/random,
+/obj/structure/closet/crate/roguecloset/lord,
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"tX" = (
+/obj/effect/decal/remains/human/old{
+	name = "dwarf remains";
+	plane = -3
+	},
+/obj/effect/decal/cleanable/blood/old,
+/obj/structure/bed/rogue/wool,
+/obj/structure/fluff/walldeco/stone{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/obj/item/clothing/head/roguetown/crown/serpcrown/surplus{
+	pixel_x = 9;
+	pixel_y = 6
+	},
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"ul" = (
+/obj/structure/rack/rogue,
+/obj/item/clothing/head/roguetown/helmet/leather/minershelm,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"uu" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"uN" = (
+/obj/structure/table/wood/reinf_long{
+	dir = 8
+	},
+/obj/item/natural/stone,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"uU" = (
+/obj/structure/kneestingers,
+/obj/structure/fluff/walldeco/stone{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"uW" = (
+/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/item/rogueore/iron,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"vf" = (
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"vl" = (
+/turf/closed/wall/mineral/rogue/stone/window/moss,
+/area/rogue/under/catacombs/dwarfoutpost)
+"vo" = (
+/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/item/chair/stool/bar/rogue,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"vI" = (
+/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/effect/decal/shadow_floor{
+	dir = 8
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"wG" = (
+/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/effect/spawner/roguemap/loot/jewelry,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"xL" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/metal,
+/area/rogue/under/catacombs/dwarfoutpost)
+"yc" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"yo" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/swamp/deep,
+/area/rogue/under/catacombs/dwarfoutpost)
+"yp" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"yN" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/flashlight/flare/torch/lantern,
+/obj/item/rogueweapon/mace/goden/steel/warhammer,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"zz" = (
+/obj/effect/decal/shadow_floor{
+	dir = 10
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Ap" = (
+/obj/item/chair/stool/bar/rogue,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"BR" = (
+/obj/effect/spawner/roguemap/maneater_danger,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"BW" = (
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Cu" = (
+/obj/structure/flora/rock/pile,
+/obj/item/candle/yellow,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"CC" = (
+/obj/item/rogueweapon/tongs,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"CV" = (
+/obj/machinery/light/rogue/smelter/great,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"Dt" = (
+/turf/open/floor/rogue/metal,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Ey" = (
+/obj/effect/spawner/roguemap/loot/random_gem,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"ED" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"EJ" = (
+/obj/item/ingot/steel,
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Fg" = (
+/obj/item/natural/stone,
+/obj/structure/kneestingers,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"GA" = (
+/obj/structure/bed/rogue/mediocre,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"GC" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"GS" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Hh" = (
+/obj/effect/decal/shadow_floor,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"Ig" = (
+/obj/effect/decal/shadow_floor{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"IM" = (
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Jw" = (
+/obj/structure/fluff/walldeco/stone,
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"JL" = (
+/obj/item/reagent_containers/glass/cup/wooden,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"JV" = (
+/obj/effect/decal/remains/human/old{
+	name = "dwarf remains";
+	plane = -3
+	},
+/obj/structure/fluff/walldeco/stone{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"KB" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"KV" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/rogueweapon/flail,
+/obj/item/clothing/head/roguetown/helmet/leather/minershelm,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Le" = (
+/obj/structure/rack/rogue,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"LK" = (
+/obj/effect/decal/remains/human/old{
+	name = "dwarf remains";
+	plane = -3
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Mb" = (
+/obj/effect/decal/shadow_floor{
+	dir = 8
+	},
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"MK" = (
+/obj/effect/spawner/roguemap/maneater_danger,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"NM" = (
+/obj/structure/fluff/walldeco/stone{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Pj" = (
+/obj/item/natural/stone,
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Pl" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Pw" = (
+/obj/effect/decal/cleanable/dirt/cobweb,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/rogueweapon/axe/steel,
+/obj/item/clothing/head/roguetown/helmet/leather/minershelm,
+/obj/item/clothing/head/roguetown/helmet/ironpot,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"PO" = (
+/obj/item/ingot/steel,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Qe" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/rogueweapon/shield/tower/metal,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Qs" = (
+/obj/effect/decal/shadow_floor{
+	dir = 4
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"QF" = (
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"QJ" = (
+/obj/structure/kneestingers,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Rs" = (
+/obj/item/rogueweapon/shovel,
+/obj/item/rogueore/coal,
+/turf/open/floor/rogue/metal{
+	icon_state = "plating2"
+	},
+/area/rogue/under/catacombs/dwarfoutpost)
+"RR" = (
+/obj/structure/fluff/walldeco/stone{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"SX" = (
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ingot/steel,
+/obj/item/ingot/steel,
+/obj/item/riddleofsteel,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Th" = (
+/obj/structure/flora/roguegrass/water,
+/obj/effect/decal/shadow_floor{
+	dir = 8
+	},
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Tm" = (
+/turf/closed/wall/mineral/rogue/stone/moss,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Tp" = (
+/obj/structure/bars/pipe{
+	dir = 1;
+	icon_state = "pipe"
+	},
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Ub" = (
+/turf/open/floor/rogue/herringbone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Uj" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/spawner/roguemap/maneater_danger,
+/obj/effect/decal/remains/human/old{
+	name = "dwarf remains";
+	plane = -3
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"UA" = (
+/obj/effect/spawner/roguemap/maneater_danger,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"UU" = (
+/obj/effect/decal/remains/human,
+/turf/closed/mineral/rogue,
+/area/rogue/under/catacombs/dwarfoutpost)
+"VR" = (
+/obj/effect/decal/shadow_floor{
+	dir = 8
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"VZ" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Wa" = (
+/obj/structure/bars/grille,
+/obj/structure/flora/roguegrass/water,
+/obj/effect/decal/shadow_floor{
+	dir = 4
+	},
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Xu" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Xy" = (
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/structure/fluff/walldeco/stone{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Xz" = (
+/obj/structure/stairs/stone{
+	dir = 4
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"XT" = (
+/obj/structure/flora/roguegrass/water/reeds,
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"XX" = (
+/obj/effect/decal/remains/human,
+/turf/closed/mineral/rogue,
+/area/rogue)
+"Ya" = (
+/obj/item/rogueweapon/pick/paxe/neu,
+/obj/structure/flora/roguegrass/water,
+/obj/effect/decal/remains/human/old{
+	name = "dwarf remains";
+	plane = -3
+	},
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Yb" = (
+/obj/structure/kneestingers,
+/turf/open/water/swamp,
+/area/rogue/under/catacombs/dwarfoutpost)
+"YV" = (
+/obj/item/rogueore/iron,
+/turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
+"Zv" = (
+/obj/structure/table/wood/reinf_long{
+	dir = 8
+	},
+/obj/effect/spawner/roguemap/loot/jewelry,
+/turf/open/floor/rogue/hexstone,
+/area/rogue/under/catacombs/dwarfoutpost)
+"ZF" = (
+/obj/structure/bars/pipe{
+	dir = 1;
+	icon_state = "pipe"
+	},
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/under/catacombs/dwarfoutpost)
+
+(1,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(2,1,1) = {"
+gl
+Tm
+vf
+vf
+vf
+vf
+vf
+vf
+vf
+vf
+gl
+gl
+gl
+gl
+vf
+vf
+vf
+vf
+vf
+vf
+vf
+Tm
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(3,1,1) = {"
+XX
+vf
+IM
+IM
+vf
+wG
+eB
+UA
+eB
+iB
+IM
+IM
+IM
+UU
+vl
+ED
+IM
+IM
+IM
+hz
+ul
+hz
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(4,1,1) = {"
+gl
+vf
+IM
+IM
+IM
+IM
+GS
+eB
+eM
+fV
+ED
+IM
+IM
+fV
+fV
+Pl
+fV
+fV
+Xu
+fV
+Pl
+fV
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(5,1,1) = {"
+gl
+tq
+Xu
+IM
+IM
+IM
+eM
+iB
+IM
+fV
+Pl
+fV
+MK
+fV
+Tm
+UU
+IM
+IM
+IM
+IM
+fV
+IM
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(6,1,1) = {"
+gl
+vf
+fV
+IM
+IM
+IM
+IM
+vl
+vf
+vf
+vl
+vf
+IM
+fV
+vf
+Tm
+vf
+IM
+IM
+vf
+ED
+vf
+Tm
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(7,1,1) = {"
+gl
+vf
+Le
+ED
+IM
+qs
+CC
+QF
+vf
+tI
+JL
+yN
+Tm
+fV
+vf
+vo
+dA
+IM
+vf
+IM
+Pl
+fV
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(8,1,1) = {"
+gl
+jt
+SX
+fV
+IM
+oe
+CV
+yc
+vf
+tX
+BR
+Ub
+ov
+fV
+vf
+Xy
+uN
+Uj
+Tm
+Pl
+fV
+KV
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(9,1,1) = {"
+gl
+Tm
+Le
+PO
+IM
+Rs
+EJ
+Ey
+vf
+qW
+GC
+ck
+vf
+fV
+tq
+eB
+im
+Ap
+eB
+fV
+fV
+MK
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(10,1,1) = {"
+gl
+vf
+fV
+fV
+vf
+Tm
+vf
+IM
+IM
+IM
+vf
+vf
+IM
+fV
+IM
+lL
+eB
+eB
+LK
+fV
+fV
+vf
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(11,1,1) = {"
+gl
+tq
+fV
+fV
+Tm
+uW
+iB
+Pl
+fV
+IM
+fV
+fV
+Pl
+fV
+tq
+Ap
+Zv
+eB
+eB
+fV
+fV
+BW
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(12,1,1) = {"
+gl
+Tm
+BW
+fV
+fV
+fV
+fV
+MK
+fV
+fV
+Pl
+IM
+IM
+IM
+vf
+JV
+im
+eB
+vf
+fV
+fV
+oi
+vf
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(13,1,1) = {"
+gl
+gl
+IM
+IM
+Tm
+eE
+iB
+iB
+fV
+YV
+iB
+IM
+vf
+iS
+vf
+dA
+Ap
+eB
+vf
+fV
+fV
+oi
+Tm
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(14,1,1) = {"
+gl
+gl
+gl
+vf
+vf
+vf
+vf
+vf
+Tm
+vf
+vf
+vf
+tq
+BW
+IM
+IM
+IM
+IM
+vf
+fV
+fV
+fV
+Tm
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(15,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+vf
+vf
+vf
+sn
+Tm
+Xz
+Tm
+mI
+bi
+vf
+vf
+uU
+fV
+Pl
+Tm
+vf
+vf
+vf
+vf
+vf
+vf
+vf
+Tm
+gl
+gl
+"}
+(16,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+vf
+IM
+IM
+Tp
+IM
+xL
+IM
+qx
+IM
+ED
+IM
+IM
+ED
+fV
+vf
+IM
+fX
+GA
+vf
+eB
+Qe
+eB
+Tm
+gl
+gl
+"}
+(17,1,1) = {"
+gl
+gl
+vf
+vf
+vf
+gl
+gl
+gl
+vf
+IM
+Tm
+RR
+gk
+Dt
+iB
+BW
+IM
+IM
+vl
+IM
+IM
+fV
+IM
+IM
+ik
+eB
+vf
+eB
+eB
+eB
+vf
+gl
+gl
+"}
+(18,1,1) = {"
+gl
+gl
+vf
+dB
+vf
+Tm
+Tm
+vf
+vf
+IM
+BW
+yp
+IM
+Dt
+dk
+tz
+XT
+Xu
+vl
+dY
+IM
+fV
+ED
+UA
+eM
+Cu
+vf
+eB
+eB
+GA
+vf
+gl
+gl
+"}
+(19,1,1) = {"
+gl
+gl
+vf
+dB
+tq
+vI
+gP
+Mb
+Tm
+IM
+BW
+IM
+oX
+Dt
+zz
+VR
+Th
+VR
+vf
+vl
+vf
+vl
+vf
+vf
+eB
+IM
+vf
+Tm
+eM
+vf
+vf
+gl
+gl
+"}
+(20,1,1) = {"
+gl
+gl
+Jw
+fV
+qz
+Hh
+QF
+QF
+QF
+uu
+QF
+QF
+QF
+nQ
+Hh
+QF
+QF
+QF
+QF
+qz
+qz
+dk
+Pl
+fV
+fV
+BW
+iB
+QJ
+iB
+IM
+vl
+gl
+gl
+"}
+(21,1,1) = {"
+gl
+gl
+vf
+fV
+qz
+Hh
+QF
+QF
+QF
+QF
+QF
+QF
+QF
+Dt
+Hh
+QF
+Yb
+QF
+QF
+IM
+qz
+IM
+fV
+fV
+fV
+fV
+fV
+vf
+iB
+Tm
+vf
+gl
+gl
+"}
+(22,1,1) = {"
+gl
+gl
+vf
+vf
+tq
+IM
+Wa
+Qs
+vf
+Qs
+Ig
+Qs
+ou
+Dt
+lb
+Qs
+iB
+IM
+vl
+vf
+vf
+vf
+vf
+vf
+IM
+lL
+iB
+eB
+bS
+Fg
+co
+Yb
+gl
+"}
+(23,1,1) = {"
+gl
+gl
+vf
+vf
+vf
+Tm
+Tm
+Tm
+vf
+fV
+Tm
+NM
+MK
+Dt
+Ya
+BW
+Tm
+NM
+vf
+gl
+gl
+gl
+vl
+Pw
+eB
+QJ
+bS
+eB
+UA
+GS
+VZ
+Pj
+gl
+"}
+(24,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+tq
+fV
+BW
+hi
+BW
+BW
+Pj
+IM
+IM
+IM
+vf
+gl
+gl
+gl
+vf
+eB
+eB
+eB
+Tm
+LK
+GA
+IM
+vf
+bS
+BW
+"}
+(25,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+vf
+BW
+BW
+rb
+IM
+IM
+vl
+oD
+vf
+vf
+vf
+gl
+gl
+gl
+vf
+eB
+GA
+fq
+Tm
+Tm
+Tm
+vf
+vl
+Yb
+BW
+"}
+(26,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+vf
+vf
+vl
+ZF
+vf
+IM
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+vl
+vf
+vf
+vf
+vl
+gl
+gl
+gl
+gl
+gl
+KB
+"}
+(27,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+BW
+"}
+(28,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+yo
+"}
+(29,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}
+(30,1,1) = {"
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+gl
+"}

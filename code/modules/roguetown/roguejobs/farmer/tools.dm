@@ -265,22 +265,25 @@
 	pixel_y = -16
 	pixel_x = -16
 
+/obj/item/reagent_containers/food/drinks/afterattack(obj/target, mob/user , proximity)
+	. = ..()
 
 /obj/item/rogueweapon/thresher/afterattack(obj/target, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
-		if(isturf(target.loc))
-			var/turf/T = target.loc
-			var/found = FALSE
-			for(var/obj/item/natural/chaff/C in T)
-				found = TRUE
-				C.thresh()
-			if(found)
-				playsound(loc,"plantcross", 90, FALSE)
-				playsound(loc,"smashlimb", 35, FALSE)
-				apply_farming_fatigue(user, 10)
-				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
-									"<span class='notice'>I thresh the stalks.</span>")
+		if(!proximity)
 			return
+		var/turf/T = target.loc
+		var/found = FALSE
+		for(var/obj/item/natural/chaff/C in T)
+			found = TRUE
+			C.thresh()
+		if(found)
+			playsound(loc,"plantcross", 90, FALSE)
+			playsound(loc,"smashlimb", 35, FALSE)
+			apply_farming_fatigue(user, 10)
+			user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
+									"<span class='notice'>I thresh the stalks.</span>")
+		return
 	..()
 /*	INSTANT THRESH
 /obj/item/rogueweapon/thresher/afterattack(obj/target, mob/user, proximity)

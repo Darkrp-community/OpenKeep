@@ -1,7 +1,7 @@
 /obj/item/clothing/suit/roguetown/shirt
 	slot_flags = ITEM_SLOT_SHIRT
 	body_parts_covered = CHEST|VITALS
-	prevent_crits = list(BCLASS_LASHING)
+	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE) //Bite crit protection on shirts should help stop cases of spawning in and getting instantly heart crit by a wolf.
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
 	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
@@ -161,7 +161,7 @@
 /obj/item/clothing/suit/roguetown/shirt/tunic
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "tunic"
-	desc = "A unisex linen tunic."
+	desc = "A comfortable linen tunic."
 	body_parts_covered = CHEST|GROIN|VITALS
 	boobed = FALSE
 	icon_state = "tunic"
@@ -344,8 +344,6 @@
 	flags_inv = HIDEBOOB
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
-	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "aasimar", "elf")
 	color = null
 	sellprice = 100
 
@@ -367,7 +365,6 @@
 	name = "grenzelhoftian hip-shirt"
 	desc = "A true fashion statement worn by Grenzelhoftian swordsmen."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
-	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "grenzelshirt"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	boobed = TRUE
@@ -377,6 +374,10 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	var/picked = FALSE
 	colorgrenz = TRUE
+
+	armor = ARMOR_PADDED_BAD
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/suit/roguetown/shirt/grenzelhoft/proc/get_player_input()
 	if(!ishuman(loc))

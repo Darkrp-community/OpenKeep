@@ -85,6 +85,10 @@
 /obj/effect/landmark/underworldcoin,
 /turf/open/floor/rogue/underworld/road,
 /area/rogue/underworld)
+"Q" = (
+/obj/item/underworld/coin,
+/turf/open/floor/rogue/underworld/road,
+/area/rogue/underworld)
 "V" = (
 /obj/effect/spawner/roguemap/tollrandom,
 /turf/open/floor/rogue/underworld/road,
@@ -5960,7 +5964,7 @@ a
 c
 n
 e
-e
+V
 e
 e
 e
@@ -6745,7 +6749,7 @@ n
 e
 e
 e
-e
+Q
 e
 e
 e
@@ -6866,7 +6870,7 @@ b
 b
 b
 e
-e
+Q
 e
 e
 e
@@ -6998,7 +7002,7 @@ b
 e
 e
 n
-e
+V
 e
 e
 n
@@ -7263,7 +7267,7 @@ e
 e
 e
 e
-e
+Q
 e
 e
 n
@@ -7398,7 +7402,7 @@ e
 e
 e
 n
-e
+V
 e
 e
 e
@@ -7517,11 +7521,11 @@ b
 b
 e
 e
+Q
 e
 e
 e
-e
-e
+Q
 e
 e
 e
@@ -7785,7 +7789,7 @@ e
 e
 e
 e
-e
+Q
 e
 e
 e
@@ -8178,7 +8182,7 @@ e
 e
 e
 n
-e
+Q
 e
 e
 e
@@ -8434,7 +8438,7 @@ e
 e
 e
 e
-e
+Q
 e
 e
 e
@@ -8686,12 +8690,12 @@ b
 b
 b
 e
+Q
 e
 e
 e
 e
-e
-e
+Q
 e
 e
 e
@@ -8956,7 +8960,7 @@ e
 e
 n
 n
-e
+V
 e
 e
 n
@@ -9207,7 +9211,7 @@ b
 b
 e
 e
-e
+V
 e
 e
 e
@@ -9468,7 +9472,7 @@ b
 e
 e
 e
-e
+Q
 e
 e
 e
@@ -10249,7 +10253,7 @@ a
 a
 c
 n
-e
+V
 e
 e
 e

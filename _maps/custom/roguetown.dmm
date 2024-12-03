@@ -1738,7 +1738,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "gw" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -1772,7 +1772,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "gA" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2660,21 +2660,21 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "jv" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "jw" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "jx" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2682,7 +2682,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "jy" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2707,7 +2707,7 @@
 	icon_state = "chair2";
 	dir = 4
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -2718,7 +2718,7 @@
 	icon_state = "largetable";
 	dir = 9
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -3849,7 +3849,7 @@
 /area/rogue/indoors/town/manor)
 "nE" = (
 /obj/structure/chair/bench/throne,
-/obj/effect/landmark/start/lady,
+/obj/effect/landmark/start/consort,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "nF" = (
@@ -4639,14 +4639,14 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "qs" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
 "qt" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -7661,15 +7661,11 @@
 	},
 /area/rogue/indoors/town/shop)
 "BQ" = (
-/obj/effect/landmark/start/grabber{
-	name = "Hauler"
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "BR" = (
-/obj/effect/landmark/start/grabber{
-	name = "Hauler"
-	},
+/obj/effect/landmark/start/stevedore,
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town)
 "BS" = (
@@ -13402,7 +13398,7 @@
 	},
 /area/rogue/indoors/town)
 "YH" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "YI" = (

@@ -50,6 +50,14 @@
 
 	if((!can_buckle && !force) || M.buckled || (buckled_mobs.len >= max_buckled_mobs) || (buckle_requires_restraints && !M.restrained()) || M == src)
 		return FALSE
+
+	// This signal will check if the mob is mounting this atom to ride it. There are 3 possibilities for how this goes
+	// 1. This movable doesn't have a ridable element and can't be ridden, so nothing gets returned, so continue on
+	// 2. There's a ridable element but we failed to mount it for whatever reason (maybe it has no seats left, for example), so we cancel the buckling
+	// 3. There's a ridable element and we were successfully able to mount, so keep it going and continue on with buckling
+	if(SEND_SIGNAL(src, COMSIG_MOVABLE_PREBUCKLE, M, force) & COMPONENT_BLOCK_BUCKLE)
+		return FALSE
+
 	M.buckling = src
 	if(!M.can_buckle() && !force)
 		if(M == usr)
@@ -110,10 +118,13 @@
 //Handle any extras after buckling
 //Called on buckle_mob()
 /atom/movable/proc/post_buckle_mob(mob/living/M)
-
+	if(buckle_lying)
+		M.update_cone_show()
+		M.layer = BELOW_MOB_LAYER
 //same but for unbuckle
 /atom/movable/proc/post_unbuckle_mob(mob/living/M)
-
+	if(buckle_lying)
+		M.update_cone_show()
 //Wrapper procs that handle sanity and user feedback
 /atom/movable/proc/user_buckle_mob(mob/living/M, mob/user, check_loc = TRUE)
 	if(!in_range(user, src) || !isturf(user.loc) || user.incapacitated() || M.anchored)

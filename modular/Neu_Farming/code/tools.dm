@@ -95,24 +95,25 @@
 "eflip" = 0)
 			if("onbelt")
 				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
+/* commented since duped
 /obj/item/rogueweapon/thresher/neu/afterattack(obj/target, mob/user, proximity)
 	if(user.used_intent.type == /datum/intent/flailthresh)
-		if(isturf(target.loc))
-			var/turf/T = target.loc
-			var/found = FALSE
-			for(var/obj/item/natural/chaff/C in T)
-				found = TRUE
-				C.thresh()
-			if(found)
-				playsound(loc,"plantcross", 90, FALSE)
-				playsound(loc,"smashlimb", 35, FALSE)
-				apply_farming_fatigue(user, 10)
-				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
-									"<span class='notice'>I thresh the stalks.</span>")
+		if(!proximity)
 			return
+		var/turf/T = target.loc
+		var/found = FALSE
+		for(var/obj/item/natural/chaff/C in T)
+			found = TRUE
+			C.thresh()
+		if(found)
+			playsound(loc,"plantcross", 90, FALSE)
+			playsound(loc,"smashlimb", 35, FALSE)
+			apply_farming_fatigue(user, 10)
+			user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
+									"<span class='notice'>I thresh the stalks.</span>")
+		return
 	..()
-
+*/
 
 /* this is too goofy to keep sadly for now we return to infinithreshing
 /obj/item/rogueweapon/thresher/neu/afterattack(obj/target, mob/living/user = usr, proximity)

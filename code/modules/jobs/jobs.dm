@@ -61,14 +61,13 @@ GLOBAL_LIST_INIT(nonhuman_positions, list(
 
 GLOBAL_LIST_INIT(noble_positions, list(
 	"King",
-	"Queen",
+	"Consort",
 	"Hand",
 	"Prince",
 	"Captain",
 	"Steward",
 	"Court Magician",
 	"Archivist",
-	"Merchant",
 	"Feldsher",
 	"Warden of the Terrorbog",
 	"Huntmaster of the Murderwoods",
@@ -87,25 +86,34 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 GLOBAL_LIST_INIT(church_positions, list(
 	"Priest",
 	"Acolyte",
+	"Gravekeeper",
 	"Inquisitor",
 	"Confessor",
 	"Templar",
 	"Adept"
 	))
 
-GLOBAL_LIST_INIT(serf_positions, list(
-	"Innkeep",
+GLOBAL_LIST_INIT(mercatorguild_positions, list(
+	"Merchant",
+	"Stevedore"
+	))
+
+GLOBAL_LIST_INIT(makersguild_positions, list(
+	"Blacksmith",
 	"Armorer",
 	"Weaponsmith",
+	"Mason",
+	))
+
+GLOBAL_LIST_INIT(serf_positions, list(
+	"Innkeep",
 	"Tailor",
 	"Alchemist",
-	"Mason",
 	"Scribe",
 	))
 
 GLOBAL_LIST_INIT(peasant_positions, list(
 	"Soilson",
-	"Stevedore",
 	"Butcher",
 	"Cook",
 	"Gravedigger",
@@ -129,9 +137,13 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Smithy Apprentice",
 	"Magician's Apprentice",
-	"Churchling",
-	"Servant",
-	"Orphan"
+	"Servant"
+	))
+
+GLOBAL_LIST_INIT(no_antag_positions, list(
+	"King",
+	"Priest",
+	"Merchant",
 	))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
@@ -165,6 +177,8 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	sorting_order += GLOB.noble_positions
 	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.church_positions
+	sorting_order += GLOB.mercatorguild_positions
+	sorting_order += GLOB.makersguild_positions
 	sorting_order += GLOB.serf_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions

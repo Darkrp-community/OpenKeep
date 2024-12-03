@@ -516,6 +516,21 @@
 	body_parts_covered = COVERAGE_NASAL
 	max_integrity = INTEGRITY_STANDARD
 
+//................ Crimson Marauder ............... //
+/obj/item/clothing/head/roguetown/helmet/ironpot/marauder
+	name = "Jinete's Caspon"
+	desc = "A solid bronze helmet from the age of the Apotheosis war. It has been reinforced and decorated for hundreds of yils, the symbol of pride for any Jinete, if not entirely outdated and ceremonial"
+	icon_state = "crimson_marauder"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	sellprice = VALUE_LEATHER_HELMET/2
+	armor =  ARMOR_PLATE
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+
 //................ Skull Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/skullcap
 	name = "skull cap"
@@ -654,7 +669,7 @@
 
 	armor =  ARMOR_PLATE
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
@@ -687,7 +702,7 @@
 	sellprice = VALUE_STEEL_HELMET
 
 	body_parts_covered = COVERAGE_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 
@@ -712,7 +727,7 @@
 
 	armor = ARMOR_PLATE
 	body_parts_covered = FULL_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -861,7 +876,7 @@
 
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Frog Helmet ............... //
@@ -1219,6 +1234,37 @@
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm/proc/turn_off(mob/user)
 	set_light(0)
 
+//............... Antler hood ............... //
+/obj/item/clothing/head/roguetown/antlerhood
+	name = "antlerhood"
+	desc = "a hood with the antlers from a saiga mounted on it."
+	color = null
+	flags_inv = HIDEEARS|HIDEHAIR
+	icon_state = "antlerhood"
+	item_state = "antlerhood"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = HEAD|HAIR|EARS|NECK
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = ""
+	max_integrity = 100
+	prevent_crits = list(BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+
+//............... Saiga skull ............... //
+/obj/item/clothing/head/roguetown/helmet/leather/saiga
+	name = "saiga skull"
+	desc = "Skull from big game. Looks like it could withstand some damage."
+	icon_state = "saigahead"
+	item_state = "saigahead"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = HEADCOVERSEYES
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
+
 
 
 /*------------------\
@@ -1301,7 +1347,7 @@
 	armor = ARMOR_PLATE_GOOD
 	armor_class = AC_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Bladesinger Helmet ............... //

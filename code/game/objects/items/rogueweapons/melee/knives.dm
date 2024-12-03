@@ -165,7 +165,7 @@
 //................ Iron Dagger ............... //
 /obj/item/rogueweapon/knife/dagger
 	force = DAMAGE_DAGGER
-	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut) //Stabbing is the first intent, for convenience.
 	name = "iron dagger"
 	desc = "Thin, sharp, pointed death."
 	icon_state = "idagger"
@@ -174,7 +174,7 @@
 
 //................ Steel Dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel
-	force = DAMAGE_DAGGER+1
+	force = DAMAGE_DAGGER+2
 	name = "steel dagger"
 	desc = "A dagger made of refined steel."
 	icon_state = "sdagger"

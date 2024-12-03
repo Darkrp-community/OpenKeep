@@ -320,7 +320,7 @@
 
 		var/obj/item/lockpick/P = I
 		var/mob/living/L = user
-		
+
 		var/pickskill = user.mind.get_skill_level(/datum/skill/misc/lockpicking)
 		var/perbonus = L.STAPER/5
 		var/picktime = 70
@@ -405,9 +405,6 @@
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
 								"<span class='notice'>I stuff [O] into [src].</span>", \
 								"<span class='hear'>I hear a loud bang.</span>")
-			var/mob/living/L = O
-			if(!issilicon(L))
-				L.Paralyze(40)
 			O.forceMove(T)
 			close()
 	else
@@ -436,10 +433,6 @@
 /obj/structure/closet/attack_paw(mob/user)
 	return attack_hand(user)
 
-/obj/structure/closet/attack_robot(mob/user)
-	if(user.Adjacent(src))
-		return attack_hand(user)
-
 // tk grab then use on self
 /obj/structure/closet/attack_self_tk(mob/user)
 	return attack_hand(user)
@@ -452,7 +445,7 @@
 	if(!usr.canUseTopic(src, BE_CLOSE) || !isturf(loc))
 		return
 
-	if(iscarbon(usr) || issilicon(usr) || isdrone(usr))
+	if(iscarbon(usr) || isdrone(usr))
 		return toggle(usr)
 	else
 		to_chat(usr, "<span class='warning'>This mob type can't use this verb.</span>")

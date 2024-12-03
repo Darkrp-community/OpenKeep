@@ -287,12 +287,10 @@
 /obj/structure/fluff/railing/wood
 	icon_state = "woodrailing"
 	blade_dulling = DULLING_BASHCHOP
-	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/railing/stonehedge
 	icon_state = "stonehedge"
 	blade_dulling = DULLING_BASHCHOP
-	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/railing/border
 	name = "border"
@@ -368,7 +366,7 @@
 	density = TRUE
 	anchored = TRUE
 	blade_dulling = DULLING_BASHCHOP
-	max_integrity = 700
+	max_integrity = INTEGRITY_STRONG
 	damage_deflection = 12
 	integrity_failure = 0.15
 	dir = SOUTH
@@ -396,6 +394,11 @@
 	icon_state = "bars_alt"
 	plane = -3
 	layer = WALL_OBJ_LAYER+0.05
+
+/obj/structure/bars/weakened
+	desc = "Iron bars made to keep things in or out. These one looks pretty rusty."
+	max_integrity = INTEGRITY_POOR
+	color = "#edc9c9"
 
 /*
 /obj/structure/bars/CheckExit(atom/movable/O, turf/target)
@@ -536,7 +539,7 @@
 	drag_slowdown = 3
 
 /obj/structure/fluff/clock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -624,7 +627,7 @@
 //				. += "<span class='warning'>The last boat will leave in [round(SSshuttle.emergency.timeLeft()/600)] minutes.</span>"
 
 /obj/structure/fluff/wallclock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -853,6 +856,7 @@
 	icon_state = "elfs"
 
 /obj/structure/fluff/statue/pillar
+	name = "wooden support"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "pillar"
 
@@ -1135,6 +1139,7 @@
 	dir = SOUTH
 	shrine = TRUE
 
+/*	..................   Dendor Shrine   ................... */
 /obj/structure/fluff/psycross/crafted/shrine/dendor_volf
 	name = "shrine to Dendor"
 	desc = "The life force of a Volf has consecrated this holy place.<br/> Present several blood bait here to craft a worthy sacrifice."
@@ -1144,6 +1149,47 @@
 	name = "shrine to Dendor"
 	desc = "The life force of a Saiga has consecrated this holy place.<br/> Present jacksberries, westleach leaves, and silk grubs for crafting a worthy sacrifice."
 	icon_state = "shrine_dendor_saiga"
+
+/*	..................   Malum Shrine (Dromkis revenge)   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/malum
+	name = "statue of Malum"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "malum"
+	bound_width = 64
+
+/*	..................   Astrata Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/astrata
+	name = "The Sun Queen"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "astrata"
+	pixel_x = -18
+
+/*	..................   Necra Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/necra
+	name = "The Undermaiden"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "necra"
+	pixel_x = -16
+
+/*	..................   Dendor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/dendor
+	name = "The Tree Father"
+	desc = ""
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "mystical"
+	pixel_x = -10
+
+/*	..................   Abyssor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/abyssor
+	name = "The World Whale"
+	desc = ""
+	icon = 'icons/roguetown/misc/96x96.dmi'
+	icon_state = "abyssor"
+	bound_width = 64
+	pixel_x = -25
 
 /obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(user.mind)
@@ -1478,6 +1524,8 @@
 	if(M.flash_act())
 		var/diff = power - M.confused
 		M.confused += min(power, diff)
+
+// ===================================================================================
 
 
 //================================
