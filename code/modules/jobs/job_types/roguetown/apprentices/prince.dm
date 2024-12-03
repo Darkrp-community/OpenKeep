@@ -36,6 +36,9 @@
 		Q.invisibility = INVISIBILITY_MAXIMUM
 		Q.become_blind("advsetup")
 
+/datum/advclass/heir
+	displays_adv_job = FALSE
+
 /datum/advclass/heir/daring
 	name = "Daring Twit"
 	tutorial = "You're a somebody, someone important. It only makes sense you want to make a name for yourself, to gain your own glory so people see how great you really are beyond your bloodline. Plus, if you're beloved by the people for your exploits you'll be chosen! Probably. Shame you're as useful and talented as a squire, despite your delusions to the contrary."
