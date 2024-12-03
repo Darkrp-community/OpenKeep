@@ -938,14 +938,12 @@
 			. += "[A.type]"
 
 ///Can the mob see reagents inside of containers?
-/mob/living/carbon/human/proc/can_see_reagents()
+/mob/proc/can_see_reagents()
 	return stat == DEAD || has_unlimited_silicon_privilege //Dead guys and silicons can always see reagents
 
-/mob/proc/get_role_title()
+/mob/living/carbon/human/proc/get_role_title()
 	var/used_title
-	if(advjob)
-		used_title = advjob
-	else if(job)
+	if(job)
 		var/datum/job/J = SSjob.GetJob(job)
 		if(!J)
 			return "Unknown"
