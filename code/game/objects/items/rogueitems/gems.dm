@@ -12,6 +12,7 @@
 	///I dont care if its negative just DONT LEAVE IT 0
 	sellprice = 0
 	static_price = FALSE
+	experimental_inhand = FALSE
 	///For Mappers; gem_path = weight
 	var/list/valid_gems = list()
 
@@ -26,6 +27,7 @@
 		var/obj/item/roguegem/spawned = new new_gem(get_turf(src))
 		spawned.update_icon_state()
 		return INITIALIZE_HINT_QDEL
+	update_icon_state()
 
 ///This is a switch incase anyone would like to add more...
 /obj/item/roguegem/update_icon_state()
@@ -52,25 +54,25 @@
 /obj/item/roguegem/green
 	name = "gemerald"
 	desc = "Glints with verdant brilliance."
-	color = "#15af15ff"
+	color = "#15af158c"
 	sellprice = 44
 
 /obj/item/roguegem/blue
 	name = "blortz"
 	desc = "Pale blue, like a frozen tear."
-	color = "#1ca5aaff"
+	color = "#1ca5aa8c"
 	sellprice = 88
 
 /obj/item/roguegem/yellow
 	name = "toper"
 	desc = "Its amber hues remind you of the sunset."
-	color = "#e6a008ff"
+	color = "#e6a0088c"
 	sellprice = 25
 
 /obj/item/roguegem/violet
 	name = "saffira"
 	desc = "This gem is admired by many wizards."
-	color = "#1733b3ff"
+	color = "#1733b38c"
 	sellprice = 56
 
 /obj/item/roguegem/diamond
@@ -82,13 +84,13 @@
 /obj/item/roguegem/red
 	name = "rubor"
 	desc = "Glistening with unkempt rage."
-	color = "#ff0000ff"
+	color = "#ff00008c"
 	sellprice = 100
 
 /obj/item/roguegem/black
 	name = "onyxa"
 	desc = "Dark as nite."
-	color = "#200013ff"
+	color = "#2000138c"
 	sellprice = 76
 
 /// riddle
