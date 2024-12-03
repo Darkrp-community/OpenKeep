@@ -122,7 +122,28 @@
 		/obj/item/clothing/head/roguetown/helmet/visored/hounskull = 5,
 		/obj/item/clothing/mask/rogue/facemask/steel = 5,
 		/obj/item/clothing/suit/roguetown/armor/plate/full = 5,
-		/obj/item/clothing/neck/roguetown/chaincoif = 5,
+		/obj/item/clothing/neck/roguetown/chaincoif = 5
+		)
+
+/obj/effect/spawner/roguemap/loot/food
+	icon_state = "lootfood"
+	spawned = list(
+		/obj/item/reagent_containers/food/snacks/rogue/bread = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/raisinbread = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/bun = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/cheesebun = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/frybread = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/peppersteak = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/friedegg = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/preserved/onion_fried = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/raisins = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/meat/salami = 10,
+		/obj/item/reagent_containers/food/snacks/rogue/crackerscooked = 10
 		)
 
 /obj/effect/spawner/roguemap/sewerencounter
