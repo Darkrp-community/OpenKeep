@@ -53,9 +53,9 @@
 	var/list/validColors = list("brown","black","white")
 	var/static/chicken_count = 0
 
-	STACON = 1
-	STASTR = 1
-	STASPD = 5
+	TOTALCON = 1
+	TOTALSTR = 1
+	TOTALSPD = 5
 	tame = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken/get_sound(input)
