@@ -10,10 +10,11 @@
 		"Humen"
 	)
 
-	tutorial = "A recent arrival from Grenzelhoft, the Inquisitor is a member of the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
+	tutorial = "The Inquisitor is a member of the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
 	whitelist_req = FALSE
 
 	outfit = /datum/outfit/job/roguetown/inquisitor
+	advclass_cat_rolls = list(CTAG_INQUISITOR = 20)	//Handles class selection.
 	display_order = JDO_INQUISITOR
 	min_pq = 4
 	bypass_lastclass = TRUE
@@ -53,7 +54,7 @@
 
 /datum/advclass/inquisitor/grenz
 	name = "Grenzelhoft Lodge"
-	tutorial = ""
+	tutorial = "The most traditional lodge and the one that defines the image of 'witch hunters' today, the Eastern Lodge allied itself with House Grenz early on in the Imperiate's founding, and provides assistance to their brutal campaigns."
 	outfit = /datum/outfit/job/roguetown/inquisitor/grenz
 
 	category_tags = list(CTAG_INQUISITOR)
@@ -95,7 +96,6 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.change_stat("intelligence", 2)
-		H.change_stat("strength", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("speed", 2)
 		H.change_stat("endurance", 1)
@@ -106,7 +106,8 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/forgotten)
+		if(H.patron != /datum/patron/forgotten)
+			H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -115,7 +116,7 @@
 
 /datum/advclass/inquisitor/zyba
 	name = "Zybantine Lodge"
-	tutorial = ""
+	tutorial = "The Western Lodge houses the sorcerous cabal of the Magi, who claim to draw their magic from a mythical Torch of Knowledge. Though they claim alliance with other Lodges, many remark that their piety is unorthodox at best."
 	outfit = /datum/outfit/job/roguetown/inquisitor/zyba
 
 	category_tags = list(CTAG_INQUISITOR)
@@ -127,7 +128,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	shoes = /obj/item/clothing/shoes/roguetown/shalal
-	pants = /obj/item/clothing/under/roguetown/trou/leather
+	pants = /obj/item/clothing/under/roguetown/tights/red
 	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
@@ -136,6 +137,8 @@
 		honorary = "Pirani"
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
+	H.confession_points = 10 // Starting with 10 points
+	H.purchase_history = list() // Initialize as an empty list to track purchases
 
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
@@ -143,9 +146,9 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/firearms, 1, TRUE)
@@ -154,14 +157,18 @@
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
 	H.change_stat("endurance", 1)
-	if(!H.has_language(/datum/language/oldpsydonic))
-		H.grant_language(/datum/language/oldpsydonic)
-		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
+	H.mind.adjust_spellpoints(4)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+	if(!H.has_language(/datum/language/zybantine))
+		H.grant_language(/datum/language/zybantine)
+		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 	if(H.mind.has_antag_datum(/datum/antagonist))
 		return
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	H.mind.add_antag_datum(new_antag)
-	H.set_patron(/datum/patron/forgotten)
+	if(H.patron != /datum/patron/forgotten)
+		H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -170,7 +177,7 @@
 
 /datum/advclass/inquisitor/amz
 	name = "Issan Lodge"
-	tutorial = ""
+	tutorial = "A lodge on the mysterious isle of Issa, home of the humen warrior-women known as Amazons. Curiously, they worship the Forgotten God alongside the Divine Pantheon, and the lodge focuses on travelling Grimoria in search of holy artifacts."
 	outfit = /datum/outfit/job/roguetown/inquisitor/amz
 
 	category_tags = list(CTAG_INQUISITOR)
@@ -178,8 +185,8 @@
 
 /datum/outfit/job/roguetown/inquisitor/amz/pre_equip(mob/living/carbon/human/H)
 	..()
+	head = /obj/item/clothing/head/roguetown/helmet/winged // dun dun da da daaa dah, dun dun DAAA da
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	armor = /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
 	backl = /obj/item/rogueweapon/polearm/spear
 	shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -187,19 +194,23 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
-	var/honorary = "Mino"
+	var/honorary = "Mino" // Derived from the Minon regiment of the historical kingdom of Dahomey (now Benin).
+	H.real_name = "[honorary] [prev_real_name]"
+	H.name = "[honorary] [prev_name]"
+	H.confession_points = 10 // Starting with 10 points
+	H.purchase_history = list() // Initialize as an empty list to track purchases
 
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/firearms, 1, TRUE)
 	H.change_stat("intelligence", 2)
@@ -214,7 +225,8 @@
 		return
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	H.mind.add_antag_datum(new_antag)
-	H.set_patron(/datum/patron/forgotten)
+	if(H.patron != /datum/patron/forgotten)
+		H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
