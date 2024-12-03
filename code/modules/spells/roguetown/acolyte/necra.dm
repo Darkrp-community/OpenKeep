@@ -36,7 +36,7 @@
 
 /obj/effect/proc_holder/spell/targeted/churn
 	name = "Churn Undead"
-	range = 8
+	range = 5
 	overlay_state = "necra"
 	releasedrain = 30
 	charge_max = 30 SECONDS

@@ -32,7 +32,7 @@
 	releasedrain = 30
 	chargedrain = 0
 	chargetime = 0
-	charge_max = 60 SECONDS
+	charge_max = 2 MINUTES
 	range = 3
 	warnie = "sydwarning"
 	movement_interrupt = FALSE

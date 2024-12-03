@@ -5,7 +5,7 @@
 	name = "Abyssor's Rage"
 	overlay_state = "curse2"
 	releasedrain = 50
-	chargetime = 60
+	chargetime = 20
 	range = 10
 	projectile_type = /obj/projectile/magic/swordfish
 	warnie = "sydwarning"
@@ -16,7 +16,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	miracle = TRUE
-	charge_max = 120 SECONDS
+	charge_max = 60 SECONDS
 	devotion_cost = 40
 
 /obj/item/reagent_containers/food/snacks/fish/swordfish

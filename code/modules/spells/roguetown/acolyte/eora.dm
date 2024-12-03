@@ -51,7 +51,7 @@
 	associated_skill = /datum/skill/magic/holy
 	charge_max = 60 SECONDS
 	miracle = TRUE
-	devotion_cost = 30
+	devotion_cost = 90
 
 /obj/effect/proc_holder/spell/invoked/bud/cast(list/targets, mob/living/user)
 	var/turf/T = get_turf(targets[1])
@@ -77,7 +77,7 @@
 	antimagic_allowed = TRUE
 	charge_max = 10 SECONDS
 	miracle = TRUE
-	devotion_cost = 50
+	devotion_cost = 75
 
 
 /obj/projectile/magic/eora
