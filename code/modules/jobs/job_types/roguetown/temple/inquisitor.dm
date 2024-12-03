@@ -27,27 +27,48 @@
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	L.mind.add_antag_datum(new_antag)
 
-/datum/outfit/job/roguetown/inquisitor
+/datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
+
+/datum/outfit/job/roguetown/inquisitor // Default equipment.
 	name = "Inquisitor"
 	jobtype = /datum/job/roguetown/inquisitor
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
+	belt = /obj/item/storage/belt/rogue/leather/black
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
+	beltl = /obj/item/flashlight/flare/torch/lantern
 
-/datum/outfit/job/roguetown/inquisitor/pre_equip(mob/living/carbon/human/H)
+/* ! ! ! INQUISITOR CLASSES ! ! !
+- Grenzelhoft: Thief.
+- Zybantine: Mage.
+- Issan: Fighter.
+*/
+
+/datum/advclass/inquisitor/grenz
+	name = "Grenzelhoft Lodge"
+	tutorial = ""
+	outfit = /datum/outfit/job/roguetown/inquisitor/grenz
+
+	category_tags = list(CTAG_INQUISITOR)
+	allowed_sexes = list(MALE)
+
+/datum/outfit/job/roguetown/inquisitor/grenz/pre_equip(mob/living/carbon/human/H)
 	..()
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
-	belt = /obj/item/storage/belt/rogue/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/cape/puritan
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
-	gloves = /obj/item/clothing/gloves/roguetown/angle
-	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
-	backr = /obj/item/storage/backpack/rogue/satchel
 	backl = /obj/item/rogueweapon/sword/long/forgotten
-	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
-	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Ritter"
@@ -86,6 +107,114 @@
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
 		H.set_patron(/datum/patron/forgotten)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+/datum/advclass/inquisitor/zyba
+	name = "Zybantine Lodge"
+	tutorial = ""
+	outfit = /datum/outfit/job/roguetown/inquisitor/zyba
+
+	category_tags = list(CTAG_INQUISITOR)
+
+/datum/outfit/job/roguetown/inquisitor/zyba/pre_equip(mob/living/carbon/human/H)
+	..()
+	head = /obj/item/clothing/neck/roguetown/keffiyeh/red
+	neck = /obj/item/clothing/neck/roguetown/bevor
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
+	shoes = /obj/item/clothing/shoes/roguetown/shalal
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
+	var/prev_real_name = H.real_name
+	var/prev_name = H.name
+	var/honorary = "Pir"
+	if(H.gender == FEMALE)
+		honorary = "Pirani"
+	H.real_name = "[honorary] [prev_real_name]"
+	H.name = "[honorary] [prev_name]"
+
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/firearms, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.change_stat("intelligence", 3)
+	H.change_stat("perception", 2)
+	H.change_stat("speed", 2)
+	H.change_stat("endurance", 1)
+	if(!H.has_language(/datum/language/oldpsydonic))
+		H.grant_language(/datum/language/oldpsydonic)
+		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
+	if(H.mind.has_antag_datum(/datum/antagonist))
+		return
+	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
+	H.mind.add_antag_datum(new_antag)
+	H.set_patron(/datum/patron/forgotten)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+/datum/advclass/inquisitor/amz
+	name = "Issan Lodge"
+	tutorial = ""
+	outfit = /datum/outfit/job/roguetown/inquisitor/amz
+
+	category_tags = list(CTAG_INQUISITOR)
+	allowed_sexes = list(FEMALE)
+
+/datum/outfit/job/roguetown/inquisitor/amz/pre_equip(mob/living/carbon/human/H)
+	..()
+	neck = /obj/item/clothing/neck/roguetown/psycross/silver
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+	armor = /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
+	backl = /obj/item/rogueweapon/polearm/spear
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	var/prev_real_name = H.real_name
+	var/prev_name = H.name
+	var/honorary = "Mino"
+
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/firearms, 1, TRUE)
+	H.change_stat("intelligence", 2)
+	H.change_stat("strength", 3)
+	H.change_stat("perception", 1)
+	H.change_stat("speed", 1)
+	H.change_stat("endurance", 1)
+	if(!H.has_language(/datum/language/oldpsydonic))
+		H.grant_language(/datum/language/oldpsydonic)
+		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
+	if(H.mind.has_antag_datum(/datum/antagonist))
+		return
+	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
+	H.mind.add_antag_datum(new_antag)
+	H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

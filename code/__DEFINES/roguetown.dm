@@ -113,6 +113,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_GARRISON		"CAT_GARRISON"
 #define CTAG_ADEPT			"CAT_ADEPT" 		// Used for Adept class selection
 #define CTAG_CONSORT		"CAT_CONSORT"		// Consort classes
+#define CTAG_INQUISITOR			"CAT_INQUISITOR" // Inquisitor classes
 
 /*
 	String category tags
