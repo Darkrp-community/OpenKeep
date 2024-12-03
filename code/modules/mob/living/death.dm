@@ -149,14 +149,14 @@
 	switch (area_of_death) // we're deliberately obtuse with this.
 		if ("mountains", "mt decapitation")
 			locale = "a twisted tangle of soaring peaks"
-		if ("wilderness", "azure basin")
+		if ("wilderness", "rockhill basin")
 			locale = "somewhere in the wilds"
 		if ("bog", "dense bog")
 			locale = "a wretched, fetid bog"
 		if ("coast", "coastforest")
 			locale = "somewhere betwixt Abyssor's realm and Dendor's bounty"
 		if ("indoors", "shop", "physician", "outdoors", "roofs", "manor", "wizard's tower", "garrison", "dungeon cell", "baths", "tavern")
-			locale = "the city of Azure Peak and all its bustling souls"
+			locale = "the city of Rockhill and all its bustling souls"
 		if ("church")
 			locale = "a hallowed place, sworn to the Ten" // special bit for the church since it's sacred ground
 	return locale
