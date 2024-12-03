@@ -22,7 +22,7 @@
 /obj/item/chair/stool/bar/rogue/crafted
 	sellprice = 6
 
-/datum/crafting_recipe/roguetown/structure/_bin
+/datum/crafting_recipe/roguetown/structure/dye_bin
 	name = "dye bin"
 	result = /obj/machinery/simple_dye_bin
 	reqs = list(/obj/item/grown/log/tree/small = 1,
