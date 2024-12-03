@@ -19,6 +19,8 @@
 	var/TOTALSPD = 0
 	var/TOTALLUC = 0
 
+	var/has_rolled_for_stats = FALSE
+
 /mob/living/proc/init_faith()
 	patron = GLOB.patronlist[/datum/patron/godless]
 
@@ -43,9 +45,11 @@
 
 ///Rolls random stats base 10, +-2, for SPECIAL, and applies species stats and age stats.
 /mob/living/proc/roll_mob_stats()
+	if(has_rolled_for_stats)
+		return FALSE
 	for(var/stat in MOBSTATS)
 		if(prob(33))
-			change_stat(stat,rand(-2,2))
+			change_stat(stat,pick(-1,1))
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
 		if(H.dna.species)
@@ -69,17 +73,18 @@
 				change_stat(STATKEY_LCK, 1)
 		if(key)
 			if(check_blacklist(ckey(key))) //You're boutta have a reaaaal bad dae....
-				change_stat(STATKEY_STR, -10,TRUE)
-				change_stat(STATKEY_PER, -10,TRUE)
-				change_stat(STATKEY_END, -10,TRUE)
-				change_stat(STATKEY_CON, -10,TRUE)
-				change_stat(STATKEY_INT, -10,TRUE)
-				change_stat(STATKEY_SPD, -10,TRUE)
-				change_stat(STATKEY_LCK, -10,TRUE)
+				change_stat(STATKEY_STR, -5)
+				change_stat(STATKEY_END, -2)
+				change_stat(STATKEY_CON, -2)
+				change_stat(STATKEY_INT, -20)
+				change_stat(STATKEY_SPD, -20)
+				change_stat(STATKEY_LCK, -20)
 			if(check_psychokiller(ckey(key)))
 				testing("foundpsych")
 				H.eye_color = "ff0000"
 				H.voice_color = "ff0000"
+	has_rolled_for_stats = TRUE
+	return TRUE
 /// Adjusts stat values of mobs. set_stat == true to set directly
 /mob/living/proc/change_stat(stat_key, adjust_amount, set_stat = FALSE)
 	if(!stat_key || !adjust_amount)
@@ -128,10 +133,6 @@
 			else
 				TOTALLUC += adjust_amount
 			STALUC = CLAMP(TOTALLUC,1,20)
-	return
-
-/mob/living/proc/adjust_stat_buffer(stat_key,amount)
-
 	return
 ///Returns: STR,PER,END,CON,INT,SPD,LCK in a list, in that order
 /mob/living/proc/get_stats()
