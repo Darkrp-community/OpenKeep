@@ -368,6 +368,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains)
+"mz" = (
+/obj/structure/fluff/psycross,
+/turf/open/floor/rogue/tile/tilerg,
+/area/rogue/outdoors/mountains)
 "mA" = (
 /obj/structure/closet/crate/chest/lootbox,
 /turf/open/floor/rogue/cobblerock,
@@ -172619,7 +172623,7 @@ YV
 YV
 YV
 qw
-bW
+mz
 qw
 kp
 qw
