@@ -60,16 +60,6 @@
 	else
 		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 35, TRUE, ignore_walls = FALSE)
 
-/mob/living/carbon/human/proc/try_impregnate(mob/living/carbon/human/wife)
-	var/obj/item/organ/testicles/testes = getorganslot(ORGAN_SLOT_TESTICLES)
-	if(!testes)
-		return
-	var/obj/item/organ/vagina/vag = wife.getorganslot(ORGAN_SLOT_VAGINA)
-	if(!vag)
-		return
-	if(prob(25))
-		vag.be_impregnated(src)
-
 /mob/living/carbon/human/proc/get_highest_grab_state_on(mob/living/carbon/human/victim)
 	var/grabstate = null
 	if(r_grab && r_grab.grabbed == victim)

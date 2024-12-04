@@ -249,7 +249,7 @@
 	return TRUE
 
 /datum/sex_controller/proc/can_ejaculate()
-	if(!user.getorganslot(ORGAN_SLOT_TESTICLES) && !user.getorganslot(ORGAN_SLOT_VAGINA))
+	if(!user.gender == MALE)
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE

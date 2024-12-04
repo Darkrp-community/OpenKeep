@@ -5,7 +5,7 @@
 /datum/sex_action/vaginal_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
+	if(!target.gender == FEMALE)
 		return FALSE
 	if(!user.gender == MALE)
 		return FALSE
@@ -18,7 +18,7 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_VAGINA))
+	if(!target.gender == FEMALE)
 		return FALSE
 	if(!user.gender == MALE)
 		return FALSE
@@ -66,7 +66,7 @@
 /datum/sex_action/vaginal_ride_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
+	if(!user.gender == FEMALE)
 		return FALSE
 	if(!target.gender == MALE)
 		return FALSE
@@ -79,7 +79,7 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_VAGINA))
+	if(!user.gender == FEMALE)
 		return FALSE
 	if(!target.gender == MALE)
 		return FALSE
