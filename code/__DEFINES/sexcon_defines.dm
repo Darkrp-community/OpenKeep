@@ -23,10 +23,9 @@ GLOBAL_LIST_INIT(sex_actions, build_sex_actions())
 #define SEX_SPEED_LOW 1
 #define SEX_SPEED_MID 2
 #define SEX_SPEED_HIGH 3
-#define SEX_SPEED_EXTREME 4
 
 #define SEX_SPEED_MIN 1
-#define SEX_SPEED_MAX 4
+#define SEX_SPEED_MAX 3
 
 #define SEX_FORCE_LOW 1
 #define SEX_FORCE_MID 2
@@ -45,14 +44,6 @@ GLOBAL_LIST_INIT(sex_actions, build_sex_actions())
 
 #define BLUEBALLS_GAIN_THRESHOLD 15
 #define BLUEBALLS_LOOSE_THRESHOLD 10
-
-#define PAIN_MILD_EFFECT 10
-#define PAIN_MED_EFFECT 20
-#define PAIN_HIGH_EFFECT 30
-#define PAIN_MINIMUM_FOR_DAMAGE PAIN_MED_EFFECT
-#define PAIN_DAMAGE_DIVISOR 50
-
-#define VIOLATED_ALLOWED_TIME (10 MINUTES)
 
 /proc/build_sex_actions()
 	. = list()
