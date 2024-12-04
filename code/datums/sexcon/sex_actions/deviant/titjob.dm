@@ -6,7 +6,7 @@
 		return FALSE
 	if(!user.gender == MALE)
 		return
-	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
+	if(!target.gender == FEMALE)
 		return
 	return TRUE
 
@@ -19,7 +19,7 @@
 		return FALSE
 	if(!user.gender == MALE)
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
+	if(!target.gender == FEMALE)
 		return FALSE
 	return TRUE
 

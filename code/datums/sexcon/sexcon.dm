@@ -194,7 +194,7 @@
 	update_erect_state()
 
 /datum/sex_controller/proc/update_erect_state()
-	var/obj/item/organ/penis/penis = user.getorganslot(ORGAN_SLOT_PENIS)
+	var/obj/item/organ/penis/penis = user.gender == MALE
 	if(penis)
 		penis.update_erect_state()
 
