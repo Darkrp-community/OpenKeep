@@ -141,6 +141,8 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	))
 
 GLOBAL_LIST_INIT(no_antag_positions, list(
+	"King",
+	"Priest",
 	"Merchant",
 	))
 
