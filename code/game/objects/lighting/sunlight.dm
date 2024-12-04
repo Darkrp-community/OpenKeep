@@ -41,19 +41,7 @@
 #endif
 
 /obj/effect/sunlight/proc/update()
-	if(mode == GLOB.tod)
-		return
-	mode = GLOB.tod
-	switch(mode)
-		if("night")
-			light_color = pick("#100a18", "#0c0412", "#0f0012")
-		if("dusk")
-			light_color = pick("#c26f56", "#c05271", "#b84933")
-		if("dawn")
-			light_color = pick("#394579", "#49385d", "#3a1537")
-		if("day")
-			light_color = pick("#dbbfbf", "#ddd7bd", "#add1b0", "#a4c0ca", "#ae9dc6", "#d09fbf")
-	set_light(brightness, brightness, light_power, 1, l_color = light_color)
+	return
 
 /obj/effect/sunlight/ultra
 	brightness = 30
