@@ -119,7 +119,11 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	max_integrity = 200
 
-
+/obj/item/clothing/suit/roguetown/shirt/robe/bath
+	name = "bathrobe"
+	desc = "A bathrobe with a luxurious fur interior."
+	icon_state = "bathrobe"
+	sellprice = 12
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"

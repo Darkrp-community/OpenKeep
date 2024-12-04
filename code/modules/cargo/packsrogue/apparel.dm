@@ -158,10 +158,20 @@
 	cost = 30
 	contains = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 
+/datum/supply_pack/rogue/apparel/valoriandress
+	name = "Valorian Dress"
+	cost = 15
+	contains = /obj/item/clothing/suit/roguetown/shirt/dress/valorian
+
 /datum/supply_pack/rogue/apparel/robe
 	name = "Robe"
 	cost = 5
 	contains = /obj/item/clothing/suit/roguetown/shirt/robe/mage
+
+/datum/supply_pack/rogue/apparel/bathrobe
+	name = "Bathrobe"
+	cost = 14
+	contains = /obj/item/clothing/suit/roguetown/shirt/robe/bath
 
 /datum/supply_pack/rogue/apparel/tights_random
 	name = "Cloth Tights"
