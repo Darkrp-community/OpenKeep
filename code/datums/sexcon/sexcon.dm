@@ -22,7 +22,6 @@
 	var/last_arousal_increase_time = 0
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
-	var/last_pain = 0
 	var/msg_signature = ""
 	var/last_msg_signature = 0
 
@@ -202,53 +201,20 @@
 /datum/sex_controller/proc/adjust_arousal(amount)
 	set_arousal(arousal + amount)
 
-/datum/sex_controller/proc/perform_deepthroat_oxyloss(mob/living/carbon/human/action_target, oxyloss_amt)
-	var/oxyloss_multiplier = 0
-	switch(force)
-		if(SEX_FORCE_LOW)
-			oxyloss_multiplier = 0
-		if(SEX_FORCE_MID)
-			oxyloss_multiplier = 0
-		if(SEX_FORCE_HIGH)
-			oxyloss_multiplier = 1.0
-		if(SEX_FORCE_EXTREME)
-			oxyloss_multiplier = 2.0
-	oxyloss_amt *= oxyloss_multiplier
-	if(oxyloss_amt <= 0)
-		return
-	action_target.adjustOxyLoss(oxyloss_amt)
-	// Indicate someone is choking through sex
-	if(action_target.oxyloss >= 50 && prob(33))
-		action_target.emote(pick(list("gag", "choke", "gasp")), forced = TRUE)
+/datum/sex_controller/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, giving)
+	action_target.sexcon.receive_sex_action(arousal_amt, giving, force, speed)
 
-/datum/sex_controller/proc/perform_sex_action(mob/living/carbon/human/action_target, arousal_amt, pain_amt, giving)
-	action_target.sexcon.receive_sex_action(arousal_amt, pain_amt, giving, force, speed)
-
-/datum/sex_controller/proc/receive_sex_action(arousal_amt, pain_amt, giving, applied_force, applied_speed)
+/datum/sex_controller/proc/receive_sex_action(arousal_amt, giving, applied_force, applied_speed)
 	arousal_amt *= get_force_pleasure_multiplier(applied_force, giving)
-	pain_amt *= get_force_pain_multiplier(applied_force)
-	pain_amt *= get_speed_pain_multiplier(applied_speed)
 
 	if(user.stat == DEAD)
 		arousal_amt = 0
-		pain_amt = 0
 
 	adjust_arousal(arousal_amt)
 
-	damage_from_pain(pain_amt)
-	try_do_moan(arousal_amt, pain_amt, applied_force, giving)
-	try_do_pain_effect(pain_amt, giving)
+	try_do_moan(arousal_amt, applied_force, giving)
 
-/datum/sex_controller/proc/damage_from_pain(pain_amt)
-	if(pain_amt < PAIN_MINIMUM_FOR_DAMAGE)
-		return
-	var/damage = (pain_amt / PAIN_DAMAGE_DIVISOR)
-	var/obj/item/bodypart/part = user.get_bodypart(BODY_ZONE_CHEST)
-	if(!part)
-		return
-	user.apply_damage(damage, BRUTE, part)
-
-/datum/sex_controller/proc/try_do_moan(arousal_amt, pain_amt, applied_force, giving)
+/datum/sex_controller/proc/try_do_moan(arousal_amt, applied_force, giving)
 	if(arousal_amt < 1.5)
 		return
 	if(user.stat != CONSCIOUS)
@@ -264,51 +230,8 @@
 		if(5 to INFINITY)
 			chosen_emote = "sexmoanhvy"
 
-	if(pain_amt >= PAIN_MILD_EFFECT)
-		if(giving)
-			if(prob(30))
-				chosen_emote = "groan"
-		else
-			if(prob(40))
-				chosen_emote = "painmoan"
-	if(pain_amt >= PAIN_MED_EFFECT)
-		if(giving)
-			if(prob(50))
-				chosen_emote = "groan"
-		else
-			if(prob(60))
-				// Because males have atrocious whimper noise
-				if(user.gender == FEMALE && prob(50))
-					chosen_emote = "whimper"
-				else
-					chosen_emote = "cry"
-
 	last_moan = world.time
 	user.emote(chosen_emote, forced = TRUE)
-
-/datum/sex_controller/proc/try_do_pain_effect(pain_amt, giving)
-	if(pain_amt < PAIN_MILD_EFFECT)
-		return
-	if(last_pain + PAIN_COOLDOWN >= world.time)
-		return
-	if(prob(50))
-		return
-	last_pain = world.time
-	if(pain_amt >= PAIN_HIGH_EFFECT)
-		var/pain_msg = pick(list("IT HURTS!!!", "IT NEEDS TO STOP!!!", "I CAN'T TAKE IT ANYMORE!!!"))
-		to_chat(user, span_boldwarning(pain_msg))
-		user.flash_fullscreen("redflash2")
-		if(prob(70) && user.stat == CONSCIOUS)
-			user.visible_message(span_warning("[user] shudders in pain!"))
-	else if(pain_amt >= PAIN_MED_EFFECT)
-		var/pain_msg = pick(list("It hurts!", "It pains me!"))
-		to_chat(user, span_boldwarning(pain_msg))
-		user.flash_fullscreen("redflash1")
-		if(prob(40) && user.stat == CONSCIOUS)
-			user.visible_message(span_warning("[user] shudders in pain!"))
-	else
-		var/pain_msg = pick(list("It hurts a little...", "It stings...", "I'm aching..."))
-		to_chat(user, span_warning(pain_msg))
 
 /datum/sex_controller/proc/update_blueballs()
 	if(arousal >= BLUEBALLS_GAIN_THRESHOLD)
@@ -376,7 +299,7 @@
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
 	var/manual_arousal_name = get_manual_arousal_string()
-	if(!user.getorganslot(ORGAN_SLOT_PENIS))
+	if(!user.gender == MALE)
 		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
 	else
 		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"
@@ -468,10 +391,6 @@
 		return
 	if(!can_perform_action(action_type))
 		return
-	if(need_to_be_violated(target) && !can_violate_victim(target))
-		violate_victim(target)
-	if(need_to_be_violated(target) && !can_violate_victim(target))
-		return
 	// Set vars
 	desire_stop = FALSE
 	current_action = action_type
@@ -490,8 +409,6 @@
 		if(!do_after(user, (action.do_time / get_speed_multiplier()), target = target))
 			break
 		if(current_action == null || performed_action_type != current_action)
-			break
-		if(need_to_be_violated(target) && !can_violate_victim(target))
 			break
 		if(!can_perform_action(current_action))
 			break
@@ -580,33 +497,6 @@
 				return 1.6
 			else
 				return 1.2
-		if(SEX_FORCE_EXTREME)
-			if(giving)
-				return 2.0
-			else
-				return 0.8
-
-/datum/sex_controller/proc/get_force_pain_multiplier(passed_force)
-	switch(passed_force)
-		if(SEX_FORCE_LOW)
-			return 0.5
-		if(SEX_FORCE_MID)
-			return 1.0
-		if(SEX_FORCE_HIGH)
-			return 2.0
-		if(SEX_FORCE_EXTREME)
-			return 3.0
-
-/datum/sex_controller/proc/get_speed_pain_multiplier(passed_speed)
-	switch(passed_speed)
-		if(SEX_SPEED_LOW)
-			return 0.8
-		if(SEX_SPEED_MID)
-			return 1.0
-		if(SEX_SPEED_HIGH)
-			return 1.2
-		if(SEX_SPEED_EXTREME)
-			return 1.4
 
 /datum/sex_controller/proc/get_force_string()
 	switch(force)
@@ -616,8 +506,6 @@
 			return "<font color='#e9a8d1'>FIRM</font>"
 		if(SEX_FORCE_HIGH)
 			return "<font color='#f05ee1'>ROUGH</font>"
-		if(SEX_FORCE_EXTREME)
-			return "<font color='#d146f5'>BRUTAL</font>"
 
 /datum/sex_controller/proc/get_speed_string()
 	switch(speed)
@@ -649,8 +537,6 @@
 			return pick(list("firmly", "vigorously", "eagerly", "steadily", "intently"))
 		if(SEX_FORCE_HIGH)
 			return pick(list("roughly", "carelessly", "forcefully", "fervently", "fiercely"))
-		if(SEX_FORCE_EXTREME)
-			return pick(list("brutally", "violently", "relentlessly", "savagely", "mercilessly"))
 
 /datum/sex_controller/proc/spanify_force(string)
 	switch(force)
@@ -660,5 +546,3 @@
 			return "<span class='love_mid'>[string]</span>"
 		if(SEX_FORCE_HIGH)
 			return "<span class='love_high'>[string]</span>"
-		if(SEX_FORCE_EXTREME)
-			return "<span class='love_extreme'>[string]</span>"

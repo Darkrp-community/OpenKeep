@@ -4,9 +4,9 @@
 /datum/sex_action/frotting/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_PENIS))
+	if(!user.gender == MALE)
 		return
-	if(!target.getorganslot(ORGAN_SLOT_PENIS))
+	if(!target.gender == MALE)
 		return
 	return TRUE
 
@@ -17,9 +17,9 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_PENIS))
+	if(!user.gender == MALE)
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_PENIS))
+	if(!target.gender == MALE)
 		return FALSE
 	return TRUE
 

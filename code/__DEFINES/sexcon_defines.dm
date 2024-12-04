@@ -19,7 +19,6 @@ GLOBAL_LIST_INIT(sex_actions, build_sex_actions())
 #define AROUSAL_LOW_UNHORNY_RATE (0.2 / (1 SECONDS))
 
 #define MOAN_COOLDOWN 3 SECONDS
-#define PAIN_COOLDOWN 6 SECONDS
 
 #define SEX_SPEED_LOW 1
 #define SEX_SPEED_MID 2
@@ -32,10 +31,9 @@ GLOBAL_LIST_INIT(sex_actions, build_sex_actions())
 #define SEX_FORCE_LOW 1
 #define SEX_FORCE_MID 2
 #define SEX_FORCE_HIGH 3
-#define SEX_FORCE_EXTREME 4
 
 #define SEX_FORCE_MIN 1
-#define SEX_FORCE_MAX 4
+#define SEX_FORCE_MAX 3
 
 #define SEX_MANUAL_AROUSAL_DEFAULT 1
 #define SEX_MANUAL_AROUSAL_UNAROUSED 2

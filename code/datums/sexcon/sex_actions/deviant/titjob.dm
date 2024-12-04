@@ -4,7 +4,7 @@
 /datum/sex_action/titjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_PENIS))
+	if(!user.gender == MALE)
 		return
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return
@@ -17,7 +17,7 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_CHEST))
 		return FALSE
-	if(!user.getorganslot(ORGAN_SLOT_PENIS))
+	if(!user.gender == MALE)
 		return FALSE
 	if(!target.getorganslot(ORGAN_SLOT_BREASTS))
 		return FALSE

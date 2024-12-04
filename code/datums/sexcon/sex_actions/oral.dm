@@ -48,7 +48,7 @@
 /datum/sex_action/blowjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_PENIS))
+	if(!target.gender == MALE)
 		return FALSE
 	return TRUE
 
@@ -59,7 +59,7 @@
 		return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
-	if(!target.getorganslot(ORGAN_SLOT_PENIS))
+	if(!target.gender == MALE)
 		return FALSE
 	return TRUE
 
@@ -73,8 +73,6 @@
 	do_thrust_animate(user, target)
 
 	user.sexcon.perform_sex_action(target, 2, 0, TRUE)
-	if(!target.sexcon.considered_limp())
-		user.sexcon.perform_deepthroat_oxyloss(user, 1.3)
 	if(target.sexcon.check_active_ejaculation())
 		target.visible_message(span_lovebold("[target] cums into [user]'s mouth!"))
 		target.sexcon.cum_into()
