@@ -6943,7 +6943,6 @@
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/town/manor)
 "jox" = (
-/obj/effect/sunlight,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/caverogue)
 "joz" = (
@@ -14205,7 +14204,6 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
 "uhE" = (
-/obj/effect/sunlight,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cavewet)
 "uhN" = (

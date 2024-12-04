@@ -7597,7 +7597,6 @@
 	},
 /area/rogue/outdoors/town)
 "Ci" = (
-/obj/effect/sunlight,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},

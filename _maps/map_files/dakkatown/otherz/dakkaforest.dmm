@@ -192,7 +192,6 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "fZ" = (
-/obj/effect/sunlight,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "gb" = (

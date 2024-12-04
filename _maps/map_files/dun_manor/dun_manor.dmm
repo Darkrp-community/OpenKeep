@@ -4206,7 +4206,6 @@
 /area/rogue/indoors/town/manor)
 "dYg" = (
 /obj/effect/spawner/roguemap/hauntz_random,
-/obj/effect/sunlight,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "dYh" = (

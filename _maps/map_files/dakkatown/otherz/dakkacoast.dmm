@@ -6,7 +6,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
 "bK" = (
-/obj/effect/sunlight,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
 "bR" = (
@@ -108,7 +107,6 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/outdoors/beach)
 "lH" = (
-/obj/effect/sunlight,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/beach/boat)
 "lK" = (
