@@ -1,5 +1,5 @@
 /datum/sex_action/frotting
-	name = "Frot them"
+	name = "frotteurism"
 
 /datum/sex_action/frotting/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -24,11 +24,11 @@
 	return TRUE
 
 /datum/sex_action/frotting/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] shoves his cock against [target]'s own!"))
+	user.visible_message(span_warning("[user] starts to rub against [target]."))
 
 /datum/sex_action/frotting/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
-		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] frots cocks together with [target]'s."))
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] frots against [target]."))
 	playsound(user, 'sound/misc/mat/fap.ogg', 20, TRUE, -2, ignore_walls = FALSE)
 
 	user.sexcon.perform_sex_action(user, 1, 4, TRUE)
@@ -38,4 +38,4 @@
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/frotting/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] lets go off both their cocks."))
+	user.visible_message(span_warning("[user] pulls away from [target]."))

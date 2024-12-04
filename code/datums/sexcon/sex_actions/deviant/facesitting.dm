@@ -22,12 +22,11 @@
 	return TRUE
 
 /datum/sex_action/facesitting/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] sits their butt on [target]'s face!"))
+	user.visible_message(span_warning("[user] sits on [target]'s face."))
 
 /datum/sex_action/facesitting/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	var/verbstring = pick(list("rubs", "smushes", "forces"))
 	if(user.sexcon.do_message_signature("[type]"))
-		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] [verbstring] their butt against [target] face."))
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] rides [target]'s face."))
 	target.make_sucking_noise()
 	do_thrust_animate(user, target)
 

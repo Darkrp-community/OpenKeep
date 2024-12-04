@@ -1,5 +1,5 @@
 /datum/sex_action/thighjob
-	name = "Use their thighs to get off"
+	name = "use thighs"
 
 /datum/sex_action/thighjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -18,11 +18,11 @@
 	return TRUE
 
 /datum/sex_action/thighjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] grabs [target]'s thighs and shoves his cock inbetween!"))
+	user.visible_message(span_warning("[user] slides between [target]'s thighs."))
 
 /datum/sex_action/thighjob/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
-		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] fucks [target]'s thighs."))
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] uses [target]'s thighs."))
 	playsound(user, 'sound/misc/mat/segso.ogg', 20, TRUE, -2, ignore_walls = FALSE)
 	do_thrust_animate(user, target)
 
@@ -30,10 +30,10 @@
 	user.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/thighjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] pulls his cock out from inbetween [target]'s thighs."))
+	user.visible_message(span_warning("[user] slides out from between [target]'s thighs."))
 
 /datum/sex_action/force_thighjob
-	name = "Jerk them off with thighs"
+	name = "use own thighs"
 
 /datum/sex_action/force_thighjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
@@ -52,11 +52,11 @@
 	return TRUE
 
 /datum/sex_action/force_thighjob/on_start(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] moves their thighs between [target]'s cock..."))
+	user.visible_message(span_warning("[user] envelops [target] with their thighs."))
 
 /datum/sex_action/force_thighjob/on_perform(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user.sexcon.do_message_signature("[type]"))
-		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] jerks [target]'s cock with their thighs..."))
+		user.visible_message(user.sexcon.spanify_force("[user] [user.sexcon.get_generic_force_adjective()] jerks [target] with their thighs."))
 	playsound(user, 'sound/misc/mat/fap.ogg', 30, TRUE, -2, ignore_walls = FALSE)
 	do_thrust_animate(target, user)
 
@@ -65,7 +65,7 @@
 	target.sexcon.handle_passive_ejaculation()
 
 /datum/sex_action/force_thighjob/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] stops jerking [target]'s off with their thighs..."))
+	user.visible_message(span_warning("[user] stops jerking [target] their thighs."))
 
 /datum/sex_action/force_thighjob/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(target.sexcon.finished_check())
