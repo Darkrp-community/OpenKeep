@@ -193,11 +193,6 @@
 	update_blueballs()
 	update_erect_state()
 
-/datum/sex_controller/proc/update_erect_state()
-	var/obj/item/organ/penis/penis = user.gender == MALE
-	if(penis)
-		penis.update_erect_state()
-
 /datum/sex_controller/proc/adjust_arousal(amount)
 	set_arousal(arousal + amount)
 
