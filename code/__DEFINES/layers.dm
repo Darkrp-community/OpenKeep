@@ -18,10 +18,10 @@
 #define OPENSPACE_BACKDROP_PLANE -6
 
 #define FLOOR_PLANE -5
-#define WEATHER_EFFECT_PLANE -4
-#define GAME_PLANE -3
-#define GAME_PLANE_FOV_HIDDEN -2
-#define GAME_PLANE_UPPER -1
+#define GAME_PLANE -4
+#define GAME_PLANE_FOV_HIDDEN -3
+#define GAME_PLANE_UPPER -2
+#define WEATHER_EFFECT_PLANE -1
 #define BLACKNESS_PLANE 0 //To keep from conflicts with SEE_BLACKNESS internals
 
 #define SPACE_LAYER 1.8

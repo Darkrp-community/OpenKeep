@@ -220,7 +220,7 @@
 	name = "weather effect plane master"
 	plane = WEATHER_EFFECT_PLANE
 	blend_mode = BLEND_OVERLAY
-	screen_loc = "CENTER-2, CENTER"
+	screen_loc = "CENTER-2:-16, CENTER"
 	//render_relay_plane = RENDER_PLANE_GAME
 
 /atom/movable/screen/plane_master/weather_effect/Initialize()
