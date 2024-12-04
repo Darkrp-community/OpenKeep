@@ -15,7 +15,7 @@
 		if(C)
 			explanation_text = "Feed [C.banditgoal] mammon to an idol of greed."
 		else
-			explanation_text = "Pray to ZIZO."
+			explanation_text = "Pray to Matthios."
 
 
 /datum/objective/delf
@@ -35,7 +35,7 @@
 		if(C)
 			explanation_text = "Feed [C.delfgoal] honeys to the mother."
 		else
-			explanation_text = "Pray to ZIZO."
+			explanation_text = "Pray to Ananshor."
 
 /datum/objective/rt_maniac
 	name = "slaying"
@@ -50,7 +50,7 @@
 
 /datum/objective/werewolf
 	name = "conquer"
-	explanation_text = "Destroy all elder vampires in ROGUETOWN. I can sniff them in my true form."
+	explanation_text = "Destroy all elder vampires in Rockhill. I can sniff them in my true form."
 	team_explanation_text = ""
 	triumph_count = 5
 
@@ -62,7 +62,7 @@
 
 /datum/objective/vampire
 	name = "conquer"
-	explanation_text = "Destroy all alpha werewolves in ROGUETOWN. I can detect them in my true form."
+	explanation_text = "Destroy all alpha werewolves in Rockhill. I can detect them in my true form."
 	team_explanation_text = ""
 	triumph_count = 5
 
