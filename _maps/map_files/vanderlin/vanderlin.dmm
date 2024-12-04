@@ -3506,7 +3506,7 @@
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/indoors/town)
 "eJr" = (
-/obj/item/roguegem/random,
+/obj/item/roguegem,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/vault)
 "eJF" = (
@@ -14987,7 +14987,7 @@
 /area/rogue/indoors/town/church/inquisition)
 "vqr" = (
 /obj/structure/closet/crate/chest,
-/obj/item/roguegem/random,
+/obj/item/roguegem,
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
 	},
