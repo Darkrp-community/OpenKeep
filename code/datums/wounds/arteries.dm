@@ -20,6 +20,8 @@
 	sleep_healing = 0
 	embed_chance = 0
 
+	werewolf_infection_probability = 100
+
 /datum/wound/artery/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/artery) && (type == other.type))
 		return FALSE
@@ -79,7 +81,7 @@
 		"MY HEART IS TORN!",
 		"MY HEART IS BLEEDING!",
 	)
-	to_chat(affected, "<span class='userdanger'>[pick(heartaches)]</span>")
+	to_chat(affected, span_userdanger("[pick(heartaches)]"))
 	if(HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
 		affected.death()
 	if(affected.mind.has_antag_datum(/datum/antagonist/vampirelord/))
