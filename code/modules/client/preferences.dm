@@ -1982,7 +1982,7 @@ Slots: [job.spawn_positions]</span>
 					var/result = input(user, "Select a flaw", "Roguetown") as null|anything in coom
 					if(result)
 						if(result == "Love-Fiend")
-							if(!user.can_do_sex())
+							if(!can_do_sex())
 								coom -= "Love-Fiend"
 								result = pick(coom)
 						result = coom[result]
