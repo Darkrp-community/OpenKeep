@@ -10543,7 +10543,6 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/cell)
 "oFQ" = (
-/obj/effect/landmark/mapGenerator/sunlights,
 /turf/open/transparent/openspace,
 /area/rogue)
 "oGi" = (

@@ -21612,10 +21612,6 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/tavern)
 "vpx" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 155
-	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
 "vpI" = (

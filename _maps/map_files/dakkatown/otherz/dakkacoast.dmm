@@ -34,10 +34,6 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "dz" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 45
-	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/beach)
 "dD" = (
@@ -271,10 +267,6 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/beach)
 "Ee" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 45
-	},
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/beach)
 "El" = (

@@ -4361,10 +4361,6 @@
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town/bath)
 "qC" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 155
-	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/town)
 "qD" = (
@@ -10112,10 +10108,6 @@
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/manor)
 "MG" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 155
-	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/rtfield)
 "MI" = (

@@ -1560,10 +1560,6 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods)
 "RM" = (
-/obj/effect/landmark/mapGenerator/sunlights{
-	endTurfX = 155;
-	endTurfY = 155
-	},
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
 "RN" = (
