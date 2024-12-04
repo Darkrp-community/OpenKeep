@@ -145,7 +145,7 @@
 	canparry = TRUE
 	miss_text = "slashes the air!"
 	miss_sound = "bluntwooshlarge"
-	item_damage_type = "slash"
+//	item_damage_type = "slash"
 
 /obj/item/rogueweapon/werewolf_claw
 	name = "Verevolf Claw"
