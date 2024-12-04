@@ -1,26 +1,24 @@
 GLOBAL_LIST_INIT(bum_quotes, world.file2list("strings/rt/bumlines.txt"))
 GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
+GLOBAL_LIST_INIT(outlaw_quotes, world.file2list("strings/rt/outlawlines.txt"))
+GLOBAL_LIST_INIT(outlaw_aggro, world.file2list("strings/rt/outlawaggrolines.txt"))
 
 /mob/living/carbon/human/species/human/northern/bum
 	aggressive=0
 	mode = AI_IDLE
 	faction = list("bums", "station")
 	ambushable = FALSE
-	dodgetime = 30
+	dodgetime = 3 SECONDS
 	flee_in_pain = TRUE
 	possible_rmb_intents = list()
 
 	wander = FALSE
+	var/outlaw
 
 /mob/living/carbon/human/species/human/northern/bum/ambush
 	aggressive=1
-
 	wander = TRUE
-
-/*	..................   Hostile Bum   ................... */
-/mob/living/carbon/human/species/human/northern/bum/ambush/Initialize()
-	. = ..()
-	name = pick("Madman", "Creep", "Lunatic", "Leper")
+	dodgetime = 5 SECONDS
 
 /mob/living/carbon/human/species/human/northern/bum/retaliate(mob/living/L)
 	var/newtarg = target
@@ -29,7 +27,10 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 		aggressive=1
 		wander = TRUE
 		if(target != newtarg)
-			say(pick(GLOB.bum_aggro))
+			if(outlaw)
+				say(pick(GLOB.outlaw_aggro))
+			else
+				say(pick(GLOB.bum_aggro))
 			linepoint(target)
 
 /mob/living/carbon/human/species/human/northern/bum/should_target(mob/living/L)
@@ -48,7 +49,7 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+//	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/vagrant)
 
 /mob/living/carbon/human/species/human/northern/bum/npc_idle()
@@ -67,15 +68,19 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 	if(!wander && prob(10))
 		face_atom(get_step(src,pick(GLOB.cardinals)))
 	if(prob(3))
-		say(pick(GLOB.bum_quotes))
+		if(outlaw)
+			say(pick(GLOB.outlaw_quotes))
+		else
+			say(pick(GLOB.bum_quotes))
 	if(prob(3))
 		emote(pick("laugh","burp","yawn","grumble","mumble","blink_r","clap"))
-
 
 /mob/living/carbon/human/species/human/northern/bum/outlaw/after_creation()
 	aggressive= TRUE
 	wander = TRUE
+	dodgetime = 4 SECONDS
 	equipOutfit(new /datum/outfit/job/roguetown/outlaw)
+	outlaw = TRUE	// just for the right say strings
 
 /datum/outfit/job/roguetown/outlaw
 	name = "Beggar"
@@ -153,7 +158,7 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 		if(1)
 			r_hand = /obj/item/rogueweapon/axe/iron
 		if(2)
-			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter
+			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu
 		if(3)
 			r_hand = /obj/item/rogueweapon/mace/cudgel/bludgeon
 		if(4)
@@ -162,4 +167,3 @@ GLOBAL_LIST_INIT(bum_aggro, world.file2list("strings/rt/bumaggrolines.txt"))
 			r_hand = /obj/item/rogueweapon/thresher
 		if(6)
 			r_hand = /obj/item/rogueweapon/sword/short/iron
-

@@ -55,7 +55,7 @@
 	retreat_health = 0.4
 	food = 0
 
-	dodgetime = 20
+	dodgetime = 2.5 SECONDS
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
