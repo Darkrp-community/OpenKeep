@@ -297,8 +297,9 @@
 /obj/structure/bed/rogue
 	icon_state = "bed"
 	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
+	anchored = 1
+	can_buckle = 1
+	buckle_lying = 1
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 2
@@ -309,34 +310,27 @@
 /obj/structure/bed/rogue/inn
 	icon_state = "inn_bed"
 	sleepy = 3
-
+// Borbop's double bed code, thank you Borbop. --Cadet
 /obj/structure/bed/rogue/inn/double
 	icon_state = "double"
+	max_buckled_mobs = 2
 	pixel_y = 0
 	sleepy = 3
 	debris = list(/obj/item/grown/log/tree/small = 2)
-//////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
-/obj/structure/bed/rogue/inn/double
-//	var/list/buckled_mobs = list()  shouldnts be needed
-/*
-/obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/M)
-	. = ..()
-	if(!buckled_mobs)
-		buckled_mobs = list()
-	buckled_mobs += M
-	M.set_mob_offsets("bed_buckle", _x = buckled_mobs.len * 10, _y = 5)
+	/// The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before they unbuckle.
+	var/mob/living/goldilocks
 
-/obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/M)
+/obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/target)
 	. = ..()
-	if(M in buckled_mobs)
-		buckled_mobs -= M
-	M.reset_offsets("bed_buckle")
+	if(length(buckled_mobs) > 1 && !goldilocks) //  Push the second buckled mob a bit higher from the normal lying position
+		target.set_mob_offsets("bed_buckle", _x = 0, _y = 13)
+		goldilocks = target
 
-	var/x_offset = 0
-	for(var/mob/living/buckled_mob in buckled_mobs)
-		buckled_mob.set_mob_offsets("bed_buckle", _x = x_offset, _y = 5)
-		x_offset += 10
-*/
+/obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/target)
+	. = ..()
+	if(target == goldilocks)
+		goldilocks = null
+
 
 
 // ------------ DECENT BEDS ----------------------

@@ -272,6 +272,28 @@
 		held_items[P]["PRICE"] = 20
 	update_icon()
 
+/obj/structure/roguemachine/vendor/inn_hamlet
+	keycontrol = "tavern"
+
+/obj/structure/roguemachine/vendor/inn_hamlet/Initialize()
+	. = ..()
+	for(var/X in list(/obj/item/roguekey/roomii))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 15
+	for(var/X in list(/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 20
+	for(var/X in list(/obj/item/roguekey/roomi))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 30
+	update_icon()
+
 /obj/structure/roguemachine/vendor/steward
 	keycontrol = "steward"
 
