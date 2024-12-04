@@ -135,7 +135,7 @@
 
 /datum/sex_controller/proc/ejaculate()
 	log_combat(user, user, "Ejaculated")
-	user.visible_message(span_lovebold("[user] makes a mess!"))
+	user.visible_message(span_love("[user] makes a mess!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
