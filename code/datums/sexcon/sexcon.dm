@@ -460,8 +460,6 @@
 			return 1.5
 		if(SEX_SPEED_HIGH)
 			return 2.0
-		if(SEX_SPEED_EXTREME)
-			return 2.5
 
 /datum/sex_controller/proc/get_stamina_cost_multiplier()
 	switch(force)
@@ -471,8 +469,6 @@
 			return 1.5
 		if(SEX_FORCE_HIGH)
 			return 2.0
-		if(SEX_SPEED_EXTREME)
-			return 2.5
 
 /datum/sex_controller/proc/get_force_pleasure_multiplier(passed_force, giving)
 	switch(passed_force)
@@ -509,8 +505,6 @@
 			return "<font color='#e9a8d1'>STEADY</font>"
 		if(SEX_SPEED_HIGH)
 			return "<font color='#f05ee1'>QUICK</font>"
-		if(SEX_SPEED_EXTREME)
-			return "<font color='#d146f5'>UNRELENTING</font>"
 
 /datum/sex_controller/proc/get_manual_arousal_string()
 	switch(manual_arousal)
