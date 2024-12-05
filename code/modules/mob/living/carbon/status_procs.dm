@@ -3,8 +3,8 @@
 //eye_blind, eye_blurry, druggy, TRAIT_BLIND trait, TRAIT_NEARSIGHT trait, and TRAIT_HUSK trait.
 
 
-/mob/living/carbon/IsParalyzed(include_stamcrit = TRUE)
-	return ..() || (include_stamcrit && stam_paralyzed)
+/mob/living/carbon/IsParalyzed()
+	return ..()
 
 /mob/living/carbon/adjust_drugginess(amount)
 	druggy = max(druggy+amount, 0)

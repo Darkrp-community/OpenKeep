@@ -130,7 +130,7 @@
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(status && (BP.status != status))
 			continue
-		if((brute && BP.brute_dam) || (burn && BP.burn_dam) || (stamina && BP.stamina_dam) || length(BP.wounds))
+		if((brute && BP.brute_dam) || (burn && BP.burn_dam) || length(BP.wounds))
 			parts += BP
 	return parts
 
@@ -177,13 +177,11 @@
 
 		var/brute_was = picked.brute_dam
 		var/burn_was = picked.burn_dam
-		var/stamina_was = picked.stamina_dam
 
 		update |= picked.heal_damage(brute, burn, stamina, required_status, FALSE)
 
 		brute = round(brute - (brute_was - picked.brute_dam), DAMAGE_PRECISION)
 		burn = round(burn - (burn_was - picked.burn_dam), DAMAGE_PRECISION)
-		stamina = round(stamina - (stamina_was - picked.stamina_dam), DAMAGE_PRECISION)
 
 		parts -= picked
 	if(updating_health)
@@ -217,14 +215,12 @@
 
 			var/brute_was = picked.brute_dam
 			var/burn_was = picked.burn_dam
-			var/stamina_was = picked.stamina_dam
 
 
 			update |= picked.receive_damage(brute_per_part, burn_per_part, stamina_per_part, FALSE, required_status)
 
 			brute	= round(brute - (picked.brute_dam - brute_was), DAMAGE_PRECISION)
 			burn	= round(burn - (picked.burn_dam - burn_was), DAMAGE_PRECISION)
-			stamina = round(stamina - (picked.stamina_dam - stamina_was), DAMAGE_PRECISION)
 
 	if(updating_health)
 		updatehealth()
