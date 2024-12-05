@@ -652,6 +652,7 @@
 #include "code\game\area\areas\shuttles.dm"
 #include "code\game\area\areas\ruins\_ruins.dm"
 #include "code\game\area\areas\ruins\templates.dm"
+#include "code\game\area\vanderlin\vanderlinareas.dm"
 #include "code\game\gamemodes\game_mode.dm"
 #include "code\game\gamemodes\objective.dm"
 #include "code\game\gamemodes\objective_items.dm"
