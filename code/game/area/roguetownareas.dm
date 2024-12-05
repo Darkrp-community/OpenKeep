@@ -519,6 +519,22 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	first_time_text = "Roguetown"
 	icon_state = "entrance"
 
+/area/rogue/indoors/town/clocktower
+	first_time_text = "Clocktower"
+	icon_state = "clocktower"
+
+/area/rogue/indoors/town/orphanage
+	first_time_text = "The Orphanage"
+	icon_state = "orphanage"
+
+/area/rogue/indoors/town/clinic_large
+	first_time_text = "Physickers Clinic"
+	icon_state = "clinic_large"
+
+/area/rogue/indoors/town/thieves_guild
+	first_time_text = "Thieves Guild"
+	icon_state = "thieves_guild"
+
 /area/rogue/indoors/town/dwarfin
 	name = "makers quarter"
 	icon_state = "dwarfin"
