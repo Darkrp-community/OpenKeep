@@ -1,3 +1,11 @@
+/* Sex controller documentation notes:
+You click with middle mouse on someone and drag them to your preferred target to open up the sex menu, where you select a sex action to perform.
+The sex actions you can perform are gender-locked, as opposed to being specificially genital-locked, because Stonekeep doesn't have penis/testicles/vagina/breast organ slots like Ratwood and Azure Peak do.
+If you want to lock an action to one sex, don't do if(!user.gender == [gender]), do if(user.gender == [gender]). I don't know why, but ! doesn't work on that and specifically that.
+If, say, you wanted to seperate sex and gender without going to the trouble of adding cocks and pussies, you could simply code seperate variables for your sex and gender identity (based on pronouns or some shit IDK).
+ejaculate() is actually just orgasm, for both sexes. I found this out the hard way after somehow making female characters unable to finish while testing this for the first time.
+*/
+
 /datum/sex_controller
 	/// The user and the owner of the controller
 	var/mob/living/carbon/human/user
@@ -129,11 +137,15 @@
 		after_intimate_climax()
 
 /datum/sex_controller/proc/ejaculate()
-	log_combat(user, user, "Ejaculated")
-	user.visible_message(span_love("[user] spills on the floor!"))
-	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
-	add_cum_floor(get_turf(user))
-	after_ejaculation()
+	log_combat(user, user, "Orgasmed")
+	if(user.gender == FEMALE)
+		user.visible_message(span_love("[user] tightens in ecstasy!"))
+		after_ejaculation()
+	if(user.gender == MALE)
+		user.visible_message(span_love("[user] spills on the floor!"))
+		playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
+		add_cum_floor(get_turf(user))
+		after_ejaculation()
 
 /datum/sex_controller/proc/after_ejaculation()
 	set_arousal(40)
@@ -238,8 +250,6 @@
 	return TRUE
 
 /datum/sex_controller/proc/can_ejaculate()
-	if(user.gender == FEMALE)
-		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
 	return TRUE
