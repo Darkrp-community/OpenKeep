@@ -369,7 +369,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/indoors/town
 	name = "indoors"
-	icon_state = "blueold"
+	icon_state = "indoor_town"
 	droning_sound = 'sound/music/area/indoor.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
@@ -459,6 +459,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/tavern
 	name = "tavern"
 	icon_state = "tavern"
+	first_time_text = "Skullcrack Inn"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
 	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
@@ -518,6 +519,39 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/entrance
 	first_time_text = "Roguetown"
 	icon_state = "entrance"
+
+/area/rogue/indoors/town/clocktower
+	first_time_text = "Clocktower"
+	icon_state = "clocktower"
+
+/area/rogue/indoors/town/orphanage
+	first_time_text = "The Orphanage"
+	icon_state = "orphanage"
+
+/area/rogue/indoors/town/clinic_large
+	first_time_text = "Physickers Clinic"
+	icon_state = "clinic_large"
+
+/area/rogue/indoors/town/thieves_guild
+	first_time_text = "Thieves Guild"
+	icon_state = "thieves_guild"
+
+/area/rogue/indoors/town/merc_guild
+	first_time_text = "Mercenary Guild"
+	icon_state = "merc_guild"
+
+/area/rogue/indoors/town/steward
+	first_time_text = "Stewards Office"
+	icon_state = "steward"
+
+/area/rogue/indoors/town/smithy
+	name = "Smithy"
+	icon_state = "smithy"
+	droning_sound = 'sound/music/area/dwarf.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	first_time_text = "The Smithy"
+	converted_type = /area/rogue/outdoors/exposed/dwarf
 
 /area/rogue/indoors/town/dwarfin
 	name = "makers quarter"
