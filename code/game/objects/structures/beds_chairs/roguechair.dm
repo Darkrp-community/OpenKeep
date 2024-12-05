@@ -316,7 +316,7 @@
 	max_buckled_mobs = 2
 	pixel_y = 0
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/plank = 2)
+	debris = list(/obj/item/natural/plank)
 	/// The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before they unbuckle.
 	var/mob/living/goldilocks
 
