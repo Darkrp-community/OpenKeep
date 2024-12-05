@@ -16,8 +16,8 @@
 	START_PROCESSING(SSroguerot, src)
 
 /datum/component/rot/Destroy()
-	if(soundloop)
-		soundloop.stop()
+//	if(soundloop)
+//		soundloop.stop()
 	. = ..()
 
 /datum/component/rot/process()
