@@ -59,24 +59,6 @@
 			return getCloneLoss()
 
 
-/mob/living/proc/apply_damages(brute = 0, burn = 0, tox = 0, oxy = 0, clone = 0, def_zone = null, blocked = FALSE, stamina = 0, brain = 0)
-	if(blocked >= 100)
-		return 0
-	if(brute)
-		apply_damage(brute, BRUTE, def_zone, blocked)
-	if(burn)
-		apply_damage(burn, BURN, def_zone, blocked)
-	if(tox)
-		apply_damage(tox, TOX, def_zone, blocked)
-	if(oxy)
-		apply_damage(oxy, OXY, def_zone, blocked)
-	if(clone)
-		apply_damage(clone, CLONE, def_zone, blocked)
-	if(brain)
-		apply_damage(brain, BRAIN, def_zone, blocked)
-	return 1
-
-
 
 /mob/living/proc/apply_effect(effect = 0,effecttype = EFFECT_STUN, blocked = FALSE)
 	var/hit_percent = (100-blocked)/100
@@ -108,7 +90,7 @@
 	return 1
 
 
-/mob/living/proc/apply_effects(stun = 0, knockdown = 0, unconscious = 0, irradiate = 0, slur = 0, stutter = 0, eyeblur = 0, drowsy = 0, blocked = FALSE, stamina = 0, jitter = 0, paralyze = 0, immobilize = 0)
+/mob/living/proc/apply_effects(stun = 0, knockdown = 0, unconscious = 0, irradiate = 0, slur = 0, stutter = 0, eyeblur = 0, drowsy = 0, blocked = FALSE, jitter = 0, paralyze = 0, immobilize = 0)
 	if(blocked >= 100)
 		return BULLET_ACT_BLOCK
 	if(stun)
@@ -131,8 +113,6 @@
 		apply_effect(eyeblur, EFFECT_EYE_BLUR, blocked)
 	if(drowsy)
 		apply_effect(drowsy, EFFECT_DROWSY, blocked)
-	if(stamina)
-		apply_damage(stamina, STAMINA, null, blocked)
 	if(jitter)
 		apply_effect(jitter, EFFECT_JITTER, blocked)
 	return BULLET_ACT_HIT
@@ -229,28 +209,28 @@
 	return
 
 // heal ONE external organ, organ gets randomly selected from damaged ones.
-/mob/living/proc/heal_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status)
+/mob/living/proc/heal_bodypart_damage(brute = 0, burn = 0, updating_health = TRUE, required_status)
 	adjustBruteLoss(-brute, FALSE) //zero as argument for no instant health update
 	adjustFireLoss(-burn, FALSE)
 	if(updating_health)
 		updatehealth()
 
 // damage ONE external organ, organ gets randomly selected from damaged ones.
-/mob/living/proc/take_bodypart_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status, check_armor = FALSE)
+/mob/living/proc/take_bodypart_damage(brute = 0, burn = 0, updating_health = TRUE, required_status, check_armor = FALSE)
 	adjustBruteLoss(brute, FALSE) //zero as argument for no instant health update
 	adjustFireLoss(burn, FALSE)
 	if(updating_health)
 		updatehealth()
 
 // heal MANY bodyparts, in random order
-/mob/living/proc/heal_overall_damage(brute = 0, burn = 0, stamina = 0, required_status, updating_health = TRUE)
+/mob/living/proc/heal_overall_damage(brute = 0, burn = 0, required_status, updating_health = TRUE)
 	adjustBruteLoss(-brute, FALSE) //zero as argument for no instant health update
 	adjustFireLoss(-burn, FALSE)
 	if(updating_health)
 		updatehealth()
 
 // damage MANY bodyparts, in random order
-/mob/living/proc/take_overall_damage(brute = 0, burn = 0, stamina = 0, updating_health = TRUE, required_status = null)
+/mob/living/proc/take_overall_damage(brute = 0, burn = 0, updating_health = TRUE, required_status = null)
 	adjustBruteLoss(brute, FALSE) //zero as argument for no instant health update
 	adjustFireLoss(burn, FALSE)
 	if(updating_health)
