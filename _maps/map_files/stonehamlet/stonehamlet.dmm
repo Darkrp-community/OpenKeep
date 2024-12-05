@@ -10135,7 +10135,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/outlaw)
 "khv" = (
-/obj/effect/spawner/roguemap/beartrap,
+/obj/effect/spawner/roguemap/beartrap_obvious,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/rtfield/hamlet)
 "khz" = (
@@ -20980,10 +20980,6 @@
 /obj/structure/fluff/railing/border,
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
-"uPQ" = (
-/obj/effect/spawner/roguemap/beartrap,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/indoors)
 "uPR" = (
 /turf/closed/wall/mineral/rogue/roofwall/outercorner{
 	dir = 8
@@ -71583,7 +71579,7 @@ gcU
 ppM
 hDi
 gcU
-uPQ
+cke
 gcU
 hDi
 rMM
