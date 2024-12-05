@@ -199,7 +199,7 @@
 		playsound(src.loc, 'sound/foley/struggle.ogg', 100, FALSE, -1)
 		user.Immobilize(2 SECONDS)
 		user.changeNext_move(2 SECONDS)
-		user.rogfat_add(5)
+		user.stamina_add(5)
 		src.Immobilize(1 SECONDS)
 		src.changeNext_move(1 SECONDS)
 		return
@@ -394,8 +394,6 @@
 		return FALSE
 	if(!(flags & SHOCK_ILLUSION))
 		adjustFireLoss(shock_damage)
-	else
-		adjustStaminaLoss(shock_damage)
 	visible_message(
 		"<span class='danger'>[src] was shocked by \the [source]!</span>", \
 		"<span class='danger'>I feel a powerful shock coursing through my body!</span>", \

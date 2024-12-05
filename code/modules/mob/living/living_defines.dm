@@ -21,7 +21,6 @@
 	var/toxloss = 0		//Toxic damage caused by being poisoned or radiated
 	var/fireloss = 0	//Burn damage caused by being way too hot, too cold or burnt.
 	var/cloneloss = 0	//Damage caused by being cloned or ejected from the cloner early. slimes also deal cloneloss damage to victims
-	var/staminaloss = 0		//Stamina damage, or exhaustion. You recover it slowly naturally, and are knocked down if it gets too high. Holodeck and hallucinations deal this.
 	var/crit_threshold = HEALTH_THRESHOLD_CRIT // when the mob goes from "normal" to crit
 
 	var/mobility_flags = MOBILITY_FLAGS_DEFAULT
@@ -121,10 +120,10 @@
 	var/list/ownedSoullinks //soullinks we are the owner of
 	var/list/sharedSoullinks //soullinks we are a/the sharer of
 
-	var/maxrogstam = 1000
-	var/maxrogfat = 100
-	var/rogstam = 1000
-	var/rogfat = 0
+	var/max_energy = 1000
+	var/maximum_stamina = 100
+	var/energy = 1000
+	var/stamina = 0
 
 	var/last_fatigued = 0
 	var/last_ps = 0
