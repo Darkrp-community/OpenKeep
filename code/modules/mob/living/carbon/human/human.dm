@@ -480,86 +480,57 @@
 				else
 					hud_used.bloods.icon_state = "damelse"
 
-/*		if(hud_used.healthdoll)
-			hud_used.healthdoll.cut_overlays()
+		if(hud_used.stamina)
 			if(stat != DEAD)
-				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
-				for(var/X in bodyparts)
-					var/obj/item/bodypart/BP = X
-					var/damage = BP.burn_dam + BP.brute_dam
-					var/comparison = (BP.max_damage/5)
-					var/icon_num = 0
-					if(damage)
-						icon_num = 1
-					if(damage > (comparison))
-						icon_num = 2
-					if(damage > (comparison*2))
-						icon_num = 3
-					if(damage > (comparison*3))
-						icon_num = 4
-					if(damage > (comparison*4))
-						icon_num = 5
-					if(hal_screwyhud == SCREWYHUD_HEALTHY)
-						icon_num = 0
-					if(icon_num)
-						hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[BP.body_zone][icon_num]"))
-				for(var/t in get_missing_limbs()) //Missing limbs
-					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]6"))
-				for(var/t in get_disabled_limbs()) //Disabled limbs
-					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]7"))
-			else
-				hud_used.healthdoll.icon_state = "healthdoll_DEAD"*/
+				. = 1
+				if(stamina >= maximum_stamina)
+					hud_used.stamina.icon_state = "fat0"
+				else if(stamina > maximum_stamina*0.90)
+					hud_used.stamina.icon_state = "fat10"
+				else if(stamina > maximum_stamina*0.80)
+					hud_used.stamina.icon_state = "fat20"
+				else if(stamina > maximum_stamina*0.70)
+					hud_used.stamina.icon_state = "fat30"
+				else if(stamina > maximum_stamina*0.60)
+					hud_used.stamina.icon_state = "fat40"
+				else if(stamina > maximum_stamina*0.50)
+					hud_used.stamina.icon_state = "fat50"
+				else if(stamina > maximum_stamina*0.40)
+					hud_used.stamina.icon_state = "fat60"
+				else if(stamina > maximum_stamina*0.30)
+					hud_used.stamina.icon_state = "fat70"
+				else if(stamina > maximum_stamina*0.20)
+					hud_used.stamina.icon_state = "fat80"
+				else if(stamina > maximum_stamina*0.10)
+					hud_used.stamina.icon_state = "fat90"
+				else if(stamina >= 0)
+					hud_used.stamina.icon_state = "fat100"
 
-		if(hud_used.fats)
+		if(hud_used.energy)
 			if(stat != DEAD)
 				. = 1
-				if(rogfat >= maxrogfat)
-					hud_used.fats.icon_state = "fat0"
-				else if(rogfat > maxrogfat*0.90)
-					hud_used.fats.icon_state = "fat10"
-				else if(rogfat > maxrogfat*0.80)
-					hud_used.fats.icon_state = "fat20"
-				else if(rogfat > maxrogfat*0.70)
-					hud_used.fats.icon_state = "fat30"
-				else if(rogfat > maxrogfat*0.60)
-					hud_used.fats.icon_state = "fat40"
-				else if(rogfat > maxrogfat*0.50)
-					hud_used.fats.icon_state = "fat50"
-				else if(rogfat > maxrogfat*0.40)
-					hud_used.fats.icon_state = "fat60"
-				else if(rogfat > maxrogfat*0.30)
-					hud_used.fats.icon_state = "fat70"
-				else if(rogfat > maxrogfat*0.20)
-					hud_used.fats.icon_state = "fat80"
-				else if(rogfat > maxrogfat*0.10)
-					hud_used.fats.icon_state = "fat90"
-				else if(rogfat >= 0)
-					hud_used.fats.icon_state = "fat100"
-		if(hud_used.stams)
-			if(stat != DEAD)
-				. = 1
-				if(rogstam <= 0)
-					hud_used.stams.icon_state = "stam0"
-				else if(rogstam > maxrogstam*0.90)
-					hud_used.stams.icon_state = "stam100"
-				else if(rogstam > maxrogstam*0.80)
-					hud_used.stams.icon_state = "stam90"
-				else if(rogstam > maxrogstam*0.70)
-					hud_used.stams.icon_state = "stam80"
-				else if(rogstam > maxrogstam*0.60)
-					hud_used.stams.icon_state = "stam70"
-				else if(rogstam > maxrogstam*0.50)
-					hud_used.stams.icon_state = "stam60"
-				else if(rogstam > maxrogstam*0.40)
-					hud_used.stams.icon_state = "stam50"
-				else if(rogstam > maxrogstam*0.30)
-					hud_used.stams.icon_state = "stam40"
-				else if(rogstam > maxrogstam*0.20)
-					hud_used.stams.icon_state = "stam30"
-				else if(rogstam > maxrogstam*0.10)
-					hud_used.stams.icon_state = "stam20"
-				else if(rogstam > 0)
-					hud_used.stams.icon_state = "stam10"
+				if(energy <= 0)
+					hud_used.energy.icon_state = "stam0"
+				else if(energy > max_energy*0.90)
+					hud_used.energy.icon_state = "stam100"
+				else if(energy > max_energy*0.80)
+					hud_used.energy.icon_state = "stam90"
+				else if(energy > max_energy*0.70)
+					hud_used.energy.icon_state = "stam80"
+				else if(energy > max_energy*0.60)
+					hud_used.energy.icon_state = "stam70"
+				else if(energy > max_energy*0.50)
+					hud_used.energy.icon_state = "stam60"
+				else if(energy > max_energy*0.40)
+					hud_used.energy.icon_state = "stam50"
+				else if(energy > max_energy*0.30)
+					hud_used.energy.icon_state = "stam40"
+				else if(energy > max_energy*0.20)
+					hud_used.energy.icon_state = "stam30"
+				else if(energy > max_energy*0.10)
+					hud_used.energy.icon_state = "stam20"
+				else if(energy > 0)
+					hud_used.energy.icon_state = "stam10"
 
 		if(hud_used.zone_select)
 			hud_used.zone_select.update_icon()
