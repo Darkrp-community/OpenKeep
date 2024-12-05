@@ -1,7 +1,7 @@
 /datum/component/rot
 	var/amount = 0
 	var/last_process = 0
-	var/datum/looping_sound/fliesloop/soundloop
+//	var/datum/looping_sound/fliesloop/soundloop		commented out looping sound flies because of runtimes. TO DO.
 
 /datum/component/rot/Initialize(new_amount)
 	..()
@@ -11,7 +11,7 @@
 	if(new_amount)
 		amount = new_amount
 
-	soundloop = new(list(parent), FALSE)
+//	soundloop = new(list(parent), FALSE)
 
 	START_PROCESSING(SSroguerot, src)
 
@@ -80,21 +80,21 @@
 		var/turf/open/T = C.loc
 		if(istype(T))
 			T.add_pollutants(/datum/pollutant/rot, 5)
-			if(soundloop && soundloop.stopped && !is_zombie)
-				soundloop.start()
-		else
-			if(soundloop && !soundloop.stopped)
-				soundloop.stop()
-	else
-		if(soundloop && !soundloop.stopped)
-			soundloop.stop()
+//			if(soundloop && soundloop.stopped && !is_zombie)
+//				soundloop.start()
+//		else
+//			if(soundloop && !soundloop.stopped)
+//				soundloop.stop()
+//	else
+//		if(soundloop && !soundloop.stopped)
+//			soundloop.stop()
 	if(shouldupdate)
 		if(findonerotten)
 			if(ishuman(C))
 				var/mob/living/carbon/human/H = C
 				H.skin_tone = "878f79" //elf ears
-			if(soundloop && soundloop.stopped && !is_zombie)
-				soundloop.start()
+//			if(soundloop && soundloop.stopped && !is_zombie)
+//				soundloop.start()
 		C.update_body()
 
 /datum/component/rot/simple/process()
@@ -105,8 +105,8 @@
 		qdel(R)
 		return
 	if(amount > 10 MINUTES)
-		if(soundloop && soundloop.stopped)
-			soundloop.start()
+//		if(soundloop && soundloop.stopped)
+//			soundloop.start()
 		var/turf/open/T = get_turf(L)
 		if(istype(T))
 			T.add_pollutants(/datum/pollutant/rot, 5)
