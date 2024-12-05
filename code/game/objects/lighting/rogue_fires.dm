@@ -105,6 +105,11 @@
 	crossfire = FALSE
 	cookonme = TRUE
 
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+
 /obj/machinery/light/rogue/wallfire/candle
 	name = "candles"
 	icon_state = "wallcandle1"
@@ -163,6 +168,15 @@
 /obj/machinery/light/rogue/wallfire/candle/weak/r
 	pixel_x = 32
 	pixel_y = 0
+
+/obj/machinery/light/rogue/wallfire/candle/lamp
+	name = "candle lamp"
+	icon_state = "candle"
+	base_state = "candle"
+	icon = 'icons/roguetown/misc/decoration.dmi'
+	layer = WALL_OBJ_LAYER+0.1
+	light_power = 0.9
+	light_outer_range =  6
 
 /obj/machinery/light/rogue/torchholder
 	name = "sconce"

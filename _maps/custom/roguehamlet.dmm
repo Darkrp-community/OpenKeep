@@ -4872,7 +4872,7 @@
 	dir = 9
 	},
 /obj/structure/roguemachine/camera/left,
-/obj/machinery/light/rogue/wallfire{
+/obj/machinery/light/rogue/wallfire/big_fireplace{
 	pixel_x = 15;
 	pixel_y = 32
 	},

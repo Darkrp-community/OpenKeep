@@ -5149,7 +5149,7 @@
 /obj/effect/decal/turfedge_neu{
 	dir = 9
 	},
-/obj/machinery/light/rogue/wallfire{
+/obj/machinery/light/rogue/wallfire/big_fireplace{
 	pixel_x = 15;
 	pixel_y = 32
 	},

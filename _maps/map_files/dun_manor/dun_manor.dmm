@@ -6016,7 +6016,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/garrison)
 "fQW" = (
-/obj/machinery/light/rogue/wallfire,
+/obj/machinery/light/rogue/wallfire/big_fireplace,
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/dwarfin)
 "fRC" = (
