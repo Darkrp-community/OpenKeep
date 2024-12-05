@@ -19,10 +19,18 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
+"av" = (
+/obj/structure/table/wood,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "az" = (
 /obj/structure/chair/bench/church,
 /mob/living/carbon/human/species/skeleton/npc/peasant,
 /turf/open/floor/rogue/church,
+/area/rogue/outdoors/mountains)
+"aA" = (
+/obj/structure/fluff/dryingrack,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "aC" = (
 /obj/structure/fluff/walldeco/innsign/trophy,
@@ -67,6 +75,12 @@
 "bu" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/mountains)
+"bx" = (
+/obj/structure/closet/crate/chest/crate,
+/obj/effect/spawner/roguemap/loot/food,
+/obj/effect/spawner/roguemap/loot/food,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "bB" = (
 /mob/living/carbon/human/species/orc/ambush,
@@ -242,6 +256,11 @@
 /obj/effect/decal/cleanable/blood/drip,
 /turf/open/floor/rogue/church,
 /area/rogue/outdoors/mountains)
+"ek" = (
+/obj/structure/closet/crate/chest/crate,
+/obj/effect/spawner/roguemap/loot/common,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "ep" = (
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
@@ -341,6 +360,10 @@
 /obj/item/reagent_containers/glass/bottle/rogue,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
+"fo" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "fq" = (
 /obj/structure/spider/stickyweb,
 /turf/open/floor/rogue/naturalstone,
@@ -353,6 +376,10 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
+/area/rogue/outdoors/mountains)
+"fA" = (
+/obj/structure/fluff/statue/tdummy,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "fB" = (
 /obj/item/rogueore/iron,
@@ -413,6 +440,10 @@
 /obj/machinery/light/rogue/campfire/densefire,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
+"gt" = (
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "gw" = (
 /obj/structure/table/wood/plain,
 /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf,
@@ -433,6 +464,11 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
+/area/rogue/outdoors/mountains)
+"gC" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "gD" = (
 /obj/structure/stairs/stone{
@@ -531,6 +567,11 @@
 "hI" = (
 /obj/item/bodypart/r_leg/prosthetic/gold,
 /turf/open/floor/rogue/metal/barograte,
+/area/rogue/outdoors/mountains)
+"hQ" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/roguemap/loot/food,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "hY" = (
 /obj/structure/rack/rogue/shelf/biggest,
@@ -861,6 +902,13 @@
 /obj/structure/barricade/rogue/crude,
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/outdoors/mountains)
+"ml" = (
+/obj/structure/bonepile,
+/obj/effect/decal/cleanable/blood/gibs/torso,
+/obj/effect/decal/cleanable/blood/gibs/up,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "mn" = (
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 10
@@ -920,6 +968,10 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
+/area/rogue/outdoors/mountains)
+"mN" = (
+/obj/structure/bed/rogue/mediocre,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "mS" = (
 /obj/structure/table/wood/plain,
@@ -1319,6 +1371,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/outdoors/mountains)
+"tU" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "tV" = (
 /obj/structure/mineral_door/bars,
 /turf/open/floor/rogue/cobble,
@@ -1342,6 +1398,10 @@
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
+/area/rogue/outdoors/mountains)
+"un" = (
+/obj/structure/closet/crate/chest,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "uo" = (
 /obj/effect/decal/cleanable/blood/tracks{
@@ -1435,6 +1495,10 @@
 /area/rogue/outdoors/mountains)
 "vo" = (
 /obj/item/ash,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
+"vp" = (
+/obj/structure/roguetent,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "vu" = (
@@ -1579,6 +1643,11 @@
 	},
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/outdoors/mountains)
+"xJ" = (
+/obj/structure/closet/crate/chest/crate,
+/obj/effect/spawner/roguemap/loot/food,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "xM" = (
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/dirt,
@@ -1615,6 +1684,10 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/fermenting_barrel/random/beer,
 /turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/mountains)
+"yk" = (
+/obj/effect/spawner/roguemap/loot,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "yp" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -1838,6 +1911,11 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
+"Bz" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/roguemap/loot/weapon,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "BD" = (
 /obj/structure/fluff/walldeco/skullspike,
 /turf/open/floor/rogue/dirt,
@@ -1918,6 +1996,12 @@
 /area/rogue/outdoors/mountains)
 "CB" = (
 /turf/open/floor/rogue/churchmarble,
+/area/rogue/outdoors/mountains)
+"CE" = (
+/obj/structure/rack/rogue,
+/obj/item/quiver/arrows,
+/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "CH" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
@@ -2068,6 +2152,10 @@
 /mob/living/carbon/human/species/orc/ambush,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
+"EF" = (
+/mob/living/carbon/human/species/goblin/npc/ambush,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/mountains)
 "EL" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/cobblerock,
@@ -2103,10 +2191,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/carbon/human/species/skeleton/npc/warrior,
 /turf/open/floor/rogue/church,
-/area/rogue/outdoors/mountains)
-"Fw" = (
-/obj/structure/roguetent,
-/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "Fx" = (
 /obj/structure/chair/wood/rogue{
@@ -2331,6 +2415,11 @@
 /mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
+"HS" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/roguemap/loot/coin/med,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "HT" = (
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
@@ -2410,6 +2499,10 @@
 "IT" = (
 /obj/machinery/light/rogue/firebowl,
 /turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/mountains)
+"IX" = (
+/mob/living/simple_animal/hostile/rogue/orc/ranged,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "Ja" = (
 /obj/structure/mineral_door/wood/donjon{
@@ -2647,6 +2740,10 @@
 /obj/item/clothing/under/roguetown/loincloth/brown,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
+"Mc" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/mimic,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "Md" = (
 /obj/machinery/light/rogue/campfire/pyre,
 /turf/open/floor/rogue/cobblerock,
@@ -2862,6 +2959,12 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
+"Ps" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/roguemap/loot/armor,
+/obj/effect/spawner/roguemap/loot/armor,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "Py" = (
 /obj/structure/closet/crate/chest/gold,
 /obj/item/roguestatue/gold/loot,
@@ -3044,6 +3147,12 @@
 "RY" = (
 /obj/structure/fluff/psycross,
 /turf/open/floor/rogue/tile/tilerg,
+/area/rogue/outdoors/mountains)
+"RZ" = (
+/obj/structure/roguetent,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "Sd" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf,
@@ -3242,6 +3351,11 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains)
+"Vv" = (
+/obj/structure/closet/crate/chest/crate,
+/obj/effect/spawner/roguemap/loot/weapon,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/mountains)
 "Vz" = (
 /obj/structure/bearpelt{
 	name = "Astrata's Comet real"
@@ -3336,6 +3450,10 @@
 "Wt" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/ruinedwood/darker,
+/area/rogue/outdoors/mountains)
+"Wu" = (
+/obj/structure/table/wood,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains)
 "Ww" = (
 /obj/structure/table/wood,
@@ -164434,8 +164552,8 @@ Gh
 Gh
 Gh
 Gh
-xR
-xR
+HS
+Ps
 Gh
 Gh
 Gh
@@ -164690,10 +164808,10 @@ Gh
 Gh
 Gh
 Gh
+Bz
 xR
 xR
-xR
-xR
+Bz
 Gh
 Gh
 Gh
@@ -165203,12 +165321,12 @@ Gh
 Gh
 Gh
 Gh
+Bn
 xR
 xR
+OH
 xR
-xR
-xR
-xR
+bx
 Gh
 Gh
 Gh
@@ -165466,7 +165584,7 @@ xR
 xR
 xR
 xR
-xR
+bx
 Gh
 Gh
 Gh
@@ -165976,11 +166094,11 @@ zR
 zR
 zR
 MD
-Fw
+vp
 MD
-xR
-xR
-xR
+Bn
+hQ
+mN
 Gh
 Gh
 Gh
@@ -166224,12 +166342,12 @@ Gh
 Gh
 Gh
 Gh
-zR
-zR
+Zc
+yk
 Gh
 Gh
 zR
-zR
+tU
 zR
 zR
 zR
@@ -166486,7 +166604,7 @@ Gh
 Gh
 Gh
 zR
-zR
+EF
 zR
 zR
 zR
@@ -166751,7 +166869,7 @@ MD
 zR
 zR
 zR
-zR
+tU
 Gh
 Gh
 Gh
@@ -166996,17 +167114,17 @@ Gh
 Gh
 Gh
 zR
-zR
+EF
 zR
 zR
 OS
+MZ
 xR
-xR
-xR
+MZ
 xR
 OS
-zR
-zR
+av
+EF
 zR
 zR
 Gh
@@ -167257,12 +167375,12 @@ zR
 zR
 zR
 OS
+ek
 xR
-xR
-xR
+ek
 xR
 OS
-zR
+av
 zR
 zR
 zR
@@ -167505,7 +167623,7 @@ zR
 zR
 zR
 zR
-zR
+gt
 Gh
 zR
 Ak
@@ -167767,13 +167885,13 @@ zR
 zR
 zR
 zR
-zR
+gt
 zR
 zR
 OS
-xR
-xR
-xR
+xJ
+HR
+Vv
 xR
 eC
 zR
@@ -168026,16 +168144,16 @@ zR
 zR
 zR
 zR
-zR
+EF
 OS
+MZ
 xR
-xR
-xR
+MZ
 xR
 OS
 zR
 zR
-zR
+tU
 Gh
 Gh
 Gh
@@ -168277,7 +168395,7 @@ Gh
 Gh
 Gh
 zR
-zR
+gt
 Gh
 Ak
 zR
@@ -168538,7 +168656,7 @@ zR
 zR
 Ak
 zR
-zR
+qj
 zR
 zR
 zR
@@ -169051,6 +169169,7 @@ zR
 zR
 Gh
 Gh
+aA
 zR
 zR
 zR
@@ -169059,8 +169178,7 @@ zR
 zR
 zR
 zR
-zR
-zR
+IX
 zR
 zR
 zR
@@ -169567,10 +169685,10 @@ Gh
 Gh
 Gh
 zR
-zR
+EF
 zR
 OS
-xR
+un
 xR
 xR
 xR
@@ -169827,12 +169945,12 @@ OS
 MD
 zR
 OS
+Mc
 xR
-xR
-xR
-xR
-xR
-xR
+Wu
+Wu
+Wu
+HR
 OS
 zR
 zR
@@ -170080,15 +170198,15 @@ Gh
 Gh
 Gh
 OS
-xR
-eC
-zR
+gC
+RZ
+fo
 OS
 xR
 xR
-xR
-xR
-xR
+Wu
+Wu
+Wu
 xR
 OS
 zR
@@ -170337,12 +170455,12 @@ Gh
 Gh
 Gh
 OS
-xR
+ml
 OS
 zR
 OS
 xR
-xR
+HR
 xR
 xR
 xR
@@ -170859,7 +170977,7 @@ zR
 zR
 zR
 zR
-zR
+CE
 zR
 zR
 zR
@@ -171366,14 +171484,14 @@ Gh
 Gh
 zR
 zR
+tU
 zR
 zR
 zR
 zR
 zR
 zR
-zR
-zR
+tU
 Gh
 Gh
 Gh
@@ -171625,11 +171743,11 @@ Gh
 Gh
 Gh
 Gh
+fA
 zR
+fA
 zR
-zR
-zR
-zR
+fA
 Gh
 Gh
 Gh
