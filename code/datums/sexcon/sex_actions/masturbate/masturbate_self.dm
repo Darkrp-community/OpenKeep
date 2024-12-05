@@ -13,7 +13,7 @@
 		return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!user.gender == FEMALE)
+	if(user.gender == MALE)
 		return FALSE
 	return TRUE
 

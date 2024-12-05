@@ -16,6 +16,7 @@
 	/// Our charge gauge
 	var/charge = SEX_MAX_CHARGE
 	/// Whether we want to screw until finished, or non stop
+	var/do_until_finished = TRUE
 	var/last_arousal_increase_time = 0
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
@@ -65,6 +66,8 @@
 	return FALSE
 
 /datum/sex_controller/proc/finished_check()
+	if(!do_until_finished)
+		return FALSE
 	if(!just_ejaculated())
 		return FALSE
 	return TRUE
@@ -457,19 +460,19 @@
 	switch(passed_force)
 		if(SEX_FORCE_LOW)
 			if(giving)
-				return 0.8
+				return 2.0
 			else
-				return 0.8
+				return 2.0
 		if(SEX_FORCE_MID)
 			if(giving)
-				return 1.2
+				return 2.2
 			else
-				return 1.2
+				return 2.2
 		if(SEX_FORCE_HIGH)
 			if(giving)
-				return 1.6
+				return 2.6
 			else
-				return 1.2
+				return 2.2
 
 /datum/sex_controller/proc/get_force_string()
 	switch(force)
