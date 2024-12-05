@@ -5,7 +5,7 @@
 /datum/sex_action/throat_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.gender == MALE)
+	if(user.gender == FEMALE)
 		return FALSE
 	return TRUE
 
@@ -16,9 +16,7 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
-	if(!user.gender == MALE)
-		return FALSE
-	if(!user.sexcon.can_use_penis())
+	if(user.gender == FEMALE)
 		return
 	return TRUE
 

@@ -4,7 +4,7 @@
 /datum/sex_action/titjob/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.gender == MALE)
+	if(user.gender == FEMALE)
 		return
 	if(!target.gender == FEMALE)
 		return
@@ -17,7 +17,7 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_CHEST))
 		return FALSE
-	if(!user.gender == MALE)
+	if(user.gender == FEMALE)
 		return FALSE
 	if(!target.gender == FEMALE)
 		return FALSE

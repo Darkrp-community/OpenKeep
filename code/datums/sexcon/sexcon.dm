@@ -238,7 +238,7 @@
 	return TRUE
 
 /datum/sex_controller/proc/can_ejaculate()
-	if(!user.gender == MALE)
+	if(user.gender == FEMALE)
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
@@ -254,7 +254,7 @@
 	ejaculate()
 
 /datum/sex_controller/proc/can_use_penis()
-	if(!user.gender == MALE)
+	if(user.gender == FEMALE)
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
