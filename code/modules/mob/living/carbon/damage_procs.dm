@@ -186,7 +186,6 @@
 		parts -= picked
 	if(updating_health)
 		updatehealth()
-		update_stamina()
 	if(update)
 		update_damage_overlays()
 
@@ -226,4 +225,3 @@
 		updatehealth()
 	if(update)
 		update_damage_overlays()
-	update_stamina()
