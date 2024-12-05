@@ -1,5 +1,3 @@
-GLOBAL_LIST_EMPTY(chosen_music)
-
 /area/vanderlin/start
 	name = "start vdl"
 	icon_state = "start"
@@ -430,7 +428,7 @@ GLOBAL_LIST_EMPTY(chosen_music)
 	droning_sound_dusk = null
 	droning_sound_night = null
 	droning_sound_dusk = null
-	droning_sound_night = vanderlin
+	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
 /area/vanderlin/indoors/town/cell
