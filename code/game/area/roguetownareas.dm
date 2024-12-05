@@ -369,7 +369,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/indoors/town
 	name = "indoors"
-	icon_state = "blueold"
+	icon_state = "indoor_town"
 	droning_sound = 'sound/music/area/indoor.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
@@ -543,6 +543,15 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/steward
 	first_time_text = "Stewards Office"
 	icon_state = "steward"
+
+/area/rogue/indoors/town/smithy
+	name = "Smithy"
+	icon_state = "smithy"
+	droning_sound = 'sound/music/area/dwarf.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = null
+	first_time_text = "The Smithy"
+	converted_type = /area/rogue/outdoors/exposed/dwarf
 
 /area/rogue/indoors/town/dwarfin
 	name = "makers quarter"
