@@ -66,7 +66,7 @@
 /datum/map_template/dwarf_outpost_ii
 	name = "Dwarf Outpost Beastmen"
 	id = "Dwarf_Outpost_2"
-	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_2.dmm"
 
 
 /*	..................   Roadblock   ................... */
