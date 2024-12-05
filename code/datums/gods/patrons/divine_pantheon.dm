@@ -120,6 +120,6 @@
 	sins = "Sadism, Abandonment, Ruining Beauty"
 	boons = "None... yet."
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/bud
+	t1 = /obj/effect/proc_holder/spell/invoked/instill_perfection
 	t2 = /obj/effect/proc_holder/spell/invoked/projectile/eoracurse
-	t3 = null
+	t3 = /obj/effect/proc_holder/spell/invoked/bud

@@ -408,6 +408,32 @@
 		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
 
 
+/*-----------------\
+|   Eora Miracles  |
+\-----------------*/
+
+/datum/status_effect/buff/divine_beauty
+	id = "divine_beauty"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/divine_beauty
+	duration = 5 MINUTES
+
+/datum/status_effect/buff/divine_beauty/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/divine_beauty)
+
+/datum/status_effect/buff/divine_beauty/on_remove()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/divine_beauty)
+
+/atom/movable/screen/alert/status_effect/buff/divine_beauty
+	name = "Divine Beauty"
+	desc = span_nicegreen("Everything about me feels fresh and perfect!")
+	icon_state = "beauty"
+
 
 
 // BARDIC BUFFS BELOW
