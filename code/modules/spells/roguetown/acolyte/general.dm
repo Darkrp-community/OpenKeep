@@ -223,7 +223,7 @@
 	name = "Vicious Mockery"
 	releasedrain = 50
 	associated_skill = /datum/skill/misc/music
-	charge_max = 10 MINUTES
+	charge_max = 30 SECONDS
 	range = 7
 
 /obj/effect/proc_holder/spell/invoked/mockery/cast(list/targets, mob/living/user)
@@ -274,7 +274,7 @@
 					if(4)
 						user.say("Ohh, is the milk drinker gonna cry?", forced = "spell")
 					if(5)
-						user.say("You couldn't dent a grain a sand with a pick from Malum!", forced = "spell")
+						user.say("Ye couldn't dent a grain a sand with a pick from Malum!", forced = "spell")
 
 			if("tiefling")
 				switch(rand(1,5))
