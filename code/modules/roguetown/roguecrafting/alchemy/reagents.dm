@@ -16,14 +16,13 @@
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.blood_volume = min(M.blood_volume+15, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-2*REM, 0)
-		M.adjustFireLoss(-2*REM, 0)
-		M.adjustOxyLoss(-1, 0)
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-3*REM, 0)
+		M.adjustFireLoss(-3*REM, 0)
+		M.adjustOxyLoss(-2, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-2*REM, 0)
+		M.adjustCloneLoss(-3*REM, 0)
 	..()
-	. = 1
 
 /datum/reagent/medicine/stronghealth
 	name = "Strong Health Potion"
@@ -35,11 +34,11 @@
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.blood_volume = min(M.blood_volume+80, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-8*REM, 0)
-		M.adjustFireLoss(-8*REM, 0)
-		M.adjustOxyLoss(-4, 0)
+		M.adjustBruteLoss(-12*REM, 0)
+		M.adjustFireLoss(-12*REM, 0)
+		M.adjustOxyLoss(-8, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-8*REM, 0)
+		M.adjustCloneLoss(-12*REM, 0)
 	..()
 	. = 1
 
@@ -56,7 +55,7 @@
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_energy(50)
+		M.adjust_energy(30)
 	..()
 
 /datum/reagent/medicine/strongmana
@@ -67,7 +66,7 @@
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_energy(200)
+		M.adjust_energy(120)
 	..()
 
 /datum/reagent/medicine/stampot
