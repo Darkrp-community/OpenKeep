@@ -2756,7 +2756,7 @@
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
 	lockid = "elder";
-	name = "Mayor's House"
+	name = "mayor's House"
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors)
@@ -17057,7 +17057,7 @@
 /area/rogue/outdoors/exposed/church)
 "qWc" = (
 /obj/structure/mineral_door/wood/red{
-	lockid = "woodsm";
+	lockid = "elder";
 	name = "Mayors room"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
