@@ -11,8 +11,6 @@
 	var/speed = SEX_SPEED_MID
 	/// Enum of desired force
 	var/force = SEX_FORCE_MID
-	/// Enum of manual arousal state
-	var/manual_arousal = SEX_MANUAL_AROUSAL_DEFAULT
 	/// Our arousal
 	var/arousal = 0
 	/// Our charge gauge
@@ -79,9 +77,6 @@
 
 /datum/sex_controller/proc/adjust_force(amt)
 	force = clamp(force + amt, SEX_FORCE_MIN, SEX_FORCE_MAX)
-
-/datum/sex_controller/proc/adjust_arousal_manual(amt)
-	manual_arousal = clamp(manual_arousal + amt, SEX_MANUAL_AROUSAL_MIN, SEX_MANUAL_AROUSAL_MAX)
 
 /datum/sex_controller/proc/update_pink_screen()
 	var/severity = 0
@@ -259,9 +254,9 @@
 	ejaculate()
 
 /datum/sex_controller/proc/can_use_penis()
-	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
-		return FALSE
 	if(!user.gender == MALE)
+		return FALSE
+	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
 	return TRUE
 
@@ -294,11 +289,7 @@
 	var/list/dat = list()
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
-	var/manual_arousal_name = get_manual_arousal_string()
-	if(!user.gender == MALE)
-		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
-	else
-		dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a> ~|~ <a href='?src=[REF(src)];task=manual_arousal_down'>\<</a> [manual_arousal_name] <a href='?src=[REF(src)];task=manual_arousal_up'>\></a></center>"
+	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
 	dat += "<center>| <a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a> |</center>"
 	if(target == user)
 		dat += "<center>Doing unto yourself</center>"
@@ -353,10 +344,6 @@
 			adjust_force(1)
 		if("force_down")
 			adjust_force(-1)
-		if("manual_arousal_up")
-			adjust_arousal_manual(1)
-		if("manual_arousal_down")
-			adjust_arousal_manual(-1)
 		if("toggle_finished")
 			do_until_finished = !do_until_finished
 	show_ui()
@@ -507,17 +494,6 @@
 			return "<font color='#e9a8d1'>STEADY</font>"
 		if(SEX_SPEED_HIGH)
 			return "<font color='#f05ee1'>QUICK</font>"
-
-/datum/sex_controller/proc/get_manual_arousal_string()
-	switch(manual_arousal)
-		if(SEX_MANUAL_AROUSAL_DEFAULT)
-			return "<font color='#eac8de'>NATURAL</font>"
-		if(SEX_MANUAL_AROUSAL_UNAROUSED)
-			return "<font color='#e9a8d1'>UNAROUSED</font>"
-		if(SEX_MANUAL_AROUSAL_PARTIAL)
-			return "<font color='#f05ee1'>PARTIALLY ERECT</font>"
-		if(SEX_MANUAL_AROUSAL_FULL)
-			return "<font color='#d146f5'>FULLY ERECT</font>"
 
 /datum/sex_controller/proc/get_generic_force_adjective()
 	switch(force)
