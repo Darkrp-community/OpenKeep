@@ -459,6 +459,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/tavern
 	name = "tavern"
 	icon_state = "tavern"
+	first_time_text = "Skullcrack Inn"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
 	droning_sound = 'sound/music/jukeboxes/tavern1.ogg'
@@ -534,6 +535,14 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/thieves_guild
 	first_time_text = "Thieves Guild"
 	icon_state = "thieves_guild"
+
+/area/rogue/indoors/town/merc_guild
+	first_time_text = "Mercenary Guild"
+	icon_state = "merc_guild"
+
+/area/rogue/indoors/town/steward
+	first_time_text = "Stewards Office"
+	icon_state = "steward"
 
 /area/rogue/indoors/town/dwarfin
 	name = "makers quarter"
