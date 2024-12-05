@@ -456,7 +456,7 @@
 	. = ..()
 	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
 /datum/component/spawner/ancient_skeleton_guard
-	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
+//	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
 	spawn_time = 0
 	spawn_delay = 0
 	max_mobs = 1
