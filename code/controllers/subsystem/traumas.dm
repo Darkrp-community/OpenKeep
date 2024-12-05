@@ -25,6 +25,7 @@ SUBSYSTEM_DEF(traumas)
 		"conspiracies" = strings(PHOBIA_FILE, "conspiracies"),
 		"birds" = strings(PHOBIA_FILE, "birds"),
 		"falling" = strings(PHOBIA_FILE, "falling"),
+		"religion" = strings(PHOBIA_FILE, "religion")
 	)
 
 	phobia_mobs = list(
