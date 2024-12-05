@@ -724,6 +724,7 @@
 #include "code\datums\sexcon\sex_actions\masturbate\masturbate_self.dm"
 #include "code\datums\sexcon\sex_actions\sex\anal_sex.dm"
 #include "code\datums\sexcon\sex_actions\sex\throat_sex.dm"
+#include "code\datums\sexcon\sex_actions\sex\vaginal_ride_sex.dm"
 #include "code\datums\sexcon\sex_actions\sex\vaginal_sex.dm"
 #include "code\datums\skills\_skill.dm"
 #include "code\datums\skills\combat.dm"

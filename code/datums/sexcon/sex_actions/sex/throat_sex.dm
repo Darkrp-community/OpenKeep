@@ -1,5 +1,5 @@
 /datum/sex_action/throat_sex
-	name = "Fuck their throat"
+	name = "use their throat"
 	stamina_cost = 1.0
 
 /datum/sex_action/throat_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)

@@ -1,5 +1,5 @@
 /datum/sex_action/facesitting
-	name = "Sit on their face"
+	name = "mouth ride"
 
 /datum/sex_action/facesitting/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)

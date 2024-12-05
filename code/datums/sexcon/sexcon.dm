@@ -135,7 +135,7 @@
 
 /datum/sex_controller/proc/ejaculate()
 	log_combat(user, user, "Ejaculated")
-	user.visible_message(span_love("[user] makes a mess!"))
+	user.visible_message(span_love("[user] spills on the floor!"))
 	playsound(user, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(user))
 	after_ejaculation()
@@ -261,6 +261,8 @@
 /datum/sex_controller/proc/can_use_penis()
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
+	if(!user.gender == MALE)
+		return FALSE
 	return TRUE
 
 /datum/sex_controller/proc/considered_limp()
@@ -326,7 +328,7 @@
 			dat += "</tr><tr>"
 
 	dat += "</tr></table>"
-	var/datum/browser/popup = new(user, "sexcon", "<center>Sate Desire</center>", 490, 550)
+	var/datum/browser/popup = new(user, "sexcon", "<center>Pleasures</center>", 490, 550)
 	popup.set_content(dat.Join())
 	popup.open()
 	return
