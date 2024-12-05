@@ -20,7 +20,6 @@
 	var/body_part = 0 //bitflag used to check which clothes cover this bodypart
 	var/use_digitigrade = NOT_DIGITIGRADE //Used for alternate legs, useless elsewhere
 	var/held_index = 0 //are we a hand? if so, which one!
-	var/is_pseudopart = FALSE //For limbs that don't really exist, eg chainsaws
 
 	var/disabled = BODYPART_NOT_DISABLED //If disabled, limb is as good as missing
 	var/body_damage_coeff = 1 //Multiplier of the limb's damage that gets applied to the mob
