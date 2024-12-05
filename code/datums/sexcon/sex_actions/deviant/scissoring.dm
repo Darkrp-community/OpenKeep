@@ -6,7 +6,7 @@
 		return FALSE
 	if(!user.gender == FEMALE)
 		return
-	if(!target.gender == FEMALE)
+	if(target.gender == MALE)
 		return
 	return TRUE
 
@@ -19,7 +19,7 @@
 		return FALSE
 	if(!user.gender == FEMALE)
 		return FALSE
-	if(!target.gender == FEMALE)
+	if(target.gender == MALE)
 		return FALSE
 	return TRUE
 

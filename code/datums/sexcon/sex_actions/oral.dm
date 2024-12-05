@@ -4,7 +4,7 @@
 /datum/sex_action/cunnilingus/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!target.gender == FEMALE)
+	if(target.gender == MALE)
 		return FALSE
 	return TRUE
 
@@ -15,7 +15,7 @@
 		return FALSE
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_MOUTH))
 		return FALSE
-	if(!target.gender == FEMALE)
+	if(target.gender == MALE)
 		return FALSE
 	return TRUE
 
@@ -34,7 +34,7 @@
 		target.sexcon.cum_into()
 
 /datum/sex_action/cunnilingus/on_finish(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	user.visible_message(span_warning("[user] stops sucking [target]'s clit ..."))
+	user.visible_message(span_warning("[user] stops eating [target]."))
 
 /datum/sex_action/cunnilingus/is_finished(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(target.sexcon.finished_check())

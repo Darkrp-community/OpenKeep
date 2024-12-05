@@ -16,7 +16,6 @@
 	/// Our charge gauge
 	var/charge = SEX_MAX_CHARGE
 	/// Whether we want to screw until finished, or non stop
-	var/do_until_finished = TRUE
 	var/last_arousal_increase_time = 0
 	var/last_ejaculation_time = 0
 	var/last_moan = 0
@@ -66,8 +65,6 @@
 	return FALSE
 
 /datum/sex_controller/proc/finished_check()
-	if(!do_until_finished)
-		return FALSE
 	if(!just_ejaculated())
 		return FALSE
 	return TRUE
@@ -165,7 +162,7 @@
 	charge = clamp(amount, 0, SEX_MAX_CHARGE)
 	var/after_empty = (charge < CHARGE_FOR_CLIMAX)
 	if(empty && !after_empty)
-		to_chat(user, span_notice("I feel like I'm not so spent anymore"))
+		to_chat(user, span_notice("I feel like I'm not so spent anymore."))
 	if(!empty && after_empty)
 		to_chat(user, span_notice("I'm spent!"))
 
@@ -290,7 +287,6 @@
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
 	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
-	dat += "<center>| <a href='?src=[REF(src)];task=toggle_finished'>[do_until_finished ? "UNTIL IM FINISHED" : "UNTIL I STOP"]</a> |</center>"
 	if(target == user)
 		dat += "<center>Doing unto yourself</center>"
 	else
@@ -344,8 +340,6 @@
 			adjust_force(1)
 		if("force_down")
 			adjust_force(-1)
-		if("toggle_finished")
-			do_until_finished = !do_until_finished
 	show_ui()
 
 /datum/sex_controller/proc/try_stop_current_action()
