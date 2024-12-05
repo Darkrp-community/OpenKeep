@@ -57,7 +57,7 @@
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.energy_add(50)
+		M.adjust_energy(50)
 	..()
 	. = 1
 
@@ -69,7 +69,7 @@
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.energy_add(200)
+		M.adjust_energy(200)
 	..()
 	. = 1
 
@@ -85,7 +85,7 @@
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.stamina_add(50)
+		M.adjust_stamina(50)
 	..()
 
 /datum/reagent/medicine/strongstam
@@ -96,7 +96,7 @@
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.stamina_add(200)
+		M.adjust_stamina(200)
 	..()
 
 /datum/reagent/medicine/antidote
@@ -300,7 +300,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/stampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.stamina_add(-25) //Slowly leech stamina
+		M.adjust_stamina(-25) //Slowly leech stamina
 	return ..()
 
 /datum/reagent/strongstampoisons
@@ -313,7 +313,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/strongstampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.stamina_add(-150) //Rapidly leech stamina
+		M.adjust_stamina(-150) //Rapidly leech stamina
 	return ..()
 
 

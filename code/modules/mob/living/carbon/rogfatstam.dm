@@ -7,7 +7,7 @@
 		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
 			added = round(added * 0.5, 1)
 		if(stamina >= 1)
-			stamina_add(added)
+			adjust_stamina(added)
 		else
 			stamina = 0
 
@@ -22,12 +22,12 @@
 	max_energy = (STAEND + (athletics_skill / 2) ) * 100
 	if(cmode)
 		if(!HAS_TRAIT(src, TRAIT_BREADY))
-			energy_add(-2)
+			adjust_energy(-2)
 
-/mob/proc/energy_add(added as num)
+/mob/proc/adjust_energy(added as num)
 	return
 
-/mob/living/energy_add(added as num)
+/mob/living/adjust_energy(added as num)
 	///this trait affects both stamina and energy since they are part of the same system.
 	if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 		return TRUE
@@ -47,15 +47,15 @@
 		update_health_hud()
 		return TRUE
 
-/mob/proc/stamina_add(added as num)
+/mob/proc/adjust_stamina(added as num)
 	return TRUE
 
-/mob/living/stamina_add(added as num, emote_override, force_emote = TRUE) //call update_stamina here and set last_fatigued, return false when not enough fatigue left
+/mob/living/adjust_stamina(added as num, emote_override, force_emote = TRUE) //call update_stamina here and set last_fatigued, return false when not enough fatigue left
 	if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 		return TRUE
 	stamina = CLAMP(stamina+added, 0, maximum_stamina)
 	if(added > 0)
-		energy_add(added * -1)
+		adjust_energy(added * -1)
 	if(added >= 5)
 		if(energy <= 0)
 			if(iscarbon(src))

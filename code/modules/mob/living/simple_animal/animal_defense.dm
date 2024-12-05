@@ -190,7 +190,7 @@
 		target.lastattackerckey = user.ckey
 		if(target.mind)
 			target.mind.attackedme[user.real_name] = world.time
-		user.stamina_add(15)
+		user.adjust_stamina(15)
 
 /mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armorcheck = "blunt")
 	var/temp_damage = damage

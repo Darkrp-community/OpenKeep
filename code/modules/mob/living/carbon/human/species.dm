@@ -2188,7 +2188,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		target.lastattackerckey = user.ckey
 		if(target.mind)
 			target.mind.attackedme[user.real_name] = world.time
-		user.stamina_add(15)
+		user.adjust_stamina(15)
 		user.OffBalance(15)
 		target.forcesay(GLOB.hit_appends)
 
