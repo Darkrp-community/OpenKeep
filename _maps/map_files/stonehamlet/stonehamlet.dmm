@@ -2158,6 +2158,13 @@
 	},
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/dwarfin)
+"cgm" = (
+/obj/item/grown/log/tree/stick,
+/turf/open/water/cleanshallow,
+/area/rogue/under/cave{
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30, /mob/living/carbon/human/species/skeleton/npc/ambush = 10);
+	first_time_text = "CATACOMBS"
+	})
 "cgo" = (
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/rogue/woodturned/saiga,
@@ -3337,11 +3344,11 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "dzZ" = (
-/obj/structure/ladder,
-/turf/open/floor/rogue/wood/saiga,
-/area/rogue/under/town/caverogue{
-	first_time_text = "DEEP MINESHAFT"
-	})
+/obj/structure/flora/rock/pile,
+/obj/item/natural/stone,
+/obj/structure/flora/rock/pile,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave)
 "dAb" = (
 /obj/structure/flora/roguegrass/water/reeds,
 /turf/open/water/swamp/deep,
@@ -4986,8 +4993,11 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/spooky)
 "eXb" = (
-/turf/closed,
-/area/rogue)
+/obj/structure/ladder,
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/under/town/caverogue{
+	first_time_text = "DEEP MINESHAFT"
+	})
 "eXr" = (
 /obj/item/natural/dirtclod,
 /obj/structure/bars/pipe{
@@ -8931,10 +8941,6 @@
 	dir = 4
 	},
 /area/rogue/outdoors/town/roofs)
-"iZd" = (
-/obj/structure/ladder,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cave)
 "jaf" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/under/town/caverogue{
@@ -10610,13 +10616,6 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
-"kCS" = (
-/obj/effect/spawner/roguemap/tree,
-/obj/effect/spawner/roguemap/tree,
-/obj/effect/spawner/roguemap/tree,
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/rtfield/hamlet)
 "kDg" = (
 /obj/structure/closet/dirthole/grave,
 /turf/open/floor/rogue/grass,
@@ -13745,9 +13744,7 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "nRU" = (
-/obj/structure/flora/rock/pile,
-/obj/item/natural/stone,
-/obj/structure/flora/rock/pile,
+/obj/structure/ladder,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "nSF" = (
@@ -17791,6 +17788,13 @@
 "rDz" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/exposed/manorgarri)
+"rDB" = (
+/obj/item/natural/stone,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/under/cave{
+	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30, /mob/living/carbon/human/species/skeleton/npc/ambush = 10);
+	first_time_text = "CATACOMBS"
+	})
 "rEa" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/outdoors/town/roofs)
@@ -28946,9 +28950,9 @@ psp
 psp
 psp
 psp
+cgm
 xKf
-xKf
-xKf
+cgm
 psp
 psp
 psp
@@ -29529,7 +29533,7 @@ psp
 psp
 psp
 psp
-dsq
+rDB
 dsq
 psp
 psp
@@ -29879,8 +29883,8 @@ cZs
 sNy
 hsL
 sNy
+dzZ
 aat
-iZd
 aat
 sRI
 cZs
@@ -54289,9 +54293,9 @@ fyl
 www
 fNt
 fyl
-vKe
+fyl
 www
-fNt
+fyl
 fyl
 psp
 psp
@@ -54483,8 +54487,8 @@ gFp
 www
 fyl
 fyl
-kCS
-rQE
+fyl
+fyl
 fyl
 fyl
 mDZ
@@ -54520,8 +54524,8 @@ sNy
 psp
 psp
 nXA
-oqz
 rXW
+oqz
 jXR
 hsL
 sNy
@@ -55064,7 +55068,7 @@ gFp
 gFp
 www
 www
-vKe
+fyl
 fyl
 fNt
 www
@@ -55258,7 +55262,7 @@ fyl
 fyl
 www
 fyl
-vKe
+fyl
 vKe
 fNt
 fyl
@@ -55453,10 +55457,10 @@ sRR
 iDL
 fNt
 fyl
-vKe
+fyl
 www
-vKe
-vKe
+fyl
+fyl
 fyl
 mDZ
 fyl
@@ -55649,7 +55653,7 @@ www
 vKe
 fyl
 fyl
-www
+fyl
 vKe
 fNt
 fNt
@@ -55840,7 +55844,7 @@ fNt
 fNt
 iDL
 fyl
-www
+fyl
 fyl
 fNt
 fyl
@@ -56033,8 +56037,8 @@ fyl
 fyl
 fNt
 fNt
-rQE
-www
+fyl
+fyl
 vKe
 fNt
 iDL
@@ -56228,11 +56232,11 @@ oHv
 fNt
 fNt
 www
-www
+fyl
 fyl
 fNt
 fNt
-www
+fyl
 fNt
 fNt
 fNt
@@ -56426,8 +56430,8 @@ fyl
 vKe
 fyl
 fyl
-www
-fNt
+fyl
+fyl
 fyl
 fNt
 fyl
@@ -73037,10 +73041,10 @@ psp
 psp
 psp
 psp
-eXb
-eXb
-eXb
-eXb
+psp
+psp
+psp
+psp
 psp
 psp
 psp
@@ -73231,10 +73235,10 @@ psp
 psp
 psp
 psp
-eXb
-eXb
-eXb
-eXb
+psp
+psp
+psp
+psp
 psp
 psp
 psp
@@ -73425,10 +73429,10 @@ psp
 psp
 psp
 psp
-eXb
-eXb
-eXb
-eXb
+psp
+psp
+psp
+psp
 psp
 psp
 psp
@@ -73619,10 +73623,10 @@ psp
 psp
 psp
 psp
-eXb
-eXb
-eXb
-eXb
+psp
+psp
+psp
+psp
 psp
 psp
 psp
@@ -73813,10 +73817,10 @@ psp
 psp
 psp
 psp
-eXb
-eXb
-eXb
-eXb
+psp
+psp
+psp
+psp
 psp
 psp
 psp
@@ -74007,10 +74011,10 @@ psp
 psp
 psp
 psp
-eXb
-eXb
-eXb
-eXb
+psp
+psp
+psp
+psp
 psp
 psp
 psp
@@ -79159,7 +79163,7 @@ sNy
 jXR
 ahS
 nXA
-rXW
+eXb
 ahS
 jXR
 sNy
@@ -79353,7 +79357,7 @@ hsL
 jXR
 jaf
 nXA
-dzZ
+rXW
 nXA
 jXR
 hsL
@@ -79546,7 +79550,7 @@ hsL
 sNy
 sNy
 nXA
-nXA
+eXb
 rXW
 nXA
 hsL
@@ -103992,7 +103996,7 @@ hsL
 sNy
 ahS
 nXA
-rXW
+eXb
 ahS
 psp
 hsL
@@ -104381,7 +104385,7 @@ sNy
 eEa
 eEa
 oqz
-rXW
+eEa
 psp
 hsL
 sNy
