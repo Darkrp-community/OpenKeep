@@ -1562,7 +1562,6 @@
 "fD" = (
 /obj/item/reagent_containers/glass/cup/golden,
 /obj/structure/table/wood,
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "fE" = (
@@ -1835,7 +1834,6 @@
 /obj/structure/table/wood{
 	icon_state = "longtable"
 	},
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/center,
 /area/rogue/indoors/town/manor)
 "gD" = (
