@@ -277,13 +277,6 @@
 				if(!locate(/obj/structure) in NT)
 					var/obj/structure/flora/newbranch/snow/TC = new(NT)
 					TC.dir = D
-		else
-			if(prob(70))
-				if(isopenturf(NT))
-					if(!istype(loc, /turf/open/transparent/openspace)) //must be lowest
-						if(!locate(/obj/structure) in NT)
-							var/obj/structure/flora/newbranch/leafless/scorched/T = new(NT)
-							T.dir = D
 
 /*
 	END SNOW
