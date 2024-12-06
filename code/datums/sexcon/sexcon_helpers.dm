@@ -51,7 +51,7 @@
 		log_combat(user, target, "tried to initiate sex with unconscious mob")
 		user.visible_message(span_warning("They're asleep."))
 		return
-	if(stat != DEAD)
+	if(stat == DEAD)
 		log_combat(user, target, "tried to initiate sex with dead mob")
 		user.visible_message(span_warning("That's a corpse..."))
 		return
