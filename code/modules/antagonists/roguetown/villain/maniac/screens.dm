@@ -14,7 +14,7 @@
 			'sound/villain/hall_appear3.ogg',
 		)
 		scared.playsound_local(scared, pick(spookies), vol = 100, vary = FALSE)
-	icon_state = "hall[rand(1, hall_amount)]"
+	icon_state = "hall[rand(1, 9)]"
 	animate(src, alpha = 255, time = fade_in, easing = BOUNCE_EASING | EASE_IN | EASE_OUT)
 	animate(time = duration, easing = BOUNCE_EASING | EASE_IN | EASE_OUT)
 	animate(alpha = 0, time = fade_out, easing = LINEAR_EASING)
