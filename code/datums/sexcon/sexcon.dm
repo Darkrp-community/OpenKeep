@@ -4,7 +4,7 @@ The sex actions you can perform are gender-locked, as opposed to being specifici
 If you want to lock an action to one sex, don't do if(!user.gender == [gender]), do if(user.gender == [gender]). I don't know why, but ! doesn't work on that and specifically that.
 If, say, you wanted to seperate sex and gender without going to the trouble of adding cocks and pussies, you could simply code seperate variables for your sex and gender identity (based on pronouns or some shit IDK).
 ejaculate() is actually just orgasm, for both sexes. I found this out the hard way after somehow making female characters unable to finish while testing this for the first time.
-*/
+Admin logging is provided for orgasms and if you try to initiate sex with corpses, sleeping people, or people in combat mode. You can't bang in combat mode, as anti-zape protection.*/
 
 /datum/sex_controller
 	/// The user and the owner of the controller
@@ -117,6 +117,18 @@ ejaculate() is actually just orgasm, for both sexes. I found this out the hard w
 /datum/sex_controller/proc/start(mob/living/carbon/human/new_target)
 	if(!ishuman(new_target))
 		return
+	if(new_target.living == FALSE)
+		log_combat(user, target, "Tried to initiate sex with dead mob")
+		user.visible_message(span_warning("That's a corpse..."))
+		return FALSE
+	if(new_target.IsUnconscious())
+		log_combat(user, target, "Tried to initiate sex with unconscious mob")
+		user.visible_message(span_warning("They're asleep."))
+		return FALSE
+	if(new_target.cmode)
+		log_combat(user, target, "Tried to initiate sex with mob in combat mode")
+		user.visible_message(span_warning("They're unwilling."))
+		return FALSE
 	set_target(new_target)
 	show_ui()
 
@@ -447,6 +459,20 @@ ejaculate() is actually just orgasm, for both sexes. I found this out the hard w
 
 /datum/sex_controller/proc/set_target(mob/living/carbon/human/new_target)
 	target = new_target
+
+/mob/living/carbon/human/proc/on_virgin_loss()
+	var/mob/living/carbon/P = src
+	virginity = FALSE
+	if(mind)
+		switch(mind.assigned_role)
+			if("Priest")
+				P.add_stress(/datum/stressevent/virginchurch)
+			if("Acolyte")
+				P.add_stress(/datum/stressevent/virginchurch)
+			if("Cleric")
+				P.add_stress(/datum/stressevent/virginchurch)
+			if("Paladin")
+				P.add_stress(/datum/stressevent/virginchurch)
 
 /datum/sex_controller/proc/get_speed_multiplier()
 	switch(speed)
