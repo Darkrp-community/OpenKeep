@@ -117,29 +117,17 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 /datum/sex_controller/proc/start(mob/living/carbon/human/new_target)
 	if(!ishuman(new_target))
 		return
-	if(new_target.living == FALSE)
-		log_combat(user, target, "Tried to initiate sex with dead mob")
-		user.visible_message(span_warning("That's a corpse..."))
-		return FALSE
-	if(new_target.IsUnconscious())
-		log_combat(user, target, "Tried to initiate sex with unconscious mob")
-		user.visible_message(span_warning("They're asleep."))
-		return FALSE
-	if(new_target.cmode)
-		log_combat(user, target, "Tried to initiate sex with mob in combat mode")
-		user.visible_message(span_warning("They're unwilling."))
-		return FALSE
 	set_target(new_target)
 	show_ui()
 
 /datum/sex_controller/proc/cum_onto()
-	log_combat(user, target, "Came onto the target")
+	log_combat(user, target, "came onto the target")
 	playsound(target, 'sound/misc/mat/endout.ogg', 50, TRUE, ignore_walls = FALSE)
 	add_cum_floor(get_turf(target))
 	after_ejaculation()
 
 /datum/sex_controller/proc/cum_into(oral = FALSE)
-	log_combat(user, target, "Came inside the target")
+	log_combat(user, target, "came inside the target")
 	if(oral)
 		playsound(target, pick(list('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg')), 100, FALSE, ignore_walls = FALSE)
 	else
@@ -149,7 +137,7 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 		after_intimate_climax()
 
 /datum/sex_controller/proc/ejaculate()
-	log_combat(user, user, "Orgasmed")
+	log_combat(user, user, "orgasmed")
 	if(user.gender == FEMALE)
 		user.visible_message(span_love("[user] tightens in ecstasy!"))
 		after_ejaculation()

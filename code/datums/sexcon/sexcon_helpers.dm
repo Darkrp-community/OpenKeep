@@ -45,8 +45,20 @@
 	if(target != user)
 		return
 	if(!user.can_do_sex())
-		to_chat(user, "<span class='warning'>I can't do this.</span>")
+		user.visible_message(span_warning("I can't do this."))
 		return
+	if(stat != CONSCIOUS)
+		log_combat(user, target, "tried to initiate sex with unconscious mob")
+		user.visible_message(span_warning("They're asleep."))
+		return
+	if(stat != DEAD)
+		log_combat(user, target, "tried to initiate sex with dead mob")
+		user.visible_message(span_warning("That's a corpse..."))
+		return
+	if(target.cmode)
+		log_combat(user, target, "tried to initiate sex with mob in combat mode")
+		user.visible_message(span_warning("They're unwilling."))
+		return FALSE
 	user.sexcon.start(src)
 
 /mob/living/proc/can_do_sex()

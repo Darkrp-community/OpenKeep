@@ -4,7 +4,7 @@
 /datum/sex_action/scissoring/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.gender == FEMALE)
+	if(user.gender == MALE)
 		return
 	if(target.gender == MALE)
 		return
@@ -17,7 +17,7 @@
 		return FALSE
 	if(!get_location_accessible(target, BODY_ZONE_PRECISE_GROIN))
 		return FALSE
-	if(!user.gender == FEMALE)
+	if(user.gender == MALE)
 		return FALSE
 	if(target.gender == MALE)
 		return FALSE
