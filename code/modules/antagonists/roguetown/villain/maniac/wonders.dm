@@ -152,7 +152,7 @@
 				mark_victim(victim)
 				break
 
-/obj/structure/wonder/proc/mark_victim(var/mob/living/carbon/human/V)
+/obj/structure/wonder/proc/mark_victim(mob/living/carbon/human/V)
 	var/obj/item/organ/heart/H = V.getorganslot(ORGAN_SLOT_HEART)
 	if(H && !QDELETED(dream_master))
 		if(!length(H.maniacs))
