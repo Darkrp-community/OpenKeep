@@ -139,7 +139,7 @@
 	if(isnull(tree_type))
 		tree_type = pick(list(1,2))
 	dir = pick(GLOB.cardinals)
-	//SStreesetup.initialize_me |= src
+	SStreesetup.initialize_me |= src
 	build_trees()
 	update_icon()
 	if(istype(loc, /turf/open/floor/rogue/grass))
@@ -189,8 +189,6 @@
 		T.base_state = "center-leaf[rand(1,2)]"
 		T.tree_type = src.tree_type
 		T.update_icon()
-		T.build_branches()
-		T.build_leafs()
 
 /obj/structure/flora/newtree/proc/build_leafs()
 	for(var/D in GLOB.diagonals)
@@ -245,8 +243,6 @@
 		var/obj/structure/flora/newtree/snow/T = new(target)
 		T.base_state = "center-leaf-cold1"
 		T.update_icon()
-		T.build_branches()
-		T.build_leafs()
 
 /obj/structure/flora/newtree/snow/build_leafs()
 	for(var/D in GLOB.diagonals)
@@ -300,8 +296,11 @@
 /obj/structure/flora/newtree/scorched/build_trees()
 	var/turf/target = get_step_multiz(src, UP)
 	if(istype(target, /turf/open/transparent/openspace))
-		var/obj/structure/flora/newtree/scorched/T = new(target)
-		T.build_branches()
+		new /obj/structure/flora/newtree/scorched(target)
+
+//Naught but ash remains.
+/obj/structure/flora/newtree/scorched/build_leafs()
+	return
 
 /obj/structure/flora/newtree/scorched/build_branches()
 	for(var/D in GLOB.cardinals)
