@@ -65,6 +65,12 @@
 	probby = 50
 	spawned = list(/obj/item/restraints/legcuffs/beartrap/armed/camouflage)
 
+/obj/effect/spawner/roguemap/beartrap_obvious
+	icon_state = "beartrap"
+	name = "beartrap"
+	probby = 50
+	spawned = list(/obj/item/restraints/legcuffs/beartrap/armed)
+
 /obj/effect/spawner/roguemap/tallgrass
 	icon_state = "grass"
 	name = "grass tile loot spawner"
@@ -450,7 +456,7 @@
 	. = ..()
 	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
 /datum/component/spawner/ancient_skeleton_guard
-	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
+//	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
 	spawn_time = 0
 	spawn_delay = 0
 	max_mobs = 1

@@ -42,6 +42,7 @@
 	backr = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1)
+	neck = /obj/item/roguekey/lord
 	id = /obj/item/clothing/ring/active/nomag
 	l_hand = /obj/item/rogueweapon/lordscepter
 	if(H.mind)
