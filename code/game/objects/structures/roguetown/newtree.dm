@@ -2,7 +2,7 @@
 	name = "tree"
 	desc = "The thick core of a tree."
 	icon = 'icons/roguetown/misc/tree.dmi'
-	icon_state = "tree1"
+	icon_state = "treenew"
 	///The Log Type
 	var/tree_type
 	///If not null, bonus overlay ontop of normal log.
@@ -238,7 +238,7 @@
 
 ///Tree, but snow leaves
 /obj/structure/flora/newtree/snow
-
+	icon_state = "treesnow"
 /obj/structure/flora/newtree/snow/build_trees()
 	var/turf/target = get_step_multiz(src, UP)
 	if(istype(target, /turf/open/transparent/openspace))
