@@ -3628,6 +3628,7 @@
 "dQg" = (
 /obj/item/chair/stool/bar/rogue/crafted,
 /obj/structure/roguemachine/vendor/inn_hamlet{
+	density = 0;
 	pixel_y = -32
 	},
 /turf/open/floor/rogue/cobble/mossy/alt,
