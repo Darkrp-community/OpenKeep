@@ -118,6 +118,9 @@
 
 /obj/item/bodypart/onbite(mob/living/carbon/human/user)
 	if((user.mind && user.mind.has_antag_datum(/datum/antagonist/zombie)) || istype(user.dna.species, /datum/species/werewolf))
+		if(user.has_status_effect(/datum/status_effect/debuff/silver_curse))
+			to_chat(user, span_notice("My power is weakened, I cannot heal!"))
+			return
 		if(do_after(user, 50, target = src))
 			user.visible_message("<span class='warning'>[user] consumes [src]!</span>",\
 							"<span class='notice'>I consume [src]!</span>")
@@ -591,7 +594,7 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='warning'>I feel a sharp pain in my back!</span>")
+			to_chat(owner, span_warning("I feel a sharp pain in my back!"))
 
 /obj/item/bodypart/chest/Destroy()
 	QDEL_NULL(cavity_item)
@@ -645,12 +648,12 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='boldwarning'>I can no longer move my [name]!</span>")
+			to_chat(owner, span_boldwarning("I can no longer move my [name]!"))
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, span_danger("I can no longer feel my [name]."))
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -703,12 +706,12 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
+			to_chat(owner, span_danger("I can no longer move my [name]!"))
 		if(held_index)
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, span_danger("I can no longer feel my [name]."))
 			if(held_index)
 				owner.dropItemToGround(owner.get_item_for_held_index(held_index))
 	if(owner.hud_used)
@@ -757,10 +760,10 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
+			to_chat(owner, span_danger("I can no longer move my [name]!"))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, span_danger("I can no longer feel my [name]."))
 
 /obj/item/bodypart/l_leg/digitigrade
 	name = "left digitigrade leg"
@@ -807,10 +810,10 @@
 		return
 	if(disabled == BODYPART_DISABLED_DAMAGE || disabled == BODYPART_DISABLED_WOUND)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer move my [name]!</span>")
+			to_chat(owner, span_danger("I can no longer move my [name]!"))
 	else if(disabled == BODYPART_DISABLED_PARALYSIS)
 		if(owner.stat < DEAD)
-			to_chat(owner, "<span class='danger'>I can no longer feel my [name].</span>")
+			to_chat(owner, span_danger("I can no longer feel my [name]."))
 
 /obj/item/bodypart/r_leg/digitigrade
 	name = "right digitigrade leg"

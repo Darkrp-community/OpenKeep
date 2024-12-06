@@ -3,9 +3,9 @@
 	check_name = "<span class='bone'><B>FRACTURE</B></span>"
 	severity = WOUND_SEVERITY_SEVERE
 	crit_message = list(
-		"The bone shatters!", 
-		"The bone is broken!", 
-		"The %BODYPART is mauled!", 
+		"The bone shatters!",
+		"The bone is broken!",
+		"The %BODYPART is mauled!",
 		"The bone snaps through the skin!",
 	)
 	sound_effect = "wetbreak"
@@ -16,7 +16,9 @@
 	can_cauterize = FALSE
 	disabling = TRUE
 	critical = TRUE
-	sleep_healing = 0 // no sleep healing that is retarded
+	sleep_healing = 0 // no sleep healing that is dumb
+
+	werewolf_infection_probability = 0
 	/// Whether or not we can be surgically set
 	var/can_set = TRUE
 	/// Emote we use when applied
@@ -25,7 +27,7 @@
 /datum/wound/fracture/get_visible_name(mob/user)
 	. = ..()
 	if(passive_healing)
-		. += " <span class='green'>(set)</span>"
+		. += span_green("(set)")
 
 /datum/wound/fracture/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/fracture) && (type == other.type))
@@ -50,9 +52,9 @@
 	name = "cranial fracture"
 	check_name = "<span class='bone'><B>SKULLCRACK</B></span>"
 	crit_message = list(
-		"The skull shatters in a gruesome way!", 
-		"The head is smashed!", 
-		"The skull is broken!", 
+		"The skull shatters in a gruesome way!",
+		"The head is smashed!",
+		"The skull is broken!",
 		"The skull caves in!",
 	)
 	sound_effect = "headcrush"
@@ -114,7 +116,7 @@
 	paralysis = TRUE
 	mortal = TRUE
 	dents_brain = TRUE
-	
+
 /datum/wound/fracture/head/brain/on_life()
 	. = ..()
 	owner.adjustOxyLoss(2.5)
@@ -153,9 +155,9 @@
 	name = "mandibular fracture"
 	check_name = "<span class='bone'>JAW FRACTURE</span>"
 	crit_message = list(
-		"The mandible comes apart beautifully!", 
-		"The jaw is smashed!", 
-		"The jaw is shattered!", 
+		"The mandible comes apart beautifully!",
+		"The jaw is smashed!",
+		"The jaw is shattered!",
 		"The jaw caves in!",
 	)
 	whp = 50
@@ -175,7 +177,7 @@
 	name = "cervical fracture"
 	check_name = "<span class='bone'><B>NECK</B></span>"
 	crit_message = list(
-		"The spine shatters in a spectacular way!", 
+		"The spine shatters in a spectacular way!",
 		"The spine snaps!",
 		"The spine cracks!",
 		"The spine is broken!",
@@ -198,7 +200,7 @@
 	if(iscarbon(affected))
 		var/mob/living/carbon/carbon_affected = affected
 		carbon_affected.update_disabled_bodyparts()
-		
+
 /datum/wound/fracture/neck/on_life()
 	. = ..()
 	owner.adjustOxyLoss(2.5)
@@ -222,9 +224,9 @@
 	name = "pelvic fracture"
 	check_name = "<span class='bone'><B>PELVIS</B></span>"
 	crit_message = list(
-		"The pelvis shatters in a magnificent way!", 
-		"The pelvis is smashed!", 
-		"The pelvis is mauled!", 
+		"The pelvis shatters in a magnificent way!",
+		"The pelvis is smashed!",
+		"The pelvis is mauled!",
 		"The pelvic floor caves in!",
 	)
 	whp = 50
@@ -236,7 +238,7 @@
 		name = "broken buck"
 		check_name = "<span class='bone'>BUCKBROKEN</span>"
 		crit_message = "The buck is broken expertly!"
-	
+
 /datum/wound/fracture/groin/on_mob_gain(mob/living/affected)
 	. = ..()
 	affected.Stun(20)
