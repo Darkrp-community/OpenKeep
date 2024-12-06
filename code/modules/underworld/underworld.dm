@@ -28,7 +28,7 @@
 			O.ckey = ckey
 			ADD_TRAIT(O, TRAIT_PACIFISM, TRAIT_GENERIC)
 			O.set_patron(prefs.selected_patron)
-			SSdeath_arena.add_fighter(O)
+			SSdeath_arena.add_fighter(O,mob.mind?.last_death)
 			SSdroning.area_entered(get_area(O), O.client)
 			verbs -= /client/proc/descend
 		if("No")
@@ -181,6 +181,11 @@
 		on_activation(AM)
 
 /obj/structure/underworld/coinspawner/proc/on_activation(mob/living/carbon/spirit/fool)
+	/* Re-enable if you ever make them respawn
+	if(SSdeath_arena.tollless_clients[fool.client] <= (world.time + 5 MINUTES))
+		to_chat(fool,span_notice("You can't seem to interact with \the [src] at this moment..."))
+		return
+		*/
 	var/obj/item/underworld/coin/toll = new(get_turf(src))
 	if(!GLOB.underworld_coinpull_locs.len)
 		if(fool.put_in_hands(toll))
@@ -202,7 +207,7 @@
 	has_coin = FALSE
 	icon_state = "the_hand"
 	desc = "A hand?"
-	addtimer(CALLBACK(src,TYPE_PROC_REF(/obj/structure/underworld/coinspawner,regenerate_coin)),20 MINUTES)
+	//addtimer(CALLBACK(src,TYPE_PROC_REF(/obj/structure/underworld/coinspawner,regenerate_coin)),20 MINUTES)
 
 /obj/structure/underworld/coinspawner/proc/regenerate_coin()
 	has_coin = TRUE

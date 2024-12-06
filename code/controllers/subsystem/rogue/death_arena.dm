@@ -43,9 +43,9 @@ SUBSYSTEM_DEF(death_arena)
 		return
 	start_fight()
 
-/datum/controller/subsystem/death_arena/proc/add_fighter(mob/living/fighter)
+/datum/controller/subsystem/death_arena/proc/add_fighter(mob/living/fighter,time_of_death = 0)
 	waiting_fighters += fighter
-	tollless_clients[fighter.client.key] = world.time + 8 MINUTES
+	tollless_clients[fighter.client.key] = (world.time + 8 MINUTES) - (time_of_death == 0 ? 0 : (world.time - time_of_death))
 	RegisterSignal(fighter, COMSIG_PARENT_QDELETING, PROC_REF(remove_fighter), fighter)
 
 /datum/controller/subsystem/death_arena/proc/remove_fighter(mob/living/fighter)
