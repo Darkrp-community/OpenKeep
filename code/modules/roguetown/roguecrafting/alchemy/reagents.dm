@@ -17,11 +17,11 @@
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-3*REM, 0)
-		M.adjustFireLoss(-3*REM, 0)
-		M.adjustOxyLoss(-2, 0)
+		M.adjustBruteLoss(-1.75*REM, 0)
+		M.adjustFireLoss(-1.75*REM, 0)
+		M.adjustOxyLoss(-1.25, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-3*REM, 0)
+		M.adjustCloneLoss(-1.75*REM, 0)
 	..()
 
 /datum/reagent/medicine/stronghealth
@@ -34,11 +34,11 @@
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.blood_volume = min(M.blood_volume+80, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-12*REM, 0)
-		M.adjustFireLoss(-12*REM, 0)
-		M.adjustOxyLoss(-8, 0)
+		M.adjustBruteLoss(-7*REM, 0)
+		M.adjustFireLoss(-7*REM, 0)
+		M.adjustOxyLoss(-5, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-12*REM, 0)
+		M.adjustCloneLoss(-7*REM, 0)
 	..()
 	. = 1
 
