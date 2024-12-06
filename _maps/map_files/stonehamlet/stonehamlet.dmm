@@ -2457,10 +2457,6 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
-"cCc" = (
-/obj/structure/bed/rogue/wool,
-/turf/open/floor/rogue/wood/saiga,
-/area/rogue/indoors/shelter/town/dwarf)
 "cCk" = (
 /obj/effect/decal/turfedge_neu{
 	dir = 1;
@@ -21392,6 +21388,7 @@
 /obj/effect/decal/turfedge_neu{
 	dir = 10
 	},
+/obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/indoors/town/tavern/saiga)
 "viq" = (
@@ -62251,7 +62248,7 @@ wSZ
 gVW
 vFV
 btB
-dJZ
+vFV
 dJZ
 vFV
 vJB
@@ -82828,6 +82825,7 @@ hZX
 pLb
 sbg
 jDX
+nmF
 mBr
 mBr
 pLb
@@ -83636,9 +83634,9 @@ hZX
 hZX
 xvb
 ecu
-cCc
+uoo
 lzE
-cCc
+uoo
 xvb
 hZX
 hZX
