@@ -290,3 +290,13 @@
 	timer = 60 MINUTES
 	stressadd = 1
 	desc = "<span class='red'>I feel useless...</span>"
+
+/datum/stressevent/saw_wonder
+	stressadd = 4
+	desc = span_boldred("<B>I have seen something nightmarish, and I fear for my life!</B>")
+	timer = 999 MINUTES
+
+/datum/stressevent/maniac_woke_up
+	stressadd = 10
+	desc = span_boldred("No... I want to go back...")
+	timer = 999 MINUTES

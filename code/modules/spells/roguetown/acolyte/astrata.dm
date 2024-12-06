@@ -72,6 +72,9 @@
 		if(target.stat < DEAD)
 			to_chat(user, "<span class='warning'>Nothing happens.</span>")
 			return FALSE
+		if(HAS_TRAIT(target, TRAIT_NECRA_CURSE))
+			to_chat(user, span_warning("Necra's grasp prevents revival."))
+			return FALSE
 		if(GLOB.tod == "night")
 			to_chat(user, "<span class='warning'>Let there be light.</span>")
 		for(var/obj/structure/fluff/psycross/S in oview(5, user))

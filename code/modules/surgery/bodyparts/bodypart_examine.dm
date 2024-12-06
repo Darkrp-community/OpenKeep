@@ -9,7 +9,7 @@
 	var/list/head_status = list()
 	if(!brain)
 		head_status += "<span class='dead'>The brain is missing.</span>"
-	/*		
+	/*
 	else if(brain.suicided || brainmob?.suiciding)
 		. += "<span class='info'>There's a pretty dumb expression on [real_name]'s face; they must have really hated life. There is no hope of recovery.</span>"
 	else if(brain.brain_death || brainmob?.health <= HEALTH_THRESHOLD_DEAD)
@@ -33,7 +33,7 @@
 
 	if(!tongue)
 		head_status += "<span class='warning'>The tongue is missing.</span>"
-	
+
 	if(length(head_status))
 		. += "<B>Organs:</B>"
 		. += head_status
@@ -66,7 +66,7 @@
 			bodypart_status += "[src] is skeletonized."
 		else if(rotted)
 			bodypart_status += "[src] is necrotic."
-		
+
 		var/brute = brute_dam
 		var/burn = burn_dam
 		if(user?.hallucinating())
@@ -105,7 +105,7 @@
 			if(!bandage || observer_privilege)
 				for(var/datum/wound/wound as anything in wounds)
 					bodypart_status += wound.get_visible_name(user)
-		
+
 	if(length(bodypart_status) <= 1)
 		bodypart_status += "[src] is healthy."
 
@@ -113,7 +113,7 @@
 		bodypart_status += "<B>Embedded objects:</B>"
 		for(var/obj/item/embedded as anything in embedded_objects)
 			bodypart_status += "<a href='?src=[owner_ref];embedded_object=[REF(embedded)];embedded_limb=[REF(src)]'>[embedded.name]</a>"
-	
+
 	return bodypart_status
 
 /obj/item/bodypart/proc/check_for_injuries(mob/user, advanced = FALSE)
@@ -131,7 +131,7 @@
 
 /obj/item/bodypart/proc/get_injury_status(mob/user, advanced = FALSE)
 	var/list/status = list()
-	
+
 	var/brute = brute_dam
 	var/burn = burn_dam
 	if(user?.hallucinating())
@@ -156,7 +156,7 @@
 					status += "<span class='danger'>[medium_brute_msg]</span>"
 				else
 					status += "<span class='warning'>[light_brute_msg]</span>"
-		
+
 		if(burn >= DAMAGE_PRECISION)
 			switch(burn/max_damage)
 				if(0.75 to INFINITY)
@@ -167,14 +167,14 @@
 					status += "<span class='danger'>[medium_burn_msg]</span>"
 				else
 					status += "<span class='warning'>[light_burn_msg]</span>"
-	
+
 	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
 		if(bleed_rate > 1) //Totally arbitrary value
 			status += "<span class='bloody'><B>BLEEDING</B></span>"
 		else
 			status += "<span class='bloody'>BLEEDING</span>"
-	
+
 	var/list/wound_strings = list()
 	for(var/datum/wound/wound as anything in wounds)
 		if(!wound.check_name)
