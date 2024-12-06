@@ -12,3 +12,4 @@ vanderlin_bog.dmm
 
 vanderlin_mountain.dmm
 	Mow (KM-Catman)
+	Marabout (sanslequellete)
