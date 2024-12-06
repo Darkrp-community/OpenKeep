@@ -11,36 +11,34 @@
 	color = "#ff0000"
 	taste_description = "lifeblood"
 	overdose_threshold = 0
-	metabolization_rate = REAGENTS_METABOLISM * 3
+	metabolization_rate = REAGENTS_METABOLISM
 	alpha = 173
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.blood_volume = min(M.blood_volume+15, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-2*REM, 0)
-		M.adjustFireLoss(-2*REM, 0)
-		M.adjustOxyLoss(-1, 0)
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-1.75*REM, 0)
+		M.adjustFireLoss(-1.75*REM, 0)
+		M.adjustOxyLoss(-1.25, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-2*REM, 0)
+		M.adjustCloneLoss(-1.75*REM, 0)
 	..()
-	. = 1
-
 
 /datum/reagent/medicine/stronghealth
 	name = "Strong Health Potion"
 	description = "Quickly regenerates all types of damage."
 	color = "#820000be"
 	taste_description = "rich lifeblood"
-	metabolization_rate = REAGENTS_METABOLISM * 9
+	metabolization_rate = REAGENTS_METABOLISM * 3
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
 		M.blood_volume = min(M.blood_volume+80, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-15*REM, 0)
-		M.adjustFireLoss(-15*REM, 0)
-		M.adjustOxyLoss(-6, 0)
+		M.adjustBruteLoss(-7*REM, 0)
+		M.adjustFireLoss(-7*REM, 0)
+		M.adjustOxyLoss(-5, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
-		M.adjustCloneLoss(-5*REM, 0)
+		M.adjustCloneLoss(-7*REM, 0)
 	..()
 	. = 1
 
@@ -56,10 +54,9 @@
 	alpha = 173
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
-	if(volume > 0.99)
-		M.adjust_energy(50)
+	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
+		M.adjust_energy(30)
 	..()
-	. = 1
 
 /datum/reagent/medicine/strongmana
 	name = "Strong Mana Potion"
@@ -68,10 +65,9 @@
 	metabolization_rate = REAGENTS_METABOLISM * 3
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
-	if(volume > 0.99)
-		M.adjust_energy(200)
+	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
+		M.adjust_energy(120)
 	..()
-	. = 1
 
 /datum/reagent/medicine/stampot
 	name = "Stamina Potion"
@@ -83,9 +79,9 @@
 	metabolization_rate = REAGENTS_METABOLISM
 	alpha = 173
 
-/datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/stampot/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(50)
+		M.adjust_stamina(-1.5)
 	..()
 
 /datum/reagent/medicine/strongstam
@@ -94,9 +90,9 @@
 	color = "#13df00"
 	metabolization_rate = REAGENTS_METABOLISM * 3
 
-/datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
+/datum/reagent/medicine/strongstam/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(200)
+		M.adjust_stamina(-6)
 	..()
 
 /datum/reagent/medicine/antidote
@@ -296,24 +292,24 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	reagent_state = LIQUID
 	color = "#083b1c"
 	taste_description = "breathlessness"
-	metabolization_rate = REAGENTS_SLOW_METABOLISM
+	metabolization_rate = REAGENTS_SLOW_METABOLISM * 3
 
 /datum/reagent/stampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(-25) //Slowly leech stamina
+		M.adjust_stamina(2.25) //Slowly leech stamina
 	return ..()
 
-/datum/reagent/strongstampoisons
+/datum/reagent/strongstampoison
 	name = "Strong Stamina Poison"
 	description = ""
 	reagent_state = LIQUID
 	color = "#041d0e"
 	taste_description = "frozen air"
-	metabolization_rate = REAGENTS_SLOW_METABOLISM * 3
+	metabolization_rate = REAGENTS_SLOW_METABOLISM * 9
 
 /datum/reagent/strongstampoison/on_mob_life(mob/living/carbon/M)
 	if(!HAS_TRAIT(M,TRAIT_NOSTAMINA))
-		M.adjust_stamina(-150) //Rapidly leech stamina
+		M.adjust_stamina(9) //Rapidly leech stamina
 	return ..()
 
 
