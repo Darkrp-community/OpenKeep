@@ -63,7 +63,7 @@
 /datum/sex_action/vaginal_ride_sex/shows_on_menu(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(user == target)
 		return FALSE
-	if(!user.gender == FEMALE)
+	if(user.gender == MALE)
 		return FALSE
 	if(target.gender == FEMALE)
 		return FALSE
