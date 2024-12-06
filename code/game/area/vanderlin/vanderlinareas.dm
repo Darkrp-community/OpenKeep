@@ -33,6 +33,14 @@
 	ambush_types = null
 	ambush_mobs = null
 
+/area/rogue/under/mountains/anvil/dungeon
+	name = "malum's anvil upper dungeon"
+	icon_state = "deception"
+
+/area/rogue/under/mountains/anvil/dungeon/lower
+	name = "malum's anvil lower dungeon"
+	icon_state = "deception"
+
 /area/rogue/outdoors/mountains/anvil
 	name = "malum's anvil generic outdoors"
 	icon_state = "deception"
