@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(death_arena)
 	for(var/mob/living/carbon/carbon as anything in fighters)
 		fighters -= carbon
 		if(carbon != user)
-			var/turf/spawn_loc = pick(GLOB.underworldcoinspawns)
+			var/turf/spawn_loc = pick(GLOB.underworldspiritspawns)
 			var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 			O.livingname = carbon.name
 			O.ckey = carbon.ckey
