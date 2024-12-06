@@ -2,8 +2,10 @@
 	name = "tree"
 	desc = "The thick core of a tree."
 	icon = 'icons/roguetown/misc/tree.dmi'
-	icon_state = "tree1"
-	var/tree_type = 1
+	icon_state = "treenew"
+	///The Log Type
+	var/tree_type
+	///If not null, bonus overlay ontop of normal log.
 	var/base_state
 	armor = list("blunt" = 0, "slash" = 0, "stab" = 0,  "piercing" = 0, "fire" = -100, "acid" = 50)
 	blade_dulling = DULLING_CUT
@@ -27,15 +29,15 @@
 		icon_state = "burnt"
 		cut_overlays()
 		return
-	icon_state = ""
+	icon_state = null
 	cut_overlays()
-	var/mutable_appearance/M
+	var/mutable_appearance/mutable
 	if(base_state)
-		M = mutable_appearance(icon, "[base_state]")
-		add_overlay(M)
-	M = mutable_appearance(icon, "tree[tree_type]")
-	M.dir = dir
-	add_overlay(M)
+		mutable = mutable_appearance(icon, "[base_state]")
+		add_overlay(mutable)
+	mutable = mutable_appearance(icon, "tree[tree_type]")
+	mutable.dir = dir
+	add_overlay(mutable)
 
 /*
 * get_complex_damage comes from item_attack.dm
@@ -134,7 +136,8 @@
 
 //Used to be at initialize but i want to override it for burnt trees
 /obj/structure/flora/newtree/proc/GenerateTree()
-	tree_type = rand(1,2)
+	if(isnull(tree_type))
+		tree_type = pick(list(1,2))
 	dir = pick(GLOB.cardinals)
 	SStreesetup.initialize_me |= src
 	build_trees()
@@ -184,6 +187,7 @@
 	if(istype(target, /turf/open/transparent/openspace))
 		var/obj/structure/flora/newtree/T = new(target)
 		T.base_state = "center-leaf[rand(1,2)]"
+		T.tree_type = src.tree_type
 		T.update_icon()
 
 /obj/structure/flora/newtree/proc/build_leafs()
@@ -225,7 +229,58 @@
 							var/obj/structure/flora/newbranch/leafless/T = new(NT)
 							T.dir = D
 
-///BURNT TREE SPAWNER
+
+/*
+	START SNOW
+				*/
+
+///Tree, but snow leaves
+/obj/structure/flora/newtree/snow
+	icon_state = "treesnow"
+/obj/structure/flora/newtree/snow/build_trees()
+	var/turf/target = get_step_multiz(src, UP)
+	if(istype(target, /turf/open/transparent/openspace))
+		var/obj/structure/flora/newtree/snow/T = new(target)
+		T.base_state = "center-leaf-cold1"
+		T.update_icon()
+
+/obj/structure/flora/newtree/snow/build_leafs()
+	for(var/D in GLOB.diagonals)
+		var/turf/NT = get_step(src, D)
+		if(istype(NT, /turf/open/transparent/openspace))
+			if(!locate(/obj/structure) in NT)
+				var/obj/structure/flora/newleaf/corner/snow/T = new(NT)
+				T.dir = D
+
+/obj/structure/flora/newtree/snow/build_branches()
+	for(var/D in GLOB.cardinals)
+		var/turf/NT = get_step(src, D)
+		if(istype(NT, /turf/open/transparent/openspace))
+			var/turf/NB = get_step(NT, D)
+			if(istype(NB, /turf/open/transparent/openspace) && prob(50))
+				if(prob(50))
+					if(!locate(/obj/structure) in NB)
+						var/obj/structure/flora/newbranch/snow/T = new(NB)
+						T.dir = D
+					if(!locate(/obj/structure) in NT)
+						var/obj/structure/flora/newbranch/connector/snow/TC = new(NT)
+						TC.dir = D
+				else
+					if(!locate(/obj/structure) in NT)
+						var/obj/structure/flora/newbranch/snow/TC = new(NT)
+						TC.dir = D
+			else
+				if(!locate(/obj/structure) in NT)
+					var/obj/structure/flora/newbranch/snow/TC = new(NT)
+					TC.dir = D
+
+/*
+	END SNOW
+				*/
+
+/*
+	START BURNT
+				*/
 /obj/structure/flora/newtree/scorched
 	name = "scorched tree"
 	desc = "A tree trunk scorched to ruin."
@@ -243,7 +298,7 @@
 	if(istype(target, /turf/open/transparent/openspace))
 		new /obj/structure/flora/newtree/scorched(target)
 
-//The leaves became embers long ago. All thats left is the whispers of ash.
+//Naught but ash remains.
 /obj/structure/flora/newtree/scorched/build_leafs()
 	return
 
@@ -276,75 +331,64 @@
 							var/obj/structure/flora/newbranch/leafless/scorched/T = new(NT)
 							T.dir = D
 
+/*
+	END BURNT
+				*/
+
 ///BRANCHES
 
 /obj/structure/flora/newbranch
 	name = "branch"
 	desc = "A stable branch, should be safe to walk on."
 	icon = 'icons/roguetown/misc/tree.dmi'
-	icon_state = "branch-end1"
 	attacked_sound = 'sound/misc/woodhit.ogg'
-//	var/tree_type = 1
-	var/base_state = TRUE
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN
 	static_debris = list(/obj/item/grown/log/tree/stick = 1)
+	///The leaves[If any]
+	var/base_state
 	density = FALSE
 	max_integrity = 30
 
 /obj/structure/flora/newbranch/update_icon()
-	icon_state = ""
 	cut_overlays()
-	var/mutable_appearance/M
-	if(base_state)
-		M = mutable_appearance(icon, "[base_state]")
-		M.dir = pick(GLOB.cardinals)
-		add_overlay(M)
-	M = mutable_appearance(icon, "branch-end[rand(1,2)]")
-	M.dir = dir
-	add_overlay(M)
-
+	var/mutable_appearance/mutable
+	if(isnull(base_state))
+		mutable = mutable_appearance(icon, "center-leaf[rand(1,2)]")
+	else
+		mutable = mutable_appearance(icon,base_state)
+	mutable.dir = dir
+	add_overlay(mutable)
+	if(isnull(icon_state))
+		mutable = mutable_appearance(icon, "branch-end[rand(1,2)]")
+	else
+		mutable = mutable_appearance(icon,icon_state)
+	mutable.dir = dir
+	add_overlay(mutable)
 /obj/structure/flora/newbranch/Initialize()
 	. = ..()
-	if(base_state)
-		AddComponent(/datum/component/squeak, list('sound/foley/plantcross1.ogg','sound/foley/plantcross2.ogg','sound/foley/plantcross3.ogg','sound/foley/plantcross4.ogg'), 100)
-		base_state = "center-leaf[rand(1,2)]"
+	AddComponent(/datum/component/squeak, list('sound/foley/plantcross1.ogg','sound/foley/plantcross2.ogg','sound/foley/plantcross3.ogg','sound/foley/plantcross4.ogg'), 100)
 	update_icon()
 
 /obj/structure/flora/newbranch/connector
 	icon_state = "branch-extend"
-
-/obj/structure/flora/newbranch/connector/update_icon()
-	icon_state = ""
-	cut_overlays()
-	var/mutable_appearance/M
-	if(base_state)
-		M = mutable_appearance(icon, "[base_state]")
-		M.dir = pick(GLOB.cardinals)
-		add_overlay(M)
-	M = mutable_appearance(icon, "branch-extend")
-	M.dir = dir
-	add_overlay(M)
-
+//Snow
+/obj/structure/flora/newbranch/connector/snow
+	base_state = "center-leaf-cold1"
+/obj/structure/flora/newbranch/snow
+	base_state = "center-leaf-cold1"
 //BURNT SUBTYPE
 /obj/structure/flora/newbranch/connector/scorched
 	name = "burnt branch"
 	desc = "Cracked and hardened from a terrible fire."
 	icon_state = "branchburnt-extend"
-	base_state = FALSE
-
-/obj/structure/flora/newbranch/connector/scorched/update_icon()
-	return
-
 //Normal
 /obj/structure/flora/newbranch/leafless
-	base_state = FALSE
 
 /obj/structure/flora/newbranch/leafless/update_icon()
-	icon_state = ""
 	cut_overlays()
-	var/mutable_appearance/M = mutable_appearance(icon, "branch-end[rand(1,2)]")
-	M.dir = dir
-	add_overlay(M)
+	var/mutable_appearance/mutable = mutable_appearance(icon, "branch-end[rand(1,2)]")
+	mutable.dir = dir
+	add_overlay(mutable)
 
 //BURNT SUBTYPE
 /obj/structure/flora/newbranch/leafless/scorched
@@ -355,32 +399,33 @@
 /obj/structure/flora/newbranch/leafless/scorched/Initialize()
 	. = ..()
 	icon_state = "branchburnt-end[rand(1,2)]"
-	update_icon()
-
-/obj/structure/flora/newbranch/leafless/scorched/update_icon()
-	return
 
 /// LEAF
-
-
-/obj/structure/flora/newleaf/corner
-	icon = 'icons/roguetown/misc/tree.dmi'
-	icon_state = "corner-leaf1"
-
-
-/obj/structure/flora/newleaf/corner/Initialize()
-	. = ..()
-	icon_state = "corner-leaf[rand(1,2)]"
-	update_icon()
 
 /obj/structure/flora/newleaf
 	name = "leaves"
 	icon = 'icons/roguetown/misc/tree.dmi'
-	icon_state = "center-leaf1"
 	density = FALSE
 	max_integrity = 10
 
 /obj/structure/flora/newleaf/Initialize()
 	. = ..()
-	icon_state = "center-leaf[rand(1,2)]"
+	if(isnull(icon_state))
+		icon_state = "center-leaf[rand(1,2)]"
 	update_icon()
+
+/obj/structure/flora/newleaf/corner
+
+/obj/structure/flora/newleaf/corner/Initialize()
+	. = ..()
+	if(isnull(icon_state))
+		icon_state = "corner-leaf[rand(1,2)]"
+	update_icon()
+
+/obj/structure/flora/newleaf/corner/snow
+	icon_state = "corner-leaf-cold1"
+
+/obj/structure/flora/newleaf/snow
+	icon_state = "center-leaf-cold1"
+	density = FALSE
+	max_integrity = 10
