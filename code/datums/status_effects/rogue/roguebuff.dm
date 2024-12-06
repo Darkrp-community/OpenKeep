@@ -433,8 +433,35 @@
 	name = "Divine Beauty"
 	desc = span_nicegreen("Everything about me feels fresh and perfect!")
 	icon_state = "beauty"
+/*-----------------\
+|   Ravox Miracles |
+\-----------------*/
 
+/datum/status_effect/buff/call_to_arms
+	id = "call_to_arms"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/call_to_arms
+	duration = 2.5 MINUTES
+	effectedstats = list(STATKEY_STR = 1, STATKEY_END = 2, STATKEY_CON = 1)
 
+/atom/movable/screen/alert/status_effect/buff/call_to_arms
+	name = "Call to Arms"
+	desc = span_bloody("THE FIGHT WILL BE BLOODY!")
+	icon_state = "call_to_arms"
+
+/*-----------------\
+|   Malum Miracles |
+\-----------------*/
+
+/datum/status_effect/buff/craft_buff
+	id = "crafting_buff_malum"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/craft_buff
+	duration = 2.5 MINUTES
+	effectedstats = list(STATKEY_INT = 3)
+
+/atom/movable/screen/alert/status_effect/buff/craft_buff
+	name = "Exquisite Craftsdwarfship"
+	desc = span_notice("I am inspired to create!")
+	icon_state = "malum_buff"
 
 // BARDIC BUFFS BELOW
 
