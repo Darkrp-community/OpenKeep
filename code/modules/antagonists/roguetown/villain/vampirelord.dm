@@ -13,14 +13,18 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	job_rank = ROLE_VAMPIRE
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "vampire"
-	confess_lines = list("I AM ANCIENT", "I AM THE LAND", "CHILD OF KAIN!")
+	confess_lines = list(
+		"I AM ANCIENT",
+		"I AM THE LAND",
+		"CHILD OF KAIN!",
+	)
 	var/isspawn = FALSE
 	var/disguised = FALSE
 	var/ascended = FALSE
 	var/starved = FALSE
 	var/sired = FALSE
 	var/vamplevel = 0
-	var/vitae = 2000
+	var/vitae = 1000
 	var/vmax = 2000
 	var/obj/structure/vampire/bloodpool/mypool
 	var/last_transform
@@ -29,26 +33,31 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/cache_hair
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
-	var/secondsundersun = 0 // How many seconds have we spent under the sun? Once it reaches 100 * vampire lord level, we get dusted.
-	var/time2getdusted = 150 // How many deciseconds (15 seg) we have before being dusted at base level of 0
-	var/timesincelastmessage = 0 // Counter that increases by 1 every second, at 15 displays the message
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
-		return "<span class='boldnotice'>A vampire spawn.</span>"
+		return span_boldnotice("A vampire spawn.")
 	if(istype(examined_datum, /datum/antagonist/vampirelord))
-		return "<span class='boldnotice'>A Vampire Lord!.</span>"
+		return span_boldnotice("A Vampire Lord!.")
 	if(istype(examined_datum, /datum/antagonist/zombie))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return span_boldnotice("Another deadite.")
 	if(istype(examined_datum, /datum/antagonist/skeleton))
-		return "<span class='boldnotice'>Another deadite.</span>"
+		return span_boldnotice("Another deadite.")
+
+/datum/antagonist/vampirelord/apply_innate_effects(mob/living/mob_override)
+	var/mob/living/M = mob_override || owner.current
+	add_antag_hud(antag_hud_type, antag_hud_name, M)
+
+/datum/antagonist/vampirelord/remove_innate_effects(mob/living/mob_override)
+	var/mob/living/M = mob_override || owner.current
+	remove_antag_hud(antag_hud_type, M)
 
 /datum/antagonist/vampirelord/on_gain()
 	var/datum/game_mode/C = SSticker.mode
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
-	//ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") unnecessary as they die to decapitation
+	ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") //half assed but necessary otherwise these guys be invincible
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSTAMINA, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, "[type]")
@@ -58,8 +67,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSLEEP, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
+
 	ADD_TRAIT(owner.current, TRAIT_VAMP_DREAMS, "[type]")
-	ADD_TRAIT(owner.current, TRAIT_VILLAIN, "[type]")
 	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -82,7 +91,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(!sired)
 			addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, spawn_pick_class), "VAMPIRE SPAWN"), 5 SECONDS)
 	else
-		ADD_TRAIT(owner.current, TRAIT_MEDIUMARMOR, "[type]") // They need it to wear their special armor.
 		forge_vampirelord_objectives()
 		finalize_vampire()
 		owner.current.verbs |= /mob/living/carbon/human/proc/demand_submission
@@ -93,6 +101,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		addtimer(CALLBACK(owner.current, TYPE_PROC_REF(/mob/living/carbon/human, choose_name_popup), "VAMPIRE LORD"), 5 SECONDS)
 		greet()
 	return ..()
+
 // OLD AND EDITED
 /datum/antagonist/vampirelord/proc/equip_lord()
 	owner.unknow_all_people()
@@ -101,18 +110,17 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	for(var/datum/mind/MF in get_minds("Vampire Spawn"))
 		owner.i_know_person(MF)
 		owner.person_knows_me(MF)
+	for(var/datum/mind/MF in get_minds("Death Knight"))
+		owner.i_know_person(MF)
+		owner.person_knows_me(MF)
 
 	var/mob/living/carbon/human/H = owner.current
-	if(H.mobid in GLOB.character_list)
-		GLOB.character_list[H.mobid] = null
-	GLOB.chosen_names -= H.real_name
-	if(H.dna.species?.id != "human" && H.dna.species?.id != "elf")
-		H.age = AGE_ADULT
-		if(prob(50))
-			H.set_species(/datum/species/human/northern)
-		else
-			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
-		H.after_creation()
+	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.Remove(owner.current,1)
+		QDEL_NULL(eyes)
+	eyes = new /obj/item/organ/eyes/night_vision/zombie
+	eyes.Insert(owner.current)
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
 	H.set_patron(/datum/patron/psydon) //Servant forever of he who is forgotten.
 
@@ -125,22 +133,15 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	for(var/datum/mind/MF in get_minds("Vampire Spawn"))
 		owner.i_know_person(MF)
 		owner.person_knows_me(MF)
+	for(var/datum/mind/MF in get_minds("Death Knight"))
+		owner.i_know_person(MF)
+		owner.person_knows_me(MF)
 
-	var/mob/living/carbon/human/H = owner.current
-	if(H.mobid in GLOB.character_list)
-		GLOB.character_list[H.mobid] = null
-	GLOB.chosen_names -= H.real_name
 	owner.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
 	owner.current.ambushable = FALSE
-	H.swap_rmb_intent(num=1)
-	owner.current.possible_rmb_intents = list(/datum/rmb_intent/feint,\
-	/datum/rmb_intent/aimed,\
-	/datum/rmb_intent/strong,\
-	/datum/rmb_intent/riposte,\
-	/datum/rmb_intent/weak)
 
 /mob/living/carbon/human/proc/spawn_pick_class()
-	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Carpenter", "Rogue", "Warrior")
+	var/list/classoptions = list("Bard", "Fisher", "Hunter", "Miner", "Peasant", "Woodcutter", "Cheesemaker", "Blacksmith", "Carpenter", "Rogue", "Treasure Hunter", "Mage")
 	var/list/visoptions = list()
 
 	for(var/T in 1 to 5)
@@ -156,12 +157,15 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/outfit/job/roguetown/vamplord/pre_equip(mob/living/carbon/human/H)
 	..()
-	H.mind?.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/magic/blood, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 5, TRUE)
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shirt = /obj/item/clothing/suit/roguetown/shirt/vampire
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
@@ -172,16 +176,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	backl = /obj/item/storage/backpack/rogue/satchel/black
 	H.ambushable = FALSE
 
-	H.swap_rmb_intent(num=1)
-	H.possible_rmb_intents = list(/datum/rmb_intent/feint,\
-	/datum/rmb_intent/aimed,\
-	/datum/rmb_intent/strong,\
-	/datum/rmb_intent/riposte,\
-	/datum/rmb_intent/weak)
+////////Outfits////////
+
 
 /datum/antagonist/vampirelord/on_removal()
 	if(!silent && owner.current)
-		to_chat(owner.current,"<span class='danger'>I am no longer a [job_rank]!</span>")
+		to_chat(owner.current,span_danger("I am no longer a [job_rank]!"))
 	owner.special_role = null
 	if(!isnull(batform))
 		owner.current.RemoveSpell(batform)
@@ -218,12 +218,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	objectives += survive
 
 /datum/antagonist/vampirelord/greet()
-	to_chat(owner.current, "<span class='userdanger'>I am ancient. I am the Land. And I am now awoken to these trespassers upon my domain.</span>")
+	to_chat(owner.current, span_userdanger("I am ancient. I am the Land. And I am now awoken to these trespassers upon my domain."))
 	owner.announce_objectives()
 	..()
 
 /datum/antagonist/vampirelord/lesser/greet()
-	to_chat(owner.current, "<span class='userdanger'>We are awakened from our slumber, Spawn of the feared Vampire Lord.</span>")
+	to_chat(owner.current, span_userdanger("We are awakened from our slumber, Spawn of the feared Vampire Lord."))
 	owner.announce_objectives()
 
 /datum/antagonist/vampirelord/proc/finalize_vampire()
@@ -257,9 +257,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(!user)
 		return
 	var/mob/living/carbon/human/H = user
-	var/datum/antagonist/vampirelord/lord = user.mind?.has_antag_datum(/datum/antagonist/vampirelord)
-	if(lord.vamplevel > 0)
-		time2getdusted = 300 * lord.vamplevel // This is necessary because otherwise anything by zero is an instant dust.
 	if(H.stat == DEAD)
 		return
 	if(H.advsetup)
@@ -272,54 +269,19 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(GLOB.tod != "night")
 			if(isturf(H.loc))
 				var/turf/T = H.loc
-				if(T.can_see_sky()) // Are we on an outdoors turf, or able to see the sky?
+				if(T.can_see_sky())
 					if(T.get_lumcount() > 0.15)
-						if(!isspawn) // VLord is more punished for daylight excursions.
-							if(lord.vamplevel <= 3) // Unless they're ascended
-								if(secondsundersun > 1) // Failsafe for the reminder
-									if(secondsundersun >= time2getdusted) // If we accumulated enough seconds under the sun to our vampire level...
-										to_chat(H, "<span class='userdanger'>ASTRATA SMOLDERS ME INTO ASHES!</span>") // I could feel my eyes / turning into dust.
-										H.emote("firescream", forced = TRUE)
-										H.dust() // And two strangers, turning into dust.
-									else
-										sleep(10)
-										secondsundersun += 10 // Add ten deciseconds (one second) per life tick we spent under the sun.
-										timesincelastmessage += 10 // Add one second to the message timer
-										if(timesincelastmessage > 49) // Every 5 seconds, remind us we're walking on sunshine (woah ooh)
-											to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
-											timesincelastmessage = 0
-								else // This will only happen once, at the start of every life cycle check
-									to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
-									secondsundersun += 10 // Add our first 10 deciseconds (one second) of time we spent under the sun.
-							else
-								if(timesincelastmessage < 1)
-									to_chat(H, "<span class='userdanger'>I HAVE CONQUERED THE SUN! NOT EVEN ASTRATA HERSELF CAN STOP ME NOW!!</span>") // Kars momento.
-									timesincelastmessage += 1
-								else
-									sleep(10)
-									timesincelastmessage += 10
-									if(timesincelastmessage > 5999)
-										to_chat(H, "<span class='userdanger'>I HAVE CONQUERED THE SUN! NOT EVEN ASTRATA HERSELF CAN STOP ME NOW!!</span>") // Kars momento.
-										timesincelastmessage = 0
-						else if(isspawn) // Failsafe, just in case.
-							if(!disguised) // Nondisguised thralls just get set on fire.
-								if(secondsundersun == 0 && timesincelastmessage < 1)
-									to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
-									secondsundersun++ // Just for thralls to show the message as well.
-									timesincelastmessage++ // Start counting
-								else // Our first grace second is gone, start burning us
-									H.fire_act(1,5)
-									H.emote("firescream", forced = TRUE)
-									handle_vitae(-10) // Vitae lost per life tick as extra punishment.
-									timesincelastmessage++ // Add one second to the timer
-									if(timesincelastmessage >= 15) // Every 15 seconds, remind us we're walking on sunshine (woah ooh)
-										to_chat(H, span_warning("Astrata spurns me! I must get out of her rays before I am undone!"))
-										timesincelastmessage = 0
-				else // We're under a roof, no longer being cooked by Astrata.
-					if(secondsundersun > 0) // Will only display the message if we HAD BEEN under the sun, guaranteeing no spam.
-						to_chat(H, span_warning("That was too close. I must avoid the sun.")) // Safe!
-					secondsundersun = 0 // Then reset our counter back to zero.
-					timesincelastmessage = 0 // To start from scratch.
+						if(!isspawn)
+							to_chat(H, span_warning("Astrata spurns me! I must get out of her rays!")) // VLord is more punished for daylight excursions.
+							var/turf/N = H.loc
+							if(N.can_see_sky())
+								if(N.get_lumcount() > 0.15)
+									H.fire_act(3)
+									handle_vitae(-500)
+							to_chat(H, span_warning("That was too close. I must avoid the sun."))
+						else if (isspawn && !disguised)
+							H.fire_act(1,5)
+							handle_vitae(-10)
 
 	if(H.on_fire)
 		if(disguised)
@@ -329,16 +291,15 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 	if(H.stat)
 		if(istype(H.loc, /obj/structure/closet/crate/coffin))
-			sleep(100)
 			H.fully_heal()
 
 	if(vitae > 0)
-		H.blood_volume = BLOOD_VOLUME_MAXIMUM
+		H.blood_volume = BLOOD_VOLUME_NORMAL
 		if(vitae < 200)
 			if(disguised)
 				to_chat(H, span_warning("My disguise fails!"))
 				H.vampire_undisguise(src)
-	handle_vitae(-0.5) // Since vitae is now finite, less vitae lost per life tick.
+	handle_vitae(-1)
 
 /datum/antagonist/vampirelord/proc/handle_vitae(change, tribute)
 	var/tempcurrent = vitae
@@ -358,7 +319,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		mypool.update_pool(tribute)
 	if(vitae <= 20)
 		if(!starved)
-			to_chat(owner, "<span class='userdanger'>I starve, my power dwindles! I am so weak!</span>")
+			to_chat(owner, span_userdanger("I starve, my power dwindles! I am so weak!"))
 			starved = TRUE
 			for(var/S in MOBSTATS)
 				owner.current.change_stat(S, -5)
@@ -416,7 +377,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			owner.current.visible_message("<font color='red'>[owner.current] is enveloped in dark crimson, a horrific sound echoing in the area. They are evolved.</font>","<font color='red'>I AM ANCIENT, I AM THE LAND. EVEN THE SUN BOWS TO ME.</font>")
 			ascended = TRUE
 			C.ascended = TRUE
-			REMOVE_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") // No longer instakilled by crits, a force to be reckoned with.
 			for(var/datum/mind/thrall in C.vampires)
 				if(thrall.special_role == "Vampire Spawn")
 					thrall.current.verbs |= /mob/living/carbon/human/proc/blood_strength
@@ -429,7 +389,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 // SPAWN
 /datum/antagonist/vampirelord/lesser
 	name = "Vampire Spawn"
-	confess_lines = list("THE CRIMSON CALLS!", "MY MASTER COMMANDS", "THE SUN IS ENEMY!")
+	antag_hud_name = "Vspawn"
+	confess_lines = list(
+		"THE CRIMSON CALLS!",
+		"MY MASTER COMMANDS",
+		"THE SUN IS ENEMY!",
+	)
 	isspawn = TRUE
 
 /datum/antagonist/vampirelord/lesser/move_to_spawnpoint()
@@ -458,8 +423,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				if(!C.kingsubmit)
 					C.kingsubmit = TRUE
 		if("No")
-			lord << "<span class='boldnotice'>They refuse!</span>"
-			src << "<span class='boldnotice'>I refuse!</span>"
+			lord << span_boldnotice("They refuse!")
+			src << span_boldnotice("I refuse!")
 
 /mob/living/carbon/human/proc/vampire_telepathy()
 	set name = "Telepathy"
@@ -470,45 +435,50 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(!msg)
 		return
 	for(var/datum/mind/V in C.vampires)
-		to_chat(V, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
+		to_chat(V, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/datum/mind/D in C.deathknights)
-		to_chat(D, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
+		to_chat(D, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/mob/dead/observer/rogue/arcaneeye/A in GLOB.mob_list)
-		to_chat(A, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
-	testing("[key_name(src)] used telepathy to say: [msg]")
-	log_telepathy("[key_name(src)] used telepathy to say: [msg]")
+		to_chat(A, span_boldnotice("A message from [src.real_name]:[msg]"))
 
 /mob/living/carbon/human/proc/punish_spawn()
 	set name = "Punish Minion"
 	set category = "VAMPIRE"
 
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/mob/living/carbon/human/possible = list()
+	var/list/possible = list()
 	for(var/datum/mind/V in C.vampires)
 		if(V.special_role == "Vampire Spawn")
-			possible |= V.current
+			possible[V.current.real_name] = V.current
 	for(var/datum/mind/D in C.deathknights)
-		possible |= D.current
-	var/mob/living/carbon/human/choice = input(src, "Who to punish?", "PUNISHMENT") as null|anything in possible
-	if(choice)
-		var/punishmentlevels = list("Pause", "Pain", "Release")
-		switch(input(src, "Severity?", "PUNISHMENT") as anything in null|punishmentlevels)
-			if("Pain")
-				to_chat(choice, "<span class='boldnotice'>You are wracked with pain as your master punishes you!</span>")
-				choice.apply_damage(30, BRUTE)
+		possible[D.current.real_name] = D.current
+	var/name_choice = input(src, "Who to punish?", "PUNISHMENT") as null|anything in possible
+	if(!name_choice)
+		return
+	var/mob/living/carbon/human/choice = possible[name_choice]
+	if(!choice || QDELETED(choice))
+		return
+	var/punishmentlevels = list("Pause", "Pain", "DESTROY")
+	var/punishment = input(src, "Severity?", "PUNISHMENT") as null|anything in punishmentlevels
+	if(!punishment)
+		return
+	switch(punishment)
+		if("Pain")
+			to_chat(choice, span_boldnotice("You are wracked with pain as your master punishes you!"))
+			choice.apply_damage(30, BRUTE)
+			choice.emote_scream()
+			playsound(choice, 'sound/misc/obey.ogg', 100, FALSE, pressure_affected = FALSE)
+		if("Pause")
+			to_chat(choice, span_boldnotice("Your body is frozen in place as your master punishes you!"))
+			choice.Paralyze(300)
+			choice.emote_scream()
+			playsound(choice, 'sound/misc/obey.ogg', 100, FALSE, pressure_affected = FALSE)
+		if("DESTROY")
+			to_chat(choice, span_boldnotice("You feel only darkness. Your master no longer has use of you."))
+			spawn(10 SECONDS)
 				choice.emote_scream()
-				playsound(choice, 'sound/misc/obey.ogg', 100, FALSE, pressure_affected = FALSE)
-			if("Pause")
-				to_chat(choice, "<span class='boldnotice'>Your body is frozen in place as your master punishes you!</span>")
-				choice.Paralyze(300)
-				choice.emote_scream()
-				playsound(choice, 'sound/misc/obey.ogg', 100, FALSE, pressure_affected = FALSE)
-			if("Release")
-				to_chat(choice, "<span class='boldnotice'>You feel only darkness. Your master no longer has use of you.</span>")
-				spawn(10 SECONDS)
-					choice.emote_scream()
-					choice.dust()
-		visible_message("<span class='danger'>[src] reaches out, gripping [choice]'s soul, inflicting punishment!</span>")
+				choice.dust()
+	visible_message(span_danger("[src] reaches out, gripping [choice]'s soul, inflicting punishment!"))
 
 /obj/structure/vampire/portal/Crossed(atom/movable/AM)
 	. = ..()
@@ -528,7 +498,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		qdel(V)
 	for(var/obj/structure/vampire/portalmaker/P in GLOB.vampire_objects)
 		P.sending =  FALSE
-	..()
+	return ..()
 
 /obj/structure/vampire/portalmaker/proc/create_portal_return(aname,duration)
 	for(var/obj/effect/landmark/vteleportdestination/Vamp in GLOB.landmarks_list)
@@ -536,22 +506,23 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			var/obj/structure/vampire/portal/P = new(Vamp.loc)
 			P.duration = duration
 			P.spawntime = world.time
-			P.visible_message("<span class='boldnotice'>A sickening tear is heard as a sinister portal emerges.</span>")
+			P.visible_message(span_boldnotice("A sickening tear is heard as a sinister portal emerges."))
 		qdel(Vamp)
 
 /obj/structure/vampire/portalmaker/proc/create_portal(choice,duration)
 	sending = TRUE
 	for(var/obj/effect/landmark/vteleportsending/S in GLOB.landmarks_list)
 		var/obj/structure/vampire/portal/sending/P = new(S.loc)
-		P.visible_message("<span class='boldnotice'>A sickening tear is heard as a sinister portal emerges.</span>")
+		P.visible_message(span_boldnotice("A sickening tear is heard as a sinister portal emerges."))
 
 /obj/structure/vampire/portal/Initialize()
 	. = ..()
-	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 2, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 	playsound(loc, 'sound/misc/portalopen.ogg', 100, FALSE, pressure_affected = FALSE)
-	addtimer(CALLBACK(src, PROC_REF(close_portal)), 1 MINUTES)
 
-/obj/structure/vampire/portal/proc/close_portal()
+	addtimer(CALLBACK(src, PROC_REF(delete)), 60 SECONDS)
+
+/obj/structure/vampire/portal/proc/delete()
 	visible_message(span_boldnotice("[src] shudders before rapidly closing."))
 	qdel(src)
 
@@ -566,18 +537,17 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/bloodpool/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='boldnotice'>Blood level: [current]</span>")
+	to_chat(user, span_boldnotice("Blood level: [current]"))
 
 /obj/structure/vampire/bloodpool/attack_hand(mob/living/user)
 	var/datum/antagonist/vampirelord/lord = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
 	if(user.mind.special_role != "Vampire Lord")
-		to_chat(user, "Only the master of the nite can operate this!")
 		return
-	var/choice = input(user,"What to do?", "Vanderlin") as anything in useoptions|null
+	var/choice = input(user,"What to do?", "ROGUETOWN") as anything in useoptions|null
 	switch(choice)
 		if("Grow Power")
 			if(lord.vamplevel == 4)
-				to_chat(user, "I've already ascended!")
+				to_chat(user, "I'm already max level!")
 				return
 			if(alert(user, "Increase vampire level? Cost:[nextlevel]","","Yes","No") == "Yes")
 				if(!check_withdraw(-nextlevel))
@@ -600,24 +570,19 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						P.name = naming
 					user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
 		if("Shape Armor")
-			if(one_time_armor)
-				if(alert(user, "Craft a new set of armor? Cost:1500","","Yes","No") == "Yes")
-					if(!check_withdraw(-1500))
-						to_chat(user, "I don't have enough vitae!")
-						return
-					user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
-					if(do_after(user, 100))
-						lord.handle_vitae(-1500)
-						new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/haubergon_vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/cuirass/vampire (src.loc)
-						new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
-						new /obj/item/clothing/head/roguetown/helmet/heavy/savoyard (src.loc)
-						one_time_armor = FALSE
-			else
-				to_chat(user, "I already summoned my ancestral armor.")
-				return
-
+			if(alert(user, "Craft a new set of armor? Cost:5000","","Yes","No") == "Yes")
+				if(!check_withdraw(-5000))
+					to_chat(user, "I don't have enough vitae!")
+					return
+				if(do_after(user, 100))
+					lord.handle_vitae(-5000)
+					new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
+					new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
+					new /obj/item/clothing/suit/roguetown/armor/haubergon_vampire (src.loc)
+					new /obj/item/clothing/suit/roguetown/armor/cuirass/vampire (src.loc)
+					new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
+					new /obj/item/clothing/head/roguetown/helmet/heavy/savoyard (src.loc)
+				user.playsound_local(get_turf(src), 'sound/misc/vcraft.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /obj/structure/vampire/bloodpool/proc/update_pool(change)
 	var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -665,21 +630,17 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				return
 			user.visible_message("[user] begins to summon a portal.", "I begin to summon a portal.")
 			if(do_after(user, 30))
-				if(!lord.mypool.check_withdraw(-1000)) // Check AGAIN, in case we got below 1k vitae in the middle of it.
-					lord.handle_vitae(-1000)
-					if(istype(choice, /obj/item/clothing/neck/roguetown/portalamulet))
-						var/obj/item/clothing/neck/roguetown/portalamulet/A = choice
-						A.uses -= 1
-						var/obj/effect/landmark/vteleportdestination/VR = new(A.loc)
-						VR.amuletname = A.name
-						create_portal_return(A.name, 3000)
-						user.playsound_local(get_turf(src), 'sound/misc/portalactivate.ogg', 100, FALSE, pressure_affected = FALSE)
-						if(A.uses <= 0)
-							A.visible_message("[A] shatters!")
-							qdel(A)
-				else
-					to_chat(user, "I've lost the necessary vitae to open a portal!")
-					return
+				lord.handle_vitae(-1000)
+				if(istype(choice, /obj/item/clothing/neck/roguetown/portalamulet))
+					var/obj/item/clothing/neck/roguetown/portalamulet/A = choice
+					A.uses -= 1
+					var/obj/effect/landmark/vteleportdestination/VR = new(A.loc)
+					VR.amuletname = A.name
+					create_portal_return(A.name, 3000)
+					user.playsound_local(get_turf(src), 'sound/misc/portalactivate.ogg', 100, FALSE, pressure_affected = FALSE)
+					if(A.uses <= 0)
+						A.visible_message("[A] shatters!")
+						qdel(A)
 		if("Sending")
 			if(sending)
 				to_chat(user, "A portal is already active!")
@@ -691,30 +652,27 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 				return
 			user.visible_message("[user] begins to summon a portal.", "I begin to summon a portal.")
 			if(do_after(user, 30))
-				if(!lord.mypool.check_withdraw(-1000)) // Check AGAIN, in case we got below 1k vitae in the middle of it.
-					lord.handle_vitae(-1000)
-					if(istype(choice, /obj/item/clothing/neck/roguetown/portalamulet))
-						var/obj/item/clothing/neck/roguetown/portalamulet/A = choice
-						A.uses -= 1
-						var/turf/G = get_turf(A)
-						new /obj/effect/landmark/vteleportsenddest(G.loc)
-						if(A.uses <= 0)
-							A.visible_message("[A] shatters!")
-							qdel(A)
-						create_portal()
-						user.playsound_local(get_turf(src), 'sound/misc/portalactivate.ogg', 100, FALSE, pressure_affected = FALSE)
-				else
-					to_chat(user, "I've lost the necessary vitae to open a portal!")
+				lord.handle_vitae(-1000)
+				if(istype(choice, /obj/item/clothing/neck/roguetown/portalamulet))
+					var/obj/item/clothing/neck/roguetown/portalamulet/A = choice
+					A.uses -= 1
+					var/turf/G = get_turf(A)
+					new /obj/effect/landmark/vteleportsenddest(G.loc)
+					if(A.uses <= 0)
+						A.visible_message("[A] shatters!")
+						qdel(A)
+					create_portal()
+					user.playsound_local(get_turf(src), 'sound/misc/portalactivate.ogg', 100, FALSE, pressure_affected = FALSE)
 		if("CANCEL")
 			return
-/* DISABLED
+/* DISABLED FOR NOW
 /obj/item/clothing/neck/roguetown/portalamulet/attack_self(mob/user)
 	. = ..()
 	if(alert(user, "Create a portal?", "PORTAL GEM", "Yes", "No") == "Yes")
 		uses -= 1
 		var/obj/effect/landmark/vteleportdestination/Vamp = new(loc)
 		Vamp.amuletname = name
-		for(var/obj/structure/vampire/portalmaker/P in world)
+		for(var/obj/structure/vampire/portalmaker/P in GLOB.vampire_objects)
 			P.create_portal_return(name, 3000)
 		user.playsound_local(get_turf(src), 'sound/misc/portalactivate.ogg', 100, FALSE, pressure_affected = FALSE)
 		if(uses <= 0)
@@ -731,6 +689,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/necromanticbook/attack_hand(mob/living/carbon/human/user)
 	var/datum/antagonist/vampirelord/lord = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
+	var/datum/game_mode/chaosmode/C = SSticker.mode
 	if(user.mind.special_role == "Vampire Lord")
 		if(!unlocked)
 			to_chat(user, "I have yet to regain this aspect of my power!")
@@ -739,12 +698,14 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		switch(choice)
 			if("Create Death Knight")
 				if(alert(user, "Create a Death Knight? Cost:5000","","Yes","No") == "Yes")
+					if(C.deathknights.len >= 3)
+						to_chat(user, "You cannot summon any more death knights.")
+						return
 					if(!lord.mypool.check_withdraw(-5000))
 						to_chat(user, "I don't have enough vitae!")
 						return
 					if(do_after(user, 100))
 						to_chat(user, "I have summoned a knight from the underworld. I need only wait for them to materialize.")
-						var/datum/game_mode/chaosmode/C = SSticker.mode
 						C.deathknightspawn = TRUE
 						for(var/mob/dead/observer/D in GLOB.player_list)
 							D.death_knight_spawn()
@@ -774,9 +735,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						for(var/mob/living/carbon/human/astrater in GLOB.human_list)
 							if(!istype(astrater.patron, /datum/patron/divine/astrata) || !length(astrater.mind?.antag_datums))
 								continue
-							to_chat(astrater, "<span class='userdanger'>You feel the pain of [astrater.patron.name]!</span>")
+							to_chat(astrater, span_userdanger("You feel the pain of [astrater.patron.name]!"))
 							astrater.emote_scream()
-
 
 	if(user.mind.special_role == "Vampire Spawn")
 		to_chat(user, "I don't have the power to use this!")
@@ -786,7 +746,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	SEND_SOUND(src, sound('sound/misc/notice (2).ogg'))
 	if(alert(src, "A Vampire Lord is summoning you from the Underworld.", "Be Risen?", "Yes", "No") == "Yes")
 		if(!C.deathknightspawn)
-			to_chat(src, "<span class='warning'>Another soul was chosen.</span>")
+			to_chat(src, span_warning("Another soul was chosen."))
 		returntolobby()
 
 // DEATH KNIGHT ANTAG
@@ -797,11 +757,19 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 /datum/antagonist/skeleton/knight/on_gain()
 	. = ..()
 	owner.current.verbs |= /mob/living/carbon/human/proc/vampire_telepathy
+	owner.unknow_all_people()
+	for(var/datum/mind/MF in get_minds())
+		owner.become_unknown_to(MF)
+	for(var/datum/mind/MF in get_minds("Vampire Spawn"))
+		owner.i_know_person(MF)
+		owner.person_knows_me(MF)
+	for(var/datum/mind/MF in get_minds("Death Knight"))
+		owner.i_know_person(MF)
+		owner.person_knows_me(MF)
 	add_objective(/datum/objective/vlordserve)
 	greet()
-
 /datum/antagonist/skeleton/knight/greet()
-	to_chat(owner.current, "<span class='userdanger'>I am returned to serve. I will obey, so that I may return to rest.</span>")
+	to_chat(owner.current, span_userdanger("I am returned to serve. I will obey, so that I may return to rest."))
 	owner.announce_objectives()
 	..()
 
@@ -832,11 +800,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(count)
 			if(owner)
 				owner.adjust_triumphs(count)
-		to_chat(world, "<span class='greentext'>The [special_role_text] has TRIUMPHED!</span>")
+		to_chat(world, span_greentext("The [special_role_text] has TRIUMPHED!"))
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 	else
-		to_chat(world, "<span class='redtext'>The [special_role_text] has FAILED!</span>")
+		to_chat(world, span_redtext("The [special_role_text] has FAILED!"))
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 // OBJECTIVES STORED HERE TEMPORARILY FOR EASE OF REFERENCE
@@ -871,7 +839,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/one/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Churchling", "Crusader")
+	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Templar", "Churchling", "Crusader", "Inquisitor")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in churchjobs)
 			return TRUE
@@ -883,7 +851,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/two/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("King", "Queen", "Prince", "Princess", "Hand", "Steward")
+	var/list/noblejobs = list("Duke", "Duchess", "Heir", "Heiress", "Hand", "Steward")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in noblejobs)
 			return TRUE
@@ -955,11 +923,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(count)
 			if(owner)
 				owner.adjust_triumphs(count)
-		to_chat(world, "<span class='greentext'>The [special_role_text] has TRIUMPHED!</span>")
+		to_chat(world, span_greentext("The [special_role_text] has TRIUMPHED!"))
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/triumph.ogg', 100, FALSE, pressure_affected = FALSE)
 	else
-		to_chat(world, "<span class='redtext'>The [special_role_text] has FAILED!</span>")
+		to_chat(world, span_redtext("The [special_role_text] has FAILED!"))
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
 
@@ -999,7 +967,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/nextlevel = VAMP_LEVEL_ONE
 	var/debug = FALSE
 	var/list/useoptions = list("Grow Power", "Shape Amulet", "Shape Armor")
-	var/one_time_armor = TRUE // This gets flipped when summoning the armor, to avoid spawning multiple copies of it.
 
 /obj/structure/vampire/scryingorb // Method of spying on the town
 	name = "Eye of Night"
@@ -1103,7 +1070,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	set hidden = 0
 
 	if(!isobserver(usr))
-		to_chat(usr, "<span class='warning'>You're not an Eye!</span>")
+		to_chat(usr, span_warning("You're not an Eye!"))
 		return
 	var/list/filtered = list()
 	for(var/V in GLOB.sortedAreas)
@@ -1120,7 +1087,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		L+=T
 
 	if(!L || !L.len)
-		to_chat(usr, "<span class='warning'>No area available.</span>")
+		to_chat(usr, span_warning("No area available."))
 		return
 
 	usr.forceMove(pick(L))
@@ -1174,27 +1141,25 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(!msg)
 		return
 	for(var/datum/mind/V in C.vampires)
-		to_chat(V, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
+		to_chat(V, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/datum/mind/D in C.deathknights)
-		to_chat(D, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
+		to_chat(D, span_boldnotice("A message from [src.real_name]:[msg]"))
 	for(var/mob/dead/observer/rogue/arcaneeye/A in GLOB.mob_list)
-		to_chat(A, "<span class='boldnotice'>A message from [src.real_name]:[msg]</span>")
-	testing("[src.real_name] ([key_name(src)]) used ghost telepathy to say: [msg]")
-	log_telepathy("[src.real_name] ([key_name(src)]) used ghost telepathy to say: [msg]")
+		to_chat(A, span_boldnotice("A message from [src.real_name]:[msg]"))
 
 /mob/dead/observer/rogue/arcaneeye/proc/eye_up()
 	set category = "Arcane Eye"
 	set name = "Move Up"
 
 	if(zMove(UP, TRUE))
-		to_chat(src, "<span class='notice'>I move upwards.</span>")
+		to_chat(src, span_notice("I move upwards."))
 
 /mob/dead/observer/rogue/arcaneeye/proc/eye_down()
 	set category = "Arcane Eye"
 	set name = "Move Down"
 
 	if(zMove(DOWN, TRUE))
-		to_chat(src, "<span class='notice'>I move down.</span>")
+		to_chat(src, span_notice("I move down."))
 
 /mob/dead/observer/rogue/arcaneeye/Move(NewLoc, direct)
 	if(world.time < next_gmove)
@@ -1231,104 +1196,138 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	releasedrain = 100
 	chargedrain = 0
 	chargetime = 0
-	range = 15
+	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/blood
 	antimagic_allowed = TRUE
-	charge_max = 5 SECONDS
+	charge_max = 10 SECONDS
 	include_user = 0
 	max_targets = 1
 
 /obj/effect/proc_holder/spell/targeted/transfix/cast(list/targets, mob/user = usr)
+	var/msg = input("Soothe them. Dominate them. Speak and they will succumb.", "Transfix") as text|null
+	if(length(msg) < 10)
+		to_chat(user, span_userdanger("This is not enough!"))
+		return FALSE
 	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)
 	var/bloodroll = roll("[bloodskill]d8")
+	user.say(msg)
 	for(var/mob/living/carbon/human/L in targets)
 		var/datum/antagonist/vampirelord/VD = L.mind.has_antag_datum(/datum/antagonist/vampirelord)
-		var/willpower = round(L.STAINT / 3)
+		var/willpower = round(L.STAINT / 4)
 		var/willroll = roll("[willpower]d6")
 		if(VD)
 			return
 		if(L.cmode)
 			willroll += 10
 		var/found_psycross = FALSE
-		for(var/obj/item/clothing/neck/roguetown/psycross/silver in L.contents)
+		for(var/obj/item/clothing/neck/roguetown/psycross/silver/I in L.contents) //Subpath fix.
 			found_psycross = TRUE
 			break
 
 		if(bloodroll >= willroll)
 			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protects me from the unholy magic.</font>")
-				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(user, span_userdanger("[L] has my BANE!It causes me to fail to ensnare their mind!"))
 			else
-				to_chat(L, "You feel like a curtain is coming over your mind.")
-				to_chat(user, "Their mind gives way, they will soon be asleep.")
-				// If succesful, gain experience towards blood magic
-				var/mob/living/carbon/human/licker = user
-				var/boon = user.mind?.get_learning_boon(/datum/skill/magic/blood)
-				var/amt2raise = licker.STAINT*2
-				user.mind.adjust_experience(associated_skill, floor(amt2raise * boon), FALSE)
-				sleep(50)
-				L.Sleeping(300)
+				L.drowsyness = min(L.drowsyness + 50, 150)
+				switch(L.drowsyness)
+					if(0 to 50)
+						to_chat(L, "You feel like a curtain is coming over your mind.")
+						to_chat(user, "Their mind gives way slightly.")
+						L.Slowdown(20)
+					if(50 to 100)
+						to_chat(L, "Your eyelids force themselves shut as you feel intense lethargy.")
+						L.Slowdown(50)
+						L.eyesclosed = TRUE
+						for(var/atom/movable/screen/eye_intent/eyet in L.hud_used.static_inventory)
+							eyet.update_icon(L)
+						L.become_blind("eyelids")
+						to_chat(user, "They will not be able to resist much more.")
+					if(100 to INFINITY)
+						to_chat(L, span_userdanger("You can't take it anymore. Your legs give out as you fall into the dreamworld."))
+						to_chat(user, "They're mine now.")
+						L.Slowdown(50)
+						L.eyesclosed = TRUE
+						for(var/atom/movable/screen/eye_intent/eyet in L.hud_used.static_inventory)
+							eyet.update_icon(L)
+						L.become_blind("eyelids")
+						sleep(50)
+						L.Sleeping(600)
+
 		if(willroll >= bloodroll)
 			if(found_psycross == TRUE)
-				to_chat(L, "<font color='white'>The silver psycross shines and protects me from the unholy magic.</font>")
-				to_chat(user, "<span class='userdanger'>[L] has my BANE!It causes me to fail to ensnare their mind!</span>")
+				to_chat(L, "<font color='white'>The silver psycross shines and protect me from the unholy magic.</font>")
+				to_chat(user, span_userdanger("[L] has my BANE!It causes me to fail to ensnare their mind!"))
 			else
 				to_chat(user, "I fail to ensnare their mind.")
 			if(willroll - bloodroll >= 3)
 				if(found_psycross == TRUE)
-					to_chat(L, "<font color='white'> The silver psycross shines and protects me from the blood magic, the one who used blood magic was [user]!</font>")
+					to_chat(L, "<font color='white'> The silver psycross shines and protect me from the blood magic, the one who used blood magic was [user]!</font>")
 				else
 					to_chat(user, "I fail to ensnare their mind.")
 					to_chat(L, "I feel like someone or something unholy is messing with my head. I should get out of here!")
-					var/holyskill = user.mind.get_skill_level(/datum/skill/magic/holy)
-					var/arcaneskill = user.mind.get_skill_level(/datum/skill/magic/arcane)
+					var/holyskill = L.mind.get_skill_level(/datum/skill/magic/holy)
+					var/arcaneskill = L.mind.get_skill_level(/datum/skill/magic/arcane)
 					if(holyskill + arcaneskill >= 1)
 						to_chat(L, "I feel like the unholy magic came from [user]. I should use my magic or miracles on them.")
 
 /obj/effect/proc_holder/spell/targeted/transfix/master
 	name = "Subjugate"
 	overlay_state = "transfixmaster"
-	releasedrain = 200
+	releasedrain = 1000
 	chargedrain = 0
 	chargetime = 0
-	range = 15
+	range = 7
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
 	chargedloop = null
 	invocation_type = "shout"
 	associated_skill = /datum/skill/magic/blood
 	antimagic_allowed = TRUE
-	charge_max = 5 SECONDS
+	charge_max = 10 SECONDS
 	include_user = 0
 	max_targets = 0
-	cooldown_min = 100 // 10 second cooldown
 
 /obj/effect/proc_holder/spell/targeted/transfix/master/cast(list/targets, mob/user = usr)
-	var/bloodskill = user.mind.get_skill_level(associated_skill)
+	var/msg = input("Soothe them. Dominate them. Speak and they will succumb.", "Transfix") as text|null
+	if(length(msg) < 10)
+		to_chat(user, span_userdanger("This is not enough!"))
+		return FALSE
+	var/bloodskill = user.mind.get_skill_level(/datum/skill/magic/blood)
 	var/bloodroll = roll("[bloodskill]d10")
+	user.say(msg)
 	user.visible_message("<font color='red'>[user]'s eyes glow a ghastly red as they project their will outwards!</font>")
 	for(var/mob/living/carbon/human/L in targets)
 		var/datum/antagonist/vampirelord/VD = L.mind.has_antag_datum(/datum/antagonist/vampirelord)
-		var/willpower = round(L.STAINT / 3)
-		var/willsave = roll("[willpower]d6")
+		var/willpower = round(L.STAINT / 4)
+		var/willroll = roll("[willpower]d6")
 		if(VD)
 			return
 		if(L.cmode)
-			willsave += 15
-		if(bloodroll >= willsave)
-			to_chat(L, "<font color='purple'>You feel like a curtain is coming over your mind.</font>")
-			sleep(50)
-			L.Sleeping(300)
-			// If succesful, gain experience towards blood magic
-			var/mob/living/carbon/human/licker = user
-			var/boon = user.mind?.get_learning_boon(/datum/skill/magic/blood)
-			var/amt2raise = licker.STAINT*2
-			user.mind.adjust_experience(associated_skill, floor(amt2raise * boon), FALSE)
-		else
-			to_chat(L, "<font color='red'>I managed to snap out of my trance!</font>")
-			to_chat(user, "<font color='red'>They resisted my allure!</font>")
-			return
+			willroll += 15
+		if(bloodroll >= willroll)
+			L.drowsyness = min(L.drowsyness + 50, 150)
+			switch(L.drowsyness)
+				if(0 to 50)
+					to_chat(L, "You feel like a curtain is coming over your mind.")
+					L.Slowdown(20)
+				if(50 to 100)
+					to_chat(L, "Your eyelids force themselves shut as you feel intense lethargy.")
+					L.Slowdown(50)
+					L.eyesclosed = TRUE
+					for(var/atom/movable/screen/eye_intent/eyet in L.hud_used.static_inventory)
+						eyet.update_icon(L)
+					L.become_blind("eyelids")
+				if(100 to INFINITY)
+					to_chat(L, span_userdanger("You can't take it anymore. Your legs give out as you fall into the dreamworld."))
+					L.eyesclosed = TRUE
+					for(var/atom/movable/screen/eye_intent/eyet in L.hud_used.static_inventory)
+						eyet.update_icon(L)
+					L.become_blind("eyelids")
+					L.Slowdown(50)
+					sleep(50)
+					L.Sleeping(300)

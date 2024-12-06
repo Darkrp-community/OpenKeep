@@ -11,6 +11,12 @@
 	if(!ishuman(user))
 		return
 	var/mob/living/carbon/human/H = user
+
+	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+		to_chat(H, "<span class='warning'>The idea repulses me!</span>")
+		H.cursed_freak_out()
+		return
+
 	if(H in SStreasury.bank_accounts)
 		var/amt = SStreasury.bank_accounts[H]
 		if(!amt)
@@ -71,6 +77,11 @@
 	if(ishuman(user))
 		if(istype(P, /obj/item/roguecoin))
 			var/mob/living/carbon/human/H = user
+			if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+				to_chat(H, "<span class='warning'>The idea repulses me!</span>")
+				H.cursed_freak_out()
+				return
+
 			if(H in SStreasury.bank_accounts)
 				SStreasury.generate_money_account(P.get_real_price(), H)
 				qdel(P)

@@ -11,7 +11,7 @@
 	show_in_roundend = FALSE
 	isgoodguy = TRUE // Previous townies, still should get buffs, make chaos.
 	confess_lines = list(
-		"VIVA!", 
+		"VIVA!",
 		"DEATH TO THE NOBLES!",
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",

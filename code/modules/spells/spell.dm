@@ -247,6 +247,10 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(!ignore_cockblock && HAS_TRAIT(user, TRAIT_SPELLBLOCK))
 		return FALSE
 
+	if(HAS_TRAIT(user, TRAIT_NOC_CURSE))
+		to_chat(user, span_warning("My magicka has left me..."))
+		return FALSE
+
 	if(!antimagic_allowed)
 		var/antimagic = user.anti_magic_check(TRUE, FALSE, FALSE, 0, TRUE)
 		if(antimagic)
