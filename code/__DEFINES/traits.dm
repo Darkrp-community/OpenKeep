@@ -52,6 +52,7 @@
 #define TRAIT_MARTIALEYE				"Martial Eye"
 #define TRAIT_BLINDFIGHT				"Blindfight"
 #define TRAIT_IRONCOMFORT				"Iron Comfort"
+#define TRAIT_SHIELDEXPERT				"Shield Expert"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -85,6 +86,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MARTIALEYE = "I can gauge an opponent's speed and exertion at a glance.",
 	TRAIT_BLINDFIGHT = "My senses are sharp. I can react to and parry opponents outside my field of vision.",
 	TRAIT_IRONCOMFORT = "Armor is like a second skin to me. Neither iron nor steel will slow me down.",
+	TRAIT_SHIELDEXPERT = "So long as I have a shield in one hand, I can catch arrows with ease.",
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",

@@ -1085,7 +1085,8 @@
 	user.visible_message("[user] mutters an incantation and a dim pulse of light radiates out from them.")
 
 	for(var/mob/living/L in range(1, usr))
-		L.apply_status_effect(/datum/status_effect/buff/longstrider)
+		if(!HAS_TRAIT(L, TRAIT_LONGSTRIDER))
+			L.apply_status_effect(/datum/status_effect/buff/longstrider)
 
 	return TRUE
 

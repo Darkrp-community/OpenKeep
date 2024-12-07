@@ -303,13 +303,15 @@
 					return
 				if(src.get_num_legs() < 2)
 					return
+				if(src.IsStun() || src.IsParalyzed())
+					return
 				if(pulledby && pulledby != src)
 					to_chat(src, "<span class='warning'>I'm being grabbed.</span>")
 					return
 				if(IsOffBalanced())
 					to_chat(src, "<span class='warning'>I haven't regained my balance yet.</span>")
 					return
-				if(lying && !HAS_TRAIT(src, TRAIT_LEAPER)) //Jesters can jump while laying down.
+				if(lying && !HAS_TRAIT(src, TRAIT_LEAPER))
 					to_chat(src, "<span class='warning'>I should stand up first.</span>")
 					return
 				if(!ismob(A) && !isturf(A))

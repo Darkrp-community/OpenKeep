@@ -55,6 +55,9 @@
 		if(owner.client?.chargedprog == 100 && owner.used_intent?.tranged)
 			owner.visible_message("<span class='danger'>[owner] blocks [hitby] with [src]!</span>")
 			return 1
+		if(HAS_TRAIT(owner, TRAIT_SHIELDEXPERT))
+			owner.visible_message("<span class='danger'>[owner] deftly blocks [hitby] with [src]!</span>")
+			return 1
 		else
 			if(prob(coverage))
 				owner.visible_message("<span class='danger'>[owner] blocks [hitby] with [src]!</span>")
