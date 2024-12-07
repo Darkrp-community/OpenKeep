@@ -110,7 +110,7 @@
 		prob2defend = 0
 
 	if(!can_see_cone(user))
-		if(d_intent == INTENT_PARRY)
+		if(d_intent == INTENT_PARRY && !HAS_TRAIT(src, TRAIT_BLINDFIGHT))
 			return FALSE
 		else
 			prob2defend = max(prob2defend-15,0)
@@ -135,6 +135,8 @@
 			if(has_status_effect(/datum/status_effect/debuff/feinted))
 				return FALSE
 			if(has_status_effect(/datum/status_effect/debuff/riposted))
+				return FALSE
+			if(has_status_effect(/datum/status_effect/buff/barbrage))
 				return FALSE
 			last_parry = world.time
 			if(intenty && !intenty.canparry)

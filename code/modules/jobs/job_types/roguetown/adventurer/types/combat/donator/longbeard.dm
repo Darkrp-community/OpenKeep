@@ -47,3 +47,4 @@
 	wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Nothing fazes a longbeard
+	ADD_TRAIT(H, TRAIT_IRONCOMFORT, TRAIT_GENERIC)
