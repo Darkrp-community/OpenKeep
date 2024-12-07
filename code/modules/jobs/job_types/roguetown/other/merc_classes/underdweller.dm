@@ -47,6 +47,7 @@
 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
 		beltl = /obj/item/rogueweapon/pick/paxe // Dorfs get a pick as their primary weapon and axes/maces to use it
 		backr = /obj/item/rogueweapon/shield/wood
+		ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) //No slowdown from medium armor here.
 	else // No miner's helm for Delves as they haven nitevision now.
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
