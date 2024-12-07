@@ -227,7 +227,7 @@
 	locked = TRUE
 
 
-/obj/structure/mineral_door/secret/proc/triggerdefenses(var/mob/living/carbon/human/H, var/D)
+/obj/structure/mineral_door/secret/proc/triggerdefenses(mob/living/carbon/human/H, D)
 	if (!D || !H)
 		return
 	H.electrocute_act(30, src) //just shock
