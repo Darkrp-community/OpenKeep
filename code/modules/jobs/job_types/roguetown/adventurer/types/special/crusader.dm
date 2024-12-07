@@ -29,7 +29,7 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	backr = /obj/item/rogueweapon/shield/tower/metal
-	backl = /obj/item/clothing/cloak/cape/crusader
+	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/silver
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
