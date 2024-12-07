@@ -1780,12 +1780,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
-"bXm" = (
-/obj/effect/mapping_helpers/thieves_cant_helper{
-	thieves_message = "Testing message"
-	},
-/turf/closed/wall/mineral/rogue/wooddark/vertical,
-/area/rogue/indoors/town/manor)
 "bXO" = (
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/outdoors/town)
@@ -14075,12 +14069,6 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
-"pre" = (
-/obj/effect/mapping_helpers/secret_door_creator{
-	redstone_id = "testing"
-	},
-/turf/closed/wall/mineral/rogue/wooddark/vertical,
-/area/rogue/indoors/town/manor)
 "prk" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -17331,12 +17319,6 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
-"tic" = (
-/obj/effect/mapping_helpers/secret_door_creator{
-	redstone_id = "testing"
-	},
-/turf/closed/wall/mineral/rogue/wooddark,
-/area/rogue/indoors/town/manor)
 "tiv" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/effect/decal/cleanable/generic,
@@ -21634,12 +21616,6 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
-"xKK" = (
-/obj/structure/lever/hidden{
-	redstone_id = "testing"
-	},
-/turf/closed/wall/mineral/rogue/stonebrick,
-/area/rogue/indoors/town/manor)
 "xKX" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
@@ -83960,10 +83936,10 @@ ulH
 ulH
 oEQ
 clN
-bXm
+bHM
 owe
-pre
-tic
+bHM
+clN
 sOa
 sOa
 sOa
@@ -84429,7 +84405,7 @@ nog
 ulH
 oiP
 oiP
-xKK
+oEQ
 nfH
 nfH
 sLP
