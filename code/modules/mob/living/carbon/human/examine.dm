@@ -443,7 +443,36 @@
 				. += "<span class='warning'>[t_He] look[p_s()] weaker than I.</span>"
 			if(-INFINITY to -5)
 				. += "<span class='warning'><B>[t_He] look[p_s()] much weaker than I.</B></span>"
-
+				
+	if(isliving(user))
+		var/mob/living/L = user
+		if(HAS_TRAIT(L, TRAIT_MARTIALEYE))
+			var/final_spd = STASPD
+			var/speed_diff = final_spd - L.STASPD
+			var/stamina = rogstam
+			switch(speed_diff)
+				if(5 to INFINITY)
+					. += "<span class='warning'><B>[t_He] look[p_s()] much faster than I.</B></span>"
+				if(1 to 5)
+					. += "<span class='warning'>[t_He] look[p_s()] faster than I.</span>"
+				if(0)
+					. += "[t_He] look[p_s()] about as fast as I."
+				if(-5 to -1)
+					. += "<span class='warning'>[t_He] look[p_s()] slower than I.</span>"
+				if(-INFINITY to -5)
+					. += "<span class='warning'><B>[t_He] look[p_s()] much slower than I.</B></span>"
+			switch(stamina)
+				if(1001 to INFINITY)
+					. += "[t_He] look[p_s()] well rested and unexerted."
+				if(701 to 1000)
+					. += "[t_He] look[p_s()] a little tired, but still combat ready."
+				if(401 to 700)
+					. += "<span class='warning'>[t_He] [t_is] breathing heavily, beads of sweat running down [t_his] skin.</span>"
+				if(151 to 400)
+					. += "<span class='warning'><B>[t_He] [t_is] struggling to maintain [t_his] posture, exhaustion overtaking [t_He].</B></span>"
+				if(-INFINITY to 150)
+					. += "<span class='warning'><B>[t_He] look[p_s()] on the brink of collapsing from exhaustion.</B></span>"
+					
 	if(Adjacent(user))
 		if(isobserver(user))
 			var/static/list/check_zones = list(

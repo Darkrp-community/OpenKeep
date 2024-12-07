@@ -49,6 +49,7 @@
 #define TRAIT_GOODRUNNER 				"Good Runner"
 #define TRAIT_SWIFTRUNNER 				"Swift Runner"
 #define TRAIT_KICKUP					"Kick-Up"
+#define TRAIT_MARTIALEYE				"Martial Eye"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -79,6 +80,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_GOODRUNNER = span_info("I can sprint without breaking a sweat!"),
 	TRAIT_SWIFTRUNNER = span_info("I can run gracefully, avoiding collisions."),
 	TRAIT_KICKUP = "I can quickly get back on my feet.",
+	TRAIT_MARTIALEYE = "I can gauge an opponent's speed and exertion at a glance.",
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",

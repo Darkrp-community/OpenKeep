@@ -52,7 +52,7 @@
 		beltr = /obj/item/rogueweapon/knife/dagger/steel/special
 		beltl = /obj/item/quiver/arrows
 		backpack_contents = list(/obj/item/reagent_containers/glass/bottle/rogue/wine = 1, /obj/item/reagent_containers/glass/cup/silver = 1)
-		if(prob(33))
+		if(prob(50))
 			ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)	
 	if(H.gender == MALE)
 		H.change_stat("constitution", 1)

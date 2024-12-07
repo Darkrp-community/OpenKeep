@@ -62,3 +62,4 @@
 			to_chat(H, "<span class='info'>I can speak Elfish with ,e before my speech.</span>")
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_LONGSTRIDER, TRAIT_GENERIC)
