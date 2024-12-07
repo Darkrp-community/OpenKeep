@@ -27,7 +27,7 @@
 	allowed_areas = list(/area/rogue/outdoors/mountains/decap,/area/rogue/outdoors/mountains/anvil/snowy)
 
 /datum/mapGeneratorModule/undermountain
-	lusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
+	clusterCheckFlags = CLUSTER_CHECK_DIFFERENT_ATOMS
 	allowed_turfs = list(/turf/open/floor/rogue/dirt,/turf/open/floor/rogue/cobblerock)
 	spawnableAtoms = list(/obj/item/natural/stone = 10,
 						/obj/item/natural/rock = 5,
