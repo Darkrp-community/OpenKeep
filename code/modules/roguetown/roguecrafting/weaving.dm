@@ -69,6 +69,18 @@
 	craftdiff = 2
 	sellprice = 19
 
+/datum/crafting_recipe/roguetown/weaving/mundies
+	name = "masculine smallclothes"
+	result = list(/obj/item/undies)
+	craftdiff = 2
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/fundies
+	name = "feminine smallclothes"
+	result = list(/obj/item/undies/f)
+	craftdiff = 2
+	sellprice = 20
+
 /*========= SKILL LEVEL: 3 REQUIRED ==========*/
 
 /datum/crafting_recipe/roguetown/weaving/paddedgambeson
