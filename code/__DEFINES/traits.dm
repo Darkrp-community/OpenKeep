@@ -50,6 +50,7 @@
 #define TRAIT_SWIFTRUNNER 				"Swift Runner"
 #define TRAIT_KICKUP					"Kick-Up"
 #define TRAIT_MARTIALEYE				"Martial Eye"
+#define TRAIT_BLINDFIGHT				"Blindfight"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -81,6 +82,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SWIFTRUNNER = span_info("I can run gracefully, avoiding collisions."),
 	TRAIT_KICKUP = "I can quickly get back on my feet.",
 	TRAIT_MARTIALEYE = "I can gauge an opponent's speed and exertion at a glance.",
+	TRAIT_BLINDFIGHT = "My senses are sharp. I can react to and parry opponents outside my field of vision.",
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",

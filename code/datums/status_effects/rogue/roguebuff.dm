@@ -297,13 +297,23 @@
 /datum/status_effect/buff/barbrage
 	id = "barbrage"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage
-	effectedstats = list("strength" = 1, "endurance" = 2, "perception" = -2, "intelligence" = -2) //endurance to boost pain treshold, not powerful enough to warrant total painkilling
-	duration = 15 SECONDS
+	effectedstats = list("strength" = 1, "endurance" = 4, "perception" = -2, "intelligence" = -2) //endurance to boost pain treshold, not powerful enough to warrant total painkilling
+	duration = 45 SECONDS
+
+/datum/status_effect/buff/barbrage/nextmove_modifier()
+	return 0.75
 
 /atom/movable/screen/alert/status_effect/buff/barbrage
 	name = "Barbaric Rage"
 	desc = span_nicegreen("WITNESS ME!")
 	icon_state = "ravox"
+	
+/datum/status_effect/buff/barbrage/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.rogstam_add(200)
+		C.rogfat_reset()
 
 /datum/status_effect/buff/barbrage/on_remove()
 	. = ..()

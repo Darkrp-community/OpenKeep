@@ -217,9 +217,10 @@
 
 /obj/effect/proc_holder/spell/self/barbrage/cast(list/targets,mob/living/user = usr)
 	. = ..()
-	user.emote("rage", forced = TRUE)
-	playsound(get_turf(user), 'sound/magic/barbroar.ogg', 50, TRUE)
-	user.apply_status_effect(/datum/status_effect/buff/barbrage)
+	if(!user.has_status_effect(/datum/status_effect/debuff/barbfalter))
+		user.emote("rage", forced = TRUE)
+		playsound(get_turf(user), 'sound/magic/barbroar.ogg', 50, TRUE)
+		user.apply_status_effect(/datum/status_effect/buff/barbrage)
 
 // XYLIX
 
