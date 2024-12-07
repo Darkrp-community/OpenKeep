@@ -373,27 +373,27 @@
 	lockid = "house9"
 
 /obj/item/roguekey/houses/waterfront1
-	name = "I Waterfront Street Ket"
+	name = "I waterfront street key"
 	icon_state = "brownkey"
 	lockid = "1waterfront"
 
 /obj/item/roguekey/houses/waterfront2
-	name = "II Waterfront Street Ket"
+	name = "II waterfront street key"
 	icon_state = "brownkey"
 	lockid = "2waterfront"
 
 /obj/item/roguekey/houses/waterfront3
-	name = "III Waterfront Street Ket"
+	name = "III waterfront street key"
 	icon_state = "brownkey"
 	lockid = "3waterfront"
 
 /obj/item/roguekey/houses/waterfront4
-	name = "IV Waterfront Street Ket"
+	name = "IV waterfront street key"
 	icon_state = "brownkey"
 	lockid = "4waterfront"
 
 /obj/item/roguekey/houses/waterfront5
-	name = "V Waterfront Street Ket"
+	name = "V waterfront street key"
 	icon_state = "brownkey"
 	lockid = "5waterfront"
 
@@ -457,45 +457,90 @@
 	icon_state = "rustkey"
 	lockid = "shop1"
 
+/obj/item/roguekey/shops/shopwarehouse1
+	name = "shop I warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop1ware"
+
 /obj/item/roguekey/shops/shop2
 	name = "shop II key"
 	icon_state = "rustkey"
 	lockid = "shop2"
+
+/obj/item/roguekey/shops/shopwarehouse2
+	name = "shop II warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop2ware"
 
 /obj/item/roguekey/shops/shop3
 	name = "shop III key"
 	icon_state = "rustkey"
 	lockid = "shop3"
 
+/obj/item/roguekey/shops/shopwarehouse3
+	name = "shop III warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop3ware"
+
 /obj/item/roguekey/shops/shop4
 	name = "shop IV key"
 	icon_state = "rustkey"
 	lockid = "shop4"
+
+/obj/item/roguekey/shops/shopwarehouse4
+	name = "shop IV warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop4ware"
 
 /obj/item/roguekey/shops/shop5
 	name = "shop V key"
 	icon_state = "rustkey"
 	lockid = "shop5"
 
+/obj/item/roguekey/shops/shopwarehouse5
+	name = "shop V warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop5ware"
+
 /obj/item/roguekey/shops/shop6
 	name = "shop VI key"
 	icon_state = "rustkey"
 	lockid = "shop6"
+
+/obj/item/roguekey/shops/shopwarehouse6
+	name = "shop VI warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop6ware"
 
 /obj/item/roguekey/shops/shop7
 	name = "shop VII key"
 	icon_state = "rustkey"
 	lockid = "shop7"
 
+/obj/item/roguekey/shops/shopwarehouse7
+	name = "shop VII warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop7ware"
+
 /obj/item/roguekey/shops/shop8
 	name = "shop VIII key"
 	icon_state = "rustkey"
 	lockid = "shop8"
 
+/obj/item/roguekey/shops/shopwarehouse8
+	name = "shop VIII warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop8ware"
+
 /obj/item/roguekey/shops/shop9
 	name = "shop IX key"
 	icon_state = "rustkey"
 	lockid = "shop9"
+
+/obj/item/roguekey/shops/shopwarehouse9
+	name = "shop IX warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop9ware"
 
 /obj/item/roguekey/theatre
 	name = "theatre key"
