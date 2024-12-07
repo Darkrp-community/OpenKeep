@@ -10,6 +10,14 @@
 	var/wallclimb = FALSE
 	var/climbdiff = 0
 
+	var/obj/effect/skill_tracker/thieves_cant/thieves_marking
+
+/turf/closed/examine(mob/user)
+	. = ..()
+	if(thieves_marking)
+		if(thieves_marking.can_see(user))
+			thieves_marking.examine(user)
+
 /turf/closed/MouseDrop_T(atom/movable/O, mob/user)
 	. = ..()
 	if(!wallpress)

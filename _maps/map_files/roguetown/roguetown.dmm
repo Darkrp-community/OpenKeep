@@ -1780,6 +1780,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
+"bXm" = (
+/obj/effect/mapping_helpers/thieves_cant_helper{
+	thieves_message = "Testing message"
+	},
+/turf/closed/wall/mineral/rogue/wooddark/vertical,
+/area/rogue/indoors/town/manor)
 "bXO" = (
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/outdoors/town)
@@ -83954,7 +83960,7 @@ ulH
 ulH
 oEQ
 clN
-bHM
+bXm
 owe
 pre
 tic
