@@ -235,6 +235,8 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 	user.emote(chosen_emote, forced = TRUE)
 
 /datum/sex_controller/proc/update_blueballs()
+	if(user.gender == FEMALE)
+		return FALSE
 	if(arousal >= BLUEBALLS_GAIN_THRESHOLD)
 		user.add_stress(/datum/stressevent/blueb)
 	else if (arousal <= BLUEBALLS_LOOSE_THRESHOLD)
@@ -484,19 +486,19 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 	switch(passed_force)
 		if(SEX_FORCE_LOW)
 			if(giving)
-				return 2.0
+				return 1.0
 			else
-				return 2.0
+				return 0.8
 		if(SEX_FORCE_MID)
 			if(giving)
-				return 2.2
+				return 1.2
 			else
-				return 2.2
+				return 1.0
 		if(SEX_FORCE_HIGH)
 			if(giving)
-				return 2.6
+				return 1.5
 			else
-				return 2.2
+				return 1.0
 
 /datum/sex_controller/proc/get_force_string()
 	switch(force)
