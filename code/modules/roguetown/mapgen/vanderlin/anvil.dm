@@ -42,4 +42,4 @@
 						/obj/structure/flora/roguegrass/herb = 2,
 						/obj/structure/flora/roguegrass/bush = 4,
 						/obj/item/grown/log/tree/stick = 10)
-	allowed_areas = list(/area/rogue/under/mountains/anvil/grove)
+	allowed_areas = list(/area/rogue/outdoors/mountains/anvil/grove)
