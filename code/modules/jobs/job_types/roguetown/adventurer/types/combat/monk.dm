@@ -12,6 +12,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/monk
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
+	cmode_music = 'sound/music/adventurer/CombatMonk.ogg'
 	vampcompat = FALSE
 
 /datum/outfit/job/roguetown/adventurer/monk
