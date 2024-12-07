@@ -41,10 +41,8 @@
 	minbodytemp = 0
 	faction = list("undead")
 	footstep_type = null
-	defprob = 50 //decently skilled
 	defdrain = 20
 	canparry = TRUE
-	retreat_health = null
 	var/obj/structure/bonepile/slavepile
 
 /mob/living/simple_animal/hostile/rogue/haunt/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
@@ -101,27 +99,39 @@
 
 /obj/structure/bonepile
 	icon = 'icons/roguetown/mob/monster/wraith.dmi'
-	icon_state = "hauntpile"
+	icon_state = "hauntpile-s"
 	max_integrity = 100
 	anchored = TRUE
 	density = FALSE
-	layer = BELOW_OBJ_LAYER
 	var/list/haunts = list()
-	var/maxhaunts = 1
+	var/maxhaunts
 	var/datum/looping_sound/boneloop/soundloop
-	var/spawning = FALSE
+	var/spawning_haunt = FALSE
+	layer = BELOW_OBJ_LAYER
+	attacked_sound = 'sound/vo/mobs/ghost/skullpile_hit.ogg'
+
+/obj/structure/intert_bonepile
+	icon = 'icons/roguetown/mob/monster/wraith.dmi'
+	icon_state = "hauntpile"
+	max_integrity = 100
+	anchored = FALSE
+	density = FALSE
+	layer = BELOW_OBJ_LAYER
 	attacked_sound = 'sound/vo/mobs/ghost/skullpile_hit.ogg'
 
 /obj/structure/bonepile/Initialize()
 	. = ..()
+	if(isnull(maxhaunts))
+		maxhaunts = rand(1,2)
 	soundloop = new(src, FALSE)
 	soundloop.start()
-//	for(var/i in 1 to maxhaunts)
-	spawn_haunt()
+	for(var/i in 1 to maxhaunts)
+		spawn_haunt()
+	update_icon()
 
 /obj/structure/bonepile/update_icon()
 	. = ..()
-	if(spawning)
+	if(spawning_haunt)
 		icon_state = "hauntpile-r"
 	else
 		icon_state = "hauntpile"
@@ -129,9 +139,7 @@
 /obj/structure/bonepile/proc/createhaunt()
 	if(QDELETED(src))
 		return
-	if(!spawning)
-		return
-	spawning = FALSE
+	spawning_haunt = FALSE
 	var/mob/living/simple_animal/hostile/rogue/haunt/H = new (get_turf(src))
 	H.slavepile = src
 	haunts += H
@@ -140,15 +148,13 @@
 /obj/structure/bonepile/proc/spawn_haunt()
 	if(QDELETED(src))
 		return
-	if(spawning)
-		return
-	spawning = TRUE
+	spawning_haunt = TRUE
 	update_icon()
-	addtimer(CALLBACK(src, PROC_REF(createhaunt)), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(createhaunt)), rand(4,6) SECONDS)
 
 /obj/structure/bonepile/Destroy()
 	soundloop.stop()
-	spawning = FALSE
+	spawning_haunt = null
 	for(var/H in haunts)
 		var/mob/living/simple_animal/hostile/rogue/haunt/D = H
 		D.death()
@@ -216,7 +222,7 @@
 	. = ..()
 	if(. && prob(8) && iscarbon(target))
 		var/mob/living/carbon/C = target
-		C.Immobilize(50)
+		C.Immobilize(2 SECONDS)
 		C.visible_message("<span class='danger'>\The [src] paralyzes \the [C] in fear!</span>", \
 				"<span class='danger'>\The [src] paralyzes me!</span>")
 		emote("laugh")
