@@ -8,7 +8,7 @@
 
 
 /datum/mapGenerator/anvil
-	modules = list(/datum/mapGeneratorModule/ambushing,/datum/mapGeneratorModule/abovemountain,/datum/mapGeneratorModule/undermountain,/datum/mapGeneratorModule/inmountain,/datum/mapGeneratorModule/grove)
+	modules = list(/datum/mapGeneratorModule/ambushing,/datum/mapGeneratorModule/abovemountain,/datum/mapGeneratorModule/undermountain,/datum/mapGeneratorModule/grove)
 
 
 /datum/mapGeneratorModule/abovemountain
