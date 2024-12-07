@@ -18,7 +18,6 @@
     spawnableAtoms = list(/obj/structure/flora/roguetree/burnt = 30,
                             /obj/structure/flora/roguegrass/bush_meagre = 25,
                             /obj/structure/flora/roguegrass = 23,
-                            /obj/structure/flora/roguegrass/snow = 13,
                             /obj/structure/flora/roguegrass/herb = 2,
                             /obj/item/natural/stone = 23,
                             /obj/item/natural/rock/random_ore = 4,
