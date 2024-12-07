@@ -31,6 +31,12 @@
 	var/vipmessage
 	var/defenses = FALSE
 
+/obj/structure/mineral_door/secret/redstone_triggered()
+	if(!door_opened)
+		force_open()
+	else
+		force_closed()
+
 /obj/structure/mineral_door/secret/update_icon()
 
 /obj/structure/mineral_door/secret/vault
@@ -322,6 +328,8 @@
 
 	var/turf/open/floor_turf = /turf/open/floor/rogue/wood
 
+	var/redstone_id
+
 	var/datum/language/given_lang = /datum/language/thievescant
 	var/list/vips = list("Vagabond", "Thug", "Rogue", "Nightmaster", "Nightmistress", "Beggar")
 	var/vip_message = "Vagabond, Thug, Rogue, Nightmaster, Nightmistress and Beggar"
@@ -340,6 +348,10 @@
 	new_door.icon_state = source_turf.icon_state
 	new_door.name = source_turf.name
 	new_door.desc = source_turf.desc
+	if(redstone_id)
+		new_door.redstone_id = redstone_id
+		GLOB.redstone_objs += new_door
+		new_door.LateInitialize()
 
 	source_turf.ChangeTurf(floor_turf)
 	. = ..()

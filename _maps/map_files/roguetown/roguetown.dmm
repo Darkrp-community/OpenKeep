@@ -14069,6 +14069,12 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
+"pre" = (
+/obj/effect/mapping_helpers/secret_door_creator{
+	redstone_id = "testing"
+	},
+/turf/closed/wall/mineral/rogue/wooddark/vertical,
+/area/rogue/indoors/town/manor)
 "prk" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -17319,6 +17325,12 @@
 /obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/garrison)
+"tic" = (
+/obj/effect/mapping_helpers/secret_door_creator{
+	redstone_id = "testing"
+	},
+/turf/closed/wall/mineral/rogue/wooddark,
+/area/rogue/indoors/town/manor)
 "tiv" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/effect/decal/cleanable/generic,
@@ -21616,6 +21628,12 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/tavern)
+"xKK" = (
+/obj/structure/lever/hidden{
+	redstone_id = "testing"
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "xKX" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
@@ -83938,8 +83956,8 @@ oEQ
 clN
 bHM
 owe
-bHM
-clN
+pre
+tic
 sOa
 sOa
 sOa
@@ -84405,7 +84423,7 @@ nog
 ulH
 oiP
 oiP
-oEQ
+xKK
 nfH
 nfH
 sLP

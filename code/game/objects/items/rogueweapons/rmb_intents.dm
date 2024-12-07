@@ -74,6 +74,12 @@
 	desc = "Your attacks have less recovery time but are less accurate."
 	icon_state = "rmbswift"
 
+/datum/rmb_intent/swift/special_attack(mob/living/user, atom/target)
+	if(isclosedturf(target))
+		var/turf/closed/turf = target
+		turf.feel_turf(user)
+	. = ..()
+
 /datum/rmb_intent/special
 	name = "special"
 	desc = "(RMB WHILE DEFENSE IS ACTIVE) A special attack that depends on the type of weapon you are using."

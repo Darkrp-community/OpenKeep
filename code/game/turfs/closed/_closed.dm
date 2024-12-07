@@ -24,6 +24,14 @@
 			wallpress(L)
 			return
 
+/turf/closed/proc/feel_turf(mob/living/user)
+	to_chat(user, span_notice("I start feeling around the [src]"))
+	if(!do_after(user, 1.5 SECONDS, target = src))
+		return
+
+	for(var/obj/structure/lever/hidden/lever in contents)
+		lever.feel_button(user)
+
 /turf/closed/proc/wallpress(mob/living/user)
 	if(user.wallpressed)
 		return
