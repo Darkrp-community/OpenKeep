@@ -373,27 +373,27 @@
 	lockid = "house9"
 
 /obj/item/roguekey/houses/waterfront1
-	name = "I Waterfront Street Key"
+	name = "I waterfront street key"
 	icon_state = "brownkey"
 	lockid = "1waterfront"
 
 /obj/item/roguekey/houses/waterfront2
-	name = "II Waterfront Street Key"
+	name = "II waterfront street key"
 	icon_state = "brownkey"
 	lockid = "2waterfront"
 
 /obj/item/roguekey/houses/waterfront3
-	name = "III Waterfront Street Key"
+	name = "III waterfront street key"
 	icon_state = "brownkey"
 	lockid = "3waterfront"
 
 /obj/item/roguekey/houses/waterfront4
-	name = "IV Waterfront Street Key"
+	name = "IV waterfront street key"
 	icon_state = "brownkey"
 	lockid = "4waterfront"
 
 /obj/item/roguekey/houses/waterfront5
-	name = "V Waterfront Street Key"
+	name = "V waterfront street key"
 	icon_state = "brownkey"
 	lockid = "5waterfront"
 
