@@ -101,7 +101,9 @@
 /obj/structure/trap/proc/trap_check(mob/living/victim)
 	if(last_trigger + time_between_triggers > world.time)
 		return FALSE
-	if(victim.mind in immune_minds || HAS_TRAIT(victim,TRAIT_LIGHT_STEP))
+	if(HAS_TRAIT(victim,TRAIT_LIGHT_STEP))
+		return FALSE
+	if(victim.mind in immune_minds)
 		return FALSE
 	if(checks_antimagic && victim.anti_magic_check())
 		flare(TRUE)
@@ -126,11 +128,12 @@
 
 /obj/structure/trap/shock
 	name = "lightning plate trap"
+	var/stun_time = 5 SECONDS
 
 /obj/structure/trap/shock/trigger_step_on(mob/living/victim)
 	..()
 	victim.electrocute_act(30, src, flags = SHOCK_NOGLOVES) // electrocute act does a message.
-	victim.Paralyze(5 SECONDS)
+	victim.Paralyze(stun_time)
 	post_triggered()
 
 /obj/structure/trap/fire
