@@ -55,7 +55,7 @@
 							// Store the current time for the player
 							GLOB.job_respawn_delays[G.ckey] = world.time + target_job.same_job_respawn_delay
 					verbs -= /client/proc/descend
-					if(!GLOB.underworldspiritspawns.len) //That cant be good.
+					if(!length(GLOB.underworldspiritspawns)) //That cant be good.
 						to_chat(usr, span_danger("Hell is full. Blood is now fuel. Alert an admin, as something is very wrong!"))
 						return
 					var/turf/spawn_loc = pick(GLOB.underworldspiritspawns)
@@ -74,7 +74,7 @@
 				G.returntolobby()
 		if(alert("Travel with the boatman?", "", "Yes", "No") == "Yes")
 			verbs -= /client/proc/descend
-			if(!GLOB.underworldspiritspawns.len) //That cant be good.
+			if(!length(GLOB.underworldspiritspawns)) //That cant be good.
 				to_chat(usr, span_danger("Hell is full. Blood is now fuel. Alert an admin, as something is very wrong!"))
 				return
 			var/turf/spawn_loc = pick(GLOB.underworldspiritspawns)

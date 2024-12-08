@@ -19,7 +19,7 @@
 					if(target_job.same_job_respawn_delay)
 						// Store the current time for the player
 						GLOB.job_respawn_delays[src.ckey] = world.time + target_job.same_job_respawn_delay
-			if(!GLOB.underworldspiritspawns.len) //That cant be good.
+			if(!length(GLOB.underworldspiritspawns)) //That cant be good.
 				to_chat(usr, span_danger("Hell is full. Blood is now fuel. Alert an admin, as something is very wrong!"))
 				return
 			var/turf/spawn_loc = pick(GLOB.underworldspiritspawns)
