@@ -14,6 +14,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/rogue
 	min_pq = 0
 	category_tags = list(CTAG_ADVENTURER)
+	cmode_music = 'sound/music/adventurer/CombatRogue.ogg'
 
 /datum/outfit/job/roguetown/adventurer/rogue/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -50,6 +51,10 @@
 	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/rogueweapon/knife/dagger/steel)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)		//Rogues are known for commonly lacking standard morals, as well as seeing fucked-shit, so - this tracks.
+	ADD_TRAIT(H, TRAIT_THIEVESGUILD, TRAIT_GENERIC)
 	H.change_stat("strength", -1)
 	H.change_stat("perception", 2)
 	H.change_stat("speed", 2)
+
+	H.grant_language(/datum/language/thievescant)
+	to_chat(H, "<span class='info'>I can gesture in thieves' cant with ,t before my speech.</span>")
