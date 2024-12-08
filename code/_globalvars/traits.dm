@@ -121,7 +121,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Shock Immunity" = TRAIT_SHOCKIMMUNE,
 		"Expert Herb Finder" = TRAIT_LEGENDARY_ALCHEMIST,
 		"Deceiving Meekness" = TRAIT_DECEIVING_MEEKNESS,
-		"Thieves Guild Memeber" = TRAIT_THIEVESGUILD,
+		"Thieves Guild Member" = TRAIT_THIEVESGUILD,
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS
