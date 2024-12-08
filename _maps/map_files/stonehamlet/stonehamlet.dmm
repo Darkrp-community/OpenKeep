@@ -17899,7 +17899,9 @@
 /area/rogue/indoors/town/shop)
 "rHl" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/reagent_containers/glass/mortar,
+/obj/item/mortar{
+	pixel_y = 5
+	},
 /obj/item/pestle,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
