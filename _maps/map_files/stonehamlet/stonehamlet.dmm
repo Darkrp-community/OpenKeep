@@ -1589,6 +1589,12 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
+"bHG" = (
+/obj/structure/roguewindow/openclose{
+	dir = 8
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/bath/redhouse)
 "bHN" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/grass,
@@ -6031,6 +6037,12 @@
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
+"fYq" = (
+/obj/structure/roguewindow/openclose{
+	dir = 1
+	},
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/bath/redhouse)
 "fYv" = (
 /obj/effect/landmark/start/wapprentice{
 	dir = 8
@@ -67439,7 +67451,7 @@ bwe
 bPq
 xPH
 xPH
-nzu
+fYq
 fyl
 roQ
 hZX
@@ -67821,7 +67833,7 @@ iOI
 xMw
 xMw
 xMw
-nzu
+bHG
 xMw
 xMw
 xMw
@@ -91884,7 +91896,7 @@ fqp
 kAp
 kAp
 kAp
-nzu
+fYq
 ydO
 oGx
 hZX
@@ -92653,7 +92665,7 @@ pzV
 xMw
 dOa
 xMw
-nzu
+bHG
 xMw
 xMw
 xMw
