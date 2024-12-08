@@ -5,6 +5,7 @@
 	icon_state = "haunt"
 	icon_living = "haunt"
 	icon_dead = null
+	alpha = 200
 	mob_biotypes = MOB_UNDEAD|MOB_HUMANOID
 	movement_type = FLYING
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -17,8 +18,6 @@
 	response_help_simple = "pass through"
 	maxHealth = 50
 	health = 50
-	layer = 16
-	plane = 16
 	spacewalk = TRUE
 	stat_attack = UNCONSCIOUS
 	robust_searching = 1
@@ -104,7 +103,7 @@
 	anchored = TRUE
 	density = FALSE
 	var/list/haunts = list()
-	var/maxhaunts
+	var/maxhaunts = 1
 	var/datum/looping_sound/boneloop/soundloop
 	var/spawning_haunt = FALSE
 	layer = BELOW_OBJ_LAYER
@@ -121,8 +120,6 @@
 
 /obj/structure/bonepile/Initialize()
 	. = ..()
-	if(isnull(maxhaunts))
-		maxhaunts = rand(1,2)
 	soundloop = new(src, FALSE)
 	soundloop.start()
 	for(var/i in 1 to maxhaunts)
