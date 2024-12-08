@@ -6,6 +6,8 @@
 	density = FALSE
 	anchored = TRUE
 	alpha = 80
+	//shhh
+	nomouseover = TRUE
 	///What to say when antimagic'd
 	var/flare_message
 	///What to say when found
@@ -27,7 +29,7 @@
 	if(isnull(flare_message))
 		flare_message = span_warning("\The [src] fizzles!")
 	if(isnull(found_message))
-		found_message = span_warning("\The [src] reveals itself!")
+		found_message = span_warning("\The [src] is revealed!")
 	spark_system = new
 	spark_system.set_up(4,1,src)
 	spark_system.attach(src)
@@ -46,25 +48,27 @@
 	. = ..()
 	if(!isliving(user))
 		return
+	var/mob/living/luser = user
 	if(user.mind && (user.mind in immune_minds))
 		return
-	if(get_dist(user, src) <= 1)
-		. += span_notice("I reveal [src]")
+	if(get_dist(user, src) <= FLOOR((luser.STAPER-4)/4,1))
+		to_chat(user,span_notice("I reveal and temporarily disarm \the [src]"))
 		flare()
 
 ///Make trap vizible and disarmed for a cooldown time, but dont take charge.
 /obj/structure/trap/proc/flare(fizzle = FALSE)
-	// Makes the trap visible, and starts the cooldown until it's
-	// able to be triggered again.
 	if(fizzle)
 		visible_message(flare_message)
 	else
 		visible_message(found_message)
 	if(sparks)
 		spark_system.start()
+	nomouseover = FALSE
 	alpha = 200
 	last_trigger = world.time
 	animate(src, alpha = initial(alpha), time = time_between_triggers)
+	if(do_atom(src,src,time_between_triggers,TRUE))
+		nomouseover = TRUE
 
 /obj/structure/trap/Crossed(atom/movable/AM)
 	if(is_type_in_typecache(AM, ignore_typecache))
@@ -72,6 +76,7 @@
 	if(isliving(AM))
 		if(trap_check(AM))
 			trigger_step_on(AM)
+			return
 
 /obj/structure/trap/Uncrossed(atom/movable/AM)
 	if(is_type_in_typecache(AM, ignore_typecache))
@@ -79,6 +84,7 @@
 	if(isliving(AM))
 		if(trap_check(AM))
 			trigger_step_off(AM)
+			return
 
 ///Knocks off charge, deletes it if it runs out
 /obj/structure/trap/proc/lose_charge()
@@ -95,26 +101,28 @@
 /obj/structure/trap/proc/trap_check(mob/living/victim)
 	if(last_trigger + time_between_triggers > world.time)
 		return FALSE
-	if(victim.mind in immune_minds)
+	if(victim.mind in immune_minds || HAS_TRAIT(victim,TRAIT_LIGHT_STEP))
 		return FALSE
 	if(checks_antimagic && victim.anti_magic_check())
 		flare(TRUE)
 		return FALSE
 	return TRUE
+
 ///Utility to set the last trigger time,show trap, and deduct charges.
 /obj/structure/trap/proc/post_triggered()
 	flare()
 	lose_charge()
-///Called when someone steps OFF and we're ready, make sure to deduct charges and set time
+
+///Called when someone steps OFF and we're ready, make sure to call post_triggered()
 /obj/structure/trap/proc/trigger_step_off(mob/living/victim)
 	playsound(src, 'sound/misc/pressurepad_up.ogg', 65, extrarange = 2)
 	return
-///Called when someone steps ON and we're ready
-/obj/structure/trap/proc/trigger_step_on(mob/living/L)
-	to_chat(L, span_info("I feel a 'click' beneath me..."))
+
+///Called when someone steps ON and we're ready, make sure to call post_triggered()
+/obj/structure/trap/proc/trigger_step_on(mob/living/victim)
+	to_chat(victim, span_info("I feel a 'click' beneath me..."))
 	playsound(src, 'sound/misc/pressurepad_down.ogg', 65, extrarange = 2)
 	return
-
 
 /obj/structure/trap/shock
 	name = "lightning plate trap"
@@ -128,29 +136,84 @@
 /obj/structure/trap/fire
 	name = "flamejet plate trap"
 
-/obj/structure/trap/fire/trigger_step_on(mob/living/L)
+/obj/structure/trap/fire/trigger_step_on(mob/living/victim)
 	..()
-	to_chat(L,span_danger("The ground suddenly erupts in flame!"))
-	L.Paralyze(1 SECONDS)
+	to_chat(victim,span_danger("The ground suddenly erupts in flame!"))
 	new /obj/effect/hotspot(get_turf(src))
 	post_triggered()
 
 /obj/structure/trap/chill
 	name = "frost plate trap"
 
-/obj/structure/trap/chill/trigger_step_on(mob/living/L)
+/obj/structure/trap/chill/trigger_step_on(mob/living/victim)
 	..()
-	to_chat(L, span_danger("I am suddenly frozen solid!"))
-	L.apply_status_effect(/datum/status_effect/frost_trap)
+	to_chat(victim, span_danger("I am suddenly frozen solid!"))
+	victim.apply_status_effect(/datum/status_effect/frost_trap)
 	post_triggered()
 
 /obj/structure/trap/spike
 	name = "spike plate trap"
 
-/obj/structure/trap/spike/trigger_step_on(mob/living/L)
+/obj/structure/trap/spike/trigger_step_on(mob/living/victim)
 	..()
-	to_chat(L, span_danger("Spikes erupt from the ground, skewering me!"))
-	L.Paralyze(5 SECONDS)
-	L.adjustBruteLoss(40)
+	to_chat(victim, span_danger("Spikes erupt from the ground, skewering me momentarily!"))
+	victim.Paralyze(5 SECONDS)
+	victim.adjustBruteLoss(40)
 	post_triggered()
 
+/obj/structure/trap/poison
+	name = "poisonous plate trap"
+
+/obj/structure/trap/poison/trigger_step_on(mob/living/victim)
+	..()
+	to_chat(victim,span_danger("I feel a slight prick from beneath me!"))
+	victim.reagents.add_reagent(/datum/reagent/berrypoison,2.5)
+	post_triggered()
+
+/obj/structure/trap/wall_projectile
+	name = "arrow plate trap"
+	icon_state = "arrow_trap_plate"
+	var/turf/closed/home_wall
+	///How far we look for a 'home' wall
+	var/wall_range = 7
+	///What're we shooting at the victim? Should be an /obj/projectile/
+	var/fired = /obj/projectile/bullet/reusable/arrow/stone
+
+/obj/structure/trap/wall_projectile/fireball
+	name = "fireball plate trap"
+	icon_state = "fireball_trap_plate"
+	fired = /obj/projectile/magic/aoe/fireball/rogue
+
+/obj/structure/trap/wall_projectile/Initialize(mapload)
+	. = ..()
+	for(var/step in 1 to wall_range)
+		var/location = get_ranged_target_turf(src,dir,step)
+		if(isclosedturf(location))
+			home_wall = location
+			break
+	if(!home_wall)
+		return INITIALIZE_HINT_QDEL
+
+/obj/structure/trap/wall_projectile/trigger_step_on(mob/living/victim)
+	..()
+	if(!home_wall || !ispath(fired,/obj/projectile))
+		return
+	var/obj/projectile/suprise = new fired(get_step_towards2(home_wall,src))
+	suprise.preparePixelProjectile(victim,home_wall)
+	suprise.fire()
+	to_chat(victim, span_danger("\The [suprise] erupts from a hidden slit in \the [home_wall]!"))
+	post_triggered()
+
+/obj/structure/trap/wall_projectile/Destroy()
+	home_wall = null
+	. = ..()
+
+/obj/structure/trap/bomb
+	name = "bomb plate trap"
+	icon_state = "bomb_trap_plate"
+	charges = 1
+
+/obj/structure/trap/bomb/trigger_step_off(mob/living/victim)
+	..()
+	explosion(src, light_impact_range = 1, hotspot_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+	post_triggered()
