@@ -97,8 +97,7 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	to_chat(user, "<span class='notice'>I push the wall but nothing happens!</span>")
-	playsound(src, 'sound/blank.ogg', 25, TRUE)
+	feel_turf(user)
 	add_fingerprint(user)
 
 /turf/closed/wall/attackby(obj/item/W, mob/user, params)

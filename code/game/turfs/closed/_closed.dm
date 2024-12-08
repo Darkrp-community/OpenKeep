@@ -10,6 +10,14 @@
 	var/wallclimb = FALSE
 	var/climbdiff = 0
 
+	var/obj/effect/skill_tracker/thieves_cant/thieves_marking
+
+/turf/closed/examine(mob/user)
+	. = ..()
+	if(thieves_marking)
+		if(thieves_marking.can_see(user))
+			thieves_marking.examine(user)
+
 /turf/closed/MouseDrop_T(atom/movable/O, mob/user)
 	. = ..()
 	if(!wallpress)
@@ -23,6 +31,14 @@
 		if(L.mobility_flags & MOBILITY_MOVE)
 			wallpress(L)
 			return
+
+/turf/closed/proc/feel_turf(mob/living/user)
+	to_chat(user, span_notice("I start feeling around the [src]"))
+	if(!do_after(user, 1.5 SECONDS, target = src))
+		return
+
+	for(var/obj/structure/lever/hidden/lever in contents)
+		lever.feel_button(user)
 
 /turf/closed/proc/wallpress(mob/living/user)
 	if(user.wallpressed)
