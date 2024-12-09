@@ -96,7 +96,8 @@
 	for(var/datum/role_ban_instance/instance as anything in bans.bans)
 		if(!instance.permanent && world.realtime >= instance.apply_date + instance.duration)
 			dat += "<b>EXPIRED</b><BR>"
-		dat += instance.get_ban_string_list().Join("<BR>")
+		var/list/ban_string =  instance.get_ban_string_list()
+		dat += ban_string.Join("<BR>")
 		dat += "<HR>"
 	var/datum/browser/popup = new(usr, "check_role_bans", "Role Bans", 550, 500)
 	popup.set_content(dat.Join())

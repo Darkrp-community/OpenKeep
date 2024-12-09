@@ -91,19 +91,26 @@
 	reason = json["reason"]
 	var/list/ban_data = json["bans"]
 	if(ban_data["roles"])
-		roles = ban_data["roles"].Copy()
+		var/list/data_roles = ban_data["roles"]
+		roles = data_roles.Copy()
 	if(ban_data["migrants"])
-		migrants = ban_data["migrants"].Copy()
+		var/list/data_roles = ban_data["migrants"]
+		migrants = data_roles.Copy()
 	if(ban_data["advclasses"])
-		advclasses = ban_data["advclasses"].Copy()
+		var/list/data_roles = ban_data["advclasses"]
+		advclasses = data_roles.Copy()
 	if(ban_data["antags"])
-		antags = ban_data["antags"].Copy()
+		var/list/data_roles = ban_data["antags"]
+		antags = data_roles.Copy()
 	if(ban_data["traits"])
-		traits = ban_data["traits"].Copy()
+		var/list/data_roles = ban_data["traits"]
+		traits = data_roles.Copy()
 	if(ban_data["misc"])
-		misc = ban_data["misc"].Copy()
+		var/list/data_roles = ban_data["misc"]
+		misc = data_roles.Copy()
 	if(ban_data["curses"])
-		curses = ban_data["curses"].Copy()
+		var/list/data_roles = ban_data["curses"]
+		curses = data_roles.Copy()
 	return TRUE
 
 /datum/role_ban_panel
@@ -303,7 +310,8 @@
 			if(length(bans.bans) < ban_index)
 				return
 			var/datum/role_ban_instance/instance = bans.bans[ban_index]
-			var/msg = "[key_name_admin(user)] REMOVED a ROLE BAN from ckey: [selected_ckey] \n[instance.get_ban_string_list().Join("\n")]"
+			var/list/ban_string = instance.get_ban_string_list()
+			var/msg = "[key_name_admin(user)] REMOVED a ROLE BAN from ckey: [selected_ckey] \n[ban_string.Join("\n")]"
 			message_admins(msg)
 			log_admin(msg)
 			log_game(msg)
@@ -326,11 +334,12 @@
 	dat += "<center><b>Role bans for [chosen_ckey]</b></center><HR>"
 	var/i = 0
 	for(var/datum/role_ban_instance/instance as anything in bans.bans)
+		var/list/ban_string = instance.get_ban_string_list()
 		i++
 		dat += "Actions: <a href='?src=[REF(src)];task=remove_ckey_role_ban;ckey=[chosen_ckey];ban_index=[i];ban_apply_date=[instance.apply_date]'>Remove</a><BR>"
 		if(!instance.permanent && world.realtime >= instance.apply_date + instance.duration)
 			dat += "<b>EXPIRED</b><BR>"
-		dat += instance.get_ban_string_list().Join("<BR>")
+		dat += ban_string.Join("<BR>")
 		dat += "<HR>"
 	var/datum/browser/popup = new(user, "ckey_role_ban_panel", "[chosen_ckey] Role Ban Panel", 550, 500)
 	popup.set_content(dat.Join())
@@ -372,7 +381,8 @@
 		instance.misc = selected_misc.Copy()
 	if(length(selected_curses))
 		instance.curses = selected_curses.Copy()
-	var/msg = "[key_name_admin(user)] applied a ROLE BAN for ckey: [selected_ckey] \n[instance.get_ban_string_list().Join("\n")]"
+	var/list/ban_string = instance.get_ban_string_list()
+	var/msg = "[key_name_admin(user)] applied a ROLE BAN for ckey: [selected_ckey] \n[ban_string.Join("\n")]"
 	message_admins(msg)
 	log_admin(msg)
 	log_game(msg)
