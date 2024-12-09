@@ -123,7 +123,22 @@
 	name = "bathrobe"
 	desc = "A bathrobe with a luxurious fur interior."
 	icon_state = "bathrobe"
+	toggle_icon_state = TRUE
+	adjustable = CAN_CADJUST
 	sellprice = 12
+
+/obj/item/clothing/suit/roguetown/shirt/robe/bath/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = null
+			body_parts_covered = ARM_LEFT|ARM_RIGHT
+		if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEBOOB
+			body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"
