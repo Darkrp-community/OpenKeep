@@ -135,7 +135,7 @@
 	var/hurt = TRUE
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
-			Paralyze(20)
+			//Paralyze(20) Super cheesy when used for grabful, allows for infinite chaining.
 			take_bodypart_damage(10,check_armor = TRUE)
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom

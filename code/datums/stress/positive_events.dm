@@ -32,6 +32,11 @@
 	timer = 30 MINUTES
 	stressadd = -2
 	desc = span_green("The Gods smiles upon me.")
+	
+/datum/stressevent/beautiful
+	stressadd = -2
+	desc = span_green("Their face is a work of art")
+	timer = 5 MINUTES
 
 /datum/stressevent/cumok
 	timer = 5 MINUTES

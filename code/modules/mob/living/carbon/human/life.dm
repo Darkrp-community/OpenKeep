@@ -63,6 +63,8 @@
 										adjust_triumphs(1)
 					if(has_status_effect(/datum/status_effect/debuff/trainsleep))
 						remove_status_effect(/datum/status_effect/debuff/trainsleep)
+					if(has_status_effect(/datum/status_effect/debuff/barbfalter))
+						remove_status_effect(/datum/status_effect/debuff/barbfalter)	
 			if(leprosy == 1)
 				adjustToxLoss(2)
 			else if(leprosy == 2)

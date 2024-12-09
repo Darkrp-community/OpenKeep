@@ -85,6 +85,8 @@
 	H.change_stat("fortune", 5)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	if(prob(50))
+		ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 
 /datum/advclass/consort/courtesan
 	name = "Courtesan"
@@ -124,6 +126,7 @@
 	H.change_stat("fortune", 3)
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)
 
 /datum/advclass/consort/lowborn
 	name = "Lowborn"
@@ -163,3 +166,5 @@
 	H.change_stat("fortune", 1)
 	ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	if(prob(33))
+		ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC)

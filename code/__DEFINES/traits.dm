@@ -2,31 +2,31 @@
 #define TRAIT_WEBWALK 					"Webwalker"
 #define TRAIT_NOSTINK 					"Dead Nose"
 #define TRAIT_ZJUMP 					"High Jumping"
-#define TRAIT_NOSEGRAB 				"Intimidating"
+#define TRAIT_NOSEGRAB 					"Intimidating"
 #define TRAIT_NUTCRACKER 				"Nutcracker"
-#define TRAIT_SEEPRICES				"Golden Blood"
+#define TRAIT_SEEPRICES					"Golden Blood"
 #define TRAIT_STRONGBITE				"Strong Bite"
-#define TRAIT_HATEWOMEN				"Ladykiller"
-#define TRAIT_GOODLOVER				"Fabled Lover"
-#define TRAIT_SEEDKNOW 				"Seed Knower"
-#define TRAIT_NOBLE					"Noble Blooded"
+#define TRAIT_HATEWOMEN					"Ladykiller"
+#define TRAIT_GOODLOVER					"Fabled Lover"
+#define TRAIT_SEEDKNOW 					"Seed Knower"
+#define TRAIT_NOBLE						"Noble Blooded"
 #define TRAIT_EMPATH					"Empath"
 #define TRAIT_BREADY					"Battleready"
 #define TRAIT_MEDIUMARMOR				"Mail Training"
 #define TRAIT_HEAVYARMOR				"Plate Training"
-#define TRAIT_DODGEEXPERT              "Fast Reflexes"
+#define TRAIT_DODGEEXPERT               "Fast Reflexes"
 #define TRAIT_VILLAIN					"Villain"
 #define TRAIT_CRITICAL_RESISTANCE		"Critical Resistance"
-#define TRAIT_CRITICAL_WEAKNESS		"Critical Weakness"
-#define TRAIT_MANIAC_AWOKEN			"Awoken"
-#define TRAIT_NOROGSTAM				"Indefatigable" //for ai
-#define TRAIT_NOSLEEP				"Nite Creacher" //for thralls
+#define TRAIT_CRITICAL_WEAKNESS			"Critical Weakness"
+#define TRAIT_MANIAC_AWOKEN				"Awoken"
+#define TRAIT_NOROGSTAM					"Indefatigable" //for ai
+#define TRAIT_NOSLEEP					"Nite Creacher" //for thralls
 #define TRAIT_NUDIST					"Nudist" //you can't wear most clothes
 #define TRAIT_KNEESTINGER_IMMUNITY		"Blessing of Dendor"
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NASTY_EATER 				"Inhumen Digestion" //can eat rotten food, organs, poison berries, and drink murky water
-#define TRAIT_NOFALLDAMAGE1 		"Minor fall damage immunity"
-#define TRAIT_ROT_EATER				"Blessing of Pestra" //can eat rotten food
+#define TRAIT_NOFALLDAMAGE1 			"Minor fall damage immunity"
+#define TRAIT_ROT_EATER					"Blessing of Pestra" //can eat rotten food
 #define TRAIT_ORGAN_EATER				"Blessing of Graggar"
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra" //can check bodies to see if they have departed
 #define TRAIT_CYCLOPS_LEFT				"Cyclops (Left)" //poked left eye
@@ -44,6 +44,15 @@
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 #define TRAIT_LONGSTRIDER 				"Longstrider"
+#define TRAIT_BEAUTIFUL 				"Beautiful"
+#define TRAIT_LEAPER 					"Leaper"
+#define TRAIT_GOODRUNNER 				"Good Runner"
+#define TRAIT_SWIFTRUNNER 				"Swift Runner"
+#define TRAIT_KICKUP					"Kick-Up"
+#define TRAIT_MARTIALEYE				"Martial Eye"
+#define TRAIT_BLINDFIGHT				"Blindfight"
+#define TRAIT_IRONCOMFORT				"Iron Comfort"
+#define TRAIT_SHIELDEXPERT				"Shield Expert"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -69,6 +78,15 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_NOSTINK = span_dead("My nose is numb to the smell of decay."),
 	TRAIT_ZJUMP = "Time to reach a new high.",
 	TRAIT_NOSEGRAB = "I love to grab idiots by their noses!",
+	TRAIT_LEAPER = "I can leap like a frog.",
+	TRAIT_BEAUTIFUL = span_info("People love looking at my face"),
+	TRAIT_GOODRUNNER = span_info("I can sprint without breaking a sweat!"),
+	TRAIT_SWIFTRUNNER = span_info("I can run gracefully, avoiding collisions."),
+	TRAIT_KICKUP = "I can quickly get back on my feet.",
+	TRAIT_MARTIALEYE = "I can gauge an opponent's speed and exertion at a glance.",
+	TRAIT_BLINDFIGHT = "My senses are sharp. I can react to and parry opponents outside my field of vision.",
+	TRAIT_IRONCOMFORT = "Armor is like a second skin to me. Neither iron nor steel will slow me down.",
+	TRAIT_SHIELDEXPERT = "So long as I have a shield in one hand, I can catch arrows with ease.",
 	TRAIT_NUTCRACKER = "I love kicking idiots on the nuts!",
 	TRAIT_SEEPRICES = "I can tell the prices of things down to the zenny.",
 	TRAIT_STRONGBITE = "Stronger bites, critical bite attacks.",
