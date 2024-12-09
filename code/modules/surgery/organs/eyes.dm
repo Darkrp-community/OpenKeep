@@ -410,7 +410,7 @@
 	eye_icon_state = "snail_eyes"
 	icon_state = "snail_eyeballs"
 
-/proc/set_eye_color(var/mob/living/carbon/mob, color_one, color_two)
+/proc/set_eye_color(mob/living/carbon/mob, color_one, color_two)
 	var/obj/item/organ/eyes/eyes = mob.getorganslot(ORGAN_SLOT_EYES)
 	if(!eyes)
 		return
