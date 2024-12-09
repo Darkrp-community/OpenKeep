@@ -319,9 +319,10 @@
 	name = "alchemical mortar"
 	result = /obj/item/mortar
 	reqs = list(/obj/item/natural/stone = 3)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
+	tools = list(/obj/item/rogueweapon/knife)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
+	subtype_reqs = TRUE // should allow you to use any kind of knoife
 
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
