@@ -300,7 +300,7 @@
 	name = "crude stone block"
 	result = list(/obj/item/natural/stoneblock)
 	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(obj/item/natural/stone)
+	tools = list(/obj/item/natural/stone)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 1
 	verbage = "bash"
