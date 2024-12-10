@@ -37,6 +37,7 @@
 #include "reagent_id_typos.dm"
 #include "reagent_recipe_collisions.dm"
 #include "resist.dm"
+#include "roguetown_clothing.dm"
 #include "spawn_humans.dm"
 #include "spawn_mobs.dm"
 #include "species_whitelists.dm"
