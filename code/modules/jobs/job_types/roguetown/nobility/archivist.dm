@@ -17,7 +17,6 @@
 		"Aasimar"
 	)
 	spells = list(/obj/effect/proc_holder/spell/self/learnspell, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-	allowed_patrons = list(/datum/patron/divine/noc)
 
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = 19
