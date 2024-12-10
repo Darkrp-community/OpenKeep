@@ -1,6 +1,6 @@
 /datum/advclass/combat/rogue
 	name = "Rogue"
-	tutorial = "Where is the gold?"
+	tutorial = "A wandering thief, capable of breaking in and out of just about any secure location, and born to meet the sharp end of the guillotine. Just remember, murder is the mark of an amateur."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
