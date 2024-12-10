@@ -194,7 +194,7 @@
 	src.TOTALLUC = 6
 
 
-	cmode_music = 'sound/music/combat_cult.ogg'
+	cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 
 	set_patron(master.patron)
 	copy_known_languages_from(master,FALSE)

@@ -69,7 +69,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	ADD_TRAIT(owner.current, TRAIT_VAMPMANSION, "[type]")
 
 	ADD_TRAIT(owner.current, TRAIT_VAMP_DREAMS, "[type]")
-	owner.current.cmode_music = 'sound/music/combat_vamp.ogg'
+	owner.current.cmode_music = 'sound/music/cmode/antag/combat_vamp.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(owner.current,1)

@@ -16,7 +16,7 @@
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
 	maximum_possible_slots = 2
-	cmode_music = 'sound/music/adventurer/CombatSorcerer.ogg'
+	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
 
 /datum/outfit/job/roguetown/adventurer/mage
 	allowed_patrons = list(/datum/patron/divine/noc)

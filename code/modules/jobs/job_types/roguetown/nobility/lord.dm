@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	give_bank_account = 500
 	selection_color = "#7851A9"
 
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 
 /datum/job/roguetown/lord/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

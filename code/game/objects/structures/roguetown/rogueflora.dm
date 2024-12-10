@@ -104,15 +104,11 @@
 	name = "wise tree"
 	desc = "Dendor's favored."
 	icon_state = "mystical"
+	var/activated = 0
 
 /obj/structure/flora/roguetree/wise/Initialize()
 	. = ..()
 	icon_state = "mystical"
-/*
-/obj/structure/flora/roguetree/wise/examine(mob/user)
-	. = ..()
-	user.play_priomusic('sound/music/tree.ogg', MUSIC_PRIO_DEFAULT)
-*/
 
 /obj/structure/flora/roguetree/burnt
 	name = "burnt tree"
