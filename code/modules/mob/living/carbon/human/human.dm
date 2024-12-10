@@ -57,6 +57,9 @@
 #endif
 
 /mob/living/carbon/human/Initialize()
+#ifdef MATURESERVER
+	sexcon = new /datum/sex_controller(src)
+#endif
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 
