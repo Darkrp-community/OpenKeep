@@ -18,7 +18,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/druqks = 15)
-	sellprice = 12
+	sellprice = 16
 
 /datum/reagent/druqks
 	name = "Drukqs"
