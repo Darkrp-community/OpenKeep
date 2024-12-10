@@ -50,7 +50,7 @@
 
 			var/female = FALSE
 
-			if(istype(obj_path, /obj/item/clothing/cloak) ||istype(obj_path, /obj/item/clothing/shoes)|| istype(obj_path, /obj/item/clothing/gloves) || istype(obj_path, /obj/item/clothing/under) ||istype(obj_path, /obj/item/clothing/suit))
+			if(istype(obj_path, /obj/item/clothing/cloak) || istype(obj_path, /obj/item/clothing/shoes) || istype(obj_path, /obj/item/clothing/gloves) || istype(obj_path, /obj/item/clothing/under) ||istype(obj_path, /obj/item/clothing/suit))
 				female = TRUE
 
 			var/match_message
@@ -126,6 +126,8 @@
 							Fail("[item_path] using invalid female boob ["icon_state"] for [initial(species.id)], \"[species_icon_state_f_boob]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
 							failed = TRUE
 
+			if(failed)
+				continue
 
 			Fail("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
 

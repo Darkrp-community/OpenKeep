@@ -29,6 +29,8 @@
 	for(var/obj/item/item_path as anything in subtypesof(/obj/item))
 		if(initial(item_path.item_flags) & ABSTRACT)
 			continue
+		if(initial(item_path.experimental_inhand))
+			continue
 
 		var/skip_left
 		var/skip_right
