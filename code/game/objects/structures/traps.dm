@@ -17,6 +17,9 @@
 	///-1==infinite, otherwise deletes at 0
 	var/charges = -1
 	var/checks_antimagic = TRUE
+	///How difficult is this trap to see in active perception?
+	///see on_active_perception
+	var/perception_dc = 6
 
 	var/list/static/ignore_typecache
 	var/list/mob/immune_minds = list()
@@ -38,10 +41,12 @@
 		ignore_typecache = typecacheof(list(
 			/obj/effect,
 			/mob/dead))
+	RegisterSignal(SSdcs,COMSIG_MOB_ACTIVE_PERCEPTION,PROC_REF(on_active_perception))
 
 /obj/structure/trap/Destroy()
 	qdel(spark_system)
 	spark_system = null
+	UnregisterSignal(SSdcs,COMSIG_MOB_ACTIVE_PERCEPTION)
 	. = ..()
 
 /obj/structure/trap/examine(mob/user)
@@ -54,6 +59,16 @@
 	if(get_dist(user, src) <= FLOOR((luser.STAPER-4)/4,1))
 		to_chat(user,span_notice("I reveal and temporarily disarm \the [src]"))
 		flare()
+
+/obj/structure/trap/proc/on_active_perception(datum/controller/subsystem/processing/dcs/unused,mob/living/percepter)
+	SIGNAL_HANDLER
+	if(!(percepter in view(FLOOR(percepter.STAPER/3,1),src)))
+		return
+	//10% chance to see over DC
+	if(percepter.stat_roll(STATKEY_PER,10,perception_dc))
+		alpha = 200
+		found_ping(get_turf(src),percepter.client,"trap")
+		animate(src, alpha = initial(alpha), time = 4.5 SECONDS)
 
 ///Make trap vizible and disarmed for a cooldown time, but dont take charge.
 /obj/structure/trap/proc/flare(fizzle = FALSE)
