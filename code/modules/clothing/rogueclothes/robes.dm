@@ -125,6 +125,7 @@
 	icon_state = "bathrobe"
 	toggle_icon_state = TRUE
 	adjustable = CAN_CADJUST
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
 	sellprice = 12
 
 /obj/item/clothing/suit/roguetown/shirt/robe/bath/AdjustClothes(mob/user)
@@ -134,11 +135,19 @@
 			if(toggle_icon_state)
 				icon_state = "[initial(icon_state)]_t"
 			flags_inv = null
-			body_parts_covered = ARM_LEFT|ARM_RIGHT
-		if(adjustable == CADJUSTED)
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_wear_suit()
+				H.update_icon()
+		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			flags_inv = HIDEBOOB
+			flags_inv = HIDEEARS|HIDEHAIR
 			body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_wear_suit()
+					H.update_icon()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"
