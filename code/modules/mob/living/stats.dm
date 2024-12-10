@@ -71,18 +71,25 @@
 				change_stat(STATKEY_INT, 2)
 				change_stat(STATKEY_SPD, -1)
 				change_stat(STATKEY_LCK, 1)
-		if(key)
-			if(check_blacklist(ckey(key))) //You're boutta have a reaaaal bad dae....
-				change_stat(STATKEY_STR, -5)
-				change_stat(STATKEY_END, -2)
-				change_stat(STATKEY_CON, -2)
-				change_stat(STATKEY_INT, -20)
-				change_stat(STATKEY_SPD, -20)
-				change_stat(STATKEY_LCK, -20)
-			if(check_psychokiller(ckey(key)))
-				testing("foundpsych")
-				H.eye_color = "ff0000"
-				H.voice_color = "ff0000"
+
+		if(HAS_TRAIT(src, TRAIT_LEPROSY))
+			change_stat(STATKEY_STR, -5)
+			change_stat(STATKEY_SPD, -5)
+			change_stat(STATKEY_END, -2)
+			change_stat(STATKEY_CON, -2)
+			change_stat(STATKEY_INT, -5)
+			change_stat(STATKEY_LCK, -5)
+
+		if(HAS_TRAIT(src, TRAIT_PUNISHMENT_CURSE))
+			change_stat(STATKEY_STR, -3)
+			change_stat(STATKEY_SPD, -3)
+			change_stat(STATKEY_END, -3)
+			change_stat(STATKEY_CON, -3)
+			change_stat(STATKEY_INT, -3)
+			change_stat(STATKEY_LCK, -3)
+			H.voice_color = "c71d76"
+			set_eye_color(H, "#c71d76", "#c71d76")
+
 	has_rolled_for_stats = TRUE
 	return TRUE
 /// Adjusts stat values of mobs. set_stat == true to set directly

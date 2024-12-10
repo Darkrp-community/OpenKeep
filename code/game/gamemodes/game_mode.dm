@@ -376,6 +376,14 @@
 	// Ultimate randomizing code right here
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
+		if(is_misc_banned(player.ckey, BAN_MISC_LEPROSY))
+			continue
+		if(is_misc_banned(player.ckey, BAN_MISC_LUNATIC))
+			continue
+		if(is_antag_banned(player.ckey, role))
+			continue
+		if(is_total_antag_banned(player.ckey))
+			continue
 		if(player.ready == PLAYER_READY_TO_PLAY && player.check_preferences())
 //			if(player.client && player.client.whitelisted() && !player.client.blacklisted())
 			players += player
@@ -391,7 +399,6 @@
 				if(get_playerquality(player.ckey) <= -10)
 					continue
 			if(role in player.client.prefs.be_special)
-//				if(!is_banned_from(player.ckey, list(role, ROLE_SYNDICATE)) && !QDELETED(player))
 				candidates += player.mind				// Get a list of all the people who want to be the antagonist for this round
 				continue
 			if(role == ROLE_NBEAST)
@@ -406,33 +413,6 @@
 				if(pre_do)
 					if(player.current.client.prefs.job_preferences[job] == JP_HIGH)
 						candidates -= player
-
-/*
-	if(candidates.len < recommended_enemies)
-		for(var/mob/dead/new_player/player in players)
-			if(player.client && player.ready == PLAYER_READY_TO_PLAY)
-				if(!(role in player.client.prefs.be_special)) // We don't have enough people who want to be antagonist, make a separate list of people who don't want to be one
-					if(!is_banned_from(player.ckey, list(role, ROLE_SYNDICATE)) && !QDELETED(player))
-						drafted += player.mind
-
-	if(restricted_jobs)
-		for(var/datum/mind/player in drafted)				// Remove people who can't be an antagonist
-			for(var/job in restricted_jobs)
-				if(player.assigned_role == job)
-					drafted -= player
-
-	drafted = shuffle(drafted) // Will hopefully increase randomness, Donkie
-
-	while(candidates.len < recommended_enemies)				// Pick randomlly just the number of people we need and add them to our list of candidates
-		if(drafted.len > 0)
-			applicant = pick(drafted)
-			if(applicant)
-				candidates += applicant
-				drafted.Remove(applicant)
-
-		else												// Not enough scrubs, ABORT ABORT ABORT
-			break
-*/
 	return candidates		// Returns: The number of people who had the antagonist role set to yes, regardless of recomended_enemies, if that number is greater than recommended_enemies
 							//			recommended_enemies if the number of people with that role set to yes is less than recomended_enemies,
 							//			Less if there are not enough valid players in the game entirely to make recommended_enemies.
