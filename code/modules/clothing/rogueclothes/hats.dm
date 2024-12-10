@@ -3,7 +3,7 @@
 	name = "hat"
 	desc = ""
 	icon = 'icons/roguetown/clothing/head.dmi'
-	icon_state = "wizardhat"
+	icon_state = "surghood"
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	equip_sound = "rustle"
