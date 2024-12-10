@@ -784,8 +784,7 @@
 
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"
-	icon_state = "furcape"
-	item_state = "furcape"
+	icon_state = "chasuble"
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
