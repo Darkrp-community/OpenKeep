@@ -4848,6 +4848,13 @@
 "ePz" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors/town)
+"ePC" = (
+/obj/effect/decal/shadow_floor,
+/obj/structure/roguemachine/scomm{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/sandstone/shaded,
+/area/rogue/indoors/town/church/chapel)
 "ePF" = (
 /obj/structure/table/wood/nice/decorated_alt,
 /obj/item/candle/yellow/lit/infinite/strong{
@@ -6555,6 +6562,10 @@
 	},
 /turf/open/floor/rogue/cobblerock/alt,
 /area/rogue/indoors/town)
+"gAT" = (
+/obj/machinery/light/rogue/wallfire/candle/l,
+/turf/open/floor/rogue/ruinedwood/spiral,
+/area/rogue/indoors/town/church)
 "gAV" = (
 /turf/open/floor/rogue/rooftop/green{
 	dir = 4
@@ -12353,8 +12364,9 @@
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "mwG" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/indoors/town/church/chapel)
+/obj/structure/roguemachine/scomm/r,
+/turf/open/floor/rogue/church,
+/area/rogue/under/town/basement)
 "mxj" = (
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
@@ -12759,6 +12771,7 @@
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
 /obj/item/storage/roguebag,
+/obj/item/storage/backpack/rogue/satchel/surgbag,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
@@ -16846,6 +16859,8 @@
 /obj/item/roguekey/tavern,
 /obj/item/roguekey/walls,
 /obj/structure/bars/pipe,
+/obj/item/roguekey/soilson,
+/obj/item/roguekey/doctor,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
 "qJI" = (
@@ -21408,6 +21423,7 @@
 /obj/item/natural/bundle/stick{
 	pixel_y = 37
 	},
+/obj/structure/roguemachine/scomm/r,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/church)
 "vfi" = (
@@ -21672,6 +21688,7 @@
 /obj/effect/landmark/start/dungeoneer{
 	dir = 8
 	},
+/obj/structure/roguemachine/mail,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
@@ -23692,6 +23709,7 @@
 /area/rogue/outdoors/mountains)
 "xxR" = (
 /obj/structure/ladder,
+/obj/machinery/light/rogue/wallfire/candle/r,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church)
 "xxU" = (
@@ -42206,7 +42224,7 @@ aZU
 ouV
 aAt
 eza
-hEf
+mwG
 obb
 qwN
 qwN
@@ -62971,7 +62989,7 @@ uuL
 ioW
 uuL
 ioW
-uuL
+ePC
 jcR
 lxV
 wAB
@@ -89928,7 +89946,7 @@ hZX
 hZX
 ofr
 rUu
-rUu
+gAT
 rUu
 rUu
 gfN
@@ -90315,7 +90333,7 @@ hZX
 hZX
 hZX
 gfN
-rON
+rUu
 dxF
 cSb
 cQr
@@ -113411,7 +113429,7 @@ xcb
 xcb
 xcb
 vaR
-mwG
+vaR
 rUu
 xxR
 dda
