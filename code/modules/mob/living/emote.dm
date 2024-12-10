@@ -166,9 +166,6 @@
 /datum/emote/living/custom/run_emote(mob/user, params, type_override = null, intentional = FALSE)
 	if(!can_run_emote(user, TRUE, intentional))
 		return FALSE
-	if(is_banned_from(user.ckey, "Emote"))
-		to_chat(user, "<span class='boldwarning'>I cannot send custom emotes (banned).</span>")
-		return FALSE
 	else if(QDELETED(user))
 		return FALSE
 	else if(user.client && user.client.prefs.muted & MUTE_IC)
@@ -177,15 +174,6 @@
 	else if(!params)
 		var/custom_emote = copytext(sanitize(input("What does your character do?") as text|null), 1, MAX_MESSAGE_LEN)
 		if(custom_emote && !check_invalid(user, custom_emote))
-/*			var/type = input("Is this a visible or hearable emote?") as null|anything in list("Visible", "Hearable")
-			switch(type)
-				if("Visible")
-					emote_type = EMOTE_VISIBLE
-				if("Hearable")
-					emote_type = EMOTE_AUDIBLE
-				else
-					alert("Unable to use this emote, must be either hearable or visible.")
-					return*/
 			message = custom_emote
 			emote_type = EMOTE_VISIBLE
 	else

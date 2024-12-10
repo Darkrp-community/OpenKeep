@@ -30,7 +30,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		if(prefs.muted & MUTE_OOC)
 			to_chat(src, "<span class='danger'>I cannot use OOC (muted).</span>")
 			return
-	if(is_banned_from(ckey, "OOC"))
+	if(is_misc_banned(ckey, BAN_MISC_OOC))
 		to_chat(src, "<span class='danger'>I have been banned from OOC.</span>")
 		return
 	if(QDELETED(src))
@@ -102,7 +102,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 		if(prefs.muted & MUTE_OOC)
 			to_chat(src, "<span class='danger'>I cannot use OOC (muted).</span>")
 			return
-	if(is_banned_from(ckey, "OOC"))
+	if(is_misc_banned(ckey, BAN_MISC_OOC))
 		to_chat(src, "<span class='danger'>I have been banned from OOC.</span>")
 		return
 	if(QDELETED(src))

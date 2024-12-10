@@ -139,7 +139,7 @@
 				if (H.mind.language_holder.has_language(ld))
 					langresult.Add(ld)
 			if(langresult)
-				var/datum/language/language_choice = input("Choose the new language", "Available languagess") as anything in langresult
+				var/datum/language/language_choice = input("Choose the new language", "Available languages") as anything in langresult
 				lang = language_choice
 		else
 			say("I don't know you, "+flavor_name()+".", language = lang)

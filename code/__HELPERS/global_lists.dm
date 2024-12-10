@@ -60,6 +60,7 @@
 
 	init_slapcraft_steps()
 	init_slapcraft_recipes()
+	init_curse_names()
 
 	init_orderless_slapcraft_recipes()
 
@@ -114,3 +115,11 @@
 			L+= path
 		return L
 
+
+/proc/init_curse_names()
+	GLOB.curse_names = list()
+	for(var/datum/curse/curse_type as anything in subtypesof(/datum/curse))
+		if(is_abstract(curse_type))
+			continue
+		GLOB.curse_names |= initial(curse_type.name)
+		GLOB.curse_names[initial(curse_type.name)] = new curse_type
