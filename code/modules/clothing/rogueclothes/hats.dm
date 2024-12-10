@@ -1532,12 +1532,6 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
 
-/obj/item/clothing/head/roguetown/reqhat
-	name = "serpent crown"
-	desc = ""
-	icon_state = "reqhat"
-	flags_inv = HIDEEARS
-
 /obj/item/clothing/head/roguetown/priesthat // bishops mitre really
 	name = "priest's hat"
 	desc = "The sacred headpiece of a priest."
