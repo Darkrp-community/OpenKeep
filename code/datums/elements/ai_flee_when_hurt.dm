@@ -37,8 +37,8 @@
 		source.ai_controller.set_blackboard_key(BB_BASIC_MOB_FLEEING, FALSE)
 		return
 
-	if(BB_BASIC_MOB_NEXT_FLEEING in source.ai_controller)
-		if(source.ai_controller[BB_BASIC_MOB_NEXT_FLEEING] > world.time)
+	if(BB_BASIC_MOB_NEXT_FLEEING in source.ai_controller.blackboard)
+		if(source.ai_controller.blackboard[BB_BASIC_MOB_NEXT_FLEEING] > world.time)
 			return
 
 	if (current_health_percentage > start_fleeing_below)
