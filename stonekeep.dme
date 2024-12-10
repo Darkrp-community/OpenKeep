@@ -1602,6 +1602,7 @@
 #include "code\modules\roguetown\roguecrafting\structure.dm"
 #include "code\modules\roguetown\roguecrafting\turfs.dm"
 #include "code\modules\roguetown\roguecrafting\weaving.dm"
+#include "code\modules\roguetown\roguecrafting\narcotics.dm"
 #include "code\modules\roguetown\roguecrafting\alchemy\alch_items.dm"
 #include "code\modules\roguetown\roguecrafting\alchemy\cauldron.dm"
 #include "code\modules\roguetown\roguecrafting\alchemy\cauldron_recipes.dm"

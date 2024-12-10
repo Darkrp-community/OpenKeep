@@ -18,7 +18,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/druqks = 15)
-	sellprice = 6
+	sellprice = 12
 
 /datum/reagent/druqks
 	name = "Drukqs"
@@ -185,7 +185,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/ozium = 15)
-	sellprice = 5
+	sellprice = 8
 
 /datum/reagent/ozium
 	name = "Ozium"
@@ -229,7 +229,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/moondust = 15)
-	sellprice = 10
+	sellprice = 16
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
 	M.adjustToxLoss(0.25*REM, 0)
@@ -269,7 +269,7 @@
 	possible_transfer_amounts = list()
 	volume = 18
 	list_reagents = list(/datum/reagent/moondust_purest = 18)
-	sellprice = 14
+	sellprice = 20
 
 /datum/reagent/moondust_purest
 	name = "Purest Moondust"
