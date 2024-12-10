@@ -246,6 +246,16 @@
 /obj/effect/sunlight,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/exposed/under/basement)
+"ans" = (
+/obj/structure/closet/crate/roguecloset/inn,
+/obj/item/clothing/suit/roguetown/armor/leather/vest,
+/obj/item/ingot/steel,
+/obj/item/rogue/instrument/drum,
+/obj/effect/decal/cleanable/dirt/cobweb{
+	dir = 1
+	},
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/indoors/town)
 "anF" = (
 /turf/open/floor/rogue/metal{
 	icon_state = "plating2"
@@ -2070,6 +2080,12 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
+"caK" = (
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = -21
+	},
+/turf/open/floor/rogue/woodturned/saiga,
+/area/rogue/indoors/town)
 "caY" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/mace/cudgel,
@@ -9350,8 +9366,8 @@
 "jrU" = (
 /obj/structure/mineral_door/wood/donjon{
 	locked = 1;
-	lockid = "blacksmith";
-	name = "smithy"
+	lockid = "armorsmith";
+	name = "blacksmiths quarters"
 	},
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town)
@@ -11879,6 +11895,14 @@
 	dir = 1
 	},
 /area/rogue)
+"lTB" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "armorsmith";
+	name = "blacksmiths quarters"
+	},
+/turf/open/floor/rogue/woodturned/saiga,
+/area/rogue/indoors/town)
 "lTO" = (
 /obj/item/reagent_containers/food/snacks/produce/jacksberry,
 /obj/structure/closet/crate/chest/wicker,
@@ -12889,9 +12913,13 @@
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/magician)
 "mWS" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/woodturned/saiga,
-/area/rogue/indoors/town)
+/obj/structure/rack/rogue,
+/obj/item/needle,
+/obj/item/needle,
+/obj/item/rope/chain,
+/obj/item/rope/chain,
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/dwarfin)
 "mWT" = (
 /obj/structure/fluff/railing/border{
 	dir = 1;
@@ -15890,6 +15918,11 @@
 "pHH" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/spooky)
+"pHV" = (
+/obj/machinery/light/rogue/wallfire/candle,
+/obj/structure/closet/crate/chest/neu_iron,
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/indoors/town)
 "pHY" = (
 /obj/structure/fluff/railing/border{
 	dir = 8;
@@ -16144,6 +16177,12 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/hamlet)
+"pXH" = (
+/obj/structure/table/wood{
+	layer = 2.8
+	},
+/turf/open/floor/rogue/wood/saiga,
+/area/rogue/indoors/town)
 "pXN" = (
 /obj/effect/decal/turfedge_neu/alt{
 	dir = 5
@@ -19061,6 +19100,12 @@
 /obj/structure/fluff/statue/small,
 /turf/open/floor/carpet/red,
 /area/rogue/outdoors/exposed/under/basement)
+"sYq" = (
+/obj/effect/landmark/start/weaponsmith{
+	dir = 4
+	},
+/turf/open/floor/rogue/woodturned/saiga,
+/area/rogue/indoors/town)
 "sYX" = (
 /obj/structure/kneestingers,
 /turf/open/water/sewer,
@@ -19279,6 +19324,7 @@
 /area/rogue/indoors/town/church/chapel)
 "tjp" = (
 /obj/structure/rack/rogue,
+/obj/item/rogueweapon/knife/villager,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/dwarfin)
 "tjQ" = (
@@ -21406,11 +21452,9 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "vek" = (
-/obj/structure/fluff/railing/border{
-	dir = 6;
-	icon_state = "border"
-	},
-/turf/open/floor/rogue/woodturned/saiga,
+/obj/structure/bed/rogue/wool,
+/obj/item/bedsheet/rogue/pelt,
+/turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town)
 "veA" = (
 /obj/effect/decal/shadow_floor,
@@ -22164,6 +22208,7 @@
 	dir = 4;
 	icon_state = "stonestairs"
 	},
+/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/town)
 "vWk" = (
@@ -23471,9 +23516,16 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town/hamlet)
 "xlV" = (
-/obj/structure/fluff/railing/border,
-/turf/open/floor/rogue/woodturned/saiga,
-/area/rogue/indoors/town)
+/obj/structure/rack/rogue,
+/obj/item/lockpick,
+/obj/item/customlock/finished,
+/obj/item/customlock/finished,
+/obj/item/customlock/finished,
+/obj/item/customblank,
+/obj/item/customblank,
+/obj/item/customblank,
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/dwarfin)
 "xmv" = (
 /obj/structure/flora/roguegrass,
 /turf/closed/mineral/rogue,
@@ -33718,7 +33770,7 @@ iGb
 xAF
 xAF
 xAF
-tjp
+mWS
 lOZ
 psp
 hsL
@@ -33912,7 +33964,7 @@ mzh
 oYY
 tbB
 xAF
-tjp
+xlV
 lOZ
 psp
 hsL
@@ -57384,8 +57436,8 @@ qnM
 rJP
 ecw
 pgK
-xUr
-khl
+pXH
+sYq
 vek
 pgK
 tFN
@@ -57579,8 +57631,8 @@ rJP
 uaI
 jrU
 xUr
-khl
-xlV
+caK
+pgK
 qZV
 pgK
 uJn
@@ -57772,9 +57824,9 @@ tVP
 iGn
 ueO
 pgK
-xUr
+pHV
 khl
-xlV
+pgK
 vWi
 pgK
 fyl
@@ -57966,9 +58018,9 @@ oOB
 rsE
 ydz
 pgK
-xUr
-mWS
+ans
 khl
+lTB
 khl
 tFN
 pgK
