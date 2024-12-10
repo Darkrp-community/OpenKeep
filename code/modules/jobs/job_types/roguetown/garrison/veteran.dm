@@ -27,7 +27,7 @@
 	give_bank_account = 50
 	min_pq = 1
 
-	cmode_music = 'sound/music/combat_guard.ogg'
+	cmode_music = 'sound/music/garrison/CombatGarrison.ogg'
 
 	forced_flaw = /datum/charflaw/noeyerandom
 
