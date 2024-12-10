@@ -30,7 +30,7 @@
 
 /datum/supply_pack/rogue/narcotics/moondust
 	name = "Moon Dust"
-	cost = 20
+	cost = 25
 	contains = /obj/item/reagent_containers/powder/moondust
 
 /datum/supply_pack/rogue/narcotics/soap
