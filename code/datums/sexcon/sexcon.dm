@@ -451,13 +451,19 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 	target = new_target
 
 /mob/living/carbon/human/proc/on_virgin_loss()
-	var/mob/living/carbon/P = src
+	var/mob/living/carbon/human/P = src
 	virginity = FALSE
+	if((P.patron != /datum/patron/divine/astrata) || (P.patron != /datum/patron/divine/noc) || (P.patron != /datum/patron/divine/malum) || (P.patron != /datum/patron/forgotten))
+		return FALSE
+	if(P.IsWedded())
+		return FALSE
 	if(mind)
 		switch(mind.assigned_role)
 			if("Priest")
 				P.add_stress(/datum/stressevent/virginchurch)
 			if("Acolyte")
+				P.add_stress(/datum/stressevent/virginchurch)
+			if("Templar")
 				P.add_stress(/datum/stressevent/virginchurch)
 			if("Cleric")
 				P.add_stress(/datum/stressevent/virginchurch)
