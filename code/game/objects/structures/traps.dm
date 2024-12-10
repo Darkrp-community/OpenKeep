@@ -112,8 +112,8 @@
 
 ///Utility to set the last trigger time,show trap, and deduct charges.
 /obj/structure/trap/proc/post_triggered()
-	flare()
 	lose_charge()
+	flare()
 
 ///Called when someone steps OFF and we're ready, make sure to call post_triggered()
 /obj/structure/trap/proc/trigger_step_off(mob/living/victim)
@@ -161,7 +161,12 @@
 	..()
 	to_chat(victim, span_danger("Spikes erupt from the ground, skewering me momentarily!"))
 	victim.Paralyze(5 SECONDS)
-	victim.adjustBruteLoss(40)
+	var/obj/item/bodypart/part = victim.get_bodypart(prob(50) ? BODY_ZONE_L_LEG : BODY_ZONE_R_LEG)
+	if(isnull(part))
+		part = victim.get_bodypart(BODY_ZONE_CHEST)
+	part?.receive_damage(30)
+	part?.add_wound(/datum/wound/puncture)
+	victim.emote("scream")
 	post_triggered()
 
 /obj/structure/trap/poison
@@ -172,6 +177,48 @@
 	to_chat(victim,span_danger("I feel a slight prick from beneath me!"))
 	victim.reagents.add_reagent(/datum/reagent/berrypoison,2.5)
 	post_triggered()
+
+/obj/structure/trap/bomb
+	name = "bomb plate trap"
+	icon_state = "bomb_trap_plate"
+	charges = 1
+
+/obj/structure/trap/bomb/trigger_step_off(mob/living/victim)
+	..()
+	explosion(src, light_impact_range = 1, hotspot_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
+	post_triggered()
+
+/obj/structure/trap/saw_blades
+	name = "saw plate trap"
+	icon_state = "saw_trap_plate"
+	charges = 1
+
+/obj/structure/trap/saw_blades/trigger_step_off(mob/living/victim)
+	..()
+	var/obj/structure/sawblade_trap/saw = new(get_turf(src))
+	saw.dir = dir
+	visible_message(span_danger("\The [saw] suddenly erupts from underneath [src]!"))
+	post_triggered()
+
+/obj/structure/sawblade_trap
+	name = "saw blade"
+	desc = "A fast spinning saw blade, propelled by some unknown mechanism"
+	icon = 'icons/roguetown/misc/traps.dmi'
+	icon_state = "trap_saw"
+	density = FALSE
+	anchored = TRUE
+	max_integrity = 100
+
+/obj/structure/sawblade_trap/Crossed(atom/movable/AM)
+	if(isliving(AM))
+		var/mob/living/victim = AM
+		to_chat(victim,span_danger("\The [src] tears into me!"))
+		var/obj/item/bodypart/part = victim.get_bodypart(prob(50) ? BODY_ZONE_L_LEG : BODY_ZONE_R_LEG)
+		if(isnull(part))
+			part = victim.get_bodypart(BODY_ZONE_CHEST)
+		part?.receive_damage(40)
+		part?.add_wound(/datum/wound/slash/large)
+		victim.emote("scream")
 
 /obj/structure/trap/wall_projectile
 	name = "arrow plate trap"
@@ -210,13 +257,3 @@
 /obj/structure/trap/wall_projectile/Destroy()
 	home_wall = null
 	. = ..()
-
-/obj/structure/trap/bomb
-	name = "bomb plate trap"
-	icon_state = "bomb_trap_plate"
-	charges = 1
-
-/obj/structure/trap/bomb/trigger_step_off(mob/living/victim)
-	..()
-	explosion(src, light_impact_range = 1, hotspot_range = 2, smoke = TRUE, soundin = pick('sound/misc/explode/bottlebomb (1).ogg','sound/misc/explode/bottlebomb (2).ogg'))
-	post_triggered()
