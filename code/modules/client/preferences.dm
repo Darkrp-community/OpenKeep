@@ -151,6 +151,8 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	var/list/preference_message_list = list()
 
+	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
+	var/has_spawned = FALSE
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -170,7 +172,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
-			if(check_nameban(C.ckey) || (C.blacklisted() == 1))
+			if(check_nameban(C.ckey))
 				real_name = pref_species.random_name(gender,1)
 			return
 	//we couldn't load character data so just randomize the character appearance + name
@@ -284,8 +286,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 // 			-----------START OF IDENT TABLE-----------
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
-			if(is_banned_from(user.ckey, "Appearance"))
-				dat += "<b>Thou are banned from using custom names and appearances. Thou can continue to adjust thy characters, but thee will be randomised once thee joins the game.</b><br>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME]'>Always Random Name: [(randomise[RANDOM_NAME]) ? "Yes" : "No"]</a>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME_ANTAG]'>When Antagonist: [(randomise[RANDOM_NAME_ANTAG]) ? "Yes" : "No"]</a>"
 			dat += "<b>Name:</b> "
@@ -752,13 +752,13 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 			dat += "<h2>Special Role Settings</h2>"
 
-			if(is_banned_from(user.ckey, ROLE_SYNDICATE))
+			if(is_total_antag_banned(user.ckey))
 				dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 				src.be_special = list()
 
 
 			for (var/i in GLOB.special_roles_rogue)
-				if(is_banned_from(user.ckey, i))
+				if(is_antag_banned(user.ckey, i))
 					dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 				else
 					var/days_remaining = null
@@ -1019,7 +1019,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			if(gender == FEMALE && job.f_title)
 				used_name = "[job.f_title]"
 			lastJob = job
-			if(is_banned_from(user.ckey, rank))
+			if(is_role_banned(user.ckey, job.title))
 				HTML += "[used_name]</td> <td><a href='?_src_=prefs;bancheck=[rank]'> BANNED</a></td></tr>"
 				continue
 			var/required_playtime_remaining = job.required_playtime_remaining(user.client)
@@ -1034,9 +1034,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				if(job.whitelist_req && (!user.client.whitelisted()))
 					HTML += "<font color=#6183a5>[used_name]</font></td> <td> </td></tr>"
 					continue
-			if((!job.bypass_jobban) && (user.client.blacklisted()))
-				HTML += "<font color=#a36c63>[used_name]</font></td> <td> </td></tr>"
-				continue
 			if(job.plevel_req > user.client.patreonlevel())
 				HTML += "<font color=#a59461>[used_name]</font></td> <td> </td></tr>"
 				continue
@@ -1296,13 +1293,13 @@ Slots: [job.spawn_positions]</span>
 	dat += "<center><a href='?_src_=prefs;preference=antag;task=close'>Done</a></center><br>"
 
 
-	if(is_banned_from(user.ckey, ROLE_SYNDICATE))
+	if(is_total_antag_banned(user.ckey))
 		dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 		src.be_special = list()
 
 
 	for (var/i in GLOB.special_roles_rogue)
-		if(is_banned_from(user.ckey, i))
+		if(is_antag_banned(user.ckey, i))
 			dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 		else
 			var/days_remaining = null
@@ -1375,10 +1372,7 @@ Slots: [job.spawn_positions]</span>
 			if("random")
 				switch(joblessrole)
 					if(RETURNTOLOBBY)
-						if(is_banned_from(user.ckey, SSjob.overflow_role))
-							joblessrole = BERANDOMJOB
-						else
-							joblessrole = BERANDOMJOB
+						joblessrole = BERANDOMJOB
 					if(BEOVERFLOW)
 						joblessrole = BERANDOMJOB
 					if(BERANDOMJOB)
@@ -2415,12 +2409,20 @@ Slots: [job.spawn_positions]</span>
 	character.dna.real_name = character.real_name
 
 	if(parent)
-		var/list/L = get_player_curses(parent.ckey)
-		if(L)
-			for(var/X in L)
-				var/curse = curse2trait(X)
-				if (curse)
-					ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
+		var/datum/role_bans/bans = get_role_bans_for_ckey(parent.ckey)
+		for(var/datum/role_ban_instance/ban as anything in bans.bans)
+			if(!ban.curses)
+				continue
+			for(var/curse_name as anything in ban.curses)
+				var/datum/curse/curse = GLOB.curse_names[curse_name]
+				character.add_curse(curse.type)
+
+	apply_trait_bans(character, parent.ckey)
+
+	if(is_misc_banned(parent.ckey, BAN_MISC_LEPROSY))
+		ADD_TRAIT(character, TRAIT_LEPROSY, TRAIT_BAN_PUNISHMENT)
+	if(is_misc_banned(parent.ckey, BAN_MISC_PUNISHMENT_CURSE))
+		ADD_TRAIT(character, TRAIT_PUNISHMENT_CURSE, TRAIT_BAN_PUNISHMENT)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
@@ -2466,5 +2468,12 @@ Slots: [job.spawn_positions]</span>
 	if(!migrant)
 		return FALSE
 	if(!migrant.active)
+		return FALSE
+	return TRUE
+
+/datum/preferences/proc/allowed_respawn()
+	if(!has_spawned)
+		return TRUE
+	if(is_misc_banned(parent.ckey, BAN_MISC_RESPAWN))
 		return FALSE
 	return TRUE
