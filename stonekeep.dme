@@ -1234,7 +1234,6 @@
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\pilgrim\rare\preacher.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\pilgrim\rare\zybantine.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\special\crusader.dm"
-#include "code\modules\jobs\job_types\roguetown\adventurer\types\special\whitecheesemaker.dm"
 #include "code\modules\jobs\job_types\roguetown\apprentices\bapprentice.dm"
 #include "code\modules\jobs\job_types\roguetown\apprentices\prince.dm"
 #include "code\modules\jobs\job_types\roguetown\apprentices\servant.dm"
