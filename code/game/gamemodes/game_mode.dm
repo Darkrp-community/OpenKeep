@@ -51,6 +51,9 @@
 	var/gamemode_ready = FALSE //Is the gamemode all set up and ready to start checking for ending conditions.
 	var/setup_error		//What stopepd setting up the mode.
 
+	var/roundvoteend = FALSE
+	var/round_ends_at
+
 	var/list/datum/mind/villains = list() //Murders Runtimes via shoving this into parent
 	var/list/datum/mind/liches = list()
 	var/list/datum/mind/vampires = list()
@@ -58,6 +61,7 @@
 	var/list/datum/mind/werewolves = list()
 	var/list/datum/mind/bandits = list()
 	var/list/datum/mind/cultists = list()
+	var/list/datum/mind/aspirants = list()
 
 	var/list/datum/mind/pre_villains = list()
 	var/list/datum/mind/pre_liches = list()
@@ -67,6 +71,7 @@
 	var/list/datum/mind/pre_delfs = list()
 	var/list/datum/mind/pre_rebels = list()
 	var/list/datum/mind/pre_cultists = list()
+	var/list/datum/mind/pre_aspirants = list()
 
 /datum/game_mode/proc/announce() //Shows the gamemode's name and a fast description.
 	to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")
