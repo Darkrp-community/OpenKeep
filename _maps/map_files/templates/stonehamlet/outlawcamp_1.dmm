@@ -118,6 +118,12 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/outlaw)
+"tl" = (
+/obj/structure/closet/dirthole/closed,
+/obj/structure/flora/roguegrass,
+/obj/effect/sunlight,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/rtfield/outlaw)
 "tV" = (
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/dirt/road,
@@ -163,6 +169,10 @@
 /area/rogue/indoors/shelter/rtfield)
 "yW" = (
 /turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/rtfield/outlaw)
+"zf" = (
+/obj/effect/sunlight,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/outlaw)
 "zg" = (
 /turf/closed/wall/mineral/rogue/wood,
@@ -398,7 +408,7 @@ zg
 VP
 zg
 dc
-or
+tl
 qa
 DF
 or
@@ -512,7 +522,7 @@ hP
 yW
 wv
 wv
-Am
+zf
 Am
 XE
 Am
