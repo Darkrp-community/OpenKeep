@@ -51,6 +51,8 @@
 			var/female = FALSE
 
 			if(istype(obj_path, /obj/item/clothing/cloak) ||istype(obj_path, /obj/item/clothing/shoes)|| istype(obj_path, /obj/item/clothing/gloves) || istype(obj_path, /obj/item/clothing/under) ||istype(obj_path, /obj/item/clothing/suit))
+				female = TRUE
+
 			var/match_message
 			if(icon_state in possible_icon_states)
 				for(var/file_place in possible_icon_states[icon_state])

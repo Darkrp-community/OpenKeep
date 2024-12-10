@@ -784,19 +784,8 @@
 
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"
-	icon_state = "roguecape"
-	item_state = "roguecape"
-
-/obj/item/clothing/cloak/cape/hood
-	name = "hooded cape"
-	icon_state = "hoodcape"
-	item_state = "hoodcape"
-
-/obj/item/clothing/cloak/cape/fur
-	name = "fur cape"
 	icon_state = "furcape"
 	item_state = "furcape"
-	inhand_mod = TRUE
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
