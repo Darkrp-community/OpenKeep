@@ -29,7 +29,6 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "wings" = "None")
 	use_skintones = 1
-	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
@@ -68,6 +67,8 @@
 	body_markings = list(
 		/datum/body_marking/tonage,
 	)
+
+	custom_clothes = TRUE
 
 /datum/species/elf/snow/check_roundstart_eligible()
 	return TRUE
