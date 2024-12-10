@@ -83,7 +83,7 @@
 	outfit = /datum/outfit/job/roguetown/adept/rthief
 
 	category_tags = list(CTAG_ADEPT)
-	cmode_music = 'sound/music/adventurer/CombatRogue.ogg'
+	cmode_music = 'sound/music/cmode/adventurer/CombatRogue.ogg'
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adept/rthief/pre_equip(mob/living/carbon/human/H)

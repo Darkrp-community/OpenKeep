@@ -27,7 +27,7 @@
 	give_bank_account = 30
 	min_pq = 0
 
-	cmode_music = 'sound/music/garrison/CombatGarrison.ogg'
+	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
 /datum/job/roguetown/guardsman/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
