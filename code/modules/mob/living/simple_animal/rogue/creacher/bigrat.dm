@@ -29,7 +29,7 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/bite)
+	base_intents = list(/datum/intent/simple/critterbite)
 	attack_sound = 'sound/combat/wooshes/punch/punchwoosh (2).ogg'
 	melee_damage_lower = 12
 	melee_damage_upper = 14
