@@ -190,6 +190,78 @@
 	icon_state = "brownkey"
 	lockid = "roomvi"
 
+/obj/item/roguekey/medroomi
+	name = "medium room I key"
+	desc = "The key to the first medium room."
+	icon_state = "brownkey"
+	lockid = "medroomi"
+
+/obj/item/roguekey/medroomii
+	name = "medium room II key"
+	desc = "The key to the second medium room."
+	icon_state = "brownkey"
+	lockid = "medroomii"
+
+/obj/item/roguekey/medroomiii
+	name = "medium room III key"
+	desc = "The key to the third medium room."
+	icon_state = "brownkey"
+	lockid = "medroomiii"
+
+/obj/item/roguekey/medroomiv
+	name = "medium room IV key"
+	desc = "The key to the fourth medium room."
+	icon_state = "brownkey"
+	lockid = "medroomiv"
+
+/obj/item/roguekey/medroomv
+	name = "medium room V key"
+	desc = "The key to the fifth medium room."
+	icon_state = "brownkey"
+	lockid = "medroomv"
+
+/obj/item/roguekey/medroomvi
+	name = "medium room VI key"
+	desc = "The key to the sixth medium room."
+	icon_state = "brownkey"
+	lockid = "medroomvi"
+
+/obj/item/roguekey/luxroomi
+	name = "luxury room I key"
+	desc = "The key to the first luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomi"
+
+/obj/item/roguekey/luxroomii
+	name = "luxury room II key"
+	desc = "The key to the second luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomii"
+
+/obj/item/roguekey/luxroomiii
+	name = "luxury room III key"
+	desc = "The key to the third luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomiii"
+
+/obj/item/roguekey/luxroomiv
+	name = "luxury room IV key"
+	desc = "The key to the fourth luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomiv"
+
+/obj/item/roguekey/luxroomv
+	name = "luxury room V key"
+	desc = "The key to the fifth luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomv"
+
+/obj/item/roguekey/luxroomiv
+	name = "luxury room VI key"
+	desc = "The key to the sixth luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomvi"
+
 /obj/item/roguekey/roomhunt
 	name = "room HUNT key"
 	desc = "The key to the most luxurious Inn room."
@@ -401,6 +473,36 @@
 	name = ""
 	icon_state = ""
 	lockid = ""
+
+/obj/item/roguekey/apartments/slums1
+	name = "slums I key"
+	icon_state = "brownkey"
+	lockid = "slums1"
+
+/obj/item/roguekey/apartments/slums2
+	name = "slums II key"
+	icon_state = "brownkey"
+	lockid = "slums2"
+
+/obj/item/roguekey/apartments/slums3
+	name = "slums III key"
+	icon_state = "brownkey"
+	lockid = "slums3"
+
+/obj/item/roguekey/apartments/slums4
+	name = "slums IV key"
+	icon_state = "brownkey"
+	lockid = "slums4"
+
+/obj/item/roguekey/apartments/slums5
+	name = "slums V key"
+	icon_state = "brownkey"
+	lockid = "slums5"
+
+/obj/item/roguekey/apartments/slums6
+	name = "slums VI key"
+	icon_state = "brownkey"
+	lockid = "slums6"
 
 /obj/item/roguekey/apartments/apartment1
 	name = "apartment i key"
