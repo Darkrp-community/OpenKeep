@@ -31,99 +31,99 @@
 			if(initial(item_path.item_flags) & ABSTRACT)
 				continue
 
-		var/icon = initial(obj_path.icon)
-		if(isnull(icon))
-			continue
-		var/icon_state = initial(obj_path.icon_state)
-		if(isnull(icon_state))
-			continue
-
-		var/worn_icon = initial(item_path.mob_overlay_icon) //override icon file. where our sprite is contained if set. (ie modularity stuff)
-
-		if(length(bad_list) && (icon_state in bad_list[icon]))
-			continue
-
-		if(icon_exists(icon, icon_state))
-			continue
-
-		bad_list[icon] += list(icon_state)
-
-		var/female = FALSE
-
-		if(istype(obj_path, /obj/item/clothing/cloak) ||istype(obj_path, /obj/item/clothing/shoes)|| istype(obj_path, /obj/item/clothing/gloves) || istype(obj_path, /obj/item/clothing/under) ||istype(obj_path, /obj/item/clothing/suit))
-		var/match_message
-		if(icon_state in possible_icon_states)
-			for(var/file_place in possible_icon_states[icon_state])
-				match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
-
-
-		var/failed = FALSE
-		if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
-			if(!(icon_state in icon_states(worn_icon, 1)))
-				Fail("[item_path] using invalid ["icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
-				failed = TRUE
-
-		if(female)
-			var/icon_state_f = "[icon_state]_f"
-
-			if(icon_state_f in possible_icon_states)
-				for(var/file_place in possible_icon_states[icon_state_f])
-					match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
-
-			if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
-				if(!(icon_state_f in icon_states(worn_icon, 1)))
-					Fail("[item_path] using invalid female ["icon_state"], \"[icon_state_f]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
-					failed = TRUE
-
-			var/icon_state_f_boob = "[icon_state]_f_boob"
-
-			if(icon_state_f_boob in possible_icon_states)
-				for(var/file_place in possible_icon_states[icon_state_f_boob])
-					match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
-
-			if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
-				if(!(icon_state_f_boob in icon_states(worn_icon, 1)))
-					Fail("[item_path] using invalid female boob ["icon_state"] , \"[icon_state_f_boob]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
-					failed = TRUE
-
-		for(var/datum/species/species in typesof(/datum/species))
-			if(!initial(species.custom_clothes))
+			var/icon = initial(obj_path.icon)
+			if(isnull(icon))
+				continue
+			var/icon_state = initial(obj_path.icon_state)
+			if(isnull(icon_state))
 				continue
 
-			var/species_icon_state = "[icon_state]_[initial(species.id)]"
+			var/worn_icon = initial(item_path.mob_overlay_icon) //override icon file. where our sprite is contained if set. (ie modularity stuff)
 
-			if(species_icon_state in possible_icon_states)
-				for(var/file_place in possible_icon_states[species_icon_state])
+			if(length(bad_list) && (icon_state in bad_list[icon]))
+				continue
+
+			if(icon_exists(icon, icon_state))
+				continue
+
+			bad_list[icon] += list(icon_state)
+
+			var/female = FALSE
+
+			if(istype(obj_path, /obj/item/clothing/cloak) ||istype(obj_path, /obj/item/clothing/shoes)|| istype(obj_path, /obj/item/clothing/gloves) || istype(obj_path, /obj/item/clothing/under) ||istype(obj_path, /obj/item/clothing/suit))
+			var/match_message
+			if(icon_state in possible_icon_states)
+				for(var/file_place in possible_icon_states[icon_state])
 					match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
 
+
+			var/failed = FALSE
 			if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
-				if(!(species_icon_state in icon_states(worn_icon, 1)))
-					Fail("[item_path] using invalid ["icon_state"] for [initial(species.id)], \"[species_icon_state]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
+				if(!(icon_state in icon_states(worn_icon, 1)))
+					Fail("[item_path] using invalid ["icon_state"], \"[icon_state]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
 					failed = TRUE
 
 			if(female)
-				var/species_icon_state_f = "[icon_state]_f_[initial(species.id)]"
+				var/icon_state_f = "[icon_state]_f"
 
-				if(species_icon_state_f in possible_icon_states)
-					for(var/file_place in possible_icon_states[species_icon_state_f])
+				if(icon_state_f in possible_icon_states)
+					for(var/file_place in possible_icon_states[icon_state_f])
 						match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
 
 				if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
-					if(!(species_icon_state_f in icon_states(worn_icon, 1)))
-						Fail("[item_path] using invalid female ["icon_state"] for [initial(species.id)], \"[species_icon_state_f]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
+					if(!(icon_state_f in icon_states(worn_icon, 1)))
+						Fail("[item_path] using invalid female ["icon_state"], \"[icon_state_f]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
 						failed = TRUE
 
-				var/species_icon_state_f_boob = "[icon_state]_f_[initial(species.id)]_boob"
+				var/icon_state_f_boob = "[icon_state]_f_boob"
 
-				if(species_icon_state_f_boob in possible_icon_states)
-					for(var/file_place in possible_icon_states[species_icon_state_f_boob])
+				if(icon_state_f_boob in possible_icon_states)
+					for(var/file_place in possible_icon_states[icon_state_f_boob])
 						match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
 
 				if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
-					if(!(species_icon_state_f_boob in icon_states(worn_icon, 1)))
-						Fail("[item_path] using invalid female boob ["icon_state"] for [initial(species.id)], \"[species_icon_state_f_boob]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
+					if(!(icon_state_f_boob in icon_states(worn_icon, 1)))
+						Fail("[item_path] using invalid female boob ["icon_state"] , \"[icon_state_f_boob]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
 						failed = TRUE
 
+			for(var/datum/species/species in typesof(/datum/species))
+				if(!initial(species.custom_clothes))
+					continue
 
-		Fail("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
+				var/species_icon_state = "[icon_state]_[initial(species.id)]"
+
+				if(species_icon_state in possible_icon_states)
+					for(var/file_place in possible_icon_states[species_icon_state])
+						match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
+
+				if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
+					if(!(species_icon_state in icon_states(worn_icon, 1)))
+						Fail("[item_path] using invalid ["icon_state"] for [initial(species.id)], \"[species_icon_state]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
+						failed = TRUE
+
+				if(female)
+					var/species_icon_state_f = "[icon_state]_f_[initial(species.id)]"
+
+					if(species_icon_state_f in possible_icon_states)
+						for(var/file_place in possible_icon_states[species_icon_state_f])
+							match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
+
+					if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
+						if(!(species_icon_state_f in icon_states(worn_icon, 1)))
+							Fail("[item_path] using invalid female ["icon_state"] for [initial(species.id)], \"[species_icon_state_f]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
+							failed = TRUE
+
+					var/species_icon_state_f_boob = "[icon_state]_f_[initial(species.id)]_boob"
+
+					if(species_icon_state_f_boob in possible_icon_states)
+						for(var/file_place in possible_icon_states[species_icon_state_f_boob])
+							match_message += (match_message ? " & '[file_place]'" : " - Matching sprite found in: '[file_place]'")
+
+					if(worn_icon) //easiest to check since we override everything. this automatically includes downstream support.
+						if(!(species_icon_state_f_boob in icon_states(worn_icon, 1)))
+							Fail("[item_path] using invalid female boob ["icon_state"] for [initial(species.id)], \"[species_icon_state_f_boob]\" in mob_overlay_icon override file, '[worn_icon]'[match_message]")
+							failed = TRUE
+
+
+			Fail("Missing icon_state for [obj_path] in '[icon]'.\n\ticon_state = \"[icon_state]\"[match_message]")
 
