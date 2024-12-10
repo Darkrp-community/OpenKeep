@@ -938,6 +938,10 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
+"aVz" = (
+/obj/effect/landmark/start/villager,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/theatre)
 "aVK" = (
 /obj/structure/stairs{
 	dir = 8
@@ -1047,6 +1051,12 @@
 "bdK" = (
 /turf/open/water/swamp,
 /area/rogue/outdoors/town)
+"bdL" = (
+/obj/structure/lever/hidden{
+	redstone_id = 604
+	},
+/turf/closed/wall/mineral/rogue/decostone,
+/area/rogue/indoors/town/manor)
 "bdR" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -1522,12 +1532,14 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "bDA" = (
-/obj/structure/mineral_door/wood/fancywood{
-	locked = 1;
-	lockid = "hand";
-	name = "Secret Passage"
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 603
 	},
-/turf/open/floor/rogue/blocks,
+/turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/indoors/town/manor)
 "bDH" = (
 /obj/structure/fluff/railing/wood{
@@ -3251,6 +3263,11 @@
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/inquisition)
+"dxt" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/villager,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/theatre)
 "dxG" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -3513,11 +3530,6 @@
 /obj/structure/flora/roguegrass/herb/mentha,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
-"dJn" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/landmark/start/villager,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town/theatre)
 "dKJ" = (
 /obj/structure/mineral_door/wood/red,
 /turf/open/floor/rogue/cobble,
@@ -3557,6 +3569,15 @@
 /obj/item/candle/yellow/lit/infinite,
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/under/town/basement)
+"dOM" = (
+/obj/structure/lever/hidden{
+	redstone_id = 605
+	},
+/turf/closed/wall/mineral/rogue/decostone/long{
+	dir = 1;
+	icon_state = "decostone-l"
+	},
+/area/rogue/indoors/town/manor)
 "dPj" = (
 /obj/structure/stairs{
 	dir = 4;
@@ -4345,8 +4366,14 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/river)
 "eEv" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/rogue/woodturned,
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 513
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/manor)
 "eEM" = (
 /obj/structure/bars/pipe{
@@ -4628,6 +4655,12 @@
 	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/inquisition)
+"eUg" = (
+/obj/structure/lever/hidden{
+	redstone_id = 514
+	},
+/turf/closed/wall/mineral/rogue/wood,
+/area/rogue/indoors/town/manor)
 "eUD" = (
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/cobble,
@@ -4875,10 +4908,6 @@
 	icon_state = "vertw"
 	},
 /area/rogue/indoors/town/dwarfin)
-"fdX" = (
-/obj/effect/landmark/start/villager,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
 "feA" = (
 /obj/structure/fluff/railing/wood{
 	dir = 4
@@ -5532,6 +5561,12 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
+"fRo" = (
+/obj/structure/lever/hidden{
+	redstone_id = 512
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "fSj" = (
 /obj/effect/landmark/start/villager,
 /turf/open/floor/rogue/wood,
@@ -6046,13 +6081,6 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/under/town/basement)
-"gxA" = (
-/obj/structure/chair/stool/rogue{
-	pixel_y = 5
-	},
-/obj/item/roguekey/apartments/slums6,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
 "gxI" = (
 /turf/closed/mineral/rogue,
 /area/rogue/indoors/shelter/rtfield)
@@ -7560,6 +7588,12 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
+"hQW" = (
+/obj/structure/lever/hidden{
+	redstone_id = 513
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "hQZ" = (
 /obj/structure/closet/crate/chest/neu_iron,
 /obj/item/paper/scroll,
@@ -7747,6 +7781,12 @@
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/butchershop)
+"iaO" = (
+/obj/structure/lever/hidden{
+	redstone_id = 516
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "ibP" = (
 /obj/structure/mineral_door/wood/violet{
 	lockid = "manor";
@@ -7802,13 +7842,6 @@
 	},
 /turf/open/floor/rogue/blocks/newstone,
 /area/rogue/under/town/basement)
-"igm" = (
-/obj/structure/chair/stool/rogue{
-	pixel_y = 5
-	},
-/obj/item/roguekey/apartments/slums3,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
 "ihg" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -7855,6 +7888,14 @@
 "ijK" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town/shop)
+"ijP" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 8;
+	icon_state = "torchwall1"
+	},
+/obj/effect/landmark/start/villager,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "ikG" = (
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/villagegarrison)
@@ -9076,6 +9117,16 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"jAC" = (
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 515
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "jAW" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -9258,6 +9309,13 @@
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church/chapel)
+"jOU" = (
+/obj/structure/chair/stool/rogue{
+	pixel_y = 5
+	},
+/obj/item/roguekey/apartments/slums5,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "jPc" = (
 /obj/structure/mineral_door/wood{
 	lockid = "slums4";
@@ -9869,6 +9927,12 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/town)
+"krA" = (
+/obj/structure/lever/hidden{
+	redstone_id = 518
+	},
+/turf/closed/wall/mineral/rogue/wood,
+/area/rogue/indoors/town/manor)
 "krR" = (
 /turf/open/floor/rogue/tile{
 	icon_state = "linoleum"
@@ -11878,8 +11942,14 @@
 /turf/open/floor/rogue/churchbrick,
 /area/rogue/indoors/town/church/inquisition)
 "mFU" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/rogue/ruinedwood/darker,
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 516
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/manor)
 "mGc" = (
 /obj/structure/fluff/walldeco/church/line{
@@ -12663,6 +12733,13 @@
 /obj/structure/bars/bent,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
+"nym" = (
+/obj/structure/chair/stool/rogue{
+	pixel_y = 5
+	},
+/obj/item/roguekey/apartments/slums2,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town/theatre)
 "nyz" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8
@@ -12756,14 +12833,6 @@
 	},
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/town/bath)
-"nEn" = (
-/obj/machinery/light/rogue/torchholder{
-	dir = 8;
-	icon_state = "torchwall1"
-	},
-/obj/effect/landmark/start/villager,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
 "nEC" = (
 /obj/structure/table/wood{
 	icon_state = "longtable";
@@ -12856,6 +12925,16 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
+"nJM" = (
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 512
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "nJO" = (
 /obj/structure/rack/rogue,
 /obj/machinery/light/rogue/torchholder{
@@ -12893,13 +12972,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/town)
-"nKk" = (
-/obj/structure/chair/stool/rogue{
-	pixel_y = 5
-	},
-/obj/item/roguekey/apartments/slums1,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town/theatre)
 "nKz" = (
 /obj/structure/closet/crate/roguecloset{
 	lockid = "butler"
@@ -13549,6 +13621,12 @@
 	icon_state = "glyph3"
 	},
 /area/rogue/indoors/town/vault)
+"ozi" = (
+/obj/structure/lever/hidden{
+	redstone_id = 515
+	},
+/turf/closed/wall/mineral/rogue/stonebrick,
+/area/rogue/indoors/town/manor)
 "ozp" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -14100,7 +14178,7 @@
 /obj/structure/chair/stool/rogue{
 	pixel_y = 5
 	},
-/obj/item/roguekey/apartments/slums2,
+/obj/item/roguekey/apartments/slums1,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/theatre)
 "ppZ" = (
@@ -14967,11 +15045,14 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "qtJ" = (
-/obj/structure/mineral_door/wood/green{
-	lockid = "manor";
-	name = "service passage"
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 605
 	},
-/turf/open/floor/rogue/blocks,
+/turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/indoors/town/manor)
 "qtK" = (
 /obj/structure/mineral_door/wood,
@@ -15267,10 +15348,6 @@
 /obj/structure/table/wood/plain_alt,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor)
-"qIe" = (
-/obj/effect/landmark/start/villager,
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town/theatre)
 "qIB" = (
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
@@ -15326,11 +15403,14 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church/chapel)
 "qOT" = (
-/obj/structure/mineral_door/wood/green{
-	lockid = "manor";
-	name = "Service Passage"
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 517
 	},
-/turf/open/floor/rogue/blocks,
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/town/manor)
 "qPi" = (
 /obj/structure/roguemachine/mail,
@@ -15404,11 +15484,14 @@
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/town/manor)
 "qSt" = (
-/obj/structure/mineral_door/wood/green{
-	lockid = "manor";
-	name = "Service Passage"
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 518
 	},
-/turf/open/floor/rogue/wood,
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/town/manor)
 "qSu" = (
 /obj/structure/stairs{
@@ -15515,12 +15598,6 @@
 /obj/machinery/light/rogue/firebowl/church,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/church)
-"qZD" = (
-/obj/effect/landmark/start/villager{
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
 "qZY" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -17187,6 +17264,12 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/sewer)
+"sQt" = (
+/obj/structure/lever/hidden{
+	redstone_id = 517
+	},
+/turf/closed/wall/mineral/rogue/wood,
+/area/rogue/indoors/town/manor)
 "sQN" = (
 /obj/structure/table/wood{
 	icon_state = "longtable";
@@ -17348,6 +17431,13 @@
 "sXF" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods_safe)
+"sXG" = (
+/obj/structure/chair/stool/rogue{
+	pixel_y = 5
+	},
+/obj/item/roguekey/apartments/slums3,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "sYp" = (
 /obj/structure/lever/wall{
 	pixel_x = 10;
@@ -17913,6 +18003,16 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains)
+"tBX" = (
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 604
+	},
+/turf/closed/wall/mineral/rogue/decostone,
+/area/rogue/indoors/town/manor)
 "tBY" = (
 /obj/structure/mirror{
 	pixel_x = -32;
@@ -19317,6 +19417,12 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/clocktower)
+"vgz" = (
+/obj/structure/lever/hidden{
+	redstone_id = 603
+	},
+/turf/closed/wall/mineral/rogue/decostone/long,
+/area/rogue/indoors/town/manor)
 "vgJ" = (
 /turf/closed/mineral/rogue,
 /area/rogue/under/town/caverogue)
@@ -19722,6 +19828,10 @@
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/smithy)
+"vAG" = (
+/obj/effect/landmark/start/villager,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "vAM" = (
 /obj/structure/fluff/railing/border{
 	dir = 10;
@@ -20081,7 +20191,7 @@
 	icon_state = "wcv";
 	locked = 1;
 	lockid = "manor";
-	name = "Hier's Chambers"
+	name = "Heir's Chambers"
 	},
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town/manor)
@@ -21234,7 +21344,7 @@
 /obj/structure/chair/stool/rogue{
 	pixel_y = 5
 	},
-/obj/item/roguekey/apartments/slums5,
+/obj/item/roguekey/apartments/slums6,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town)
 "xal" = (
@@ -21777,8 +21887,14 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/merc_guild)
 "xFJ" = (
-/obj/structure/bookcase/random,
-/turf/open/floor/rogue/blocks/newstone/alt,
+/obj/effect/mapping_helpers/secret_door_creator{
+	name = "Keep Secret Door";
+	floor_turf = /turf/open/floor/rogue/blocks;
+	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
+	vips = list("King","Queen","Prince","Hand","Butler","Servant");
+	redstone_id = 514
+	},
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/indoors/town/manor)
 "xFP" = (
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow,
@@ -21945,6 +22061,12 @@
 /obj/structure/industrial_lift/tram,
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
+"xOJ" = (
+/obj/effect/landmark/start/villager{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "xPg" = (
 /obj/machinery/light/rogue/wallfire/candle{
 	pixel_x = -32;
@@ -97887,7 +98009,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 htj
 htj
 htj
@@ -98144,7 +98266,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 htj
 htj
 htj
@@ -98658,7 +98780,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 htj
 htj
 htj
@@ -98915,7 +99037,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 htj
 htj
 htj
@@ -99174,11 +99296,11 @@ vHz
 vHz
 vHz
 vHz
+vHz
+vHz
 htj
-htj
-htj
-htj
-htj
+vHz
+vHz
 htj
 htj
 htj
@@ -99435,7 +99557,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 htj
 htj
 htj
@@ -99692,7 +99814,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 eyp
 eyp
 eyp
@@ -99949,7 +100071,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 eyp
 eyp
 eyp
@@ -100206,7 +100328,7 @@ htj
 htj
 htj
 htj
-htj
+vHz
 htj
 htj
 htj
@@ -111853,7 +111975,7 @@ tug
 tug
 tug
 mjb
-qIe
+aVz
 mNf
 mNf
 aUB
@@ -112368,7 +112490,7 @@ fXS
 tug
 mjb
 lYY
-nKk
+ppX
 cDp
 cDp
 mNf
@@ -113138,7 +113260,7 @@ tug
 tug
 tug
 mjb
-dJn
+dxt
 mNf
 mNf
 cDp
@@ -113399,7 +113521,7 @@ cDp
 aUB
 cDp
 mNf
-ppX
+nym
 mjb
 elp
 elp
@@ -115975,7 +116097,7 @@ vik
 fsJ
 nlk
 hDd
-gxA
+xaa
 fjg
 dBi
 nlk
@@ -116477,7 +116599,7 @@ fsJ
 fjg
 vik
 vik
-qZD
+xOJ
 nlk
 ehF
 ehF
@@ -116486,7 +116608,7 @@ fjg
 fjg
 vik
 fjg
-fdX
+vAG
 nlk
 blt
 fjg
@@ -116733,7 +116855,7 @@ nlk
 vik
 vik
 ulA
-igm
+sXG
 hDd
 nlk
 elp
@@ -117002,7 +117124,7 @@ nlk
 nlk
 nlk
 nlk
-xaa
+jOU
 vik
 vik
 fjg
@@ -117260,7 +117382,7 @@ elp
 ehF
 nlk
 nEc
-nEn
+ijP
 qyg
 jKU
 nlk
@@ -118684,7 +118806,7 @@ tpL
 tpL
 mso
 vwo
-blM
+vwo
 bJN
 ccH
 eNr
@@ -118940,8 +119062,8 @@ gOl
 alA
 alA
 alA
-gOl
-bDA
+bdL
+tBX
 bJN
 ciz
 avx
@@ -119197,7 +119319,7 @@ vgJ
 vgJ
 rDr
 rDr
-rDr
+bET
 bET
 bJN
 dEp
@@ -120225,7 +120347,7 @@ hEF
 rDr
 rDr
 rDr
-rDr
+bET
 bET
 bJN
 dWG
@@ -120482,7 +120604,7 @@ hEF
 rDr
 rDr
 gOl
-alA
+vgz
 bDA
 gOl
 frI
@@ -121521,7 +121643,7 @@ cGL
 ejP
 bas
 bas
-bJN
+dOM
 jSN
 phh
 vwo
@@ -178566,14 +178688,14 @@ vgJ
 rDr
 guQ
 xGB
-xGB
+iaO
 mFU
 xGB
 xGB
 xGB
 xGB
-xGB
-mFU
+ozi
+jAC
 xGB
 xGB
 xGB
@@ -181654,11 +181776,11 @@ phh
 phh
 phh
 xFJ
+eUg
 phh
 phh
 phh
-phh
-phh
+eUg
 xFJ
 phh
 phh
@@ -182950,7 +183072,7 @@ avx
 bqV
 avx
 avx
-phh
+sQt
 xGB
 xGB
 xGB
@@ -184473,8 +184595,8 @@ xGB
 xGB
 xGB
 xGB
-eEv
-xGB
+nJM
+fRo
 xGB
 xGB
 xGB
@@ -185761,7 +185883,7 @@ xGB
 xGB
 rDr
 rDr
-rDr
+bET
 bET
 xGB
 wYj
@@ -186018,7 +186140,7 @@ dGz
 kOe
 xGB
 xGB
-xGB
+hQW
 eEv
 xGB
 xGB
@@ -188089,7 +188211,7 @@ gOl
 gOl
 jkj
 jkj
-phh
+krA
 jGs
 phh
 phh
