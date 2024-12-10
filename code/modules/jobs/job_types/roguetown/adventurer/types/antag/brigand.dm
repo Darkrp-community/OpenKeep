@@ -5,7 +5,7 @@
 	allowed_races = ALL_PLAYER_RACES_BY_NAME
 	outfit = /datum/outfit/job/roguetown/bandit/brigand
 	category_tags = list(CTAG_BANDIT)
-	cmode_music = 'sound/music/combat_bandit_brigand.ogg'
+	cmode_music = 'sound/music/cmode/antag/combat_bandit_brigand.ogg'
 
 /datum/outfit/job/roguetown/bandit/brigand/pre_equip(mob/living/carbon/human/H)
 	..()

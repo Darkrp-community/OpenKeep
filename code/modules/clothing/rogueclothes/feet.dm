@@ -216,6 +216,7 @@
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/boots/rare
+	icon_state = "elfshoes"
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	sleeved = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'

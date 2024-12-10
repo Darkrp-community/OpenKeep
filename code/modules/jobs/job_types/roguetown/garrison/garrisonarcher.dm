@@ -25,7 +25,7 @@
 	give_bank_account = 30
 	min_pq = 0
 
-	cmode_music = 'sound/music/combat_guard.ogg'
+	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
 /datum/outfit/job/roguetown/watchman
 	name = "Garrison Archer"

@@ -28,7 +28,6 @@
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
