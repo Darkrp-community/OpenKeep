@@ -440,6 +440,7 @@
 #include "code\datums\ai\behaviours\run_from_target.dm"
 #include "code\datums\ai\behaviours\use_in_hand.dm"
 #include "code\datums\ai\behaviours\use_on_object.dm"
+#include "code\datums\ai\behaviours\use_targeted_ability.dm"
 #include "code\datums\ai\behaviours\wak_to_target.dm"
 #include "code\datums\ai\behaviours\eat_food\eat_body.dm"
 #include "code\datums\ai\behaviours\hostile\attack.dm"
