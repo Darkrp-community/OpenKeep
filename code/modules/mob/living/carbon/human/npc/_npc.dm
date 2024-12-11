@@ -144,7 +144,7 @@
 				for(var/i = 0; i < maxStepsTick; ++i)
 					if(!IsDeadOrIncap())
 						if(myPath.len >= 1)
-							walk_to(src,myPath[1],0,update_movespeed())
+							walk_to(src,turf_of_target,0,update_movespeed())
 							myPath -= myPath[1]
 				return 1
 	else

@@ -40,7 +40,7 @@
 	del_on_deaggro = 999 SECONDS
 	retreat_health = 0.1
 	food = 0
-	dodgetime = 15
+	dodgetime = 4 SECONDS
 	aggressive = 1
 	remains_type = null
 	body_eater = TRUE
