@@ -63,7 +63,6 @@ GLOBAL_LIST_INIT(court_positions, list(
 	"Consort",
 	"Hand",
 	"Prince",
-	"Captain",
 	"Steward",
 	"Court Magician",
 	"Archivist",
@@ -75,6 +74,7 @@ GLOBAL_LIST_INIT(court_positions, list(
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
+	"Captain",
 	"Garrison Guard",
 	"Royal Guard",
 	"Veteran",

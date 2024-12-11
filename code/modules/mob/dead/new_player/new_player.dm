@@ -564,7 +564,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.apprentices_positions)
-
+	omegalist += list(GLOB.allmig_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode

@@ -24,7 +24,7 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 100
 	min_pq = 0
-	selection_color = "#4657ec"
+	selection_color = "#565ea0"
 
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
