@@ -241,7 +241,7 @@
 	var/total_thickness
 	if(length(pollutant_list) == 1)
 		pollutant = SSpollution.singletons[pollutant_list[1]]
-s		if(!(pollutant.pollutant_flags & POLLUTANT_APPEARANCE))
+		if(!(pollutant.pollutant_flags & POLLUTANT_APPEARANCE))
 			return
 		total_thickness = total_amount * pollutant.thickness
 	else
