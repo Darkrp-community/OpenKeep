@@ -4,8 +4,7 @@
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 1
-	spawn_positions = 1
-	f_title = "Apothecary"
+	spawn_positions = 1s
 
 	allowed_races = list(
 		"Humen",
