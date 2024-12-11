@@ -27,6 +27,9 @@
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
+"dM" = (
+/turf/open/water/swamp,
+/area/rogue)
 "dV" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/rogue/concrete,
@@ -326,10 +329,6 @@
 /obj/item/reagent_containers/glass/bowl,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
-"uW" = (
-/obj/effect/spawner/roguemap/orc_warrior_maybe,
-/turf/open/floor/rogue/concrete,
-/area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vf" = (
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
@@ -352,6 +351,7 @@
 /obj/effect/decal/shadow_floor{
 	dir = 4
 	},
+/obj/item/ammo_casing/caseless/rogue/arrow,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "vI" = (
@@ -470,7 +470,7 @@
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Hh" = (
 /obj/effect/decal/cleanable/blood_neu/random,
-/obj/effect/spawner/roguemap/beartrap,
+/obj/effect/spawner/roguemap/beartrap_obvious,
 /turf/open/floor/rogue/metal{
 	icon_state = "plating2"
 	},
@@ -490,6 +490,7 @@
 "IZ" = (
 /obj/effect/mob_spawn/human/corpse/damaged/underdweller,
 /obj/effect/decal/cleanable/blood_neu/random,
+/obj/item/ammo_casing/caseless/rogue/arrow,
 /turf/open/floor/rogue/metal,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Jw" = (
@@ -555,6 +556,10 @@
 "NP" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/concrete,
+/area/rogue/under/catacombs/dwarfoutpost/orcy)
+"Os" = (
+/obj/structure/bars,
+/turf/open/water/swamp,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Pk" = (
 /obj/effect/mob_spawn/human/corpse/damaged/underdweller,
@@ -673,10 +678,6 @@
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "Uj" = (
 /obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/hexstone,
-/area/rogue/under/catacombs/dwarfoutpost/orcy)
-"UA" = (
-/obj/effect/spawner/roguemap/orc_warrior_maybe,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "UK" = (
@@ -1487,8 +1488,8 @@ Zs
 Zs
 Zs
 Zs
-vf
-gl
+Os
+dM
 gl
 "}
 (21,1,1) = {"
@@ -1518,7 +1519,7 @@ Zs
 Zs
 Zs
 Zj
-uW
+et
 vf
 ik
 vf
@@ -1590,7 +1591,7 @@ eB
 eB
 vf
 tW
-UA
+DR
 eB
 vf
 gl

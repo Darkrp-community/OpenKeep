@@ -16846,7 +16846,6 @@
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
