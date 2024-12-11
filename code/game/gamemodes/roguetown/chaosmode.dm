@@ -214,13 +214,13 @@
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.garrison_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.noble_positions)
+				if(rebelguy.assigned_role in GLOB.court_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.apprentices_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.church_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.serf_positions)
+				if(rebelguy.assigned_role in GLOB.towner_positions)
 					blockme = TRUE
 				if(blockme)
 					continue

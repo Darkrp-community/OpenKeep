@@ -1,7 +1,7 @@
 /datum/job/roguetown/royalguard
 	title = "Royal Guard"
-	flag = GUARDSMAN
-	department_flag = GARRISON
+	flag = ROYAL_GUARD
+	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2

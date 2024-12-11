@@ -1,7 +1,7 @@
 /datum/job/roguetown/tailor
 	title = "Tailor"
 	flag = TAILOR
-	department_flag = SERFS
+	department_flag = TOWNERS
 	faction = "Station"
 	tutorial = "Cloth, linen, silk and leather. You've tirelessly studied and poured your life into \
 				sewing articles of slight protection, padding, and fashion for serf and noble alike."

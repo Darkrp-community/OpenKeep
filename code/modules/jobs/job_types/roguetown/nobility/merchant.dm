@@ -1,7 +1,7 @@
 /datum/job/roguetown/merchant
 	title = "Merchant"
 	flag = MERCHANT
-	department_flag = MERCATOR_GUILD
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
