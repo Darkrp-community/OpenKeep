@@ -32,7 +32,7 @@
 	wrists = /obj/item/rope/chain
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace/spiked // He gets a random mace.
-	beltr = /obj/item/keyring/guard
+	beltr = /obj/item/storage/keyring/guard
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // Main weapon

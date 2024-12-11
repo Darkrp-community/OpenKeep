@@ -34,7 +34,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	neck = /obj/item/roguekey/forrestgarrison
+	neck = /obj/item/key/forrestgarrison
 	belt = /obj/item/storage/belt/rogue/leather
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1, /obj/item/rope/chain = 1)
 	beltl = /obj/item/rogueweapon/mace/steel/morningstar
