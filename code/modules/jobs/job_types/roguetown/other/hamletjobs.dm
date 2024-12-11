@@ -95,6 +95,7 @@
 /datum/job/roguetown/watchman/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
 		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
