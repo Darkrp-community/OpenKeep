@@ -564,4 +564,30 @@
 	candodge = TRUE
 	canparry = TRUE
 
+/datum/intent/simple/claw_strong
+	name = "claw"
+	icon_state = "inclaw"
+	attack_verb = list("slashes", "claws")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = "smallslash"
+	chargetime = 0
+	penfactor = 5
+	swingdelay = 2 SECONDS
+	candodge = TRUE
+	canparry = TRUE
+	miss_text = "slashes the air!"
 
+/datum/intent/simple/claw_quick
+	name = "claw"
+	icon_state = "inclaw"
+	attack_verb = list("slashes", "claws")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = "smallslash"
+	chargetime = 0
+	penfactor = 3
+	swingdelay = 1 SECONDS
+	candodge = TRUE
+	canparry = TRUE
+	miss_text = "slashes the air!"
