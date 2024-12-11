@@ -92,7 +92,7 @@
 
 	cmode_music = 'sound/music/combat_guard.ogg'
 
-/datum/job/roguetown/townwatch/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/roguetown/watchman/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(ishuman(L))
 		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/guard))
