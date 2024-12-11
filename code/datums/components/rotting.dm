@@ -44,8 +44,6 @@
 		if(C.stat != DEAD)
 			qdel(src)
 			return
-
-
 	if(!(C.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)))
 		qdel(src)
 		return
@@ -64,18 +62,17 @@
 					B.rotted = TRUE
 					findonerotten = TRUE
 					shouldupdate = TRUE
-					C.change_stat("constitution", -8, "rottenlimbs")
+					C.change_stat(STATKEY_CON, -8)
 			else
 				if(amount > 45 MINUTES)
 					if(!is_zombie)
 						B.skeletonize()
 						if(C.dna && C.dna.species)
 							C.dna.species.species_traits |= NOBLOOD
-						C.change_stat("constitution", -99, "skeletonized")
+						C.change_stat(STATKEY_CON, -99)
 						shouldupdate = TRUE
 				else
 					findonerotten = TRUE
-
 	if(findonerotten)
 		var/turf/open/T = C.loc
 		if(istype(T))
