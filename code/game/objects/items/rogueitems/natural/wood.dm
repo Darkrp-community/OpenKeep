@@ -44,7 +44,7 @@
 
 /obj/item/grown/log/tree/small
 	name = "small log"
-	desc = "A smaller log that came from a larger log. Suitable for building."
+	desc = "A smaller log that came from a larger log. With a saw, you could turn it into wooden planks."
 	icon_state = "logsmall"
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30

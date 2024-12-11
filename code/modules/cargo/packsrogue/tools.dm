@@ -101,6 +101,17 @@
 	cost = 15
 	contains = /obj/item/rogueweapon/hoe
 
+/datum/supply_pack/rogue/tools/handsaw
+	name = "handsaw"
+	cost = 12
+	contains = /obj/item/rogueweapon/handsaw
+
+/datum/supply_pack/rogue/tools/chisel
+	name = "chisel"
+	cost = 12
+	contains =  list(/obj/item/rogueweapon/chisel,
+	/obj/item/rogueweapon/chisel)
+
 /datum/supply_pack/rogue/tools/bottle
 	name = "Glass Bottle"
 	cost = 3

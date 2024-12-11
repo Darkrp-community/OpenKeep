@@ -273,7 +273,7 @@
 	recipe_name = "a Tower Shield"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
-	additional_items = list(/obj/item/grown/log/tree/small)
+	additional_items = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
 	created_item = /obj/item/rogueweapon/shield/tower
 	craftdiff = 2
 
@@ -354,7 +354,7 @@
 	recipe_name = "a Crossbow"
 	appro_skill = /datum/skill/craft/engineering
 	req_bar = /obj/item/ingot/steel
-	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/natural/fibers)
+	additional_items = list(/obj/item/natural/plank, /obj/item/natural/fibers)
 	created_item = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 	craftdiff = 1 // Minimal engineering needed
 
