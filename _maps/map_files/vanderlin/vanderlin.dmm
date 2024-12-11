@@ -2678,10 +2678,6 @@
 "cKJ" = (
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/town)
-"cLn" = (
-/obj/structure/wallladder,
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town)
 "cMa" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
@@ -9519,7 +9515,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "jWL" = (
-/obj/structure/wallladder,
+/obj/structure/ladder,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town)
 "jXc" = (
@@ -17706,7 +17702,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "tnA" = (
-/obj/structure/table/wood/fine,
+/obj/structure/table/wood/reinforced_alter,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/merc_guild)
 "tnD" = (
@@ -94951,7 +94947,7 @@ qEb
 iGx
 iGx
 iGx
-cLn
+sOR
 iGx
 qEb
 xYa
@@ -95232,7 +95228,7 @@ boe
 mVA
 niL
 niL
-cLn
+sOR
 iGx
 qEb
 oMJ
@@ -105509,7 +105505,7 @@ iGx
 iGx
 iGx
 iGx
-cLn
+sOR
 iGx
 qEb
 vgJ
@@ -120862,7 +120858,7 @@ rDr
 rDr
 bJN
 nAy
-vzD
+rTe
 ftZ
 rTe
 fUX
@@ -122147,7 +122143,7 @@ rDr
 rDr
 bJN
 fcx
-rTe
+vzD
 eOa
 gOl
 alA
