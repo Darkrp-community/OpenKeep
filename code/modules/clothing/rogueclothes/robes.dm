@@ -137,7 +137,7 @@
 			flags_inv = null
 			if(ishuman(user))
 				var/mob/living/carbon/H = user
-				H.update_inv_wear_suit()
+				H.update_inv_armor()
 				H.update_icon()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
@@ -146,7 +146,7 @@
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
-					H.update_inv_wear_suit()
+					H.update_inv_armor()
 					H.update_icon()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
