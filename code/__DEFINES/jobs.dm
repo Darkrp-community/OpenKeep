@@ -112,6 +112,7 @@
 #define DUNGEONEER	(1<<1)
 #define WATCHMAN	(1<<2)
 #define MAYOR       (1<<3)
+#define JAILOR	    (1<<4)
 
 #define CHURCHMEN		(1<<2)
 
@@ -123,6 +124,7 @@
 #define SERFS			(1<<3)
 
 #define INNKEEP		(1<<0)
+#define INNKEEPCHILD    (1<<1)
 #define BLACKSMITH	(1<<2)
 #define ALCHEMIST	(1<<3)
 #define MASON		(1<<4)
@@ -179,6 +181,7 @@
 #define JDO_ROYALGUARD 7.1
 #define JDO_GARRISONGUARD 8
 #define JDO_GARRISONARCHER 9
+#define JDO_JAILOR 9.5
 #define JDO_DUNGEONEER 10
 #define JDO_SQUIRE 11
 #define JDO_VET 11.1
@@ -207,6 +210,7 @@
 #define JDO_SERVANT 26
 
 #define JDO_INNKEEP 27
+#define JDO_INNKEEP_CHILD 27.5
 #define JDO_COOK 28
 
 #define JDO_BUTCHER 28.1

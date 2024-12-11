@@ -78,6 +78,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	"Royal Guard",
 	"Veteran",
 	"Dungeoneer",
+	"Jailor",
 	"Garrison Archer",
 	"Mayor"
 	))
@@ -93,6 +94,7 @@ GLOBAL_LIST_INIT(church_positions, list(
 
 GLOBAL_LIST_INIT(serf_positions, list(
 	"Innkeep",
+	"Innkeeper's Son",
 	"Armorer",
 	"Weaponsmith",
 	"Tailor",

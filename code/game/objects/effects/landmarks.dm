@@ -145,6 +145,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Veteran"
 	icon_state = "arrow"
 
+/obj/effect/landmark/start/jailor
+	name = "Jailor"
+	icon_state = "arrow"
+
 /obj/effect/landmark/start/dungeoneer
 	name = "Dungeoneer"
 	icon_state = "arrow"
@@ -207,6 +211,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/innkeep
 	name = "Innkeep"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/innkeep_son
+	name = "Innkeeper's Child"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/archivist

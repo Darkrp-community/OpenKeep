@@ -45,6 +45,7 @@ SUBSYSTEM_DEF(familytree)
 		"King",
 		"Inquisitor",
 		"Hand",
+		"Jailor",
 		)
 	//This creates 2 families for each race roundstart so that siblings dont fail to be added to a family.
 	var/list/preset_family_species = list(

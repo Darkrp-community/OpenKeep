@@ -129,6 +129,9 @@
 /obj/item/clothing/under/roguetown/loincloth/brown
 	color = CLOTHING_BARK_BROWN
 
+/obj/item/clothing/under/roguetown/loincloth/black
+	color = CLOTHING_SOOT_BLACK
+
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"
 
