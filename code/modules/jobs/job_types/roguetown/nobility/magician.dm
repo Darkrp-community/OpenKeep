@@ -16,7 +16,6 @@
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAGICIAN
-	allowed_patrons = list(/datum/patron/divine/noc)
 	tutorial = "Dream interpreter, soothsayer, astrologer and valued courtier, blessed by Noc. \
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
@@ -40,6 +39,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backpack_contents = list(/obj/item/scrying = 1)
 	if(H.mind)
+		if(H.patron != /datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc)
+
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
