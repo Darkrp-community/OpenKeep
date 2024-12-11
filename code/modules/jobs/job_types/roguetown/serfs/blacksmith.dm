@@ -1,7 +1,7 @@
 /datum/job/roguetown/armorsmith
 	title = "Armorer"
 	flag = BLACKSMITH
-	department_flag = MAKERS_GUILD
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -73,7 +73,7 @@
 /datum/job/roguetown/weaponsmith
 	title = "Weaponsmith"
 	flag = BLACKSMITH
-	department_flag = MAKERS_GUILD
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -145,7 +145,7 @@
 /datum/job/roguetown/blacksmith
 	title = "Blacksmith"
 	flag = BLACKSMITH
-	department_flag = MAKERS_GUILD
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
