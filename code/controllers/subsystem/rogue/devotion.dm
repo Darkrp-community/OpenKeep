@@ -59,13 +59,27 @@
 		if(CLERIC_T3) // already maxed out
 			return
 
+
+/datum/devotion/cleric_holder/proc/grant_spells_churchling(mob/living/carbon/human/H)
+	if(!H || !H.mind || !patron)
+		return
+
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/touch/orison, /obj/effect/proc_holder/spell/invoked/lesser_heal, /obj/effect/proc_holder/spell/invoked/diagnose) //This would have caused jank.
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		var/newspell = new spell_type
+		H.mind.AddSpell(newspell)
+	level = CLERIC_T0
+	max_devotion = CLERIC_REQ_1 //Max devotion limit - Churchlings only get diagnose and lesser miracle.
+
 // Cleric Spell Spawner
 /datum/devotion/cleric_holder/proc/grant_spells_priest(mob/living/carbon/human/H)
 	if(!H || !H.mind)
 		return
 
 	var/datum/patron/A = H.patron
-	var/list/spelllist = list(A.t0, A.t1, A.t2, A.t3, /obj/effect/proc_holder/spell/invoked/cure_rot)
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/touch/orison, A.t0, A.t1, A.t2, A.t3, /obj/effect/proc_holder/spell/invoked/cure_rot)
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
 			continue

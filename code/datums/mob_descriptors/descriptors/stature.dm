@@ -54,7 +54,7 @@
 	name = "Trickster"
 
 /datum/mob_descriptor/stature/vagabond
-	name = "Vagabond"
+	name = "Orphan"
 
 /datum/mob_descriptor/stature/foreigner
 	name = "Foreigner"
