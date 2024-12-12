@@ -15,8 +15,7 @@
 	display_order = JDO_ORPHAN
 	show_in_credits = FALSE
 	min_pq = -30
-
-	cmode_music = 'sound/music/nobility/CombatKnight.ogg'
+	cmode_music = 'sound/music/combat_bum.ogg'
 
 /datum/job/roguetown/orphan/New()
 	. = ..()
