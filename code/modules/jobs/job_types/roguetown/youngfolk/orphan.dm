@@ -16,7 +16,7 @@
 	show_in_credits = FALSE
 	min_pq = -30
 
-	cmode_music = 'sound/music/combat_bum.ogg'
+	cmode_music = 'sound/music/nobility/CombatKnight.ogg'
 
 /datum/job/roguetown/orphan/New()
 	. = ..()
