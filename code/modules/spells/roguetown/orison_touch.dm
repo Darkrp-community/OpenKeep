@@ -273,8 +273,6 @@
 
 /datum/reagent/water/cursed/on_mob_life(mob/living/carbon/M)
 	. = ..()
-	if(istype(M,/mob/living/carbon/human))
-		M_hum = M
 	if((M.mob_biotypes & MOB_UNDEAD))
 		M.adjustBruteLoss(-0.1*REM)
 		M.adjustFireLoss(-0.1*REM)
