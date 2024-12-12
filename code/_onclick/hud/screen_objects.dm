@@ -1868,10 +1868,9 @@
 		if("dawn")
 			icon_state = "dawn"
 			name = "Sir Sun - Dawn"
-	for(var/datum/particle_weather/rain_gentle/R in SSweather.curweathers)
-		if(R.stage < 2)
-			add_overlay("clouds")
-		if(R.stage == 2)
+		/* if(R.stage < 2)
+			add_overlay("clouds") */
+		if(PARTICLEWEATHER_RAIN)
 			add_overlay("rainlay")
 
 /atom/movable/screen/rogfat

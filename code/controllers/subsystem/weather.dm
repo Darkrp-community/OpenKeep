@@ -108,10 +108,6 @@ SUBSYSTEM_DEF(weather)
 /atom/proc/weather_trigger(W)
 	return
 
-/mob/living/weather_trigger(W)
-	if(W==/datum/weather/rain)
-		START_PROCESSING(SSweather,src)
-
 /turf/proc/trigger_weather(atom/A)
 	if(A)
 		var/area/AR = get_area(src)

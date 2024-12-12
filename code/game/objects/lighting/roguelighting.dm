@@ -87,10 +87,6 @@
 	seton(TRUE)
 	. = ..()
 
-/obj/machinery/light/rogue/weather_trigger(W)
-	if(W==/datum/weather/rain)
-		START_PROCESSING(SSweather,src)
-
 /obj/machinery/light/rogue/attack_hand(mob/living/carbon/human/user)
 	. = ..()
 	if(.)

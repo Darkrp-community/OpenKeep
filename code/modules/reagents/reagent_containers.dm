@@ -19,10 +19,17 @@
 	var/poursounds
 	var/short_cooktime = FALSE  // based on cooking skill
 	var/long_cooktime = FALSE  // based on cooking skill
+	var/fill_cooldown = 5 SECONDS
 
-/obj/item/reagent_containers/weather_trigger(W)
-	if(W==/datum/weather/rain)
-		START_PROCESSING(SSweather,src)
+/obj/item/reagent_containers/weather_act_on(weather_trait, severity)
+	if(spillable)
+		GLOB.weather_act_upon_list |= src
+
+	if(weather_trait != PARTICLEWEATHER_RAIN || !COOLDOWN_FINISHED(src, fill_cooldown))
+		return
+
+	reagents.add_reagent(/datum/reagent/water, severity * 0.5)
+	COOLDOWN_START(src, fill_cooldown, 10 SECONDS)
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
