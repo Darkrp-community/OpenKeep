@@ -248,7 +248,7 @@
 	)
 	greet_text = "The Mercator Guild sent you, respected Zybantinian to seek favorable business proposal within the Kingdom of Vanderlin."
 
-/datum/migrant_wave/zybantine_wave
+/datum/migrant_wave/zybantine_wave_down
 	name = "The Ziggurat expedition"
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/zybantine_wave
