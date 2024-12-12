@@ -304,7 +304,7 @@
 
 /obj/item/paper/scroll/frumentarii
 	name = "List of Known Agents"
-	desc = "A list of the hands fingers."
+	desc = "A list of the hand's fingers."
 
 	var/list/real_names = list()
 	var/list/removed_names = list()
