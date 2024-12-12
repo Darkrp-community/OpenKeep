@@ -84,6 +84,8 @@
 
 	var/list/notes = list() //RTD add notes button
 
+	var/list/cached_frumentarii = list()
+
 	var/datum/sleep_adv/sleep_adv = null
 
 /datum/mind/New(key)
