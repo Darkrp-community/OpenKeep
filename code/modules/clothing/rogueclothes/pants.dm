@@ -115,7 +115,7 @@
 	name = "silk tights"
 	desc = "Form-fitting legwear. Almost too form-fitting."
 	icon_state = "shadowpants"
-	allowed_race = list("elf", "dark elf")
+	//allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
