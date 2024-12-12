@@ -116,25 +116,24 @@
 #define FORWARDEN   (1<<5)
 #define FORGUARD    (1<<6)
 
-#define CHURCHMEN		(1<<3)
+#define CHURCHMEN		(1<<2)
 
 #define PRIEST		(1<<0)
 #define CLERIC		(1<<1)
 #define PURITAN		(1<<2)
 #define MONK		(1<<3)
 
-#define SERFS			(1<<4)
+#define SERFS			(1<<3)
 
 #define INNKEEP		(1<<0)
-#define INNKEEPCHILD    (1<<1)
-#define BLACKSMITH	(1<<2)
-#define ALCHEMIST	(1<<3)
-#define MASON		(1<<4)
-#define TAILOR		(1<<5)
-#define ARTIFICER	(1<<6)
-#define SCRIBE		(1<<7)
+#define BLACKSMITH	(1<<1)
+#define ALCHEMIST	(1<<2)
+#define MASON		(1<<3)
+#define TAILOR		(1<<4)
+#define ARTIFICER	(1<<5)
+#define SCRIBE		(1<<6)
 
-#define PEASANTS		(1<<5)
+#define PEASANTS		(1<<4)
 
 #define HUNTER		(1<<0)
 #define FARMER		(1<<1)
@@ -156,9 +155,12 @@
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
 #define SERVANT		(1<<2)
-#define ORPHAN		(1<<3)
-#define CHURCHLING  (1<<4)
-#define PRINCE		(1<<5)
+#define PRINCE		(1<<3)
+
+#define YOUNGFOLK           (1<<6)
+#define INNKEEPCHILD    (1<<1)
+#define CHURCHLING      (1<<2)
+#define ORPHAN		    (1<<3)
 
 #define JCOLOR_NOBLE "#9c40bf"
 #define JCOLOR_MERCHANT "#c2b449"
