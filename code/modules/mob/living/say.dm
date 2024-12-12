@@ -318,7 +318,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 					continue
 				if(!(M.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
-		if(!is_in_zweb(src.z,M.z))
+		if(!is_in_zweb(src.z,M.z) && !(M.client.prefs.chat_toggles & CHAT_GHOSTEARS))
 			continue
 		listening |= M
 		the_dead[M] = TRUE
