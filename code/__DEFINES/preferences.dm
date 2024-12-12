@@ -110,12 +110,14 @@
 #define RANDOM_EYE_COLOR "random_eye_color"
 
 //Age ranges
+#define AGE_CHILD			"Youngling"
 #define AGE_ADULT			"Adult"
 #define AGE_MIDDLEAGED		"Middle-Aged"
 #define AGE_OLD				"Old"
 #define AGE_IMMORTAL		"Immortal"
 
 #define ALL_AGES_LIST		list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
+#define ALL_AGES_LIST_WITH_CHILD		list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 
 //alignment
 #define ALIGNMENT_LG		"Lawful Good"

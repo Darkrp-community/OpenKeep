@@ -67,7 +67,7 @@
 /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
 	desc = "Cloth gloves to absorb palm sweat while leaving the fingers free for fine manipulation."
 	icon_state = "shadowgloves"
-	allowed_race = list("elf", "dark elf")
+	//allowed_race = list("elf", "dark elf")
 
 
 /obj/item/clothing/gloves/roguetown/angle

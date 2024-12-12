@@ -140,6 +140,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_ADEPT			"CAT_ADEPT" // Used for Adept class selection
 #define CTAG_SQUIRE 		"CAT_SQUIRE" // Squire Love, Classes, as above.
 #define CTAG_HEIR			"CAT_HEIR"
+#define CTAG_HAND			"CAT_HAND"			// Hand class - Handles Hand class selector
 /*
 	Defines for the triumph buy datum categories
 */

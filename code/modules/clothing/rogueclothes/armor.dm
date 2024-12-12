@@ -143,7 +143,7 @@
 /obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
 	name = "stalker robe"
 	desc = "A robe-like gambeson of moth-eaten cloth and cheap purple dye. No self-respecting elf would be seen wearing this."
-	allowed_race = list("elf", "dark elf")
+	//allowed_race = list("elf", "dark elf")
 	icon_state = "shadowrobe"
 
 
