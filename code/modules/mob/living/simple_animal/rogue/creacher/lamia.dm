@@ -11,7 +11,7 @@
 	speak_chance = 1
 	see_in_dark = 9
 	move_to_delay = 2
-	base_intents = list(/datum/intent/simple/bite, /datum/intent/simple/claw)
+	base_intents = list(/datum/intent/simple/claw_quick, /datum/intent/simple/bite)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/alch/sinew = 2,
@@ -20,8 +20,8 @@
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST|MOB_REPTILE
 	health = 200
 	maxHealth = 200
-	melee_damage_lower = 35
-	melee_damage_upper = 50
+	melee_damage_lower = 25
+	melee_damage_upper = 35
 	vision_range = 9
 	aggro_vision_range = 9
 	environment_smash = ENVIRONMENT_SMASH_NONE
@@ -39,7 +39,7 @@
 	del_on_deaggro = 999 SECONDS
 	retreat_health = 0.1
 	food = 0
-	dodgetime = 15
+	dodgetime = 2 SECONDS
 	aggressive = 1
 	remains_type = null
 	body_eater = TRUE

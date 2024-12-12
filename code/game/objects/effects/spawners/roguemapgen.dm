@@ -293,14 +293,14 @@
 		/mob/living/carbon/human/species/human/northern/bum/ambush  = 25,
 		)
 
-/*	..................   Ancient Tomb Danger   ................... */
+/*	..................   Skeleton Fighter Danger   ................... */
 /obj/effect/spawner/roguemap/ancientskellyguardmaybe
 	icon = 'icons/roguetown/mob/skeleton_male.dmi'
 	icon_state = "z"
 	probby = 50
 	color = "#ff0000"
 	spawned = list(
-		/obj/structure/idle_enemy/ancient_skeleton_guard = 100
+		/obj/structure/idle_enemy/skeleton_fighter = 100
 		)
 
 /*	..................   Beggar Danger   ................... */
@@ -383,25 +383,17 @@
 	spawned = list(
 		/obj/structure/idle_enemy/hairy_spider = 100	)
 
-/*	..................   Orc Warband Danger   ................... */
-/obj/effect/spawner/roguemap/orc_warrior_maybe
-	icon = 'icons/roguetown/mob/monster/simple_orcs.dmi'
-	icon_state = "orcmarauder_spear"
-	probby = 50
-	color = "#ff0000"
-	spawned = list(
-		/obj/structure/idle_enemy/orc_warrior = 65,
-		/obj/structure/idle_enemy/orc_spearman = 35	)
 
-/*	..................   Orc Warband Danger Carbon   ................... */
+
+/*	..................   Savage Orc Danger Carbon   ................... */
 /obj/effect/spawner/roguemap/orc_warrior_carbon_maybe
 	icon = 'icons/roguetown/mob/monster/simple_orcs.dmi'
 	icon_state = "orcmarauder_spear"
 	probby = 50
 	color = "#ff5858"
 	spawned = list(
-		/obj/structure/idle_enemy/orc_c_warrior = 65,
-		/obj/structure/idle_enemy/orc_c_marauder = 35	)
+		/obj/structure/idle_enemy/savage_orc = 65,
+		/obj/structure/idle_enemy/savage_orc_looter = 35	)
 
 /obj/effect/spawner/roguemap/orc_warlord_carbon
 	icon = 'icons/roguetown/mob/monster/simple_orcs.dmi'
@@ -409,7 +401,7 @@
 	probby = 100
 	color = "#ff0000"
 	spawned = list(
-		/obj/structure/idle_enemy/orc_c_warlord = 100 )
+		/obj/structure/idle_enemy/savage_orc_chieftain = 100 )
 
 
 /*	..................   Haunts Danger   ................... */
@@ -439,6 +431,16 @@
 	spawned = list(
 		/obj/structure/idle_enemy/volf= 100	)
 
+/*	..................   Cabbit Cottage Danger  ................... */
+/obj/effect/spawner/roguemap/cabbit_maybe
+	icon = 'icons/roguetown/mob/cabbit.dmi'
+	icon_state = "cabbit"
+	probby = 100
+	color = "#ff0000"
+	spawned = list(
+		/obj/structure/idle_enemy/cabbit_boss= 50,
+		/mob/living/simple_animal/pet/cat/rogue/cabbit = 50	)
+
 
 // ===================================================================================
 /*	..................   Idle Enemy Spawner   ................... */
@@ -451,18 +453,113 @@
 	layer = BELOW_OBJ_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
-/obj/structure/idle_enemy/ancient_skeleton_guard
-/obj/structure/idle_enemy/ancient_skeleton_guard/Initialize()
+
+// *** CARBONS ***
+/*	..................   Skeleton Fighter Spawner   ................... */
+/obj/structure/idle_enemy/skeleton_fighter
+/obj/structure/idle_enemy/skeleton_fighter/Initialize()
 	. = ..()
-	AddComponent(/datum/component/spawner/ancient_skeleton_guard)
-/datum/component/spawner/ancient_skeleton_guard
-//	mob_types = list(/mob/living/carbon/human/species/skeleton/npc/ancient)
+	AddComponent(/datum/component/spawner/skeleton_fighter)
+/datum/component/spawner/skeleton_fighter
+	mob_types = list(/mob/living/carbon/human/species/skeleton/skilled/fighter)
 	spawn_time = 0
 	spawn_delay = 0
 	max_mobs = 1
 	range = 11
 	spawn_text = ""
 
+/*	..................   Orc Carbons Spawner   ................... */
+/obj/structure/idle_enemy/savage_orc
+/obj/structure/idle_enemy/savage_orc/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/savage_orc)
+/datum/component/spawner/savage_orc
+	mob_types = list(/mob/living/carbon/human/species/orc/skilled/savage)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/obj/structure/idle_enemy/savage_orc_looter
+/obj/structure/idle_enemy/savage_orc_looter/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/savage_orc_looter)
+/datum/component/spawner/savage_orc_looter
+	mob_types = list(/mob/living/carbon/human/species/orc/skilled/looter)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/obj/structure/idle_enemy/savage_orc_chieftain
+/obj/structure/idle_enemy/savage_orc_chieftain/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/savage_orc_chieftain)
+/datum/component/spawner/savage_orc_chieftain
+	mob_types = list(/mob/living/carbon/human/species/orc/skilled/savage_chieftain)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/*	..................   Hostile Bum Spawner   ................... */
+/obj/structure/idle_enemy/hostile_bum
+/obj/structure/idle_enemy/hostile_bum/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/hostile_bum)
+/datum/component/spawner/hostile_bum
+	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/skilled/madman)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/*	..................   Weak Skelly Spawner   ................... */
+/obj/structure/idle_enemy/weak_skelly
+/obj/structure/idle_enemy/weak_skelly/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/weak_skelly)
+/datum/component/spawner/weak_skelly
+	mob_types = list(/mob/living/carbon/human/species/skeleton/skilled/unarmed)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+/*	..................   Zizombie Farmer Spawner   ................... */
+/obj/structure/idle_enemy/zizombie_farmer
+/obj/structure/idle_enemy/zizombie_farmer/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/zizombie_farmer)
+/datum/component/spawner/zizombie_farmer
+	mob_types = list(/mob/living/carbon/human/species/zizombie/npc/peasant)
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+
+/*	..................   Outlaw Spawner   ................... */
+/obj/structure/idle_enemy/outlaw
+/obj/structure/idle_enemy/outlaw/Initialize()
+	. = ..()
+	AddComponent(/datum/component/spawner/outlaw)
+/datum/component/spawner/outlaw
+	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/skilled/outlaw )
+	spawn_time = 0
+	spawn_delay = 0
+	max_mobs = 1
+	range = 11
+	spawn_text = ""
+
+
+// *** SIMPLE ANIMALS ***
 /*	..................   Big Rat Spawner   ................... */
 /obj/structure/idle_enemy/bigrat
 /obj/structure/idle_enemy/bigrat/Initialize()
@@ -476,19 +573,6 @@
 	range = 11
 	spawn_text = ""
 
-/*	..................   Hostile Bum Spawner   ................... */
-/obj/structure/idle_enemy/hostile_bum
-/obj/structure/idle_enemy/hostile_bum/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/hostile_bum)
-/datum/component/spawner/hostile_bum
-	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/ambush)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
 /*	..................   Lesser Mole Spawner   ................... */
 /obj/structure/idle_enemy/mole
 /obj/structure/idle_enemy/mole/Initialize()
@@ -496,19 +580,6 @@
 	AddComponent(/datum/component/spawner/mole)
 /datum/component/spawner/mole
 	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/mole)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/*	..................   Weak Skelly Spawner   ................... */
-/obj/structure/idle_enemy/weak_skelly
-/obj/structure/idle_enemy/weak_skelly/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/weak_skelly)
-/datum/component/spawner/weak_skelly
-	mob_types = list(/mob/living/simple_animal/hostile/rogue/skeleton)
 	spawn_time = 0
 	spawn_delay = 0
 	max_mobs = 1
@@ -541,18 +612,7 @@
 	range = 10
 	spawn_text = ""
 
-/*	..................   Zizombie Farmer Spawner   ................... */
-/obj/structure/idle_enemy/zizombie_farmer
-/obj/structure/idle_enemy/zizombie_farmer/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/zizombie_farmer)
-/datum/component/spawner/zizombie_farmer
-	mob_types = list(/mob/living/carbon/human/species/zizombie/npc/peasant)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
+
 /*	..................   Hairy Spider Spawner   ................... */
 /obj/structure/idle_enemy/hairy_spider
 /obj/structure/idle_enemy/hairy_spider/Initialize()
@@ -565,69 +625,6 @@
 	max_mobs = 1
 	range = 11
 	spawn_text = ""
-/*	..................   Orc Warband Spawner   ................... */
-/obj/structure/idle_enemy/orc_warrior
-/obj/structure/idle_enemy/orc_warrior/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/orc_warrior)
-/datum/component/spawner/orc_warrior
-	mob_types = list(/mob/living/simple_animal/hostile/rogue/orc/orc_marauder)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/obj/structure/idle_enemy/orc_spearman
-/obj/structure/idle_enemy/orc_spearman/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/orc_spearman)
-/datum/component/spawner/orc_spearman
-	mob_types = list(/mob/living/simple_animal/hostile/rogue/orc/orc_marauder/spear)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/*	..................   Orc Carbons Spawner   ................... */
-/obj/structure/idle_enemy/orc_c_warrior
-/obj/structure/idle_enemy/orc_c_warrior/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/orc_c_warrior)
-/datum/component/spawner/orc_c_warrior
-	mob_types = list(/mob/living/carbon/human/species/orc/warrior)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/obj/structure/idle_enemy/orc_c_marauder
-/obj/structure/idle_enemy/orc_c_marauder/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/orc_c_marauder)
-/datum/component/spawner/orc_c_marauder
-	mob_types = list(/mob/living/carbon/human/species/orc/marauder)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/obj/structure/idle_enemy/orc_c_warlord
-/obj/structure/idle_enemy/orc_c_warlord/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/orc_c_warlord)
-/datum/component/spawner/orc_c_warlord
-	mob_types = list(/mob/living/carbon/human/species/orc/warlord)
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-
 
 /*	..................   Volf Spawner   ................... */
 /obj/structure/idle_enemy/volf
@@ -636,19 +633,6 @@
 	AddComponent(/datum/component/spawner/volf)
 /datum/component/spawner/volf
 	mob_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf )
-	spawn_time = 0
-	spawn_delay = 0
-	max_mobs = 1
-	range = 11
-	spawn_text = ""
-
-/*	..................   Outlaw Spawner   ................... */
-/obj/structure/idle_enemy/outlaw
-/obj/structure/idle_enemy/outlaw/Initialize()
-	. = ..()
-	AddComponent(/datum/component/spawner/outlaw)
-/datum/component/spawner/outlaw
-	mob_types = list(/mob/living/carbon/human/species/human/northern/bum/outlaw )
 	spawn_time = 0
 	spawn_delay = 0
 	max_mobs = 1

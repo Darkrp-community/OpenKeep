@@ -36,7 +36,7 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/headbutt, /datum/intent/simple/bigbite)
+	base_intents = list(/datum/intent/simple/trollsmash, /datum/intent/simple/trollrip)
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	melee_damage_lower = 30
 	melee_damage_upper = 50
@@ -57,7 +57,7 @@
 	food_max = 250
 	food = 0
 
-	dodgetime = 15
+	dodgetime = 5 SECONDS
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.
