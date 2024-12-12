@@ -72,7 +72,17 @@
 	new /obj/item/roguekey/mercenary(src)
 
 /obj/item/storage/belt/rogue/leather/mason/PopulateContents()
-	new /obj/item/roguekey/mercenary(src)
+	new /obj/item/keyring/mason(src)
+
+/obj/item/storage/belt/rogue/leather/sheriff/PopulateContents()
+	new /obj/item/rogueweapon/knife/dagger/steel(src)
+	new /obj/item/needle/thorn(src)
+	new /obj/item/keyring/captain(src)
+
+/obj/item/storage/belt/rogue/leather/townwatch/PopulateContents()
+	new /obj/item/rogueweapon/knife/dagger(src)
+	new /obj/item/needle/thorn(src)
+	new /obj/item/keyring/guard(src)
 
 /obj/item/storage/belt/rogue/leather/mercenary/shalal
 	name = "shalal belt"

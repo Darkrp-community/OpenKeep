@@ -1,7 +1,7 @@
 /datum/job/roguetown/mason
 	title = "Mason"
 	flag = MASON
-	department_flag = MAKERS_GUILD
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -53,7 +53,7 @@
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
 	id = /obj/item/clothing/ring/silver/makers_guild
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/rogueweapon/knife/villager = 1, /obj/item/keyring = 1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/rogueweapon/knife/villager = 1)
 
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)
