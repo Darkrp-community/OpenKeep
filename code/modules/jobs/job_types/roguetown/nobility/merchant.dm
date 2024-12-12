@@ -1,7 +1,7 @@
 /datum/job/roguetown/merchant
 	title = "Merchant"
 	flag = MERCHANT
-	department_flag = MERCATOR_GUILD
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -24,7 +24,7 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 100
 	min_pq = 0
-	selection_color = "#4657ec"
+	selection_color = "#565ea0"
 
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -64,3 +64,4 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 4, TRUE) // Literally unused skill
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 2, TRUE)

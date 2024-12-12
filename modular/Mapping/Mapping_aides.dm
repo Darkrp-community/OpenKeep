@@ -66,7 +66,7 @@
 /datum/map_template/dwarf_outpost_ii
 	name = "Dwarf Outpost Beastmen"
 	id = "Dwarf_Outpost_2"
-	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_2.dmm"
 
 
 /*	..................   Roadblock   ................... */
@@ -874,8 +874,6 @@
 
 /obj/effect/decal/cleanable/blood_neu/Initialize(mapload)
 	. = ..()
-	if(. == INITIALIZE_HINT_QDEL)
-		return .
 	pixel_x = rand(-5,5)
 	pixel_y = rand(5,5)
 	GLOB.weather_act_upon_list += src

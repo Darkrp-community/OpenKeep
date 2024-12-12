@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/outdoors/rtfield/hamlet/unsafe	// just so there isnt unusable ambush spots placed in safe areas causing annoying screenshake but no effect
 
 /area/rogue/outdoors/rtfield/plague_district
-	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
+	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50, /mob/living/simple_animal/hostile/rogue/skeleton = 50)
 	first_time_text = "PLAGUE DISTRICT"
 	color = "#d4da75"
 	name = "plague district"
@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/cobblerock)
 
 /area/rogue/outdoors/rtfield/outlaw
-	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50)
+	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/skilled/outlaw = 50)
 	name = "outlaw hideout"
 	color = "#e9baa3"
 	first_time_text = null

@@ -1,7 +1,7 @@
 /datum/job/roguetown/captain
 	title = "Captain"
 	flag = CAPTAIN
-	department_flag = NOBLEMEN
+	department_flag = GARRISON
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -20,8 +20,8 @@
 	outfit = /datum/outfit/job/roguetown/captain
 	give_bank_account = 120
 	min_pq = 4
-
-	cmode_music = 'sound/music/combat_noble.ogg'	
+	selection_color = "#af594f"
+	cmode_music = 'sound/music/combat_guard.ogg'
 
 /datum/job/roguetown/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
