@@ -1868,7 +1868,7 @@
 		if("dawn")
 			icon_state = "dawn"
 			name = "Sir Sun - Dawn"
-	for(var/datum/weather/rain/R in SSweather.curweathers)
+	for(var/datum/particle_weather/rain_gentle/R in SSweather.curweathers)
 		if(R.stage < 2)
 			add_overlay("clouds")
 		if(R.stage == 2)
