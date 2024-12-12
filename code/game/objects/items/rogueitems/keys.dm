@@ -555,6 +555,96 @@
 	icon_state = "brownkey"
 	lockid = "apartment9"
 
+/obj/item/roguekey/apartments/apartment10
+	name = "apartment x key"
+	icon_state = "brownkey"
+	lockid = "apartment10"
+
+/obj/item/roguekey/apartments/apartment11
+	name = "apartment xi key"
+	icon_state = "brownkey"
+	lockid = "apartment11"
+
+/obj/item/roguekey/apartments/apartment12
+	name = "apartment xii key"
+	icon_state = "brownkey"
+	lockid = "apartment12"
+
+/obj/item/roguekey/apartments/apartment13
+	name = "apartment xiii key"
+	icon_state = "brownkey"
+	lockid = "apartment13"
+
+/obj/item/roguekey/apartments/apartment14
+	name = "apartment xiv key"
+	icon_state = "brownkey"
+	lockid = "apartment14"
+
+/obj/item/roguekey/apartments/apartment15
+	name = "apartment xv key"
+	icon_state = "brownkey"
+	lockid = "apartment15"
+
+/obj/item/roguekey/apartments/apartment16
+	name = "apartment xvi key"
+	icon_state = "brownkey"
+	lockid = "apartment16"
+
+/obj/item/roguekey/apartments/apartment17
+	name = "apartment xvii key"
+	icon_state = "brownkey"
+	lockid = "apartment17"
+
+/obj/item/roguekey/apartments/apartment18
+	name = "apartment xviii key"
+	icon_state = "brownkey"
+	lockid = "apartment18"
+
+/obj/item/roguekey/apartments/apartment19
+	name = "apartment xix key"
+	icon_state = "brownkey"
+	lockid = "apartment19"
+
+/obj/item/roguekey/apartments/apartment20
+	name = "apartment xx key"
+	icon_state = "brownkey"
+	lockid = "apartment20"
+
+/obj/item/roguekey/apartments/apartment21
+	name = "apartment xxi key"
+	icon_state = "brownkey"
+	lockid = "apartment21"
+
+/obj/item/roguekey/apartments/apartment22
+	name = "apartment xxii key"
+	icon_state = "brownkey"
+	lockid = "apartment22"
+
+/obj/item/roguekey/apartments/apartment23
+	name = "apartment xxiii key"
+	icon_state = "brownkey"
+	lockid = "apartment23"
+
+/obj/item/roguekey/apartments/apartment24
+	name = "apartment xxiv key"
+	icon_state = "brownkey"
+	lockid = "apartment24"
+
+/obj/item/roguekey/apartments/apartment25
+	name = "apartment xxv key"
+	icon_state = "brownkey"
+	lockid = "apartment25"
+
+/obj/item/roguekey/apartments/penthouse1
+	name = "penthouse i key"
+	icon_state = "brownkey"
+	lockid = "penthouse1"
+
+/obj/item/roguekey/apartments/penthouse2
+	name = "penthouse ii key"
+	icon_state = "brownkey"
+	lockid = "penthouse2"
+
 /obj/item/roguekey/shops
 	name = ""
 	icon_state = ""

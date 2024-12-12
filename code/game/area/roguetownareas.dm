@@ -530,6 +530,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/clocktower
 	first_time_text = "Clocktower"
 	icon_state = "clocktower"
+	droning_sound = "sound/music/area/clocktower_ambience.ogg"
 
 /area/rogue/indoors/town/orphanage
 	first_time_text = "The Orphanage"

@@ -151,13 +151,14 @@
 #define MIGRANT		(1<<16)
 #define BANDIT		(1<<17)
 
-#define APPRENTICES		(1<<6)
+#define APPRENTICES		(1<<5)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
 #define SERVANT		(1<<2)
 #define ORPHAN		(1<<3)
-#define PRINCE		(1<<4)
+#define CHURCHLING  (1<<4)
+#define PRINCE		(1<<5)
 
 #define JCOLOR_NOBLE "#9c40bf"
 #define JCOLOR_MERCHANT "#c2b449"
