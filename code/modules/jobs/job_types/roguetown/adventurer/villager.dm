@@ -10,7 +10,7 @@
 	advclass_cat_rolls = list(CTAG_TOWNER = 20)
 	outfit = null
 	outfit_female = null
-	bypass_jobban = FALSE
+	banned_leprosy = FALSE
 	display_order = JDO_VILLAGER
 	give_bank_account = TRUE
 	min_pq = -100

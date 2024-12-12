@@ -3,7 +3,7 @@
 	name = "hat"
 	desc = ""
 	icon = 'icons/roguetown/clothing/head.dmi'
-	icon_state = "top_hat"
+	icon_state = "surghood"
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	equip_sound = "rustle"
@@ -1301,26 +1301,12 @@
 | Unique helmets & hats |	- Unique means no crafting them, no importing, nothing but spawn with the intended class
 \----------------------*/
 
-//............... Orc Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/orc
-	name = "orc helmet"
-	icon_state = "marauder_helm_item"
-	item_state = "marauder_helm"
-	icon = 'icons/roguetown/mob/monster/orc.dmi'
-	allowed_race = list("orc")
-	smeltresult = /obj/item/ingot/iron
-	sellprice = NO_MARKET_VALUE
-
-	armor = ARMOR_PADDED_GOOD
-	body_parts_covered = HEAD|EARS|HAIR|EYES
-	prevent_crits = ONLY_VITAL_ORGANS
-	max_integrity = INTEGRITY_POOR
-
 
 //............... Rare Helmets ............... //
 ///obj/item/clothing/head/roguetown/helmet/rare
 /obj/item/clothing/head/roguetown/rare
 	name = "rare helmet template"
+	icon_state = "elfhead"
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	bloody_icon = 'icons/effects/blood32x64.dmi'
@@ -1546,12 +1532,6 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
-
-/obj/item/clothing/head/roguetown/reqhat
-	name = "serpent crown"
-	desc = ""
-	icon_state = "reqhat"
-	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/roguetown/priesthat // bishops mitre really
 	name = "priest's hat"

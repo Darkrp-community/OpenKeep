@@ -94,12 +94,16 @@
 				for(var/datum/advclass/CUR_AZZ in subsystem_ctag_list)
 					if(rolled_classes[CUR_AZZ])
 						continue
+					if(is_advclass_banned(H.ckey, CUR_AZZ.name))
+						continue
 					local_insert_sortlist += CUR_AZZ
 
 			else // If we are not bypassing reqs, time to do a req check
 				for(var/datum/advclass/CUR_AZZ in subsystem_ctag_list)
 					if(rolled_classes[CUR_AZZ])
 						testing("[CUR_AZZ] is in rolled_classes")
+						continue
+					if(is_advclass_banned(H.ckey, CUR_AZZ.name))
 						continue
 					if(CUR_AZZ.check_requirements(H))
 						testing("adding [CUR_AZZ] to sortlist")

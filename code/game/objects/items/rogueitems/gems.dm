@@ -54,37 +54,43 @@
 /obj/item/roguegem/green
 	name = "gemerald"
 	desc = "Glints with verdant brilliance."
-	color = "#15af158c"
+	//color = "#15af158c"
+	icon_state = "emerald_cut"
 	sellprice = 44
 
 /obj/item/roguegem/blue
 	name = "blortz"
 	desc = "Pale blue, like a frozen tear."
-	color = "#1ca5aa8c"
+	//color = "#1ca5aa8c"
+	icon_state = "quartz_cut"
 	sellprice = 88
 
 /obj/item/roguegem/yellow
 	name = "toper"
 	desc = "Its amber hues remind you of the sunset."
-	color = "#e6a0088c"
+	//color = "#e6a0088c"
+	icon_state = "topaz_cut"
 	sellprice = 25
 
 /obj/item/roguegem/violet
 	name = "saffira"
 	desc = "This gem is admired by many wizards."
-	color = "#1733b38c"
+	//color = "#1733b38c"
+	icon_state = "sapphire_cut"
 	sellprice = 56
 
 /obj/item/roguegem/diamond
 	name = "dorpel"
 	desc = "Beautifully pure, it demands respect."
-	color = "#ffffff8c"
+	//color = "#ffffff8c"
+	icon_state = "diamond_cut"
 	sellprice = 121
 
 /obj/item/roguegem/red
 	name = "rubor"
 	desc = "Glistening with unkempt rage."
-	color = "#ff00008c"
+	//color = "#ff00008c"
+	icon_state = "ruby_cut"
 	sellprice = 100
 
 /obj/item/roguegem/black

@@ -1684,6 +1684,7 @@
 	var/looktime = 50 - (STAPER * 2)
 	if(do_after(src, looktime, target = src))
 		// var/huhsneak
+		SEND_GLOBAL_SIGNAL(COMSIG_MOB_ACTIVE_PERCEPTION,src)
 		for(var/mob/living/M in view(7,src))
 			if(M == src)
 				continue

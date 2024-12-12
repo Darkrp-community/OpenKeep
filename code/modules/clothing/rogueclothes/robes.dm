@@ -43,7 +43,7 @@
 /obj/item/clothing/suit/roguetown/shirt/robe/necromancer
 	name = "necromancer robes"
 	desc = "Eerie black garb of death."
-	icon_state = "necromrobe"
+	icon_state = "warlock"
 	sleeved = null
 
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor

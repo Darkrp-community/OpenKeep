@@ -42,6 +42,7 @@
 	var/masterkey = TRUE //if masterkey can open this regardless
 	var/kickthresh = 15
 	var/bump_closed = TRUE
+	var/can_add_lock = TRUE
 
 	var/ghostproof = FALSE	// Set to true to stop dead players passing through closed ones. Only use this for special areas, not generally
 

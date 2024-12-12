@@ -372,14 +372,14 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "indoor_town"
 	droning_sound = 'sound/music/area/indoor.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_night = 'sound/music/area/deliverer.ogg'
 	converted_type = /area/rogue/outdoors/exposed/town
 
 /area/rogue/outdoors/exposed/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = null
-//	droning_sound_night = 'sound/music/area/night.ogg'
+	droning_sound_night = 'sound/music/area/deliverer.ogg'
 
 /area/rogue/indoors/town/manor
 	name = "Manor"
@@ -523,6 +523,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/clocktower
 	first_time_text = "Clocktower"
 	icon_state = "clocktower"
+	droning_sound = "sound/music/area/clocktower_ambience.ogg"
 
 /area/rogue/indoors/town/orphanage
 	first_time_text = "The Orphanage"
@@ -601,7 +602,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-//	droning_sound_night = 'sound/music/area/night.ogg'	Too much guitar honestly
+	droning_sound_night = 'sound/music/area/deliverer.ogg'
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE TOWN OF ROCKHILL"
 
@@ -609,7 +610,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "town"
 	droning_sound = 'sound/music/area/townstreets.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_night = 'sound/music/area/deliverer.ogg'
 
 /area/rogue/outdoors/town/sargoth
 	name = "outdoors"
@@ -638,7 +639,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "roofs"
 	droning_sound = 'sound/music/area/field.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_night = 'sound/music/area/deliverer.ogg'
 
 /area/rogue/outdoors/town/dwarf
 	name = "makers quarter"

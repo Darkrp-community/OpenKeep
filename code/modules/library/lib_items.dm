@@ -71,7 +71,6 @@
 
 
 /obj/structure/bookcase/deconstruct(disassembled = TRUE)
-//	new /obj/item/stack/sheet/mineral/wood(loc, 4)
 	for(var/obj/item/book/B in contents)
 		B.forceMove(get_turf(src))
 	qdel(src)

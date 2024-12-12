@@ -23,7 +23,7 @@
 	give_bank_account = 80
 	min_pq = 1
 
-	cmode_music = 'sound/music/combat_bog.ogg'
+	cmode_music = 'sound/music/cmode/towner/CombatMayor.ogg'
 
 /datum/outfit/job/roguetown/mayor
 	name = "Mayor"

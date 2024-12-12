@@ -1,4 +1,4 @@
-/datum/advclass/comatb/dbomb
+/datum/advclass/combat/dbomb
 	name = "Dwarven Bombardier"
 	tutorial = "Tinkering Dwarves that like to blow things up."
 	allowed_sexes = list(MALE, FEMALE)

@@ -327,6 +327,7 @@
 	name = "accordion"
 	desc = "A complex piece of dwarven intuition, composed of metal, wood, hide and ivory. Favored by Abyssorian bards."
 	icon_state = "accordion"
+	item_state = "accordion"
 	song_list = list(
 	"Song 1" = 'modular/Barding/sound/instruments/accord (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/accord (2).ogg',
@@ -343,6 +344,7 @@
 	desc = "A corrupted lute, a heritage instrument of Tiefling pedigree."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
 	icon_state = "guitar"
+	item_state = "guitar"
 	song_list = list(
 	"Song 1" = 'modular/Barding/sound/instruments/guitar (1).ogg',
 	"Song 2" = 'modular/Barding/sound/instruments/guitar (2).ogg',

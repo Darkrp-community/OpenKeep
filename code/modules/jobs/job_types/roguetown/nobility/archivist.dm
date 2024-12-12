@@ -17,7 +17,6 @@
 		"Aasimar"
 	)
 	spells = list(/obj/effect/proc_holder/spell/self/learnspell, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-	allowed_patrons = list(/datum/patron/divine/noc)
 
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = 19
@@ -46,6 +45,9 @@
 	backpack_contents = list(/obj/item/literary/apprentice = 1)
 
 	if(H.mind)
+		if(H.patron != /datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc)
+
 		H.grant_language(/datum/language/elvish)
 		H.grant_language(/datum/language/dwarvish)
 		H.grant_language(/datum/language/zybantine)

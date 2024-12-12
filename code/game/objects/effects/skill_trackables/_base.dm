@@ -14,8 +14,8 @@
 	invisibility = INVISIBILITY_MAXIMUM
 	///The visible state for those that know this.
 	var/real_icon_state = "tracks"
-	///The image knowers see.
-	var/real_image
+	///The image knowers see.c
+	var/image/real_image
 	///List of mobs aware of this track.
 	var/list/mob/living/known_by = list()
 	///When this was created. Adjusts difficulty of locating / analyzing.
@@ -49,7 +49,10 @@
 
 /obj/effect/skill_tracker/Initialize(mapload, atom/parent)
 	. = ..()
-	real_image = image(icon, parent, real_icon_state, ABOVE_OPEN_TURF_LAYER) //Default image in case manually created.
+	if(!parent)
+		parent = get_turf(src)
+	real_image = image(icon, parent, real_icon_state, BULLET_HOLE_LAYER) //Default image in case manually created.
+	real_image.alpha = alpha
 	SStrackables.add_new_trackable(src)
 	if(always_revealed_trait)
 		check_for_users()

@@ -20,17 +20,17 @@
 
 /datum/supply_pack/rogue/narcotics/spice
 	name = "Spice"
-	cost = 35
+	cost = 25
 	contains = /obj/item/reagent_containers/powder/spice
 
 /datum/supply_pack/rogue/narcotics/ozium
 	name = "Ozium"
-	cost = 30
+	cost = 12
 	contains = /obj/item/reagent_containers/powder/ozium
 
 /datum/supply_pack/rogue/narcotics/moondust
 	name = "Moon Dust"
-	cost = 55
+	cost = 25
 	contains = /obj/item/reagent_containers/powder/moondust
 
 /datum/supply_pack/rogue/narcotics/soap

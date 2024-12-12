@@ -190,6 +190,78 @@
 	icon_state = "brownkey"
 	lockid = "roomvi"
 
+/obj/item/roguekey/medroomi
+	name = "medium room I key"
+	desc = "The key to the first medium room."
+	icon_state = "brownkey"
+	lockid = "medroomi"
+
+/obj/item/roguekey/medroomii
+	name = "medium room II key"
+	desc = "The key to the second medium room."
+	icon_state = "brownkey"
+	lockid = "medroomii"
+
+/obj/item/roguekey/medroomiii
+	name = "medium room III key"
+	desc = "The key to the third medium room."
+	icon_state = "brownkey"
+	lockid = "medroomiii"
+
+/obj/item/roguekey/medroomiv
+	name = "medium room IV key"
+	desc = "The key to the fourth medium room."
+	icon_state = "brownkey"
+	lockid = "medroomiv"
+
+/obj/item/roguekey/medroomv
+	name = "medium room V key"
+	desc = "The key to the fifth medium room."
+	icon_state = "brownkey"
+	lockid = "medroomv"
+
+/obj/item/roguekey/medroomvi
+	name = "medium room VI key"
+	desc = "The key to the sixth medium room."
+	icon_state = "brownkey"
+	lockid = "medroomvi"
+
+/obj/item/roguekey/luxroomi
+	name = "luxury room I key"
+	desc = "The key to the first luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomi"
+
+/obj/item/roguekey/luxroomii
+	name = "luxury room II key"
+	desc = "The key to the second luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomii"
+
+/obj/item/roguekey/luxroomiii
+	name = "luxury room III key"
+	desc = "The key to the third luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomiii"
+
+/obj/item/roguekey/luxroomiv
+	name = "luxury room IV key"
+	desc = "The key to the fourth luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomiv"
+
+/obj/item/roguekey/luxroomv
+	name = "luxury room V key"
+	desc = "The key to the fifth luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomv"
+
+/obj/item/roguekey/luxroomiv
+	name = "luxury room VI key"
+	desc = "The key to the sixth luxury room."
+	icon_state = "brownkey"
+	lockid = "luxroomvi"
+
 /obj/item/roguekey/roomhunt
 	name = "room HUNT key"
 	desc = "The key to the most luxurious Inn room."
@@ -373,27 +445,27 @@
 	lockid = "house9"
 
 /obj/item/roguekey/houses/waterfront1
-	name = "I Waterfront Street Ket"
+	name = "I waterfront street key"
 	icon_state = "brownkey"
 	lockid = "1waterfront"
 
 /obj/item/roguekey/houses/waterfront2
-	name = "II Waterfront Street Ket"
+	name = "II waterfront street key"
 	icon_state = "brownkey"
 	lockid = "2waterfront"
 
 /obj/item/roguekey/houses/waterfront3
-	name = "III Waterfront Street Ket"
+	name = "III waterfront street key"
 	icon_state = "brownkey"
 	lockid = "3waterfront"
 
 /obj/item/roguekey/houses/waterfront4
-	name = "IV Waterfront Street Ket"
+	name = "IV waterfront street key"
 	icon_state = "brownkey"
 	lockid = "4waterfront"
 
 /obj/item/roguekey/houses/waterfront5
-	name = "V Waterfront Street Ket"
+	name = "V waterfront street key"
 	icon_state = "brownkey"
 	lockid = "5waterfront"
 
@@ -401,6 +473,36 @@
 	name = ""
 	icon_state = ""
 	lockid = ""
+
+/obj/item/roguekey/apartments/slums1
+	name = "slums I key"
+	icon_state = "brownkey"
+	lockid = "slums1"
+
+/obj/item/roguekey/apartments/slums2
+	name = "slums II key"
+	icon_state = "brownkey"
+	lockid = "slums2"
+
+/obj/item/roguekey/apartments/slums3
+	name = "slums III key"
+	icon_state = "brownkey"
+	lockid = "slums3"
+
+/obj/item/roguekey/apartments/slums4
+	name = "slums IV key"
+	icon_state = "brownkey"
+	lockid = "slums4"
+
+/obj/item/roguekey/apartments/slums5
+	name = "slums V key"
+	icon_state = "brownkey"
+	lockid = "slums5"
+
+/obj/item/roguekey/apartments/slums6
+	name = "slums VI key"
+	icon_state = "brownkey"
+	lockid = "slums6"
 
 /obj/item/roguekey/apartments/apartment1
 	name = "apartment i key"
@@ -447,6 +549,96 @@
 	icon_state = "brownkey"
 	lockid = "apartment9"
 
+/obj/item/roguekey/apartments/apartment10
+	name = "apartment x key"
+	icon_state = "brownkey"
+	lockid = "apartment10"
+
+/obj/item/roguekey/apartments/apartment11
+	name = "apartment xi key"
+	icon_state = "brownkey"
+	lockid = "apartment11"
+
+/obj/item/roguekey/apartments/apartment12
+	name = "apartment xii key"
+	icon_state = "brownkey"
+	lockid = "apartment12"
+
+/obj/item/roguekey/apartments/apartment13
+	name = "apartment xiii key"
+	icon_state = "brownkey"
+	lockid = "apartment13"
+
+/obj/item/roguekey/apartments/apartment14
+	name = "apartment xiv key"
+	icon_state = "brownkey"
+	lockid = "apartment14"
+
+/obj/item/roguekey/apartments/apartment15
+	name = "apartment xv key"
+	icon_state = "brownkey"
+	lockid = "apartment15"
+
+/obj/item/roguekey/apartments/apartment16
+	name = "apartment xvi key"
+	icon_state = "brownkey"
+	lockid = "apartment16"
+
+/obj/item/roguekey/apartments/apartment17
+	name = "apartment xvii key"
+	icon_state = "brownkey"
+	lockid = "apartment17"
+
+/obj/item/roguekey/apartments/apartment18
+	name = "apartment xviii key"
+	icon_state = "brownkey"
+	lockid = "apartment18"
+
+/obj/item/roguekey/apartments/apartment19
+	name = "apartment xix key"
+	icon_state = "brownkey"
+	lockid = "apartment19"
+
+/obj/item/roguekey/apartments/apartment20
+	name = "apartment xx key"
+	icon_state = "brownkey"
+	lockid = "apartment20"
+
+/obj/item/roguekey/apartments/apartment21
+	name = "apartment xxi key"
+	icon_state = "brownkey"
+	lockid = "apartment21"
+
+/obj/item/roguekey/apartments/apartment22
+	name = "apartment xxii key"
+	icon_state = "brownkey"
+	lockid = "apartment22"
+
+/obj/item/roguekey/apartments/apartment23
+	name = "apartment xxiii key"
+	icon_state = "brownkey"
+	lockid = "apartment23"
+
+/obj/item/roguekey/apartments/apartment24
+	name = "apartment xxiv key"
+	icon_state = "brownkey"
+	lockid = "apartment24"
+
+/obj/item/roguekey/apartments/apartment25
+	name = "apartment xxv key"
+	icon_state = "brownkey"
+	lockid = "apartment25"
+
+/obj/item/roguekey/apartments/penthouse1
+	name = "penthouse i key"
+	icon_state = "brownkey"
+	lockid = "penthouse1"
+
+/obj/item/roguekey/apartments/penthouse2
+	name = "penthouse ii key"
+	icon_state = "brownkey"
+	lockid = "penthouse2"
+
 /obj/item/roguekey/shops
 	name = ""
 	icon_state = ""
@@ -457,45 +649,90 @@
 	icon_state = "rustkey"
 	lockid = "shop1"
 
+/obj/item/roguekey/shops/shopwarehouse1
+	name = "shop I warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop1ware"
+
 /obj/item/roguekey/shops/shop2
 	name = "shop II key"
 	icon_state = "rustkey"
 	lockid = "shop2"
+
+/obj/item/roguekey/shops/shopwarehouse2
+	name = "shop II warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop2ware"
 
 /obj/item/roguekey/shops/shop3
 	name = "shop III key"
 	icon_state = "rustkey"
 	lockid = "shop3"
 
+/obj/item/roguekey/shops/shopwarehouse3
+	name = "shop III warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop3ware"
+
 /obj/item/roguekey/shops/shop4
 	name = "shop IV key"
 	icon_state = "rustkey"
 	lockid = "shop4"
+
+/obj/item/roguekey/shops/shopwarehouse4
+	name = "shop IV warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop4ware"
 
 /obj/item/roguekey/shops/shop5
 	name = "shop V key"
 	icon_state = "rustkey"
 	lockid = "shop5"
 
+/obj/item/roguekey/shops/shopwarehouse5
+	name = "shop V warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop5ware"
+
 /obj/item/roguekey/shops/shop6
 	name = "shop VI key"
 	icon_state = "rustkey"
 	lockid = "shop6"
+
+/obj/item/roguekey/shops/shopwarehouse6
+	name = "shop VI warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop6ware"
 
 /obj/item/roguekey/shops/shop7
 	name = "shop VII key"
 	icon_state = "rustkey"
 	lockid = "shop7"
 
+/obj/item/roguekey/shops/shopwarehouse7
+	name = "shop VII warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop7ware"
+
 /obj/item/roguekey/shops/shop8
 	name = "shop VIII key"
 	icon_state = "rustkey"
 	lockid = "shop8"
 
+/obj/item/roguekey/shops/shopwarehouse8
+	name = "shop VIII warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop8ware"
+
 /obj/item/roguekey/shops/shop9
 	name = "shop IX key"
 	icon_state = "rustkey"
 	lockid = "shop9"
+
+/obj/item/roguekey/shops/shopwarehouse9
+	name = "shop IX warehouse key"
+	icon_state = "rustkey"
+	lockid = "shop9ware"
 
 /obj/item/roguekey/theatre
 	name = "theatre key"
@@ -652,12 +889,15 @@
 			qdel(src)
 	if(istype(K, /obj/structure/mineral_door))
 		var/obj/structure/mineral_door/KE = K
-		if(KE.keylock == TRUE)
-			to_chat(user, "<span class='warning'>[K] already has a lock.</span>")
+		if(KE.can_add_lock)
+			if(KE.keylock == TRUE)
+				to_chat(user, span_warning("[K] already has a lock."))
+			else
+				KE.keylock = TRUE
+				KE.lockhash = src.lockhash
+				if(src.holdname)
+					KE.name = src.holdname
+				to_chat(user, span_notice("You add [src] to [K]."))
+				qdel(src)
 		else
-			KE.keylock = TRUE
-			KE.lockhash = src.lockhash
-			if(src.holdname)
-				KE.name = src.holdname
-			to_chat(user, "<span class='notice'>You add [src] to [K].</span>")
-			qdel(src)
+			to_chat(user, span_warning("A lock can't be added to [K]."))
