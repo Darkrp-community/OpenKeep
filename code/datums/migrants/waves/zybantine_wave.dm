@@ -13,7 +13,6 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/zybantine_migration/emir
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 /datum/outfit/job/roguetown/zybantine_migration/emir/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -78,7 +77,7 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/zybantine_migration/amirah
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
+
 
 /datum/outfit/job/roguetown/zybantine_migration/amirah/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -129,7 +128,6 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/zybantine_migration/furusiyya
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 /datum/outfit/job/roguetown/zybantine_migration/furusiyya/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -198,7 +196,7 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/zybantine_migration/zybantine_guard
-	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
+
 
 /datum/outfit/job/roguetown/zybantine_migration/zybantine_guard/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -243,10 +241,10 @@
 	weight = 50
 	downgrade_wave = /datum/migrant_wave/zybantine_wave_down
 	roles = list(
-	/datum/migrant_role/zybantine/emir = 1
-	/datum/migrant_role/zybantine/amirah = 1
-	/datum/migrant_role/zybantine/furusiyya = 1
-	/datum/migrant_role/zybantine_guard = 2
+		/datum/migrant_role/zybantine/emir = 1,
+		/datum/migrant_role/zybantine/amirah = 1,
+		/datum/migrant_role/zybantine/furusiyya = 1,
+		/datum/migrant_role/zybantine_guard = 2
 	)
 	greet_text = "The Mercator Guild sent you, respected Zybantinian to seek favorable business proposal within the Kingdom of Vanderlin."
 
@@ -256,9 +254,10 @@
 	shared_wave_type = /datum/migrant_wave/zybantine_wave
 	weight = 50
 	downgrade_wave = /datum/migrant_wave/zybantine_wave_down
+	can_roll = FALSE
 	roles = list(
-	/datum/migrant_role/zybantine/emir = 1
-	/datum/migrant_role/zybantine/amirah = 1
-	/datum/migrant_role/zybantine/furusiyya = 1
+		/datum/migrant_role/zybantine/emir = 1,
+		/datum/migrant_role/zybantine/amirah = 1,
+		/datum/migrant_role/zybantine/furusiyya = 1
 	)
 	greet_text = "The Mercator Guild sent you, respected Zybantinian to seek favorable business proposal within the Kingdom of Vanderlin. Unfortunately most of your guards died on the way here."
