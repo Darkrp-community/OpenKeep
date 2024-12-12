@@ -424,7 +424,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/mountains/anvil/grove)
 "eG" = (
-/obj/structure/bonepile,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/lower/building)
 "eH" = (
@@ -1094,9 +1094,9 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/lower/building)
 "kj" = (
-/obj/structure/bonepile,
 /obj/effect/decal/cleanable/blood/gibs/body,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "kl" = (
@@ -1301,10 +1301,10 @@
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/under/mountains/anvil/lower/building)
 "ml" = (
-/obj/structure/bonepile,
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/effect/decal/cleanable/blood/gibs/up,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/twig,
 /area/rogue/under/mountains/anvil/lower/building)
 "mn" = (
@@ -1850,7 +1850,7 @@
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/under/mountains/anvil/lower/building)
 "rU" = (
-/obj/structure/bonepile,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "rX" = (
@@ -3256,7 +3256,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/mountains/anvil/castle)
 "Fq" = (
-/obj/structure/bonepile,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "Ft" = (
@@ -3408,7 +3408,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/lower)
 "GC" = (
-/obj/structure/bonepile,
+/obj/structure/intert_bonepile,
 /turf/open/water/cleanshallow,
 /area/rogue/under/mountains/anvil/lower/building)
 "GF" = (
@@ -4251,9 +4251,9 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/lower)
 "On" = (
-/obj/structure/bonepile,
 /obj/effect/decal/cleanable/blood/gibs/down,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "Oq" = (
@@ -4373,8 +4373,8 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "Po" = (
-/obj/structure/bonepile,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "Pp" = (
@@ -4860,8 +4860,8 @@
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/mountains/anvil/castle)
 "TT" = (
-/obj/structure/bonepile,
 /obj/effect/spawner/roguemap/loot/common,
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "TY" = (
@@ -5071,10 +5071,10 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/lower)
 "Wa" = (
-/obj/structure/bonepile,
 /obj/effect/decal/cleanable/blood/gibs/limb{
 	dir = 4
 	},
+/obj/structure/intert_bonepile,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "Wd" = (
