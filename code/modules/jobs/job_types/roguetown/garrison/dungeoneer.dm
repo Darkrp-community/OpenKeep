@@ -24,7 +24,7 @@
 
 	outfit = /datum/outfit/job/roguetown/dungeoneer
 	give_bank_account = 50
-	min_pq = 4
+	min_pq = 3
 
 	cmode_music = 'sound/music/cmode/combat_weird.ogg'
 

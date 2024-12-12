@@ -154,7 +154,15 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/watchman
-	name = "Garrison Archer"
+	name = "Watchman"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/forestwarden
+	name = "Forest Warden"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/forestguard
+	name = "Forest Guard"
 	icon_state = "arrow"
 
 /obj/effect/landmark/start/villager

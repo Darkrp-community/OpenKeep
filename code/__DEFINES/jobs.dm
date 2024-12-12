@@ -109,19 +109,21 @@
 #define GARRISON		(1<<1)
 
 #define GUARDSMAN	(1<<0)
-#define DUNGEONEER	(1<<1)
-#define WATCHMAN	(1<<2)
-#define MAYOR       (1<<3)
-#define JAILOR	    (1<<4)
+#define WATCHMAN	(1<<1)
+#define JAILOR	    (1<<2)
+#define DUNGEONEER	(1<<3)
+#define MAYOR       (1<<4)
+#define FORWARDEN   (1<<5)
+#define FORGUARD    (1<<6)
 
-#define CHURCHMEN		(1<<2)
+#define CHURCHMEN		(1<<3)
 
 #define PRIEST		(1<<0)
 #define CLERIC		(1<<1)
 #define PURITAN		(1<<2)
 #define MONK		(1<<3)
 
-#define SERFS			(1<<3)
+#define SERFS			(1<<4)
 
 #define INNKEEP		(1<<0)
 #define INNKEEPCHILD    (1<<1)
@@ -132,7 +134,7 @@
 #define ARTIFICER	(1<<6)
 #define SCRIBE		(1<<7)
 
-#define PEASANTS		(1<<4)
+#define PEASANTS		(1<<5)
 
 #define HUNTER		(1<<0)
 #define FARMER		(1<<1)
@@ -149,7 +151,7 @@
 #define MIGRANT		(1<<16)
 #define BANDIT		(1<<17)
 
-#define APPRENTICES		(1<<5)
+#define APPRENTICES		(1<<6)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
@@ -179,12 +181,14 @@
 
 #define JDO_CAPTAIN 7
 #define JDO_ROYALGUARD 7.1
-#define JDO_GARRISONGUARD 8
-#define JDO_GARRISONARCHER 9
-#define JDO_JAILOR 9.5
-#define JDO_DUNGEONEER 10
-#define JDO_SQUIRE 11
-#define JDO_VET 11.1
+#define JDO_GARRISONGUARD 7.5
+#define JDO_WATCHMAN 8
+#define JDO_JAILOR 8.5
+#define JDO_DUNGEONEER 9
+#define JDO_SQUIRE 9.5
+#define JDO_VET 10
+#define JDO_FORWARDEN 11
+#define JDO_FORGUARD 11.5
 
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13

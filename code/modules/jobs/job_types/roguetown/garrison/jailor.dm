@@ -6,15 +6,20 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	tutorial = "Your eyes have seen true terror in The Crimson Valley Asylum- men ripping one another apart for thier own entertainment.\
-				You now live in this town- a quiet peaceful place compared Asylum you used to guard."
-	allowed_races = ALL_PLAYER_RACES_BY_NAME
+	tutorial = "Your eyes have seen true terror in The Crimson Valley Asylum- men ripping one another apart for\
+	their own entertainment. You now live in this town- a quiet peaceful place compared Asylum you used to guard."
+	allowed_races = list( // They're from Crimson Valley Asylum- only a select of houses are in position of guard there.
+		"Humen",
+		"Dwarf",
+		"Elf",
+		"Half-Elf"
+	)
 	allowed_ages = list(AGE_OLD, AGE_IMMORTAL) // He's a wierd elderly man that is fucking jacked- this will make for a memorable character I think.
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/jailor
 	cmode_music = 'sound/music/cmode/garrison/CombatJailor.ogg'
 	give_bank_account = 25
-	min_pq = 3
+	min_pq = 2
 
 /datum/outfit/job/roguetown/jailor/pre_equip(mob/living/carbon/human/H)
 	..()
