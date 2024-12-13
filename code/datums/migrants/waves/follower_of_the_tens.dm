@@ -26,7 +26,7 @@
 	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
 	downgrade_wave = /datum/migrant_wave/acolytes_down_one
-	weight = 20
+	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/acolytes = 3,
 	)
@@ -36,7 +36,7 @@
 	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
 	downgrade_wave = /datum/migrant_wave/acolytes_down_two
-	weight = 20
+	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/acolytes = 2,
 	)
@@ -45,7 +45,7 @@
 /datum/migrant_wave/acolytes_down_two
 	name = "The Holy voyage"
 	shared_wave_type = /datum/migrant_wave/acolytes
-	weight = 20
+	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/acolytes = 1,
 	)
