@@ -3,7 +3,7 @@
 	greet_text = "A Count hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside his beloved convoy and spouse."
 	allowed_sexes = list(MALE)
 	allowed_races = list(
-        "Humen",
+		"Humen",
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/roguetown/grenzelhoft_migration/count
@@ -57,7 +57,7 @@
 	greet_text = "A Countess hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside her beloved convoy and husband."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
-        "Humen",
+		"Humen",
 		"Dwarf"
 	)
 	outfit = /datum/outfit/job/roguetown/grenzelhoft_migration/countess
