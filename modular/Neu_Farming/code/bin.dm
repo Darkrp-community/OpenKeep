@@ -18,8 +18,6 @@
 	blade_dulling = DULLING_BASHCHOP
 	obj_flags = CAN_BE_HIT
 
-	COOLDOWN_DECLARE(fill_cooldown)
-
 /obj/item/roguebin/Initialize()
 	if(!base_state)
 		create_reagents(600, DRAINABLE | AMOUNT_VISIBLE | REFILLABLE)
