@@ -57,6 +57,10 @@
 	},
 /turf/open/floor/rogue/underworld/arena,
 /area/rogue/underworld)
+"qV" = (
+/obj/structure/underworld/barrier,
+/turf/open/floor/rogue/underworld/space,
+/area/rogue/underworld)
 "rm" = (
 /obj/effect/landmark/underworldsafe,
 /turf/open/floor/rogue/underworld/road,
@@ -90,6 +94,7 @@
 /obj/structure/underworld/necra{
 	pixel_x = -64
 	},
+/obj/structure/underworld/barrier,
 /turf/open/floor/rogue/underworld/space,
 /area/rogue/underworld)
 "xn" = (
@@ -25340,7 +25345,7 @@ xn
 xn
 xn
 xn
-xn
+qV
 PP
 IP
 Lk
@@ -25470,7 +25475,7 @@ xn
 xn
 xn
 xn
-xn
+qV
 Wt
 Wt
 Wt
@@ -25730,7 +25735,7 @@ xn
 xn
 xn
 xn
-xn
+qV
 Wt
 Wt
 Wt
@@ -25860,7 +25865,7 @@ xn
 xn
 xn
 xn
-xn
+qV
 PP
 IP
 Lk
