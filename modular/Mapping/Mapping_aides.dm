@@ -856,9 +856,17 @@
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
 
+/obj/structure/fluff/traveltile/bandit
+	aportalid = "banditexit"
+	aportalgoesto = "banditin"
+
 /obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "vampin"
 	aportalgoesto = "vampexit"
+
+/obj/structure/fluff/traveltile/vampire
+	aportalid = "vampexit"
+	aportalgoesto = "vampin"
 
 /obj/structure/fluff/traveltile/exit_inhumen
 	aportalid = "inhumenin"
