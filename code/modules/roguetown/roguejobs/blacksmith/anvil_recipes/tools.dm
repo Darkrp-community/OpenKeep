@@ -100,7 +100,7 @@
 	created_item = /obj/item/rogueweapon/hoe
 	i_type = "Tools"
 
-/datum/anvil_recipe/tools/storage/keyring
+/datum/anvil_recipe/tools/keyring
 	name = "3x Keyrings"
 	recipe_name = "three Keyrings"
 	req_bar = /obj/item/ingot/iron
