@@ -492,17 +492,17 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 	switch(passed_force)
 		if(SEX_FORCE_LOW)
 			if(giving)
+				return 0.8
+			else
+				return 0.6
+		if(SEX_FORCE_MID)
+			if(giving)
 				return 1.0
 			else
 				return 0.8
-		if(SEX_FORCE_MID)
-			if(giving)
-				return 1.2
-			else
-				return 1.0
 		if(SEX_FORCE_HIGH)
 			if(giving)
-				return 1.5
+				return 1.2
 			else
 				return 1.0
 
