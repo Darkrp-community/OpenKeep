@@ -124,6 +124,7 @@
 	. = ..()
 	lockhash = GLOB.lockids[lockid]
 
+
 /obj/item/key/manor
 	name = "manor key"
 	desc = "This key will open any manor doors."
@@ -442,7 +443,7 @@
 //grenchensnacker
 /obj/item/key/porta
 	name = "strange key"
-	desc = "Was this key enchanted by a locksmith...?"
+	desc = "Was this key enchanted by a locksmith..?"
 	icon_state = "eyekey"
 	lockid = "porta"
 
