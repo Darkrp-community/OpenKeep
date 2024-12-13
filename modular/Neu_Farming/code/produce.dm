@@ -150,7 +150,7 @@
 /obj/item/reagent_containers/food/snacks/produce/jacksberry
 	seed = /obj/item/neuFarm/seed/berryrogue
 	name = "jacksberries"
-	desc = "Common berries found throughout Rockhill. A traveler's repast, or Dendor's wrath."
+	desc = "Common berries found throughout Enigma. A traveler's repast, or Dendor's wrath."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5

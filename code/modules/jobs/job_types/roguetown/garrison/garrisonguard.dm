@@ -17,7 +17,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
-	tutorial = "You are a soldier in the ruler's garrison. Your experience, training, and equipment may vary... but you are the first line of defense against the horrors that encroach on Rockhill."
+	tutorial = "You are a soldier in the ruler's garrison. Your experience, training, and equipment may vary... but you are the first line of defense against the horrors that encroach on Vanderlin."
 	display_order = JDO_GARRISONGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
