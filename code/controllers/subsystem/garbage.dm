@@ -52,7 +52,7 @@ SUBSYSTEM_DEF(garbage)
 	#endif
 
 	/// Toggle for enabling/disabling hard deletes. Objects that don't explicitly request hard deletion with this disabled will leak.
-	var/enable_hard_deletes = FALSE
+	var/enable_hard_deletes = TRUE
 	var/list/failed_hard_deletes = list()
 
 
