@@ -3,8 +3,8 @@
 	flag = FORWARDEN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 0 // 1
-	spawn_positions = 0 // 1
+	total_positions = 1
+	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_races = list(
