@@ -112,9 +112,9 @@
 	name = "cooked sausage"
 	scent = "cooked sausage"
 
-/datum/pollutant/food/sausage
-	name = "cooked sausage"
-	scent = "cooked sausage"
+/datum/pollutant/food/wiener
+	name = "cooked wiener"
+	scent = "cooked wiener"
 
 /datum/pollutant/food/fried_cabbage
 	name = "fried cabbage"

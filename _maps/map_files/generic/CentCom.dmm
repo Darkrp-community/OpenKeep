@@ -677,7 +677,7 @@
 /area/rogue/indoors/vampire_manor)
 "bG" = (
 /obj/structure/fluff/wallclock/vampire,
-/obj/machinery/light/rogue/hearth/big_fireplace,
+/obj/machinery/light/rogue/wallfire/big_fireplace,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/vampire_manor)
 "bH" = (
