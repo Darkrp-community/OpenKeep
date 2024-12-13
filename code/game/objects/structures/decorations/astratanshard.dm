@@ -71,9 +71,9 @@
 	if(isdead(fool))
 		return
 	if(!visible_message)
-		visible_message = span_danger("[fool] reaches out and touches \The [src], on making contact,[fool.p_they()] turn to dust!")
+		visible_message = span_danger("[fool] reaches out and touches \the [src], on making contact,[fool.p_they()] turn to dust!")
 	if(!mob_message)
-		mob_message = span_userdanger("You reach out and touch \The [src]. Your body is filled with undescribable pain, your mind unable to even comprehend the divinity you make contact with. Your consciousness fades in a flash... lost to infinite agony.")
+		mob_message = span_userdanger("You reach out and touch \the [src]. Your body is filled with undescribable pain, your mind unable to even comprehend the divinity you make contact with. Your consciousness fades in a flash... lost to infinite agony.")
 	if(!cause)
 		cause = "contact"
 	fool.visible_message(visible_message,mob_message,span_hear("You hear a pained, echoing scream."))

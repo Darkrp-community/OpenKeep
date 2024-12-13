@@ -14167,6 +14167,12 @@
 /obj/structure/bars/pipe,
 /turf/open/floor/rogue/rooftop,
 /area/rogue/outdoors/town)
+"mAr" = (
+/obj/structure/lever{
+	redstone_id = "gatelava"
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/manorgate)
 "mAU" = (
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/outdoors/rtfield)
@@ -125165,7 +125171,7 @@ vnF
 sWL
 jdk
 cYY
-fSW
+mAr
 fSW
 uOr
 sIO
