@@ -22,6 +22,7 @@
 	display_order = JDO_PURITAN
 	min_pq = 4
 	bypass_lastclass = TRUE
+	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 
 /datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

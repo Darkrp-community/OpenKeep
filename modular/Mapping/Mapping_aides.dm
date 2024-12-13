@@ -138,7 +138,7 @@
 	icon_state = "lootarmor"
 	spawned = list(
 		/obj/item/clothing/mask/rogue/facemask/copper = 15,
-		/datum/anvil_recipe/armor/copper/bracers = 15,
+		/obj/item/clothing/wrists/roguetown/bracers/copper = 15,
 		/obj/item/clothing/head/roguetown/helmet/coppercap = 15,
 		/obj/item/clothing/suit/roguetown/armor/cuirass/copperchest = 15,
 		/obj/item/clothing/under/roguetown/chainlegs/iron = 10,
@@ -480,6 +480,7 @@
 /obj/structure/spider/cocoon
 	name = "cocoon"
 	desc = ""
+	icon = 'icons/effects/effects.dmi'
 	icon_state = "cocoon1"
 	max_integrity = 40
 
@@ -855,9 +856,17 @@
 	aportalid = "banditin"
 	aportalgoesto = "banditexit"
 
+/obj/structure/fluff/traveltile/bandit
+	aportalid = "banditexit"
+	aportalgoesto = "banditin"
+
 /obj/structure/fluff/traveltile/exit_vampire	// mus NOT be a traveltile/vampire child, because that one has a check for banditcamp trait. People should always be able to leave the camp.
 	aportalid = "vampin"
 	aportalgoesto = "vampexit"
+
+/obj/structure/fluff/traveltile/vampire
+	aportalid = "vampexit"
+	aportalgoesto = "vampin"
 
 /obj/structure/fluff/traveltile/exit_inhumen
 	aportalid = "inhumenin"

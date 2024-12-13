@@ -109,9 +109,12 @@
 #define GARRISON		(1<<1)
 
 #define GUARDSMAN	(1<<0)
-#define DUNGEONEER	(1<<1)
-#define WATCHMAN	(1<<2)
-#define MAYOR       (1<<3)
+#define WATCHMAN	(1<<1)
+#define JAILOR	    (1<<2)
+#define DUNGEONEER	(1<<3)
+#define MAYOR       (1<<4)
+#define FORWARDEN   (1<<5)
+#define FORGUARD    (1<<6)
 
 #define CHURCHMEN		(1<<2)
 
@@ -123,12 +126,12 @@
 #define SERFS			(1<<3)
 
 #define INNKEEP		(1<<0)
-#define BLACKSMITH	(1<<2)
-#define ALCHEMIST	(1<<3)
-#define MASON		(1<<4)
-#define TAILOR		(1<<5)
-#define ARTIFICER	(1<<6)
-#define SCRIBE		(1<<7)
+#define BLACKSMITH	(1<<1)
+#define ALCHEMIST	(1<<2)
+#define MASON		(1<<3)
+#define TAILOR		(1<<4)
+#define ARTIFICER	(1<<5)
+#define SCRIBE		(1<<6)
 
 #define PEASANTS		(1<<4)
 
@@ -147,16 +150,17 @@
 #define MIGRANT		(1<<16)
 #define BANDIT		(1<<17)
 
-#define YOUNGFOLK	(1<<6)
-
 #define APPRENTICES		(1<<5)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
 #define SERVANT		(1<<2)
-#define ORPHAN		(1<<3)
-#define CHURCHLING  (1<<4)
-#define PRINCE		(1<<5)
+#define PRINCE		(1<<3)
+
+#define YOUNGFOLK           (1<<6)
+#define INNKEEPCHILD    (1<<1)
+#define CHURCHLING      (1<<2)
+#define ORPHAN		    (1<<3)
 
 #define JCOLOR_NOBLE "#9c40bf"
 #define JCOLOR_MERCHANT "#c2b449"
@@ -180,11 +184,14 @@
 
 #define JDO_CAPTAIN 7
 #define JDO_ROYALGUARD 7.1
-#define JDO_GARRISONGUARD 8
-#define JDO_GARRISONARCHER 9
-#define JDO_DUNGEONEER 10
-#define JDO_SQUIRE 11
-#define JDO_VET 11.1
+#define JDO_GARRISONGUARD 7.5
+#define JDO_WATCHMAN 8
+#define JDO_JAILOR 8.5
+#define JDO_DUNGEONEER 9
+#define JDO_SQUIRE 9.5
+#define JDO_VET 10
+#define JDO_FORWARDEN 11
+#define JDO_FORGUARD 11.5
 
 #define JDO_PRIEST 12
 #define JDO_CLERIC 13
@@ -210,6 +217,7 @@
 #define JDO_SERVANT 26
 
 #define JDO_INNKEEP 27
+#define JDO_INNKEEP_CHILD 27.5
 #define JDO_COOK 28
 
 #define JDO_BUTCHER 28.1

@@ -1,7 +1,7 @@
 /datum/advclass/combat/heartfelthand
 	name = "Hand of Heartfelt"
 	tutorial = "You serve your lord as hand, taking care of diplomatic actions within your realm, \
-	but why have you come to Rockhill?"
+	but why have you come to Vanderlin?"
 	allowed_sexes = list(MALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfelthand
