@@ -79,7 +79,10 @@
 	SSdroning.kill_rain(src.client)
 	SSdroning.kill_loop(src.client)
 	SSdroning.kill_droning(src.client)
-	src.playsound_local(src, 'sound/misc/deth.ogg', 100)
+	if(prob(0.1))
+		src.playsound_local(src, 'sound/misc/dark_die.ogg', 250)
+	else
+		src.playsound_local(src, 'sound/misc/deth.ogg', 100)
 
 	set_drugginess(0)
 	set_disgust(0)

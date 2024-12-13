@@ -390,6 +390,13 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 	first_time_text = "THE KEEP OF ROCKHILL"
 
+/area/rogue/indoors/town/manorgate
+	name = "Manor Gate"
+	icon_state = "manorgate"
+	droning_sound = 'sound/music/area/manorgarri.ogg'
+	droning_sound_dusk = null
+	droning_sound_night = 'sound/music/area/deliverer.ogg'
+
 /area/rogue/outdoors/exposed/manorgarri
 	icon_state = "manorgarri"
 	droning_sound = 'sound/music/area/manor.ogg'

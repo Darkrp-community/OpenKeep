@@ -106,6 +106,12 @@
 	icon_state = "spikekey"
 	lockid = "garrison"
 
+/obj/item/roguekey/forrestgarrison
+	name = "forrest garrison key"
+	desc = "This key belongs to the Forrest Garrison."
+	icon_state = "spikekey"
+	lockid = "forrestgarrison"
+
 /obj/item/roguekey/dungeon
 	name = "dungeon key"
 	desc = "This key should unlock the rusty bars and doors of the dungeon."

@@ -3030,6 +3030,12 @@
 /obj/item/clothing/neck/roguetown/psycross/silver/ravox,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
+"dqy" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/cave)
 "dqV" = (
 /obj/structure/mineral_door/wood{
 	lockid = "apartment5";
@@ -3157,6 +3163,12 @@
 	icon_state = "vertw"
 	},
 /turf/open/water/river,
+/area/rogue/under/cave)
+"dvX" = (
+/obj/machinery/light/rogue/torchholder{
+	dir = 8
+	},
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cave)
 "dwu" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8355,6 +8367,12 @@
 "jmH" = (
 /turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town)
+"jnu" = (
+/obj/structure/stairs/stone{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/rtfield)
 "jnB" = (
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/under/cave)
@@ -10442,6 +10460,9 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"lyR" = (
+/turf/closed/wall/mineral/rogue/stone,
+/area/rogue/under/cave)
 "lzk" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/hexstone,
@@ -28343,7 +28364,7 @@ vzQ
 vzQ
 vzQ
 vzQ
-vzQ
+lyR
 vzQ
 "}
 (41,1,1) = {"
@@ -28500,7 +28521,7 @@ vzQ
 vzQ
 vzQ
 vzQ
-vzQ
+aXn
 vzQ
 "}
 (42,1,1) = {"
@@ -29440,9 +29461,9 @@ vzQ
 vzQ
 vzQ
 vzQ
-vzQ
-vzQ
-vzQ
+dqy
+dvX
+aXn
 vzQ
 "}
 (48,1,1) = {"
@@ -29598,8 +29619,8 @@ vzQ
 vzQ
 vzQ
 vzQ
-vzQ
-vzQ
+lyR
+lyR
 vzQ
 "}
 (49,1,1) = {"
@@ -52834,9 +52855,9 @@ uca
 uca
 uca
 uca
-uca
-uca
-uca
+qQp
+qQp
+bHI
 bFf
 "}
 (42,1,2) = {"
@@ -53774,11 +53795,11 @@ gLE
 uca
 gLE
 uca
-uca
-uca
-uca
-uca
-uca
+qQp
+jnu
+bHI
+bHI
+bHI
 bFf
 "}
 (48,1,2) = {"

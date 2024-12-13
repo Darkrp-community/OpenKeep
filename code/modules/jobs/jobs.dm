@@ -74,12 +74,15 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
-	"Garrison Guard",
 	"Royal Guard",
 	"Veteran",
+	"Garrison Guard",
+	"Watchman",
+	"Jailor",
 	"Dungeoneer",
-	"Garrison Archer",
-	"Mayor"
+	"Mayor",
+	"Forest Warden",
+	"Forest Guard"
 	))
 
 GLOBAL_LIST_INIT(church_positions, list(
@@ -130,6 +133,7 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	))
 
 GLOBAL_LIST_INIT(youngfolk_positions, list(
+	"Innkeeper's Son",
 	"Orphan",
 	"Churchling",
 ))

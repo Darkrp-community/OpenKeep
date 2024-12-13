@@ -194,6 +194,9 @@
 /obj/item/clothing/suit/roguetown/shirt/tunic/purple
 	color = CLOTHING_PLUM_PURPLE
 
+/obj/item/clothing/suit/roguetown/shirt/tunic/black
+	color = CLOTHING_SOOT_BLACK
+
 /obj/item/clothing/suit/roguetown/shirt/tunic/ucolored
 	color = CLOTHING_ASH_GREY
 

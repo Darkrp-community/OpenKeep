@@ -237,13 +237,16 @@
 	picks = list(/obj/item/lockpick, /obj/item/lockpick, /obj/item/lockpick)
 
 /obj/item/keyring/captain
-	keys = list(/obj/item/roguekey/captain, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
+	keys = list(/obj/item/roguekey/captain, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/forrestgarrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
 
 /obj/item/keyring/queen
-	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/queen, /obj/item/roguekey/guest)
+	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/forrestgarrison, /obj/item/roguekey/walls, /obj/item/roguekey/manor, /obj/item/roguekey/queen, /obj/item/roguekey/guest)
 
 /obj/item/keyring/guard
-	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
+	keys = list(/obj/item/roguekey/dungeon, /obj/item/roguekey/garrison)
+
+/obj/item/keyring/manorguard
+	keys = list(/obj/item/roguekey/manor, /obj/item/roguekey/dungeon, /obj/item/roguekey/garrison, /obj/item/roguekey/walls)
 
 /obj/item/keyring/archivist
 	keys = list(/obj/item/roguekey/archive, /obj/item/roguekey/manor)
@@ -273,7 +276,7 @@
 	keys = list(/obj/item/roguekey/niteman, /obj/item/roguekey/nitemaiden)
 
 /obj/item/keyring/hand
-	keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/merchant, /obj/item/roguekey/dungeon, /obj/item/roguekey/walls, /obj/item/roguekey/garrison, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
+	keys = list(/obj/item/roguekey/hand, /obj/item/roguekey/steward, /obj/item/roguekey/tavern, /obj/item/roguekey/church, /obj/item/roguekey/merchant, /obj/item/roguekey/dungeon, /obj/item/roguekey/walls, /obj/item/roguekey/garrison, /obj/item/roguekey/forrestgarrison, /obj/item/roguekey/manor, /obj/item/roguekey/guest)
 
 /obj/item/keyring/steward
 	keys = list(/obj/item/roguekey/steward, /obj/item/roguekey/vault, /obj/item/roguekey/manor, /obj/item/roguekey/warehouse)
