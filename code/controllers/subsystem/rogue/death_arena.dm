@@ -157,8 +157,6 @@ SUBSYSTEM_DEF(death_arena)
 
 /datum/outfit/job/roguetown/arena_skeleton/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
-	H.change_stat(STATKEY_STR, 1, TRUE)
-	H.change_stat(STATKEY_END, 1, TRUE)
 
 	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)

@@ -348,8 +348,8 @@
 	equipOutfit(new /datum/outfit/job/roguetown/arena_skeleton)
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 
-	H.TOTALSTR = 6
-	H.TOTALSPD = 10
-	H.TOTALCON = 8
-	H.TOTALEND = 8
-	H.TOTALINT = 1
+	TOTALSTR = 6
+	TOTALSPD = 10
+	TOTALCON = 8
+	TOTALEND = 8
+	TOTALINT = 1
