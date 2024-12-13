@@ -543,7 +543,7 @@
 		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
-		. += "It says \"IMPORTS\""
+		. += "It says something."
 
 /obj/structure/fluff/sellsign
 	icon_state = "signwrote"
@@ -556,7 +556,7 @@
 		user.mind.adjust_experience(/datum/skill/misc/reading, 2, FALSE)
 		. += "I have no idea what it says."
 	else
-		. += "It says \"EXPORTS\""
+		. += "It says something."
 
 
 /obj/structure/fluff/customsign
