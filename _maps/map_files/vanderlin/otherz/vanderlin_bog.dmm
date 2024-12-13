@@ -14,7 +14,7 @@
 "aA" = (
 /mob/living/carbon/human/species/skeleton/npc/no_equipment{
 	real_name = "Drowned";
-	custom_descriptors = Askeletonwhosribcageisfilledwithleeches.
+	custom_descriptors = "A skeleton whose ribcage is filled with leeches."
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
