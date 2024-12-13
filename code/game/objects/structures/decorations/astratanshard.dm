@@ -15,7 +15,7 @@
 	the_hum = new /datum/looping_sound/astratanshard_hum(src,FALSE)
 	the_hum.start()
 	. = ..()
-
+	set_light(5, 4, 30, l_color = LIGHT_COLOR_YELLOW)
 
 /obj/structure/astratanshard/deconstruct(disassembled = FALSE)
 	if(!broken_containment)
