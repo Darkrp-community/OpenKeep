@@ -100,17 +100,19 @@
 #define HAND		(1<<2)
 #define STEWARD		(1<<3)
 #define WIZARD		(1<<4)
-#define CAPTAIN		(1<<5)
-#define ARCHIVIST   (1<<6)
-#define FELDSHER    (1<<8)
-#define NIGHTMAN    (1<<9)
+#define ARCHIVIST   (1<<5)
+#define BUTLER		(1<<6)
+#define JESTER  	(1<<7)
+#define ROYAL_GUARD	(1<<8)
+
 
 #define GARRISON		(1<<1)
 
-#define GUARDSMAN	(1<<0)
-#define DUNGEONEER	(1<<1)
+#define CAPTAIN		(1<<0)
+#define GUARDSMAN	(1<<1)
 #define WATCHMAN	(1<<2)
-#define MAYOR       (1<<3)
+#define DUNGEONEER	(1<<3)
+
 
 #define TEMPLE			(1<<2)
 
@@ -121,39 +123,42 @@
 #define INQUISITOR	(1<<4)
 #define ADEPT		(1<<5)
 
-#define MERCATOR_GUILD	(1<<3)
+
+#define TOWNERS			(1<<3)
 
 #define MERCHANT	(1<<0)
 #define STEVEDORE	(1<<1)
+#define BLACKSMITH	(1<<2)
+#define MASON		(1<<3)
+#define FELDSHER    (1<<4)
+#define INNKEEP		(1<<5)
+#define COOK		(1<<6)
+#define NIGHTMAN    (1<<7)
+#define NITEMAIDEN	(1<<8)
+#define ALCHEMIST	(1<<9)
+#define TAILOR		(1<<10)
+#define SCRIBE		(1<<11)
 
-#define MAKERS_GUILD	(1<<4)
 
-#define BLACKSMITH	(1<<0)
-#define MASON		(1<<1)
+#define PEASANTS		(1<<4)
 
-#define SERFS			(1<<5)
-
-#define INNKEEP		(1<<0)
-#define ALCHEMIST	(1<<3)
-
-#define TAILOR		(1<<5)
-#define SCRIBE		(1<<7)
-#define COOK		(1<<10)
-
-#define PEASANTS		(1<<6)
-
-#define HUNTER		(1<<0)
+#define MAYOR       (1<<0)
 #define FARMER		(1<<1)
 #define BEASTMASTER	(1<<2)
-#define FISHER		(1<<4)
-#define LUMBERJACK	(1<<5)
-#define MINER		(1<<6)
-#define BUTLER		(1<<7)
-#define JESTER		(1<<8)
-#define ADVENTURER	(1<<9)
+#define FISHER		(1<<3)
+#define LUMBERJACK	(1<<4)
+#define MINER		(1<<5)
+#define HUNTER		(1<<6)
+#define BEGGAR		(1<<6)
 
-#define WAVE_DRIFTER (1<<16)
-#define GRAVEDIGGER	(1<<18)
+
+#define OUTSIDERS		(1<<5)
+
+#define ADVENTURER	(1<<0)
+#define WAVE_DRIFTER (1<<1)
+#define MERCENARY	(1<<2)
+#define GRAVEDIGGER	(1<<3)
+
 
 #define APPRENTICES		(1<<7)
 
@@ -162,6 +167,7 @@
 #define SERVANT		(1<<2)
 #define ORPHAN		(1<<3)
 #define PRINCE		(1<<4)
+
 
 #define JCOLOR_NOBLE "#9c40bf"
 #define JCOLOR_MERCHANT "#c2b449"
@@ -176,61 +182,51 @@
 #define JDO_CONSORT 1.1
 #define JDO_PRINCE 1.2
 #define JDO_HAND 2
-#define JDO_STEWARD 3
-
-#define JDO_MAGICIAN 4
-#define JDO_WAPP 5
+#define JDO_ROYALGUARD 3
+#define JDO_STEWARD 4
+#define JDO_MAGICIAN 5
+#define JDO_WAPP 5.1
 #define JDO_ARCHIVIST 6
-#define JDO_FELDSHER 6.1
+#define JDO_BUTLER 7
+#define JDO_JESTER 8
+#define JDO_SERVANT 9.1
 
-#define JDO_CAPTAIN 7
-#define JDO_ROYALGUARD 7.1
-#define JDO_GARRISONGUARD 8
-#define JDO_GARRISONARCHER 9
-#define JDO_DUNGEONEER 10
-#define JDO_SQUIRE 11
+#define JDO_CAPTAIN 10
+#define JDO_GARRISONGUARD 11
+#define JDO_GARRISONARCHER 12
+#define JDO_SQUIRE 13
+#define JDO_DUNGEONEER 14
+#define JDO_PRISONER 15
 
+#define JDO_PRIEST 20
+#define JDO_ACOLYTE 21
+#define JDO_GRAVEKEEPER 22
+#define JDO_TEMPLAR 23
+#define JDO_INQUISITOR 24
+#define JDO_ADEPT 24.1
+#define JDO_CLERIC 25
 
-#define JDO_PRIEST 12
-#define JDO_CLERIC 13
-#define JDO_ACOLYTE 14
-#define JDO_GRAVEKEEPER 15
-#define JDO_TEMPLAR 15.1
-#define JDO_INQUISITOR 16
-#define JDO_ADEPT 17
+#define JDO_MERCHANT 30
+#define JDO_STEVEDORE 30.1
+#define JDO_ARMORER 31
+#define JDO_WSMITH 31.1
+#define JDO_BAPP 31.2
+#define JDO_MASON 31.3
+#define JDO_FELDSHER 34
+#define JDO_TAILOR 35
+#define JDO_INNKEEP 36
+#define JDO_COOK 36.1
+#define JDO_NITEMAN 37.1
+#define JDO_NITEMAIDEN 37.2
+#define JDO_VILLAGER 38
 
-#define JDO_MERCHANT 18
-#define JDO_STEVEDORE 19
+#define JDO_CHIEF 40
+#define JDO_VET 41
+#define JDO_BUTCHER 42
+#define JDO_SOILSON 43
 
-#define JDO_ARMORER 20
-#define JDO_WSMITH 21
-#define JDO_BAPP 22
-#define JDO_MASON 23
-
-#define JDO_BUTLER 24
-#define JDO_SERVANT 25
-
-#define JDO_TAILOR 25.1
-
-#define JDO_INNKEEP 26
-#define JDO_COOK 27
-
-#define JDO_CHIEF 27.1
-#define JDO_VET 27.2
-#define JDO_BUTCHER 27.3
-#define JDO_SOILSON 27.4
-
-#define JDO_NITEMAN 28.1
-#define JDO_NITEMAIDEN 28.2
-
-#define JDO_JESTER 29
-#define JDO_PRISONER 30
-#define JDO_VILLAGER 32
-
-#define JDO_ADVENTURER 32.1
-#define JDO_PILGRIM 32.2
-#define JDO_DRIFTER 32.3
-
-#define JDO_MERCENARY 33
-
-#define JDO_VAGRANT 34
+#define JDO_ADVENTURER 50
+#define JDO_PILGRIM 51
+#define JDO_DRIFTER 52
+#define JDO_MERCENARY 53
+#define JDO_VAGRANT 54

@@ -212,11 +212,11 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 					break
 				if(!(bandaids in allantags)) // We don't want to double dip... I guess? Two birds one stone tho, A already bandit check would check pre_bandits
 					continue
-				if(bandaids.assigned_role in GLOB.noble_positions) // Job cat string stoppers
+				if(bandaids.assigned_role in GLOB.court_positions) // Job cat string stoppers
 					continue
 				if(bandaids.assigned_role in GLOB.church_positions) // Many of these guys vanishing would suck
 					continue
-				if(bandaids.assigned_role in GLOB.serf_positions) // Many of these guys vanishing would suck
+				if(bandaids.assigned_role in GLOB.towner_positions) // Many of these guys vanishing would suck
 					continue
 
 				allantags -= bandaids
@@ -249,13 +249,13 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.garrison_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.noble_positions)
+				if(rebelguy.assigned_role in GLOB.court_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.apprentices_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.church_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.serf_positions)
+				if(rebelguy.assigned_role in GLOB.towner_positions)
 					blockme = TRUE
 				if(blockme)
 					continue
@@ -340,7 +340,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 		var/blockme = FALSE
 		if(!(vampire in allantags))
 			blockme = TRUE
-		if(vampire.assigned_role in GLOB.noble_positions)
+		if(vampire.assigned_role in GLOB.court_positions)
 			continue
 		if(vampire.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE
@@ -372,7 +372,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 		var/blockme = FALSE
 		if(!(werewolf in allantags))
 			blockme = TRUE
-		if(werewolf.assigned_role in GLOB.noble_positions)
+		if(werewolf.assigned_role in GLOB.court_positions)
 			blockme = TRUE
 		if(werewolf.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE

@@ -53,28 +53,28 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Detective",
 	"Security Officer"))
 
-
 GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"AI",
 	"Cyborg",
 	ROLE_PAI))
 
-GLOBAL_LIST_INIT(noble_positions, list(
+GLOBAL_LIST_INIT(court_positions, list(
 	"King",
 	"Consort",
 	"Hand",
 	"Prince",
-	"Captain",
 	"Steward",
 	"Court Magician",
 	"Archivist",
-	"Feldsher",
+	"Butler",
+	"Jester",
 	"Warden of the Terrorbog",
 	"Huntmaster of the Murderwoods",
-	"Hetman of Mount Decapitation"
+	"Hetman of Mount Decapitation",
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
+	"Captain",
 	"Garrison Guard",
 	"Royal Guard",
 	"Veteran",
@@ -88,24 +88,19 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Acolyte",
 	"Gravekeeper",
 	"Inquisitor",
-	"Confessor",
 	"Templar",
-	"Adept"
+	"Adept",
+	"Confessor",
 	))
 
-GLOBAL_LIST_INIT(mercatorguild_positions, list(
+GLOBAL_LIST_INIT(towner_positions, list(
 	"Merchant",
-	"Stevedore"
-	))
-
-GLOBAL_LIST_INIT(makersguild_positions, list(
+	"Stevedore",
 	"Blacksmith",
 	"Armorer",
 	"Weaponsmith",
 	"Mason",
-	))
-
-GLOBAL_LIST_INIT(serf_positions, list(
+	"Feldsher",
 	"Innkeep",
 	"Tailor",
 	"Alchemist",
@@ -117,20 +112,15 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Butcher",
 	"Cook",
 	"Gravedigger",
-	"Jester",
 	"Miner",
 	"Hunter",
 	"Fisher",
-	"Butler",
 	"Towner",
-	"Mercenary",
 	"Niteman",
 	"Nitemaiden",
 	"Prisoner",
 	"Beggar",
-	"Adventurer",
-	"Pilgrim",
-	"Drifter"
+
 ))
 
 GLOBAL_LIST_INIT(apprentices_positions, list(
@@ -144,11 +134,18 @@ GLOBAL_LIST_INIT(no_antag_positions, list(
 	"King",
 	"Priest",
 	"Merchant",
+	"Royal Guard",
+	"Templar",
+	"Stevedore",
+	"Inquisitor",
+	"Adept"
 	))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
+	"Mercenary",
 	"Adventurer",
-	"Pilgrim"
+	"Pilgrim",
+	"Drifter"
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(
@@ -174,12 +171,10 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 
 /proc/get_job_assignment_order()
 	var/list/sorting_order = list()
-	sorting_order += GLOB.noble_positions
-	sorting_order += GLOB.garrison_positions
+	sorting_order += GLOB.court_positions
 	sorting_order += GLOB.church_positions
-	sorting_order += GLOB.mercatorguild_positions
-	sorting_order += GLOB.makersguild_positions
-	sorting_order += GLOB.serf_positions
+	sorting_order += GLOB.towner_positions
+	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.allmig_positions
