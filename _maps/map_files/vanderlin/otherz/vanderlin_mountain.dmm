@@ -1686,10 +1686,6 @@
 /obj/structure/fermenting_barrel/random/beer,
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/mountains)
-"yk" = (
-/obj/effect/spawner/roguemap/loot,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/outdoors/mountains)
 "yp" = (
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/rogue/cobble,
@@ -166350,7 +166346,7 @@ Nx
 Nx
 Nx
 Zc
-yk
+zR
 Nx
 Nx
 zR

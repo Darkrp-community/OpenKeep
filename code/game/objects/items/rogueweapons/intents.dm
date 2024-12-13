@@ -55,6 +55,8 @@
 		chargedloop.stop()
 	if(mastermob.curplaying == src)
 		mastermob.curplaying = null
+	mastermob = null
+	masteritem = null
 	return ..()
 
 /datum/intent/proc/examine(mob/user)
@@ -199,7 +201,7 @@
 	swingdelay = 5
 	misscost = 20
 	unarmed = TRUE
-	animname = "cut"
+	animname = "kick"
 	pointer = 'icons/effects/mousemice/human_kick.dmi'
 	item_damage_type = "blunt"
 
@@ -355,7 +357,7 @@
 	icon_state = "inpunch"
 	attack_verb = list("punches", "jabs", "clocks", "strikes")
 	chargetime = 0
-	animname = "blank22"
+	animname = "punch"
 	hitsound = list('sound/combat/hits/punch/punch (1).ogg', 'sound/combat/hits/punch/punch (2).ogg', 'sound/combat/hits/punch/punch (3).ogg')
 	misscost = 5
 	releasedrain = 5
@@ -454,7 +456,7 @@
 	name = "headbutt"
 	icon_state = "instrike"
 	attack_verb = list("headbutts", "rams")
-	animname = "blank22"
+	animname = "smash"
 	blade_class = BCLASS_BLUNT
 	hitsound = "punch_hard"
 	chargetime = 0
@@ -470,7 +472,7 @@
 	name = "claw"
 	icon_state = "inclaw"
 	attack_verb = list("slashes", "claws")
-	animname = "blank22"
+	animname = "claw"
 	blade_class = BCLASS_CUT
 	hitsound = "smallslash"
 	chargetime = 0
@@ -500,7 +502,7 @@
 	name = "bite"
 	icon_state = "instrike"
 	attack_verb = list("bites")
-	animname = "blank22"
+	animname = "bite"
 	blade_class = BCLASS_CUT
 	hitsound = "smallslash"
 	chargetime = 0
@@ -529,7 +531,7 @@
 	name = "claw"
 	icon_state = "inclaw"
 	attack_verb = list("claws", "scratches", "rends", "tears")
-	animname = "cut"
+	animname = "claw"
 	blade_class = BCLASS_CUT
 	hitsound = "smallslash"
 	penfactor = 20
@@ -548,7 +550,7 @@
 	name = "claw"
 	icon_state = "inclaw"
 	attack_verb = list("claws", "mauls", "eviscerates")
-	animname = "cut"
+	animname = "claw"
 	blade_class = BCLASS_CHOP
 	hitsound = "genslash"
 	penfactor = 131
@@ -578,7 +580,7 @@
 	name = "big bite"
 	icon_state = "instrike"
 	attack_verb = list("gnashes", "viciously bites")
-	animname = "blank22"
+	animname = "bite"
 	blade_class = BCLASS_CHOP
 	hitsound = "smallslash"
 	chargetime = 0
@@ -594,7 +596,7 @@
 	name = "stab"
 	icon_state = "instrike"
 	attack_verb = list("impales", "stabs")
-	animname = "blank22"
+	animname = "stab"
 	blade_class = BCLASS_STAB
 	hitsound = "smallslash"
 	chargetime = 0
@@ -609,7 +611,7 @@
 	name = "hack"
 	icon_state = "instrike"
 	attack_verb = list("hacks at", "chops at", "bashes")
-	animname = "blank22"
+	animname = "chop"
 	blade_class = BCLASS_CUT
 	hitsound = list("genchop", "genslash")
 	chargetime = 0
@@ -623,7 +625,7 @@
 	name = "spear"
 	icon_state = "instrike"
 	attack_verb = list("stabs", "skewers", "bashes")
-	animname = "blank22"
+	animname = "stab"
 	blade_class = BCLASS_CUT
 	hitsound = list("genthrust", "genstab")
 	chargetime = 0
@@ -637,7 +639,7 @@
 	name = "claw"
 	icon_state = "instrike"
 	attack_verb = list("claws", "pecks")
-	animname = "blank22"
+	animname = "claw"
 	blade_class = BCLASS_CHOP
 	hitsound = "genslash"
 	chargetime = 0
@@ -653,7 +655,7 @@
 	name = "bite"
 	icon_state = "instrike"
 	attack_verb = list("bites")
-	animname = "blank22"
+	animname = "bite"
 	blade_class = BCLASS_BITE
 	hitsound = "smallslash"
 	chargetime = 0

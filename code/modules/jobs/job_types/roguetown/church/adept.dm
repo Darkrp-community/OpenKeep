@@ -17,7 +17,7 @@
 		"Half-Orc"
 	)
 	allowed_sexes = list(MALE, FEMALE)
-	tutorial = "You were a convicted criminal, the lowest scum of Rockhill. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to Psydon. You will not let him down."
+	tutorial = "You were a convicted criminal, the lowest scum of Vanderlin. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to Psydon. You will not let him down."
 
 	outfit = /datum/outfit/job/roguetown/adept
 	advclass_cat_rolls = list(CTAG_ADEPT = 20)
@@ -45,6 +45,7 @@
 	outfit = /datum/outfit/job/roguetown/adept/bzealot
 
 	category_tags = list(CTAG_ADEPT)
+	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adept/bzealot/pre_equip(mob/living/carbon/human/H)

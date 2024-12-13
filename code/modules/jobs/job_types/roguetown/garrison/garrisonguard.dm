@@ -17,7 +17,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
-	tutorial = "You are a soldier in the ruler's garrison. Your experience, training, and equipment may vary... but you are the first line of defense against the horrors that encroach on Rockhill."
+	tutorial = "You are a soldier in the ruler's garrison. Your experience, training, and equipment may vary... but you are the first line of defense against the horrors that encroach on Vanderlin."
 	display_order = JDO_GARRISONGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
@@ -25,7 +25,7 @@
 	outfit = /datum/outfit/job/roguetown/guardsman	//Default outfit.
 	advclass_cat_rolls = list(CTAG_GARRISON = 20)	//Handles class selection.
 	give_bank_account = 30
-	min_pq = 0
+	min_pq = 1
 
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
