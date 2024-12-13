@@ -17,16 +17,8 @@
 	throw_range = 1
 	blade_dulling = DULLING_BASHCHOP
 	obj_flags = CAN_BE_HIT
-	var/fill_cooldown = 5 SECONDS
 
-/obj/item/roguebin/weather_act_on(weather_trait, severity)
-	GLOB.weather_act_upon_list |= src
-
-	if(weather_trait != PARTICLEWEATHER_RAIN || !COOLDOWN_FINISHED(src, fill_cooldown))
-		return
-
-	reagents.add_reagent(/datum/reagent/water, severity * 0.5)
-	COOLDOWN_START(src, fill_cooldown, 10 SECONDS)
+	COOLDOWN_DECLARE(fill_cooldown)
 
 /obj/item/roguebin/Initialize()
 	if(!base_state)
