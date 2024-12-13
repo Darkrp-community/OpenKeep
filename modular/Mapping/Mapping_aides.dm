@@ -138,7 +138,7 @@
 	icon_state = "lootarmor"
 	spawned = list(
 		/obj/item/clothing/mask/rogue/facemask/copper = 15,
-		/datum/anvil_recipe/armor/copper/bracers = 15,
+		/obj/item/clothing/wrists/roguetown/bracers/copper = 15,
 		/obj/item/clothing/head/roguetown/helmet/coppercap = 15,
 		/obj/item/clothing/suit/roguetown/armor/cuirass/copperchest = 15,
 		/obj/item/clothing/under/roguetown/chainlegs/iron = 10,
