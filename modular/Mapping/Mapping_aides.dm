@@ -480,6 +480,7 @@
 /obj/structure/spider/cocoon
 	name = "cocoon"
 	desc = ""
+	icon = "icons/effects/effects.dmi"
 	icon_state = "cocoon1"
 	max_integrity = 40
 
