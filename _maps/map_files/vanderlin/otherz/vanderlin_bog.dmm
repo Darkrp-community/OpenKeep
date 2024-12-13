@@ -43,7 +43,7 @@
 /area/rogue/under/town/basement)
 "aN" = (
 /obj/structure/lever{
-	redstone_id = towerprison
+	redstone_id = "towerprison"
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
@@ -305,7 +305,7 @@
 "eK" = (
 /obj/machinery/light/rogue/wallfire/candle/blue/l,
 /obj/structure/winch{
-	redstone_id = southernlichgate
+	redstone_id = "southernlichgate"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/town/basement)
@@ -375,7 +375,7 @@
 "ga" = (
 /mob/living/carbon/human/species/skeleton/npc/no_equipment{
 	real_name = "Drowned";
-	custom_descriptors = Askeletonwhosribcageisfilledwithleeches.
+	custom_descriptors = "A skeleton whose ribcage is filled with leeches."
 	},
 /turf/open/water/swamp/deep,
 /area/rogue/outdoors/bog)
@@ -435,7 +435,7 @@
 /area/rogue/under/town/basement)
 "hx" = (
 /obj/structure/gate{
-	redstone_id = northernlichgate
+	redstone_id = "northernlichgate"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/town/basement)
@@ -672,7 +672,7 @@
 /area/rogue/outdoors/mountains)
 "lK" = (
 /obj/structure/bars/passage{
-	redstone_id = s
+	redstone_id = "s"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/mountains)
@@ -959,7 +959,7 @@
 /area/rogue/outdoors/bog)
 "pO" = (
 /obj/structure/gate/bars{
-	redstone_id = Bopsouth
+	redstone_id = "Bopsouth"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
@@ -1062,7 +1062,7 @@
 /area/rogue/outdoors/bog)
 "rh" = (
 /obj/structure/winch{
-	redstone_id = ss;
+	redstone_id = "ss";
 	name = "Southern Gate"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1107,7 +1107,7 @@
 /area/rogue/indoors/shelter/bog)
 "rW" = (
 /obj/structure/gate{
-	redstone_id = southernlichgate
+	redstone_id = "southernlichgate"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/town/basement)
@@ -1260,7 +1260,7 @@
 /area/rogue/under/town/basement)
 "ul" = (
 /obj/structure/bars/passage{
-	redstone_id = towerprison
+	redstone_id = "towerprison"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/outdoors/exposed/under/basement)
@@ -1315,7 +1315,7 @@
 /area/rogue/outdoors/bog)
 "vF" = (
 /obj/structure/winch{
-	redstone_id = s;
+	redstone_id = "s";
 	name = "Northern Gate"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1512,7 +1512,7 @@
 /area/rogue/outdoors/mountains)
 "yV" = (
 /obj/structure/gate/bars{
-	redstone_id = BogNorth
+	redstone_id = "BogNorth"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
@@ -1793,7 +1793,7 @@
 /area/rogue/outdoors/bog)
 "CO" = (
 /obj/structure/winch{
-	redstone_id = ss;
+	redstone_id = "ss";
 	name = "Southern Gate"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1860,7 +1860,7 @@
 /area/rogue/under/town/basement)
 "DQ" = (
 /obj/structure/winch{
-	redstone_id = s;
+	redstone_id = "s";
 	name = "Northern Gate"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -2847,7 +2847,7 @@
 "SL" = (
 /obj/structure/lever/wall{
 	dir = 8;
-	redstone_id = forestprison
+	redstone_id = "forestprison"
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/mountains)
@@ -2943,7 +2943,7 @@
 /area/rogue/outdoors/bog)
 "Un" = (
 /obj/structure/winch{
-	redstone_id = s
+	redstone_id = "s"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/town/basement)
@@ -3160,7 +3160,7 @@
 /area/rogue/indoors/cave)
 "XW" = (
 /obj/structure/lever{
-	redstone_id = towerprison
+	redstone_id = "towerprison"
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/outdoors/exposed/under/basement)
