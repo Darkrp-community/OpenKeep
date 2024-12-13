@@ -138,7 +138,7 @@
 		move_item_to_assembly(user, item, assembly)
 
 	if(progress_crafting(user, item, assembly))
-		assembly.finished_step(user, src)
+		assembly.finished_step(user, src, item)
 	return TRUE
 
 /// Text replacing for sending visibile messages when the steps are happening.

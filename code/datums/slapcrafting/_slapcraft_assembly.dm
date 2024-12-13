@@ -118,7 +118,7 @@
 	qdel(src)
 
 /// Progresses the assembly to the next step and finishes it if made it through the last step.
-/obj/item/slapcraft_assembly/proc/finished_step(mob/living/user, datum/slapcraft_step/step_datum)
+/obj/item/slapcraft_assembly/proc/finished_step(mob/living/user, datum/slapcraft_step/step_datum, obj/item/last_item)
 	// Mark the step as finished.
 	step_states[step_datum.type] = TRUE
 
@@ -127,7 +127,7 @@
 			to_chat(user, "<span class='warning'>I can't craft here.</span>")
 			step_states[step_datum.type] = FALSE
 			return
-		recipe.finish_recipe(user, src)
+		recipe.finish_recipe(user, src, step_datum.type, last_item)
 
 /// Sets the recipe of this assembly aswell making the name and description matching.
 /obj/item/slapcraft_assembly/proc/set_recipe(datum/slapcraft_recipe/set_recipe)
