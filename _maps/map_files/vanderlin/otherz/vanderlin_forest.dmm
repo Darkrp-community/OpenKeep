@@ -577,7 +577,7 @@
 /area/rogue/outdoors/mountains)
 "Aw" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken{
-	name = "vanderlin forest"
+	name = "chicken"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
