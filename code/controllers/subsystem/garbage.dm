@@ -52,7 +52,7 @@ SUBSYSTEM_DEF(garbage)
 	#endif
 
 	/// Toggle for enabling/disabling hard deletes. Objects that don't explicitly request hard deletion with this disabled will leak.
-	var/enable_hard_deletes = TRUE
+	var/enable_hard_deletes = FALSE
 	var/list/failed_hard_deletes = list()
 
 
@@ -296,7 +296,7 @@ SUBSYSTEM_DEF(garbage)
 /// Datums passed to this will be given a chance to clean up references to allow the GC to collect them.
 /proc/qdel(datum/D, force=FALSE, ...)
 	if(!istype(D))
-		SSgarbage.HardDelete(D, TRUE)
+		del(D)
 		return
 
 	var/datum/qdel_item/I = SSgarbage.items[D.type]
