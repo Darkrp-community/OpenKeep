@@ -530,7 +530,7 @@
 	drop_organs()
 	return ..()
 /obj/item/bodypart/chest
-	name = BODY_ZONE_CHEST
+	name = "chest"
 	desc = ""
 	icon_state = "default_human_chest"
 	max_damage = 200
