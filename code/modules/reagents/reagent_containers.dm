@@ -20,7 +20,7 @@
 	var/short_cooktime = FALSE  // based on cooking skill
 	var/long_cooktime = FALSE  // based on cooking skill
 
-COOLDOWN_DECLARE(fill_cooldown)
+	COOLDOWN_DECLARE(fill_cooldown)
 
 /obj/item/reagent_containers/Initialize(mapload, vol)
 	. = ..()
