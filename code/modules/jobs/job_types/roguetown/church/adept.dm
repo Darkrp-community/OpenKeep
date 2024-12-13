@@ -45,6 +45,7 @@
 	outfit = /datum/outfit/job/roguetown/adept/bzealot
 
 	category_tags = list(CTAG_ADEPT)
+	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adept/bzealot/pre_equip(mob/living/carbon/human/H)
