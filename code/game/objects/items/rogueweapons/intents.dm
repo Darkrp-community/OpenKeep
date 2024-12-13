@@ -55,6 +55,8 @@
 		chargedloop.stop()
 	if(mastermob.curplaying == src)
 		mastermob.curplaying = null
+	mastermob = null
+	masteritem = null
 	return ..()
 
 /datum/intent/proc/examine(mob/user)
