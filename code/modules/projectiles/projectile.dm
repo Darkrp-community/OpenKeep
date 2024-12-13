@@ -103,7 +103,7 @@
 
 	var/woundclass = null
 	var/embedchance = 0
-	var/obj/item/dropped = FALSE
+	var/obj/item/dropped = null
 	var/ammo_type
 
 	var/arcshot = FALSE
