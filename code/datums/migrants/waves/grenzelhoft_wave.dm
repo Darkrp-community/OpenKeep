@@ -1,6 +1,6 @@
 /datum/migrant_role/grenzelhoft/count
 	name = "Grenzelhoft Count"
-	tutorial = "A Count hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside his beloved convoy and spouse."
+	greet_text = "A Count hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside his beloved convoy and spouse."
 	allowed_sexes = list(MALE)
 	allowed_races = list(
         "Humen",
@@ -54,7 +54,7 @@
 
 /datum/migrant_role/grenzelhoft/countess
 	name = "Grenzelhoft Countess"
-	tutorial = "A Countess hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside her beloved convoy and husband."
+	greet_text = "A Countess hailing from the Grenzelhoft Imperiate, here on an official visit to the Isle of the Enigma alongside her beloved convoy and husband."
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
         "Humen",
