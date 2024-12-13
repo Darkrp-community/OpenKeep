@@ -845,7 +845,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "og" = (
 /obj/structure/fluff/customsign{
-	wrotesign = MINES.CLOSEDFORGOBLININFESTATION!!
+	wrotesign = "MINES. CLOSED FOR GOBLIN INFESTATION!!"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
