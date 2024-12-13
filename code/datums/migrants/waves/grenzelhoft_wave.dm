@@ -42,7 +42,7 @@
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
 		var/honorary = "Count"
-        H.real_name = "[honorary] [prev_real_name]"
+		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
@@ -96,7 +96,7 @@
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
 		var/honorary = "Countess"
-        H.real_name = "[honorary] [prev_real_name]"
+		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
