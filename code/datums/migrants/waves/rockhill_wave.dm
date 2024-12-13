@@ -219,7 +219,6 @@
 /datum/migrant_wave/rockhill_wave_down_one
 	name = "The Mayor's visit"
 	shared_wave_type = /datum/migrant_wave/rockhill_wave
-	downgrade_wave = /datum/migrant_wave/rockhill_wave_down
 	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/rockhill/mayor = 1,
