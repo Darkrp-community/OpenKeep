@@ -3,6 +3,7 @@
 	max_integrity = 1500
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "clockcrystal"
+	desc = "The crystal within the comet landed at Malum's Anvil. Gathered and contained by the finest artificers, it now lies here to light the way for travellers and boats alike. Bask in its divinity."
 	var/datum/looping_sound/the_hum
 	var/broken_containment = FALSE
 	anchored = TRUE
@@ -14,7 +15,7 @@
 	the_hum = new /datum/looping_sound/astratanshard_hum(src,FALSE)
 	the_hum.start()
 	. = ..()
-
+	set_light(5, 4, 30, l_color = LIGHT_COLOR_YELLOW)
 
 /obj/structure/astratanshard/deconstruct(disassembled = FALSE)
 	if(!broken_containment)
@@ -70,12 +71,12 @@
 	if(isdead(fool))
 		return
 	if(!visible_message)
-		visible_message = span_danger("[fool] reaches out and touches \The [src], on making contact,[fool.p_they()] turn to dust!")
+		visible_message = span_danger("[fool] reaches out and touches \the [src], on making contact,[fool.p_they()] turn to dust!")
 	if(!mob_message)
-		mob_message = span_userdanger("You reach out and touch \The [src], as the warmth of Astrata fills you, your last thought is \"I regret nothing.\"")
+		mob_message = span_userdanger("You reach out and touch \the [src]. Your body is filled with undescribable pain, your mind unable to even comprehend the divinity you make contact with. Your consciousness fades in a flash... lost to infinite agony.")
 	if(!cause)
 		cause = "contact"
-	fool.visible_message(visible_message,mob_message,span_hear("You hear the sound of Astrata's light fill your body!"))
+	fool.visible_message(visible_message,mob_message,span_hear("You hear a pained, echoing scream."))
 	src.investigate_log("has been attacked ([cause]) by [key_name(fool)]", INVESTIGATE_SUPERMATTER)
 	fool.dust(drop_items = TRUE)
 
