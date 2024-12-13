@@ -68,8 +68,6 @@
 		/datum/body_marking/tonage,
 	)
 
-	custom_clothes = TRUE
-
 /datum/species/elf/snow/check_roundstart_eligible()
 	return TRUE
 
