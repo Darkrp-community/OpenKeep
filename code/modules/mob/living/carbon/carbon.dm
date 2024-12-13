@@ -841,7 +841,7 @@
 			succumb_timer = world.time
 		overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
 		overlay_fullscreen("DD", /atom/movable/screen/fullscreen/crit/death)
-		overlay_fullscreen("DDZ", /atom/movable/screen/fullscreen/crit/zeth)
+		overlay_fullscreen("DDZ", /atom/movable/screen/fullscreen/crit/dying)
 	else
 		if(succumb_timer)
 			succumb_timer = 0
