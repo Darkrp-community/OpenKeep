@@ -161,4 +161,4 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /atom/movable/openspace_backdr
 		P.original = target
 		P.process_hit(target, P.select_target(target))
 		//bump
-		return BULLET_ACT_TURF
+		return BULLET_ACT_FORCE_PIERCE
