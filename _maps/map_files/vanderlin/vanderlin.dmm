@@ -1340,6 +1340,9 @@
 /obj/structure/fluff/walldeco/med5,
 /turf/closed/wall/mineral/rogue/craftstone,
 /area/rogue/indoors/town)
+"bhw" = (
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town)
 "bhT" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/under/town/caverogue)
@@ -9351,6 +9354,10 @@
 /obj/machinery/light/rogue/torchholder,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
+"imR" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/church,
+/area/rogue/indoors/town)
 "imY" = (
 /obj/machinery/light/rogue/wallfire/candle{
 	pixel_x = 32;
@@ -9395,6 +9402,10 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/shop)
+"ioN" = (
+/obj/structure/barricade/rogue/crude,
+/turf/closed/wall/mineral/rogue/wood,
+/area/rogue/indoors/town)
 "ipr" = (
 /obj/structure/fluff/railing/border{
 	dir = 4;
@@ -11826,13 +11837,9 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/tavern)
 "knL" = (
-/obj/effect/landmark/start/feldsher{
-	dir = 1
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
-/area/rogue/indoors/town)
+/obj/structure/closet/crate/roguecloset,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "knY" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /obj/structure/closet/crate/roguecloset/dark,
@@ -12246,6 +12253,12 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/under/town/basement)
+"kKd" = (
+/obj/structure/table/wood/large/corner{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "kKy" = (
 /obj/structure/bookcase/random/archive,
 /obj/machinery/light/rogue/wallfire/candle/l,
@@ -13471,6 +13484,14 @@
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/blocks/newstone/alt,
 /area/rogue/indoors/town/church/inquisition)
+"lPo" = (
+/obj/structure/fluff/signage{
+	dir = 4;
+	desc = "We are sorry for the inconvenience.";
+	name = "CAVE-IN: BOG PASS UNAVIALABLE TEMPORARILY"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "lPq" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -13606,6 +13627,10 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains)
+"lZm" = (
+/obj/structure/barricade/rogue,
+/turf/open/floor/rogue/church,
+/area/rogue/indoors/town)
 "lZy" = (
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 4
@@ -14777,6 +14802,12 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
+"mXs" = (
+/obj/machinery/light/rogue/wallfire{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "mXI" = (
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/cobble/mossy,
@@ -15705,6 +15736,14 @@
 /obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/villagegarrison)
+"nOV" = (
+/obj/structure/fluff/signage{
+	dir = 4;
+	desc = "We are sorry for the inconvenience.";
+	name = "CAVE-IN: MOUNTAIN PASS UNAVAILABLE TEMPORARILY"
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield)
 "nOW" = (
 /obj/structure/table/wood/large/corner_alt,
 /obj/item/dice,
@@ -15991,6 +16030,12 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/manor)
+"oew" = (
+/obj/structure/table/wood/large/corner{
+	dir = 6
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "oeZ" = (
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
@@ -16604,6 +16649,12 @@
 /obj/item/natural/stone,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/town/sewer)
+"oHY" = (
+/obj/structure/table/wood/large/corner{
+	dir = 10
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "oIg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt/cobweb{
@@ -17293,9 +17344,8 @@
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
 "pzf" = (
-/obj/effect/landmark/start/nightman,
-/turf/open/floor/rogue/blocks/stonered,
-/area/rogue/indoors/town/bath)
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/rtfield)
 "pzq" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
@@ -17613,7 +17663,8 @@
 "pNg" = (
 /obj/structure/winch{
 	gid = "keepgate";
-	redstone_id = "keepgate"
+	redstone_id = "keepgate";
+	name = "Keep Interior"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manorgate)
@@ -18062,6 +18113,10 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/shop)
+"qkO" = (
+/obj/structure/bed/rogue,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "qlE" = (
 /obj/structure/bed/rogue/hay,
 /obj/effect/decal/cleanable/dirt/cobweb,
@@ -18304,6 +18359,10 @@
 	},
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
+"qvU" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/rogue/woodturned,
+/area/rogue/indoors/town)
 "qvV" = (
 /obj/structure/fluff/walldeco/church/line,
 /obj/structure/fluff/walldeco/church/line{
@@ -18626,6 +18685,12 @@
 	},
 /turf/open/floor/rogue/grass/yel,
 /area/rogue/outdoors/town)
+"qNH" = (
+/obj/effect/landmark/start/feldsher{
+	dir = 4
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "qOm" = (
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church/chapel)
@@ -19412,6 +19477,12 @@
 /obj/structure/flora/roguegrass/bush_meagre,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)
+"rzu" = (
+/obj/structure/table/wood/large/corner{
+	dir = 9
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "rzC" = (
 /obj/structure/bars,
 /obj/machinery/light/rogue/wallfire/candle,
@@ -20673,6 +20744,12 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
+"sGo" = (
+/obj/structure/chair/wood/rogue/chair3{
+	dir = 4
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "sGS" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf{
 	del_on_deaggro = 0;
@@ -22395,6 +22472,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/garrison)
+"udr" = (
+/obj/structure/table/wood/plain/alt,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "udt" = (
 /obj/effect/decal/cleanable/dirt/cobweb/cobweb2,
 /obj/effect/landmark/start/servant{
@@ -23272,7 +23353,8 @@
 "uOr" = (
 /obj/structure/winch{
 	gid = "keepgateb";
-	redstone_id = "keepgateb"
+	redstone_id = "keepgateb";
+	name = "Keep Exterior"
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manorgate)
@@ -23324,6 +23406,9 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/theatre)
+"uQM" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/under/cavelava)
 "uQX" = (
 /obj/structure/toilet,
 /turf/open/floor/rogue/wood,
@@ -23670,6 +23755,12 @@
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town)
+"vkn" = (
+/obj/structure/table/wood/large/corner{
+	dir = 5
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "vkE" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -24616,6 +24707,12 @@
 /obj/structure/flora/rogueshroom,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cavelava)
+"wau" = (
+/obj/structure/table/wood/large/corner{
+	dir = 4
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/manorgate)
 "waz" = (
 /obj/machinery/light/rogue/wallfire/candle/blue,
 /turf/open/floor/rogue/cobble,
@@ -25938,6 +26035,12 @@
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
+"xcs" = (
+/obj/effect/landmark/start/nightman{
+	dir = 4
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/town)
 "xcv" = (
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/indoors/town/steward)
@@ -127300,7 +127403,7 @@ elp
 whf
 owo
 meN
-pzf
+kbf
 hJF
 kbf
 meN
@@ -130380,9 +130483,9 @@ vgJ
 qiy
 jRR
 dkK
+qNH
 rFo
-rFo
-rFo
+xcs
 rFo
 kGO
 cPU
@@ -143542,7 +143645,7 @@ vtv
 vtv
 sBG
 sEQ
-sEQ
+nOV
 sEQ
 sBG
 vtv
@@ -144311,8 +144414,8 @@ vtv
 vtv
 vtv
 vtv
-sBG
-sEQ
+pzf
+pzf
 sEQ
 sEQ
 sBG
@@ -144568,10 +144671,10 @@ vtv
 vtv
 vtv
 vtv
-sBG
+pzf
+pzf
 sEQ
-sEQ
-sEQ
+pzf
 sBG
 vtv
 vtv
@@ -144826,9 +144929,9 @@ vtv
 vtv
 vtv
 sBG
-sEQ
-sEQ
-sEQ
+pzf
+pzf
+pzf
 sBG
 vtv
 vtv
@@ -145084,9 +145187,9 @@ vtv
 vtv
 byA
 hCq
-hCq
-hCq
-byA
+uQM
+uQM
+uQM
 vtv
 vtv
 vtv
@@ -145343,7 +145446,7 @@ byA
 hCq
 hCq
 hCq
-byA
+uQM
 vtv
 vtv
 vtv
@@ -157402,11 +157505,11 @@ vtv
 vtv
 sjy
 sjy
-byA
-byA
-hCq
-hCq
-byA
+uQM
+uQM
+uQM
+uQM
+uQM
 byA
 vtv
 vtv
@@ -157659,11 +157762,11 @@ vtv
 vtv
 vtv
 vtv
-byA
+uQM
 byA
 rqi
 hCq
-vtv
+bKn
 vtv
 vtv
 vtv
@@ -157916,11 +158019,11 @@ vtv
 vtv
 vtv
 vtv
-vtv
+bKn
 hCq
 hCq
 hCq
-vtv
+bKn
 vtv
 vtv
 vtv
@@ -183196,7 +183299,7 @@ sEQ
 sEQ
 sEQ
 sEQ
-sEQ
+pzf
 vtv
 bKn
 "}
@@ -183453,8 +183556,8 @@ sEQ
 sEQ
 sEQ
 sEQ
-sEQ
-sEQ
+pzf
+pzf
 dsx
 "}
 (99,1,3) = {"
@@ -183708,8 +183811,8 @@ sEQ
 sEQ
 sEQ
 sEQ
-sEQ
-sEQ
+lPo
+pzf
 icy
 sEQ
 dsx
@@ -183967,8 +184070,8 @@ sBG
 sEQ
 sEQ
 sEQ
-sEQ
-sEQ
+pzf
+pzf
 dsx
 "}
 (101,1,3) = {"
@@ -190450,9 +190553,9 @@ acx
 acx
 acx
 cYY
-oJQ
-oJQ
-oJQ
+rzu
+kKd
+oHY
 cYY
 cYY
 cYY
@@ -190707,13 +190810,13 @@ acx
 acx
 acx
 cYY
+vkn
+wau
+oew
 oJQ
 oJQ
-oJQ
-oJQ
-oJQ
-oJQ
-oJQ
+sGo
+sGo
 cYY
 iSk
 iSk
@@ -190964,13 +191067,13 @@ acx
 acx
 acx
 cYY
+mXs
 oJQ
 oJQ
 oJQ
 oJQ
 oJQ
-oJQ
-oJQ
+udr
 cYY
 iSk
 iSk
@@ -191482,9 +191585,9 @@ mPD
 mOm
 mOm
 cYY
+qkO
 oJQ
-oJQ
-oJQ
+qkO
 cYY
 iSk
 iSk
@@ -191739,9 +191842,9 @@ uwj
 uwj
 uwj
 cYY
-oJQ
-oJQ
-oJQ
+knL
+udr
+knL
 cYY
 iSk
 iSk
@@ -193858,7 +193961,7 @@ dZq
 dtq
 rEO
 nUR
-knL
+nUR
 dtq
 aWD
 nDY
@@ -255990,10 +256093,10 @@ fdp
 oVK
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -256247,10 +256350,10 @@ fdp
 oVK
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -256504,10 +256607,10 @@ fdp
 oVK
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -256761,10 +256864,10 @@ fdp
 nSp
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -257018,10 +257121,10 @@ fdp
 oVK
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -257275,10 +257378,10 @@ fdp
 oVK
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -257532,10 +257635,10 @@ fdp
 oVK
 iBK
 iBK
-acx
-acx
-acx
-acx
+iBK
+iBK
+iBK
+iBK
 acx
 acx
 acx
@@ -258574,7 +258677,7 @@ jjT
 jjT
 fdp
 dtq
-iGx
+bhw
 dtq
 iBK
 fdp
@@ -258831,7 +258934,7 @@ dtq
 dtq
 dtq
 dtq
-iGx
+bhw
 dtq
 iBK
 fdp
@@ -259081,14 +259184,14 @@ acx
 acx
 fdp
 dtq
+qvU
+qvU
 iGx
 iGx
 iGx
 iGx
-iGx
-iGx
-iGx
-iGx
+bhw
+qvU
 dtq
 iBK
 fdp
@@ -259338,12 +259441,12 @@ acx
 acx
 fdp
 dtq
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
+qvU
+bhw
+bhw
+bhw
+qvU
+bhw
 iGx
 iGx
 dtq
@@ -259595,13 +259698,13 @@ acx
 acx
 fdp
 dtq
+bhw
+qvU
 iGx
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
+lox
+lox
+qvU
+qvU
 iGx
 dtq
 iBK
@@ -259852,14 +259955,14 @@ acx
 acx
 fdp
 dtq
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
+bhw
+lox
+bhw
+qvU
+qvU
+lox
+bhw
+bhw
 dtq
 iBK
 fdp
@@ -260109,14 +260212,14 @@ acx
 acx
 fdp
 dtq
+bhw
+bhw
+bhw
+bhw
+lox
+bhw
 iGx
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
-iGx
+bhw
 dtq
 iBK
 acx
@@ -260371,9 +260474,9 @@ iGx
 iGx
 iGx
 iGx
-iGx
-iGx
-iGx
+bhw
+qvU
+bhw
 dtq
 iBK
 acx
@@ -260625,12 +260728,12 @@ fdp
 hVd
 dtq
 jkg
+imR
 jkg
-jkg
 iGx
 iGx
-iGx
-iGx
+qvU
+bhw
 dtq
 iBK
 acx
@@ -260884,9 +260987,9 @@ dtq
 jkg
 jkg
 jkg
-iGx
-iGx
-iGx
+bhw
+bhw
+qvU
 iGx
 dtq
 iBK
@@ -261138,13 +261241,13 @@ acx
 acx
 fdp
 dtq
-jkg
-jkg
-jkg
-iGx
-iGx
-iGx
-iGx
+ioN
+ioN
+dtq
+qvU
+bhw
+qvU
+lox
 dtq
 iBK
 acx
@@ -261395,12 +261498,12 @@ acx
 acx
 fdp
 dtq
-jkg
-jkg
-jkg
+lZm
+lZm
+dtq
 iGx
-iGx
-iGx
+bhw
+bhw
 iGx
 dtq
 iBK
@@ -261657,7 +261760,7 @@ jkg
 dtq
 dtq
 iGx
-iGx
+bhw
 iGx
 dtq
 iBK
@@ -261913,9 +262016,9 @@ yeg
 yeg
 fdp
 dtq
-iGx
-iGx
-iGx
+bhw
+bhw
+bhw
 dtq
 iBK
 fdp
@@ -262171,8 +262274,8 @@ acx
 fdp
 dtq
 iGx
-iGx
-iGx
+bhw
+qvU
 dtq
 iBK
 fdp
@@ -262428,8 +262531,8 @@ acx
 fdp
 dtq
 iGx
-iGx
-iGx
+qvU
+qvU
 dtq
 iBK
 fdp
@@ -262685,7 +262788,7 @@ acx
 fdp
 dtq
 iGx
-iGx
+bhw
 iGx
 dtq
 iBK
