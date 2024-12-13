@@ -1952,7 +1952,6 @@
 /area/rogue/outdoors/exposed/under/basement)
 "Fy" = (
 /obj/structure/closet/crate/chest/gold,
-/obj/effect/spawner/roguemap/loot,
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/under/town/basement)
 "FC" = (
