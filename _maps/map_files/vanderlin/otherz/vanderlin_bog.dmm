@@ -2683,7 +2683,7 @@
 /area/rogue/under/town/basement)
 "Qg" = (
 /obj/structure/fluff/customsign{
-	wrotesign = NOTTRAPFRElOOt
+	wrotesign = "NOT TRAP FRE lOOt"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
