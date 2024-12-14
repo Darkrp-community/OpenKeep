@@ -1516,7 +1516,7 @@
 /area/rogue/outdoors/town)
 "bnc" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment19,
+/obj/item/key/apartments/apartment19,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "bno" = (
@@ -1868,7 +1868,7 @@
 /area/rogue/indoors/town)
 "bAj" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment10,
+/obj/item/key/apartments/apartment10,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "bAt" = (
@@ -2983,7 +2983,7 @@
 /area/rogue/indoors/town)
 "cvD" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment20,
+/obj/item/key/apartments/apartment20,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "cvO" = (
@@ -3722,7 +3722,7 @@
 /area/rogue/indoors/town/garrison)
 "deB" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment15,
+/obj/item/key/apartments/apartment15,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "dfi" = (
@@ -4952,7 +4952,7 @@
 /area/rogue/outdoors/town)
 "eig" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment13,
+/obj/item/key/apartments/apartment13,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "eiv" = (
@@ -10922,7 +10922,7 @@
 /area/rogue/indoors/town/manor)
 "jkM" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment24,
+/obj/item/key/apartments/apartment24,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "jlc" = (
@@ -11240,7 +11240,7 @@
 	pixel_x = 32;
 	pixel_y = 0
 	},
-/obj/item/roguekey/apartments/apartment11,
+/obj/item/key/apartments/apartment11,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "jzl" = (
@@ -12856,7 +12856,7 @@
 /area/rogue/outdoors/river)
 "kSN" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment14,
+/obj/item/key/apartments/apartment14,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "kTk" = (
@@ -13050,7 +13050,7 @@
 /area/rogue/indoors/town/tavern)
 "lai" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment1,
+/obj/item/key/apartments/apartment1,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "laY" = (
@@ -17117,7 +17117,7 @@
 /area/rogue/indoors/town)
 "oEK" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/penthouse1,
+/obj/item/key/apartments/penthouse1,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "oFf" = (
@@ -17571,7 +17571,7 @@
 /area/rogue/outdoors/town)
 "pbI" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/penthouse2,
+/obj/item/key/apartments/penthouse2,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "pcq" = (
@@ -18042,7 +18042,7 @@
 /area/rogue/indoors/town)
 "pCj" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment23,
+/obj/item/key/apartments/apartment23,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "pCw" = (
@@ -19773,7 +19773,7 @@
 /area/rogue/under/town/basement)
 "rkb" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment18,
+/obj/item/key/apartments/apartment18,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "rkS" = (
@@ -21718,7 +21718,7 @@
 /area/rogue/indoors/town/cell)
 "sSj" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment17,
+/obj/item/key/apartments/apartment17,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
 "sSs" = (
@@ -21848,7 +21848,7 @@
 /area/rogue/outdoors/woods_safe)
 "sWC" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment22,
+/obj/item/key/apartments/apartment22,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "sWJ" = (
@@ -24709,7 +24709,7 @@
 /area/rogue/indoors/town/garrison)
 "vsJ" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment16,
+/obj/item/key/apartments/apartment16,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
 "vte" = (
@@ -25908,7 +25908,7 @@
 /area/rogue/indoors/town/garrison)
 "wuO" = (
 /obj/structure/closet/crate/roguecloset/inn,
-/obj/item/roguekey/apartments/apartment21,
+/obj/item/key/apartments/apartment21,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "wvt" = (

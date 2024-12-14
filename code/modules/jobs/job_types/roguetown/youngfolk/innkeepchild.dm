@@ -8,7 +8,7 @@
 	spawn_positions = 1
 
 	allowed_races = ALL_PLAYER_RACES_BY_NAME
-	
+
 	allowed_ages = list(AGE_CHILD)
 
 	tutorial = "One nite the Innkeeper took you in durring a harsh winter, you've been thankful ever since."
@@ -38,7 +38,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-	neck = /obj/item/keyring/innkeep
+	neck = /obj/item/storage/keyring/innkeep
 	if(H.gender == MALE)
 		cloak = /obj/item/clothing/cloak/apron/waist
 	else
