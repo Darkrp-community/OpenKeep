@@ -362,6 +362,13 @@
 "oE" = (
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
+"pw" = (
+/obj/structure/stairs/stone{
+	dir = 1;
+	icon_state = "stonestairs"
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains)
 "pz" = (
 /turf/closed/wall/mineral/rogue/tent,
 /area/rogue/outdoors/woods)
@@ -924,6 +931,18 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
+"QN" = (
+/obj/structure/stairs/stone{
+	dir = 8
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains)
+"QP" = (
+/obj/structure/stairs/stone{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains)
 "Rb" = (
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
@@ -1152,6 +1171,10 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
+"XQ" = (
+/obj/structure/stairs/stone,
+/turf/open/floor/rogue/cobble,
+/area/rogue/outdoors/mountains)
 "XX" = (
 /obj/effect/landmark/start/adventurer{
 	dir = 1
@@ -76618,13 +76641,13 @@ UR
 UR
 UR
 UR
-Fb
+XQ
 YK
 YK
 YK
 YK
 YK
-KM
+pw
 UR
 UR
 UR
@@ -76875,13 +76898,13 @@ UR
 UR
 UR
 UR
-Fb
+XQ
 YK
 YK
 YK
 YK
 YK
-KM
+pw
 UR
 UR
 UR
@@ -77132,13 +77155,13 @@ UR
 UR
 UR
 UR
-Fb
+XQ
 YK
 YK
 YK
 YK
 YK
-KM
+pw
 UR
 UR
 UR
@@ -77667,14 +77690,14 @@ UR
 UR
 UR
 UR
-Fb
+XQ
 YK
 YK
 YK
 YK
 YK
 YK
-KM
+pw
 UR
 UR
 UR
@@ -77924,14 +77947,14 @@ UR
 UR
 UR
 UR
-Fb
+XQ
 YK
 YK
 YK
 YK
 YK
 YK
-KM
+pw
 UR
 UR
 UR
@@ -78181,14 +78204,14 @@ UR
 UR
 UR
 UR
-Fb
+XQ
 YK
 YK
 YK
 YK
 YK
 YK
-KM
+pw
 UR
 UR
 UR
@@ -87720,9 +87743,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+QP
+QP
+QP
 UR
 UR
 UR
@@ -89776,9 +89799,9 @@ UR
 UR
 UR
 UR
-UR
-UR
-UR
+QN
+QN
+QN
 UR
 UR
 UR
