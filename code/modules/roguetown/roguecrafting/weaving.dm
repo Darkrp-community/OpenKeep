@@ -182,6 +182,20 @@
 	craftdiff = 4
 	sellprice = 25
 
+/datum/crafting_recipe/roguetown/weaving/nocrobe
+	name = "noc robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/noc)
+	reqs = list(/obj/item/natural/cloth = 4)
+	craftdiff = 4
+	sellprice = 25
+
+/datum/crafting_recipe/roguetown/weaving/nochood
+	name = "moon hood"
+	result = list(/obj/item/clothing/head/roguetown/roguehood/nochood)
+	reqs = list(/obj/item/natural/cloth = 2)
+	craftdiff = 4
+	sellprice = 25
+
 /datum/crafting_recipe/roguetown/weaving/dendorrobe
 	name = "dendor robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/dendor)
