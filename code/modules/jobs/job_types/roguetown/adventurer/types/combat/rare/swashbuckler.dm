@@ -14,7 +14,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
 	maximum_possible_slots = 1
 	min_pq = 0
-	pickprob = 100
+	pickprob = 30
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/swashbuckler
