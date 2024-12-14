@@ -84,8 +84,6 @@
 				user.dropItemToGround(src)
 				user.put_in_hands(S)
 			qdel(src)
-	return
-
 	..()
 
 /obj/item/grown/log/tree/stick
