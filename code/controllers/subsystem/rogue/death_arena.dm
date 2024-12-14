@@ -44,6 +44,8 @@ SUBSYSTEM_DEF(death_arena)
 	start_fight()
 
 /datum/controller/subsystem/death_arena/proc/add_fighter(mob/living/fighter,time_of_death = 0)
+	if(!fighter.client)
+		return
 	waiting_fighters += fighter
 	tollless_clients[fighter.client.key] = (world.time + 8 MINUTES) - (time_of_death == 0 ? 0 : (world.time - time_of_death))
 	RegisterSignal(fighter, COMSIG_PARENT_QDELETING, PROC_REF(remove_fighter), fighter)
@@ -53,6 +55,10 @@ SUBSYSTEM_DEF(death_arena)
 
 /datum/controller/subsystem/death_arena/proc/start_fight()
 	fighting = TRUE
+	for(var/mob/living/carbon/spirit/spirit in waiting_fighters)
+		if(!spirit?.client)
+			remove_fighter(spirit)
+			continue
 
 	var/mob/living/carbon/spirit/first = pick(waiting_fighters)
 	remove_fighter(first)
@@ -123,7 +129,6 @@ SUBSYSTEM_DEF(death_arena)
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
 		carbon.returntolobby()
-		qdel(carbon)
 	fight_force_end = null
 	fighting = FALSE
 
