@@ -105,7 +105,7 @@
 	export_price = 40
 	importexport_amt = 1
 
-/obj/structure/closet/crate/chest/crate/steward/crafingtools/PopulateContents()
+/obj/structure/closet/crate/chest/crate/steward/craftingtools/PopulateContents()
 	new /obj/item/rogueweapon/handsaw (src)
 	new /obj/item/rogueweapon/chisel(src)
 
