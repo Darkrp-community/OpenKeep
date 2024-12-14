@@ -141,7 +141,7 @@
 	icon = 'icons/roguetown/items/crafting.dmi'
 	icon_state = "stoneblock"
 	gripped_intents = null
-	dropshrink = 0.75
+//	dropshrink = 0.9
 	possible_item_intents = list(INTENT_GENERIC)
 	force = 12
 	throwforce = 20 //brick is valid weapon

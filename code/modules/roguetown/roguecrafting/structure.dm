@@ -484,6 +484,16 @@
 	craftsound = null
 	craftdiff = 2
 
+/datum/crafting_recipe/roguetown/structure/smelter_block
+	name = "ore furnace"
+	result = /obj/machinery/light/rogue/smelter
+	reqs = list(/obj/item/natural/stoneblock = 4,
+			/obj/item/rogueore/coal = 1)
+	verbage = "build"
+	verbage_tp = "builds"
+	craftsound = null
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/structure/forge
 	name = "forge"
 	result = /obj/machinery/light/rogue/forge

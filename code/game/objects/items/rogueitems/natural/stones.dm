@@ -33,6 +33,13 @@
 			var/turf/front = get_step(user,user.dir)
 			S.set_up(1, 1, front)
 			S.start()
+	if(istype(W, /obj/item/rogueweapon/chisel))
+		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
+		user.visible_message("<span class='info'>[user] chisels the stone into a block.</span>")
+		if(do_after(user, 3 SECONDS))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			qdel(src)
+		return
 	else
 		..()
 
@@ -109,6 +116,15 @@
 			var/turf/front = get_turf(src)
 			S.set_up(1, 1, front)
 			S.start()
+		return
+	if(istype(W, /obj/item/rogueweapon/chisel))
+		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
+		user.visible_message("<span class='info'>[user] chisels the rock into blocks.</span>")
+		if(do_after(user, 9 SECONDS))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			qdel(src)
 		return
 	..()
 
