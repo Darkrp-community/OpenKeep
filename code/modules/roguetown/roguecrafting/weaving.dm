@@ -69,6 +69,14 @@
 	craftdiff = 2
 	sellprice = 19
 
+/datum/crafting_recipe/roguetown/weaving/bathrobe
+	name = "bathrobe"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/bath)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fur = 1)
+	craftdiff = 2
+	sellprice = 10
+
 /datum/crafting_recipe/roguetown/weaving/mundies
 	name = "masculine smallclothes"
 	result = list(/obj/item/undies)
@@ -80,6 +88,7 @@
 	result = list(/obj/item/undies/f)
 	craftdiff = 2
 	sellprice = 20
+
 
 /*========= SKILL LEVEL: 3 REQUIRED ==========*/
 
