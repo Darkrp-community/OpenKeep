@@ -1010,3 +1010,4 @@
 	fueluse = -1
 	pixel_x = -16
 	climb_offset = 4
+

@@ -171,7 +171,7 @@
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked/wiener
-	cooked_smell = /datum/pollutant/food/sausage
+	cooked_smell = /datum/pollutant/food/wiener
 	become_rot_type = /obj/item/reagent_containers/food/snacks/rotten/sausage
 
 
