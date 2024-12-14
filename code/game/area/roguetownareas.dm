@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/outdoors/rtfield/hamlet/unsafe	// just so there isnt unusable ambush spots placed in safe areas causing annoying screenshake but no effect
 
 /area/rogue/outdoors/rtfield/plague_district
-	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/ambush = 50, /mob/living/simple_animal/hostile/rogue/skeleton = 50)
+	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/skilled/madman = 50, /mob/living/simple_animal/hostile/rogue/skeleton = 50)
 	first_time_text = "PLAGUE DISTRICT"
 	color = "#d4da75"
 	name = "plague district"
@@ -323,7 +323,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/skilled = 20,
 				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 5,
-				/mob/living/carbon/human/species/skeleton/skilled/figter = 5)
+				/mob/living/carbon/human/species/skeleton/skilled/fighter = 5)
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/outdoors/caves
@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/dirt)
 	ambush_mobs = list(
 				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 5,
-				/mob/living/carbon/human/species/skeleton/skilled/figter = 5,
+				/mob/living/carbon/human/species/skeleton/skilled/fighter = 5,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/goblin/skilled = 20)
 	converted_type = /area/rogue/outdoors/caves

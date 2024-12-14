@@ -2380,7 +2380,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "cte" = (
 /obj/structure/roguemachine/balloon_pad,
-/turf/open/floor/rogue/tile,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/town/roofs)
 "ctX" = (
 /turf/closed/mineral/rogue/bedrock,
@@ -5066,6 +5066,9 @@
 /obj/machinery/light/rogue/firebowl/standing,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
+"eZv" = (
+/turf/open/transparent/openspace,
+/area/rogue/indoors/shelter/town/roofs)
 "eZz" = (
 /obj/machinery/light/rogue/campfire,
 /turf/open/floor/rogue/dirt/road,
@@ -10632,7 +10635,7 @@
 "kBA" = (
 /obj/structure/roguemachine/balloon_pad,
 /obj/item/reagent_containers/food/snacks/crow,
-/turf/open/floor/rogue/tile,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/town/roofs)
 "kBD" = (
 /obj/effect/spawner/roguemap/tree,
@@ -18013,7 +18016,7 @@
 "rKy" = (
 /obj/item/roguemachine/merchant,
 /obj/structure/roguemachine/balloon_pad,
-/turf/open/floor/rogue/tile,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/town/roofs)
 "rKK" = (
 /obj/structure/rogue/trophy/deer,
@@ -24202,7 +24205,7 @@
 	dir = 1;
 	icon_state = "crow"
 	},
-/turf/open/floor/rogue/tile,
+/turf/open/floor/rogue/tile/kitchen,
 /area/rogue/outdoors/town/roofs)
 "xRs" = (
 /obj/structure/chair/stool/rogue,
@@ -138916,7 +138919,7 @@ hZX
 hZX
 hZX
 eQe
-hZX
+eZv
 eQe
 hZX
 hZX
