@@ -101,11 +101,11 @@
 /datum/roguestock/import/craftingtools
 	name = "Crafting tools"
 	desc = "For making stone blocks and planks."
-	item_type = /obj/structure/closet/crate/chest/crate/steward/craftingtools
+	item_type = /obj/structure/closet/crate/chest/crate/steward/tools
 	export_price = 40
 	importexport_amt = 1
 
-/obj/structure/closet/crate/chest/crate/steward/craftingtools/PopulateContents()
+/obj/structure/closet/crate/chest/crate/steward/tools/PopulateContents()
 	new /obj/item/rogueweapon/handsaw (src)
 	new /obj/item/rogueweapon/chisel(src)
 
