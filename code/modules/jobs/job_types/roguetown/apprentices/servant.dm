@@ -47,7 +47,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/uncolored
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		neck = /obj/item/roguekey/manor
+		neck = /obj/item/key/manor
 		if(H.gender == MALE)
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 		else
