@@ -256,6 +256,66 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/plankaxe
+	name = "crude wooden plank"
+	result = list(/obj/item/natural/plank)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	tools = list(/obj/item/rogueweapon/axe)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "cut"
+	verbage_tp = "cuts"
+
+/datum/crafting_recipe/roguetown/plank
+	name = "wooden plank"
+	result = list(/obj/item/natural/plank,/obj/item/natural/plank)
+	reqs = list(/obj/item/grown/log/tree/small = 1)
+	tools = list(/obj/item/rogueweapon/handsaw)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "saw"
+	verbage_tp = "saws"
+
+/datum/crafting_recipe/roguetown/plankshort
+	name = "short wooden plank"
+	result = list(/obj/item/natural/plankshort, /obj/item/natural/plankshort)
+	reqs = list(/obj/item/natural/plank = 1)
+	tools = list(/obj/item/rogueweapon/handsaw)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+	verbage = "saw"
+	verbage_tp = "saws"
+
+/datum/crafting_recipe/roguetown/stoneblock
+	name = "stone block"
+	result = list(/obj/item/natural/stoneblock, /obj/item/natural/stoneblock)
+	reqs = list(/obj/item/natural/stone = 1)
+	tools = list(/obj/item/rogueweapon/chisel)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+	verbage = "chisel"
+	verbage_tp = "chisels"
+
+/datum/crafting_recipe/roguetown/stoneblocprimitive
+	name = "crude stone block"
+	result = list(/obj/item/natural/stoneblock)
+	reqs = list(/obj/item/natural/stone = 1)
+	tools = list(/obj/item/natural/stone)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+	verbage = "bash"
+	verbage_tp = "bashes"
+
+/datum/crafting_recipe/roguetown/stonesaw
+	name = "crude saw"
+	result = /obj/item/rogueweapon/handsaw/crude
+	reqs = list(/obj/item/natural/stone = 2, /obj/item/alch/bone = 1)
+	tools = /obj/item/rogueweapon/knife
+	craftdiff = 1
+	verbage = "hew"
+	verbage_tp = "hews"
+	craftdiff = 1
+
 /*========= MISCELLANY ==========*/
 
 /datum/crafting_recipe/roguetown/pestle
@@ -265,7 +325,6 @@
 	tools = list(/obj/item/rogueweapon/knife/hunting)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
-	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/mortar
 	name = "stone mortar"
