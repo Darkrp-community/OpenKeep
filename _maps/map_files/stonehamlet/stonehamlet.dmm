@@ -2156,6 +2156,7 @@
 /area/rogue/outdoors/town/roofs)
 "ceT" = (
 /obj/machinery/light/rogue/wallfire/candle/weak/r,
+/obj/structure/fluff/railing/border,
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/tavern/saiga)
 "cfh" = (
@@ -5723,11 +5724,9 @@
 /obj/item/cooking/platter{
 	pixel_y = -5
 	},
-/obj/structure/fluff/railing/border{
-	dir = 1;
-	icon_state = "border"
-	},
 /obj/effect/decal/turfedge_neu/alt,
+/obj/item/reagent_containers/glass/bowl,
+/obj/item/reagent_containers/glass/bowl,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/tavern/saiga)
 "fFz" = (
@@ -6116,7 +6115,7 @@
 /obj/effect/landmark/start/cook{
 	dir = 8
 	},
-/turf/open/floor/rogue/twig,
+/turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/town/tavern/saiga)
 "gbg" = (
 /obj/structure/table/wood/reinf_long{
@@ -6576,9 +6575,6 @@
 /area/rogue/outdoors/town/roofs)
 "gAM" = (
 /obj/item/grown/log/tree/small,
-/obj/machinery/light/rogue/torchholder/c{
-	pixel_x = -32
-	},
 /turf/open/floor/rogue/cobblerock/alt,
 /area/rogue/indoors/town)
 "gAT" = (
@@ -6759,10 +6755,11 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/magician)
 "gHu" = (
-/obj/structure/closet/crate/roguecloset/crafted,
-/obj/item/rogueweapon/pick,
-/obj/item/rogueweapon/pick,
-/obj/item/rogueweapon/shovel,
+/obj/structure/table/wood/plain_alt,
+/obj/item/rogueweapon/shovel{
+	pixel_x = 1;
+	pixel_y = 1
+	},
 /obj/item/rogueweapon/shovel,
 /turf/open/floor/rogue/cobblerock/alt,
 /area/rogue/indoors/town)
@@ -9438,6 +9435,16 @@
 	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/soilsons)
+"jwy" = (
+/obj/structure/table/wood/plain_alt,
+/obj/item/rogueweapon/pick{
+	pixel_y = 3
+	},
+/obj/item/rogueweapon/pick{
+	pixel_y = 5
+	},
+/turf/open/floor/rogue/cobblerock/alt,
+/area/rogue/indoors/town)
 "jwS" = (
 /obj/structure/roguewindow/openclose{
 	dir = 1;
@@ -11674,6 +11681,7 @@
 /area/rogue/indoors/town/tavern/saiga)
 "lIP" = (
 /obj/structure/table/wood/plain_alt,
+/obj/item/rogueweapon/handsaw,
 /turf/open/floor/rogue/cobblerock/alt,
 /area/rogue/indoors)
 "lJh" = (
@@ -11998,6 +12006,9 @@
 /obj/item/cooking/pan{
 	pixel_x = -1;
 	pixel_y = 5
+	},
+/obj/effect/decal/turfedge_neu/alt{
+	dir = 4
 	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/tavern/saiga)
@@ -13180,6 +13191,9 @@
 /area/rogue/outdoors/exposed/manorgarri)
 "nlv" = (
 /obj/item/rogueore/coal,
+/obj/machinery/light/rogue/torchholder/c{
+	pixel_y = -32
+	},
 /turf/open/floor/rogue/cobblerock/alt,
 /area/rogue/indoors/town)
 "nlJ" = (
@@ -13880,7 +13894,12 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/manorgarri)
 "nVy" = (
-/obj/structure/fermenting_barrel/random/water,
+/obj/structure/fermenting_barrel/random/water{
+	pixel_x = -5
+	},
+/obj/effect/decal/turfedge_neu/alt{
+	dir = 5
+	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/tavern/saiga)
 "nVH" = (
@@ -15139,7 +15158,7 @@
 	dir = 4;
 	icon_state = "border"
 	},
-/turf/open/floor/rogue/twig,
+/turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/town/tavern/saiga)
 "oYu" = (
 /obj/structure/table/vtable,
@@ -16992,6 +17011,26 @@
 "qNk" = (
 /turf/open/water/swamp,
 /area/rogue/under/catacombs/dwarfoutpost)
+"qNs" = (
+/obj/item/rogueweapon/chisel{
+	pixel_x = -5;
+	pixel_y = -1
+	},
+/obj/item/rogueweapon/chisel{
+	pixel_x = -11;
+	pixel_y = 1
+	},
+/obj/item/rogueweapon/handsaw{
+	pixel_x = 4;
+	pixel_y = 4
+	},
+/obj/structure/table/wood/plain_alt,
+/obj/item/rogueweapon/handsaw{
+	pixel_x = 4;
+	pixel_y = 2
+	},
+/turf/open/floor/rogue/cobblerock/alt,
+/area/rogue/indoors/town)
 "qNw" = (
 /obj/structure/table/wood{
 	dir = 10;
@@ -18439,6 +18478,9 @@
 "smq" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 5
+	},
+/obj/effect/decal/turfedge_neu/alt{
+	dir = 4
 	},
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town/tavern/saiga)
@@ -23397,10 +23439,14 @@
 /area/rogue/under/town/sewer)
 "xgl" = (
 /obj/structure/fluff/railing/border{
-	dir = 5;
+	dir = 4;
 	icon_state = "border"
 	},
-/turf/open/floor/rogue/twig,
+/obj/structure/fluff/railing/border{
+	dir = 5;
+	pixel_y = -21
+	},
+/turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/town/tavern/saiga)
 "xgA" = (
 /obj/structure/table/wood/plain,
@@ -23752,6 +23798,12 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/mountains)
+"xwl" = (
+/obj/effect/decal/turfedge_neu/alt{
+	dir = 6
+	},
+/turf/open/floor/rogue/wood/nosmooth/saiga,
+/area/rogue/indoors/town/tavern/saiga)
 "xwo" = (
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/rooftop{
@@ -58223,7 +58275,7 @@ tFN
 rpx
 xUr
 pgK
-pgK
+jwy
 boQ
 boQ
 pgK
@@ -58611,7 +58663,7 @@ iId
 iId
 pgK
 vfR
-iId
+qNs
 iId
 nlv
 pgK
@@ -64225,7 +64277,7 @@ fcR
 nVy
 smq
 lYm
-fcR
+xwl
 fmG
 fGl
 cvO
@@ -64416,9 +64468,9 @@ rSm
 sAY
 sAY
 vIo
-gdc
-gdc
-gdc
+tos
+tos
+tos
 gas
 nAt
 fGl
@@ -64611,9 +64663,9 @@ oII
 xKP
 gbU
 oXM
-oXM
 xgl
-gdc
+tos
+tos
 xIU
 fGl
 xkE
@@ -71067,9 +71119,9 @@ fyl
 fyl
 fyl
 fyl
-fyl
-fyl
-fyl
+sjL
+sjL
+sjL
 fyl
 mzw
 sLW
@@ -71242,12 +71294,12 @@ iIw
 bWG
 iIw
 iIw
-fyl
-fyl
-iIw
-fyl
-fyl
-mDZ
+sjL
+sjL
+cAL
+sjL
+sjL
+peo
 fyl
 fyl
 fyl
@@ -71258,12 +71310,12 @@ fyl
 oHv
 fyl
 fyl
-fyl
-fyl
-fyl
-fyl
-fyl
-fyl
+sjL
+sjL
+sjL
+sjL
+sjL
+sjL
 sXf
 mzw
 sfJ
@@ -71435,13 +71487,13 @@ iIw
 iIw
 bWG
 bWG
-iIw
-ozI
-fyl
-iIw
-iIw
-fyl
-fyl
+cAL
+jWD
+sjL
+cAL
+cAL
+sjL
+sjL
 oHv
 fyl
 fyl
@@ -71452,12 +71504,12 @@ fyl
 fyl
 fyl
 fyl
-fyl
-fyl
-oHv
-fyl
-fyl
-fyl
+sjL
+sjL
+fbt
+sjL
+sjL
+sjL
 rog
 sfJ
 sfJ
@@ -71629,29 +71681,29 @@ iIw
 bWG
 bWG
 iIw
-iIw
-oHv
-fyl
-iIw
-iIw
-fyl
-fyl
+cAL
+fbt
+sjL
+cAL
+cAL
+sjL
+sjL
 fyl
 fyl
 fyl
 aLP
 fyl
 fyl
-iIw
-fyl
-fyl
-mDZ
-mDZ
-fyl
-iIw
-iIw
-oHv
-oHv
+cAL
+sjL
+sjL
+peo
+peo
+sjL
+cAL
+cAL
+fbt
+fbt
 rog
 sfJ
 sfJ
@@ -71823,8 +71875,8 @@ iIw
 bWG
 bWG
 iIw
-fyl
-fyl
+sjL
+sjL
 jWD
 cAL
 cAL
@@ -71838,11 +71890,11 @@ sjL
 cAL
 cAL
 sjL
-fyl
-mDZ
-osA
-mDZ
-iIw
+sjL
+peo
+iTP
+peo
+cAL
 sfJ
 sfJ
 rog
@@ -72017,8 +72069,8 @@ iIw
 bWG
 bWG
 iIw
-oHv
-fyl
+fbt
+sjL
 fbt
 cAL
 cAL
@@ -72032,11 +72084,11 @@ cAL
 cAL
 iEh
 sjL
-fyl
-fyl
-fyl
-iIw
-iIw
+sjL
+sjL
+sjL
+cAL
+cAL
 sfJ
 sfJ
 rog
@@ -72211,8 +72263,8 @@ sfJ
 bWG
 bWG
 iIw
-oHv
-fyl
+fbt
+sjL
 sjL
 cAL
 cAL
@@ -72405,8 +72457,8 @@ sfJ
 foR
 bWG
 iIw
-iIw
-iIw
+cAL
+cAL
 sjL
 sjL
 sjL
@@ -72599,8 +72651,8 @@ sfJ
 sfJ
 foR
 foR
-iIw
-iIw
+cAL
+cAL
 cAL
 sjL
 fbt
