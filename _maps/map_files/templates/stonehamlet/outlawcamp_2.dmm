@@ -136,6 +136,10 @@
 /obj/item/natural/hide,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/rtfield)
+"MS" = (
+/obj/effect/sunlight,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/rtfield/outlaw)
 "NB" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/grass,
@@ -302,7 +306,7 @@ kb
 WU
 yW
 yW
-Am
+MS
 sM
 wv
 zg
@@ -396,7 +400,7 @@ wv
 wv
 Am
 Am
-Am
+MS
 Am
 wv
 Am

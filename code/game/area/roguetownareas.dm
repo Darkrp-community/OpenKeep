@@ -158,7 +158,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/cobblerock)
 
 /area/rogue/outdoors/rtfield/outlaw
-	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/outlaw = 50)
+	ambush_mobs = list(/mob/living/carbon/human/species/human/northern/bum/skilled/outlaw = 50)
 	name = "outlaw hideout"
 	color = "#e9baa3"
 	first_time_text = null
