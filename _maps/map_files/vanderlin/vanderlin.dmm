@@ -1520,7 +1520,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "bno" = (
-/obj/structure/gate/preopen{
+/obj/structure/gate/bars/preopen{
 	gid = "keepgate";
 	redstone_id = "keepgate"
 	},
@@ -13914,7 +13914,7 @@
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/manor)
 "lOm" = (
-/obj/structure/gate/preopen{
+/obj/structure/gate/bars/preopen{
 	gid = "keepgateb";
 	redstone_id = "keepgateb"
 	},
