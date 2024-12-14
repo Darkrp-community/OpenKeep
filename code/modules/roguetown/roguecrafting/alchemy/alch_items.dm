@@ -7,7 +7,7 @@
 	possible_transfer_amounts = list(9)
 	volume = 27
 	fill_icon_thresholds = list(0, 33, 66, 100)
-	dropshrink = 0.5
+	dropshrink = 0.8
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	obj_flags = CAN_BE_HIT
 	spillable = FALSE
