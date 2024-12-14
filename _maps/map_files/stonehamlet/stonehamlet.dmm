@@ -15104,6 +15104,9 @@
 /area/rogue/under/town/basement)
 "oXi" = (
 /obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/captain{
+	dir = 1
+	},
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/garrison)
 "oXq" = (

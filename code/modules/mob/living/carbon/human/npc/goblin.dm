@@ -408,7 +408,7 @@
 		to_chat(user, "<span class='danger'>Too many Gobs.</span>")
 		return
 	gobs++
-	var/mob/living/carbon/human/species/goblin/npc/N = new (get_turf(src))
+	var/mob/living/carbon/human/species/goblin/skilled/N = new (get_turf(src))
 	N.key = user.key
 	qdel(user)
 
@@ -426,9 +426,9 @@
 			else
 				moon_goblins = 2
 	if(moon_goblins == 1)
-		new /mob/living/carbon/human/species/goblin/npc/moon(get_turf(src))
+		new /mob/living/carbon/human/species/goblin/skilled/moon(get_turf(src))
 	else
-		new /mob/living/carbon/human/species/goblin/npc(get_turf(src))
+		new /mob/living/carbon/human/species/goblin/skilled(get_turf(src))
 	gobs++
 	update_icon()
 	if(living_player_count() < 10)
