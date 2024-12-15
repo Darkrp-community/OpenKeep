@@ -467,7 +467,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 
 	SSticker.mode.make_antag_chance(humanc)
 	rank = humanc.mind.assigned_role
-	
+
 	testing("basedtest 2")
 	//creates the human and transfers vars and mind
 	testing("basedtest 3")
@@ -564,7 +564,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	var/column_counter = 0
 
 	var/list/omegalist = list()
-	omegalist += list(GLOB.court_positions)
+	omegalist += list(GLOB.noble_positions)
 	omegalist += list(GLOB.church_positions)
 	omegalist += list(GLOB.towner_positions)
 	omegalist += list(GLOB.garrison_positions)
@@ -638,7 +638,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 				var/datum/job/job_datum = SSjob.name_occupations[job]
 				if(job_datum)
 					var/command_bold = ""
-					if(job in GLOB.court_positions)
+					if(job in GLOB.noble_positions)
 						command_bold = " command"
 					var/used_name = job_datum.title
 					if(client.prefs.gender == FEMALE && job_datum.f_title)

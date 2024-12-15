@@ -192,7 +192,7 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 
 /proc/get_job_assignment_order()
 	var/list/sorting_order = list()
-	sorting_order += GLOB.court_positions
+	sorting_order += GLOB.noble_positions
 	sorting_order += GLOB.church_positions
 	sorting_order += GLOB.towner_positions
 	sorting_order += GLOB.garrison_positions

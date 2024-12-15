@@ -44,11 +44,9 @@
 /datum/antagonist/prebel/can_be_owned(datum/mind/new_owner)
 	. = ..()
 	if(.)
-		if(new_owner.assigned_role in GLOB.court_positions)
+		if(new_owner.assigned_role in GLOB.noble_positions)
 			return FALSE
 		if(new_owner.assigned_role in GLOB.garrison_positions)
-			return FALSE
-		if(new_owner.assigned_role in GLOB.no_antag_positions)
 			return FALSE
 		if(new_owner.unconvertable)
 			return FALSE
@@ -112,7 +110,7 @@
 		return FALSE
 	if(!can_be_owned(candidate.mind))
 		return FALSE
-	if(candidate.mind.assigned_role in GLOB.court_positions)
+	if(candidate.mind.assigned_role in GLOB.noble_positions)
 		return FALSE
 	if(candidate.mind.assigned_role in GLOB.garrison_positions)
 		return FALSE

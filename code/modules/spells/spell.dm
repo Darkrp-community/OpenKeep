@@ -456,12 +456,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 
 /obj/effect/proc_holder/spell/proc/cast(list/targets,mob/user = usr)
-	var/mob/living/carbon/human/H = usr // The caster
-	var/datum/devotion/cleric_holder/D = H.cleric // The caster that is a cleric
-	var/boon = H.mind?.get_learning_boon(associated_skill)
-	var/amt2raise = H.STAINT*2
-	var/miracle_refund = H.mind?.get_skill_level(associated_skill) / 10
-	H.mind?.adjust_experience(associated_skill, floor(amt2raise * boon), FALSE) // Now you get to level your magic, little by little
 	if(miracle)
 		var/mob/living/carbon/human/C = user
 		var/datum/devotion/cleric_holder/D = C.cleric

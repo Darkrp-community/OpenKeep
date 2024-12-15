@@ -301,60 +301,6 @@
 		looty += /obj/item/natural/thorn
 	looty += /obj/item/natural/fibers
 
-// fyrituis bush
-/obj/structure/flora/roguegrass/pyroclasticflowers
-	name = "odd group of flowers"
-	desc = "A cluster of dangerously combustible flowers."
-	icon_state = "pyroflower1"
-	layer = ABOVE_ALL_MOB_LAYER
-	max_integrity = 1
-	climbable = FALSE
-	dir = SOUTH
-	debris = list(/obj/item/natural/fibers = 1)
-	var/list/looty2 = list()
-	var/bushtype2
-	var/res_replenish2
-
-/obj/structure/flora/roguegrass/pyroclasticflowers/Initialize()
-	if(prob(88))
-		bushtype2 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/fyritius = 1))
-	loot_replenish2()
-	pixel_x += rand(-3,3)
-	return ..()
-
-/obj/structure/flora/roguegrass/pyroclasticflowers/proc/loot_replenish2()
-	if(bushtype2)
-		looty2 += bushtype2
-	if(prob(66))
-		looty2 += /obj/item/reagent_containers/food/snacks/produce/fyritius
-
-// swarmpweed bush
-/obj/structure/flora/roguegrass/swampweed
-	name = "bunch of swampweed"
-	desc = "a green root good for smoking."
-	icon_state = "swampweed1"
-	layer = ABOVE_ALL_MOB_LAYER
-	max_integrity = 1
-	climbable = FALSE
-	dir = SOUTH
-	debris = list(/obj/item/natural/fibers = 1)
-	var/list/looty3 = list()
-	var/bushtype3
-	var/res_replenish3
-
-/obj/structure/flora/roguegrass/swampweed/Initialize()
-	if(prob(88))
-		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1))
-	loot_replenish3()
-	pixel_x += rand(-3,3)
-	return ..()
-
-/obj/structure/flora/roguegrass/swampweed/proc/loot_replenish3()
-	if(bushtype3)
-		looty3 += bushtype3
-	if(prob(66))
-		looty3 += /obj/item/reagent_containers/food/snacks/grown/rogue/swampweed
-
 // bush crossing
 /obj/structure/flora/roguegrass/bush/Crossed(atom/movable/AM)
 	..()

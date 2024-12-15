@@ -131,7 +131,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			addomen("nolord")
 		return FALSE
 	else
-		return TRUE */
+		return TRUE
 
 /datum/game_mode/chaosmode/pre_setup()
 	if(allmig || roguefight)
@@ -262,7 +262,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 					break
 				if(!(bandaids in allantags)) // We don't want to double dip... I guess? Two birds one stone tho, A already bandit check would check pre_bandits
 					continue
-				if(bandaids.assigned_role in GLOB.court_positions) // Job cat string stoppers
+				if(bandaids.assigned_role in GLOB.noble_positions) // Job cat string stoppers
 					continue
 				if(bandaids.assigned_role in GLOB.church_positions) // Many of these guys vanishing would suck
 					continue
@@ -299,7 +299,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.garrison_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.court_positions)
+				if(rebelguy.assigned_role in GLOB.noble_positions)
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.apprentices_positions)
 					blockme = TRUE
@@ -456,7 +456,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 		var/blockme = FALSE
 		if(!(werewolf in allantags))
 			blockme = TRUE
-		if(werewolf.assigned_role in GLOB.court_positions)
+		if(werewolf.assigned_role in GLOB.noble_positions)
 			blockme = TRUE
 		if(werewolf.assigned_role in GLOB.apprentices_positions)
 			blockme = TRUE

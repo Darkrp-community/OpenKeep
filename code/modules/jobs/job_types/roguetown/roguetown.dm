@@ -4,7 +4,7 @@
 /datum/job/roguetown/New()
 	. = ..()
 	if(give_bank_account)
-		for(var/X in GLOB.court_positions)
+		for(var/X in GLOB.noble_positions)
 			peopleiknow += X
 			peopleknowme += X
 		for(var/X in GLOB.church_positions)

@@ -297,7 +297,7 @@ SUBSYSTEM_DEF(ticker)
 	else
 		var/list/stuffy = list("Set Merchant to 'high' in your class preferences to start the game!", "PLAY Merchant NOW!", "A Merchant is required to start.", "Pray for a Merchant.", "One day, there will be a Merchant.", "Just try playing Merchant.", "If you don't play Merchant, the game will never start.", "We need at least one Merchant to start the game.", "We're waiting for you to pick Merchant to start.", "Still no Merchant is readied..", "I'm going to lose my mind if we don't get a Merchant readied up.","No. The game will not start because there is no Merchant.","What's the point of ROGUETOWN without a Merchant?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
-		return FALSE */
+		return FALSE
 
 /*
 #ifdef DEPLOY_TEST

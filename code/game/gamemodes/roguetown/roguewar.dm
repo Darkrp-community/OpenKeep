@@ -210,7 +210,7 @@
 							break
 					if(rebelguy.assigned_role in GLOB.garrison_positions)
 						found = FALSE
-					if(rebelguy.assigned_role in GLOB.court_positions)
+					if(rebelguy.assigned_role in GLOB.noble_positions)
 						found = FALSE
 					if(rebelguy.assigned_role in GLOB.apprentices_positions)
 						found = FALSE
