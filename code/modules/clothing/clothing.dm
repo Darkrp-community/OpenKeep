@@ -222,7 +222,7 @@
 	tastes = list("dust" = 1, "lint" = 1)
 	foodtype = CLOTH
 
-/obj/item/clothing/attack(mob/M, mob/user, def_zone)
+/obj/item/clothing/attack(mob/living/M, mob/living/user, def_zone)
 	if(user.used_intent.type != INTENT_HARM && ismoth(M))
 		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
 		clothing_as_food.name = name
