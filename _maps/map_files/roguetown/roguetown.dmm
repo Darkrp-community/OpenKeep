@@ -2068,7 +2068,7 @@
 /area/rogue/outdoors/rtfield)
 "ciy" = (
 /obj/effect/spawner/roguemap/hauntz_random,
-/turf/open/floor/rogue/cobblerock/alt,
+/turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/outdoors/rtfield)
 "cjm" = (
 /obj/machinery/light/rogue/firebowl/standing/blue,
@@ -7443,7 +7443,7 @@
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 1
 	},
-/turf/open/floor/rogue/cobblerock/alt,
+/turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/outdoors/rtfield)
 "hVW" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8292,7 +8292,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
 "iXu" = (
-/turf/open/floor/rogue/cobblerock/alt,
+/turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/outdoors/rtfield)
 "iXx" = (
 /obj/effect/decal/turfedge_neu{

@@ -932,8 +932,7 @@
 						/turf/open/floor/rogue/snow/rough)
 
 /turf/open/floor/rogue/cobblerock/cardinal_smooth(adjacencies)
-	if(icon_state == "cobblerock")
-		roguesmooth(adjacencies)
+	roguesmooth(adjacencies)
 
 /obj/effect/decal/turfedge_neu
 	name = ""
@@ -1055,12 +1054,19 @@
 	. = ..()
 	icon_state = "cobblestonealt[rand(1,3)]"
 
-/turf/open/floor/rogue/cobblerock/alt
+/turf/open/floor/rogue/cobblerock_alt
 	icon_state = "cobblealt1"
 	canSmoothWith = list(/turf/open/floor/rogue/cobblerock)
 	smooth = SMOOTH_FALSE
 	smooth_diag = FALSE
-/turf/open/floor/rogue/cobblerock/alt/Initialize()
+	footstep = FOOTSTEP_STONE
+	barefootstep = FOOTSTEP_HARD_BAREFOOT
+	clawfootstep = FOOTSTEP_HARD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/stoneland.wav'
+	neighborlay = "cobblerock"
+
+/turf/open/floor/rogue/cobblerock_alt/Initialize()
 	. = ..()
 	icon_state = "cobblealt[rand(1,3)]"
 

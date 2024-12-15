@@ -92,7 +92,7 @@
 		if("death")
 			return pick('sound/vo/mobs/troll/death.ogg')
 		if("idle")
-			return
+			return pick('sound/vo/mobs/troll/idle1.ogg','sound/vo/mobs/troll/idle2.ogg')
 		if("cidle")
 			return pick('sound/vo/mobs/troll/cidle1.ogg','sound/vo/mobs/troll/aggro2.ogg')
 
