@@ -13584,7 +13584,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/mountains)
 "nDW" = (
-/obj/machinery/light/rogue/campfire,
+/obj/machinery/light/rogue/campfire{
+	light_outer_range = 5
+	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/hamlet)
 "nEL" = (
