@@ -15,11 +15,6 @@
 
 /mob/living/silicon/robot/set_suicide(suicide_state)
 	. = ..()
-	if(mmi)
-		if(mmi.brain)
-			mmi.brain.suicided = suicide_state
-		if(mmi.brainmob)
-			mmi.brainmob.suiciding = suicide_state
 
 /mob/living/carbon/human/verb/suicide()
 	set hidden = 1
@@ -186,7 +181,7 @@
 	if(confirm == "Yes")
 		var/turf/T = get_turf(src.loc)
 		T.visible_message("<span class='notice'>[src] flashes a message across its screen, \"Wiping core files. Please acquire a new personality to continue using pAI device functions.\"</span>", null, \
-		 "<span class='notice'>[src] bleeps electronically.</span>")
+		"<span class='notice'>[src] bleeps electronically.</span>")
 
 		suicide_log()
 

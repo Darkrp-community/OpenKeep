@@ -1,3 +1,9 @@
+	/*==============*
+	*				*
+	*	Tiefling	*
+	*				*
+	*===============*/
+
 /mob/living/carbon/human/species/tieberian
 	race = /datum/species/tieberian
 
@@ -27,7 +33,7 @@
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -47,7 +53,7 @@
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
 	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
-	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 2, "fortune" = -1)
+	specstats_f = list("strength" = 0, "perception" = 3, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -81,7 +87,7 @@
 	UnregisterSignal(C, COMSIG_MOB_SAY)
 	C.remove_language(/datum/language/hellspeak)
 
-/datum/species/tieberian/handle_speech(datum/source, mob/speech_args)
+/datum/species/tieberian/handle_speech(datum/source, list/speech_args)
 	. = ..()
 	var/message = speech_args[SPEECH_MESSAGE]
 	if(message)

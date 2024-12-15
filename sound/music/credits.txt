@@ -11,3 +11,22 @@ combat_guard.ogg: Deus Ex - Desolation Combat
 combat_guard2.ogg: Deus Ex - NYC Streets Combat
 combat_physician.ogg: Pathologic (Classic) - Utroba Aggression
 combat_bum.ogg: Pathologic (Classic) - Most Combat Theme
+
+combat_dwarf.ogg: Filip Lackovic - Drums of the Horde
+title.ogg: Kings Field IV - Dark Reality
+roundend.ogg: Fear & Hunger 2: Termina - Dark Outside Extended
+accord (8).ogg: Tchaikovsky - Dance of the Sugar Plum Fairy. Cover by Amy Turk
+lute (8).ogg: Oblivion - Harvest Dawn. Cover by Daniel Estrem
+drum (5).ogg: Middle East Loop - Malfulf 90 bpm. Kettem BEAT
+guitar (15).ogg: Fear & Hunger - Prelude to Darkness Guitar Part Only
+flute (8).ogg: Elden Ring - Scribe Flute Song
+manor2.ogg: Fear & Hunger 2: Termina - Midnight Hour
+night.ogg: Vampire The Masquerade: Bloodlines - Hollywood
+crazycombat.ogg: Vampire The Masquerade: Bloodlines - Disturbed And Twisted Combat
+spice2.ogg: The Appolo Stars - Power Of The Source
+combat_rg.ogg: USAF Band - Cyrus The Great
+combat_noble.ogg: Aram Khachaturian - Masquerade Suite - Waltz
+churchnight.ogg: Fear & Hunger 2: Termina - Cathedral Whispers
+combat_bandit3.ogg: Manhunt - White Trash
+combat_assassin2.ogg: Fear & Hunger 2: Termina - Monologue With The Moon
+PIG.ogg: Manhunt - Deliverance

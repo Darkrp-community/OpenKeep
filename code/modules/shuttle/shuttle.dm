@@ -484,7 +484,7 @@
 		var/turf/T = t
 		for(var/mob/living/M in T.GetAllContents())
 			// If they have a mind and they're not in the brig, they escaped
-			if(M.mind && !istype(t, /turf/open/floor/plasteel/shuttle/red) && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
+			if(M.mind && !istype(t, /turf/open/floor/plasteel) && !istype(t, /turf/open/floor/mineral/plastitanium/red/brig))
 				M.mind.force_escaped = TRUE
 			// Ghostize them and put them in nullspace stasis (for stat & possession checks)
 			M.notransform = TRUE
@@ -520,10 +520,6 @@
 		ripple_turfs += T1
 
 	return ripple_turfs
-
-/obj/docking_port/mobile/proc/check_poddoors()
-	for(var/obj/machinery/door/poddoor/shuttledock/pod in GLOB.airlocks)
-		pod.check()
 
 /obj/docking_port/mobile/proc/dock_id(id)
 	var/port = SSshuttle.getDock(id)
@@ -648,7 +644,7 @@
 /obj/docking_port/mobile/proc/timeLeft(divisor)
 	//rtstuff
 	return max(0, timer - world.time)
-	if(divisor <= 0)
+/* 	if(divisor <= 0)
 		divisor = 10
 
 	var/ds_remaining
@@ -657,7 +653,7 @@
 	else
 		ds_remaining = max(0, timer - world.time)
 
-	. = round(ds_remaining / divisor, 1)
+	. = round(ds_remaining / divisor, 1) */
 
 // returns 3-letter mode string, used by status screens and mob status panel
 /obj/docking_port/mobile/proc/getModeStr()
@@ -690,10 +686,10 @@
 //	if(timeleft > 1 HOURS)
 //		return "--:--"
 //	else if(timeleft > 0)
-	if(timeleft > 0)
+/* 	if(timeleft > 0)
 		return "[add_zero(num2text((timeleft / 60) % 60),2)]:[add_zero(num2text(timeleft % 60), 2)]"
 	else
-		return "00:00"
+		return "00:00" */
 
 
 /obj/docking_port/mobile/proc/getStatusText()

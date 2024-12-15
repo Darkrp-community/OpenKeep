@@ -223,7 +223,7 @@
 	duration = -1
 	alert_type = null
 
-datum/status_effect/rebreathing/tick()
+/datum/status_effect/rebreathing/tick()
 	owner.adjustOxyLoss(-6, 0) //Just a bit more than normal breathing.
 
 ///////////////////////////////////////////////////////
@@ -505,7 +505,7 @@ datum/status_effect/rebreathing/tick()
 	ADD_TRAIT(owner, TRAIT_NOSLIPWATER, "slimestatus")
 	return ..()
 
-datum/status_effect/stabilized/blue/on_remove()
+/datum/status_effect/stabilized/blue/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_NOSLIPWATER, "slimestatus")
 
 /datum/status_effect/stabilized/metal
@@ -528,29 +528,6 @@ datum/status_effect/stabilized/blue/on_remove()
 			var/obj/item/stack/sheet/S = pick(sheets)
 			S.amount++
 			to_chat(owner, "<span class='notice'>[linked_extract] adds a layer of slime to [S], which metamorphosizes into another sheet of material!</span>")
-	return ..()
-
-
-/datum/status_effect/stabilized/yellow
-	id = "stabilizedyellow"
-	colour = "yellow"
-	var/cooldown = 10
-	var/max_cooldown = 10
-	examine_text = "<span class='warning'>Nearby electronics seem just a little more charged wherever SUBJECTPRONOUN goes.</span>"
-
-/datum/status_effect/stabilized/yellow/tick()
-	if(cooldown > 0)
-		cooldown--
-		return ..()
-	cooldown = max_cooldown
-	var/list/batteries = list()
-	for(var/obj/item/stock_parts/cell/C in owner.GetAllContents())
-		if(C.charge < C.maxcharge)
-			batteries += C
-	if(batteries.len)
-		var/obj/item/stock_parts/cell/ToCharge = pick(batteries)
-		ToCharge.charge += min(ToCharge.maxcharge - ToCharge.charge, ToCharge.maxcharge/10) //10% of the cell, or to maximum.
-		to_chat(owner, "<span class='notice'>[linked_extract] discharges some energy into a device you have.</span>")
 	return ..()
 
 /obj/item/hothands
@@ -577,7 +554,7 @@ datum/status_effect/stabilized/blue/on_remove()
 	if(istype(F))
 		if(F.cooked_type)
 			to_chat(owner, "<span class='warning'>[linked_extract] flares up brightly, and my hands alone are enough cook [F]!</span>")
-			var/obj/item/result = F.microwave_act()
+			var/obj/item/result = F.heating_act()
 			if(istype(result))
 				owner.put_in_hands(result)
 	else

@@ -151,6 +151,7 @@
 /datum/component/storage/proc/update_actions()
 	QDEL_NULL(modeswitch_action)
 	return
+/*
 	if(!isitem(parent) || !allow_quick_gather)
 		return
 	var/obj/item/I = parent
@@ -161,6 +162,7 @@
 		if(!istype(M))
 			return
 		modeswitch_action.Grant(M)
+*/
 
 /datum/component/storage/proc/change_master(datum/component/storage/concrete/new_master)
 	if(new_master == src || (!isnull(new_master) && !istype(new_master)))
@@ -317,15 +319,15 @@
 
 	if(istype(T, /turf/closed)) // Is there an impassible turf in the way? Don't dump the sack out on that
 		to_chat(user, "<span class='warning'>Something in the way.</span>")
-		return		
+		return
 
 	for(var/obj/item/I in things) // If the above aren't true, dump the sack onto the tile in front of us
 		things -= I
 //		if(I.loc != real_location)
 //			continue
 		remove_from_storage(I, T)
-		I.pixel_x = initial(I.pixel_x) += rand(-10,10)
-		I.pixel_y = initial(I.pixel_y) += rand(-10,10)
+		I.pixel_x = initial(I.pixel_x) + rand(-10,10)
+		I.pixel_y = initial(I.pixel_y) + rand(-10,10)
 //		if(trigger_on_found && I.on_found())
 //			return FALSE
 
@@ -337,8 +339,8 @@
 			testing("debugbag5 [I]")
 			continue
 		remove_from_storage(I, target)
-		I.pixel_x = initial(I.pixel_x) += rand(-10,10)
-		I.pixel_y = initial(I.pixel_y) += rand(-10,10)
+		I.pixel_x = initial(I.pixel_x) + rand(-10,10)
+		I.pixel_y = initial(I.pixel_y) + rand(-10,10)
 		if(trigger_on_found && I.on_found())
 			testing("debugbag6 [I]")
 			return FALSE
@@ -554,8 +556,6 @@
 		if(labeler.mode)
 			return FALSE
 //	. = TRUE //no afterattack
-	if(iscyborg(M))
-		return
 	if(!can_be_inserted(I, FALSE, M))
 		var/atom/real_location = real_location()
 		if(real_location.contents.len >= max_items) //don't use items on the backpack if they don't fit

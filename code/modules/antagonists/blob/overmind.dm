@@ -107,7 +107,6 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	else if(!victory_in_progress && (blobs_legit.len >= blobwincount))
 		victory_in_progress = TRUE
 		priority_announce("Biohazard has reached critical mass. Station loss is imminent.", "Biohazard Alert")
-		set_security_level("delta")
 		max_blob_points = INFINITY
 		blob_points = INFINITY
 		addtimer(CALLBACK(src, PROC_REF(victory)), 450)
@@ -127,7 +126,7 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 		if(!T || !is_station_level(T.z))
 			continue
 
-		if(L in GLOB.overminds || (L.pass_flags & PASSBLOB))
+		if((L in GLOB.overminds) || (L.pass_flags & PASSBLOB))
 			continue
 
 		var/area/Ablob = get_area(T)

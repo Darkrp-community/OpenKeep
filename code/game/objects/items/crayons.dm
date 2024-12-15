@@ -222,7 +222,7 @@
 				. = TRUE
 		if("select_stencil")
 			var/stencil = params["item"]
-			if(stencil in all_drawables + randoms)
+			if(stencil in (all_drawables + randoms))
 				drawtype = stencil
 				. = TRUE
 				text_buffer = ""
@@ -314,7 +314,7 @@
 		temp = "symbol"
 	else if(drawing in drawings)
 		temp = "drawing"
-	else if(drawing in graffiti|oriented)
+	else if((drawing in graffiti) || (drawing in oriented))
 		temp = "graffiti"
 
 
@@ -698,30 +698,6 @@
 		var/mutable_appearance/spray_overlay = mutable_appearance('icons/obj/crayons.dmi', "[is_capped ? "spraycan_cap_colors" : "spraycan_colors"]")
 		spray_overlay.color = paint_color
 		add_overlay(spray_overlay)
-
-/obj/item/toy/crayon/spraycan/borg
-	name = "cyborg spraycan"
-	desc = ""
-	charges = -1
-
-/obj/item/toy/crayon/spraycan/borg/afterattack(atom/target,mob/user,proximity, params)
-	var/diff = ..()
-	if(!iscyborg(user))
-		to_chat(user, "<span class='notice'>How did you get this?</span>")
-		qdel(src)
-		return FALSE
-
-	var/mob/living/silicon/robot/borgy = user
-
-	if(!diff)
-		return
-	// 25 is our cost per unit of paint, making it cost 25 energy per
-	// normal tag, 50 per window, and 250 per attack
-	var/cost = diff * 25
-	// Cyborgs shouldn't be able to use modules without a cell. But if they do
-	// it's free.
-	if(borgy.cell)
-		borgy.cell.use(cost)
 
 /obj/item/toy/crayon/spraycan/hellcan
 	name = "hellcan"

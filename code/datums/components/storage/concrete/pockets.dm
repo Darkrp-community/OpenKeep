@@ -26,7 +26,7 @@
 	. = ..()
 	var/static/list/exception_cache = typecacheof(list(
 		/obj/item/katana, /obj/item/toy/katana, /obj/item/nullrod/claymore/katana,
-		/obj/item/energy_katana, /obj/item/gun/ballistic/automatic/tommygun
+		/obj/item/gun/ballistic/automatic/tommygun
 		))
 	exception_hold = exception_cache
 
@@ -87,7 +87,9 @@
 
 /datum/component/storage/concrete/pockets/helmet/Initialize()
 	. = ..()
-	set_holdable(list(/obj/item/reagent_containers/food/drinks/bottle/vodka,
-					  /obj/item/reagent_containers/food/drinks/bottle/molotov,
-					  /obj/item/reagent_containers/food/drinks/drinkingglass,
-					  /obj/item/ammo_box/a762))
+	set_holdable(list(
+		/obj/item/reagent_containers/food/drinks/bottle/vodka,
+		/obj/item/reagent_containers/food/drinks/bottle/molotov,
+		/obj/item/reagent_containers/food/drinks/drinkingglass,
+		/obj/item/ammo_box/a762)
+	)

@@ -32,13 +32,6 @@
 
 	name = "brain"
 
-	if(C.mind && C.mind.has_antag_datum(/datum/antagonist/changeling) && !no_id_transfer)	//congrats, you're trapped in a body you don't control
-		if(brainmob && !(C.stat == DEAD || (HAS_TRAIT(C, TRAIT_DEATHCOMA))))
-			to_chat(brainmob, "<span class= danger>I can't feel my body! I'm still just a brain!</span>")
-		forceMove(C)
-		C.update_hair()
-		return
-
 	if(brainmob)
 //		if(C.key)
 //			testing("UHM BASED?? [C]")
@@ -128,8 +121,8 @@
 	if(brainmob) //if we aren't trying to heal the brain, pass the attack onto the brainmob.
 		O.attack(brainmob, user) //Oh noooeeeee
 
-  if(O.force != 0 && !(O.item_flags & NOBLUDGEON))
-	  setOrganDamage(maxHealth) //fails the brain as the brain was attacked, they're pretty fragile.
+	if(O.force != 0 && !(O.item_flags & NOBLUDGEON))
+		setOrganDamage(maxHealth) //fails the brain as the brain was attacked, they're pretty fragile.
 
 /obj/item/organ/brain/examine(mob/user)
 	. = ..()

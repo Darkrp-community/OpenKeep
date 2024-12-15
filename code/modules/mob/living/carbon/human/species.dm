@@ -236,7 +236,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					if(id in X.specuse)
 						if(X.roundstart)
 							spec_undies += X
-			return spec_undies
 		if(FEMALE)
 			for(var/O in GLOB.underwear_f)
 				X = GLOB.underwear_list[O]
@@ -244,7 +243,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					if(id in X.specuse)
 						if(X.roundstart)
 							spec_undies += X
-			return spec_undies
+	return spec_undies
 
 /datum/species/proc/random_underwear(gender)
 	var/list/spec_undies = get_spec_undies_list(gender)
@@ -265,14 +264,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(X)
 					if(id in X.specuse)
 						spec_hair += X
-			return spec_hair
 		if(FEMALE)
 			for(var/O in GLOB.hairstyles_female_list)
 				X = GLOB.hairstyles_list[O]
 				if(X)
 					if(id in X.specuse)
 						spec_hair += X
-			return spec_hair
+	return spec_hair
 
 /datum/species/proc/random_hairstyle(gender)
 	var/list/spec_hair = get_spec_hair_list(gender)
@@ -299,14 +297,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(X)
 					if(id in X.specuse)
 						spec_hair += X
-			return spec_hair
 		if(FEMALE)
 			for(var/O in GLOB.facial_hairstyles_female_list)
 				X = GLOB.facial_hairstyles_list[O]
 				if(X)
 					if(id in X.specuse)
 						spec_hair += X
-			return spec_hair
+	return spec_hair
 
 /datum/species/proc/random_facial_hairstyle(gender)
 	var/list/spec_hair = get_spec_facial_list(gender)
@@ -477,9 +474,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(should_have_stomach && !stomach)
 		if(mutantstomach)
 			stomach = new mutantstomach()
-			guts = new mutantguts()
 		else
 			stomach = new()
+		if(mutantguts)
+			guts = new mutantguts()
+		else
 			guts = new()
 		stomach.Insert(C)
 		guts.Insert(C)
@@ -1536,8 +1535,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(!disable_warning)
 					to_chat(H, "<span class='warning'>The [I.name] is too big to attach!</span>") //should be src?
 				return FALSE
-			if( istype(I, /obj/item/pda) || istype(I, /obj/item/pen) || is_type_in_list(I, H.wear_armor.allowed) )
-				return TRUE
 			return FALSE
 		if(SLOT_HANDCUFFED)
 			if(H.handcuffed)
@@ -1815,6 +1812,12 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				user.visible_message("<span class='warning'>[user] stole [target]'s [I.name]!</span>",
 								"<span class='notice'>I stole [target]'s [I.name]!</span>", null, null, target)
 				to_chat(target, "<span class='danger'>[user] stole my [I.name]!</span>")*/
+		var/def_zone = check_zone(user.zone_selected)
+		var/obj/item/bodypart/affecting = target.get_bodypart(def_zone)
+		if(length(affecting?.embedded_objects))
+			for(var/obj/item/embedded in affecting.embedded_objects)
+				target.grabbedby(user, 1, item_override = embedded)
+				return TRUE
 		target.grabbedby(user)
 		return TRUE
 
@@ -2343,7 +2346,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 		switch(hit_area)
 			if(BODY_ZONE_HEAD)
-				if(!I.get_sharpness() && armor_block < 50)
+//				if(!I.get_sharpness() && armor_block < 50)
 //					if(prob(I.force))
 //						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, 20)
 //						if(H.stat == CONSCIOUS)
@@ -2354,11 +2357,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //							H.gain_trauma(/datum/brain_trauma/mild/concussion)
 //					else
 //						H.adjustOrganLoss(ORGAN_SLOT_BRAIN, I.force * 0.2)
-
-					if(H.mind && H.stat == CONSCIOUS && H != user && prob(I.force + ((100 - H.health) * 0.5))) // rev deconversion through blunt trauma.
-						var/datum/antagonist/rev/rev = H.mind.has_antag_datum(/datum/antagonist/rev)
-						if(rev)
-							rev.remove_revolutionary(FALSE, user)
 
 				if(bloody)	//Apply blood
 					if(H.wear_mask)
@@ -2510,8 +2508,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/handle_environment(datum/gas_mixture/environment, mob/living/carbon/human/H)
 	if(!environment)
-		return
-	if(istype(H.loc, /obj/machinery/atmospherics/components/unary/cryo_cell))
 		return
 
 	var/loc_temp = H.get_temperature(environment)
@@ -2875,8 +2871,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/skill_modifier = 10
 	if(istype(starting_turf) && !QDELETED(starting_turf))
 		distance = get_dist(starting_turf, src)
-	if(mind)
-		skill_modifier = mind.get_skill_level(/datum/skill/misc/athletics)
+	skill_modifier *= mind?.get_skill_level(/datum/skill/misc/athletics)
 	var/modifier = -distance
 	if(!prob(STASPD * 5 + skill_modifier * 10 + modifier * 10))
 		Knockdown(8)

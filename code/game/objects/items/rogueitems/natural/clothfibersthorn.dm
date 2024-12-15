@@ -20,6 +20,9 @@
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
 	if(move_after(user, 5 SECONDS, target = src))
 		var/fibercount = 0
+		var/obj/item/natural/fibers/W = user.get_active_held_item()
+		if(istype(W))
+			fibercount++
 		for(var/obj/item/natural/fibers/F in get_turf(src))
 			fibercount++
 		while(fibercount > 0)
@@ -33,6 +36,8 @@
 				fibercount -= clamp(fibercount, 2, 6)
 		for(var/obj/item/natural/fibers/F in get_turf(src))
 			qdel(F)
+		if(istype(W))
+			qdel(W)
 
 /obj/item/natural/silk
 	name = "silk"
@@ -56,6 +61,9 @@
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
 	if(move_after(user, 5 SECONDS, target = src))
 		var/silkcount = 0
+		var/obj/item/natural/silk/W = user.get_active_held_item()
+		if(istype(W))
+			silkcount++
 		for(var/obj/item/natural/silk/F in get_turf(src))
 			silkcount++
 		while(silkcount > 0)
@@ -69,6 +77,8 @@
 				silkcount -= clamp(silkcount, 2, 6)
 		for(var/obj/item/natural/silk/F in get_turf(src))
 			qdel(F)
+		if(istype(W))
+			qdel(W)
 
 #ifdef TESTSERVER
 
@@ -112,7 +122,7 @@
 /obj/item/natural/cloth/examine(mob/user)
 	. = ..()
 	if(wet)
-		. += "<span class='notice'>It's wet!</span>"
+		. += span_notice("It's wet!")
 
 /obj/item/natural/cloth/bandit
 	color = "#ff0000"
@@ -122,7 +132,7 @@
 /obj/item/natural/cloth/attack_obj(obj/O, mob/living/user)
 	testing("attackobj")
 	if(user.client && ((O in user.client.screen) && !user.is_holding(O)))
-		to_chat(user, "<span class='warning'>I need to take that [O.name] off before cleaning it!</span>")
+		to_chat(user, span_warning("I need to take that [O.name] off before cleaning it!"))
 		return
 	if(istype(O, /obj/effect/decal/cleanable))
 		var/cleanme = TRUE
@@ -132,14 +142,14 @@
 			add_blood_DNA(O.return_blood_DNA())
 		if(prob(40 + (wet*10)) && cleanme)
 			wet = max(wet-0.50, 0)
-			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message(span_info("[user] wipes \the [O.name] with [src]."), span_info("I wipe \the [O.name] with [src]."))
 			qdel(O)
 		else
-			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message(span_warning("[user] wipes \the [O.name] with [src]."), span_warning("I wipe \the [O.name] with [src]."))
 		playsound(user, "clothwipe", 100, TRUE)
 	else
 		if(prob(40 + (wet*10)))
-			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message(span_info("[user] wipes \the [O.name] with [src]."), span_info("I wipe \the [O.name] with [src]."))
 
 			if(O.return_blood_DNA())
 				add_blood_DNA(O.return_blood_DNA())
@@ -150,21 +160,17 @@
 			else
 				SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRONG)
 			wet = max(wet-0.50, 0)
-		else
-			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
 		playsound(user, "clothwipe", 100, TRUE)
 
 /obj/item/natural/cloth/attack_turf(turf/T, mob/living/user)
 	if(istype(T, /turf/open/water))
 		return ..()
 	if(prob(40 + (wet*10)))
-		user.visible_message("<span class='notice'>[user] wipes \the [T.name] with [src].</span>", "<span class='notice'>I wipe \the [T.name] with [src].</span>")
+		user.visible_message(span_notice("[user] wipes \the [T.name] with [src]."), span_notice("I wipe \the [T.name] with [src]."))
 		if(wet)
 			for(var/obj/effect/decal/cleanable/C in T)
 				qdel(C)
 			wet = max(wet-0.50, 0)
-	else
-		user.visible_message("<span class='warning'>[user] wipes \the [T.name] with [src].</span>", "<span class='warning'>I wipe \the [T.name] with [src].</span>")
 	playsound(user, "clothwipe", 100, TRUE)
 
 
@@ -236,6 +242,8 @@
 		if(prob(prob2break))
 			playsound(src,'sound/items/seedextract.ogg', 100, FALSE)
 			qdel(src)
+			if (L.alpha == 0 && L.rogue_sneaking) // not anymore you're not
+				L.update_sneak_invis(TRUE)
 			L.consider_ambush()
 
 /obj/item/natural/bundle/fibers
@@ -360,6 +368,9 @@
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
 	if(move_after(user, 5 SECONDS, target = src))
 		var/wormcount = 0
+		var/obj/item/natural/worms/W = user.get_active_held_item()
+		if(istype(W))
+			wormcount++
 		for(var/obj/item/natural/worms/F in get_turf(src))
 			wormcount++
 		while(wormcount > 0)
@@ -373,3 +384,5 @@
 				wormcount -= clamp(wormcount, 2, 12)
 		for(var/obj/item/natural/worms/F in get_turf(src))
 			qdel(F)
+		if(istype(W))
+			qdel(W)

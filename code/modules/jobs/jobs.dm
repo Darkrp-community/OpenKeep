@@ -53,7 +53,6 @@ GLOBAL_LIST_INIT(security_positions, list(
 	"Detective",
 	"Security Officer"))
 
-
 GLOBAL_LIST_INIT(nonhuman_positions, list(
 	"AI",
 	"Cyborg",
@@ -64,15 +63,18 @@ GLOBAL_LIST_INIT(noble_positions, list(
 	"Lady",
 	"Hand",
 	"Prince",
-	"Captain",
 	"Steward",
 	"Court Magician",
 	"Archivist",
-	"Merchant",
-	"Feldsher"
+	"Butler",
+	"Jester",
+	"Warden of the Terrorbog",
+	"Huntmaster of the Murderwoods",
+	"Hetman of Mount Decapitation",
 	))
 
 GLOBAL_LIST_INIT(garrison_positions, list(
+	"Captain",
 	"Garrison Guard",
 	"Royal Guard",
 	"Veteran",
@@ -84,16 +86,22 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 GLOBAL_LIST_INIT(church_positions, list(
 	"Priest",
 	"Acolyte",
+	"Gravekeeper",
 	"Inquisitor",
-	"Confessor",
 	"Templar",
-	"Adept"
+	"Adept",
+	"Confessor",
 	))
 
-GLOBAL_LIST_INIT(serf_positions, list(
-	"Innkeep",
+GLOBAL_LIST_INIT(towner_positions, list(
+	"Merchant",
+	"Stevedore",
+	"Blacksmith",
 	"Armorer",
 	"Weaponsmith",
+	"Mason",
+	"Feldsher",
+	"Innkeep",
 	"Tailor",
 	"Alchemist",
 	"Mason",
@@ -102,23 +110,15 @@ GLOBAL_LIST_INIT(serf_positions, list(
 
 GLOBAL_LIST_INIT(peasant_positions, list(
 	"Soilson",
-	"Stevedore",
 	"Butcher",
 	"Cook",
 	"Gravedigger",
-	"Jester",
 	"Miner",
 	"Hunter",
 	"Fisher",
-	"Lumberjack",
-	"Butler",
-	"Adventurer",
 	"Towner",
-	"Pilgrim",
-	"Mercenary",
 	"Niteman",
 	"Nitemaiden",
-	"Docker",
 	"Prisoner",
 	"Beggar",
 	"Adventurer",
@@ -163,8 +163,10 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
+	"Mercenary",
 	"Adventurer",
-	"Pilgrim"
+	"Pilgrim",
+	"Drifter"
 	))
 
 GLOBAL_LIST_INIT(roguewar_positions, list(
@@ -191,9 +193,9 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 /proc/get_job_assignment_order()
 	var/list/sorting_order = list()
 	sorting_order += GLOB.noble_positions
-	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.church_positions
-	sorting_order += GLOB.serf_positions
+	sorting_order += GLOB.towner_positions
+	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.allmig_positions
@@ -227,7 +229,7 @@ GLOBAL_PROTECT(exp_specialmap)
 
 //this is necessary because antags happen before job datums are handed out, but NOT before they come into existence
 //so I can't simply use job datum.department_head straight from the mind datum, laaaaame.
-/proc/get_department_heads(var/job_title)
+/proc/get_department_heads(job_title)
 	if(!job_title)
 		return list()
 

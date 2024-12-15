@@ -21,6 +21,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	fillsounds = list('sound/items/fillcup.ogg')
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
+	var/fancy		// for bottles with custom descriptors that you don't want to change when bottle manipulated
 
 /obj/item/reagent_containers/glass/bottle/rogue
 	volume = 70
@@ -75,14 +76,16 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	if(closed)
 		reagent_flags = TRANSPARENT
 		reagents.flags = reagent_flags
-		desc = "A bottle with a cork."
 		spillable = FALSE
+		if(!fancy)
+			desc = "A bottle with a cork."
 	else
 		reagent_flags = OPENCONTAINER
 		reagents.flags = reagent_flags
 		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
-		desc = "An open bottle, hopefully a cork is close by."
 		spillable = TRUE
+		if(!fancy)
+			desc = "An open bottle, hopefully a cork is close by."
 	update_icon()
 
 /obj/item/reagent_containers/glass/bottle/Initialize()
@@ -102,11 +105,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	name = "toxin bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin = 30)
-
-/obj/item/reagent_containers/glass/bottle/cyanide
-	name = "cyanide bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/toxin/cyanide = 30)
 
 /obj/item/reagent_containers/glass/bottle/spewium
 	name = "spewium bottle"
@@ -341,11 +339,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = "Buds from exotic flowers, distilled and left to settle for a decade. This is the result. The unpleasant effects on the drinker are best countered with alcohol the label says."
 	spawned_disease = /datum/disease/anxiety
 
-/obj/item/reagent_containers/glass/bottle/beesease
-	name = "Beesease culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/beesease
-
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"
 	desc = ""
@@ -516,6 +509,30 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	fillsounds = list('sound/items/fillcup.ogg')
 	poursounds = list('sound/items/fillbottle.ogg')
 	experimental_onhip = TRUE
+
+/obj/item/reagent_containers/glass/bottle/vial/update_icon(dont_fill=FALSE)
+	if(!fill_icon_thresholds || dont_fill)
+		return
+
+	cut_overlays()
+	underlays.Cut()
+
+	if(reagents.total_volume)
+		var/fill_name = fill_icon_state? fill_icon_state : icon_state
+		var/mutable_appearance/filling = mutable_appearance('icons/obj/reagentfillings.dmi', "[fill_name][fill_icon_thresholds[1]]")
+
+		var/percent = round((reagents.total_volume / volume) * 100)
+		for(var/i in 1 to fill_icon_thresholds.len)
+			var/threshold = fill_icon_thresholds[i]
+			var/threshold_end = (i == fill_icon_thresholds.len)? INFINITY : fill_icon_thresholds[i+1]
+			if(threshold <= percent && percent < threshold_end)
+				filling.icon_state = "[fill_name][fill_icon_thresholds[i]]"
+		filling.alpha = mix_alpha_from_reagents(reagents.reagent_list)
+		filling.color = mix_color_from_reagents(reagents.reagent_list)
+		underlays += filling
+
+	if(closed)
+		add_overlay("[icon_state]cork")
 
 /obj/item/reagent_containers/glass/bottle/vial/rmb_self(mob/user)
 	closed = !closed

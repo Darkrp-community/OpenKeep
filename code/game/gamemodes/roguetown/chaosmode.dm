@@ -220,7 +220,7 @@
 					blockme = TRUE
 				if(rebelguy.assigned_role in GLOB.church_positions)
 					blockme = TRUE
-				if(rebelguy.assigned_role in GLOB.serf_positions)
+				if(rebelguy.assigned_role in GLOB.towner_positions)
 					blockme = TRUE
 				if(blockme)
 					continue
@@ -235,7 +235,7 @@
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
 	restricted_jobs = list("King",
-	"Queen",
+	"Consort",
 	"Prisoner",
 	"Dungeoneer",
 	"Witch Hunter",

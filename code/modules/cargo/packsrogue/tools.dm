@@ -57,6 +57,12 @@
 	cost = 20
 	contains = /obj/item/flint
 
+/datum/supply_pack/rogue/tools/dyebin
+	name = "Fine dyes"
+	cost = 200
+	contains = /obj/machinery/dye_bin
+
+
 /datum/supply_pack/rogue/tools/candles
 	name = "Candles"
 	cost = 10
@@ -103,6 +109,17 @@
 	name = "Hoe"
 	cost = 15
 	contains = /obj/item/rogueweapon/hoe
+
+/datum/supply_pack/rogue/tools/handsaw
+	name = "handsaw"
+	cost = 12
+	contains = /obj/item/rogueweapon/handsaw
+
+/datum/supply_pack/rogue/tools/chisel
+	name = "chisel"
+	cost = 12
+	contains =  list(/obj/item/rogueweapon/chisel,
+	/obj/item/rogueweapon/chisel)
 
 /datum/supply_pack/rogue/tools/bottle
 	name = "Glass Bottle"

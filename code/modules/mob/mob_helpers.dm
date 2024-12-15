@@ -46,11 +46,11 @@
 	return zone
 
 /**
-  * Return the zone or randomly, another valid zone
-  *
-  * probability controls the chance it chooses the passed in zone, or another random zone
-  * defaults to 80
-  */
+ * Return the zone or randomly, another valid zone
+ *
+ * probability controls the chance it chooses the passed in zone, or another random zone
+ * defaults to 80
+ */
 /proc/ran_zone(zone, probability = 80)
 	if(prob(probability))
 		zone = check_zone(zone)
@@ -66,13 +66,13 @@
 	else
 		return 0
 /**
-  * Convert random parts of a passed in message to stars
-  *
-  * * n - the string to convert
-  * * pr - probability any character gets changed
-  *
-  * This proc is dangerously laggy, avoid it or die
-  */
+ * Convert random parts of a passed in message to stars
+ *
+ * * n - the string to convert
+ * * pr - probability any character gets changed
+ *
+ * This proc is dangerously laggy, avoid it or die
+ */
 /proc/stars(n, pr)
 	n = html_encode(n)
 	if (pr == null)
@@ -95,62 +95,62 @@
 		t += "..." //signals missing text
 	return sanitize(t)
 /**
-  * Makes you speak like you're drunk
-  */
+ * Makes you speak like you're drunk
+ */
 /proc/slur(n)
-    var/phrase = html_decode(n)
-    var/leng = length_char(phrase)
-    var/counter = leng
-    var/newphrase = ""
-    var/newletter = ""
-    
-    while (counter >= 1)
-        newletter = copytext_char(phrase, (leng - counter) + 1, (leng - counter) + 2)
-        
-        
-        if (rand(1, 3) == 3)
-            switch (lowertext(newletter))
-                if ("o")
-                    newletter = "u"
-                if ("s")
-                    newletter = "sh"
-                if ("a")
-                    newletter = "ah"
-                if ("u")
-                    newletter = "oo"
-                if ("c")
-                    newletter = "k"
-                if ("о")  // cyrillic 'о'
-                    newletter = "у"
-                if ("с")  // cyrillic 'с'
-                    newletter = "ш"
-                if ("а")  // cyrillic 'а'
-                    newletter = "аа"
-                if ("у")  // cyrillic 'у'
-                    newletter = "оо"
-                if ("к")  // cyrillic 'к'
-                    newletter = "кк"
+	var/phrase = html_decode(n)
+	var/leng = length_char(phrase)
+	var/counter = leng
+	var/newphrase = ""
+	var/newletter = ""
 
-        
-        if (rand(1, 20) == 20)
-            if (newletter == " ")
-                newletter = "...хууххх..."
-            if (newletter == ".")
-                newletter = " *ИК*."
+	while (counter >= 1)
+		newletter = copytext_char(phrase, (leng - counter) + 1, (leng - counter) + 2)
 
-        
-        switch (rand(1, 20))
-            if (1)
-                newletter += "'"
-            if (10)
-                newletter += "[newletter]"
-            if (20)
-                newletter += "[newletter][newletter]"
 
-        newphrase += "[newletter]"
-        counter -= 1
+		if (rand(1, 3) == 3)
+			switch (lowertext(newletter))
+				if ("o")
+					newletter = "u"
+				if ("s")
+					newletter = "sh"
+				if ("a")
+					newletter = "ah"
+				if ("u")
+					newletter = "oo"
+				if ("c")
+					newletter = "k"
+				if ("о")  // cyrillic 'о'
+					newletter = "у"
+				if ("с")  // cyrillic 'с'
+					newletter = "ш"
+				if ("а")  // cyrillic 'а'
+					newletter = "аа"
+				if ("у")  // cyrillic 'у'
+					newletter = "оо"
+				if ("к")  // cyrillic 'к'
+					newletter = "кк"
 
-    return newphrase
+
+		if (rand(1, 20) == 20)
+			if (newletter == " ")
+				newletter = "...хууххх..."
+			if (newletter == ".")
+				newletter = " *ИК*."
+
+
+		switch (rand(1, 20))
+			if (1)
+				newletter += "'"
+			if (10)
+				newletter += "[newletter]"
+			if (20)
+				newletter += "[newletter][newletter]"
+
+		newphrase += "[newletter]"
+		counter -= 1
+
+	return newphrase
 
 /// Makes you talk like you got cult stunned, which is slurring but with some dark messages
 /proc/cultslur(n) // Inflicted on victims of a stun talisman
@@ -191,34 +191,36 @@
 				newletter="nglu"
 			if(5)
 				newletter="glor"
+			else
+				;;
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
 ///Adds stuttering to the message passed in
 /proc/stutter(n)
-    var/te = html_decode(n)
-    var/t = "" // placed before the message. Not really sure what it's for.
-    var/length_n = length_char(n) // length of the entire word
-    var/p = 1 // 1 is the start of any word
+	var/te = html_decode(n)
+	var/t = "" // placed before the message. Not really sure what it's for.
+	var/length_n = length_char(n) // length of the entire word
+	var/p = 1 // 1 is the start of any word
 
-    // List of consonants in both Latin and Cyrillic alphabets
-    var/list/consonants = list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
-                               "б","в","г","д","ж","з","й","к","л","м","н","п","р","с","т","ф","х","ц","ч","ш","щ")
+	// List of consonants in both Latin and Cyrillic alphabets
+	var/list/consonants = list("b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z",
+								"б","в","г","д","ж","з","й","к","л","м","н","п","р","с","т","ф","х","ц","ч","ш","щ")
 
-    while(p <= length_n) // while P, which starts at 1 is less or equal to N which is the length.
-        var/n_letter = copytext_char(te, p, p + 1) // copies text from a certain distance. In this case, only one letter at a time.
-        if (prob(80) && (n_letter in consonants))
-            if (prob(10))
-                n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]") // replaces the current letter with this instead.
-            else if (prob(20))
-                n_letter = text("[n_letter]-[n_letter]-[n_letter]")
-            else if (prob(5))
-                n_letter = null
-            else
-                n_letter = text("[n_letter]-[n_letter]")
-        t = text("[t][n_letter]") // since the above is ran through for each letter, the text just adds up back to the original word.
-        p++ // for each letter p is increased to find where the next letter will be.
-    return copytext_char(sanitize(t), 1, MAX_MESSAGE_LEN)
+	while(p <= length_n) // while P, which starts at 1 is less or equal to N which is the length.
+		var/n_letter = copytext_char(te, p, p + 1) // copies text from a certain distance. In this case, only one letter at a time.
+		if (prob(80) && (n_letter in consonants))
+			if (prob(10))
+				n_letter = text("[n_letter]-[n_letter]-[n_letter]-[n_letter]") // replaces the current letter with this instead.
+			else if (prob(20))
+				n_letter = text("[n_letter]-[n_letter]-[n_letter]")
+			else if (prob(5))
+				n_letter = null
+			else
+				n_letter = text("[n_letter]-[n_letter]")
+		t = text("[t][n_letter]") // since the above is ran through for each letter, the text just adds up back to the original word.
+		p++ // for each letter p is increased to find where the next letter will be.
+	return copytext_char(sanitize(t), 1, MAX_MESSAGE_LEN)
 
 ///Convert a message to derpy speak
 /proc/derpspeech(message, stuttering)
@@ -239,10 +241,10 @@
 	return message
 
 /**
-  * Turn text into complete gibberish!
-  *
-  * text is the inputted message, replace_characters will cause original letters to be replaced and chance are the odds that a character gets modified.
-  */
+ * Turn text into complete gibberish!
+ *
+ * text is the inputted message, replace_characters will cause original letters to be replaced and chance are the odds that a character gets modified.
+ */
 /proc/Gibberish(text, replace_characters = FALSE, chance = 50)
 	. = ""
 	for(var/i in 1 to length(text))
@@ -256,14 +258,14 @@
 
 
 /**
-  * Convert a message into leet non gaijin speak
-  *
-  * The difference with stutter is that this proc can stutter more than 1 letter
-  *
-  * The issue here is that anything that does not have a space is treated as one word (in many instances). For instance, "LOOKING," is a word, including the comma.
-  *
-  * It's fairly easy to fix if dealing with single letters but not so much with compounds of letters./N
-  */
+ * Convert a message into leet non gaijin speak
+ *
+ * The difference with stutter is that this proc can stutter more than 1 letter
+ *
+ * The issue here is that anything that does not have a space is treated as one word (in many instances). For instance, "LOOKING," is a word, including the comma.
+ *
+ * It's fairly easy to fix if dealing with single letters but not so much with compounds of letters./N
+ */
 /proc/ninjaspeak(n) //NINJACODE
 	var/te = html_decode(n)
 	var/t = ""
@@ -323,10 +325,10 @@
 
 
 /**
-  * change a mob's act-intent.
-  *
-  * Input the intent as a string such as "help" or use "right"/"left
-  */
+ * change a mob's act-intent.
+ *
+ * Input the intent as a string such as "help" or use "right"/"left
+ */
 /mob/verb/a_intent_change(input as text)
 	set name = "a-intent"
 	set hidden = 1
@@ -359,7 +361,7 @@
 	if(hud_used && hud_used.action_intent)
 		hud_used.action_intent.icon_state = "[a_intent]"
 
-/mob/proc/examine_intent(var/numb, offhand = FALSE)
+/mob/proc/examine_intent(numb, offhand = FALSE)
 	var/datum/intent/to_examine
 	if(offhand)
 		if(numb)
@@ -722,38 +724,18 @@
 
 // moved out of admins.dm because things other than admin procs were calling this.
 /**
-  * Is this mob special to the gamemode?
-  *
-  * returns 1 for special characters and 2 for heroes of gamemode
-  *
-  */
+ * Is this mob special to the gamemode?
+ *
+ * returns 1 for special characters and 2 for heroes of gamemode
+ *
+ */
 /proc/is_special_character(mob/M)
 	if(!SSticker.HasRoundStarted())
 		return FALSE
 	if(!istype(M))
 		return FALSE
-	if(issilicon(M))
-		if(iscyborg(M)) //For cyborgs, returns 1 if the cyborg has a law 0 and special_role. Returns 0 if the borg is merely slaved to an AI traitor.
-			return FALSE
-		else if(isAI(M))
-			var/mob/living/silicon/ai/A = M
-			if(A.laws && A.laws.zeroth && A.mind && A.mind.special_role)
-				return TRUE
-		return FALSE
 	if(M.mind && M.mind.special_role)//If they have a mind and special role, they are some type of traitor or antagonist.
 		switch(SSticker.mode.config_tag)
-			if("revolution")
-				if(is_revolutionary(M))
-					return 2
-			if("cult")
-				if(M.mind in SSticker.mode.cult)
-					return 2
-			if("nuclear")
-				if(M.mind.has_antag_datum(/datum/antagonist/nukeop,TRUE))
-					return 2
-			if("changeling")
-				if(M.mind.has_antag_datum(/datum/antagonist/changeling,TRUE))
-					return 2
 			if("wizard")
 				if(iswizard(M))
 					return 2
@@ -776,30 +758,30 @@
 
 
 /**
-  * Fancy notifications for ghosts
-  *
-  * The kitchen sink of notification procs
-  *
-  * Arguments:
-  * * message
-  * * ghost_sound sound to play
-  * * enter_link Href link to enter the ghost role being notified for
-  * * source The source of the notification
-  * * alert_overlay The alert overlay to show in the alert message
-  * * action What action to take upon the ghost interacting with the notification, defaults to NOTIFY_JUMP
-  * * flashwindow Flash the byond client window
-  * * ignore_key  Ignore keys if they're in the GLOB.poll_ignore list
-  * * header The header of the notifiaction
-  * * notify_suiciders If it should notify suiciders (who do not qualify for many ghost roles)
-  * * notify_volume How loud the sound should be to spook the user
-  */
+ * Fancy notifications for ghosts
+ *
+ * The kitchen sink of notification procs
+ *
+ * Arguments:
+ * * message
+ * * ghost_sound sound to play
+ * * enter_link Href link to enter the ghost role being notified for
+ * * source The source of the notification
+ * * alert_overlay The alert overlay to show in the alert message
+ * * action What action to take upon the ghost interacting with the notification, defaults to NOTIFY_JUMP
+ * * flashwindow Flash the byond client window
+ * * ignore_key  Ignore keys if they're in the GLOB.poll_ignore list
+ * * header The header of the notifiaction
+ * * notify_suiciders If it should notify suiciders (who do not qualify for many ghost roles)
+ * * notify_volume How loud the sound should be to spook the user
+ */
 /proc/notify_ghosts(message, ghost_sound = null, enter_link = null, atom/source = null, mutable_appearance/alert_overlay = null, action = NOTIFY_JUMP, flashwindow = TRUE, ignore_mapload = TRUE, ignore_key, header = null, notify_suiciders = TRUE, notify_volume = 100) //Easy notification of ghosts.
 	if(ignore_mapload && SSatoms.initialized != INITIALIZATION_INNEW_REGULAR)	//don't notify for objects created during a map load
 		return
 	for(var/mob/dead/observer/O in GLOB.player_list)
 		if(!notify_suiciders && (O in GLOB.suicided_mob_list))
 			continue
-		if (ignore_key && O.ckey in GLOB.poll_ignore[ignore_key])
+		if (ignore_key && (O.ckey in GLOB.poll_ignore[ignore_key]))
 			continue
 		var/orbit_link
 		if (source && action == NOTIFY_ORBIT)
@@ -826,8 +808,8 @@
 				A.add_overlay(alert_overlay)
 
 /**
-  * Heal a robotic body part on a mob
-  */
+ * Heal a robotic body part on a mob
+ */
 /proc/item_heal_robotic(mob/living/carbon/human/H, mob/user, brute_heal, burn_heal)
 	var/obj/item/bodypart/affecting = H.get_bodypart(check_zone(user.zone_selected))
 	if(affecting && affecting.status == BODYPART_ROBOTIC)
@@ -860,10 +842,10 @@
 	return TRUE
 
 /**
-  * Offer control of the passed in mob to dead player
-  *
-  * Automatic logging and uses pollCandidatesForMob, how convenient
-  */
+ * Offer control of the passed in mob to dead player
+ *
+ * Automatic logging and uses pollCandidatesForMob, how convenient
+ */
 /proc/offer_control(mob/M)
 	to_chat(M, "Control of your mob has been offered to dead players.")
 	if(usr)
@@ -946,10 +928,10 @@
 	. = TRUE
 
 /**
-  * Examine text for traits shared by multiple types.
-  *
-  * I wish examine was less copypasted. (oranges say, be the change you want to see buddy)
-  */
+ * Examine text for traits shared by multiple types.
+ *
+ * I wish examine was less copypasted. (oranges say, be the change you want to see buddy)
+ */
 /mob/proc/common_trait_examine()
 	if(HAS_TRAIT(src, TRAIT_DISSECTED))
 		var/dissectionmsg = ""
@@ -962,11 +944,11 @@
 		. += "<span class='notice'>This body has been dissected and analyzed[dissectionmsg].</span><br>"
 
 /**
-  * Get the list of keywords for policy config
-  *
-  * This gets the type, mind assigned roles and antag datums as a list, these are later used
-  * to send the user relevant headadmin policy config
-  */
+ * Get the list of keywords for policy config
+ *
+ * This gets the type, mind assigned roles and antag datums as a list, these are later used
+ * to send the user relevant headadmin policy config
+ */
 /mob/proc/get_policy_keywords()
 	. = list()
 	. += "[type]"
@@ -979,3 +961,14 @@
 ///Can the mob see reagents inside of containers?
 /mob/proc/can_see_reagents()
 	return stat == DEAD || has_unlimited_silicon_privilege //Dead guys and silicons can always see reagents
+
+/mob/proc/get_role_title()
+	var/used_title
+	if(job)
+		var/datum/job/J = SSjob.GetJob(job)
+		if(!J)
+			return "Unknown"
+		used_title = J.title
+		if((gender == FEMALE) && J.f_title)
+			used_title = J.f_title
+	return used_title

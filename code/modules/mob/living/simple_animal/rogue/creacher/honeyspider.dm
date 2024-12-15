@@ -48,6 +48,10 @@
 	stat_attack = UNCONSCIOUS
 	body_eater = TRUE
 
+	ai_controller = /datum/ai_controller/spider
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
 	name = "skallax spider"
@@ -61,11 +65,14 @@
 	base_intents = list(/datum/intent/simple/bite)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/Initialize()
-	..()
+	. = ..()
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
 	update_icon()
+
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/AttackingTarget()
 	. = ..()
@@ -73,6 +80,11 @@
 		var/mob/living/L = target
 		if(L.reagents)
 			L.reagents.add_reagent(/datum/reagent/toxin/venom, 1)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/death(gibbed)
 	..()

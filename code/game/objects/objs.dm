@@ -144,7 +144,7 @@
 			if ((M.client && M.machine == src))
 				is_in_use = TRUE
 				ui_interact(M)
-		if(issilicon(usr) || IsAdminGhost(usr))
+		if(IsAdminGhost(usr))
 			if (!(usr in nearby))
 				if (usr.client && usr.machine==src) // && M.machine == src is omitted because if we triggered this by using the dialog, it doesn't matter if our machine changed in between triggering it and this - the dialog is probably still supposed to refresh.
 					is_in_use = TRUE
@@ -173,12 +173,8 @@
 				if ((M.client && M.machine == src))
 					is_in_use = TRUE
 					src.interact(M)
-		var/ai_in_use = FALSE
-		if(update_ais)
-			ai_in_use = AutoUpdateAI(src)
-
-		if(update_viewers && update_ais) //State change is sure only if we check both
-			if(!ai_in_use && !is_in_use)
+		if(update_viewers) //State change is sure only if we check both
+			if(!is_in_use)
 				obj_flags &= ~IN_USE
 
 
@@ -215,10 +211,7 @@
 /obj/proc/hide(h)
 	return
 
-/obj/singularity_pull(S, current_size)
-	..()
-	if(!anchored || current_size >= STAGE_FIVE)
-		step_towards(src,S)
+/obj/singularity_pull()
 
 /obj/get_dumping_location(datum/component/storage/source,mob/user)
 	return get_turf(src)
@@ -254,15 +247,17 @@
 		if (islist(result))
 			if (result["button"] != 2) // If the user pressed the cancel button
 				// text2num conveniently returns a null on invalid values
-				armor = armor.setRating(melee = text2num(result["values"]["melee"]),\
-			                  bullet = text2num(result["values"]["bullet"]),\
-			                  laser = text2num(result["values"]["laser"]),\
-			                  energy = text2num(result["values"]["energy"]),\
-			                  bomb = text2num(result["values"]["bomb"]),\
-			                  bio = text2num(result["values"]["bio"]),\
-			                  rad = text2num(result["values"]["rad"]),\
-			                  fire = text2num(result["values"]["fire"]),\
-			                  acid = text2num(result["values"]["acid"]))
+				armor = armor.setRating(
+					melee = text2num(result["values"]["melee"]),\
+					bullet = text2num(result["values"]["bullet"]),\
+					laser = text2num(result["values"]["laser"]),\
+					energy = text2num(result["values"]["energy"]),\
+					bomb = text2num(result["values"]["bomb"]),\
+					bio = text2num(result["values"]["bio"]),\
+					rad = text2num(result["values"]["rad"]),\
+					fire = text2num(result["values"]["fire"]),\
+					acid = text2num(result["values"]["acid"])\
+				)
 				log_admin("[key_name(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]")
 				message_admins("<span class='notice'>[key_name_admin(usr)] modified the armor on [src] ([type]) to melee: [armor.melee], bullet: [armor.bullet], laser: [armor.laser], energy: [armor.energy], bomb: [armor.bomb], bio: [armor.bio], rad: [armor.rad], fire: [armor.fire], acid: [armor.acid]</span>")
 	if(href_list[VV_HK_MASS_DEL_TYPE])
@@ -332,15 +327,9 @@
 		icon_state = unique_reskin[choice]
 		to_chat(M, "[src] is now skinned as '[choice].'")
 
-/obj/analyzer_act(mob/living/user, obj/item/I)
-	if(atmosanalyzer_scan(user, src))
-		return TRUE
-	return ..()
-
 /obj/proc/plunger_act(obj/item/plunger/P, mob/living/user, reinforced)
 	return
 
 // Should move all contained objects to it's location.
 /obj/proc/dump_contents()
 	CRASH("Unimplemented.")
-	return

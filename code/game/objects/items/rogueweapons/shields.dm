@@ -62,6 +62,7 @@
 	return 0
 
 /datum/intent/shield/bash
+	penfactor = AP_CLUB_STRIKE
 	name = "bash"
 	icon_state = "inbash"
 	hitsound = list('sound/combat/shieldbash_wood.ogg')
@@ -133,7 +134,7 @@
 			update_icon()
 		else
 			return
-	
+
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"
 	desc = "A gigantic, iron reinforced shield that covers the entire body, a design-copy of the Aasimar shields of an era gone by."
@@ -156,6 +157,14 @@
 	desc = "A bulky shield of spike-like lengths molten together. The motifs evoke anything but safety and protection."
 	icon_state = "spidershield"
 	coverage = 55
+
+/obj/item/rogueweapon/shield/tower/rider
+	name = "desert rider shield"
+	desc = "A shield of Zybantine design, reinforced with iron and made to protect the upper body."
+	icon_state = "desert_rider"
+	force = 15
+	wdefense = 5
+	coverage = 50
 
 /obj/item/rogueweapon/shield/tower/getonmobprop(tag)
 	. = ..()
@@ -244,3 +253,35 @@
 		..()
 
 #undef SHIELD_BANG_COOLDOWN
+
+
+/obj/item/rogueweapon/shield/tower/buckleriron
+	name = "iron buckler"
+	desc = "A small sized iron shield, popular among mercenaries due to it's light weight and ease of mobility."
+	icon_state = "ironbuckler"
+	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
+	force = 10
+	throwforce = 10
+	dropshrink = 0.75
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	wbalance = 1 // small, tiny shield
+	resistance_flags = FIRE_PROOF
+	wdefense = 4
+	coverage = 45
+	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	max_integrity = 250
+	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
+
+/obj/item/rogueweapon/shield/tower/buckleriron/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -5,"sy" = -1,"nx" = 6,"ny" = -1,"wx" = 0,"wy" = -2,"ex" = 0,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)

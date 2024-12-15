@@ -9,6 +9,13 @@
  * Misc
  */
 
+///Add an untyped item to a list, taking care to handle list items by wrapping them in a list to remove the footgun
+#define UNTYPED_LIST_ADD(list, item) (list += LIST_VALUE_WRAP_LISTS(item))
+///Remove an untyped item to a list, taking care to handle list items by wrapping them in a list to remove the footgun
+#define UNTYPED_LIST_REMOVE(list, item) (list -= LIST_VALUE_WRAP_LISTS(item))
+///If value is a list, wrap it in a list so it can be used with list add/remove operations
+#define LIST_VALUE_WRAP_LISTS(value) (islist(value) ? list(value) : value)
+
 #define LAZYINITLIST(L) if (!L) L = list()
 #define UNSETEMPTY(L) if (L && !length(L)) L = null
 #define LAZYREMOVE(L, I) if(L) { L -= I; if(!length(L)) { L = null; } }
@@ -585,3 +592,30 @@
 			return FALSE
 
 	return TRUE
+
+
+//Scales a range (i.e 1,100) and picks an item from the list based on your passed value
+//i.e in a list with length 4, a 25 in the 1-100 range will give you the 2nd item
+//This assumes your ranges start with 1, I am not good at math and can't do linear scaling
+/proc/scale_range_pick(min,max,value,list/L)
+	if(!length(L))
+		return null
+	var/index = 1 + (value * (length(L) - 1)) / (max - min)
+	if(index > length(L))
+		index = length(L)
+	return L[index]
+
+GLOBAL_LIST_EMPTY(string_lists)
+
+/**
+ * Caches lists with non-numeric stringify-able values (text or typepath).
+ */
+/proc/string_list(list/values)
+	var/string_id = values.Join("-")
+
+	. = GLOB.string_lists[string_id]
+
+	if(.)
+		return
+
+	return GLOB.string_lists[string_id] = values

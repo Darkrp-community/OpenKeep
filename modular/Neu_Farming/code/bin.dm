@@ -148,6 +148,13 @@
 	return FALSE
 
 /obj/item/roguebin/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/ash) || istype(I, /obj/item/natural/dirtclod) || istype(I, /obj/item/reagent_containers/food/snacks/produce/jacksberry))
+		if(do_after(user,3 SECONDS, target = src))
+			qdel(I)
+			user.visible_message("<span class='info'>[user] mixed in some dye into [src].</span>")
+			new /obj/machinery/simple_dye_bin(src.loc)
+			qdel(src)
+			return
 	if(!reagents || !reagents.maximum_volume) //trash
 		return ..()
 	if(istype(I, /obj/item/rogueweapon/tongs))
@@ -245,3 +252,6 @@
 
 /obj/item/roguebin/trash/StorageBlock(obj/item/I, mob/user)
 	return FALSE
+
+/obj/item/roguebin/alt
+	icon_state = "washbin2"

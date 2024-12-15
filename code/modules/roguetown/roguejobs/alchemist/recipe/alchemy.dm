@@ -22,7 +22,7 @@
 		/datum/reagent/medicine/healthpot = 30,
 		/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
-        )
+		)
 	result = /obj/item/reagent_containers/glass/bottle/rogue/strengthpotion
 	craftdiff = 3
 
@@ -64,7 +64,7 @@
 		/datum/reagent/medicine/manapot = 30,
 		/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
-        )
+		)
 	result = /obj/item/reagent_containers/glass/bottle/rogue/speedpotion
 	craftdiff = 3
 
@@ -104,9 +104,9 @@
 	name = "potion of endurance"
 	reqs = list(
 		/datum/reagent/medicine/healthpot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
+		/obj/item/reagent_containers/food/snacks/produce/swampweed = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
-        )
+		)
 	result = /obj/item/reagent_containers/glass/bottle/rogue/endurancepotion
 	craftdiff = 3
 
@@ -146,9 +146,9 @@
 	name = "potion of wisdom"
 	reqs = list(
 		/datum/reagent/medicine/manapot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
+		/obj/item/reagent_containers/food/snacks/produce/swampweed = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
-        )
+		)
 	result = /obj/item/reagent_containers/glass/bottle/rogue/wisdompotion
 	craftdiff = 3
 
@@ -189,10 +189,10 @@
 	reqs = list(
 		/datum/reagent/medicine/manapot = 30,
 		/datum/reagent/medicine/healthpot = 30,
-		/obj/item/reagent_containers/food/snacks/grown/rogue/swampweed = 1,
+		/obj/item/reagent_containers/food/snacks/produce/swampweed = 1,
 		/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
 		/obj/item/reagent_containers/glass/bottle/rogue = 1
-        )
+		)
 	result = /obj/item/reagent_containers/glass/bottle/rogue/luckpotion
 	craftdiff = 4
 

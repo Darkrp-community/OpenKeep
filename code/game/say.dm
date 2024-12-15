@@ -1,5 +1,5 @@
 /*
- 	Miauw's big Say() rewrite.
+	Miauw's big Say() rewrite.
 	This file has the basic atom/movable level speech procs.
 	And the base of the send_speech() proc, which is the core of saycode.
 */
@@ -168,10 +168,10 @@ GLOBAL_LIST_INIT(freqtospan, list(
 
 /proc/get_radio_name(freq)
 	return freq
-	var/returntext = GLOB.reverseradiochannels["[freq]"]
+/* 	var/returntext = GLOB.reverseradiochannels["[freq]"]
 	if(returntext)
 		return returntext
-	return "[copytext_char("[freq]", 1, 4)].[copytext_char("[freq]", 4, 5)]"
+	return "[copytext("[freq]", 1, 4)].[copytext("[freq]", 4, 5)]" */
 
 /proc/attach_spans(input, list/spans)
 	return "[message_spans_start(spans)][input]</span>"
@@ -237,13 +237,6 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 			job = "Unknown"
 	else if(iscarbon(M))  // Carbon nonhuman
 		job = "No ID"
-	else if(isAI(M))  // AI
-		job = "AI"
-	else if(iscyborg(M))  // Cyborg
-		var/mob/living/silicon/robot/B = M
-		job = "[B.designation] Cyborg"
-	else if(istype(M, /mob/living/silicon/pai))  // Personal AI (pAI)
-		job = "Personal AI"
 	else if(isobj(M))  // Cold, emotionless machines
 		job = "Machine"
 	else  // Unidentifiable mob
@@ -255,5 +248,3 @@ INITIALIZE_IMMEDIATE(/atom/movable/virtualspeaker)
 /atom/movable/virtualspeaker/GetSource()
 	return source
 
-/atom/movable/virtualspeaker/GetRadio()
-	return radio

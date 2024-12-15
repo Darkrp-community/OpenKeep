@@ -197,10 +197,12 @@
 #define NOSE		(1<<16)
 #define RIGHT_EYE	(1<<17)
 #define LEFT_EYE	(1<<18)
-#define HAIR		(1<<19) 
+#define HAIR		(1<<19)
 #define EYES		(LEFT_EYE | RIGHT_EYE)
 #define FACE		(MOUTH | NOSE | EYES)
 #define FULL_HEAD	(HEAD | MOUTH | NOSE | EYES | EARS | HAIR)
+#define HEAD_EXCEPT_MOUTH	(HEAD | NOSE | EYES | EARS | HAIR)
+#define HEAD_NECK	(HEAD | MOUTH | NOSE | EYES | EARS | HAIR | NECK)
 #define BELOW_HEAD	(CHEST | GROIN | VITALS | ARMS | HANDS | LEGS | FEET)
 #define BELOW_CHEST	(GROIN | VITALS | LEGS | FEET) //for water
 #define FULL_BODY	(FULL_HEAD | NECK | BELOW_HEAD)
@@ -255,7 +257,6 @@ GLOBAL_LIST_INIT(advanced_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_casing,
 	/obj/item/flashlight,
 	/obj/item/gun,
-	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals)))
@@ -265,8 +266,6 @@ GLOBAL_LIST_INIT(security_hardsuit_allowed, typecacheof(list(
 	/obj/item/ammo_casing,
 	/obj/item/flashlight,
 	/obj/item/gun/ballistic,
-	/obj/item/gun/energy,
-	/obj/item/melee/baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
 	/obj/item/tank/internals)))
@@ -278,9 +277,7 @@ GLOBAL_LIST_INIT(detective_vest_allowed, typecacheof(list(
 	/obj/item/flashlight,
 	/obj/item/taperecorder,
 	/obj/item/gun/ballistic,
-	/obj/item/gun/energy,
 	/obj/item/lighter,
-	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
@@ -293,9 +290,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/ammo_casing,
 	/obj/item/flashlight,
 	/obj/item/gun/ballistic,
-	/obj/item/gun/energy,
 	/obj/item/kitchen/knife/combat,
-	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,
@@ -308,9 +303,7 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/flashlight,
 	/obj/item/storage/fancy/cigarettes,
 	/obj/item/gun/ballistic,
-	/obj/item/gun/energy,
 	/obj/item/lighter,
-	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
 	/obj/item/restraints/handcuffs,

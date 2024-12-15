@@ -1,7 +1,7 @@
 /*
- FUN ZONE OF ADMIN LISTINGS
- Try to keep this in sync with __DEFINES/traits.dm
- quirks have it's own panel so we don't need them here.
+FUN ZONE OF ADMIN LISTINGS
+Try to keep this in sync with __DEFINES/traits.dm
+quirks have it's own panel so we don't need them here.
 */
 GLOBAL_LIST_INIT(traits_by_type, list(
 	/mob = list(
@@ -22,7 +22,6 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"TRAIT_DEATHCOMA" = TRAIT_DEATHCOMA,
 		"TRAIT_FAKEDEATH" = TRAIT_FAKEDEATH,
 		"TRAIT_DISFIGURED" = TRAIT_DISFIGURED,
-		"TRAIT_XENO_HOST" = TRAIT_XENO_HOST,
 		"TRAIT_STUNIMMUNE" = TRAIT_STUNIMMUNE,
 		"TRAIT_SLEEPIMMUNE" = TRAIT_SLEEPIMMUNE,
 		"TRAIT_PUSHIMMUNE" = TRAIT_PUSHIMMUNE,

@@ -3,24 +3,22 @@
 	return TRUE				//There's almost no cases where non /living mobs should be used in game as actual mobs, other than ghosts.
 
 /**
-  * If your mob is concious, drop the item in the active hand
-  *
-  * This is a hidden verb, likely for binding with winset for hotkeys
-  */
+ * If your mob is concious, drop the item in the active hand
+ *
+ * This is a hidden verb, likely for binding with winset for hotkeys
+ */
 /client/verb/drop_item()
 	set hidden = 1
-	if(!iscyborg(mob) && mob.stat == CONSCIOUS)
-		mob.dropItemToGround(mob.get_active_held_item(), silent = FALSE)
 	return
 
 /**
-  * force move the control_object of your client mob
-  *
-  * Used in admin possession and called from the client Move proc
-  * ensures the possessed object moves and not the admin mob
-  *
-  * Has no sanity other than checking density
-  */
+ * force move the control_object of your client mob
+ *
+ * Used in admin possession and called from the client Move proc
+ * ensures the possessed object moves and not the admin mob
+ *
+ * Has no sanity other than checking density
+ */
 /client/proc/Move_object(direct)
 	if(mob && mob.control_object)
 		if(mob.control_object.density)
@@ -35,41 +33,41 @@
 #define MOVEMENT_DELAY_BUFFER_DELTA 1.25
 
 /**
-  * Move a client in a direction
-  *
-  * Huge proc, has a lot of functionality
-  *
-  * Mostly it will despatch to the mob that you are the owner of to actually move
-  * in the physical realm
-  *
-  * Things that stop you moving as a mob:
-  * * world time being less than your next move_delay
-  * * not being in a mob, or that mob not having a loc
-  * * missing the n and direction parameters
-  * * being in remote control of an object (calls Moveobject instead)
-  * * being dead (it ghosts you instead)
-  *
-  * Things that stop you moving as a mob living (why even have OO if you're just shoving it all
-  * in the parent proc with istype checks right?):
-  * * having incorporeal_move set (calls Process_Incorpmove() instead)
-  * * being grabbed
-  * * being buckled  (relaymove() is called to the buckled atom instead)
-  * * having your loc be some other mob (relaymove() is called on that mob instead)
-  * * Not having MOBILITY_MOVE
-  * * Failing Process_Spacemove() call
-  *
-  * At this point, if the mob is is confused, then a random direction and target turf will be calculated for you to travel to instead
-  *
-  * Now the parent call is made (to the byond builtin move), which moves you
-  *
-  * Some final move delay calculations (doubling if you moved diagonally successfully)
-  *
-  * if mob throwing is set I believe it's unset at this point via a call to finalize
-  *
-  * Finally if you're pulling an object and it's dense, you are turned 180 after the move
-  * (if you ask me, this should be at the top of the move so you don't dance around)
-  *
-  */
+ * Move a client in a direction
+ *
+ * Huge proc, has a lot of functionality
+ *
+ * Mostly it will despatch to the mob that you are the owner of to actually move
+ * in the physical realm
+ *
+ * Things that stop you moving as a mob:
+ * * world time being less than your next move_delay
+ * * not being in a mob, or that mob not having a loc
+ * * missing the n and direction parameters
+ * * being in remote control of an object (calls Moveobject instead)
+ * * being dead (it ghosts you instead)
+ *
+ * Things that stop you moving as a mob living (why even have OO if you're just shoving it all
+ * in the parent proc with istype checks right?):
+ * * having incorporeal_move set (calls Process_Incorpmove() instead)
+ * * being grabbed
+ * * being buckled  (relaymove() is called to the buckled atom instead)
+ * * having your loc be some other mob (relaymove() is called on that mob instead)
+ * * Not having MOBILITY_MOVE
+ * * Failing Process_Spacemove() call
+ *
+ * At this point, if the mob is is confused, then a random direction and target turf will be calculated for you to travel to instead
+ *
+ * Now the parent call is made (to the byond builtin move), which moves you
+ *
+ * Some final move delay calculations (doubling if you moved diagonally successfully)
+ *
+ * if mob throwing is set I believe it's unset at this point via a call to finalize
+ *
+ * Finally if you're pulling an object and it's dense, you are turned 180 after the move
+ * (if you ask me, this should be at the top of the move so you don't dance around)
+ *
+ */
 /atom/movable
 	var/facepull = TRUE
 
@@ -115,9 +113,6 @@
 
 	if(mob.remote_control)					//we're controlling something, our movement is relayed to it
 		return mob.remote_control.relaymove(mob, direct)
-
-	if(isAI(mob))
-		return AIMove(n,direct,mob)
 
 	if(Process_Grab()) //are we restrained by someone's grip?
 		return
@@ -204,10 +199,10 @@
 		mob << browse(null, "window=[X]")
 		open_popups -= X
 /**
-  * Checks to see if you're being grabbed and if so attempts to break it
-  *
-  * Called by client/Move()
-  */
+ * Checks to see if you're being grabbed and if so attempts to break it
+ *
+ * Called by client/Move()
+ */
 /client/proc/Process_Grab()
 	if(mob.pulledby)
 		if(mob.pulledby == mob)
@@ -231,18 +226,18 @@
 			return TRUE
 
 /**
-  * Allows mobs to ignore density and phase through objects
-  *
-  * Called by client/Move()
-  *
-  * The behaviour depends on the incorporeal_move value of the mob
-  *
-  * * INCORPOREAL_MOVE_BASIC - forceMoved to the next tile with no stop
-  * * INCORPOREAL_MOVE_SHADOW  - the same but leaves a cool effect path
-  * * INCORPOREAL_MOVE_JAUNT - the same but blocked by holy tiles
-  *
-  * You'll note this is another mob living level proc living at the client level
-  */
+ * Allows mobs to ignore density and phase through objects
+ *
+ * Called by client/Move()
+ *
+ * The behaviour depends on the incorporeal_move value of the mob
+ *
+ * * INCORPOREAL_MOVE_BASIC - forceMoved to the next tile with no stop
+ * * INCORPOREAL_MOVE_SHADOW  - the same but leaves a cool effect path
+ * * INCORPOREAL_MOVE_JAUNT - the same but blocked by holy tiles
+ *
+ * You'll note this is another mob living level proc living at the client level
+ */
 /client/proc/Process_Incorpmove(direct)
 	var/turf/mobloc = get_turf(mob)
 	if(!isliving(mob))
@@ -319,14 +314,14 @@
 
 
 /**
-  * Handles mob/living movement in space (or no gravity)
-  *
-  * Called by /client/Move()
-  *
-  * return TRUE for movement or FALSE for none
-  *
-  * You can move in space if you have a spacewalk ability
-  */
+ * Handles mob/living movement in space (or no gravity)
+ *
+ * Called by /client/Move()
+ *
+ * return TRUE for movement or FALSE for none
+ *
+ * You can move in space if you have a spacewalk ability
+ */
 /mob/Process_Spacemove(movement_dir = 0)
 	if(spacewalk || ..())
 		return TRUE
@@ -339,8 +334,8 @@
 	return FALSE
 
 /**
-  * Find movable atoms? near a mob that are viable for pushing off when moving
-  */
+ * Find movable atoms? near a mob that are viable for pushing off when moving
+ */
 /mob/get_spacemove_backup()
 	for(var/A in orange(1, get_turf(src)))
 		if(isarea(A))
@@ -368,16 +363,16 @@
 				. = AM
 
 /**
-  * Returns true if a mob has gravity
-  *
-  * I hate that this exists
-  */
+ * Returns true if a mob has gravity
+ *
+ * I hate that this exists
+ */
 /mob/proc/mob_has_gravity()
 	return has_gravity()
 
 /**
-  * Does this mob ignore gravity
-  */
+ * Does this mob ignore gravity
+ */
 /mob/proc/mob_negates_gravity()
 	return FALSE
 
@@ -403,10 +398,10 @@
 	return mob && mob.hud_used && mob.hud_used.zone_select && istype(mob.hud_used.zone_select, /atom/movable/screen/zone_sel)
 
 /**
-  * Hidden verb to set the target zone of a mob to the head
-  *
-  * (bound to 8) - repeated presses toggles through head - eyes - mouth
-  */
+ * Hidden verb to set the target zone of a mob to the head
+ *
+ * (bound to 8) - repeated presses toggles through head - eyes - mouth
+ */
 /client/verb/body_toggle_head()
 	set name = "body-toggle-head"
 	set hidden = 1
@@ -570,10 +565,10 @@
 		mob.toggle_move_intent(usr)
 
 /**
-  * Toggle the move intent of the mob
-  *
-  * triggers an update the move intent hud as well
-  */
+ * Toggle the move intent of the mob
+ *
+ * triggers an update the move intent hud as well
+ */
 /mob/proc/toggle_move_intent(mob/user)
 	if(m_intent == MOVE_INTENT_RUN)
 		m_intent = MOVE_INTENT_WALK
@@ -615,10 +610,10 @@
 			spawn(used_time + 5) regenerate_icons()
 			rogue_sneaking = TRUE
 	return
-
+/*
 	if(world.time < mob_timers[MT_INVISIBILITY]) // Check if the mob is affected by the invisibility spell
 		alpha = 0
-		return
+		return */
 
 /mob/proc/toggle_rogmove_intent(intent, silent = FALSE)
 	// If we're becoming sprinting from non-sprinting, reset the counter
@@ -654,19 +649,19 @@
 /mob/living/carbon/human/check_armor_skill()
 	if(istype(src.wear_armor, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
 					return FALSE
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
 					return FALSE
@@ -679,15 +674,15 @@
 	var/heaviest = "Light"
 	if(istype(src.wear_armor, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+		if(CL.armor_class == AC_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
 			heaviest = "Heavy"
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+		if(CL.armor_class == AC_MEDIUM && heaviest == "Light")
 			heaviest = "Medium"
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+		if(CL.armor_class == AC_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
 			heaviest = "Heavy"
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+		if(CL.armor_class == AC_MEDIUM && heaviest == "Light")
 			heaviest = "Medium"
 	return heaviest
 
@@ -699,15 +694,21 @@
 		return FALSE
 	if(istype(src.wear_armor, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			return FALSE
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
+			return FALSE
+	if(istype(src.wear_pants, /obj/item/clothing))
+		var/obj/item/clothing/CL = src.wear_pants
+		if(CL.armor_class == AC_HEAVY)
+			return FALSE
+		if(CL.armor_class == AC_MEDIUM)
 			return FALSE
 	return TRUE
 

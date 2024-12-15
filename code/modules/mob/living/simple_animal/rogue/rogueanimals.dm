@@ -1,5 +1,5 @@
-#define TROLL_HEALTH 600
-#define BOGTROLL_HEALTH 300
+#define TROLL_HEALTH 500
+#define BOGTROLL_HEALTH 350
 #define MOLE_HEALTH 200
 #define BOGBUG_HEALTH 160
 #define SPIDER_HEALTH 120
@@ -74,8 +74,16 @@
 	var/eat_forever
 
 
+/mob/living/simple_animal/hostile/retaliate/rogue/onbite(mob/living/carbon/human/user)
+	visible_message(span_danger("[user] bites [src]!"))
+	playsound(src, "smallslash", 100, TRUE, -1)
+	var/bite_power = 3
 
+	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
+		bite_power += ( user.STASTR )
 
+	apply_damage((bite_power), BRUTE)
+	..()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Move()
 	//If you cant act and dont have a player stop moving.
@@ -117,8 +125,84 @@
 	if(!stop_automated_movement && wander && !doing)
 		if(ssaddle && has_buckled_mobs())
 			return FALSE
+		if(find_food())
+			return
 		else
 			..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/find_food()
+	if(food > 50 && !eat_forever)
+		return
+	var/list/around = view(1, src)
+	var/list/foundfood = list()
+	if(stat)
+		return
+	for(var/obj/item/F in around)
+		if(is_type_in_list(F, food_type))
+			foundfood += F
+			if(src.Adjacent(F))
+				face_atom(F)
+				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+				qdel(F)
+				food = max(food + 30, 100)
+				return TRUE
+
+	for(var/obj/item/F in foundfood)
+		if(is_type_in_list(F, food_type))
+			var/turf/T = get_turf(F)
+			Goto(T,move_to_delay,0)
+			return TRUE
+	return FALSE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/proc/eat_bodies()
+	var/mob/living/L
+//	var/list/around = view(aggro_vision_range, src)
+	var/list/around = hearers(1, src)
+	var/list/foundfood = list()
+	if(stat)
+		return
+	for(var/mob/living/eattarg in around)
+		if(!(eattarg in enemies)) //Makes a tamed rous not eat people on the floor unless instigated.
+			return
+		if(eattarg.stat != CONSCIOUS)
+			foundfood += eattarg
+			L = eattarg
+			if(src.Adjacent(L))
+				if(iscarbon(L))
+					var/mob/living/carbon/C = L
+					if(attack_sound)
+						playsound(src, pick(attack_sound), 100, TRUE, -1)
+					face_atom(C)
+					src.visible_message(span_danger("[src] starts to rip apart [C]!"))
+					if(do_after(src,100, target = L))
+						var/obj/item/bodypart/limb
+						var/list/limb_list = list(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+						for(var/zone in limb_list)
+							limb = C.get_bodypart(zone)
+							if(limb)
+								limb.dismember()
+								return TRUE
+						limb = C.get_bodypart(BODY_ZONE_HEAD)
+						if(limb)
+							limb.dismember()
+							return TRUE
+						limb = C.get_bodypart(BODY_ZONE_CHEST)
+						if(limb)
+							if(!limb.dismember())
+								C.gib()
+							return TRUE
+				else
+					if(attack_sound)
+						playsound(src, pick(attack_sound), 100, TRUE, -1)
+					src.visible_message(span_danger("[src] starts to rip apart [L]!"))
+					if(do_after(src,100, target = L))
+						L.gib()
+						return TRUE
+	for(var/mob/living/eattarg in foundfood)
+		var/turf/T = get_turf(eattarg)
+		Goto(T,move_to_delay,0)
+		return TRUE
+	return FALSE
 
 //What can we attack?
 /mob/living/simple_animal/hostile/retaliate/rogue/CanAttack(atom/the_target)
@@ -208,7 +292,7 @@
 	var/list/check_health = list("health" = src.health)
 
 	if(L.stat != CONSCIOUS)
-		src.visible_message("<span class='danger'>[src] starts to rip apart [L]!</span>")
+		src.visible_message(span_danger("[src] starts to rip apart [L]!"))
 		if(attack_sound)
 			playsound(src, pick(attack_sound), 100, TRUE, -1)
 		//If their health is decreased at all during the 10 seconds the dismemberment will fail and they will lose target.
@@ -238,7 +322,7 @@
 		LoseTarget()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/Initialize()
-	..()
+	. = ..()
 	if(tame)
 		tamed(owner)
 	ADD_TRAIT(src, TRAIT_SIMPLE_WOUNDS, TRAIT_GENERIC)
@@ -265,7 +349,7 @@
 	if(enemies.len)
 		if(prob(23))
 			enemies = list()
-			src.visible_message("<span class='notice'>[src] calms down.</span>")
+			src.visible_message(span_info("[src] calms down."))
 			LoseTarget()
 		else
 			return
@@ -282,7 +366,7 @@
 				if(mob_timers["aggro_time"])
 					if(world.time > mob_timers["aggro_time"] + 30 SECONDS)
 						enemies = list()
-						src.visible_message("<span class='info'>[src] calms down.</span>")
+						src.visible_message(span_info("[src] calms down."))
 						LoseTarget()
 				else
 					mob_timers["aggro_time"] = world.time
@@ -356,10 +440,10 @@
 		Goto(user,move_to_delay)
 		addtimer(CALLBACK(src, PROC_REF(return_action)), 3 SECONDS)
 
-// Goatmilk-udder
+
+//................. UDDER (GOTE).......................//
 /obj/item/gudder
-	name = "udder"
-	var/in_use // so you can't spam milking sounds
+	name = "gote"
 
 /obj/item/gudder/Initialize()
 	create_reagents(100)
@@ -369,24 +453,33 @@
 /obj/item/gudder/proc/generateMilk()
 	reagents.add_reagent(/datum/reagent/consumable/milk/gote, 1)
 
-/obj/item/gudder/proc/milkAnimal(obj/O, mob/user)
+/obj/item/gudder/proc/milkAnimal(obj/O, mob/living/user = usr)
 	var/obj/item/reagent_containers/glass/G = O
-	if(in_use)
-		return
 	if(G.reagents.total_volume >= G.volume)
-		to_chat(user, "<span class='warning'>[O] is full.</span>")
+		to_chat(user, span_warning("[O] is full."))
 		return
 	if(!reagents.has_reagent(/datum/reagent/consumable/milk/gote, 5))
-		to_chat(user, "<span class='warning'>The udder is dry. Wait a bit longer...</span>")
+		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
+		user.changeNext_move(10)
 		return
-	beingmilked()
-	playsound(O, pick('modular/Creechers/sound/milking1.ogg', 'modular/Creechers/sound/milking2.ogg'), 100, TRUE, -1)
-	if(do_after(user, 20, target = src))
+	if(do_after(user, 1 SECONDS, target = src))
 		reagents.trans_to(O, rand(5,10))
-		user.visible_message("<span class='notice'>[user] milks [src] using \the [O].</span>", "<span class='notice'>I milk [src] using \the [O].</span>")
+		user.visible_message(span_notice("[user] milks [src] using \the [O]"))
+		playsound(O, pick('sound/vo/mobs/cow/milking (1).ogg', 'sound/vo/mobs/cow/milking (2).ogg'), 100, TRUE, -1)
+		user.Immobilize(1 SECONDS)
+		user.changeNext_move(1 SECONDS)
 
-/obj/item/gudder/proc/beingmilked()
-	in_use = TRUE
-	sleep(15)
-	in_use = FALSE
+
+/mob/living/simple_animal/hostile/retaliate/rogue/UnarmedAttack(atom/A)
+	. = ..()
+	if(!is_type_in_list(A, food_type))
+		return
+
+	if(!src.CanReach(A))
+		return
+
+	face_atom(A)
+	playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+	qdel(A)
+	food = max(food + 30, 100)
 

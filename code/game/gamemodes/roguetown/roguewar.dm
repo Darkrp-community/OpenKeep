@@ -216,7 +216,7 @@
 						found = FALSE
 					if(rebelguy.assigned_role in GLOB.church_positions)
 						found = FALSE
-					if(rebelguy.assigned_role in GLOB.serf_positions)
+					if(rebelguy.assigned_role in GLOB.towner_positions)
 						found = FALSE
 					if(!found)
 						continue

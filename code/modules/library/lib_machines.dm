@@ -1,597 +1,354 @@
-/* Library Machines
- *
- * Contains:
- *		Borrowbook datum
- *		Library Public Computer
- *		Cachedbook datum
- *		Library Computer
- *		Library Scanner
- *		Book Binder
- */
+#define PRINTER_COOLDOWN 600 // The time between printing manuscripts and binding books
+#define PRINTING_TIME 250 // The time it takes to actually print something using the printing press
 
-
-
-/*
- * Library Public Computer
- */
-/obj/machinery/computer/libraryconsole
-	name = "library visitor console"
-	icon_state = "oldcomp"
-	icon_screen = "library"
-	icon_keyboard = null
-	circuit = /obj/item/circuitboard/computer/libraryconsole
-	desc = ""
-	var/screenstate = 0
-	var/title
-	var/category = "Any"
-	var/author
-	var/SQLquery
-
-/obj/machinery/computer/libraryconsole/ui_interact(mob/user)
-	. = ..()
-	var/dat = "" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
-	switch(screenstate)
-		if(0)
-			dat += "<h2>Search Settings</h2><br>"
-			dat += "<A href='?src=[REF(src)];settitle=1'>Filter by Title: [title]</A><BR>"
-			dat += "<A href='?src=[REF(src)];setcategory=1'>Filter by Category: [category]</A><BR>"
-			dat += "<A href='?src=[REF(src)];setauthor=1'>Filter by Author: [author]</A><BR>"
-			dat += "<A href='?src=[REF(src)];search=1'>\[Start Search\]</A><BR>"
-		if(1)
-			if (!SSdbcore.Connect())
-				dat += "<font color=red><b>ERROR</b>: Unable to contact External Archive. Please contact my system administrator for assistance.</font><BR>"
-			else if(QDELETED(user))
-				return
-			else if(!SQLquery)
-				dat += "<font color=red><b>ERROR</b>: Malformed search request. Please contact my system administrator for assistance.</font><BR>"
-			else
-				dat += "<table>"
-				dat += "<tr><td>AUTHOR</td><td>TITLE</td><td>CATEGORY</td><td>SS<sup>13</sup>BN</td></tr>"
-
-				var/datum/DBQuery/query_library_list_books = SSdbcore.NewQuery(SQLquery)
-				if(!query_library_list_books.Execute())
-					dat += "<font color=red><b>ERROR</b>: Unable to retrieve book listings. Please contact my system administrator for assistance.</font><BR>"
-				else
-					while(query_library_list_books.NextRow())
-						var/author = query_library_list_books.item[1]
-						var/title = query_library_list_books.item[2]
-						var/category = query_library_list_books.item[3]
-						var/id = query_library_list_books.item[4]
-						dat += "<tr><td>[author]</td><td>[title]</td><td>[category]</td><td>[id]</td></tr>"
-				qdel(query_library_list_books)
-				if(QDELETED(user))
-					return
-				dat += "</table><BR>"
-			dat += "<A href='?src=[REF(src)];back=1'>\[Go Back\]</A><BR>"
-	var/datum/browser/popup = new(user, "publiclibrary", name, 600, 400)
-	popup.set_content(dat)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
-	popup.open()
-
-/obj/machinery/computer/libraryconsole/Topic(href, href_list)
-	. = ..()
-	if(..())
-		usr << browse(null, "window=publiclibrary")
-		onclose(usr, "publiclibrary")
-		return
-
-	if(href_list["settitle"])
-		var/newtitle = input("Enter a title to search for:") as text|null
-		if(newtitle)
-			title = sanitize(newtitle)
-		else
-			title = null
-		title = sanitizeSQL(title)
-	if(href_list["setcategory"])
-		var/newcategory = input("Choose a category to search for:") in list("Any", "Fiction", "Non-Fiction", "Adult", "Reference", "Religion")
-		if(newcategory)
-			category = sanitize(newcategory)
-		else
-			category = "Any"
-		category = sanitizeSQL(category)
-	if(href_list["setauthor"])
-		var/newauthor = input("Enter an author to search for:") as text|null
-		if(newauthor)
-			author = sanitize(newauthor)
-		else
-			author = null
-		author = sanitizeSQL(author)
-	if(href_list["search"])
-		SQLquery = "SELECT author, title, category, id FROM [format_table_name("library")] WHERE isnull(deleted) AND "
-		if(category == "Any")
-			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%'"
-		else
-			SQLquery += "author LIKE '%[author]%' AND title LIKE '%[title]%' AND category='[category]'"
-		screenstate = 1
-
-	if(href_list["back"])
-		screenstate = 0
-
-	src.add_fingerprint(usr)
-	src.updateUsrDialog()
-	return
-
-/*
- * Borrowbook datum
- */
-/datum/borrowbook // Datum used to keep track of who has borrowed what when and for how long.
-	var/bookname
-	var/mobname
-	var/getdate
-	var/duedate
-
-/*
- * Cachedbook datum
- */
-/datum/cachedbook // Datum used to cache the SQL DB books locally in order to achieve a performance gain.
-	var/id
-	var/title
-	var/author
-	var/category
-
-GLOBAL_LIST(cachedbooks) // List of our cached book datums
-
-
-/proc/load_library_db_to_cache()
-	if(GLOB.cachedbooks)
-		return
-	if(!SSdbcore.Connect())
-		return
-	GLOB.cachedbooks = list()
-	var/datum/DBQuery/query_library_cache = SSdbcore.NewQuery("SELECT id, author, title, category FROM [format_table_name("library")] WHERE isnull(deleted)")
-	if(!query_library_cache.Execute())
-		qdel(query_library_cache)
-		return
-	while(query_library_cache.NextRow())
-		var/datum/cachedbook/newbook = new()
-		newbook.id = query_library_cache.item[1]
-		newbook.author = query_library_cache.item[2]
-		newbook.title = query_library_cache.item[3]
-		newbook.category = query_library_cache.item[4]
-		GLOB.cachedbooks += newbook
-	qdel(query_library_cache)
-
-
-
-#define PRINTER_COOLDOWN 60
-
-/*
- * Library Computer
- * After 860 days, it's finally a buildable computer.
- */
-// TODO: Make this an actual /obj/machinery/computer that can be crafted from circuit boards and such
-// It is August 22nd, 2012... This TODO has already been here for months.. I wonder how long it'll last before someone does something about it.
-// It's December 25th, 2014, and this is STILL here, and it's STILL relevant. Kill me
-/obj/machinery/computer/libraryconsole/bookmanagement
-	name = "book inventory management console"
-	desc = ""
-	screenstate = 0 // 0 - Main Menu, 1 - Inventory, 2 - Checked Out, 3 - Check Out a Book
-	verb_say = "beeps"
-	verb_ask = "beeps"
-	verb_exclaim = "beeps"
-	pass_flags = PASSTABLE
-	var/arcanecheckout = 0
-	var/buffer_book
-	var/buffer_mob
-	var/upload_category = "Fiction"
-	var/list/checkouts = list()
-	var/list/inventory = list()
-	var/checkoutperiod = 5 // In minutes
-	var/obj/machinery/libraryscanner/scanner // Book scanner that will be used when uploading books to the Archive
-	var/list/libcomp_menu
-	var/page = 1	//current page of the external archives
-	var/cooldown = 0
-
-/obj/machinery/computer/libraryconsole/bookmanagement/proc/build_library_menu()
-	if(libcomp_menu)
-		return
-	load_library_db_to_cache()
-	if(!GLOB.cachedbooks)
-		return
-	libcomp_menu = list("")
-
-	for(var/i in 1 to GLOB.cachedbooks.len)
-		var/datum/cachedbook/C = GLOB.cachedbooks[i]
-		var/page = round(i/250)+1
-		if (libcomp_menu.len < page)
-			libcomp_menu.len = page
-			libcomp_menu[page] = ""
-		libcomp_menu[page] += "<tr><td>[C.author]</td><td>[C.title]</td><td>[C.category]</td><td><A href='?src=[REF(src)];targetid=[C.id]'>\[Order\]</A></td></tr>\n"
-
-/obj/machinery/computer/libraryconsole/bookmanagement/Initialize()
-	. = ..()
-	if(circuit)
-		circuit.name = "Book Inventory Management Console (Machine Board)"
-		circuit.build_path = /obj/machinery/computer/libraryconsole/bookmanagement
-
-/obj/machinery/computer/libraryconsole/bookmanagement/ui_interact(mob/user)
-	. = ..()
-	var/dat = "" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
-	switch(screenstate)
-		if(0)
-			// Main Menu
-			dat += "<A href='?src=[REF(src)];switchscreen=1'>1. View General Inventory</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=2'>2. View Checked Out Inventory</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=3'>3. Check out a Book</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=4'>4. Connect to External Archive</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=5'>5. Upload New Title to Archive</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=6'>6. Upload Scanned Title to Newscaster</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=7'>7. Print Corporate Materials</A><BR>"
-			if(obj_flags & EMAGGED)
-				dat += "<A href='?src=[REF(src)];switchscreen=8'>8. Access the Forbidden Lore Vault</A><BR>"
-			if(src.arcanecheckout)
-				print_forbidden_lore(user)
-				src.arcanecheckout = 0
-		if(1)
-			// Inventory
-			dat += "<H3>Inventory</H3><BR>"
-			for(var/obj/item/book/b in inventory)
-				dat += "[b.name] <A href='?src=[REF(src)];delbook=[REF(b)]'>(Delete)</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(2)
-			// Checked Out
-			dat += "<h3>Checked Out Books</h3><BR>"
-			for(var/datum/borrowbook/b in checkouts)
-				var/timetaken = world.time - b.getdate
-				timetaken /= 600
-				timetaken = round(timetaken)
-				var/timedue = b.duedate - world.time
-				timedue /= 600
-				if(timedue <= 0)
-					timedue = "<font color=red><b>(OVERDUE)</b> [timedue]</font>"
-				else
-					timedue = round(timedue)
-				dat += "\"[b.bookname]\", Checked out to: [b.mobname]<BR>--- Taken: [timetaken] minutes ago, Due: in [timedue] minutes<BR>"
-				dat += "<A href='?src=[REF(src)];checkin=[REF(b)]'>(Check In)</A><BR><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(3)
-			// Check Out a Book
-			dat += "<h3>Check Out a Book</h3><BR>"
-			dat += "Book: [src.buffer_book] "
-			dat += "<A href='?src=[REF(src)];editbook=1'>\[Edit\]</A><BR>"
-			dat += "Recipient: [src.buffer_mob] "
-			dat += "<A href='?src=[REF(src)];editmob=1'>\[Edit\]</A><BR>"
-			dat += "Checkout Date : [world.time/600]<BR>"
-			dat += "Due Date: [(world.time + checkoutperiod)/600]<BR>"
-			dat += "(Checkout Period: [checkoutperiod] minutes) (<A href='?src=[REF(src)];increasetime=1'>+</A>/<A href='?src=[REF(src)];decreasetime=1'>-</A>)"
-			dat += "<A href='?src=[REF(src)];checkout=1'>(Commit Entry)</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(4)
-			dat += "<h3>External Archive</h3>"
-			build_library_menu()
-
-			if(!GLOB.cachedbooks)
-				dat += "<font color=red><b>ERROR</b>: Unable to contact External Archive. Please contact my system administrator for assistance.</font>"
-			else
-				dat += "<A href='?src=[REF(src)];orderbyid=1'>(Order book by SS<sup>13</sup>BN)</A><BR><BR>"
-				dat += "<table>"
-				dat += "<tr><td>AUTHOR</td><td>TITLE</td><td>CATEGORY</td><td></td></tr>"
-				dat += libcomp_menu[CLAMP(page,1,libcomp_menu.len)]
-				dat += "<tr><td><A href='?src=[REF(src)];page=[(max(1,page-1))]'>&lt;&lt;&lt;&lt;</A></td> <td></td> <td></td> <td><span style='text-align:right'><A href='?src=[REF(src)];page=[(min(libcomp_menu.len,page+1))]'>&gt;&gt;&gt;&gt;</A></span></td></tr>"
-				dat += "</table>"
-			dat += "<BR><A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(5)
-			dat += "<H3>Upload a New Title</H3>"
-			if(!scanner)
-				scanner = findscanner(9)
-			if(!scanner)
-				dat += "<FONT color=red>No scanner found within wireless network range.</FONT><BR>"
-			else if(!scanner.cache)
-				dat += "<FONT color=red>No data found in scanner memory.</FONT><BR>"
-			else
-				dat += "<TT>Data marked for upload...</TT><BR>"
-				dat += "<TT>Title: </TT>[scanner.cache.name]<BR>"
-				if(!scanner.cache.author)
-					scanner.cache.author = "Anonymous"
-				dat += "<TT>Author: </TT><A href='?src=[REF(src)];setauthor=1'>[scanner.cache.author]</A><BR>"
-				dat += "<TT>Category: </TT><A href='?src=[REF(src)];setcategory=1'>[upload_category]</A><BR>"
-				dat += "<A href='?src=[REF(src)];upload=1'>\[Upload\]</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(6)
-			dat += "<h3>Post Title to Newscaster</h3>"
-			if(!scanner)
-				scanner = findscanner(9)
-			if(!scanner)
-				dat += "<FONT color=red>No scanner found within wireless network range.</FONT><BR>"
-			else if(!scanner.cache)
-				dat += "<FONT color=red>No data found in scanner memory.</FONT><BR>"
-			else
-				dat += "<TT>Post [scanner.cache.name] to station newscasters?</TT>"
-				dat += "<A href='?src=[REF(src)];newspost=1'>\[Post\]</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(7)
-			dat += "<h3>NTGanda(tm) Universal Printing Module</h3>"
-			dat += "What would you like to print?<BR>"
-			dat += "<A href='?src=[REF(src)];printbible=1'>\[Bible\]</A><BR>"
-			dat += "<A href='?src=[REF(src)];printposter=1'>\[Poster\]</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>(Return to main menu)</A><BR>"
-		if(8)
-			dat += "<h3>Accessing Forbidden Lore Vault v 1.3</h3>"
-			dat += "Are you absolutely sure you want to proceed? EldritchRelics Inc. takes no responsibilities for loss of sanity resulting from this action.<p>"
-			dat += "<A href='?src=[REF(src)];arccheckout=1'>Yes.</A><BR>"
-			dat += "<A href='?src=[REF(src)];switchscreen=0'>No.</A><BR>"
-
-	var/datum/browser/popup = new(user, "library", name, 600, 400)
-	popup.set_content(dat)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
-	popup.open()
-
-/obj/machinery/computer/libraryconsole/bookmanagement/proc/findscanner(viewrange)
-	for(var/obj/machinery/libraryscanner/S in range(viewrange, get_turf(src)))
-		return S
-	return null
-
-/obj/machinery/computer/libraryconsole/bookmanagement/proc/print_forbidden_lore(mob/user)
-	new /obj/item/melee/cultblade/dagger(get_turf(src))
-	to_chat(user, "<span class='warning'>My sanity barely endures the seconds spent in the vault's browsing window. The only thing to remind you of this when you stop browsing is a sinister dagger sitting on the desk. You don't even remember where it came from...</span>")
-	user.visible_message("<span class='warning'>[user] stares at the blank screen for a few moments, [user.p_their()] expression frozen in fear. When [user.p_they()] finally awaken[user.p_s()] from it, [user.p_they()] look[user.p_s()] a lot older.</span>", 2)
-
-/obj/machinery/computer/libraryconsole/bookmanagement/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/barcodescanner))
-		var/obj/item/barcodescanner/scanner = W
-		scanner.computer = src
-		to_chat(user, "<span class='notice'>[scanner]'s associated machine has been set to [src].</span>")
-		audible_message("<span class='hear'>[src] lets out a low, short blip.</span>")
-	else
-		return ..()
-
-/obj/machinery/computer/libraryconsole/bookmanagement/emag_act(mob/user)
-	if(density && !(obj_flags & EMAGGED))
-		obj_flags |= EMAGGED
-
-/obj/machinery/computer/libraryconsole/bookmanagement/Topic(href, href_list)
-	if(..())
-		usr << browse(null, "window=library")
-		onclose(usr, "library")
-		return
-	if(href_list["page"] && screenstate == 4)
-		page = text2num(href_list["page"])
-	if(href_list["switchscreen"])
-		switch(href_list["switchscreen"])
-			if("0")
-				screenstate = 0
-			if("1")
-				screenstate = 1
-			if("2")
-				screenstate = 2
-			if("3")
-				screenstate = 3
-			if("4")
-				screenstate = 4
-			if("5")
-				screenstate = 5
-			if("6")
-				screenstate = 6
-			if("7")
-				screenstate = 7
-			if("8")
-				screenstate = 8
-	if(href_list["arccheckout"])
-		if(obj_flags & EMAGGED)
-			src.arcanecheckout = 1
-		src.screenstate = 0
-	if(href_list["increasetime"])
-		checkoutperiod += 1
-	if(href_list["decreasetime"])
-		checkoutperiod -= 1
-		if(checkoutperiod < 1)
-			checkoutperiod = 1
-	if(href_list["editbook"])
-		buffer_book = copytext(sanitize(input("Enter the book's title:") as text|null),1,MAX_MESSAGE_LEN)
-	if(href_list["editmob"])
-		buffer_mob = copytext(sanitize(input("Enter the recipient's name:") as text|null),1,MAX_NAME_LEN)
-	if(href_list["checkout"])
-		var/datum/borrowbook/b = new /datum/borrowbook
-		b.bookname = sanitize(buffer_book)
-		b.mobname = sanitize(buffer_mob)
-		b.getdate = world.time
-		b.duedate = world.time + (checkoutperiod * 600)
-		checkouts.Add(b)
-	if(href_list["checkin"])
-		var/datum/borrowbook/b = locate(href_list["checkin"]) in checkouts
-		if(b && istype(b))
-			checkouts.Remove(b)
-	if(href_list["delbook"])
-		var/obj/item/book/b = locate(href_list["delbook"]) in inventory
-		if(b && istype(b))
-			inventory.Remove(b)
-	if(href_list["setauthor"])
-		var/newauthor = copytext(sanitize(input("Enter the author's name: ") as text|null),1,MAX_MESSAGE_LEN)
-		if(newauthor)
-			scanner.cache.author = newauthor
-	if(href_list["setcategory"])
-		var/newcategory = input("Choose a category: ") in list("Fiction", "Non-Fiction", "Adult", "Reference", "Religion","Technical")
-		if(newcategory)
-			upload_category = newcategory
-	if(href_list["upload"])
-		if(scanner)
-			if(scanner.cache)
-				var/choice = input("Are you certain you wish to upload this title to the Archive?") in list("Confirm", "Abort")
-				if(choice == "Confirm")
-					if (!SSdbcore.Connect())
-						alert("Connection to Archive has been severed. Aborting.")
-					else
-
-						var/sqltitle = sanitizeSQL(scanner.cache.name)
-						var/sqlauthor = sanitizeSQL(scanner.cache.author)
-						var/sqlcontent = sanitizeSQL(scanner.cache.dat)
-						var/sqlcategory = sanitizeSQL(upload_category)
-						var/sqlckey = sanitizeSQL(usr.ckey)
-						var/msg = "[key_name(usr)] has uploaded the book titled [scanner.cache.name], [length(scanner.cache.dat)] signs"
-						var/datum/DBQuery/query_library_upload = SSdbcore.NewQuery("INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, datetime, round_id_created) VALUES ('[sqlauthor]', '[sqltitle]', '[sqlcontent]', '[sqlcategory]', '[sqlckey]', Now(), '[GLOB.round_id]')")
-						if(!query_library_upload.Execute())
-							qdel(query_library_upload)
-							alert("Database error encountered uploading to Archive")
-							return
-						else
-							log_game(msg)
-							qdel(query_library_upload)
-							alert("Upload Complete. Uploaded title will be unavailable for printing for a short period")
-	if(href_list["newspost"])
-		if(!GLOB.news_network)
-			alert("No news network found on station. Aborting.")
-		var/channelexists = 0
-		for(var/datum/newscaster/feed_channel/FC in GLOB.news_network.network_channels)
-			if(FC.channel_name == "Nanotrasen Book Club")
-				channelexists = 1
-				break
-		if(!channelexists)
-			GLOB.news_network.CreateFeedChannel("Nanotrasen Book Club", "Library", null)
-		GLOB.news_network.SubmitArticle(scanner.cache.dat, "[scanner.cache.name]", "Nanotrasen Book Club", null)
-		alert("Upload complete. Your uploaded title is now available on station newscasters.")
-	if(href_list["orderbyid"])
-		if(cooldown > world.time)
-			say("Printer unavailable. Please allow a short time before attempting to print.")
-		else
-			var/orderid = input("Enter my order:") as num|null
-			if(orderid)
-				if(isnum(orderid) && ISINTEGER(orderid))
-					href_list["targetid"] = num2text(orderid)
-
-	if(href_list["targetid"])
-		var/sqlid = sanitizeSQL(href_list["targetid"])
-		if (!SSdbcore.Connect())
-			alert("Connection to Archive has been severed. Aborting.")
-		if(cooldown > world.time)
-			say("Printer unavailable. Please allow a short time before attempting to print.")
-		else
-			cooldown = world.time + PRINTER_COOLDOWN
-			var/datum/DBQuery/query_library_print = SSdbcore.NewQuery("SELECT * FROM [format_table_name("library")] WHERE id=[sqlid] AND isnull(deleted)")
-			if(!query_library_print.Execute())
-				qdel(query_library_print)
-				say("PRINTER ERROR! Failed to print document (0x0000000F)")
-				return
-			while(query_library_print.NextRow())
-				var/author = query_library_print.item[2]
-				var/title = query_library_print.item[3]
-				var/content = query_library_print.item[4]
-				if(!QDELETED(src))
-					var/obj/item/book/B = new(get_turf(src))
-					B.name = "Book: [title]"
-					B.title = title
-					B.author = author
-					B.dat = content
-					B.icon_state = "book[rand(1,8)]"
-					visible_message("<span class='notice'>[src]'s printer hums as it produces a completely bound book. How did it do that?</span>")
-				break
-			qdel(query_library_print)
-	if(href_list["printbible"])
-		if(cooldown < world.time)
-			var/obj/item/storage/book/bible/B = new /obj/item/storage/book/bible(src.loc)
-			if(GLOB.bible_icon_state && GLOB.bible_item_state)
-				B.icon_state = GLOB.bible_icon_state
-				B.item_state = GLOB.bible_item_state
-				B.name = GLOB.bible_name
-				B.deity_name = GLOB.deity
-			cooldown = world.time + PRINTER_COOLDOWN
-		else
-			say("Printer currently unavailable, please wait a moment.")
-	if(href_list["printposter"])
-		if(cooldown < world.time)
-			new /obj/item/poster/random_official(src.loc)
-			cooldown = world.time + PRINTER_COOLDOWN
-		else
-			say("Printer currently unavailable, please wait a moment.")
-	add_fingerprint(usr)
-	updateUsrDialog()
-
-/*
- * Library Scanner
- */
-/obj/machinery/libraryscanner
-	name = "scanner control interface"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "bigscanner"
-	desc = ""
+/obj/machinery/printingpress
+	name = "printing press"
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = "Ppress_Clean"
+	desc = "The Archivist's wonder. Gears, ink, and wood blocks can turn the written word to the printed word."
 	density = TRUE
-	var/obj/item/book/cache		// Last scanned book
+	var/cooldown = 0
+	var/printing = FALSE
+	var/has_paper = FALSE
+	var/obj/item/paper/loaded_paper
+	var/obj/item/output_item // Variable to store the printed item
 
-/obj/machinery/libraryscanner/attackby(obj/O, mob/user, params)
-	if(istype(O, /obj/item/book))
-		if(!user.transferItemToLoc(O, src))
+/obj/machinery/printingpress/attackby(obj/item/O, mob/user, params)
+	if(printing)
+		to_chat(user, span_warning("[src] is currently printing. Please wait."))
+		return
+	if(output_item)
+		to_chat(user, span_notice("Please retrieve the printed item before inserting new items."))
+		return
+	if(istype(O, /obj/item/paper/manuscript))
+		var/obj/item/paper/manuscript/M = O
+		if(!M.written)
+			to_chat(user, span_notice("This manuscript is blank. You need to write something before uploading it."))
 			return
-	else
-		return ..()
-
-/obj/machinery/libraryscanner/attack_hand(mob/user)
-	. = ..()
-	if(.)
+		// Prompt the user to upload the manuscript
+		var/choice = input(user, "Do you want to add the manuscript to the archive?") in list("Yes", "No")
+		if(choice == "Yes")
+			upload_manuscript(user, M)
+			// Optionally delete the manuscript after uploading
+			qdel(M)
+			to_chat(user, span_notice("The manuscript has been uploaded and removed from your inventory."))
+		else
+			to_chat(user, span_notice("You decide not to upload the manuscript."))
 		return
-	usr.set_machine(src)
-	var/dat = "" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
-	if(cache)
-		dat += "<FONT color=#005500>Data stored in memory.</FONT><BR>"
-	else
-		dat += "No data stored in memory.<BR>"
-	dat += "<A href='?src=[REF(src)];scan=1'>\[Scan\]</A>"
-	if(cache)
-		dat += "       <A href='?src=[REF(src)];clear=1'>\[Clear Memory\]</A><BR><BR><A href='?src=[REF(src)];eject=1'>\[Remove Book\]</A>"
-	else
-		dat += "<BR>"
-	var/datum/browser/popup = new(user, "scanner", name, 600, 400)
-	popup.set_content(dat)
-	popup.set_title_image(user.browse_rsc_icon(src.icon, src.icon_state))
-	popup.open()
+	if(istype(O, /obj/item/paper) && !has_paper)
+		has_paper = TRUE
+		loaded_paper = O
+		src.icon_state = "Ppress_Prepared"
+		to_chat(user, span_warning("You insert the blank paper into [src]."))
+		qdel(O)
+	return ..()
 
-/obj/machinery/libraryscanner/Topic(href, href_list)
-	if(..())
-		usr << browse(null, "window=scanner")
-		onclose(usr, "scanner")
+/obj/machinery/printingpress/attack_hand(mob/user)
+	if(printing)
+		to_chat(user, span_warning("The [src] is currently printing. Please wait."))
+		return
+	if(output_item)
+		// Try to put the item into the user's hands
+		if(!user.put_in_hands(output_item))
+			output_item.forceMove(get_turf(user))
+		else
+			to_chat(user, span_warning("You retrieve [output_item] from [src]."))
+		output_item = null
+		src.icon_state = "Ppress_Clean"
+		return
+	if(loaded_paper)
+		// Allow the user to retrieve the blank paper
+		var/obj/item/paper/P = new /obj/item/paper(get_turf(user)) // Create the item at the user's location
+		if(!user.put_in_hands(P)) // Try to put the item in the user's hands
+			P.forceMove(get_turf(user)) // If not, drop it at the user's location
+		to_chat(user, span_warning("You retrieve the [P.name] from [src]."))
+		has_paper = FALSE
+		loaded_paper = null
+		src.icon_state = "Ppress_Clean"
+		return
+	else
+		// Default interaction or message
+		to_chat(user, span_warning("[src] is empty."))
 		return
 
-	if(href_list["scan"])
-		for(var/obj/item/book/B in contents)
-			cache = B
-			break
-	if(href_list["clear"])
-		cache = null
-	if(href_list["eject"])
-		for(var/obj/item/book/B in contents)
-			B.forceMove(drop_location())
-	src.add_fingerprint(usr)
-	src.updateUsrDialog()
-	return
+/obj/machinery/printingpress/attack_right(mob/user)
+	if(printing)
+		to_chat(user, span_warning("[src] is currently printing. Please wait."))
+		return
+	if(output_item)
+		to_chat(user, span_warning("There is a finished product in [src]. Use an empty hand to retrieve it."))
+		return
+	if(!has_paper)
+		to_chat(user, span_warning("[src] requires a blank piece of paper to print."))
+		return
+	var/choice = input(user, "Choose an option for \the [src]") in list("Print The Book", "Print a Tome of Justice", "Print from the Archive")
+	switch(choice)
+		if ("Print The Book")
+			start_printing(user, "bibble")
+		if ("Print a Tome of Justice")
+			start_printing(user, "justice")
+		if ("Print from the Archive")
+			choose_search_parameters(user)
 
+/obj/machinery/printingpress/proc/start_printing(mob/user, print_type, id = null)
+	if(cooldown > world.time)
+		to_chat(user, span_warning("[src] is still recalibrating."))
+		return
+	printing = TRUE
+	src.icon_state = "Ppress_Printing"
+	to_chat(user, span_warning("[src] starts printing..."))
+	playsound(src.loc, 'sound/misc/ppress.ogg', 100, FALSE)
+	// Delete the blank paper as it's consumed during printing
+	if(loaded_paper)
+		qdel(loaded_paper)
+		loaded_paper = null
+		has_paper = FALSE
+	sleep(PRINTING_TIME)
+	if(print_type == "bibble")
+		print_bibble(user)
+	else if(print_type == "justice")
+		print_justice(user)
+	else if(print_type == "archive")
+		print_manuscript(user, id)
+	// Printing is done
+	printing = FALSE
+	src.icon_state = "Ppress_Done"
+	cooldown = world.time + PRINTER_COOLDOWN
 
-/*
- * Book binder
- */
+/obj/machinery/printingpress/proc/upload_manuscript(mob/user, obj/item/paper/manuscript/M)
+	// Perform the actual SQL INSERT query
+	var/datum/DBQuery/query_upload_manuscript = SSdbcore.NewQuery({"
+		INSERT INTO library (author, title, content, category, select_icon, ckey, datetime, round_id_created, approved)
+		VALUES (:author, :title, :content, :category, :select_icon, :ckey, Now(), :round_id_created, :approved)
+	"}, list(
+		"author" = M.author,
+		"title" = M.name,
+		"content" = M.content,
+		"category" = M.category,
+		"select_icon" = M.select_icon,
+		"ckey" = M.ckey,
+		"round_id_created" = GLOB.round_id,
+		"approved" = 0
+	))
+
+	if (query_upload_manuscript.Execute())
+		user.visible_message(span_notice("[user] uploads a manuscript to the archive."), span_notice("You upload a manuscript to the archive."))
+	else
+		to_chat(user, span_warning("Manuscript storage failed. Please try again later."))
+
+	qdel(query_upload_manuscript)
+
+/obj/machinery/printingpress/proc/print_bibble(mob/user)
+	// Creates a static book (Bibble)
+	var/obj/item/book/rogue/bibble/B = new()
+	output_item = B
+	visible_message("<span class='notice'>The printing press hums as it produces [B.name].</span>")
+
+/obj/machinery/printingpress/proc/print_justice(mob/user)
+	// Creates a static book (Tome of Justice)
+	var/obj/item/book/rogue/law/B = new()
+	output_item = B
+	visible_message("<span class='notice'>[src] hums as it produces the [B.name].</span>")
+
+/obj/machinery/printingpress/proc/print_manuscript(mob/user, id)
+	var/sqlid = text2num(id)
+	if (!sqlid)
+		to_chat(user, span_warning("Invalid manuscript ID."))
+		return
+
+	// Perform the actual SQL SELECT query
+	var/datum/DBQuery/query_print_manuscript = SSdbcore.NewQuery({"
+		SELECT author, title, content, category, ckey, select_icon
+		FROM library
+		WHERE id = :id AND deleted <> 1 AND approved = 1
+	"}, list("id" = sqlid))
+
+	if (query_print_manuscript.Execute() && query_print_manuscript.NextRow())
+		var/author = query_print_manuscript.item[1]
+		var/title = query_print_manuscript.item[2]
+		var/content = query_print_manuscript.item[3]
+		var/category = query_print_manuscript.item[4]
+		var/ckey = query_print_manuscript.item[5]
+		var/select_icon = query_print_manuscript.item[6]
+
+		// Check if the manuscript is in the forbidden category
+		if (category == "Apocrypha & Grimoires")
+			to_chat(user, span_warning("This manuscript cannot be printed using [src]."))
+			qdel(query_print_manuscript)
+			return
+
+		// Create a new manuscript object
+		var/obj/item/paper/manuscript/M = new()
+		M.name = title
+		M.author = author
+		M.content = content
+		M.category = category
+		M.ckey = ckey
+		M.select_icon = select_icon
+		M.written = TRUE
+		M.info = content
+		output_item = M
+		visible_message("<span class='notice'>[src] hums as it produces a manuscript titled [title].</span>")
+	else
+		to_chat(user, span_warning("Could not find manuscript with ID [id]."))
+
+	qdel(query_print_manuscript)
+
+/obj/machinery/printingpress/proc/choose_search_parameters(mob/user)
+	var/search_title = input(user, "Enter the title (optional):") as text|null
+	var/search_author = input(user, "Enter the author (optional):") as text|null
+	var/search_category = input(user, "Select a category (optional):") in list("Any", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica") // Removed "Apocrypha & Grimoires"
+	// Pass the selected parameters to search_manuscripts
+	search_manuscripts(user, search_title, search_author, search_category)
+
+/obj/machinery/printingpress/proc/search_manuscripts(mob/user, search_title, search_author, search_category)
+	var/list/params = list()
+	var/sqlquery = "SELECT id, author, title, category FROM library WHERE deleted <> 1 AND approved = 1 AND category != 'Apocrypha & Grimoires'" // Exclude forbidden category
+
+	if (search_author && search_author != "")
+		sqlquery += " AND author LIKE :author"
+		params["author"] = "%" + search_author + "%"
+	if (search_title && search_title != "")
+		sqlquery += " AND title LIKE :title"
+		params["title"] = "%" + search_title + "%"
+	if (search_category && search_category != "Any")
+		sqlquery += " AND category = :category"
+		params["category"] = search_category
+
+	var/datum/DBQuery/query_search_manuscripts = SSdbcore.NewQuery(sqlquery, params)
+
+	var/dat = "<h3>Manuscript Search Results:</h3><br>"
+	dat += "<table><tr><th>Author</th><th>Title</th><th>Category</th><th>Print</th></tr>"
+
+	if (query_search_manuscripts.Execute())
+		var/has_results = FALSE
+		while (query_search_manuscripts.NextRow())
+			has_results = TRUE
+			var/id = query_search_manuscripts.item[1]
+			var/author = query_search_manuscripts.item[2]
+			var/title = query_search_manuscripts.item[3]
+			var/category = query_search_manuscripts.item[4]
+			dat += "<tr><td>[html_encode(author)]</td><td>[html_encode(title)]</td><td>[html_encode(category)]</td><td><a href='?src=[REF(src)];print=1;id=[id]'>Print</a></td></tr>"
+		if (!has_results)
+			dat += "<tr><td colspan='4'>No results found.</td></tr>"
+	else
+		dat += "<tr><td colspan='4'>Error executing search query.</td></tr>"
+
+	dat += "</table>"
+	user << browse(dat, "window=search_results")
+
+	qdel(query_search_manuscripts)
+
+/obj/machinery/printingpress/Topic(href, href_list)
+	if(printing)
+		return // Ignore interactions while printing
+	if("print" in href_list)
+		var/id = href_list["id"]
+		start_printing(usr, "archive", id)
+
 /obj/machinery/bookbinder
 	name = "book binder"
-	icon = 'icons/obj/library.dmi'
-	icon_state = "binder"
-	desc = ""
+	icon = 'icons/roguetown/misc/machines.dmi'
+	icon_state = "book_binder"
+	desc = "A machine that binds loose manuscripts into finished books."
 	density = TRUE
 	var/busy = FALSE
 
-/obj/machinery/bookbinder/attackby(obj/O, mob/user, params)
-	if(istype(O, /obj/item/paper))
-		bind_book(user, O)
-	else if(default_unfasten_wrench(user, O))
-		return 1
-	else
-		return ..()
+/obj/machinery/bookbinder/proc/bind_book(mob/user, obj/item/paper/manuscript/M)
+	if (busy)
+		to_chat(user, "<span class='warning'>[src] is already pressing a book!</span>")
+		return
 
-/obj/machinery/bookbinder/proc/bind_book(mob/user, obj/item/paper/P)
-	if(stat)
+	if (!user.transferItemToLoc(M, src))
 		return
-	if(busy)
-		to_chat(user, "<span class='warning'>The book binder is busy. Please wait for completion of previous operation.</span>")
-		return
-	if(!user.transferItemToLoc(P, src))
-		return
-	user.visible_message("<span class='notice'>[user] loads some paper into [src].</span>", "<span class='notice'>I load some paper into [src].</span>")
-	audible_message("<span class='hear'>[src] begins to hum as it warms up its printing drums.</span>")
+
+	user.visible_message(span_notice("[user] places \the [M] into \the [src] and screws the press."), span_notice("I place \the [M] into \the [src] and screw the press."))
 	busy = TRUE
-	sleep(rand(200,400))
+	sleep(rand(50, 100))
 	busy = FALSE
-	if(P)
-		if(!stat)
-			visible_message("<span class='notice'>[src] whirs as it prints and binds a new book.</span>")
-			var/obj/item/book/B = new(src.loc)
-			B.dat = P.info
-			B.name = "Print Job #" + "[rand(100, 999)]"
-			B.icon_state = "book[rand(1,7)]"
-			qdel(P)
+
+	var/obj/item/book/rogue/B = new(src.loc)
+	B.name = M.name
+	B.title = M.name
+	B.author = M.author
+	B.pages = list("<b3><h3>Title: [B.title]<br>Author: [B.author]</b><h3>[M.info]")
+	B.icon_state = "[M.select_icon]_0"
+	B.base_icon_state = "[M.select_icon]"
+	qdel(M)
+
+	visible_message("<span class='notice'>[B.title] has been produced from the manuscript!</span>")
+
+/obj/machinery/bookbinder/attackby(obj/O, mob/user, params)
+	if (istype(O, /obj/item/paper/manuscript))
+		bind_book(user, O)
+		return TRUE
+	return ..()
+
+/obj/item/paper/manuscript
+	name = "manuscript"
+	desc = "A loose manuscript yet to be bound."
+	var/author = "anonymous"
+	var/content = ""
+	var/category = "Unspecified"
+	var/ckey = ""
+	var/newicon = "basic_book_0"
+	var/written = FALSE
+	var/select_icon = "basic_book"
+	var/list/book_icons = list(
+		"Simple green" = "basic_book",
+		"Simple black" = "book",
+		"Simple red" = "book2",
+		"Simple blue" = "book3",
+		"Simple dark yellow" = "book4",
+		"Brown with dark corners" = "book5",
+		"Heavy purple with dark corners" = "book6",
+		"Light purple with gold leaf" = "book7",
+		"Light blue with gold leaf" = "book8",
+		"Grey with gold leaf" = "knowledge")
+
+/obj/item/paper/attack_right(mob/user)
+	if(istype(user, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = user
+		if(H.mind.get_skill_level(/datum/skill/misc/reading) <= 0)
+			to_chat(user, "<span class='warning'>I don't know how to do this!</span>")
+			return
+		if(!user.is_holding(src))
+			to_chat(user, "<span class='warning'>I need to hold \the [src] to turn it into a manuscript!</span>")
+			return
+		if(info)
+			to_chat(user, "<span class='warning'>The paper already has content!</span>")
+			return
+		user.temporarilyRemoveItemFromInventory(src) // Remove the paper
+
+		var/obj/item/paper/manuscript/new_manuscript = new /obj/item/paper/manuscript // Create a new manuscript object
+		user.put_in_hands(new_manuscript) // Place the manuscript into the user's hands
+
+		to_chat(user, "<span class='notice'>You have turned the paper into a blank manuscript.</span>")
+
+/obj/item/paper/manuscript/attackby(obj/item/P, mob/living/carbon/human/user, params)
+	if(istype(P, /obj/item/natural/feather) && !written)
+		// Prompt user to populate manuscript fields
+		var/newtitle = dd_limittext(sanitize_hear_message(input(user, "Enter the title of the manuscript:") as text|null), MAX_CHARTER_LEN)
+		var/newauthor = dd_limittext(sanitize_hear_message(input(user, "Enter the author's name:") as text|null), MAX_CHARTER_LEN)
+		var/newcontent = "<p>[dd_limittext(input(user, "Enter the content of the manuscript:") as text|null, MAX_BOOK_LEN)]</p>"
+		var/newcategory = input(user, "Select the category of the manuscript:") in list("Apocrypha & Grimoires", "Myths & Tales", "Legends & Accounts", "Thesis", "Eoratica")
+		var/newicon = book_icons[input(user, "Choose a book style", "Book Style") as anything in book_icons]
+
+		if (newtitle && newauthor && newcontent && newcategory)
+			name = newtitle
+			author = newauthor
+			content = newcontent
+			category = newcategory
+			ckey = user.ckey
+			select_icon = newicon
+			written = TRUE
+			info = parsepencode(content)
+			icon_state = "paperwrite"
+			to_chat(user, "<span class='notice'>You have successfully written the manuscript.</span>")
 		else
-			P.forceMove(drop_location())
+			to_chat(user, "<span class='notice'>You must fill out all fields to complete the manuscript.</span>")
+		return
+	else if(istype(P, /obj/item/natural/feather) && written)
+		to_chat(user, "<span class='notice'>The manuscript has already been written.</span>")
+		return
+	return ..()

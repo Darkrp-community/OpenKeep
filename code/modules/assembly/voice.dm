@@ -17,9 +17,9 @@
 	var/recorded = "" //the activation message
 	var/mode = 1
 	var/list/modes = list("inclusive",
-								 "exclusive",
-								 "recognizer",
-								 "voice sensor")
+								"exclusive",
+								"recognizer",
+								"voice sensor")
 
 /obj/item/assembly/voice/examine(mob/user)
 	. = ..()

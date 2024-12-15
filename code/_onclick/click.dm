@@ -193,10 +193,6 @@
 	if(dir == get_dir(A,src)) //they are behind us and we are not facing them
 		return
 
-	if(ismecha(loc))
-		var/obj/mecha/M = loc
-		return M.click_action(A,src,params)
-
 	if(restrained())
 		changeNext_move(CLICK_CD_HANDCUFFED)   //Doing shit in cuffs shall be vey slow
 		RestrainedClickOn(A)
@@ -495,9 +491,9 @@
 	return
 
 /**
-  *Middle click
-  *Mainly used for swapping hands
-  */
+ *Middle click
+ *Mainly used for swapping hands
+ */
 /mob/proc/MiddleClickOn(atom/A, params)
 	. = SEND_SIGNAL(src, COMSIG_MOB_MIDDLECLICKON, A)
 	if(. & COMSIG_MOB_CANCEL_CLICKON)
@@ -512,7 +508,7 @@
 		return
 	if(user.get_active_held_item())
 		return
-	var/list/atomy = list()
+	var/list/obj/item/atomy = list()
 	var/list/atomcounts = list()
 	var/list/atomrefs = list()
 	var/list/overrides = list()
