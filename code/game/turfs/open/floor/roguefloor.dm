@@ -1064,7 +1064,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
-	neighborlay = "cobblerock"
+	neighborlay = ""
 
 /turf/open/floor/rogue/cobblerock_alt/Initialize()
 	. = ..()

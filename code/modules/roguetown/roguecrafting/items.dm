@@ -255,7 +255,7 @@
 				/obj/item/grown/log/tree/stick = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
-
+/*
 /datum/crafting_recipe/roguetown/plankaxe
 	name = "crude wooden plank"
 	result = list(/obj/item/natural/plank)
@@ -295,7 +295,7 @@
 	craftdiff = 1
 	verbage = "chisel"
 	verbage_tp = "chisels"
-
+*/
 /datum/crafting_recipe/roguetown/stoneblocprimitive
 	name = "crude stone block"
 	result = list(/obj/item/natural/stoneblock)

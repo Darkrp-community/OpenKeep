@@ -13618,7 +13618,7 @@
 /area/rogue/outdoors/mountains)
 "nDW" = (
 /obj/machinery/light/rogue/campfire{
-	light_outer_range = 5
+	on = 1
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/hamlet)
@@ -19829,13 +19829,6 @@
 /obj/structure/idle_enemy/volf,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)
-"tGV" = (
-/obj/structure/flora/newbranch{
-	dir = 4
-	},
-/obj/structure/flora/roguegrass,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield/hamlet)
 "tHr" = (
 /obj/effect/decal/cleanable/blood_neu/random,
 /turf/open/floor/rogue/cobble/alt,
@@ -62297,7 +62290,7 @@ hQx
 hQx
 bsm
 hQx
-tGV
+lmG
 hQx
 hQx
 hQx
