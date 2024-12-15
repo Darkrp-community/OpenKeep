@@ -173,7 +173,7 @@
 	clusterMin = 1
 	checkdensity = FALSE
 	allowed_areas = list(/area/rogue/outdoors/rtfield/spooky, /area/rogue/outdoors/rtfield/plague_district, /area/rogue/outdoors/rtfield/outlaw, /area/rogue/outdoors/rtfield/boggish, /area/rogue/outdoors/rtfield/woodish, /area/rogue/outdoors/rtfield/hamlet/unsafe	)
-	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
+//	allowed_turfs = list(/turf/open/floor/rogue/dirt/ambush)
 	excluded_turfs = list(/turf/open/floor/rogue/dirt/road)
 
 

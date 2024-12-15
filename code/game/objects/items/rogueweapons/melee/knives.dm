@@ -400,7 +400,7 @@
 	throwforce = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
-	desc = "A tool favored by the wood-elves, easy to make, useful for skinning the flesh of beast and man alike."
+	desc = "A tool favored by poor woodland inhabitants, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
 	max_integrity = 30
@@ -414,7 +414,7 @@
 /obj/item/rogueweapon/knife/villager
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	name = "villager knife"
-	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
+	desc = "The loyal companion of simple peasants, for cutting hard bread and carving wood."
 	icon_state = "villagernife"
 
 /obj/item/rogueweapon/knife/copper

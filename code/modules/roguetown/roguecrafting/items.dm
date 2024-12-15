@@ -255,7 +255,7 @@
 				/obj/item/grown/log/tree/stick = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
-
+/*
 /datum/crafting_recipe/roguetown/plankaxe
 	name = "crude wooden plank"
 	result = list(/obj/item/natural/plank)
@@ -288,14 +288,14 @@
 
 /datum/crafting_recipe/roguetown/stoneblock
 	name = "stone block"
-	result = list(/obj/item/natural/stoneblock, /obj/item/natural/stoneblock)
+	result = list(/obj/item/natural/stoneblock)
 	reqs = list(/obj/item/natural/stone = 1)
 	tools = list(/obj/item/rogueweapon/chisel)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 1
 	verbage = "chisel"
 	verbage_tp = "chisels"
-
+*/
 /datum/crafting_recipe/roguetown/stoneblocprimitive
 	name = "crude stone block"
 	result = list(/obj/item/natural/stoneblock)
@@ -303,13 +303,14 @@
 	tools = list(/obj/item/natural/stone)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 1
+	time = 10 SECONDS
 	verbage = "bash"
 	verbage_tp = "bashes"
 
 /datum/crafting_recipe/roguetown/stonesaw
 	name = "crude saw"
 	result = /obj/item/rogueweapon/handsaw/crude
-	reqs = list(/obj/item/natural/stone = 2, /obj/item/alch/bone = 1)
+	reqs = list(/obj/item/natural/stone = 2, /obj/item/grown/log/tree/stick = 1)
 	tools = /obj/item/rogueweapon/knife
 	craftdiff = 1
 	verbage = "hew"
@@ -319,30 +320,59 @@
 /*========= MISCELLANY ==========*/
 
 /datum/crafting_recipe/roguetown/pestle
-	name = "pestle"
+	name = "pestle (stone)"
 	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 2)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
+	reqs = list(/obj/item/natural/stone = 1)
+	tools = list(/obj/item/rogueweapon/chisel)
 	verbage = "crafts"
+	skillcraft = /datum/skill/craft/masonry
+
+/datum/crafting_recipe/roguetown/pestle_bone
+	name = "pestle (bone)"
+	result = /obj/item/pestle
+	reqs = list(/obj/item/alch/bone = 1)
+	tools = /obj/item/rogueweapon/knife
+	subtype_reqs = TRUE
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/crafting
+
+/*
+/datum/crafting_recipe/roguetown/mortar
+	name = "mortar (stone)"
+	result = /obj/item/reagent_containers/glass/mortar
+	reqs = list(/obj/item/natural/stone = 2)
+	tools = list(/obj/item/rogueweapon/chisel)
+	craftdiff = 1
 	skillcraft = /datum/skill/craft/masonry
 
 /datum/crafting_recipe/roguetown/mortar
-	name = "stone mortar"
+	name = "mortar (bone)"
 	result = /obj/item/reagent_containers/glass/mortar
-	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	craftdiff = 1
+	reqs = list(/obj/item/alch/bone = 2)
+	tools = /obj/item/rogueweapon/knife
 	subtype_reqs = TRUE
-	skillcraft = /datum/skill/craft/masonry
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/crafting
+*/
 
 /datum/crafting_recipe/roguetown/alchmortar
-	name = "alchemical mortar"
+	name = "alchemical mortar (stone)"
 	result = /obj/item/mortar
 	reqs = list(/obj/item/natural/stone = 3)
-	tools = list(/obj/item/rogueweapon/knife)
+	tools = list(/obj/item/rogueweapon/chisel)
 	verbage = "crafts"
 	skillcraft = /datum/skill/craft/masonry
 	subtype_reqs = TRUE // should allow you to use any kind of knoife
+
+/datum/crafting_recipe/roguetown/alchmortar
+	name = "alchemical mortar (bone)"
+	result = /obj/item/mortar
+	reqs = list(/obj/item/alch/bone = 3)
+	tools = /obj/item/rogueweapon/knife
+	subtype_reqs = TRUE
+	verbage = "crafts"
+	skillcraft = /datum/skill/craft/crafting
+
 
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"

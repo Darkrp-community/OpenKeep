@@ -473,29 +473,48 @@
 	wander = FALSE
 	ambushable = FALSE
 
+/mob/living/carbon/human/species/goblin/skilled/ambush
+	simpmob_attack = 35
+	simpmob_defend = 25
+	wander = TRUE
+	attack_speed = 2
+
 /mob/living/carbon/human/species/goblin/skilled/proc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 
-	mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-	mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 
 /mob/living/carbon/human/species/goblin/skilled/after_creation()
 	..()
 	configure_mind()
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, the higher the skill the more powerful this is of course
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
-	equipOutfit(new /datum/outfit/job/roguetown/npc/goblin)
+//	equipOutfit(new /datum/outfit/job/roguetown/npc/goblin)
 
-/mob/living/carbon/human/species/goblin/skilled/moon
+/mob/living/carbon/human/species/goblin/skilled/ambush/moon
 	name = "moon goblin"
 	race = /datum/species/goblin/moon
+
+/mob/living/carbon/human/species/goblin/skilled/ambush/hell
+	name = "hell goblin"
+	race = /datum/species/goblin/hell
+
+/mob/living/carbon/human/species/goblin/skilled/ambush/cave
+	name = "cave goblin"
+	race = /datum/species/goblin/cave
+
+/mob/living/carbon/human/species/goblin/skilled/ambush/sea
+	name = "sea goblin"
+	race = /datum/species/goblin/sea
+
 
 
 /* 	Can be put into pre_equip to lessen chance of crits, bit strong despite the low value
