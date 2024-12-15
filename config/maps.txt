@@ -13,7 +13,8 @@ Format:
 	votable (is this map votable)
 endmap
 
-map vanderlin
+map roguetown
 	default
+	#voteweight 1.5
 	votable
 endmap

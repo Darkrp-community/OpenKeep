@@ -308,7 +308,6 @@ SUBSYSTEM_DEF(ticker)
 	amt_ready = 999
 #endif
 
-#ifndef UNIT_TESTS
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
 			continue

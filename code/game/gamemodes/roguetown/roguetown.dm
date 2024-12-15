@@ -168,13 +168,17 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 					log_game("Major Antagonist: Extended")
 		return TRUE
 	var/playersready = num_players()
-	if(get_players_for_role(ROLE_PREBEL).len > 1)
+	var/list/prebel = get_players_for_role(ROLE_PREBEL)
+	var/list/werevolf = get_players_for_role(ROLE_WEREWOLF)
+	var/list/nbeast = get_players_for_role(ROLE_NBEAST)
+	var/list/zizocultis = get_players_for_role(ROLE_ZIZOIDCULTIST)
+	if(prebel.len > 1)
 		major_modes |= 1
-	if(get_players_for_role(ROLE_WEREWOLF).len > 0)
+	if(werevolf.len > 0)
 		major_modes |= 2
-	if(get_players_for_role(ROLE_NBEAST).len > 0)
+	if(nbeast.len > 0)
 		major_modes |= 3
-	if(get_players_for_role(ROLE_ZIZOIDCULTIST).len > 0)
+	if(zizocultis.len > 0)
 		major_modes |= 4
 	if(!major_modes.len)
 		major_modes |= 0
