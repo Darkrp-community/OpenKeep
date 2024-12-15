@@ -34,14 +34,16 @@
 			S.set_up(1, 1, front)
 			S.start()
 	if(istype(W, /obj/item/rogueweapon/chisel))
-		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
+		playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 		user.visible_message("<span class='info'>[user] chisels the stone into a block.</span>")
-		if(do_after(user, 3 SECONDS))
+		if(do_after(user, 2 SECONDS))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 			qdel(src)
 		return
 	else
 		..()
+
 
 /obj/item/natural/rock
 	name = "rock"
@@ -118,12 +120,13 @@
 			S.start()
 		return
 	if(istype(W, /obj/item/rogueweapon/chisel))
-		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
+		playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 		user.visible_message("<span class='info'>[user] chisels the rock into blocks.</span>")
-		if(do_after(user, 9 SECONDS))
+		if(do_after(user, 6 SECONDS))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
 			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
 			qdel(src)
 		return
 	..()

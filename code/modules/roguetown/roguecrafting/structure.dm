@@ -477,7 +477,7 @@
 /datum/crafting_recipe/roguetown/structure/smelter
 	name = "ore furnace"
 	result = /obj/machinery/light/rogue/smelter
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stone = 6,
 			/obj/item/rogueore/coal = 1)
 	verbage = "build"
 	verbage_tp = "builds"

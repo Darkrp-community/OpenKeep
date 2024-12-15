@@ -288,7 +288,7 @@
 
 /datum/crafting_recipe/roguetown/stoneblock
 	name = "stone block"
-	result = list(/obj/item/natural/stoneblock, /obj/item/natural/stoneblock)
+	result = list(/obj/item/natural/stoneblock)
 	reqs = list(/obj/item/natural/stone = 1)
 	tools = list(/obj/item/rogueweapon/chisel)
 	skillcraft = /datum/skill/craft/masonry
@@ -303,13 +303,14 @@
 	tools = list(/obj/item/natural/stone)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 1
+	time = 10 SECONDS
 	verbage = "bash"
 	verbage_tp = "bashes"
 
 /datum/crafting_recipe/roguetown/stonesaw
 	name = "crude saw"
 	result = /obj/item/rogueweapon/handsaw/crude
-	reqs = list(/obj/item/natural/stone = 2, /obj/item/alch/bone = 1)
+	reqs = list(/obj/item/natural/stone = 2, /obj/item/grown/log/tree/stick = 1)
 	tools = /obj/item/rogueweapon/knife
 	craftdiff = 1
 	verbage = "hew"
