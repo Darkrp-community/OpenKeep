@@ -368,8 +368,9 @@
 	craftdiff = 2
 
 /datum/artificer_recipe/silver/psycross/malum
-	name = "Malum silver Psycross"
-	required_item = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/neck/roguetown/psycross/steel/malum
+	name = "Malum steel Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+	additional_items = list(/obj/item/ingot/steel = 1)
 	hammers_per_item = 7
-	craftdiff = 2
+	craftdiff = 3
