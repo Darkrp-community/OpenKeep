@@ -159,7 +159,7 @@
 	name = "privy"
 	},
 /turf/open/floor/rogue/cobblerock,
-/area/rogue/under/town/sewer)
+/area/rogue/indoors/town)
 "aiB" = (
 /turf/closed/mineral/rogue/salt,
 /area/rogue/under/town/caverogue/saltmine)
@@ -345,7 +345,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "asS" = (
 /turf/open/floor/rogue/cobble,
-/area/rogue/under/town/sewer)
+/area/rogue/indoors/town)
 "ate" = (
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
@@ -4142,7 +4142,7 @@
 	dir = 6
 	},
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/exposed/under/sewer)
+/area/rogue/indoors/town)
 "elF" = (
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /obj/effect/landmark/ambush,
@@ -6354,9 +6354,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "gnk" = (
-/obj/structure/mineral_door/wood/deadbolt{
-	dir = 8
-	},
+/obj/machinery/dye_bin,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town)
 "gnn" = (
@@ -6773,10 +6771,9 @@
 "gHu" = (
 /obj/structure/table/wood/plain_alt,
 /obj/item/rogueweapon/shovel{
-	pixel_x = 1;
+	pixel_x = 6;
 	pixel_y = 1
 	},
-/obj/item/rogueweapon/shovel,
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
 "gHE" = (
@@ -7173,8 +7170,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/river)
 "hgj" = (
-/turf/closed/wall/mineral/rogue/wooddark/slitted,
-/area/rogue/under/town/sewer)
+/obj/structure/table/wood/plain_alt,
+/turf/open/floor/rogue/woodturned/saiga,
+/area/rogue/indoors/town)
 "hgo" = (
 /obj/effect/decal/turfedge_neu/road{
 	dir = 9
@@ -9267,7 +9265,7 @@
 /obj/structure/stairs/stone,
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/cobble,
-/area/rogue/outdoors/exposed/under/sewer)
+/area/rogue/indoors/town)
 "jlO" = (
 /obj/effect/spawner/roguemap/tree,
 /turf/open/floor/rogue/dirt,
@@ -9464,10 +9462,12 @@
 "jwy" = (
 /obj/structure/table/wood/plain_alt,
 /obj/item/rogueweapon/pick{
-	pixel_y = 3
-	},
-/obj/item/rogueweapon/pick{
+	pixel_x = -5;
 	pixel_y = 5
+	},
+/obj/item/rogueweapon/hammer{
+	pixel_x = 9;
+	pixel_y = 3
 	},
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
@@ -13662,12 +13662,11 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
-/obj/item/needle/thorn{
-	pixel_x = -4
+/obj/item/needle{
+	pixel_x = -7;
+	pixel_y = 4
 	},
-/obj/item/roguekey/tailor{
-	pixel_y = 37
-	},
+/obj/item/natural/bundle/silk,
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town)
 "nHt" = (
@@ -14521,8 +14520,9 @@
 /area/rogue/outdoors/rtfield/hamlet)
 "oyu" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
+/obj/item/natural/plank,
+/obj/item/natural/plank,
+/obj/item/natural/plank,
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
 "oyB" = (
@@ -14893,10 +14893,8 @@
 "oLO" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/natural/stone,
-/obj/item/natural/stone,
-/obj/item/natural/stone,
-/obj/item/natural/stone,
-/obj/item/natural/stone,
+/obj/item/natural/bundle/stoneblock,
+/obj/item/natural/bundle/stoneblock,
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
 "oMj" = (
@@ -16269,8 +16267,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "pYM" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/under/town/sewer)
+/obj/effect/landmark/start/tailor,
+/turf/open/floor/rogue/woodturned/saiga,
+/area/rogue/indoors/town)
 "pYT" = (
 /obj/structure/roguemachine/vendor/centcom,
 /turf/closed/wall/mineral/rogue/stone,
@@ -17047,16 +17046,8 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "qNs" = (
 /obj/item/rogueweapon/chisel{
-	pixel_x = -5;
-	pixel_y = -1
-	},
-/obj/item/rogueweapon/chisel{
 	pixel_x = -11;
 	pixel_y = 1
-	},
-/obj/item/rogueweapon/handsaw{
-	pixel_x = 4;
-	pixel_y = 4
 	},
 /obj/structure/table/wood/plain_alt,
 /obj/item/rogueweapon/handsaw{
@@ -18225,7 +18216,7 @@
 	dir = 1
 	},
 /turf/open/floor/rogue/dirt,
-/area/rogue/under/town/sewer)
+/area/rogue/indoors/town)
 "rWD" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
@@ -19078,9 +19069,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "sSj" = (
-/obj/structure/table/wood/plain_alt,
-/obj/effect/spawner/roguemap/loot/common,
-/turf/open/floor/rogue/woodturned/saiga,
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 4
+	},
+/turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/town)
 "sSX" = (
 /obj/structure/mineral_door/wood{
@@ -19184,6 +19176,7 @@
 /obj/effect/landmark/start/weaponsmith{
 	dir = 4
 	},
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/town)
 "sYX" = (
@@ -20645,7 +20638,7 @@
 	},
 /obj/machinery/light/rogue/wallfire/candle/weak/r,
 /turf/open/floor/rogue/dirt,
-/area/rogue/under/town/sewer)
+/area/rogue/indoors/town)
 "utU" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/cow,
 /turf/open/floor/rogue/dirt,
@@ -20851,7 +20844,6 @@
 /area/rogue/indoors/town/bath/redhouse)
 "uBq" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
 "uBG" = (
@@ -21997,7 +21989,7 @@
 	dir = 5
 	},
 /turf/open/floor/rogue/dirt,
-/area/rogue/under/town/sewer)
+/area/rogue/indoors/town)
 "vEU" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/trufflepig,
 /turf/open/floor/rogue/grass/peril,
@@ -22270,10 +22262,6 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/under/town/basement)
-"vWe" = (
-/obj/structure/table/wood/plain_alt,
-/turf/open/floor/rogue/woodturned/saiga,
-/area/rogue/indoors/town)
 "vWg" = (
 /obj/effect/decal/turfedge_neu{
 	dir = 10
@@ -59856,7 +59844,7 @@ xEd
 okB
 niZ
 xEd
-qLT
+qer
 baL
 bJf
 jYy
@@ -60050,7 +60038,7 @@ tFN
 qer
 tFN
 tFN
-qLT
+qer
 fKK
 wMi
 bJf
@@ -60244,7 +60232,7 @@ xGc
 ejD
 gMb
 tph
-qLT
+qer
 slK
 dOi
 vyQ
@@ -60438,7 +60426,7 @@ qko
 bDY
 xOf
 ppn
-fyR
+tFN
 iuE
 qbF
 xEd
@@ -60632,8 +60620,8 @@ rhi
 xLq
 nwn
 qJB
-fyR
-qLT
+tFN
+qer
 xEd
 xEd
 xEd
@@ -62794,7 +62782,7 @@ uJs
 bpv
 gtN
 iLY
-khl
+pYM
 sEq
 rqR
 swy
@@ -62981,13 +62969,13 @@ lFW
 tZZ
 pSa
 vWP
+wAB
 rqR
-swy
 pjU
 giM
 nHh
 oJh
-iLY
+gnk
 khl
 sEq
 rqR
@@ -63376,7 +63364,7 @@ dZd
 xeL
 gKF
 xeL
-xeL
+khl
 dZd
 rqR
 swy
@@ -63570,7 +63558,7 @@ pjU
 dZd
 hyn
 dZd
-dZd
+sSj
 pjU
 rqR
 swy
@@ -63763,8 +63751,8 @@ wAB
 dZd
 cjO
 nRE
-sSj
-vWe
+khl
+khl
 dZd
 rqR
 swy
@@ -63957,7 +63945,7 @@ dZq
 dZd
 khl
 khl
-trq
+khl
 khl
 owy
 oII
@@ -64149,10 +64137,10 @@ pSa
 rSm
 sQV
 dZd
-iLY
-iLY
-iLY
 wks
+trq
+hgj
+khl
 dZd
 hOz
 czT
@@ -64343,7 +64331,7 @@ xkE
 xkE
 wAB
 pjU
-gnk
+dZd
 dZd
 dZd
 dZd
@@ -66263,10 +66251,10 @@ uOa
 jbL
 eiu
 eBg
-qLT
-qLT
-qLT
-qLT
+qer
+qer
+qer
+qer
 vWP
 dZq
 vfK
@@ -66457,7 +66445,7 @@ cSb
 gfN
 eiu
 oMz
-qLT
+qer
 fjH
 jlJ
 elw
@@ -66651,10 +66639,10 @@ boJ
 gfN
 eiu
 aOi
-qLT
-qLT
-qLT
-qLT
+qer
+qer
+qer
+qer
 pxU
 wAB
 hny
@@ -66845,7 +66833,7 @@ old
 kvS
 aOi
 aOi
-pYM
+dZd
 rWn
 asS
 aif
@@ -67039,10 +67027,10 @@ qOE
 iso
 aOi
 oMz
-pYM
+dZd
 vDw
 utC
-hgj
+pjU
 wuh
 dZq
 eRt
