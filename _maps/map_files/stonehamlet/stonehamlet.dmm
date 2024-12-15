@@ -7562,7 +7562,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield/plague_district)
 "hDd" = (
-/obj/item/reagent_containers/glass/bottle/rogue/water,
+/obj/item/reagent_containers/glass/bottle/rogue/beer/voddena,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "hDi" = (
@@ -20838,6 +20838,9 @@
 "uxm" = (
 /obj/structure/closet/crate/chest/neu,
 /obj/item/natural/cloth,
+/obj/item/flashlight/flare/torch/metal,
+/obj/item/flashlight/flare/torch/metal,
+/obj/item/flashlight/flare/torch/metal,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "uxt" = (
