@@ -92,7 +92,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 20,
 				/mob/living/carbon/human/species/skeleton/skilled/fighter = 15,
-				/mob/living/carbon/human/species/goblin/skilled = 50)
+				/mob/living/carbon/human/species/goblin/skilled/ambush/hell = 50)
 
 /area/rogue/outdoors/mountains/decap
 	name = "mt decapitation"
@@ -124,7 +124,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/grass)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
-				/mob/living/carbon/human/species/goblin/skilled = 20)
+				/mob/living/carbon/human/species/goblin/skilled/ambush = 10)
 	first_time_text = "ROCKHILL BASIN"
 	droning_sound = 'sound/music/area/field.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
@@ -138,7 +138,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/grass/peril)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
-				/mob/living/carbon/human/species/goblin/skilled = 10,
+				/mob/living/carbon/human/species/goblin/skilled/ambush = 5,
 				/mob/living/simple_animal/pet/cat/rogue/cabbit = 10)
 	first_time_text = "STONEHILL VALLEY"
 
@@ -159,7 +159,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	first_time_text = null
 
 /area/rogue/outdoors/rtfield/boggish
-	ambush_mobs = list(/mob/living/carbon/human/species/goblin/skilled = 50)
+	ambush_mobs = list(/mob/living/carbon/human/species/goblin/skilled/ambush/sea = 50)
 	name = "bog approaches"
 	color = "#7db36e"
 	first_time_text = null
@@ -199,7 +199,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 60,
 				/mob/living/simple_animal/hostile/retaliate/rogue/troll = 5,
-				/mob/living/carbon/human/species/goblin/skilled = 20,
+				/mob/living/carbon/human/species/goblin/skilled/ambush = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 10)
 	first_time_text = "THE MURDERWOOD"
 	converted_type = /area/rogue/indoors/shelter/woods
@@ -266,8 +266,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 20,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 80,
-				/mob/living/carbon/human/species/goblin/skilled = 50,
-				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 30)	//Bogbugs bugged bigtime, so removed for now.
+				/mob/living/carbon/human/species/goblin/skilled/ambush/sea = 20,
+				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 30)
 
 	first_time_text = "THE TERRORBOG"
 	converted_type = /area/rogue/indoors/shelter/bog
@@ -321,7 +321,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/dirt)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
-				/mob/living/carbon/human/species/goblin/skilled = 20,
+				/mob/living/carbon/human/species/goblin/skilled/ambush/cave = 20,
 				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 5,
 				/mob/living/carbon/human/species/skeleton/skilled/fighter = 5)
 	converted_type = /area/rogue/outdoors/caves
@@ -354,7 +354,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/skeleton/skilled/unarmed = 5,
 				/mob/living/carbon/human/species/skeleton/skilled/fighter = 5,
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
-				/mob/living/carbon/human/species/goblin/skilled = 20)
+				/mob/living/carbon/human/species/goblin/skilled/ambush/sea = 20)
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/cave/abandoned_mine
@@ -364,7 +364,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/turf/open/floor/rogue/dirt)
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
-				/mob/living/carbon/human/species/goblin/skilled = 20)
+				/mob/living/carbon/human/species/goblin/skilled/ambush/cave = 20)
 
 /area/rogue/under/cave/spider
 	icon_state = "spider"
@@ -446,7 +446,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 10,
-				/mob/living/carbon/human/species/goblin/skilled = 20)
+				/mob/living/carbon/human/species/goblin/skilled/ambush/cave = 20)
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null

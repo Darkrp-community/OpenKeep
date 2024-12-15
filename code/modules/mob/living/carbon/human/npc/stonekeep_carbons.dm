@@ -473,6 +473,12 @@
 	wander = FALSE
 	ambushable = FALSE
 
+/mob/living/carbon/human/species/goblin/skilled/ambush
+	simpmob_attack = 35
+	simpmob_defend = 25
+	wander = TRUE
+	attack_speed = 2
+
 /mob/living/carbon/human/species/goblin/skilled/proc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
@@ -493,9 +499,22 @@
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/npc/goblin)
 
-/mob/living/carbon/human/species/goblin/skilled/moon
+/mob/living/carbon/human/species/goblin/skilled/ambush/moon
 	name = "moon goblin"
 	race = /datum/species/goblin/moon
+
+/mob/living/carbon/human/species/goblin/skilled/ambush/hell
+	name = "hell goblin"
+	race = /datum/species/goblin/hell
+
+/mob/living/carbon/human/species/goblin/skilled/ambush/cave
+	name = "cave goblin"
+	race = /datum/species/goblin/cave
+
+/mob/living/carbon/human/species/goblin/skilled/ambush/sea
+	name = "sea goblin"
+	race = /datum/species/goblin/sea
+
 
 
 /* 	Can be put into pre_equip to lessen chance of crits, bit strong despite the low value

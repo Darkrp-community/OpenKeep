@@ -507,6 +507,8 @@
 	bulb_colour = "#da5e21"
 	cookonme = TRUE
 	max_integrity = 30
+	light_outer_range = 5
+	light_power = 3
 
 /obj/machinery/light/rogue/campfire/process()
 	..()

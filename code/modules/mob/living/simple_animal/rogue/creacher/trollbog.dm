@@ -1,7 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
 	name = "bog troll"
-	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm; nowadays they are sometimes found in the company of orcs."
+	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm."
 	icon_state = "Trolls"
 	icon_living = "Troll"
 	icon_dead = "Trolld"
@@ -24,11 +24,14 @@
 	aggro_vision_range = 6
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
-						/obj/item/natural/hide = 1)
+						/obj/item/natural/hide = 1,
+						/obj/item/natural/trollheart = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
-						/obj/item/natural/hide = 3)
+						/obj/item/natural/hide = 3,
+						/obj/item/natural/trollheart = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
-						/obj/item/natural/hide = 4)
+						/obj/item/natural/hide = 4,
+						/obj/item/natural/trollheart = 1)
 
 	health = BOGTROLL_HEALTH
 	maxHealth = BOGTROLL_HEALTH
@@ -89,16 +92,21 @@
 		if("death")
 			return pick('sound/vo/mobs/troll/death.ogg')
 		if("idle")
-			return pick('sound/vo/mobs/troll/idle1.ogg','sound/vo/mobs/troll/idle2.ogg')
+			return
 		if("cidle")
 			return pick('sound/vo/mobs/troll/cidle1.ogg','sound/vo/mobs/troll/aggro2.ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/taunted(mob/user)
+//	update_name()	didnt work for some reason
 	emote("aggro")
 	Retaliate()
 	GiveTarget(user)
 	return
-
+/*
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/proc/update_name(mob/living)
+	name = "bog troll"
+	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm."
+*/
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Life()
 	..()
 	if(pulledby)
@@ -106,7 +114,6 @@
 		GiveTarget(pulledby)
 	if(fire_stacks <= 0)
 		adjustHealth(-rand(40,50))
-
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/LoseTarget()
 	..()
@@ -121,6 +128,7 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/GiveTarget()
 	..()
+//	update_name()
 	icon_state = "Trolla"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/simple_limb_hit(zone)
