@@ -15,9 +15,9 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata)
-	tutorial = "The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Rockhill. It is up to you to shepard the flock into a god-fearing future."
-	whitelist_req = FALSE
+	allowed_patrons = ALL_CLERIC_PATRONS
+	tutorial = "The Divine is all that matters in a world of the immoral. The Weeping god left his children to rule over us mortals and you will preach their wisdom to any who still heed their will. The faithless are growing in number, it is up to you to shepard them to a God-Fearing future."
+	whitelist_req = TRUE
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/priest
 
@@ -53,6 +53,40 @@
 
 	else
 		id = /obj/item/clothing/ring/active/nomag
+
+	var/datum/patron/A = H.patron
+	switch(A.name)
+		if("Astrata")
+			head = /obj/item/clothing/head/roguetown/roguehood/priest
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+			wrists = /obj/item/clothing/wrists/roguetown/wrappings
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/padded/briarthorns
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
+		if("Necra")
+			head = /obj/item/clothing/head/roguetown/padded/deathshroud
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
+		if("Eora")
+			head = /obj/item/clothing/head/roguetown/roguehood/eora
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
+		if("Noc")
+			head = /obj/item/clothing/head/roguetown/roguehood/nochood
+			neck = /obj/item/clothing/neck/roguetown/psycross/noc
+			wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/noc
+		if("Pestra")
+			head = /obj/item/clothing/head/roguetown/roguehood/brown
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		if("Malum")
+			head = /obj/item/clothing/head/roguetown/roguehood/black
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 4, TRUE)
@@ -95,7 +129,7 @@
 	for(var/mob/living/carbon/human/HU in get_step(src, src.dir))
 		if(!HU.mind)
 			continue
-		if(HU.mind.assigned_role == "King")
+		if(HU.mind.assigned_role == "Lord")
 			continue
 		if(!HU.head)
 			continue
@@ -103,26 +137,26 @@
 			continue
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.mind)
-				if(HL.mind.assigned_role == "King")
-					HL.mind.assigned_role = "Ex-King"
-			if(HL.job == "King")
-				HL.job = "Ex-King"
+				if(HL.mind.assigned_role == "Lord")
+					HL.mind.assigned_role = "Ex-Lord"
+			if(HL.job == "Lord")
+				HL.job = "Ex-Lord"
 			if(HL.mind)
-				if(HL.mind.assigned_role == "Queen")
-					HL.mind.assigned_role = "Ex-Queen"
-			if(HL.job == "Queen")
-				HL.job = "Ex-Queen"
+				if(HL.mind.assigned_role == "Lady")
+					HL.mind.assigned_role = "Ex-Lady"
+			if(HL.job == "Lady")
+				HL.job = "Ex-Lady"
 		switch(HU.gender)
 			if("male")
-				HU.mind.assigned_role = "King"
-				HU.job = "King"
+				HU.mind.assigned_role = "Lord"
+				HU.job = "Lord"
 			if("female")
-				HU.mind.assigned_role = "Queen"
-				HU.job = "Queen"
+				HU.mind.assigned_role = "Lady"
+				HU.job = "Lady"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"
-		say("By the authority of the gods, I pronounce you Ruler of all Rockhill!")
+		say("By the authority of the gods, I pronounce you Ruler of all Blackwine!")
 		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of Rockhill!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 		return
 
