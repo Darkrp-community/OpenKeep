@@ -662,6 +662,7 @@
 	if(has_spell(S))
 		return
 	spell_list += S
+	to_chat(current, "<span class='boldnotice'>I have learned a new spell: [S]</span>")
 	S.action.Grant(current)
 
 /datum/mind/proc/check_learnspell(obj/effect/proc_holder/spell/S)
