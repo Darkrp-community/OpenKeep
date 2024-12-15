@@ -1,10 +1,10 @@
 /datum/job/roguetown/consort
 	title = "Consort"
-	flag = CONSORT
+	flag = LADY
 	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 0
-	spawn_positions = 1
+	spawn_positions = 0
 
 	allowed_races = list(
 		"Humen",

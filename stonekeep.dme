@@ -1748,8 +1748,8 @@
 #include "code\modules\jobs\job_types\roguetown\adventurer\pilgrim.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\villager.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\_advclass.dm"
-#include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\_combat.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\antag\bandit.dm"
+#include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\_combat.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\amazon.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\barbarian.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\cleric.dm"
@@ -1816,6 +1816,11 @@
 #include "code\modules\jobs\job_types\roguetown\nobility\archivist.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\captain.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\consort.dm"
+
+#include "code\modules\mob\living\simple_animal\hostile\zombie.dm"
+#include "code\modules\jobs\job_types\roguetown\nobility\lady.dm"
+#include "code\modules\jobs\job_types\roguetown\peasants\gravedigger.dm"
+
 #include "code\modules\jobs\job_types\roguetown\nobility\feldsher.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\hand.dm"
 #include "code\modules\jobs\job_types\roguetown\nobility\lord.dm"

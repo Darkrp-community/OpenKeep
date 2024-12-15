@@ -48,3 +48,13 @@
 	cost = 240
 	contains = /obj/item/clothing/ring/active/nomag
 
+
+/datum/supply_pack/rogue/luxury/steelsecret
+	name = "The secret of steel"
+	cost = 350
+	contains = list(/obj/item/riddleofsteel)
+
+/datum/supply_pack/rogue/luxury/scrying
+	name = "Scrying Orb"
+	cost = 460
+	contains = list(/obj/item/scrying)
