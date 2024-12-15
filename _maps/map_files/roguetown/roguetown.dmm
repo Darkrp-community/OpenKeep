@@ -1220,9 +1220,6 @@
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town)
-"bst" = (
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/indoors/town)
 "btq" = (
 /obj/item/roguebin/water/gross,
 /turf/open/floor/rogue/woodturned,
@@ -8527,9 +8524,6 @@
 /area/rogue/indoors/shelter/town/sargoth)
 "jmy" = (
 /turf/closed/wall/mineral/rogue/stone,
-/area/rogue/indoors/town)
-"jmH" = (
-/turf/open/floor/rogue/blocks/bluestone,
 /area/rogue/indoors/town)
 "jnB" = (
 /turf/closed/wall/mineral/rogue/craftstone,
@@ -18985,14 +18979,6 @@
 /obj/structure/closet/crate/roguecloset,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
-"uAd" = (
-/obj/effect/landmark/start/consort{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
-/area/rogue/indoors/town/manor)
 "uBb" = (
 /obj/structure/bookcase,
 /obj/item/book/rogue/arcyne,
@@ -59462,7 +59448,7 @@ bXO
 iUq
 gwA
 iac
-bst
+iac
 iac
 vlU
 qek
@@ -59618,9 +59604,9 @@ iUq
 iUq
 iUq
 kYG
-jmH
-jmH
-jmH
+eAq
+eAq
+eAq
 sZF
 sZF
 sZF
@@ -59775,9 +59761,9 @@ xDQ
 tDt
 iUq
 kYG
-jmH
 eAq
-jmH
+eAq
+eAq
 sZF
 sZF
 sZF
@@ -59932,9 +59918,9 @@ iUq
 bXO
 iUq
 kYG
-jmH
-jmH
-jmH
+eAq
+eAq
+eAq
 sZF
 sZF
 sZF
@@ -60089,9 +60075,9 @@ iUq
 tDt
 iUq
 kYG
-jmH
-jmH
-jmH
+eAq
+eAq
+eAq
 sZF
 sZF
 sZF
@@ -60247,7 +60233,7 @@ iUq
 iUq
 gwA
 iac
-bst
+iac
 ejb
 lyL
 qBg
@@ -85627,7 +85613,7 @@ oEQ
 oOy
 lBH
 fdb
-uAd
+nfH
 uUV
 cbm
 bHM
