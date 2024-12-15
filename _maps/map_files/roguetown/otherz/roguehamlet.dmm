@@ -5667,7 +5667,8 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town/roofs)
 "fgc" = (
-)
+/turf/closed,
+/area/rogue/indoors/town/garrison)
 "fgs" = (
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/under/basement)
