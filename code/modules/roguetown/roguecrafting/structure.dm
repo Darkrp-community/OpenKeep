@@ -34,19 +34,6 @@
 	skillcraft = /datum/skill/craft/carpentry
 	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
 
-/datum/crafting_recipe/roguetown/structure/dye_bin_luxury
-	name = "luxury dye bin"
-	result = /obj/machinery/dye_bin
-	reqs = list(/obj/item/natural/plank = 2,,
-	/obj/item/reagent_containers/food/snacks/produce/fyritius = 3,
-	/obj/item/reagent_containers/food/snacks/produce/pear = 3,
-	/obj/item/reagent_containers/food/snacks/produce/sunflower = 3,)
-	verbage = "construct"
-	verbage_tp = "carpents"
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
-
 /* === SKILL LEVEL 1 === */
 
 /datum/crafting_recipe/roguetown/structure/chair

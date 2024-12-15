@@ -271,6 +271,14 @@
 	return ..()
 
 /obj/machinery/simple_dye_bin/attackby(obj/item/I, mob/living/user)
+	if(istype(I, /obj/item/luxury_dyes))
+		playsound(src, "bubbles", 50, 1)
+		if(do_after(user, 3 SECONDS))
+			user.visible_message("<span class='notice'>[user] adds the [I].</span>")
+			new /obj/machinery/dye_bin(get_turf(src.loc))
+			qdel(I)
+			qdel(src)
+
 	if(allow_mobs && istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/H = I
 		if(inserted)
@@ -291,6 +299,7 @@
 		inserted = I
 	else
 		return ..()
+
 
 /obj/machinery/simple_dye_bin/AllowDrop()
 	return FALSE

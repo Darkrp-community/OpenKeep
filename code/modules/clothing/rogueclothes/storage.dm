@@ -147,6 +147,8 @@
 /obj/item/storage/belt/rogue/leather/cloth/tailor/Initialize()
 	. = ..()
 	new /obj/item/roguekey/tailor(src)
+	new /obj/item/rogueweapon/knife/dagger(src)
+	new /obj/item/needle(src)
 
 /obj/item/storage/belt/rogue/leather/cloth/bandit
 	color = "#ff0000"
