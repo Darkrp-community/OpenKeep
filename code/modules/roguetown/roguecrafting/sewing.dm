@@ -104,8 +104,7 @@
 /datum/crafting_recipe/roguetown/sewing/zigbox
 	name = "paper zigbox"
 	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
-	reqs = list(/obj/item/paper = 1,
-				/obj/item/natural/fibers = 1)
+	reqs = list(/obj/item/paper = 1)
 
 /datum/crafting_recipe/roguetown/sewing/sack
 	name = "sack hood"

@@ -7918,7 +7918,7 @@
 	dir = 1;
 	icon_state = "stonestairs"
 	},
-/turf/closed/mineral/rogue/bedrock,
+/turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "hXk" = (
 /obj/structure/table/wood/plain_alt,
@@ -89806,8 +89806,8 @@ psp
 psp
 psp
 psp
-tvc
-tvc
+hWY
+hWY
 uZo
 psp
 psp
@@ -90781,7 +90781,7 @@ psp
 psp
 psp
 uZo
-hZX
+psp
 hZX
 hZX
 hZX
