@@ -19,29 +19,29 @@
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/physicker/pre_equip(mob/living/carbon/human/H)
-    ..()
-    mask = /obj/item/clothing/mask/rogue/phys
-    head = /obj/item/clothing/head/roguetown/roguehood/phys
-    shoes = /obj/item/clothing/shoes/roguetown/boots
-    shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-    backr = /obj/item/storage/backpack/rogue/satchel
-    r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
-    pants = /obj/item/clothing/under/roguetown/tights/black
-    belt = /obj/item/storage/belt/rogue/leather/black
-    gloves = /obj/item/clothing/gloves/roguetown/leather/phys
-    armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
-    neck = /obj/item/clothing/neck/roguetown/phys
+	..()
+	mask = /obj/item/clothing/mask/rogue/phys
+	head = /obj/item/clothing/head/roguetown/roguehood/phys
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	backr = /obj/item/storage/backpack/rogue/satchel
+	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	belt = /obj/item/storage/belt/rogue/leather/black
+	gloves = /obj/item/clothing/gloves/roguetown/leather/phys
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+	neck = /obj/item/clothing/neck/roguetown/phys
 
-    H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-    H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
-    if(H.age == AGE_OLD)
-        H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
-        H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
-    H.change_stat("intelligence", 2)
-    H.change_stat("speed", 1)
-    ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
-    ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+	if(H.age == AGE_OLD)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
+	H.change_stat("intelligence", 2)
+	H.change_stat("speed", 1)
+	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)

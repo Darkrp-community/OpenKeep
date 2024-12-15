@@ -576,7 +576,7 @@
 			if(istype(get_active_held_item(), /obj/item/grabbing))
 				var/obj/item/grabbing/I = get_active_held_item()
 				if(I.grabbed == pulling)
-					grabs |= I					
+					grabs |= I
 			if(istype(get_inactive_held_item(), /obj/item/grabbing))
 				var/obj/item/grabbing/I = get_inactive_held_item()
 				if(I.grabbed == pulling)
@@ -1901,10 +1901,10 @@
 	I.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	flick_overlay(I, list(C), 30)
 
-/mob/proc/look_up(var/step)
+/mob/proc/look_up(step)
 	return
 
-/mob/living/look_up(var/step)
+/mob/living/look_up(step)
 	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_MELEE)
@@ -1914,7 +1914,7 @@
 	var/turf/ceiling = T
 	for(var/i=0,i<step, ++i)
 		ceiling = get_step_multiz(ceiling, UP)
-		
+
 		if(!ceiling) //We are at the highest z-level.
 			if(T.can_see_sky())
 				switch(GLOB.forecast)
