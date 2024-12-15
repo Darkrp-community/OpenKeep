@@ -20,7 +20,7 @@
 
 /datum/objective/delf
 	name = "delf"
-	explanation_text = "Feed honeys to the mother."
+	explanation_text = "Feed honeys to the silkseed bearer."
 
 /datum/objective/delf/check_completion()
 	if(SSticker.mode)
@@ -33,7 +33,7 @@
 	if(SSticker.mode)
 		var/datum/game_mode/chaosmode/C = SSticker.mode
 		if(C)
-			explanation_text = "Feed [C.delfgoal] honeys to the mother."
+			explanation_text = "Feed [C.delfgoal] honeys to the silkseed bearer."
 		else
 			explanation_text = "Pray to Ananshor."
 
@@ -50,7 +50,7 @@
 
 /datum/objective/werewolf
 	name = "conquer"
-	explanation_text = "Destroy all elder vampires in Rockhill. I can sniff them in my true form."
+	explanation_text = "The hubric arrogant rot of Noc stains the town of Rockhill, I must slay the elder vampires. I can smell their decay in my true form."
 	team_explanation_text = ""
 	triumph_count = 5
 
@@ -62,7 +62,7 @@
 
 /datum/objective/vampire
 	name = "conquer"
-	explanation_text = "Destroy all alpha werewolves in Rockhill. I can detect them in my true form."
+	explanation_text = "The savage maddening stink of Dendorian perversion fluxes within Rockhill. Destroying the werbeast is imperative, I can sense them in my true form."
 	team_explanation_text = ""
 	triumph_count = 5
 
