@@ -102,6 +102,8 @@
 	deepfishingweight = 1
 
 /obj/item/fishing/bait
+	baitpenalty = 0
+
 	var/list/fishinglist = list(/obj/item/reagent_containers/food/snacks/fish/eel = 2)
 	//default is one anglerfish
 	var/deeplist
@@ -162,34 +164,34 @@
 	deeplist = list(/obj/item/reagent_containers/food/snacks/fish/angler = 2,
 					/obj/item/reagent_containers/food/snacks/fish/clownfish = 1)
 
-//	specialcatch = TRUE
-//	specialchance = 20
-/*
+	specialcatch = TRUE
+	specialchance = 20
+
 	specialsize = list(
-		"diffmod" = 2
-		"accmod" = 3
-		"health" = 5
-		"costmod" = 4
-		"hookmod" = 2
-		"type" = "Titanic"
+		"diffmod" = 2,
+		"accmod" = 3,
+		"health" = 5,
+		"costmod" = 4,
+		"hookmod" = 2,
+		"type" = "Titanic",
 	)
 	specialrarity = list(
-		"diffmod" = 1
-		"accmod" = 2
-		"health" = 3
-		"costmod" = 10
-		"hookmod" = 2
-		"type" = "Zizoid"
+		"diffmod" = 1,
+		"accmod" = 2,
+		"health" = 3,
+		"costmod" = 10,
+		"hookmod" = 2,
+		"type" = "Zizoid",
 	)
 	specialfishtype = list(
-		"diffmod" = 2
-		"accmod" = 3
-		"health" = 5
-		"costmod" = 4
-		"hookmod" = 2
-		"type" = /obj/item/reagent_containers/food/snacks/fish/clownfish
+		"diffmod" = 2,
+		"accmod" = 3,
+		"health" = 5,
+		"costmod" = 4,
+		"hookmod" = 2,
+		"type" = /obj/item/reagent_containers/food/snacks/fish/clownfish,
 	)
-*/
+
 /proc/pickweightmerge(list/List, list/add)//i need a way to merge multiple lists for my shenanigannery to work. remove this if fishing ever stops needing this
 	var/list/returner = List
 	var/addlength = length(add)

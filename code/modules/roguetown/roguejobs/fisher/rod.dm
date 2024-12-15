@@ -468,7 +468,7 @@
 					costmod *= 10
 
 	difficulty = clamp(difficulty, 1, 6)
-	hookwindow = clamp(hookwindow, 8, 30)
+	hookwindow = clamp(hookwindow, 1 SECONDS, 4 SECONDS)
 	acceleration = max(acceleration, 1)
 
 
@@ -484,56 +484,57 @@
 	if(!check_allowed_items(target,target_self=1))
 		return ..()
 	if(user.used_intent.type != ROD_CAST)
-		if(istype(target, /turf/open/water) && !istype(target, /turf/open/water/bath))
-			if(user.used_intent.type == ROD_CAST && !user.doing)
-				if(target in range(user,5))
-					user.visible_message("<span class='warning'>[user] casts a line!</span>", \
-										"<span class='notice'>I cast a line.</span>")
-					playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
-					ft -= (sl * 1 SECONDS) //every skill lvl is -1 seconds
-					if(do_after(user,ft, target = target))
-						if(baited)
-							var/bp = baited.baitpenalty // Penalty to fishing chance based on how good bait is. Lower is better.
-							var/fishchance = 100 // Total fishing chance, deductions applied below
-							if(user.mind)
-								if(!sl) // If we have zero fishing skill...
-									fishchance -= 60 // 40% chance to fish base
-									fishchance -= bp // On top of it, deduct penalties from bait quality, if any
-								else
-									fishchance -= bp // Deduct penalties from bait quality, if any
-									fishchance -= fpp // Deduct a penalty the lower our fishing level is (-0 at legendary)
-							if(prob(fishchance)) // Finally, roll the dice to see if we fish.
-								var/ow = 30 + (sl * 10) // Opportunity window, in ticks. Longer means you get more time to cancel your bait
-								to_chat(user, "<span class='notice'>Something tugs the line!</span>")
-								playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
-								if(!do_after(user,ow, target = target))
-									var/mob/living/fisherman = user
-									var/boon = user.mind.get_learning_boon(/datum/skill/labor/fishing)
-									caught = TRUE
-									to_chat(user, "<span class='warning'>Reel 'em in!</span>")
-									user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT * boon, 1), FALSE) // Level up!
-									playsound(src.loc, 'sound/items/Fish_out.ogg', 100, TRUE)
-									if(prob(80 - (sl * 10))) // Higher skill levels make you less likely to lose your bait
-										to_chat(user, "<span class='warning'>Damn, it ate my bait.</span>")
-										qdel(baited)
-										baited = null
-								else
-									caught = FALSE
-									to_chat(user, "<span class='warning'>Damn, it got away...</span>")
-									if(prob(100 - (sl * 10))) // Higher chance for it to flee with your bait.
-										to_chat(user, "<span class='warning'>...And took my bait, too.</span>")
-										qdel(baited)
-										baited = null
+		if(user.used_intent.type == ROD_AUTO && !user.doing)
+			if(target in range(user,5))
+				user.visible_message("<span class='warning'>[user] casts a line!</span>", \
+									"<span class='notice'>I cast a line.</span>")
+				playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
+				ft -= (sl * 1 SECONDS) //every skill lvl is -1 seconds
+				if(do_after(user,ft, target = target))
+					if(baited)
+						var/bp = baited.baitpenalty // Penalty to fishing chance based on how good bait is. Lower is better.
+						var/fishchance = 100 // Total fishing chance, deductions applied below
+						fishchance -= (difficulty * 15) ///based on your difficulty
+						if(user.mind)
+							if(!sl) // If we have zero fishing skill...
+								fishchance -= 60 // 40% chance to fish base
+								fishchance -= bp // On top of it, deduct penalties from bait quality, if any
 							else
-								to_chat(user, "<span class='warning'>Not even a nibble...</span>")
-								return
+								fishchance -= bp // Deduct penalties from bait quality, if any
+								fishchance -= fpp // Deduct a penalty the lower our fishing level is (-0 at legendary)
+						if(prob(fishchance)) // Finally, roll the dice to see if we fish.
+							var/ow = 30 + (sl * 10) // Opportunity window, in ticks. Longer means you get more time to cancel your bait
+							to_chat(user, "<span class='notice'>Something tugs the line!</span>")
+							playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
+							if(!do_after(user,ow, target = target))
+								var/mob/living/fisherman = user
+								var/boon = user.mind.get_learning_boon(/datum/skill/labor/fishing)
+								caught = TRUE
+								to_chat(user, "<span class='warning'>Reel 'em in!</span>")
+								user.mind.adjust_experience(/datum/skill/labor/fishing, round(fisherman.STAINT * boon, 1), FALSE) // Level up!
+								playsound(src.loc, 'sound/items/Fish_out.ogg', 100, TRUE)
+								if(prob(80 - (sl * 10))) // Higher skill levels make you less likely to lose your bait
+									to_chat(user, "<span class='warning'>Damn, it ate my bait.</span>")
+									qdel(baited)
+									baited = null
+							else
+								caught = FALSE
+								to_chat(user, "<span class='warning'>Damn, it got away...</span>")
+								if(prob(100 - (sl * 10))) // Higher chance for it to flee with your bait.
+									to_chat(user, "<span class='warning'>...And took my bait, too.</span>")
+									qdel(baited)
+									baited = null
 						else
-							to_chat(user, "<span class='warning'>This seems pointless without a bait.</span>")
+							to_chat(user, "<span class='warning'>Not even a nibble...</span>")
+							afterattack(target, user, proximity, params) //this may work?
 							return
 					else
-						to_chat(user, "<span class='warning'>I must stand still to fish.</span>")
+						to_chat(user, "<span class='warning'>This seems pointless without a bait.</span>")
 						return
-				update_icon()
+				else
+					to_chat(user, "<span class='warning'>I must stand still to fish.</span>")
+					return
+			update_icon()
 	else
 		//the actual game
 		currentlyfishing = TRUE
@@ -569,7 +570,7 @@
 
 			face.icon_state = "stress[facestate]"
 
-			switch(currentstate)rar
+			switch(currentstate)
 				if("wait")
 					if(waittime <= 0)
 						if(line.bobber)
