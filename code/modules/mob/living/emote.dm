@@ -408,16 +408,15 @@
 	message = "dances."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
+	var/start_y = user.pixel_y
+	var/offset = 4  // Height of the bop
 /datum/emote/living/dance/run_emote(mob/living/user, params, type_override, intentional, targetted)
 	. = ..()
 	if(prob(50))
 		danceanim(user)
 	else
 		dance_rotate(user, CALLBACK(user, TYPE_PROC_REF(/mob, dance_flip)))
-
 /datum/emote/living/dance/proc/danceanim(var/mob/living/user, var/repeats = 20)
-	var/start_y = user.pixel_y
-	var/offset = 4  // Height of the bop
 	ping_sound_through_walls(user.loc)
 	for (var/i = 1 to repeats)
 		user.pixel_y = start_y + offset  // Move up
