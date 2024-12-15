@@ -1,6 +1,6 @@
 /obj/item/fishingrod
 	force = 12
-	possible_item_intents = list(POLEARM_BASH, ROD_CAST, ROD_AUTO)
+	possible_item_intents = list(POLEARM_BASH, ROD_AUTO, ROD_CAST)
 	name = "fishing rod"
 	desc = ""
 	icon_state = "rod"
@@ -427,15 +427,16 @@
 			while(luckboost > 0)
 				raritypicker = pickweightmerge(raritypicker, luckrarity)
 				luckboost--
-		else if (fisher.STALUC < 10 || skillmod == 0)
-			if(prob(16 - skillmod - fisher.STALUC))
-				fishtype = pickweight(list(/obj/item/natural/fibers = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/clothing/shoes/roguetown/boots/leather = 1, /obj/structure/fermenting_barrel = 1, /obj/item/clothing/head/roguetown/fisherhat = 1))
-				difficulty = 1
-				acceleration = 1
-				hookwindow = 30
-				maxvelocity = 1
-				fishhealth = 15
-				trashfishing = TRUE
+
+		if(prob(16 - skillmod - fisher.STALUC)) //you will always have a chance at this, legendary fishers got a 10% chance - their luck stat
+			fishtype = pickweight(list(/obj/item/natural/fibers = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/clothing/shoes/roguetown/boots/leather = 1, /obj/structure/fermenting_barrel = 1, /obj/item/clothing/head/roguetown/fisherhat = 1))
+			difficulty = 1
+			acceleration = 1
+			hookwindow = 30
+			maxvelocity = 1
+			fishhealth = 15
+			trashfishing = TRUE
+
 		if(!trashfishing)
 			raritypicker = removenegativeweights(raritypicker)
 			sizepicker = removenegativeweights(sizepicker)
@@ -568,7 +569,7 @@
 
 			face.icon_state = "stress[facestate]"
 
-			switch(currentstate)
+			switch(currentstate)rar
 				if("wait")
 					if(waittime <= 0)
 						if(line.bobber)
