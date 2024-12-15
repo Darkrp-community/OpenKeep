@@ -1,6 +1,6 @@
 /obj/item/fishingrod
 	force = 12
-	possible_item_intents = list(SPEAR_BASH,ROD_CAST)
+	possible_item_intents = list(POLEARM_BASH,ROD_CAST)
 	name = "fishing rod"
 	desc = ""
 	icon_state = "rod"
@@ -27,32 +27,28 @@
 
 
 /obj/item/fishingrod/attackby(obj/item/I, mob/user, params)
-	if(!baited)
-		if(I.isbait) // Don't use items that aren't bait
-			user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
-								"<span class='notice'>I hook [I] to my line.</span>")
-			playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
-			if(istype(I,/obj/item/natural/worms))
-				var/obj/item/natural/worms/W = I
-				if(W.amt > 1)
-					W.amt--
-					var/obj/item/natural/worms/N = new W.type(src)
-					baited = N
-				else
-					W.forceMove(src)
-					baited = W
-			else
-				I.forceMove(src)
-				baited = I
-			update_icon()
-			return
-		else
-			to_chat(user, "<span class='notice'>This isn't suitable as bait...</span>")
-			return
-	else
+	if(baited)
 		to_chat(user, "<span class='warning'>The rod already has bait on it!</span>")
 		return
-	. = ..()
+	if(!I.isbait) // Don't use items that aren't bait
+		to_chat(user, "<span class='notice'>This isn't suitable as bait...</span>")
+		return
+	user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
+						"<span class='notice'>I hook [I] to my line.</span>")
+	playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
+	if(istype(I,/obj/item/natural/worms))
+		var/obj/item/natural/worms/W = I
+		if(W.amt > 1)
+			W.amt--
+			var/obj/item/natural/worms/N = new W.type(src)
+			baited = N
+		else
+			W.forceMove(src)
+			baited = W
+	else
+		I.forceMove(src)
+		baited = I
+	update_icon()
 
 /obj/item/fishingrod/getonmobprop(tag)
 	. = ..()
@@ -67,7 +63,7 @@
 	var/sl = user.mind.get_skill_level(/datum/skill/labor/fishing) // User's skill level
 	var/ft = 120 //Time to get a catch, in ticks
 	var/fpp =  100 - (40 + (sl * 10)) // Fishing power penalty based on fishing skill level
-	if(user.used_intent.type == SPEAR_BASH)
+	if(user.used_intent.type == POLEARM_BASH)
 		return ..()
 
 	if(!check_allowed_items(target,target_self=1))

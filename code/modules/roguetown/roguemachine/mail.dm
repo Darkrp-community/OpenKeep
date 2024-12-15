@@ -10,6 +10,8 @@
 	pixel_y = 32
 	var/coin_loaded = FALSE
 	var/ournum
+	var/mailtag
+	var/obfuscated = FALSE
 
 /obj/structure/roguemachine/mail/attack_hand(mob/user)
 	if(SSroguemachine.hermailermaster && ishuman(user))
@@ -227,6 +229,7 @@
 /obj/structure/roguemachine/mail/Destroy()
 	set_light(0)
 	SSroguemachine.hermailers -= src
+	return ..()
 
 /obj/structure/roguemachine/mail/r
 	pixel_y = 0
@@ -240,14 +243,37 @@
 	cut_overlays()
 	if(coin_loaded)
 		add_overlay(mutable_appearance(icon, "mail-f"))
-		set_light(1, 1, "#ff0d0d")
+		set_light(1, 1, 1, l_color =  "#ff0d0d")
 	else
 		add_overlay(mutable_appearance(icon, "mail-s"))
-		set_light(1, 1, "#1b7bf1")
+		set_light(1, 1, 1, l_color =  "#1b7bf1")
 
+/obj/structure/roguemachine/mail/examine(mob/user)
+	. = ..()
+	. += "<a href='?src=[REF(src)];directory=1'>Directory:</a> [mailtag]"
 
+/obj/structure/roguemachine/mail/Topic(href, href_list)
+	..()
 
+	if(!usr)
+		return
 
+	if(href_list["directory"])
+		view_directory(usr)
+
+/obj/structure/roguemachine/mail/proc/view_directory(mob/user)
+	var/dat
+	for(var/obj/structure/roguemachine/mail/X in SSroguemachine.hermailers)
+		if(X.obfuscated)
+			continue
+		if(X.mailtag)
+			dat += "#[X.ournum] [X.mailtag]<br>"
+		else
+			dat += "#[X.ournum] [capitalize(get_area_name(X))]<br>"
+
+	var/datum/browser/popup = new(user, "hermes_directory", "<center>HERMES DIRECTORY</center>", 387, 420)
+	popup.set_content(dat)
+	popup.open(FALSE)
 
 /obj/item/roguemachine/mastermail
 	name = "MASTER OF MAILS"
@@ -267,7 +293,7 @@
 		icon_state = "mailspecial-get"
 	else
 		icon_state = "mailspecial"
-	set_light(1, 1, "#ff0d0d")
+	set_light(1, 1, 1, l_color = "#ff0d0d")
 
 /obj/item/roguemachine/mastermail/ComponentInitialize()
 	. = ..()
@@ -338,7 +364,7 @@
 		for(var/mob/living/carbon/human/I in world) // Find all the living Inquisitors and Adepts and give them a triumph for the confession.
 			if(I.mind && (I.mind.assigned_role == "Inquisitor" || I.mind.assigned_role == "Adept") && !(I.stat == DEAD))
 				if(I.mind.assigned_role == "Inquisitor")
-					I.confession_points += 1 // Increase the Inquisitor's confession count.
+					I.confession_points += 5 // Increase the Inquisitor's confession count.
 				I.visible_message("<span class='warning'>A sense of grim satisfaction fills your heart. One down, a million remain.</span>")
 				I.adjust_triumphs(1)
 
@@ -361,27 +387,47 @@
 
 	// Define the available items, their costs, and max purchases
 	var/list/items = list(
-		"Puffer Pistol" = list(
+		"Puffer Pistol (8)" = list(
 			list(type = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol, count = 1),
 			list(type = /obj/item/storage/belt/rogue/pouch/bullets, count = 1),
 			list(type = /obj/item/reagent_containers/glass/bottle/rogue/aflask, count = 1),
-			cost = 1,
+			cost = 8,
 			max_purchases = 1
 		),
-		"Surgery Bag" = list(
+		"Surgery Bag (3)" = list(
 			list(type = /obj/item/storage/backpack/rogue/satchel/surgbag, count = 1),
-			cost = 1,
+			cost = 3,
 			max_purchases = 1
 		),
-		"Lockpick Ring" = list(
+		"Lockpick Ring (2)" = list(
 			list(type = /obj/item/lockpickring/mundane, count = 1),
-			cost = 1,
+			cost = 2,
 			max_purchases = 5
 		),
-		"Bag of Coins" = list(
+		"Bag of Coins (3)" = list(
 			list(type = /obj/item/storage/belt/rogue/pouch/coins/rich, count = 1),
-			cost = 1,
+			cost = 3,
 			max_purchases = 5
+		),
+		"Valorian Cloak (2)" = list(
+			list(type = /obj/item/clothing/cloak/cape/inquisitor, count = 1),
+			cost = 2,
+			max_purchases = 2
+		),
+		"Powder Flask (4)" = list(
+			list(type = /obj/item/reagent_containers/glass/bottle/rogue/aflask, count = 1),
+			cost = 4,
+			max_purchases = 1
+		),
+		"Silver Psycross (2)" = list(
+			list(type = /obj/item/clothing/neck/roguetown/psycross/silver, count = 1),
+			cost = 2,
+			max_purchases = 3
+		),
+		"Silver Dagger (4)" = list(
+			list(type = /obj/item/rogueweapon/knife/dagger/silver, count = 1),
+			cost = 2,
+			max_purchases = 4
 		)
 	)
 	testing("Items defined: [items]")

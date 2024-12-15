@@ -1,6 +1,6 @@
 #define TARGET_CLOSEST 1
 #define TARGET_RANDOM 2
-
+#define MAGIC_XP_MULTIPLIER 0.3 //used to miltuply the amount of xp gained from spells
 
 /obj/effect/proc_holder
 	var/panel = "Debug"//What panel the proc holder needs to go on.
@@ -128,6 +128,8 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	density = FALSE
 	opacity = 0
 
+	var/cost = 0 //how many points it costs to learn this spell
+
 	var/school = "evocation" //not relevant at now, but may be important later if there are changes to how spells work. the ones I used for now will probably be changed... maybe spell presets? lacking flexibility but with some other benefit?
 
 	var/charge_type = "recharge" //can be recharge or charges, see charge_max and charge_counter descriptions; can also be based on the holder's vars now, use "holder_var" for that
@@ -143,7 +145,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/holder_var_amount = 20 //same. The amount adjusted with the mob's var when the spell is used
 
 	var/clothes_req = FALSE //see if it requires clothes
-	var/cult_req = FALSE //SPECIAL SNOWFLAKE clothes required for cult only spells
 	var/human_req = FALSE //spell can only be cast by humans
 	var/nonabstract_req = FALSE //spell can only be cast by mobs that are physical entities
 	var/stat_allowed = FALSE //see if it requires being conscious/alive, need to set to 1 for ghostpells
@@ -176,8 +177,8 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	var/req_inhand = null			//required inhand to cast
 	var/base_icon_state = "spell"
 	var/associated_skill = /datum/skill/magic/arcane
-	var/miracle = FALSE
-	var/devotion_cost = 0
+	var/miracle = FALSE			// Boolean. If the spell being cast counts as a miracle, for devotion draining costs.
+	var/devotion_cost = 0		// Amount of devotion that costs to cast a spell. Takes positive numbers, which get deducted. Has to be minimum 12 (rounded up to 15) to avoid refund exploits.
 	var/ignore_cockblock = FALSE //whether or not to ignore TRAIT_SPELLCOCKBLOCK
 
 	action_icon_state = "spell0"
@@ -274,25 +275,14 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 			return FALSE
 
 		var/list/casting_clothes = typecacheof(list(/obj/item/clothing/suit/wizrobe,
-		/obj/item/clothing/suit/space/hardsuit/wizard,
-		/obj/item/clothing/head/wizard,
-		/obj/item/clothing/head/helmet/space/hardsuit/wizard,
-		/obj/item/clothing/suit/space/hardsuit/shielded/wizard,
-		/obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard))
+		/obj/item/clothing/head/wizard))
 
 		if(clothes_req) //clothes check
 			if(!is_type_in_typecache(H.wear_armor, casting_clothes))
-				to_chat(H, "<span class='warning'>I don't feel strong enough without your robe!</span>")
+				to_chat(H, "<span class='warning'>You don't feel strong enough without your robe!</span>")
 				return FALSE
 			if(!is_type_in_typecache(H.head, casting_clothes))
-				to_chat(H, "<span class='warning'>I don't feel strong enough without your hat!</span>")
-				return FALSE
-		if(cult_req) //CULT_REQ CLOTHES CHECK
-			if(!istype(H.wear_armor, /obj/item/clothing/suit/magusred) && !istype(H.wear_armor, /obj/item/clothing/suit/space/hardsuit/cult))
-				to_chat(H, "<span class='warning'>I don't feel strong enough without your armor.</span>")
-				return FALSE
-			if(!istype(H.head, /obj/item/clothing/head/magus) && !istype(H.head, /obj/item/clothing/head/helmet/space/hardsuit/cult))
-				to_chat(H, "<span class='warning'>I don't feel strong enough without your helmet.</span>")
+				to_chat(H, "<span class='warning'>You don't feel strong enough without your hat!</span>")
 				return FALSE
 		if(miracle)
 			var/datum/devotion/cleric_holder/D = H.cleric
@@ -303,7 +293,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		if(clothes_req || human_req)
 			to_chat(user, "<span class='warning'>This spell can only be cast by humans!</span>")
 			return FALSE
-		if(nonabstract_req && (isbrain(user) || ispAI(user)))
+		if(nonabstract_req && (isbrain(user)))
 			to_chat(user, "<span class='warning'>This spell can only be cast by physical beings!</span>")
 			return FALSE
 
@@ -466,6 +456,12 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 
 /obj/effect/proc_holder/spell/proc/cast(list/targets,mob/user = usr)
+	var/mob/living/carbon/human/H = usr // The caster
+	var/datum/devotion/cleric_holder/D = H.cleric // The caster that is a cleric
+	var/boon = H.mind?.get_learning_boon(associated_skill)
+	var/amt2raise = H.STAINT*2
+	var/miracle_refund = H.mind?.get_skill_level(associated_skill) / 10
+	H.mind?.adjust_experience(associated_skill, floor(amt2raise * boon), FALSE) // Now you get to level your magic, little by little
 	if(miracle)
 		var/mob/living/carbon/human/C = user
 		var/datum/devotion/cleric_holder/D = C.cleric
@@ -652,7 +648,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(!ishuman(user))
 		if(clothes_req || human_req)
 			return FALSE
-		if(nonabstract_req && (isbrain(user) || ispAI(user)))
+		if(nonabstract_req && (isbrain(user)))
 			return FALSE
 	if((invocation_type == "whisper" || invocation_type == "shout") && isliving(user))
 		var/mob/living/living_user = user
@@ -683,15 +679,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 /obj/effect/proc_holder/spell/self/basic_heal/cast(mob/living/carbon/human/user) //Note the lack of "list/targets" here. Instead, use a "user" var depending on mob requirements.
 	//Also, notice the lack of a "for()" statement that looks through the targets. This is, again, because the spell can only have a single target.
-	var/mob/living/carbon/C = user
-	if(C.patron == /datum/patron/godless)
-		user.visible_message("<span class='warning'>No Gods answer these prayers.</span>", "<span class='notice'>No Gods answer these prayers.</span>")
-		return
-	if(C.real_name in GLOB.excommunicated_players)
-		user.visible_message("<span class='warning'>The angry Gods sears [user]s flesh, blasphemer, heretic!</span>", "<span class='notice'>I am despised by the Gods, rejected, and they remind me with a wave of pain just how unlovable I am!</span>")
-		user.emote("scream")
-		user.adjustFireLoss(2)
-		return
 	user.visible_message("<span class='warning'>A wreath of gentle light passes over [user]!</span>", "<span class='notice'>I wreath myself in healing light!</span>")
 	user.adjustBruteLoss(-10)
 	user.adjustFireLoss(-10)

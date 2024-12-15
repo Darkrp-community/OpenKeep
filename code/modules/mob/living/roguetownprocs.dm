@@ -1,3 +1,12 @@
+// PARRY AND DODGE FORMULA DEFINES : for easy adjustments. These multipliers are integrated into the formulas, can be set to different values to adjust desired outcome likelihoods
+#define PARRY_SKILL_WEIGHT 18
+#define WEAPON_DEFENSE_WEIGHT 10
+
+#define SPEED_WEIGHT_FOR_DODGE_EXPERT 12
+#define SPEED_WEIGHT_FOR_DODGE 10
+#define MIN_DODGE_CHANCE 5
+#define MAX_DODGE_CHANCE 90
+
 /proc/accuracy_check(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
 	if(!zone)
 		return
@@ -144,12 +153,12 @@
 
 			if(mainhand)
 				if(mainhand.can_parry)
-					mainhand_defense += (H.mind ? (H.mind.get_skill_level(mainhand.associated_skill) * 20) : 20)
-					mainhand_defense += (mainhand.wdefense * 10)
+					mainhand_defense += (H.mind ? (H.mind.get_skill_level(mainhand.associated_skill) * PARRY_SKILL_WEIGHT) : 20)
+					mainhand_defense += (mainhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 			if(offhand)
 				if(offhand.can_parry)
-					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * 20) : 20)
-					offhand_defense += (offhand.wdefense * 10)
+					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * PARRY_SKILL_WEIGHT) : 20)
+					offhand_defense += (offhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 					if(istype(offhand, /obj/item/rogueweapon/shield))
 						force_shield = TRUE
 			if(!force_shield)
@@ -186,7 +195,7 @@
 			else
 				prob2defend -= U.STASTR * 3
 
-			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
+			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 20% defense malus if so
 				prob2defend *= 0.8
 			prob2defend = clamp(prob2defend, 5, 95)
 			if(src.client?.prefs.showrolls)
@@ -204,7 +213,7 @@
 
 			if(weapon_parry == TRUE)
 				if(do_parry(used_weapon, drained, user)) //show message
-					 // defender skill gain
+					// defender skill gain
 					if((mobility_flags & MOBILITY_STAND) && attacker_skill && (defender_skill < attacker_skill - SKILL_LEVEL_NOVICE))
 						// No duping exp gains by attacking with a shield on active hand
 						if(used_weapon == offhand && istype(used_weapon, /obj/item/rogueweapon/shield))
@@ -374,16 +383,18 @@
 			return FALSE
 		if(L)
 			if(H?.check_dodge_skill())
-				prob2defend = prob2defend + (L.STASPD * 12)
+				prob2defend = prob2defend + (L.STASPD * SPEED_WEIGHT_FOR_DODGE_EXPERT)
 			else
-				prob2defend = prob2defend + (L.STASPD * 10)
+				prob2defend = prob2defend + (L.STASPD * SPEED_WEIGHT_FOR_DODGE)
 		if(U)
-			prob2defend = prob2defend - (U.STASPD * 10)
+			prob2defend = prob2defend - (U.STASPD * SPEED_WEIGHT_FOR_DODGE)
 		if(I)
+			prob2defend = prob2defend - ( I.wbalance * 10)	// so slow weapon gives +10 % chance to dodge and fast the opposite. So it doesnt get multiplied too by the dodge bonus of being faster.
 			if(I.wbalance > 0 && U.STASPD > L.STASPD) //nme weapon is quick, so they get a bonus based on spddiff
-				prob2defend = prob2defend - ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
+				prob2defend = prob2defend - (((U.STASPD - L.STASPD) * 8) )
 			if(I.wbalance < 0 && L.STASPD > U.STASPD) //nme weapon is slow, so its easier to dodge if we're faster
-				prob2defend = prob2defend + ( I.wbalance * ((U.STASPD - L.STASPD) * 10) )
+				prob2defend = prob2defend + (((U.STASPD - L.STASPD) * 8) )
+
 			if(UH?.mind)
 				prob2defend = prob2defend - (UH.mind.get_skill_level(I.associated_skill) * 10)
 		if(H)
@@ -395,7 +406,7 @@
 			if(!(H.mobility_flags & MOBILITY_STAND))
 				prob2defend -= 20
 			if(H.handcuffed)
-				prob2defend -= 20			
+				prob2defend -= 20
 //			if(H.mind)
 //				drained = drained + max((H.checkwornweight() * 10)-(mind.get_skill_level(/datum/skill/misc/athletics) * 10),0)
 //			else
@@ -419,8 +430,8 @@
 						if(H.mind)
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
-				prob2defend *= 0.8
-			prob2defend = clamp(prob2defend, 5, 95)
+				prob2defend *= 0.5
+			prob2defend = clamp(prob2defend, MIN_DODGE_CHANCE, MAX_DODGE_CHANCE)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
 			if(!prob(prob2defend))
@@ -431,7 +442,7 @@
 		else //we are a non human
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			prob2defend = clamp(prob2defend, 5, 95)
+			prob2defend = clamp(prob2defend, MIN_DODGE_CHANCE, MAX_DODGE_CHANCE)
 			if(!prob(prob2defend))
 				return FALSE
 		dodgecd = TRUE
@@ -485,3 +496,9 @@
 	var/datum/atom_hud/antag/hud = GLOB.huds[antag_hud_type]
 	hud.leave_hud(src)
 	set_antag_hud(src, null)
+
+
+#undef PARRY_SKILL_WEIGHT
+#undef WEAPON_DEFENSE_WEIGHT
+#undef SPEED_WEIGHT_FOR_DODGE_EXPERT
+#undef SPEED_WEIGHT_FOR_DODGE

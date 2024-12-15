@@ -1,12 +1,12 @@
 /**
-  *This is the proc that handles the order of an item_attack.
-  *The order of procs called is:
-  *tool_act on the target. If it returns TRUE, the chain will be stopped.
-  *pre_attack() on src. If this returns TRUE, the chain will be stopped.
-  *attackby on the target. If it returns TRUE, the chain will be stopped.
-  *and lastly
-  *afterattack. The return value does not matter.
-  */
+ *This is the proc that handles the order of an item_attack.
+ *The order of procs called is:
+ *tool_act on the target. If it returns TRUE, the chain will be stopped.
+ *pre_attack() on src. If this returns TRUE, the chain will be stopped.
+ *attackby on the target. If it returns TRUE, the chain will be stopped.
+ *and lastly
+ *afterattack. The return value does not matter.
+ */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
 		to_chat(user, "<span class='notice'>I can't move my arm!</span>")
@@ -39,6 +39,9 @@
 	if(SEND_SIGNAL(src, COMSIG_ITEM_PRE_ATTACK, A, user, params) & COMPONENT_NO_ATTACK)
 		return TRUE
 	return FALSE //return TRUE to avoid calling attackby after this proc does stuff
+
+/atom/proc/pre_attack_right(atom/A, mob/living/user, params)
+	return FALSE
 
 // No comment
 /atom/proc/attackby(obj/item/W, mob/user, params)
@@ -127,7 +130,7 @@
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 			return
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-		user.rogfat_add(10)
+		user.rogfat_add(7)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
 		user.rogfat_add(10)
 	if(M.checkdefense(user.used_intent, user))
@@ -317,6 +320,9 @@
 			if(!cont)
 				return 0
 		if(DULLING_PICK) //cannot deal damage if not a pick item. aka rock walls
+			if(!(user.mobility_flags & MOBILITY_STAND))
+				to_chat(user, span_warning("I need to stand up to get a proper swing."))
+				return 0
 			if(user.used_intent.blade_class != BCLASS_PICK)
 				return 0
 			var/mob/living/miner = user
@@ -327,7 +333,7 @@
 			if(istype(I, /obj/item/rogueweapon/pick))
 				var/obj/item/rogueweapon/pick/P = I
 				newforce *= P.pickmult
-			shake_camera(user, 1, 1)
+			shake_camera(user, 1, 0.1)
 			miner.mind.adjust_experience(/datum/skill/labor/mining, (miner.STAINT*0.2))
 	/*
 	* Ill be honest this final thing is extremely confusing.
@@ -343,6 +349,8 @@
 	newforce = (newforce * user.used_intent.damfactor) * dullfactor
 	if(user.used_intent.get_chargetime() && user.client?.chargedprog < 100)
 		newforce = newforce * 0.5
+	if(!(user.mobility_flags & MOBILITY_STAND))
+		newforce *= 0.5
 	// newforce is rounded upto the nearest intiger.
 	newforce = round(newforce,1)
 	//This is returning the maximum of the arguments meaning this is to prevent negative values.

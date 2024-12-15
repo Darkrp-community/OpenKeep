@@ -108,6 +108,20 @@
 	climbdiff = 4
 	damage_deflection = 20
 
+/*	..................   Red brick Walls   ................... */
+/turf/closed/wall/mineral/rogue/stonebrick/reddish
+	color = "#e0b7af"
+
+/turf/closed/wall/mineral/rogue/decostone/fluffstone/reddish
+	color = "#fbc5bc"
+
+/turf/closed/wall/mineral/rogue/decostone/cand/reddish
+	color = "#fbd2cb"
+
+/obj/structure/stairs/stone/reddish
+	color = "#ffddd7"
+
+
 /turf/closed/wall/mineral/rogue/wood
 	name = "wall"
 	desc = "A rough-hewn wall of wood."
@@ -232,8 +246,8 @@
 	icon_state = "roofTurf_IC"
 
 /turf/closed/wall/mineral/rogue/decowood
-	name = "decorated wooden wall"
-	desc = "This one is a fancy wooden wall."
+	name = "daub wall"
+	desc = "a wattle and daub wall."
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "decowood"
 	smooth = SMOOTH_FALSE
@@ -293,7 +307,8 @@
 /turf/closed/wall/mineral/rogue/decostone/fluffstone
 	icon_state = "fluffstone"
 
-
+/turf/closed/wall/mineral/rogue/decostone/chimney
+	icon_state = "chimney"
 
 
 /turf/closed/wall/shroud //vines

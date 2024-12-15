@@ -1,7 +1,7 @@
 /datum/job/roguetown/feldsher
 	title = "Feldsher"
 	flag = FELDSHER
-	department_flag = NOBLEMEN
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -40,7 +40,7 @@
 	mask = /obj/item/clothing/mask/rogue/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/roguekey/doctor
+	beltl = /obj/item/keyring/doctor
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)

@@ -102,12 +102,12 @@
 	if(M != user)
 		return ..()
 	user.visible_message("<span class='warning'>[user] raises [src] to [user.p_their()] mouth and tears into it with [user.p_their()] teeth!</span>", \
-						 "<span class='danger'>[src] feels unnaturally cold in my hands. You raise [src] my mouth and devour it!</span>")
+						"<span class='danger'>[src] feels unnaturally cold in my hands. You raise [src] my mouth and devour it!</span>")
 	playsound(user, 'sound/blank.ogg', 50, TRUE)
 
 
 	user.visible_message("<span class='warning'>Blood erupts from [user]'s arm as it reforms into a weapon!</span>", \
-						 "<span class='danger'>Icy blood pumps through my veins as my arm reforms itself!</span>")
+						"<span class='danger'>Icy blood pumps through my veins as my arm reforms itself!</span>")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)
 
@@ -183,33 +183,20 @@
 		if(isethereal(AM))
 			AM.emp_act(EMP_LIGHT)
 
-		if(iscyborg(AM))
-			var/mob/living/silicon/robot/borg = AM
-			if(!borg.lamp_cooldown)
-				borg.update_headlamp(TRUE, INFINITY)
-				to_chat(borg, "<span class='danger'>My headlamp is fried! You'll need a human to help replace it.</span>")
-		else
-			for(var/obj/item/O in AM)
-				if(O.light_range && O.light_power)
-					disintegrate(O)
-		if(L.pulling && L.pulling.light_range && isitem(L.pulling))
+		for(var/obj/item/O in AM)
+			if(O.light_outer_range && O.light_power)
+				disintegrate(O)
+		if(L.pulling && L.pulling.light_outer_range && isitem(L.pulling))
 			disintegrate(L.pulling)
 	else if(isitem(AM))
 		var/obj/item/I = AM
-		if(I.light_range && I.light_power)
+		if(I.light_outer_range && I.light_power)
 			disintegrate(I)
 
 /obj/item/light_eater/proc/disintegrate(obj/item/O)
-	if(istype(O, /obj/item/pda))
-		var/obj/item/pda/PDA = O
-		PDA.set_light(0)
-		PDA.fon = FALSE
-		PDA.f_lum = 0
-		PDA.update_icon()
-		visible_message("<span class='danger'>The light in [PDA] shorts out!</span>")
-	else
-		visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
-		O.burn()
+
+	visible_message("<span class='danger'>[O] is disintegrated by [src]!</span>")
+	O.burn()
 	playsound(src, 'sound/blank.ogg', 50, TRUE)
 
 #undef HEART_SPECIAL_SHADOWIFY

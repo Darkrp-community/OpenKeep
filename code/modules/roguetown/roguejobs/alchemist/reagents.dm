@@ -16,7 +16,7 @@
 
 /datum/reagent/medicine/healthpot/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
+		M.blood_volume = min(M.blood_volume+15, BLOOD_VOLUME_MAXIMUM)
 		M.adjustBruteLoss(-2*REM, 0)
 		M.adjustFireLoss(-2*REM, 0)
 		M.adjustOxyLoss(-1, 0)
@@ -35,10 +35,10 @@
 
 /datum/reagent/medicine/stronghealth/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.blood_volume = min(M.blood_volume+5, BLOOD_VOLUME_MAXIMUM)
-		M.adjustBruteLoss(-8*REM, 0)
-		M.adjustFireLoss(-8*REM, 0)
-		M.adjustOxyLoss(-5, 0)
+		M.blood_volume = min(M.blood_volume+20, BLOOD_VOLUME_MAXIMUM)
+		M.adjustBruteLoss(-15*REM, 0)
+		M.adjustFireLoss(-15*REM, 0)
+		M.adjustOxyLoss(-6, 0)
 		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5*REM)
 		M.adjustCloneLoss(-5*REM, 0)
 	..()
@@ -219,7 +219,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
-	if(volume > 0.99)
+	if(volume > 0.09)
 		if(isdwarf(M))
 			M.add_nausea(1)
 			M.adjustToxLoss(0.5)
@@ -239,12 +239,12 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/strongpoison/on_mob_life(mob/living/carbon/M)
 	testing("Someone was poisoned")
-	if(volume > 0.99)
+	if(volume > 0.09)
 		if(isdwarf(M))
 			M.add_nausea(1)
 			M.adjustToxLoss(2.3)  // will put you just above dying crit treshold
 		else
-			M.add_nausea(2)
+			M.add_nausea(6) //So a poison bolt (2u) will eventually cause puking at least once
 			M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
 	return ..()
 

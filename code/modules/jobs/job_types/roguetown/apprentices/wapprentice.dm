@@ -38,14 +38,14 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/tower
-		armor = /obj/item/clothing/suit/roguetown/armor/workervest
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 		backr = /obj/item/storage/backpack/rogue/satchel
 	else
 		shoes = /obj/item/clothing/shoes/roguetown/sandals
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/tower
-		armor = /obj/item/clothing/suit/roguetown/armor/workervest
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 		backr = /obj/item/storage/backpack/rogue/satchel
 
 	H.change_stat("intelligence", 1)

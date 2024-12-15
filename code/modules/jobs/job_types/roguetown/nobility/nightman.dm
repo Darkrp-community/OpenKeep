@@ -27,7 +27,7 @@
 
 /datum/outfit/job/roguetown/niteman/pre_equip(mob/living/carbon/human/H)
 	..()
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/keyring/niteman
@@ -47,13 +47,13 @@
 
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/niteman
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 		if(H.dna?.species)
 			if(H.dna.species.id == "human")
 				H.dna.species.soundpack_m = new /datum/voicepack/male/zeth()
 			if(H.dna.species.id == "elf")
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 			if(H.dna.species.id == "dwarf")
-				armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
+				armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 	else
 		pants = /obj/item/clothing/under/roguetown/tights

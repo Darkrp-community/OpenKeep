@@ -106,6 +106,7 @@ SUBSYSTEM_DEF(job)
 			if(player.client)
 				player.client.prefs.lastclass = null
 				player.client.prefs.save_preferences()
+		job.greet(player)
 		return TRUE
 	JobDebug("AR has failed, Player: [player], Rank: [rank]")
 	return FALSE
@@ -173,7 +174,7 @@ SUBSYSTEM_DEF(job)
 //		if(istype(job, GetJob(SSjob.overflow_role))) // We don't want to give him assistant, that's boring!
 //			continue
 
-		if(job.title in GLOB.noble_positions) //If you want a command position, select it!
+		if(job.title in GLOB.court_positions) //If you want a command position, select it!
 			continue
 
 		if(is_banned_from(player.ckey, job.title) || QDELETED(player))
@@ -195,7 +196,7 @@ SUBSYSTEM_DEF(job)
 			JobDebug("GRJ player not enough xp, Player: [player]")
 			continue
 
-		if(player.mind && job.title in player.mind.restricted_roles)
+		if(player.mind && (job.title in player.mind.restricted_roles))
 			JobDebug("GRJ incompatible with antagonist role, Player: [player], Job: [job.title]")
 			continue
 
@@ -265,7 +266,7 @@ SUBSYSTEM_DEF(job)
 //This is basically to ensure that there's atleast a few heads in the round
 /datum/controller/subsystem/job/proc/FillHeadPosition()
 	for(var/level in level_order)
-		for(var/noble_position in GLOB.noble_positions)
+		for(var/noble_position in GLOB.court_positions)
 			var/datum/job/job = GetJob(noble_position)
 			if(!job)
 				continue
@@ -283,7 +284,7 @@ SUBSYSTEM_DEF(job)
 //This proc is called at the start of the level loop of DivideOccupations() and will cause head jobs to be checked before any other jobs of the same level
 //This is also to ensure we get as many heads as possible
 /datum/controller/subsystem/job/proc/CheckHeadPositions(level)
-	for(var/noble_position in GLOB.noble_positions)
+	for(var/noble_position in GLOB.court_positions)
 		var/datum/job/job = GetJob(noble_position)
 		if(!job)
 			continue
@@ -335,13 +336,6 @@ SUBSYSTEM_DEF(job)
 /datum/controller/subsystem/job/proc/DivideOccupations(list/required_jobs)
 	//Setup new player list and get the jobs list
 	JobDebug("Running DO")
-
-	//Holder for Triumvirate is stored in the SSticker, this just processes it
-	if(SSticker.triai)
-		for(var/datum/job/ai/A in occupations)
-			A.spawn_positions = 3
-		for(var/obj/effect/landmark/start/ai/secondary/S in GLOB.start_landmarks_list)
-			S.latejoin_active = TRUE
 
 	//Get the players who are ready
 	for(var/i in GLOB.new_player_list)
@@ -433,7 +427,7 @@ SUBSYSTEM_DEF(job)
 					JobDebug("DO player not enough xp, Player: [player], Job:[job.title]")
 					continue
 
-				if(player.mind && job.title in player.mind.restricted_roles)
+				if(player.mind && (job.title in player.mind.restricted_roles))
 					JobDebug("DO incompatible with antagonist role, Player: [player], Job:[job.title]")
 					continue
 
@@ -521,12 +515,12 @@ SUBSYSTEM_DEF(job)
 			if(job.required_playtime_remaining(player.client))
 				continue
 
-			if(player.mind && job.title in player.mind.restricted_roles)
+			if(player.mind && (job.title in player.mind.restricted_roles))
 				continue
 
 			if(length(job.allowed_races) && !(player.client.prefs.pref_species.name in job.allowed_races))
 				continue
-			
+
 			if(length(job.allowed_patrons) && !(player.client.prefs.selected_patron.type in job.allowed_patrons))
 				continue
 
@@ -720,19 +714,6 @@ SUBSYSTEM_DEF(job)
 			JobDebug("Setting open security officer positions to [officer_positions]")
 			J.total_positions = officer_positions
 			J.spawn_positions = officer_positions
-
-	//Spawn some extra eqipment lockers if we have more than 5 officers
-	var/equip_needed = J.total_positions
-	if(equip_needed < 0) // -1: infinite available slots
-		equip_needed = 12
-	for(var/i=equip_needed-5, i>0, i--)
-		if(GLOB.secequipment.len)
-			var/spawnloc = GLOB.secequipment[1]
-			new /obj/structure/closet/secure_closet/security/sec(spawnloc)
-			GLOB.secequipment -= spawnloc
-		else //We ran out of spare locker spawns!
-			break
-
 
 /datum/controller/subsystem/job/proc/LoadJobs()
 	var/jobstext = file2text("[global.config.directory]/jobs.txt")

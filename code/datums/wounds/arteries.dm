@@ -10,7 +10,7 @@
 	sewn_bleed_rate = 0.2
 	clotting_threshold = null
 	sewn_clotting_threshold = null
-	woundpain = 50
+	woundpain = 35
 	sewn_woundpain = 20
 	mob_overlay = "s1"
 	sewn_overlay = "cut"
@@ -18,7 +18,7 @@
 	can_cauterize = TRUE
 	critical = TRUE
 	sleep_healing = 0
-	embed_chance = 75
+	embed_chance = 0
 
 /datum/wound/artery/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/artery) && (type == other.type))
@@ -44,8 +44,8 @@
 	sewn_whp = 25
 	bleed_rate = 20
 	sewn_bleed_rate = 0.5
-	woundpain = 60
-	sewn_woundpain = 30
+	woundpain = 45
+	sewn_woundpain = 20
 	mob_overlay = "s1_throat"
 
 /datum/wound/artery/neck/on_mob_gain(mob/living/affected)
@@ -64,7 +64,7 @@
 	sewn_whp = 35
 	bleed_rate = 20
 	sewn_bleed_rate = 0.8
-	woundpain = 100
+	woundpain = 80
 	sewn_woundpain = 50
 
 /datum/wound/artery/chest/on_mob_gain(mob/living/affected)
@@ -82,6 +82,9 @@
 	to_chat(affected, "<span class='userdanger'>[pick(heartaches)]</span>")
 	if(HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
 		affected.death()
+	if(affected.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+		var/datum/antagonist/vampirelord/VL = affected.mind.has_antag_datum(/datum/antagonist/vampirelord)
+		VL.handle_vitae(-2000)
 
 /datum/wound/artery/chest/on_life()
 	. = ..()

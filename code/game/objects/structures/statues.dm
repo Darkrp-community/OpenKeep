@@ -50,7 +50,7 @@
 
 /obj/structure/statue/uranium
 	max_integrity = 300
-	light_range = 2
+	light_outer_range =  2
 	material_drop_type = /obj/item/stack/sheet/mineral/uranium
 	var/last_event = 0
 	var/active = null
@@ -286,9 +286,9 @@
 	icon_state = "snowman"
 
 /obj/structure/statue/snow/snowlegion
-    name = "snowlegion"
-    desc = ""
-    icon_state = "snowlegion"
+	name = "snowlegion"
+	desc = ""
+	icon_state = "snowlegion"
 
 ///////////////////////////////bronze///////////////////////////////////
 

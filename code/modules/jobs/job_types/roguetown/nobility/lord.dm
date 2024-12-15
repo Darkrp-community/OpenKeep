@@ -6,18 +6,22 @@
 	total_positions = 0
 	spawn_positions = 1
 
+	f_title = "Queen"
 	allowed_races = list(
-		"Humen"
+		"Humen",
+		"Elf",
+		"Half-Elf"
 	)
-	allowed_sexes = list(MALE)
 	outfit = /datum/outfit/job/roguetown/lord
 	display_order = JDO_LORD
-	tutorial = "Elevated upon your throne through a web of intrigue and political upheaval, you are the absolute authority of these lands and at the center of every plot within it. Every man, woman and child is envious of your position and would replace you in less than a heartbeat: Show them the error in their ways."
+	tutorial = "Elevated to your throne by a web of intrigue, you are the absolute authority of this island and at the center of every plot within it. All are envious of your position and would replace you in less than a heartbeat; show them the error of their ways."
 	bypass_lastclass = TRUE
 	whitelist_req = TRUE
 	min_pq = 0
 	give_bank_account = 200
 	selection_color = "#7851A9"
+
+	cmode_music = 'sound/music/combat_noble.ogg'
 
 /datum/job/roguetown/lord/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -25,7 +29,10 @@
 		SSticker.select_ruler()
 		to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Lord of Blackwine.</span></span></b>")
 		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
-	SSfamilytree.AddRoyal(L, FAMILY_FATHER)
+	if(L.gender == MALE)
+		SSfamilytree.AddRoyal(L, FAMILY_FATHER)
+	else
+		SSfamilytree.AddRoyal(L, FAMILY_MOTHER)
 
 /datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -65,6 +72,10 @@
 		if(H.dna?.species)
 			if(H.dna.species.id == "human")
 				H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
+	else
+		pants = /obj/item/clothing/under/roguetown/tights/stockings/silk/random
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
+		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 
 		if(H.wear_mask)
 			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch))

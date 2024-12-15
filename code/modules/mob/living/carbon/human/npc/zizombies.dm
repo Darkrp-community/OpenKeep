@@ -6,7 +6,7 @@
 	race = /datum/species/zizombie
 	gender = PLURAL
 	bodyparts = list(/obj/item/bodypart/chest/zizombie, /obj/item/bodypart/head/zizombie, /obj/item/bodypart/l_arm/zizombie,
-					 /obj/item/bodypart/r_arm/zizombie, /obj/item/bodypart/r_leg/zizombie, /obj/item/bodypart/l_leg/zizombie)
+					/obj/item/bodypart/r_arm/zizombie, /obj/item/bodypart/r_leg/zizombie, /obj/item/bodypart/l_leg/zizombie)
 	rot_type = /datum/component/rot/corpse/zizombie
 	ambushable = FALSE
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw, /datum/intent/simple/bite, /datum/intent/kick)
@@ -21,7 +21,7 @@
 	wander = FALSE
 
 
-mob/living/carbon/human/species/zizombie/ambush/after_creation()
+/mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	..()
 	job = "Ambush zizombie"
 	QDEL_NULL(sexcon)
@@ -50,7 +50,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 /obj/item/bodypart/head/zizombie/update_icon_dropped()
 	return
 
-/obj/item/bodypart/head/zizombie/get_limb_icon()
+/obj/item/bodypart/head/zizombie/get_limb_icon(dropped, hideaux = FALSE)
 	return
 
 /obj/item/bodypart/head/zizombie/skeletonize()
@@ -109,9 +109,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 
 /mob/living/carbon/human/species/zizombie/Initialize()
 	. = ..()
-	spawn(10)
-		after_creation()
-	//addtimer(CALLBACK(src, PROC_REF(after_creation)), 10)
+	addtimer(CALLBACK(src, PROC_REF(after_creation)), 1 SECONDS)
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
@@ -120,15 +118,15 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	. = ..()
 
 /mob/living/carbon/human/species/zizombie/proc/configure_mind()
-    if(!mind)
-        mind = new /datum/mind(src)
+	if(!mind)
+		mind = new /datum/mind(src)
 
-    mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-    mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 
 /mob/living/carbon/human/species/zizombie/handle_combat()
 	if(mode == AI_HUNT)
@@ -181,12 +179,13 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = "human"
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	var/raceicon = "zizombie"
 
-/datum/species/zizombie/update_damage_overlays(var/mob/living/carbon/human/H)
+/datum/species/zizombie/update_damage_overlays(mob/living/carbon/human/H)
 	return
 
-/datum/species/zizombie/regenerate_icons(var/mob/living/carbon/human/H)
+/datum/species/zizombie/regenerate_icons(mob/living/carbon/human/H)
 //	H.cut_overlays()
 	H.icon_state = ""
 	if(H.notransform)
@@ -259,50 +258,26 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	H.STASPD = 7
 	H.STACON = 10
 	H.STAEND = 16//the zombies shouldn't get tired after all
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	head = /obj/item/clothing/head/roguetown/roguehood/random
 	var/loadout = rand(1,6)
 	switch(loadout)
 		if(1) //Axe Warrior
-			r_hand = /obj/item/rogueweapon/woodcut
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+			r_hand = /obj/item/rogueweapon/axe/iron
 		if(2) //Long Stick Fighter
-			r_hand = /obj/item/rogueweapon/woodstaff
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+			r_hand = /obj/item/rogueweapon/polearm/woodstaff
 		if(3) //Club Caveman
 			r_hand = /obj/item/rogueweapon/mace/woodclub
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(4) //Stabbity Stabbity your Knight is now horizontality
 			r_hand =/obj/item/rogueweapon/pitchfork
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(5) //Bonk Build
 			r_hand = /obj/item/rogueweapon/thresher
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
 		if(6) //Bonk Build
 			r_hand = /obj/item/rogueweapon/hoe
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
-			pants = /obj/item/clothing/under/roguetown/tights/vagrant
-			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-			head = /obj/item/clothing/head/roguetown/roguehood
+
 
 ///////////////////////////////////////////////////////////// EVENTMIN ZIZOMBIES
 /mob/living/carbon/human/species/zizombie/npc/ambush/after_creation()
@@ -337,7 +312,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/helmet/leather
 	if(prob(50))
-		head = /obj/item/clothing/head/roguetown/roguehood
+		head = /obj/item/clothing/head/roguetown/roguehood/uncolored
 	if(prob(50))
 		r_hand = /obj/item/rogueweapon/sword/iron
 		shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -404,7 +379,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap
 		if(4) //zizombie Warrior
-			r_hand =/obj/item/rogueweapon/spear
+			r_hand =/obj/item/rogueweapon/polearm/spear
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -414,7 +389,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(5) //zizombie Warrior
 			r_hand = /obj/item/rogueweapon/sword/sabre
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant
@@ -423,8 +398,8 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(6) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/sword/iron/messer
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
+			r_hand = /obj/item/rogueweapon/sword/scimitar/messer
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 			pants = /obj/item/clothing/under/roguetown/tights/vagrant
@@ -469,7 +444,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			cloak = /obj/item/clothing/cloak/stabard/guard
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(2) //zizombie Warrior
-			r_hand =/obj/item/rogueweapon/spear
+			r_hand =/obj/item/rogueweapon/polearm/spear
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
@@ -480,7 +455,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			cloak = /obj/item/clothing/cloak/stabard/guard
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(3) //zizombie Warrior
-			r_hand =/obj/item/rogueweapon/huntingknife/cleaver/combat
+			r_hand =/obj/item/rogueweapon/knife/cleaver/combat
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
@@ -491,7 +466,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			cloak = /obj/item/clothing/cloak/stabard/guard
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(4) //zizombie Warrior
-			r_hand =/obj/item/rogueweapon/huntingknife
+			r_hand =/obj/item/rogueweapon/knife/hunting
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
@@ -502,7 +477,7 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			cloak = /obj/item/clothing/cloak/stabard/guard
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if(5) //zizombie Warrior
-			r_hand =/obj/item/rogueweapon/woodcut
+			r_hand =/obj/item/rogueweapon/axe/iron
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 			belt = /obj/item/storage/belt/rogue/leather
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
@@ -541,10 +516,10 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 	var/loadout = rand(1,5)
 	switch(loadout)
 		if(1) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/greatsword/zwei
+			r_hand = /obj/item/rogueweapon/sword/long/greatsword/zwei
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
@@ -553,10 +528,10 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(2) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/halberd
+			r_hand = /obj/item/rogueweapon/polearm/halberd
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
@@ -565,10 +540,10 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(3) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/eaglebeak
+			r_hand = /obj/item/rogueweapon/polearm/eaglebeak
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
@@ -577,11 +552,11 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(4) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/sword/iron/short
-			l_hand = /obj/item/rogueweapon/huntingknife/idagger
+			r_hand = /obj/item/rogueweapon/sword/short
+			l_hand = /obj/item/rogueweapon/knife/dagger
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
@@ -590,10 +565,10 @@ mob/living/carbon/human/species/zizombie/ambush/after_creation()
 			backl = /obj/item/storage/backpack/rogue/satchel
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		if(5) //zizombie Warrior
-			r_hand = /obj/item/rogueweapon/battle
+			r_hand = /obj/item/rogueweapon/axe/battle
 			pants = /obj/item/clothing/under/roguetown/grenzelpants
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-			gloves = /obj/item/clothing/gloves/roguetown/grenzelgloves
+			gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 			belt = /obj/item/storage/belt/rogue/leather
 			shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
 			head = /obj/item/clothing/head/roguetown/helmet/sallet

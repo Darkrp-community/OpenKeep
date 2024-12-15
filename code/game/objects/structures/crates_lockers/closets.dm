@@ -304,7 +304,7 @@
 		else
 			playsound(src, 'sound/foley/doors/lockrattle.ogg', 100)
 
-obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
+/obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 	if(opened)
 		to_chat(user, "<span class='warning'>This cannot be picked while it is open.</span>")
 		return
@@ -320,7 +320,7 @@ obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 
 		var/obj/item/lockpick/P = I
 		var/mob/living/L = user
-		
+
 		var/pickskill = user.mind.get_skill_level(/datum/skill/misc/lockpicking)
 		var/perbonus = L.STAPER/5
 		var/picktime = 70
@@ -398,16 +398,13 @@ obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='warning'>I [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
-				 	 	"<span class='hear'>I hear clanging.</span>")
+						"<span class='warning'>I [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
+						"<span class='hear'>I hear clanging.</span>")
 	if(actuallyismob)
 		if(do_after_mob(user, targets, 40))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
-							 	 "<span class='notice'>I stuff [O] into [src].</span>", \
-							 	 "<span class='hear'>I hear a loud bang.</span>")
-			var/mob/living/L = O
-			if(!issilicon(L))
-				L.Paralyze(40)
+								"<span class='notice'>I stuff [O] into [src].</span>", \
+								"<span class='hear'>I hear a loud bang.</span>")
 			O.forceMove(T)
 			close()
 	else
@@ -436,10 +433,6 @@ obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 /obj/structure/closet/attack_paw(mob/user)
 	return attack_hand(user)
 
-/obj/structure/closet/attack_robot(mob/user)
-	if(user.Adjacent(src))
-		return attack_hand(user)
-
 // tk grab then use on self
 /obj/structure/closet/attack_self_tk(mob/user)
 	return attack_hand(user)
@@ -452,7 +445,7 @@ obj/structure/closet/proc/trypicklock(obj/item/I, mob/user)
 	if(!usr.canUseTopic(src, BE_CLOSE) || !isturf(loc))
 		return
 
-	if(iscarbon(usr) || issilicon(usr) || isdrone(usr))
+	if(iscarbon(usr) || isdrone(usr))
 		return toggle(usr)
 	else
 		to_chat(usr, "<span class='warning'>This mob type can't use this verb.</span>")

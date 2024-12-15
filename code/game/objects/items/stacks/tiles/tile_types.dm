@@ -43,8 +43,8 @@
 			if (mineralType == "metal")
 				var/obj/item/stack/sheet/metal/new_item = new(user.loc)
 				user.visible_message("<span class='notice'>[user.name] shaped [src] into metal with the welding tool.</span>", \
-							 "<span class='notice'>I shaped [src] into metal with the welding tool.</span>", \
-							 "<span class='hear'>I hear welding.</span>")
+							"<span class='notice'>I shaped [src] into metal with the welding tool.</span>", \
+							"<span class='hear'>I hear welding.</span>")
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -56,8 +56,8 @@
 				var/sheet_type = text2path("/obj/item/stack/sheet/mineral/[mineralType]")
 				var/obj/item/stack/sheet/mineral/new_item = new sheet_type(user.loc)
 				user.visible_message("<span class='notice'>[user.name] shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='notice'>I shaped [src] into a sheet with the welding tool.</span>", \
-							 "<span class='hear'>I hear welding.</span>")
+							"<span class='notice'>I shaped [src] into a sheet with the welding tool.</span>", \
+							"<span class='hear'>I hear welding.</span>")
 				var/obj/item/stack/rods/R = src
 				src = null
 				var/replace = (user.get_inactive_held_item()==R)
@@ -320,12 +320,6 @@
 	mineralType = "metal"
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 70)
 	resistance_flags = FIRE_PROOF
-
-/obj/item/stack/tile/plasteel/cyborg
-	desc = "" //Not the usual floor tile desc as that refers to throwing, Cyborgs can't do that - RR
-	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
-	is_cyborg = 1
-	cost = 125
 
 /obj/item/stack/tile/plastic
 	name = "plastic tile"

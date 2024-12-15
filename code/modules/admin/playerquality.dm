@@ -122,7 +122,7 @@
 
 /proc/check_pq_menu(ckey)
     if(!fexists("data/player_saves/[copytext(ckey,1,2)]/[ckey]/preferences.sav"))
-        to_chat(src, "<span class='boldwarning'>User does not exist.</span>")
+        to_chat(usr, "<span class='boldwarning'>User does not exist.</span>")
         return
     var/popup_window_data = "<!DOCTYPE html><html><head><meta charset='UTF-8'></head><body>"
     popup_window_data += "<center>[ckey]</center>"
@@ -144,7 +144,7 @@
             if(ya)
                 popup_window_data += "<span class='info'>[listy[i]]</span><br>"
     popup_window_data += "</body></html>"
-    
+
     var/datum/browser/noclose/popup = new(usr, "playerquality", "", 390, 320)
     popup.set_content(popup_window_data)
     popup.open()
@@ -235,7 +235,7 @@
 	if(!curcomm)
 		curcomm = 0
 	return curcomm
-	
+
 /proc/get_eslpoints(key)
 	if(!key)
 		return

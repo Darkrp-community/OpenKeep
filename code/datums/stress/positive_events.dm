@@ -12,7 +12,7 @@
 	timer = 30 SECONDS
 	stressadd = -1
 	desc = span_green("Death. Hehe...")
-	
+
 /datum/stressevent/viewdismembermaniac
 	timer = 2 MINUTES
 	stressadd = -1
@@ -128,33 +128,43 @@
 	stressadd = -5
 	desc = span_green("Down with the tyranny!")
 
+/datum/stressevent/clean
+	timer = 15 MINUTES
+	stressadd = -1
+	desc = span_green("I cleaned myself recently.")
+
+/datum/stressevent/clean_plus
+	timer = 20 MINUTES
+	stressadd = -2
+	desc = span_green("That was an amazing bath.")
+
 /datum/stressevent/music
 	timer = 1 MINUTES
 	stressadd = -1
-	desc = span_green("The music is relaxing.")
+	desc = span_green("This music is relaxing.")
 
 /datum/stressevent/music/two
 	stressadd = -2
-	desc = span_green("The music is very relaxing.")
+	desc = span_green("This music is very relaxing.")
 
 /datum/stressevent/music/three
 	stressadd = -3
-	desc = span_green("The music saps my stress.")
+	desc = span_green("This music saps my stress.")
 
 /datum/stressevent/music/four
 	stressadd = -4
-	desc = span_green("The music is heavenly.")
+	desc = span_green("This music is heavenly.")
 	timer = 10 MINUTES
 
 /datum/stressevent/music/five
 	stressadd = -5
 	timer = 10 MINUTES
-	desc = span_green("The music is strummed by an angel.")
+	desc = span_green("This music is strummed by an angel.")
 
 /datum/stressevent/music/six
 	stressadd = -6
 	timer = 10 MINUTES
-	desc = span_green("The music is a blessing from Xylix.")
+	desc = span_green("This music is a blessing from Xylix.")
 
 // Bard buffs below
 

@@ -1,22 +1,22 @@
 /datum/advclass/pilgrim/physicker
-    name = "Physicker"
-    tutorial =  "Those who fail their studies, or are exiled from the towns they take \
-                residence as feldshers in, often end up becoming wandering physickers. \
-                Capable doctors nonetheless, they journey from place to place offering \
-                their services."
-    allowed_sexes = list(MALE, FEMALE)
-    allowed_races = list(
-        "Humen",
-        "Elf",
-        "Half-Elf",
-        "Dwarf",
-        "Tiefling",
-        "Dark Elf",
-        "Aasimar"
-    )
-    outfit = /datum/outfit/job/roguetown/adventurer/physicker
-    category_tags = list(CTAG_PILGRIM)
-    maximum_possible_slots = 2
+	name = "Physicker"
+	tutorial =  "Those who fail their studies, or are exiled from the towns they take \
+				residence as feldshers in, often end up becoming wandering physickers. \
+				Capable doctors nonetheless, they journey from place to place offering \
+				their services."
+	allowed_sexes = list(MALE, FEMALE)
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar"
+	)
+	outfit = /datum/outfit/job/roguetown/adventurer/physicker
+	category_tags = list(CTAG_PILGRIM)
+	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adventurer/physicker/pre_equip(mob/living/carbon/human/H)
     ..()
@@ -25,7 +25,7 @@
     shoes = /obj/item/clothing/shoes/roguetown/boots
     shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
     backr = /obj/item/storage/backpack/rogue/satchel
-    backl = /obj/item/storage/backpack/rogue/satchel/surgbag
+    r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
     pants = /obj/item/clothing/under/roguetown/tights/black
     belt = /obj/item/storage/belt/rogue/leather/black
     gloves = /obj/item/clothing/gloves/roguetown/leather/phys

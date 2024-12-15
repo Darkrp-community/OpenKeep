@@ -491,15 +491,14 @@
 		playsound(C.loc, "smallslash", 100, FALSE, -1)
 		limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
 		if(user.mind)
-			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
+			if(ishuman(C) && user.mind.has_antag_datum(/datum/antagonist/werewolf))
 				var/mob/living/carbon/human/H = C
-				if(prob(25) && H)
-					spawn(3 MINUTES)
-						H.werewolf_infect()
-					//addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
+				if(prob(25))
+					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
 				var/mob/living/carbon/human/H = C
-				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
+				if(istype(H))
+					INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
 				if(C.stat)
 					if(istype(limb_grabbed, /obj/item/bodypart/head))
 						var/obj/item/bodypart/head/HE = limb_grabbed
@@ -564,7 +563,7 @@
 					to_chat(user, "<span class='warning'>I cannot drain vitae from a fellow nitewalker.</span>")
 					return
 				else if(C.vitae_pool > 500)
-					C.blood_volume = max(C.blood_volume-45, 0)
+					C.blood_volume = max(C.blood_volume-20, 0)
 					if(ishuman(C))
 						var/mob/living/carbon/human/H = C
 						if(H.virginity)
@@ -603,7 +602,7 @@
 		if(user.mind) // We're drinking from a mob or a person who disconnected from the game
 			if(user.mind.has_antag_datum(/datum/antagonist/vampirelord))
 				var/datum/antagonist/vampirelord/VDrinker = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
-				C.blood_volume = max(C.blood_volume-45, 0)
+				C.blood_volume = max(C.blood_volume-20, 0)
 				if(C.vitae_pool >= 250)
 					if(VDrinker.isspawn)
 						VDrinker.handle_vitae(250, 250)
@@ -612,7 +611,7 @@
 				else
 					to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
 
-	C.blood_volume = max(C.blood_volume-5, 0)
+	C.blood_volume = max(C.blood_volume-60, 0)
 	C.handle_blood()
 
 	playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)

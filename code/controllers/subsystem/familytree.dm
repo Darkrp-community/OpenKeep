@@ -41,7 +41,7 @@ SUBSYSTEM_DEF(familytree)
 	var/excluded_jobs = list(
 		"Prince",
 		"Princess",
-		"Queen",
+		"Consort",
 		"King",
 		"Inquisitor",
 		)
@@ -56,11 +56,11 @@ SUBSYSTEM_DEF(familytree)
 		)
 
 /datum/controller/subsystem/familytree/Initialize()
-	ruling_family = new /datum/heritage(null, null, /datum/species/human/northern)
+	ruling_family = new /datum/heritage(majority_species = /datum/species/human/northern)
 	//Blank starter families that we can customize for players.
 	for(var/pioneer_household in preset_family_species)
 		for(var/I = 1 to 2)
-			families += new /datum/heritage(null, null, pioneer_household)
+			families += new /datum/heritage(majority_species = pioneer_household)
 
 	return ..()
 
@@ -106,7 +106,11 @@ SUBSYSTEM_DEF(familytree)
 */
 /datum/controller/subsystem/familytree/proc/AssignToHouse(mob/living/carbon/human/H)
 	//If no human and they are older than adult age.
-	if(!H || H.age > AGE_ADULT)
+	if(!H)
+		return
+	//Akward way of assigning people as aunts and uncles to houses.
+	if(H.age > AGE_ADULT)
+		AssignAuntUncle(H)
 		return
 	var/species = H.dna.species.type
 	var/adopted = FALSE
@@ -118,7 +122,6 @@ SUBSYSTEM_DEF(familytree)
 			high_priority_houses.Add(I)
 		else
 			low_priority_houses.Add(I)
-
 	//Extremely sloppy but shorter code than writing the same code twice. -IP
 	for(var/i = 1 to 2)
 		var/list/what_we_checkin = high_priority_houses
@@ -238,7 +241,7 @@ SUBSYSTEM_DEF(familytree)
 		if(L == H)
 			continue
 		//They already have a spouse so skip this one.
-		if(L.spouse_name)
+		if(L.spouse_mob)
 			continue
 		//True love! They chose you and chose love them!
 		if(H.setspouse == L.real_name && L.setspouse == H.real_name)
@@ -282,6 +285,36 @@ SUBSYSTEM_DEF(familytree)
 		viable_spouses -= lover
 		viable_spouses -= H
 		H.MarryTo(lover)
+
+/*
+* Assings people as uncles and aunts.
+*/
+/datum/controller/subsystem/familytree/proc/AssignAuntUncle(mob/living/carbon/human/H)
+	var/species = H.dna.species.type
+	var/datum/heritage/chosen_house
+	var/list/low_priority_houses = list()
+	var/list/high_priority_houses = list()
+	for(var/datum/heritage/I in families)
+		if(I.housename || (I.family.len >= 1 && I.family.len <= 6))
+			high_priority_houses.Add(I)
+		else
+			low_priority_houses.Add(I)
+
+	//Extremely sloppy but shorter code than writing the same code twice. -IP
+	for(var/i = 1 to 2)
+		var/list/what_we_checkin = high_priority_houses
+		//If second run then check the other houses.
+		if(i == 2)
+			what_we_checkin = low_priority_houses
+		for(var/datum/heritage/I in what_we_checkin)
+			if(I.dominant_species == species)
+				chosen_house = I
+				break
+		if(chosen_house)
+			break
+
+	if(chosen_house)
+		chosen_house.addToHouse(H, FAMILY_OMMER)
 
 /*
 * For admins to view EVERY FAMILY and see all the

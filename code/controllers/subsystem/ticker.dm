@@ -37,6 +37,7 @@ SUBSYSTEM_DEF(ticker)
 
 	var/timeLeft						//pregame timer
 	var/start_at
+	var/timeDelayAdd = 120
 	//576000 dusk
 	//376000 day
 	var/gametime_offset = 288001		//Deciseconds to add to world.time for station time.
@@ -59,6 +60,9 @@ SUBSYSTEM_DEF(ticker)
 	var/late_join_disabled
 
 	var/roundend_check_paused = FALSE
+
+	var/amt_ready = 0 // Total count of players that are ready
+	var/amt_ready_needed = 1 // Total count of players that are needed ready to start the game
 
 	var/round_start_time = 0
 	var/round_start_irl = 0
@@ -213,14 +217,8 @@ SUBSYSTEM_DEF(ticker)
 
 			if(timeLeft <= 0)
 				if(!checkreqroles())
-/*					if(failedstarts >= 13)
-						current_state = GAME_STATE_SETTING_UP
-						Master.SetRunLevel(RUNLEVEL_SETUP)
-						if(start_immediately)
-							fire()
-					else*/
 					current_state = GAME_STATE_STARTUP
-					start_at = world.time + 600
+					start_at = world.time + timeDelayAdd
 					timeLeft = null
 					Master.SetRunLevel(RUNLEVEL_LOBBY)
 				else
@@ -234,7 +232,7 @@ SUBSYSTEM_DEF(ticker)
 			if(!setup())
 				//setup failed
 				current_state = GAME_STATE_STARTUP
-				start_at = world.time + 600
+				start_at = world.time + timeDelayAdd
 				timeLeft = null
 				Master.SetRunLevel(RUNLEVEL_LOBBY)
 
@@ -299,18 +297,18 @@ SUBSYSTEM_DEF(ticker)
 	else
 		var/list/stuffy = list("Set Merchant to 'high' in your class preferences to start the game!", "PLAY Merchant NOW!", "A Merchant is required to start.", "Pray for a Merchant.", "One day, there will be a Merchant.", "Just try playing Merchant.", "If you don't play Merchant, the game will never start.", "We need at least one Merchant to start the game.", "We're waiting for you to pick Merchant to start.", "Still no Merchant is readied..", "I'm going to lose my mind if we don't get a Merchant readied up.","No. The game will not start because there is no Merchant.","What's the point of ROGUETOWN without a Merchant?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
-		return FALSE
+		return FALSE */
 
+/*
 #ifdef DEPLOY_TEST
-	var/amt_ready = 999
-#else
-	var/amt_ready = 0
+	amt_ready = 999
 #endif
-
+*/
 #ifdef ROGUEWORLD
 	amt_ready = 999
 #endif
 
+#ifndef UNIT_TESTS
 	for(var/mob/dead/new_player/player in GLOB.player_list)
 		if(!player)
 			continue
@@ -331,7 +329,6 @@ SUBSYSTEM_DEF(ticker)
 				SStitle.splash_turf.icon = ikon
 			for(var/mob/dead/new_player/player in GLOB.player_list)
 				player.playsound_local(player, 'sound/music/wartitle.ogg', 100, TRUE)*/
-		return FALSE
 	job_change_locked = TRUE
 	return TRUE
 
@@ -881,7 +878,6 @@ SUBSYSTEM_DEF(ticker)
 		world.Reboot()
 
 /datum/controller/subsystem/ticker/Shutdown()
-	gather_newscaster() //called here so we ensure the log is created even upon admin reboot
 	save_admin_data()
 	update_everything_flag_in_db()
 
