@@ -131,6 +131,8 @@
 
 	var/datum/charflaw/forced_flaw
 
+	var/shows_in_list = TRUE
+
 /datum/job/proc/special_job_check(mob/dead/new_player/player)
 	return TRUE
 
