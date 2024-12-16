@@ -171,21 +171,19 @@
 // --------- Ammo -----------
 
 /datum/artificer_recipe/iron/ammo/lead_bullet
-	name = "Lead Bullet"
-	hammers_per_item = 2
-	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	name = "5X Lead Bullet"
+	hammers_per_item = 6
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet = 5
 	required_item = /obj/item/ingot/iron
-	createmultiple = TRUE
 	i_type = "Ammo"
 	craftdiff = 2
 
 /datum/artificer_recipe/iron/ammo/bolts
-	name = "Crossbow bolt"
+	name = "5X Crossbow bolt"
 	required_item = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/ammo_casing/caseless/rogue/bolt
-	createmultiple = TRUE
-	hammers_per_item = 2
+	created_item = /obj/item/ammo_casing/caseless/rogue/bolt = 5
+	hammers_per_item = 6
 	i_type = "Ammo"
 	craftdiff = 1
 // --------- PROSTHETICS -----------
