@@ -813,6 +813,7 @@
 	name = "uncooked prezzel"
 	icon_state = "prezzel_raw"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/prezzel
+	cooked_smell = /datum/pollutant/food/prezzel
 	w_class = WEIGHT_CLASS_NORMAL
 	eat_effect = null
 	rotprocess = SHELFLIFE_LONG
@@ -879,7 +880,7 @@
 	icon_state = "honeycakeuncook"
 	slices_num = 0
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/hcake
-	cooked_smell = /datum/pollutant/food/cheese_cake
+	cooked_smell = /datum/pollutant/food/honey_cake
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	w_class = WEIGHT_CLASS_NORMAL
 	foodtype = GRAIN | DAIRY | SUGAR
@@ -925,6 +926,7 @@
 	icon_state = "cheesecakeuncook"
 	slices_num = 0
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/ccake
+	cooked_smell = /datum/pollutant/food/cheese_cake
 	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
 	foodtype = GRAIN | DAIRY | SUGAR
 	w_class = WEIGHT_CLASS_NORMAL
@@ -936,6 +938,7 @@
 	icon_state = "cheesecake"
 	slices_num = 8
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/ccakeslice
+	cooked_smell = /datum/pollutant/food/cheese_cake
 	list_reagents = list(/datum/reagent/consumable/nutriment = 48)
 	w_class = WEIGHT_CLASS_NORMAL
 	tastes = list("cake"=1, "creamy cheese"=1)

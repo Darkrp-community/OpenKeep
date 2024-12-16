@@ -1730,7 +1730,6 @@
 /area/rogue/indoors/town)
 "gx" = (
 /obj/structure/table/wood,
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "gy" = (

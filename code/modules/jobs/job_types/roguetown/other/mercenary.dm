@@ -1,7 +1,7 @@
 /datum/job/roguetown/mercenary
 	title = "Mercenary"
-	flag = GRAVEDIGGER
-	department_flag = PEASANTS
+	flag = MERCENARY
+	department_flag = OUTSIDERS
 	faction = "Station"
 	total_positions = 4
 	spawn_positions = 4

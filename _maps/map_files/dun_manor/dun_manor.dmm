@@ -14029,7 +14029,6 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -20125,7 +20124,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue/under/town/basement)
 "tGe" = (
-/mob/living/carbon/human/species/goblin/npc/cave,
+/mob/living/carbon/human/species/goblin/skilled/ambush/cave,
 /turf/open/floor/rogue/dirt/ambush,
 /area/rogue/under/cave)
 "tGm" = (
@@ -22198,7 +22197,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/town)
 "vPI" = (
-/mob/living/carbon/human/species/goblin/npc/cave,
+/mob/living/carbon/human/species/goblin/skilled/ambush/cave,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "vPS" = (

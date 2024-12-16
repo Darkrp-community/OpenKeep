@@ -1,9 +1,11 @@
 // PARRY AND DODGE FORMULA DEFINES : for easy adjustments. These multipliers are integrated into the formulas, can be set to different values to adjust desired outcome likelihoods
-#define PARRY_SKILL_WEIGHT 20
+#define PARRY_SKILL_WEIGHT 18
 #define WEAPON_DEFENSE_WEIGHT 10
+
 #define SPEED_WEIGHT_FOR_DODGE_EXPERT 12
 #define SPEED_WEIGHT_FOR_DODGE 10
-
+#define MIN_DODGE_CHANCE 5
+#define MAX_DODGE_CHANCE 90
 
 /proc/accuracy_check(zone, mob/living/user, mob/living/target, associated_skill, datum/intent/used_intent, obj/item/I)
 	if(!zone)
@@ -421,7 +423,7 @@
 							prob2defend = prob2defend + (H.mind.get_skill_level(/datum/skill/combat/unarmed) * 10)
 			if(!(L.mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 50% defense malus if so
 				prob2defend *= 0.5
-			prob2defend = clamp(prob2defend, 5, 95)
+			prob2defend = clamp(prob2defend, MIN_DODGE_CHANCE, MAX_DODGE_CHANCE)
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
 			if(!prob(prob2defend))
@@ -432,7 +434,7 @@
 		else //we are a non human
 			if(client?.prefs.showrolls)
 				to_chat(src, "<span class='info'>Roll to dodge... [prob2defend]%</span>")
-			prob2defend = clamp(prob2defend, 5, 95)
+			prob2defend = clamp(prob2defend, MIN_DODGE_CHANCE, MAX_DODGE_CHANCE)
 			if(!prob(prob2defend))
 				return FALSE
 		dodgecd = TRUE

@@ -36,7 +36,7 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/claw)
+	base_intents = list(/datum/intent/simple/claw_strong)
 	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 40
@@ -55,7 +55,7 @@
 	retreat_health = 0.4
 	food = 0
 
-	dodgetime = 20
+	dodgetime = 2.5 SECONDS
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole

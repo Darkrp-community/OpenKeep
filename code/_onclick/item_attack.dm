@@ -119,7 +119,7 @@
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 			return
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-		user.rogfat_add(10)
+		user.rogfat_add(7)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
 		user.rogfat_add(10)
 	if(M.checkdefense(user.used_intent, user))

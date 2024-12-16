@@ -65,9 +65,9 @@
 #define BAD_PARRY 0
 #define MEDIOCHRE_PARRY 1
 #define AVERAGE_PARRY 2
-#define GOOD_PARRY 3
-#define GREAT_PARRY 4
-#define ULTMATE_PARRY 5
+#define GOOD_PARRY 2.5
+#define GREAT_PARRY 3
+#define ULTMATE_PARRY 4
 
 //wbalance defines
 #define VERY_EASY_TO_DODGE -2

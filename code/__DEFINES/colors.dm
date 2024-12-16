@@ -90,7 +90,7 @@
 #define CLOTHING_ROYAL_BLACK	"#2f352f"
 #define CLOTHING_BOG_GREEN		"#58793f"
 #define CLOTHING_ROYAL_TEAL		"#249589"
-#define CLOTHING_PEAR_YELLOW	"#b5b004"
+#define CLOTHING_PEAR_YELLOW	"#a19d20"
 #define CLOTHING_CHALK_WHITE	"#c7c0b5"
 
 
@@ -99,8 +99,8 @@
 
 #define CLOTHING_SOOT_BLACK		"#4b4b50"
 #define CLOTHING_WINESTAIN_RED	"#6b3737"
-#define CLOTHING_PEASANT_BROWN	"#705243"
-#define CLOTHING_MUD_BROWN		"#685542"
+#define CLOTHING_PEASANT_BROWN	"#574a43"
+#define CLOTHING_MUD_BROWN		"#57493a"
 #define CLOTHING_CHESTNUT		"#5f3d21"
 #define CLOTHING_OLD_LEATHER	"#473a30"
 #define CLOTHING_SPRING_GREEN	"#435436"
@@ -125,6 +125,8 @@
 			return CLOTHING_ROYAL_PURPLE
 		if("Forest Green")
 			return CLOTHING_FOREST_GREEN
+		if("Spring Green")
+			return CLOTHING_SPRING_GREEN
 		if("Sky Blue")
 			return CLOTHING_SKY_BLUE
 		if("Mustard Yellow")

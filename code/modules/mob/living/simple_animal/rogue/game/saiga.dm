@@ -96,6 +96,7 @@
 	gender = PLURAL
 	icon_state = "skele"
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
+	color = "#d6b3a5"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/get_sound(input)
 	switch(input)

@@ -22,37 +22,12 @@
 /obj/item/chair/stool/bar/rogue/crafted
 	sellprice = 6
 
-/datum/crafting_recipe/roguetown/structure/dye_bin
-	name = "dye bin"
-	result = /obj/machinery/simple_dye_bin
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1,
-	/obj/item/natural/dirtclod = 1)
-	verbage = "construct"
-	verbage_tp = "carpents"
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
-
-/datum/crafting_recipe/roguetown/structure/dye_bin_luxury
-	name = "luxury dye bin"
-	result = /obj/machinery/dye_bin
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/reagent_containers/food/snacks/produce/fyritius = 3,
-	/obj/item/reagent_containers/food/snacks/produce/pear = 3,
-	/obj/item/reagent_containers/food/snacks/produce/sunflower = 3,)
-	verbage = "construct"
-	verbage_tp = "carpents"
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
-
 /* === SKILL LEVEL 1 === */
 
 /datum/crafting_recipe/roguetown/structure/chair
 	name = "wooden chair"
 	result = /obj/item/chair/rogue/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -82,7 +57,7 @@
 /datum/crafting_recipe/roguetown/structure/table
 	name = "wooden table"
 	result = /obj/structure/table/wood/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -130,7 +105,7 @@
 /datum/crafting_recipe/roguetown/structure/closet
 	name = "closet"
 	result = /obj/structure/closet/crate/roguecloset/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank = 2)
 	verbage = "construct"
 	verbage_tp = "constructs"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -143,7 +118,7 @@
 /datum/crafting_recipe/roguetown/structure/coffin
 	name = "wooden coffin"
 	result = /obj/structure/closet/crate/coffin
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank=3)
 	verbage = "construct"
 	verbage_tp = "constructs"
 	skillcraft = /datum/skill/craft/carpentry
@@ -231,7 +206,7 @@
 /datum/crafting_recipe/roguetown/structure/barrel
 	name = "wooden barrel"
 	result = /obj/structure/fermenting_barrel/crafted
-	reqs = list(/obj/item/grown/log/tree/small = 1)
+	reqs = list(/obj/item/natural/plank=2)
 	verbage = "construct"
 	verbage_tp = "makes"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -274,7 +249,7 @@
 /datum/crafting_recipe/roguetown/structure/nicebed
 	name = "nice bed"
 	result = /obj/structure/bed/rogue
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	reqs = list(/obj/item/natural/plank=2,
 				/obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
 	verbage = "carpent"
@@ -286,7 +261,7 @@
 /datum/crafting_recipe/roguetown/structure/door
 	name = "wooden door"
 	result = /obj/structure/mineral_door/wood/deadbolt
-	reqs = list(/obj/item/grown/log/tree/small = 2)
+	reqs = list(/obj/item/natural/plank=2)
 	verbage = "carpent"
 	verbage_tp = "carpents"
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -332,7 +307,7 @@
 /datum/crafting_recipe/roguetown/structure/window
 	name = "solid window"
 	result = /obj/structure/roguewindow/solid
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	reqs = list(/obj/item/natural/plank = 1,
 				/obj/item/natural/glass = 1)
 	craftsound = 'sound/foley/Building-01.ogg'
 	skillcraft = /datum/skill/craft/masonry
@@ -341,7 +316,7 @@
 /datum/crafting_recipe/roguetown/structure/windowopen
 	name = "openable window"
 	result = /obj/structure/roguewindow/openclose
-	reqs = list(/obj/item/grown/log/tree/small = 1,
+	reqs = list(/obj/item/natural/plank = 1,
 				/obj/item/natural/glass = 1,
 				/obj/item/ingot/iron = 1)
 	craftsound = 'sound/foley/Building-01.ogg'
@@ -351,7 +326,7 @@
 /datum/crafting_recipe/roguetown/structure/windowstained
 	name = "stained glass window (silver)"
 	result = /obj/structure/roguewindow/stained
-	reqs = list(/obj/item/natural/stone = 3,
+	reqs = list(/obj/item/natural/stoneblock = 3,
 				/obj/item/natural/glass = 2,
 				/obj/item/ingot/silver = 1)
 	skillcraft = /datum/skill/craft/masonry
@@ -477,7 +452,17 @@
 /datum/crafting_recipe/roguetown/structure/smelter
 	name = "ore furnace"
 	result = /obj/machinery/light/rogue/smelter
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stone = 6,
+			/obj/item/rogueore/coal = 1)
+	verbage = "build"
+	verbage_tp = "builds"
+	craftsound = null
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/smelter_block
+	name = "ore furnace"
+	result = /obj/machinery/light/rogue/smelter
+	reqs = list(/obj/item/natural/stoneblock = 4,
 			/obj/item/rogueore/coal = 1)
 	verbage = "build"
 	verbage_tp = "builds"
@@ -487,7 +472,7 @@
 /datum/crafting_recipe/roguetown/structure/forge
 	name = "forge"
 	result = /obj/machinery/light/rogue/forge
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stoneblock = 4,
 				/obj/item/rogueore/coal = 1)
 
 	verbage = "build"

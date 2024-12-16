@@ -61,7 +61,7 @@
 	desc = "Big-hearted, but small-brained."
 	icon_state = "trollheart"
 	layer = 3.1
-	sellprice = 40
+	sellprice = 50
 
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
