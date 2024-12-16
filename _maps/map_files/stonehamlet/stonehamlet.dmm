@@ -3628,9 +3628,6 @@
 /turf/open/floor/rogue/sandstone,
 /area/rogue/indoors/town/church/chapel)
 "dOs" = (
-/obj/machinery/light/rogue/torchholder{
-	pixel_y = 32
-	},
 /obj/item/roguebin/water/gross,
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
@@ -4628,13 +4625,6 @@
 "eDh" = (
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors)
-"eDs" = (
-/obj/structure/chair/wood/rogue/fancy{
-	dir = 8;
-	icon_state = "chair1"
-	},
-/turf/open/floor/rogue/ruinedwood/spiralfade,
-/area/rogue/indoors/town/shop)
 "eDG" = (
 /obj/effect/decal/turfedge_neu{
 	dir = 6
@@ -5569,7 +5559,7 @@
 "fsl" = (
 /obj/item/rogueweapon/knife/dagger/steel/special,
 /obj/structure/closet/crate/chest/neu_iron,
-/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/mace/cudgel,
 /obj/machinery/light/rogue/torchholder/c{
 	pixel_y = -32
 	},
@@ -13920,10 +13910,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/under/basement)
 "nSX" = (
-/obj/structure/chair/wood/rogue/fancy{
-	dir = 4;
-	icon_state = "chair1"
-	},
+/obj/structure/chair/wood/rogue/fancy,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "nTd" = (
@@ -18090,6 +18077,9 @@
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked{
 	pixel_y = 3
 	},
+/obj/machinery/light/rogue/torchholder{
+	pixel_y = 32
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "rHl" = (
@@ -18523,7 +18513,12 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/clothing/mask/cigarette/rollie/nicotine,
+/obj/item/clothing/mask/cigarette/rollie/nicotine{
+	pixel_x = 8
+	},
+/obj/item/candle/yellow/lit/infinite{
+	pixel_x = -9
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "sjL" = (
@@ -86179,7 +86174,7 @@ cGL
 pBo
 pwX
 wnB
-eDs
+nSX
 jDn
 mqm
 mqm

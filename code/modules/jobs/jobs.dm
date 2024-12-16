@@ -103,6 +103,8 @@ GLOBAL_LIST_INIT(towner_positions, list(
 	"Feldsher",
 	"Innkeep",
 	"Tailor",
+	"Niteman",
+	"Nitemaiden",
 	"Alchemist",
 	"Scribe",
 	))
@@ -116,8 +118,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Hunter",
 	"Fisher",
 	"Towner",
-	"Niteman",
-	"Nitemaiden",
 	"Prisoner",
 	"Beggar",
 

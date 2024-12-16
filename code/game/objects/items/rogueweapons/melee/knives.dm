@@ -403,8 +403,8 @@
 	desc = "A tool favored by poor woodland inhabitants, easy to make, useful for skinning the flesh of beast and man alike."
 	icon_state = "stone_knife"
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	max_integrity = 30
-	max_blade_int = 30
+	max_integrity = 28
+	max_blade_int = 28
 	wdefense = TERRIBLE_PARRY
 	smeltresult = /obj/item/ash
 	sellprice = 5

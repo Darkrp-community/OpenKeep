@@ -89,7 +89,7 @@
 	body_parts_covered = GROIN|LEG_RIGHT
 
 /obj/item/clothing/under/roguetown/tights/vagrant/Initialize()
-	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	color = pick(CLOTHING_MUD_BROWN, CLOTHING_OLD_LEATHER,  CLOTHING_SPRING_GREEN, CLOTHING_BARK_BROWN, CLOTHING_SOOT_BLACK	)
 	..()
 
 /obj/item/clothing/under/roguetown/tights/sailor
@@ -213,7 +213,7 @@
 	name = "leather trousers"
 	desc = "Standard leather pants for hardy workers."
 	icon_state = "leathertrou"
-	
+
 	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_POOR
@@ -226,7 +226,7 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	detail_tag = "_detail"
 	colorgrenz = TRUE
-	
+
 	armor = ARMOR_PADDED
 	prevent_crits = MINOR_CRITICALS
 	max_integrity = INTEGRITY_STANDARD
@@ -281,11 +281,11 @@
 	name = "iron chain chausses"
 	desc = "Chain mail chausses made of iron rings woven together, offering protection against cuts and stabs."
 	smeltresult = /obj/item/ingot/iron
-	
+
 	armor = ARMOR_MAILLE_IRON
 	max_integrity = INTEGRITY_STRONG //250 Integrity.
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB //Non-riveted, iron chain can be broken apart with a powerful thrust.
-	
+
 
 //..................................................................................................................................
 /*---------------\

@@ -20,7 +20,6 @@
 	H.mind.adjust_skillrank(/datum/skill/labor/farming, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	head = /obj/item/clothing/head/roguetown/fashionablehat
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
 	pants = /obj/item/clothing/under/roguetown/tights/random
@@ -28,10 +27,10 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	beltr = /obj/item/rogueweapon/knife/dagger
+	beltr = /obj/item/rogueweapon/knife/hunting
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	beltl = /obj/item/reagent_containers/glass/bottle/waterskin/half
-	backpack_contents = list(/obj/item/natural/bundle/cloth/partial = 1, /obj/item/needle = 1, /obj/item/natural/bundle/fibers = 1, /obj/item/natural/fur/volf = 1)
+	backpack_contents = list(/obj/item/natural/bundle/cloth/partial = 1, /obj/item/cheap_dyes = 1, /obj/item/natural/bundle/fibers = 1, /obj/item/natural/fur/volf = 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", 2)
 	H.change_stat("perception", 1)

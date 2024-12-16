@@ -133,10 +133,10 @@
 #define FELDSHER    (1<<4)
 #define INNKEEP		(1<<5)
 #define COOK		(1<<6)
-#define NIGHTMAN    (1<<7)
-#define NITEMAIDEN	(1<<8)
-#define ALCHEMIST	(1<<9)
-#define TAILOR		(1<<10)
+#define TAILOR		(1<<7)
+#define NIGHTMAN    (1<<8)
+#define NITEMAIDEN	(1<<9)
+#define ALCHEMIST	(1<<10)
 #define SCRIBE		(1<<11)
 
 

@@ -22,18 +22,6 @@
 /obj/item/chair/stool/bar/rogue/crafted
 	sellprice = 6
 
-/datum/crafting_recipe/roguetown/structure/dye_bin
-	name = "dye bin"
-	result = /obj/machinery/simple_dye_bin
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1,
-	/obj/item/natural/dirtclod = 1)
-	verbage = "construct"
-	verbage_tp = "carpents"
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
-
 /* === SKILL LEVEL 1 === */
 
 /datum/crafting_recipe/roguetown/structure/chair

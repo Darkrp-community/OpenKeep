@@ -61,3 +61,9 @@
 	desc = "Adding these to a dye bin will let you use even the rarest, most expensive dyes."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "luxury_dyes"
+
+/obj/item/cheap_dyes
+	name = "cheap dyes"
+	desc = "Adding these to a wooden bin will let you use it to dye clothing."
+	icon = 'icons/roguetown/items/misc.dmi'
+	icon_state = "cheap_dyes"
