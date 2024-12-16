@@ -290,7 +290,8 @@
 		/obj/item/reagent_containers/food/snacks/smallrat = 15,
 		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
 		/obj/item/roguecoin/copper = 50,
-		/mob/living/carbon/human/species/human/northern/bum/skilled/madman  = 25,
+		/mob/living/carbon/human/species/human/northern/bum/skilled/madman  = 10,
+		/obj/structure/idle_enemy/bigrat = 10
 		)
 
 /*	..................   Skeleton Fighter Danger   ................... */

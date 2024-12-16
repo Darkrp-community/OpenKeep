@@ -42,32 +42,39 @@
 		"Ash Grey" ="#999999",
 		"Chalk White" ="#c7c0b5",
 		"Cream" ="#b0ae80",
-		"Blood Red" ="#770d0d",
-		"Plum Purple" ="#4b2265",
+		"Soot Black" ="#4b4b50",
 		"Dark Ink" ="#372b2b",
-		"Forest Green" ="#3f8b24",
-		"Sky Blue" ="#1b3c7a",
-		"Mustard Yellow" ="#979044",
-
 		"Royal Black" ="#2f352f",
+		"Winestain Red" ="#6b3737",
+		"Blood Red" ="#770d0d",
 		"Royal Red" ="#8f3636",
 		"Royal Majenta" ="#822b52",
+		"Red Ochre" = "#6f2d28",
+		"Maroon" ="#672c0d",
+		"Salmon" ="#a56176",
+		"Russet" ="#733f18",
+		"Peasant Brown" ="#705243",
+		"Chestnut" ="#5f3d21",
+
 		"Bark Brown"="#685542",
+		"Mud Brown" ="#685542",
+		"Old Leather" ="#473a30",
+		"Spring Green" ="#435436",
+		"Forest Green" ="#3f8b24",
 		"Bog Green" ="#58793f",
 		"Mage Green" ="#759259",
 		"Royal Teal" ="#249589",
+		"Berry Blue" ="#38455b",
 		"Pear Yellow" ="#b5b004",
 		"Mage Yellow" ="#d2bc2b",
+		"Mustard Yellow" ="#979044",
+		"Yellow Ochre" ="#9b7a02",
 		"Fyritius Orange" ="#b47011",
 		"Mage Orange" ="#ad5e29",
 		"Royal Purple" ="#865c9c",
+		"Plum Purple" ="#4b2265",
 		"Mage Blue" ="#4756d8",
-
-		"Salmon" ="#a56176",
-		"Russet" ="#733f18",
-		"Yellow Ochre" ="#9b7a02",
-		"Red Ochre" = "#6f2d28",
-		"Maroon" ="#672c0d"
+		"Sky Blue" ="#1b3c7a",
 		)
 
 
@@ -271,6 +278,14 @@
 	return ..()
 
 /obj/machinery/simple_dye_bin/attackby(obj/item/I, mob/living/user)
+	if(istype(I, /obj/item/luxury_dyes))
+		playsound(src, "bubbles", 50, 1)
+		if(do_after(user, 3 SECONDS))
+			user.visible_message("<span class='notice'>[user] adds the [I].</span>")
+			new /obj/machinery/dye_bin(get_turf(src.loc))
+			qdel(I)
+			qdel(src)
+
 	if(allow_mobs && istype(I, /obj/item/clothing/head/mob_holder))
 		var/obj/item/clothing/head/mob_holder/H = I
 		if(inserted)
@@ -291,6 +306,7 @@
 		inserted = I
 	else
 		return ..()
+
 
 /obj/machinery/simple_dye_bin/AllowDrop()
 	return FALSE

@@ -124,8 +124,6 @@
 	if(wet)
 		. += span_notice("It's wet!")
 
-/obj/item/natural/cloth/bandit
-	color = "#ff0000"
 
 // CLEANING
 
@@ -312,6 +310,9 @@
 	icon1step = 5
 	icon2 = "clothroll2"
 	icon2step = 10
+
+/obj/item/natural/bundle/cloth/partial
+	amount = 6
 
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"

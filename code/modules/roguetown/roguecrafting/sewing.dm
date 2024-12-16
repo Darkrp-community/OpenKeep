@@ -285,16 +285,19 @@
 /datum/crafting_recipe/roguetown/sewing/fancyhat
 	name = "fancy hat"
 	result = list(/obj/item/clothing/head/roguetown/fancyhat)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/sewing/fashionablehat
 	name = "fashionable hat"
 	result = /obj/item/clothing/head/roguetown/fashionablehat
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/sewing/plumedhat
 	name = "plumed hat"
 	result = list(/obj/item/clothing/head/roguetown/bardhat)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 
 /*========= ROLE LOCKED RECIPES ==========*/

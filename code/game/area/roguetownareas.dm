@@ -655,6 +655,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 
+/area/rogue/indoors/town/tailor
+	name = "tailorshop"
+	icon_state = "tavern"
 
 // so you can teleport to the farm
 /area/rogue/indoors/soilsons
