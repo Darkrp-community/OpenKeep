@@ -102,7 +102,7 @@
 			if(get_triumphs() > 0)
 				adjust_triumphs(-1)
 
-		if(job == "King" || job == "Queen")
+		if(job == "Monarch")
 			for(var/mob/living/carbon/human/HU in GLOB.player_list)
 				if(!HU.stat)
 					if(is_in_roguetown(HU))
@@ -110,7 +110,7 @@
 
 		if(yeae)
 			if(mind)
-				if((mind.assigned_role == "King"))
+				if((mind.assigned_role == "Monarch"))
 					addomen("nolord")			// Re-adding at Ook's request.
 				if(mind.assigned_role == "Priest")
 					addomen("importantdeath")	// message changed to reflect only priest for now, change it if more roles added. (Priest dying causes Bad Omen)

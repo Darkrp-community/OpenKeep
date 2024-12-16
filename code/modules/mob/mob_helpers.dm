@@ -1049,4 +1049,11 @@
 		used_title = J.title
 		if((gender == FEMALE) && J.f_title)
 			used_title = J.f_title
+
+		if(J.title == "Monarch")
+			if(gender == FEMALE)
+				used_title = "Queen"
+			else
+				used_title = "King"
+
 	return used_title

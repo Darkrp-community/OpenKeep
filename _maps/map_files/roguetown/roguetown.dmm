@@ -18628,7 +18628,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/basement)
 "uAd" = (
-/obj/effect/landmark/start/lady{
+/obj/effect/landmark/start/consort{
 	dir = 8
 	},
 /turf/open/floor/rogue/ruinedwood{

@@ -1147,7 +1147,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)
 "Fo" = (
-/obj/effect/landmark/start/lady,
+/obj/effect/landmark/start/consort,
 /turf/open/floor/rogue/carpet/lord/left,
 /area/rogue/indoors)
 "QR" = (

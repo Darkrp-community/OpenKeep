@@ -118,6 +118,7 @@ SUBSYSTEM_DEF(death_arena)
 			qdel(carbon)
 		else
 			carbon.returntolobby()
+			qdel(carbon)
 	fighters = list()
 
 	fighting = FALSE
@@ -129,6 +130,7 @@ SUBSYSTEM_DEF(death_arena)
 	for(var/mob/living/carbon/carbon in fighters)
 		fighters -= carbon
 		carbon.returntolobby()
+		qdel(carbon)
 	fight_force_end = null
 	fighting = FALSE
 
