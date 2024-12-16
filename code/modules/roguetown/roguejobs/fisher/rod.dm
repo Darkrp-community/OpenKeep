@@ -56,6 +56,10 @@
 	var/atom/movable/fishingoverlay/face
 	var/atom/movable/fishingoverlay/faceframe
 
+	///our clients average ping
+	var/average_ping = 0
+	COOLDOWN_DECLARE(ping_delay)
+
 /datum/intent/cast
 	name = "cast"
 	chargetime = 0
@@ -271,6 +275,9 @@
 
 		return
 
+	if(user.client)
+		average_ping = user.client.avgping * 0.01
+
 	if(get_dist(user, target) > 5)
 		to_chat(user, "<span class='warning'>It's too far away...</span>")
 		return
@@ -330,7 +337,7 @@
 		skillmod = fisher.mind.get_skill_level(/datum/skill/labor/fishing)
 	difficulty = -skillmod
 	linehealth = skillmod + 6
-	hookwindow = skillmod*3 + 4
+	hookwindow = skillmod*3 + 4 + average_ping
 
 	for(var/obj/item/fishing/A in attacheditems)
 		deepmod += A.deepfishingweight
@@ -553,6 +560,8 @@
 		fishtarget = 90
 
 		while(currentlyfishing)
+			if(user.client)
+				average_ping = user.client.avgping * 0.01
 
 			if(!checkreqs(fisher))
 				currentlyfishing = FALSE
@@ -614,7 +623,9 @@
 
 					targetdif = clamp((-currentmouse + fishtarget + 90) * difficulty, -90, 90)
 					if(targetdif >= 90 || targetdif <= -90)
-						linehealth--
+						if(COOLDOWN_FINISHED(src, ping_delay))
+							linehealth--
+							COOLDOWN_START(src, ping_delay, average_ping) ///this gives users the average ping free time between damages incase of lag spikes you don't instantly lose
 					velocity = clamp(velocity + ((acceleration*directionstate)/5), -maxvelocity, maxvelocity)
 					fishtarget = clamp(fishtarget + velocity, 0, 180)
 
