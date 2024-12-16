@@ -24278,7 +24278,7 @@
 /obj/machinery/light/rogue/wallfire/candle{
 	pixel_y = -32
 	},
-/obj/effect/landmark/start/lady{
+/obj/effect/landmark/start/consort{
 	dir = 8
 	},
 /turf/open/floor/rogue/carpet/lord/left,
