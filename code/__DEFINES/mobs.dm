@@ -391,7 +391,7 @@
 //skin tones defines
 
 //DWARF SKIN TONES
-#define SKIN_COLOR_ARGENT "ffe0d1"
+#define SKIN_COLOR_ARGENT "f9d5c3"
 #define SKIN_COLOR_AURUM "fcdab3"
 #define SKIN_COLOR_MERCUR "edc6b3"
 #define SKIN_COLOR_BRASS "dfb798"
@@ -400,6 +400,7 @@
 #define SKIN_COLOR_OBSIDIAN "59403b"
 #define SKIN_COLOR_PYRITE "54545d"
 #define SKIN_COLOR_QUARTZ "8b7e70"
+#define SKIN_COLOR_GRENZDWARF "ffe0d1"
 
 //DARK ELF SKIN TONES
 #define SKIN_COLOR_MAGGOT "9796a9"

@@ -34,7 +34,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 
-	head = /obj/item/clothing/head/roguetown/headband/red
+	head = /obj/item/clothing/head/roguetown/headband/blue
 	neck = /obj/item/roguekey/shop
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red

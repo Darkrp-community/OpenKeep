@@ -13,15 +13,12 @@
 	name = "Dwarf"
 	id = "dwarf"
 	desc = "<b>Dwarf</b><br>\
-	A proud and robust race of stunted folk, \
-	the dwarves are known for being stubborn and curious, inventors of many mechanical things.  \
-	Their curiosity has made their society rely on tradition and custom to avoid being destroyed through reckless experimentation. \
-	Saint Malum is by far the most popular patron of these people, though by mixing with the outsiders communities other gods have begun to gain favor too. \
-	This is a sure sign of the end times the elders say in their deep halls under the mountain. \
-	There exists a clear divide amongst the dwarves, the metal clans being long entrenched in their fortresses, \
-	with distinct accents and prone toconstant infighting regarding 'true' doctrines, traditions, customs. \
-	Meanwhile the stone clans live in smaller groups, spread out in cave systems and most often employed as miners by other peoples, \
-	the lack of unity making their speech much more like the locals, though their often ashen skin makes them easily identifiable.\
+	A stubborn and curious-minded race of stunted folk, \
+	the dwarves are known for inventing many mechanical contraptions.  \
+	Tradition and customs such as respect for Malum are pillars of their society, \
+	but is often also the cause of endless bickering and infighting over minute details. \
+	The metal clans originate from old fortresses and have developed distinct accents. \
+	The stone clans live in smaller groups, often underground, commonly employed as miners by other peoples, \
 	Dwarves are hearty, stout and prone to severe mood swings, but are not known for their speed or eyesight..."
 
 	skin_tone_wording = "Ore Attunement"
@@ -157,6 +154,8 @@
 			return strings("dwarf_replacement.json", "dwarf")
 		if(SKIN_COLOR_FERRO)
 			return strings("dwarf_replacement.json", "dwarf")
+		if(SKIN_COLOR_GRENZDWARF)
+			return strings("grenzelhoft_replacement.json", "grenzelhoft")
 	return null
 
 
