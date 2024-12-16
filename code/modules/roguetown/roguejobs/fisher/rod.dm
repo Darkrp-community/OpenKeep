@@ -494,7 +494,7 @@
 					if(baited)
 						var/bp = baited.baitpenalty // Penalty to fishing chance based on how good bait is. Lower is better.
 						var/fishchance = 100 // Total fishing chance, deductions applied below
-						fishchance -= (difficulty * 15) ///based on your difficulty
+						fishchance -= (difficulty * 15) ///based on the fishes difficulty means better fishing rods can be given to shit fishers
 						if(user.mind)
 							if(!sl) // If we have zero fishing skill...
 								fishchance -= 60 // 40% chance to fish base
