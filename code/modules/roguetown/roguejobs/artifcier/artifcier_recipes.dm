@@ -168,6 +168,30 @@
 /obj/item/rogueweapon/shield/heater/crafted
 	sellprice = 6
 
+// --------- Ammo -----------
+
+/datum/artificer_recipe/iron/ammo/lead_bullet
+	name = "5x Lead Bullets"
+	recipe_name = "five Lead Bullets"
+	hammers_per_item = 5
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	required_item = /obj/item/ingot/iron
+	createmultiple = TRUE
+	createditem_num = 4
+	i_type = "Ammo"
+	craftdiff = 2
+
+/datum/artificer_recipe/iron/ammo/bolts
+	name = "5x Crossbow Bolts (+Stick)"
+	recipe_name = "five Crossbow Bolts"
+	required_item = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/ammo_casing/caseless/rogue/bolt
+	createmultiple = TRUE
+	createditem_num = 4
+	hammers_per_item = 6
+	i_type = "Ammo"
+	craftdiff = 1
 // --------- PROSTHETICS -----------
 
 /datum/artificer_recipe/wood/prosthetics
