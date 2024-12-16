@@ -135,7 +135,7 @@
 		return
 	var/obj/item/rogueweapon/WP = hostagetaker.get_active_held_item()
 	WP.attack(src, hostagetaker)
-	hostagetaker.visible_message("<span class='danger'>\The [hostagetaker] attacks \the [src] reflexively!</span>")
+	hostagetaker.visible_message(span_danger("\The [hostagetaker] attacks \the [src] reflexively!"))
 	hostagetaker.hostage = null
 	hostagetaker = null
 
@@ -154,7 +154,7 @@
 	switch(user.used_intent.type)
 		if(/datum/intent/grab/upgrade)
 			if(!(M.status_flags & CANPUSH) || HAS_TRAIT(M, TRAIT_PUSHIMMUNE))
-				to_chat(user, "<span class='warning'>Can't get a grip!</span>")
+				to_chat(user, span_warning("Can't get a grip!"))
 				return FALSE
 			M.grippedby(user)
 		if(/datum/intent/grab/choke)
@@ -167,7 +167,7 @@
 						C.adjustOxyLoss(user.STASTR)
 					C.visible_message("<span class='danger'>[user] [pick("chokes", "strangles")] [C]!</span>", \
 									"<span class='userdanger'>[user] [pick("chokes", "strangles")] me!</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
-					to_chat(user, "<span class='danger'>I [pick("choke", "strangle")] [C]!</span>")
+					to_chat(user, span_danger("I [pick("choke", "strangle")] [C]!</span>"))
 		if(/datum/intent/grab/hostage)
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(ishuman(M) && M != user)
@@ -175,10 +175,10 @@
 					var/mob/living/carbon/human/U = user
 					if(U.cmode)
 						if(H.cmode)
-							to_chat(U, "<span class='warning'>[H] is too prepared for combat to be taken hostage.</span>")
+							to_chat(U, span_warning("[H] is too prepared for combat to be taken hostage."))
 							return
-						to_chat(U, "<span class='warning'>I take [H] hostage.</span>")
-						to_chat(H, "<span class='danger'>[U] takes us hostage!</span>")
+						to_chat(U, span_warning("I take [H] hostage."))
+						to_chat(H, span_danger("[U] takes us hostage!"))
 
 						U.swap_hand() // Swaps hand to weapon so you can attack instantly if hostage decides to resist
 
@@ -199,19 +199,19 @@
 				user.stop_pulling()
 		if(/datum/intent/grab/shove)
 			if(!(user.mobility_flags & MOBILITY_STAND))
-				to_chat(user, "<span class='warning'>I must stand..</span>")
+				to_chat(user, span_warning("I must stand.."))
 				return
 			if(!(M.mobility_flags & MOBILITY_STAND))
 				if(user.loc != M.loc)
-					to_chat(user, "<span class='warning'>I must be above them.</span>")
+					to_chat(user, span_warning("I must be above them."))
 					return
 				if(src == user.r_grab)
 					if(!user.l_grab || user.l_grab.grabbed != M)
-						to_chat(user, "<span class='warning'>I must grab them with both hands.</span>")
+						to_chat(user, span_warning("I must grab them with both hands."))
 						return
 				if(src == user.l_grab)
 					if(!user.r_grab || user.r_grab.grabbed != M)
-						to_chat(user, "<span class='warning'>I must grab them with both hands.</span>")
+						to_chat(user, span_warning("I must grab them with both hands."))
 						return
 				if(user.STASTR > M.STASTR)
 					M.visible_message("<span class='danger'>[user] pins [M] to the ground!</span>", \
@@ -253,7 +253,7 @@
 	limb_grabbed.bodypart_attacked_by(BCLASS_TWIST, damage, user, sublimb_grabbed, crit_message = TRUE)
 	C.visible_message("<span class='danger'>[user] twists [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", \
 					"<span class='userdanger'>[user] twists my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, "<span class='warning'>I twist [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
+	to_chat(user, span_warning("I twist [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limbtwisted [sublimb_grabbed] ")
 
@@ -277,7 +277,7 @@
 
 	C.visible_message("<span class='danger'>[H] headbutts [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", \
 					"<span class='userdanger'>[H] headbutts my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, H)
-	to_chat(H, "<span class='warning'>I headbutt [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
+	to_chat(H, span_warning("I headbutt [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))
 	C.next_attack_msg.Cut()
 	log_combat(H, C, "headbutted ")
 
@@ -338,7 +338,7 @@
 				user.Move_Pulled(T)
 		if(/datum/intent/grab/smash)
 			if(!(user.mobility_flags & MOBILITY_STAND))
-				to_chat(user, "<span class='warning'>I must stand..</span>")
+				to_chat(user, span_warning("I must stand.."))
 				return
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(isopenturf(T))
@@ -367,7 +367,7 @@
 	if(user.used_intent.type == /datum/intent/grab/smash)
 		if(isstructure(O) && O.blade_dulling != DULLING_CUT)
 			if(!(user.mobility_flags & MOBILITY_STAND))
-				to_chat(user, "<span class='warning'>I must stand..</span>")
+				to_chat(user, span_warning("I must stand.."))
 				return
 			if(limb_grabbed && grab_state > 0) //this implies a carbon victim
 				if(iscarbon(grabbed))
@@ -387,10 +387,10 @@
 		limb_grabbed.bodypart_attacked_by(BCLASS_BLUNT, damage, user, sublimb_grabbed, crit_message = TRUE)
 		playsound(C.loc, "smashlimb", 100, FALSE, -1)
 	else
-		C.next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
+		C.next_attack_msg += span_warning("Armor stops the damage.")
 	C.visible_message("<span class='danger'>[user] smashes [C]'s [limb_grabbed] into [A]![C.next_attack_msg.Join()]</span>", \
 					"<span class='userdanger'>[user] smashes my [limb_grabbed] into [A]![C.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening sound of pugilism!</span>", COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, "<span class='warning'>I smash [C]'s [limb_grabbed] against [A].[C.next_attack_msg.Join()]</span>")
+	to_chat(user, span_warning("I smash [C]'s [limb_grabbed] against [A].[C.next_attack_msg.Join()]"))
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limbsmashed [limb_grabbed] ")
 
@@ -490,11 +490,13 @@
 	if(C.apply_damage(damage, BRUTE, limb_grabbed, armor_block))
 		playsound(C.loc, "smallslash", 100, FALSE, -1)
 		limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
+		var/datum/wound/caused_wound = limb_grabbed.bodypart_attacked_by(BCLASS_BITE, damage, user, sublimb_grabbed, crit_message = TRUE)
 		if(user.mind)
-			if(ishuman(C) && user.mind.has_antag_datum(/datum/antagonist/werewolf))
-				var/mob/living/carbon/human/H = C
-				if(prob(25))
-					addtimer(CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
+			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
+				var/mob/living/carbon/human/human = user
+				caused_wound?.werewolf_infect_attempt()
+				if(prob(30))
+					human.werewolf_feed(C)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))
 				var/mob/living/carbon/human/H = C
 				if(istype(H))
@@ -506,17 +508,17 @@
 							QDEL_NULL(HE.brain)
 							C.visible_message("<span class='danger'>[user] consumes [C]'s brain!</span>", \
 								"<span class='userdanger'>[user] consumes my brain!</span>", "<span class='hear'>I hear a sickening sound of chewing!</span>", COMBAT_MESSAGE_RANGE, user)
-							to_chat(user, "<span class='boldnotice'>Braaaaaains!</span>")
+							to_chat(user, span_notice("Braaaaaains!"))
 							if(!user.mob_timers["zombie_tri"])
 								user.adjust_triumphs(1)
 								user.mob_timers["zombie_tri"] = world.time
 							playsound(C.loc, 'sound/combat/fracture/headcrush (2).ogg', 100, FALSE, -1)
 							return
 	else
-		C.next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
+		C.next_attack_msg += span_warning("Armor stops the damage.")
 	C.visible_message("<span class='danger'>[user] bites [C]'s [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", \
 					"<span class='userdanger'>[user] bites my [parse_zone(sublimb_grabbed)]![C.next_attack_msg.Join()]</span>", "<span class='hear'>I hear a sickening sound of chewing!</span>", COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, "<span class='danger'>I bite [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]</span>")
+	to_chat(user, span_danger("I bite [C]'s [parse_zone(sublimb_grabbed)].[C.next_attack_msg.Join()]"))
 	C.next_attack_msg.Cut()
 	log_combat(user, C, "limb chewed [sublimb_grabbed] ")
 
@@ -530,19 +532,19 @@
 	if(world.time < last_drink + 2 SECONDS)
 		return
 	if(!limb_grabbed.get_bleed_rate())
-		to_chat(user, "<span class='warning'>Sigh. It's not bleeding.</span>")
+		to_chat(user, span_warning("Sigh. It's not bleeding."))
 		return
 	var/mob/living/carbon/C = grabbed
 	if(C.dna?.species && (NOBLOOD in C.dna.species.species_traits))
-		to_chat(user, "<span class='warning'>Sigh. No blood.</span>")
+		to_chat(user, span_warning("Sigh. No blood."))
 		return
 	if(C.blood_volume <= 0)
-		to_chat(user, "<span class='warning'>Sigh. No blood.</span>")
+		to_chat(user, span_warning("Sigh. No blood."))
 		return
 	if(ishuman(C))
 		var/mob/living/carbon/human/H = C
 		if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psycross/silver))
-			to_chat(user, "<span class='userdanger'>SILVER! HISSS!!!</span>")
+			to_chat(user, span_userdanger("SILVER! HISSS!!!"))
 			return
 	last_drink = world.time
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -556,18 +558,18 @@
 				zomwerewolf = C.mind.has_antag_datum(/datum/antagonist/zombie)
 		if(VDrinker)
 			if(zomwerewolf)
-				to_chat(user, "<span class='danger'>I'm going to puke...</span>")
+				to_chat(user, span_danger("I'm going to puke..."))
 				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 			else
 				if(VVictim)
-					to_chat(user, "<span class='warning'>I cannot drain vitae from a fellow nitewalker.</span>")
+					to_chat(user, span_warning("I cannot drain vitae from a fellow nitewalker."))
 					return
 				else if(C.vitae_pool > 500)
 					C.blood_volume = max(C.blood_volume-20, 0)
 					if(ishuman(C))
 						var/mob/living/carbon/human/H = C
 						if(H.virginity)
-							to_chat(user, "<span class='love'>Virgin blood, delicious!</span>")
+							to_chat(user, span_love("Virgin blood, delicious!"))
 							var/mob/living/carbon/V = user
 							V.add_stress(/datum/stressevent/vblood)
 							if(C.vitae_pool >= 750)
@@ -576,7 +578,7 @@
 								else
 									VDrinker.handle_vitae(750)
 								C.vitae_pool -= 760
-								to_chat(user, "<span class='love'>...And empowering!</span>")
+								to_chat(user, span_love("...And empowering!"))
 							else if(C.vitae_pool < 750) // In case someone already drank from their vitae.
 								var/vitaeleft = C.vitae_pool // We assume they're left with 250 vitae or less, so we take it all
 								if(VDrinker.isspawn)
@@ -584,9 +586,9 @@
 								else
 									VDrinker.handle_vitae(vitaeleft)
 								C.vitae_pool -= vitaeleft
-								to_chat(user, "<span class='notice'>...But alas, only leftovers...</span>")
+								to_chat(user, span_notice("...But alas, only leftovers..."))
 							else
-								to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
+								to_chat(user, span_warning("And yet, not enough vitae can be extracted from them... Tsk."))
 						else
 							if(VDrinker.isspawn)
 								VDrinker.handle_vitae(500, 500)
@@ -596,7 +598,7 @@
 				else
 					to_chat(user, span_warning("No more vitae from this blood..."))
 		else // Don't larp as a vampire, kids.
-			to_chat(user, "<span class='warning'>I'm going to puke...</span>")
+			to_chat(user, span_warning("I'm going to puke..."))
 			addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 	else
 		if(user.mind) // We're drinking from a mob or a person who disconnected from the game
@@ -609,7 +611,7 @@
 					else
 						VDrinker.handle_vitae(250)
 				else
-					to_chat(user, "<span class='warning'>And yet, not enough vitae can be extracted from them... Tsk.</span>")
+					to_chat(user, span_warning("And yet, not enough vitae can be extracted from them... Tsk."))
 
 	C.blood_volume = max(C.blood_volume-60, 0)
 	C.handle_blood()
@@ -618,7 +620,7 @@
 
 	C.visible_message("<span class='danger'>[user] drinks from [C]'s [parse_zone(sublimb_grabbed)]!</span>", \
 					"<span class='userdanger'>[user] drinks from my [parse_zone(sublimb_grabbed)]!</span>", "<span class='hear'>...</span>", COMBAT_MESSAGE_RANGE, user)
-	to_chat(user, "<span class='warning'>I drink from [C]'s [parse_zone(sublimb_grabbed)].</span>")
+	to_chat(user, span_warning("I drink from [C]'s [parse_zone(sublimb_grabbed)]."))
 	log_combat(user, C, "drank blood from ")
 
 	if(ishuman(C) && C.mind)
@@ -636,4 +638,4 @@
 							sleep(20)
 							C.fully_heal()
 					if("No")
-						to_chat(user, "<span class='warning'>I decide [C] is unworthy.</span>")
+						to_chat(user, span_warning("I decide [C] is unworthy."))
