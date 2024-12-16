@@ -142,6 +142,7 @@
 /obj/item/storage/belt/rogue/leather/cloth/lady
 	color = "#575160"
 /obj/item/storage/belt/rogue/leather/cloth/lady/Initialize()
+	. = ..()
 	new /obj/item/needle(src)
 
 /obj/item/storage/belt/rogue/leather/cloth/tailor
