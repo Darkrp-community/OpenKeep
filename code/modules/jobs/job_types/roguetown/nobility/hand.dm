@@ -40,6 +40,7 @@
 
 /datum/job/roguetown/hand/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	. = ..()
+	SSfamilytree.AddRoyal(L, FAMILY_OMMER)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
 		H.advsetup = 1
