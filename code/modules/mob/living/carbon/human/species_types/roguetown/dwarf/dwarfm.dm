@@ -146,18 +146,18 @@
 	return " [pick(world.file2list("strings/rt/names/dwarf/dwarmlast.txt"))]"
 
 /datum/species/dwarf/mountain/get_accent(mob/living/carbon/human/H)
-    switch(H.skin_tone)
-        if(SKIN_COLOR_ARGENT)
-            return strings("dwarf_replacement.json", "dwarf")
-        if(SKIN_COLOR_AURUM)
-            return strings("dwarf_replacement.json", "dwarf")
-        if(SKIN_COLOR_MERCUR)
-            return strings("dwarf_replacement.json", "dwarf")
-        if(SKIN_COLOR_BRASS)
-            return strings("dwarf_replacement.json", "dwarf")
-        if(SKIN_COLOR_FERRO)
-            return strings("dwarf_replacement.json", "dwarf")
-    return null
+	switch(H.skin_tone)
+		if(SKIN_COLOR_ARGENT)
+			return strings("dwarf_replacement.json", "dwarf")
+		if(SKIN_COLOR_AURUM)
+			return strings("dwarf_replacement.json", "dwarf")
+		if(SKIN_COLOR_MERCUR)
+			return strings("dwarf_replacement.json", "dwarf")
+		if(SKIN_COLOR_BRASS)
+			return strings("dwarf_replacement.json", "dwarf")
+		if(SKIN_COLOR_FERRO)
+			return strings("dwarf_replacement.json", "dwarf")
+	return null
 
 
 /*------------------\
