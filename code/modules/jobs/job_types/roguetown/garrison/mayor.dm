@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
-	tutorial = "The crown may lead officially, but the townsfolk of Rockhill look to you to manage the settlement and solve lesser issues. Remember the old ways of the law... not everything must end in bloodshed, but do what is necessary to maintain the peace."
+	tutorial = "The crown may lead officially, but the townsfolk of Vanderlin look to you to manage the settlement and solve lesser issues. Remember the old ways of the law... not everything must end in bloodshed, but do what is necessary to maintain the peace."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/mayor
@@ -39,7 +39,7 @@
 	cloak = /obj/item/clothing/cloak/half
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/black
-	beltr = /obj/item/keyring/mayor
+	beltr = /obj/item/storage/keyring/mayor
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	r_hand = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	if(H.mind)

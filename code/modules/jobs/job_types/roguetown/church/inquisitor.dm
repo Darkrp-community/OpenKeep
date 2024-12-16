@@ -22,6 +22,7 @@
 	display_order = JDO_PURITAN
 	min_pq = 4
 	bypass_lastclass = TRUE
+	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 
 /datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -52,7 +53,7 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
-	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
+	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Ritter"

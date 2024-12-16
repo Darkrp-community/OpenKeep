@@ -39,7 +39,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-	beltl = /obj/item/keyring/priest
+	beltl = /obj/item/storage/keyring/priest
 
 
 	H.change_stat("perception", 1)

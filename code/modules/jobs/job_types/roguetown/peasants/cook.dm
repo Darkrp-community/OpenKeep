@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	tutorial = "Slice, chop, and into the pot... you work closely with the innkeep to prepare meals for all the hungry mouths of Rockhill. You've spent more nites than you can count cutting meat and vegetables until your fingers are bloody and raw, but it's honest work."
+	tutorial = "Slice, chop, and into the pot... you work closely with the innkeep to prepare meals for all the hungry mouths of Vanderlin. You've spent more nites than you can count cutting meat and vegetables until your fingers are bloody and raw, but it's honest work."
 
 	outfit = /datum/outfit/job/roguetown/cook
 	display_order = JDO_COOK
@@ -38,7 +38,7 @@
 		if(H.age == AGE_OLD)
 			H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltl = /obj/item/roguekey/tavern
+	beltl = /obj/item/key/tavern
 	beltr = /obj/item/rogueweapon/knife/villager
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random

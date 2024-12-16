@@ -3,8 +3,8 @@
 	flag = FORWARDEN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 0 // 1
-	spawn_positions = 0 // 1
+	total_positions = 1
+	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	allowed_races = list(
@@ -33,7 +33,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	neck = /obj/item/roguekey/forrestgarrison
+	neck = /obj/item/key/forrestgarrison
 	belt = /obj/item/storage/belt/rogue/leather
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1, /obj/item/rope/chain = 1)
 	beltl = /obj/item/rogueweapon/axe/iron
@@ -43,16 +43,14 @@
 	backpack_contents = list(/obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 5, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		H.change_stat("strength", 3)
@@ -64,5 +62,4 @@
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_KNEESTINGER_IMMUNITY, TRAIT_GENERIC) // Medieval cowboy. He should know the woods enough for this.
 	ADD_TRAIT(H, TRAIT_LEECHIMMUNE, TRAIT_GENERIC) // Women fear me. Leeches fear me. Men turn their eyes away from me as I walk. No creechers dare make a sound in my presence. I am alone in these barren woods.

@@ -34,7 +34,7 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/cloth/lady
-	beltl = /obj/item/keyring/queen
+	beltl = /obj/item/storage/keyring/queen
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/clothing/head/roguetown/crown/circlet = 1)
@@ -76,7 +76,7 @@
 	if(SSticker.rulertype == "Queen")
 		SSticker.select_ruler()
 		if(L)
-			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of Rockhill.</span></span></b>")
+			to_chat(world, "<b><span class='notice'><span class='big'>[L.real_name] is Queen of Vanderlin.</span></span></b>")
 			to_chat(world, "<br>")
 			addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, lord_color_choice)), 50)
 	SSfamilytree.AddRoyal(L, FAMILY_MOTHER)

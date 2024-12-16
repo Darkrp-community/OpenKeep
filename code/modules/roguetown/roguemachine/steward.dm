@@ -20,8 +20,8 @@
 
 
 /obj/structure/roguemachine/steward/attackby(obj/item/P, mob/user, params)
-	if(istype(P, /obj/item/roguekey))
-		var/obj/item/roguekey/K = P
+	if(istype(P, /obj/item/key))
+		var/obj/item/key/K = P
 		if(K.lockid == "steward" || K.lockid == "lord")
 			locked = !locked
 			playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
@@ -31,9 +31,9 @@
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			to_chat(user, "<span class='warning'>Wrong key.</span>")
 			return
-	if(istype(P, /obj/item/keyring))
-		var/obj/item/keyring/K = P
-		for(var/obj/item/roguekey/KE in K.keys)
+	if(istype(P, /obj/item/storage/keyring))
+		var/obj/item/storage/keyring/K = P
+		for(var/obj/item/key/KE in K.contents)
 			if(KE.lockid == "steward" || KE.lockid == "lord")
 				locked = !locked
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
@@ -61,7 +61,7 @@
 		var/amt = D.get_import_price()
 		SStreasury.treasury_value -= amt
 		SStreasury.log_to_steward("-[amt] imported [D.name]")
-		scom_announce("Rockhill imports [D.name] for [amt] mammon.", )
+		scom_announce("Vanderlin imports [D.name] for [amt] mammon.", )
 		D.raise_demand()
 		addtimer(CALLBACK(src, PROC_REF(do_import), D.type), 10 SECONDS)
 	if(href_list["export"])
@@ -75,7 +75,7 @@
 		D.held_items -= D.importexport_amt
 		SStreasury.treasury_value += amt
 		SStreasury.log_to_steward("+[amt] exported [D.name]")
-		scom_announce("Rockhill exports [D.name] for [amt] mammon.")
+		scom_announce("Vanderlin exports [D.name] for [amt] mammon.")
 		D.lower_demand()
 	if(href_list["togglewithdraw"])
 		var/datum/roguestock/D = locate(href_list["togglewithdraw"]) in SStreasury.stockpile_datums

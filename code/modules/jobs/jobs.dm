@@ -72,7 +72,7 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	))
 
 GLOBAL_LIST_INIT(youngfolk_positions, list(
-	"Innkeeper's Son",
+	"Innkeepers Son",
 	"Orphan",
 	"Churchling",
 ))

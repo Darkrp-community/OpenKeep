@@ -4,8 +4,8 @@
 	department_flag = GARRISON
 	display_order = JDO_JAILOR
 	faction = "Station"
-	total_positions = 0 // 1
-	spawn_positions = 0 // 1
+	total_positions = 1
+	spawn_positions = 1
 	tutorial = "Your eyes have seen true terror in The Crimson Valley Asylum- men ripping one another apart for\
 	their own entertainment. You now live in this town- a quiet peaceful place compared Asylum you used to guard."
 	allowed_races = list( // They're from Crimson Valley Asylum- only a select of houses are in position of guard there.
@@ -32,7 +32,7 @@
 	wrists = /obj/item/rope/chain
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace/spiked // He gets a random mace.
-	beltr = /obj/item/keyring/guard
+	beltr = /obj/item/storage/keyring/guard
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE) // Main weapon

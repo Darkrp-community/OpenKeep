@@ -36,7 +36,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/manorguard
+	beltl = /obj/item/storage/keyring/manorguard
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special)
 	if(H.mind)
