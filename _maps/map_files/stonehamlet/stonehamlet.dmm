@@ -2452,6 +2452,9 @@
 /obj/structure/bars/pipe{
 	dir = 1
 	},
+/obj/machinery/light/rogue/wallfire/candle/l{
+	pixel_y = 28
+	},
 /turf/open/floor/rogue/tile/bath,
 /area/rogue/indoors/town/bath/redhouse)
 "cyt" = (
@@ -5608,7 +5611,7 @@
 "fvn" = (
 /obj/structure/mineral_door/bars{
 	locked = 1;
-	lockid = "lord"
+	lockid = "manor"
 	},
 /obj/effect/decal/shadow_floor{
 	dir = 1
@@ -5767,6 +5770,7 @@
 /obj/effect/decal/shadow_floor{
 	dir = 1
 	},
+/obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
 "fGl" = (
@@ -6794,8 +6798,11 @@
 "gHu" = (
 /obj/structure/table/wood/plain_alt,
 /obj/item/rogueweapon/shovel{
-	pixel_x = 6;
+	pixel_x = 11;
 	pixel_y = 1
+	},
+/obj/item/rogueweapon/axe/iron{
+	pixel_x = -12
 	},
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
@@ -7348,6 +7355,7 @@
 /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison,
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
 /obj/structure/closet/crate/chest/neu_fancy,
+/obj/item/paper/nitemaiden_certificate,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath/redhouse)
 "hsL" = (
@@ -7788,10 +7796,6 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
-"hOu" = (
-/obj/machinery/light/rogue/wallfire/candle/weak/l,
-/turf/open/floor/rogue/tile/bath,
-/area/rogue/indoors/town/bath/redhouse)
 "hOx" = (
 /obj/effect/decal/shadow_floor{
 	dir = 8
@@ -7879,6 +7883,7 @@
 /obj/effect/decal/shadow_floor{
 	dir = 6
 	},
+/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath/redhouse)
 "hQV" = (
@@ -8072,6 +8077,7 @@
 /obj/item/clothing/suit/roguetown/shirt/tunic/random,
 /obj/item/clothing/suit/roguetown/shirt/tunic/random,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
+/obj/item/paper/nitemaiden_certificate,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/under/town/basement)
 "icG" = (
@@ -12760,6 +12766,7 @@
 /area/rogue/outdoors/rtfield/plague_district)
 "mNM" = (
 /obj/structure/mineral_door/wood{
+	lockid = "manor";
 	name = "servants quarters"
 	},
 /turf/open/floor/rogue/cobble,
@@ -12808,7 +12815,6 @@
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
-/obj/machinery/light/rogue/wallfire/candle/weak/r,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
 "mPQ" = (
@@ -15597,7 +15603,6 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church)
 "pov" = (
-/obj/machinery/light/rogue/wallfire/candle/weak,
 /obj/effect/decal/shadow_floor{
 	dir = 1
 	},
@@ -20594,6 +20599,7 @@
 /obj/structure/closet/crate/drawer/random{
 	pixel_y = 7
 	},
+/obj/item/paper/nitemaiden_certificate,
 /turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/under/town/basement)
 "uoh" = (
@@ -22040,6 +22046,10 @@
 /obj/structure/table/wood/large/corner_blue{
 	dir = 10
 	},
+/obj/item/candle/yellow/lit/infinite{
+	pixel_x = 17;
+	pixel_y = 11
+	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath/redhouse)
 "vCr" = (
@@ -23162,6 +23172,9 @@
 /obj/item/reagent_containers/powder/ozium,
 /obj/item/reagent_containers/powder/spice,
 /obj/effect/decal/shadow_floor,
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_y = -30
+	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
 "wLo" = (
@@ -65805,7 +65818,7 @@ tsI
 kuA
 sFL
 dDV
-hOu
+sFL
 cya
 tcZ
 fIp

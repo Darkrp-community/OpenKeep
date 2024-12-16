@@ -34,6 +34,11 @@
 		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 
+	if(H.dna.species.id == "dwarf")
+		H.skin_tone = SKIN_COLOR_GRENZDWARF
+	if(H.dna.species.id == "human")
+		H.skin_tone = SKIN_COLOR_GRENZELHOFT
+
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
 	pants = /obj/item/clothing/under/roguetown/grenzelpants

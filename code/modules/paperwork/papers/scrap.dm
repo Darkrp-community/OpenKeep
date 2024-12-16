@@ -21,6 +21,19 @@
 	name = "note about steel deliveries"
 	info = "Makers! The northern dwarves delivery of steele is much delayed this yil. Make do or go get it from them, the Guild cannot do more to solve this."
 
+/obj/item/paper/feldsher_certificate
+	name = "feldsher health certificate"
+	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a few weeks ago)"
+	icon_state = "certificate"
+
+/obj/item/paper/feldsher_certificate/expired
+	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a smudge)"
+
+/obj/item/paper/nitemaiden_certificate/Initialize()
+	..()
+	var/type = pick(typesof(/obj/item/paper/feldsher_certificate))
+	new type(loc)
+	return INITIALIZE_HINT_QDEL
 
 /obj/item/paper/heartfelt/random/Initialize()
 	..()
