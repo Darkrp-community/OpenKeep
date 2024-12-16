@@ -14,18 +14,14 @@
 	id = "dwarf"
 	desc = "<b>Dwarf</b><br>\
 	A proud and robust race of stunted folk, \
-	the dwarves are known for their pride in martial strength \
-	and their tenacity towards their ancient customs. \
-	A Dwarf, much like the rock that they carve their fortress out of \
-	is stubborn and ancient, much like their Patron founder the Saint Malum \
-	during the time of the weeping god. They, like stone: also rarely change \
-	and are stubborn to a fault. \
-	A Dwarf tends to his ancestorial heritage for posterity and guidance on \
-	the various challenges their people will face. Even if, in some irony: this behaviour \
-	leads the race towards technological innovation as they continue \
-	to improve their craft through powerful mechanization and forging. \
-	While also impeding their civilizational growth beyond Grimorias mountain ranges due to \
-	constant infighting regarding 'true' doctrines, traditions, customs. \
+	the dwarves are known for being stubborn and curious, inventors of many mechanical things.  \
+	Their curiosity has made their society rely on tradition and custom to avoid being destroyed through reckless experimentation. \
+	Saint Malum is by far the most popular patron of these people, though by mixing with the outsiders communities other gods have begun to gain favor too. \
+	This is a sure sign of the end times the elders say in their deep halls under the mountain. \
+	There exists a clear divide amongst the dwarves, the metal clans being long entrenched in their fortresses, \
+	with distinct accents and prone toconstant infighting regarding 'true' doctrines, traditions, customs. \
+	Meanwhile the stone clans live in smaller groups, spread out in cave systems and most often employed as miners by other peoples, \
+	the lack of unity making their speech much more like the locals, though their often ashen skin makes them easily identifiable.\
 	Dwarves are hearty, stout and prone to severe mood swings, but are not known for their speed or eyesight..."
 
 	skin_tone_wording = "Ore Attunement"
@@ -87,15 +83,15 @@
 
 /datum/species/dwarf/mountain/get_skin_list()
 	return sortList(list(
-		"Platinum" = SKIN_COLOR_PLATINUM,
+		"Argent" = SKIN_COLOR_ARGENT,
 		"Aurum" = SKIN_COLOR_AURUM,
-		"Quicksilver" = SKIN_COLOR_QUICKSILVER,
+		"Mercur" = SKIN_COLOR_MERCUR,
 		"Brass" = SKIN_COLOR_BRASS,
-		"Iron" = SKIN_COLOR_IRON,
-		"Malachite" = SKIN_COLOR_MALACHITE,
+		"Ferro" = SKIN_COLOR_FERRO,
+		"Phosphorite" = SKIN_COLOR_PHOSPHORITE,
 		"Obsidian" = SKIN_COLOR_OBSIDIAN,
-		"Brimstone" = SKIN_COLOR_BRIMSTONE,
-		"Cerargyrite" =	SKIN_COLOR_CERARGYRITE,
+		"Pyrite" = SKIN_COLOR_PYRITE,
+		"Quartz" =	SKIN_COLOR_QUARTZ,
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()
@@ -105,10 +101,10 @@
 	"black - rogue" = "2b201b",
 	"black - midnight" = "1d1b2b",
 
-	"blond - pale" = "9d8d6e",
-	"blond - dirty" = "88754f",
-	"blond - drywheat" = "d5ba7b",
-	"blond - strawberry" = "c69b71",
+	"gray - faint" = "958a75",
+	"gray - dusty" = "706755",
+	"gray - pebbles" = "656158",
+	"gray - granite" = "57514c",
 
 	"brown - mud" = "362e25",
 	"brown - oats" = "7a4e1e",
@@ -149,6 +145,19 @@
 /datum/species/dwarf/mountain/random_surname()
 	return " [pick(world.file2list("strings/rt/names/dwarf/dwarmlast.txt"))]"
 
+/datum/species/dwarf/mountain/get_accent(mob/living/carbon/human/H)
+    switch(H.skin_tone)
+        if(SKIN_COLOR_ARGENT)
+            return strings("dwarf_replacement.json", "dwarf")
+        if(SKIN_COLOR_AURUM)
+            return strings("dwarf_replacement.json", "dwarf")
+        if(SKIN_COLOR_MERCUR)
+            return strings("dwarf_replacement.json", "dwarf")
+        if(SKIN_COLOR_BRASS)
+            return strings("dwarf_replacement.json", "dwarf")
+        if(SKIN_COLOR_FERRO)
+            return strings("dwarf_replacement.json", "dwarf")
+    return null
 
 
 /*------------------\
