@@ -151,6 +151,12 @@
 	appro_skill = /datum/skill/craft/traps
 	craftdiff = 0
 
+/datum/anvil_recipe/tools/fishinghooks
+	name = "3x Fishing hooks"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/fishing/hook/iron, /obj/item/fishing/hook/iron, /obj/item/fishing/hook/iron)
+	i_type = "Tools"
+
 /datum/anvil_recipe/tools/pick
 	name = "Pick (+Stick)"
 	recipe_name = "a digging Pick"

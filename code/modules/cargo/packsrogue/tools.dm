@@ -154,8 +154,18 @@
 
 /datum/supply_pack/rogue/tools/bait
 	name = "Fishing Grub"
-	cost = 3
-	contains = /obj/item/natural/worms/grubs
+	cost = 6
+	contains = /obj/item/fishing/bait/deluxe
+
+/datum/supply_pack/rogue/tools/fishingline
+	name = "Premium Fishing line"
+	cost = 25
+	contains = /obj/item/fishing/reel/deluxe
+
+/datum/supply_pack/rogue/tools/fishinghook
+	name = "Premium Fishing hook"
+	cost = 25
+	contains = /obj/item/fishing/hook/deluxe
 
 /datum/supply_pack/rogue/tools/prarml
 	name = "Prosthetic Left Wooden Arm"
