@@ -168,6 +168,8 @@
 	icon_state = "brownkey"
 	lockid = "roomi"
 	color = CLOTHING_CHALK_WHITE
+/obj/item/roguekey/roomi/duchess
+	name = "duchess room key"
 
 /obj/item/roguekey/roomii
 	name = "room II key"
@@ -175,6 +177,8 @@
 	icon_state = "brownkey"
 	lockid = "roomii"
 	color = CLOTHING_CHALK_WHITE
+/obj/item/roguekey/roomii/wanderer
+	name = "wanderer room key"
 
 /obj/item/roguekey/roomiii
 	name = "room III key"
@@ -182,6 +186,8 @@
 	icon_state = "brownkey"
 	lockid = "roomiii"
 	color = CLOTHING_CHALK_WHITE
+/obj/item/roguekey/roomiii/yeoman
+	name = "yeoman room key"
 
 /obj/item/roguekey/roomiv
 	name = "room IV key"
@@ -189,6 +195,8 @@
 	icon_state = "brownkey"
 	lockid = "roomiv"
 	color = CLOTHING_CHALK_WHITE
+/obj/item/roguekey/roomiv/castellan
+	name = "castellan room key"
 
 /obj/item/roguekey/roomv
 	name = "room V key"

@@ -817,8 +817,8 @@
 	slot_flags = FALSE
 	dropshrink = 0.9
 
-
-
+/obj/item/rogueweapon/polearm/spear/neu
+	slot_flags = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony // colony spider
 	name = "hairy spider"

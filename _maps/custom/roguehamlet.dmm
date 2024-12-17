@@ -12281,7 +12281,7 @@
 /obj/structure/chair/bench/ultimacouch/r{
 	icon_state = "ultimacochright"
 	},
-/obj/effect/landmark/start/nightman,
+/obj/effect/landmark/start/nightmaster,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
 "mVv" = (

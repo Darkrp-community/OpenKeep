@@ -1164,7 +1164,7 @@
 	desc = ""
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 	icon_state = "astrata"
-	pixel_x = -18
+	pixel_x = -19
 
 /*	..................   Necra Shrine   ................... */
 /obj/structure/fluff/psycross/crafted/shrine/necra

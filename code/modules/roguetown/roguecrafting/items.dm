@@ -146,6 +146,11 @@
 	/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1,
 	/obj/item/ash = 1)
 
+/datum/crafting_recipe/roguetown/zigbox
+	name = "paper zigbox"
+	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
+	reqs = list(/obj/item/paper = 1)
+
 /*
 /datum/crafting_recipe/roguetown/net
 	name = "net"

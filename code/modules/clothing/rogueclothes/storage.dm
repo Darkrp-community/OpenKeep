@@ -255,9 +255,9 @@
 
 //Darts pouch
 /obj/item/storage/belt/rogue/pouch/blowgun/PopulateContents()
-	new /obj/item/ammo_casing/caseless/rogue/dart(src)
-	new /obj/item/ammo_casing/caseless/rogue/dart(src)
-	new /obj/item/ammo_casing/caseless/rogue/dart(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
 
 
 

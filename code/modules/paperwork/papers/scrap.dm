@@ -24,10 +24,13 @@
 /obj/item/paper/feldsher_certificate
 	name = "feldsher health certificate"
 	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a few weeks ago)"
-	icon_state = "certificate"
 
 /obj/item/paper/feldsher_certificate/expired
 	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a smudge)"
+
+/obj/item/paper/feldsher_certificate/Initialize()
+	..()
+	icon_state = "certificate"
 
 /obj/item/paper/nitemaiden_certificate/Initialize()
 	..()

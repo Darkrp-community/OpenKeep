@@ -342,34 +342,8 @@
 	if(!total_override)
 		..()
 
-/obj/structure/table/wood
-	name = "wooden table"
-	desc = ""
-	icon = 'icons/roguetown/misc/tables.dmi'
-	icon_state = "tablewood"
-	resistance_flags = FLAMMABLE
-	max_integrity = 70
-	smooth = 0
-	debris = list(/obj/item/grown/log/tree/small = 1)
-	climb_offset = 10
 
-/obj/structure/table/church
-	name = "stone table"
-	desc = ""
-	icon = 'icons/roguetown/misc/tables.dmi'
-	icon_state = "churchtable"
-	max_integrity = 300
-	smooth = 0
-	climb_offset = 10
 
-/obj/structure/table/church/OnCrafted(dirin, user)
-	if(dirin == NORTH || dirin == SOUTH)
-		icon_state = "churchtable_mid"
-	. = ..()
-
-/obj/structure/table/church/m
-	icon = 'icons/roguetown/misc/tables.dmi'
-	icon_state = "churchtable_mid"
 
 /obj/structure/table/vtable
 	name = "ancient wooden table"
@@ -524,6 +498,67 @@
 	icon_state = "fancy_table_royalblue"
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
+
+
+//................	Stone tables	............... //
+/obj/structure/table/church
+	name = "stone table"
+	desc = ""
+	icon = 'icons/roguetown/misc/tables.dmi'
+	icon_state = "church_mid"
+	max_integrity = 300
+	smooth = 0
+	climb_offset = 10
+
+/obj/structure/table/stone
+	name = "stone table"
+	desc = ""
+	icon = 'icons/roguetown/misc/tables.dmi'
+	icon_state = "stonetable_mid"
+	max_integrity = 200
+	smooth = 0
+	climb_offset = 10
+
+/obj/structure/table/stone/OnCrafted(dirin, user)
+	if(dirin == NORTH)
+		dir = NORTH
+	if(dirin == SOUTH)
+		dir = SOUTH
+	if(dirin == WEST)
+		dir = WEST
+	if(dirin == EAST)
+		dir = EAST
+	. = ..()
+
+/obj/structure/table/stone_end
+	name = "stone table"
+	desc = ""
+	icon_state = "stonetable_end"
+	icon_state = "stonetable_mid"
+	max_integrity = 200
+	smooth = 0
+	climb_offset = 10
+
+/obj/structure/table/stone_end/OnCrafted(dirin, user)
+	if(dirin == NORTH)
+		dir = NORTH
+	if(dirin == SOUTH)
+		dir = SOUTH
+	if(dirin == WEST)
+		dir = WEST
+	if(dirin == EAST)
+		dir = EAST
+	. = ..()
+
+/obj/structure/table/stone_small
+	name = "stone table"
+	desc = ""
+	icon = 'icons/roguetown/misc/tables.dmi'
+	icon_state = "stonetable_small"
+	max_integrity = 200
+	smooth = 0
+	climb_offset = 10
+
 
 /*	..................   More tables   ................... */
 /obj/structure/table/wood/reinf_long

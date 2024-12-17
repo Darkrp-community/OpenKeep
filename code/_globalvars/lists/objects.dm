@@ -60,8 +60,6 @@ GLOBAL_LIST_INIT(rod_jobs, list(
 	"Archivist",
 	"Jester",
 	"Prisoner",
-	"Feldsher",
-	"Niteman",
 	"Concubine",
 	"Champion of Rockhill",
 	"Warden of the Terrorbog",

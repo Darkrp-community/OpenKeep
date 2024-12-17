@@ -731,7 +731,7 @@
 /obj/structure/chair/wood/rogue/fancy{
 	dir = 8
 	},
-/obj/effect/landmark/start/nightman{
+/obj/effect/landmark/start/nightmaster{
 	dir = 8
 	},
 /turf/open/floor/carpet/purple,

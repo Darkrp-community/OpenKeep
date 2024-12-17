@@ -101,11 +101,6 @@
 	result = list(/obj/item/clothing/head/roguetown/fisherhat)
 	reqs = list(/obj/item/natural/fibers = 3)
 
-/datum/crafting_recipe/roguetown/sewing/zigbox
-	name = "paper zigbox"
-	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
-	reqs = list(/obj/item/paper = 1)
-
 /datum/crafting_recipe/roguetown/sewing/sack
 	name = "sack hood"
 	result = list(/obj/item/clothing/head/roguetown/menacing)
@@ -228,40 +223,6 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
-/datum/crafting_recipe/roguetown/sewing/stockings_white
-	name = "white stockings"
-	result = list(/obj/item/clothing/under/roguetown/tights/stockings/white)
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/sewing/stockings_black
-	name = "black stockings"
-	result = list(/obj/item/clothing/under/roguetown/tights/stockings/black)
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/sewing/stockings_blue
-	name = "blue stockings"
-	result = list(/obj/item/clothing/under/roguetown/tights/stockings/blue)
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/sewing/stockings_red
-	name = "red stockings"
-	result = list(/obj/item/clothing/under/roguetown/tights/stockings/red)
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
-
-/datum/crafting_recipe/roguetown/sewing/stockings_green
-	name = "green stockings"
-	result = list(/obj/item/clothing/under/roguetown/tights/stockings/green)
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 2
 
 /*========= SKILL LEVEL: 3 REQUIRED ==========*/
 

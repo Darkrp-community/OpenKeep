@@ -1,5 +1,5 @@
-/datum/job/roguetown/niteman
-	title = "Niteman"
+/datum/job/roguetown/nitemaster
+	title = "Nitemaster"
 	flag = NIGHTMAN
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -12,14 +12,12 @@
 		"Dwarf",
 		"Elf",
 		"Half-Elf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar"
 	)
 
-	tutorial = "You are renting out the bath-house in a joint operation with the Innkeep. Providing security for the bathwenches and helping them find work, or a troublemaking rake that the others hate to tolerate."
+	tutorial = "You are the master of the bath-house guild, likely a disgraced noble who fell on hard times. Whatever the reason, you now have a supply of drugs and nitemaidens to employ and profit from. Fencing valuables stolen by bandits and rogues might provide even more mammons, to wash away the shame your trade has brought you and your family."
 
 	allowed_sexes = list(MALE, FEMALE)
+	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	outfit = /datum/outfit/job/roguetown/niteman
 	display_order = JDO_NITEMAN
 	give_bank_account = 100
