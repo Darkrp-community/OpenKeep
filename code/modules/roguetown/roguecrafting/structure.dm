@@ -270,6 +270,15 @@
 
 /*========= MASONRY SKILL ==========*/
 
+/datum/crafting_recipe/roguetown/structure/stonetable
+	name = "stone table"
+	result = /obj/structure/table/church
+	reqs = list(/obj/item/natural/stoneblock = 2)
+	verbage_simple = "build"
+	verbage = "builds"
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/structure/millstone
 	name = "millstone"
 	result = /obj/structure/fluff/millstone
@@ -331,6 +340,7 @@
 				/obj/item/ingot/silver = 1)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 2
+
 
 /*========= MISCELLANY/CRAFTING SKILL ==========*/
 

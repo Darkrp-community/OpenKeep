@@ -246,13 +246,16 @@
 
 //Nitemaiden pouch
 /obj/item/storage/belt/rogue/pouch/nitemaiden/PopulateContents()
-	new /obj/item/natural/cloth(src)
+	if(prob(50))
+		new /obj/item/paper/feldsher_certificate(src)
+	else
+		new /obj/item/paper/feldsher_certificate/expired(src)
 	new /obj/item/bath/soap(src)
 	new /obj/item/roguecoin/copper/pile(src)
 
-//Amazon pouch
-/obj/item/storage/belt/rogue/pouch/amazon/PopulateContents()
-	new /obj/item/natural/cloth(src)
+//Darts pouch
+/obj/item/storage/belt/rogue/pouch/blowgun/PopulateContents()
+	new /obj/item/ammo_casing/caseless/rogue/dart(src)
 	new /obj/item/ammo_casing/caseless/rogue/dart(src)
 	new /obj/item/ammo_casing/caseless/rogue/dart(src)
 

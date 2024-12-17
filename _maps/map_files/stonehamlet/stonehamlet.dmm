@@ -3604,12 +3604,6 @@
 "dNW" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/town/basement)
-"dOa" = (
-/obj/structure/roguemachine/drugmachine{
-	pixel_y = -6
-	},
-/turf/closed/wall/mineral/rogue/stonebrick/reddish,
-/area/rogue/indoors/town/bath/redhouse)
 "dOe" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/dirt/road,
@@ -15605,6 +15599,10 @@
 "pov" = (
 /obj/effect/decal/shadow_floor{
 	dir = 1
+	},
+/obj/structure/roguemachine/drugmachine{
+	density = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town/bath/redhouse)
@@ -92972,7 +92970,7 @@ hZX
 hZX
 pzV
 xMw
-dOa
+xMw
 xMw
 bHG
 xMw

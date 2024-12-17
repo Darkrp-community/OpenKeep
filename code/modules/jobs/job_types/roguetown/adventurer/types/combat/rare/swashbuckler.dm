@@ -21,7 +21,6 @@
 	pants = /obj/item/clothing/under/roguetown/tights/sailor
 	belt = /obj/item/storage/belt/rogue/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
-	backl = /obj/item/storage/backpack/rogue/satchel
 	backr = /obj/item/quiver/bolts
 	beltl = /obj/item/rogueweapon/sword/sabre/cutlass
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
