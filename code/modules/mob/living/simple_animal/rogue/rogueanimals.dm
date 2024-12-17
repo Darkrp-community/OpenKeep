@@ -373,12 +373,6 @@
 		else
 			if(prob(8))
 				emote("idle")
-//			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
-//				var/step = get_step(src, direction)
-//				if(step)
-//					var/obj/item/reagent_containers/food/I = locate(/obj/item/reagent_containers/food) in step
-//					if(is_type_in_list(I, food_type))
-//						Move(step, get_dir(src, step))
 			if(adult_growth)
 				growth_prog += 0.5
 				if(growth_prog >= 100)

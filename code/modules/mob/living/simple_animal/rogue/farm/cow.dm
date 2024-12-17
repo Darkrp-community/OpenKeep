@@ -51,12 +51,32 @@
 					/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet = 5)
 	remains_type = /obj/effect/decal/remains/cow
 
+	can_have_ai = FALSE
+	AIStatus = AI_OFF
+	ai_controller = /datum/ai_controller/basic_controller/cow
+	var/can_breed = TRUE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/Initialize()
 	..()
+	AddComponent(/datum/component/tippable, \
+		0.5 SECONDS, \
+		0.5 SECONDS, \
+		rand(25 SECONDS, 50 SECONDS), \
+		null,
+		CALLBACK(src, PROC_REF(after_cow_tipped)),\
+		CALLBACK(src, PROC_REF(after_cow_untipped)))
+
 	if(milkies)
 		udder = new()
-
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
+	if(can_breed)
+		AddComponent(\
+			/datum/component/breed,\
+			list(/mob/living/simple_animal/hostile/retaliate/rogue/cow, /mob/living/simple_animal/hostile/retaliate/rogue/bull),\
+			3 MINUTES,
+			list(/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet = 95, /mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet = 5),\
+			CALLBACK(src, PROC_REF(after_birth)),\
+		)
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/Destroy()
 	qdel(udder)
 	udder = null
@@ -88,6 +108,8 @@
 		if("idle")
 			return pick('sound/vo/mobs/cow/idle (1).ogg','sound/vo/mobs/cow/idle (2).ogg','sound/vo/mobs/cow/idle (3).ogg','sound/vo/mobs/cow/idle (4).ogg','sound/vo/mobs/cow/idle (5).ogg')
 
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/proc/after_birth(mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/baby, mob/living/partner)
+	return
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/simple_limb_hit(zone)
 	if(!zone)
@@ -130,18 +152,30 @@
 
 	return ..()
 
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/attack_hand(mob/living/carbon/M)
-	if(!stat && M.used_intent.type == INTENT_DISARM && icon_state != icon_dead && !has_buckled_mobs())
-		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
-			"<span class='notice'>I tip over [src].</span>")
-		to_chat(src, span_danger("I am tipped over by [M]!"))
-		Paralyze(60, ignore_canstun = TRUE)
-		icon_state = "[initial(icon_state)]_tip"
-		spawn(60)
-			if(!stat && M)
-				icon_state = icon_living
-	else
-		..()
+/*
+ * Proc called via callback after the cow is tipped by the tippable component.
+ * Begins a timer for us pleading for help.
+ *
+ * tipper - the mob who tipped us
+ */
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/proc/after_cow_tipped(mob/living/carbon/tipper)
+	icon_state = "[initial(icon_state)]_tip"
+	addtimer(CALLBACK(src, PROC_REF(set_tip_react_blackboard), tipper), rand(5 SECONDS, 8 SECONDS))
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/proc/after_cow_untipped(mob/living/carbon/tipper)
+	icon_state = initial(icon_state)
+
+/*
+ * We've been waiting long enough, we're going to tell our AI to begin pleading.
+ *
+ * tipper - the mob who originally tipped us
+ */
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/proc/set_tip_react_blackboard(mob/living/carbon/tipper)
+	if(!ai_controller)
+		return
+	ai_controller.set_blackboard_key(BB_BASIC_MOB_TIP_REACTING, TRUE)
+	ai_controller.set_blackboard_key(BB_BASIC_MOB_TIPPER, tipper)
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/Life()
 	. = ..()
@@ -198,6 +232,25 @@
 	TOTALSTR = 12
 	TOTALSPD = 2
 	remains_type = /obj/effect/decal/remains/cow
+
+	can_have_ai = FALSE
+	AIStatus = AI_OFF
+	ai_controller = /datum/ai_controller/basic_controller/cow
+
+/mob/living/simple_animal/hostile/retaliate/rogue/bull/Initialize()
+	. = ..()
+	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
+	AddComponent(\
+		/datum/component/breed,\
+		list(/mob/living/simple_animal/hostile/retaliate/rogue/cow, /mob/living/simple_animal/hostile/retaliate/rogue/bull),\
+		3 MINUTES,
+		list(/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet = 95, /mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet = 5),\
+		CALLBACK(src, PROC_REF(after_birth)),\
+	)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/bull/proc/after_birth(mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/baby, mob/living/partner)
+	return
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bull/get_sound(input)
 	switch(input)
@@ -285,6 +338,9 @@
 	TOTALSPD = 5
 	defprob = 50
 	adult_growth = /mob/living/simple_animal/hostile/retaliate/rogue/cow
+
+	ai_controller = /datum/ai_controller/basic_controller/cow/baby
+	can_breed = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet
 	desc = "So cute! Be careful of those horns, though."
