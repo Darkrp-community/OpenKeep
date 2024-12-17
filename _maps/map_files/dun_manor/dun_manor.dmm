@@ -3558,7 +3558,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/magician)
 "dqL" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "drT" = (
@@ -3772,7 +3772,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/outdoors/town/roofs)
 "dEa" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/blocks/green,
 /area/rogue/under/town/sewer)
 "dEc" = (
@@ -7891,7 +7891,7 @@
 	},
 /area/rogue/indoors/town/dwarfin)
 "hFy" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/town/basement)
@@ -11914,7 +11914,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/coast)
 "lAL" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/town)
 "lBm" = (
@@ -12495,7 +12495,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/tavern)
 "mfz" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
 "mfP" = (
@@ -14812,7 +14812,7 @@
 /area/rogue/indoors/town)
 "oAa" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "oBf" = (
@@ -15447,7 +15447,7 @@
 /area/rogue/indoors/town/dwarfin)
 "pgy" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "pgF" = (
@@ -22176,7 +22176,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/town)
 "vRD" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/needle/thorn,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)

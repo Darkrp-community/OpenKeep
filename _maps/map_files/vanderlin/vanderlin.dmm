@@ -12246,7 +12246,7 @@
 	},
 /area/rogue/outdoors/town)
 "knL" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/tile{
 	icon_state = "tavern"
 	},
@@ -12984,7 +12984,7 @@
 /area/rogue/outdoors/rtfield)
 "kXl" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "kXs" = (
@@ -14576,7 +14576,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "mws" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
 "mwF" = (
@@ -18518,7 +18518,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/cavewet)
 "pYB" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/machinery/light/rogue/torchholder{
 	pixel_y = 26
 	},
@@ -19882,7 +19882,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
 "rpX" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/needle/thorn,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield)

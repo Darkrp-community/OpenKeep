@@ -4435,7 +4435,7 @@
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "We" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods_safe)
 "Wj" = (

@@ -237,7 +237,6 @@
  * * datum/emote/emote - The emote used by the mob
  */
 /datum/component/tippable/proc/accept_roleplay(mob/living/user, datum/emote/emote)
-	SIGNAL_HANDLER
 
 	if (!is_tipped)
 		return

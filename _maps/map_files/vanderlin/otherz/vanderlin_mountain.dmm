@@ -29,7 +29,7 @@
 /turf/open/floor/rogue/church,
 /area/rogue/outdoors/mountains)
 "aA" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/mountains)
 "aC" = (
@@ -491,7 +491,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains)
 "gN" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
 "gP" = (
@@ -1107,7 +1107,7 @@
 /area/rogue/outdoors/mountains)
 "pK" = (
 /obj/effect/decal/cleanable/blood,
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /turf/open/floor/rogue/cobblerock,
