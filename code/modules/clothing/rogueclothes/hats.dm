@@ -579,6 +579,13 @@
 	icon_state = "hornedcap"
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
+//................ Horned Cap Barbarian ............... //
+/obj/item/clothing/head/roguetown/helmet/horned/barbarian
+	name = "horned cap"
+	desc = "A crude horned cap usually worn by brute barbarians to invoke fear unto their enemies."
+	icon_state = "barbarian"
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
 //................ Winged Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/winged
 	name = "winged cap"
