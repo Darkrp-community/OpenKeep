@@ -194,7 +194,6 @@
 /obj/item/clothing/suit/roguetown/armor/leather/advanced
 	name = "hardened leather coat"
 	desc = "Sturdy, durable, flexible. Will keep you alive in style."
-	icon_state = "alcoat"
 	max_integrity = 350
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
