@@ -1844,7 +1844,6 @@
 #include "code\modules\jobs\job_types\roguetown\peasants\butcher.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\butler.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\cook.dm"
-#include "code\modules\jobs\job_types\roguetown\peasants\gravedigger.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\jester.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\prisoner.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\soilson.dm"

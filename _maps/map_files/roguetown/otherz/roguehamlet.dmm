@@ -12486,7 +12486,7 @@
 /area/rogue/indoors)
 "lGN" = (
 /obj/item/storage/bag/tray,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /obj/item/kitchen/spoon,
 /obj/structure/table/wood/reinf_long{
 	dir = 1
@@ -20107,7 +20107,7 @@
 /obj/item/reagent_containers/glass/bowl,
 /obj/item/reagent_containers/glass/bowl,
 /obj/structure/table/wood,
-/obj/item/kitchen/rollingpin,
+/obj/item/rogueweapon/mace/woodclub/rollingpin,
 /obj/item/natural/cloth,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/tavern)
@@ -20660,6 +20660,10 @@
 /obj/structure/bars,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
+"sKO" = (
+/obj/effect/landmark/start/blacksmith,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/indoors/town/dwarfin)
 "sLw" = (
 /obj/structure/fluff/railing/border{
 	icon_state = "border";
@@ -61558,7 +61562,7 @@ daD
 sfv
 hKD
 qjp
-hKD
+sKO
 nnN
 daD
 ydz
