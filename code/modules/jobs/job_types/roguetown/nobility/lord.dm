@@ -6,7 +6,8 @@
 	total_positions = 0
 	spawn_positions = 1
 
-	f_title = "Queen"
+	allowed_sexes = list(MALE)
+
 	allowed_races = list(
 		"Humen",
 		"Elf",
