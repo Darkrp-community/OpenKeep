@@ -9,14 +9,14 @@
  */
 /obj/item/proc/melee_attack_chain(mob/user, atom/target, params)
 	if(user.check_arm_grabbed(user.active_hand_index))
-		to_chat(user, "<span class='notice'>I can't move my arm!</span>")
+		to_chat(user, span_notice("I can't move my arm!"))
 		return
 	if(!user.has_hand_for_held_index(user.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
-		to_chat(user, "<span class='warning'>I can't move the fingers.</span>")
+		to_chat(user, span_warning("I can't move the fingers."))
 		return
 	if(!istype(src, /obj/item/grabbing))
 		if(HAS_TRAIT(user, TRAIT_CHUNKYFINGERS))
-			to_chat(user, "<span class='warning'>...What?</span>")
+			to_chat(user, span_warning("...What?"))
 			return
 	if(tool_behaviour && target.tool_act(user, src, tool_behaviour))
 		return
@@ -80,7 +80,7 @@
 		return FALSE
 
 	if(force && HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='warning'>I don't want to harm other living beings!</span>")
+		to_chat(user, span_warning("I don't want to harm other living beings!"))
 		return
 
 	M.lastattacker = user.real_name
@@ -363,12 +363,12 @@
 	verbu = pick(user.used_intent.attack_verb)
 	if(newforce > 1)
 		if(user.rogfat_add(5))
-			user.visible_message("<span class='danger'>[user] [verbu] [src] with [I]!</span>")
+			user.visible_message(span_danger("[user] [verbu] [src] with [I]!"))
 		else
-			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
+			user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 			newforce = 1
 	else
-		user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
+		user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 	take_damage(newforce, I.damtype, "melee", 1)
 	if(newforce > 1)
 		I.take_damage(1, BRUTE, "melee")
@@ -390,12 +390,12 @@
 	verbu = pick(user.used_intent.attack_verb)
 	if(newforce > 1)
 		if(user.rogfat_add(5))
-			user.visible_message("<span class='danger'>[user] [verbu] [src] with [I]!</span>")
+			user.visible_message(span_danger("[user] [verbu] [src] with [I]!"))
 		else
-			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
+			user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 			newforce = 1
 	else
-		user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
+		user.visible_message(span_warning("[user] [verbu] [src] with [I]!"))
 
 	take_damage(newforce, I.damtype, "melee", 1)
 	if(newforce > 1)
@@ -451,6 +451,42 @@
 	return "body"
 
 /obj/item/proc/funny_attack_effects(mob/living/target, mob/living/user, nodmg)
+	if(is_silver)
+		if(world.time < src.last_used + 120)
+			to_chat(user, span_notice("The silver effect is on cooldown."))
+			return
+
+		if(ishuman(target) && target.mind)
+			var/mob/living/carbon/human/s_user = user
+			var/mob/living/carbon/human/H = target
+			var/datum/antagonist/werewolf/W = H.mind.has_antag_datum(/datum/antagonist/werewolf/)
+			var/datum/antagonist/vampirelord/lesser/V = H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser)
+			var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
+			if(V)
+				if(V.disguised)
+					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+					src.last_used = world.time
+				else
+					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+					src.last_used = world.time
+			if(V_lord)
+				if(V_lord.vamplevel < 4 && !V)
+					H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+					to_chat(H, span_userdanger("I'm hit by my BANE!"))
+					H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+					src.last_used = world.time
+				if(V_lord.vamplevel == 4 && !V)
+					to_chat(s_user, "<font color='red'> The silver weapon fails!</font>")
+					H.visible_message(H, span_userdanger("This feeble metal can't hurt me, I AM ANCIENT!"))
+			if(W && W.transformed == TRUE)
+				H.visible_message("<font color='white'>The silver weapon weakens the curse temporarily!</font>")
+				to_chat(H, span_userdanger("I'm hit by my BANE!"))
+				H.apply_status_effect(/datum/status_effect/debuff/silver_curse)
+				src.last_used = world.time
 	return
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)

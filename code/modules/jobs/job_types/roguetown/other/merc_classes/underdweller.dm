@@ -45,7 +45,7 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
-		beltl = /obj/item/rogueweapon/pick/paxe // Dorfs get a pick as their primary weapon and axes/maces to use it
+		beltl = /obj/item/rogueweapon/pick/paxe/neu // Dorfs get a pick as their primary weapon and axes/maces to use it
 		backr = /obj/item/rogueweapon/shield/wood
 	else // No miner's helm for Delves as they haven nitevision now.
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
