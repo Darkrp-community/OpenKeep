@@ -30,7 +30,7 @@
 	name = "dry westleach leaf"
 	result = /obj/item/reagent_containers/food/snacks/produce/dry_westleach
 	reqs = list(/obj/item/reagent_containers/food/snacks/produce/westleach = 1)
-	structurecraft = /obj/structure/fluff/dryingrack
+	structurecraft = /obj/machinery/tanningrack
 	time = 2 SECONDS
 	verbage = "dry"
 	verbage_tp = "dries"
@@ -53,7 +53,7 @@
 	name = "dry swampweed"
 	result = /obj/item/reagent_containers/food/snacks/produce/swampweed_dried
 	reqs = list(/obj/item/reagent_containers/food/snacks/produce/swampweed = 1)
-	structurecraft = /obj/structure/fluff/dryingrack
+	structurecraft = /obj/machinery/tanningrack
 	time = 2 SECONDS
 	verbage = "dry"
 	verbage_tp = "dries"

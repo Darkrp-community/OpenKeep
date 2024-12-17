@@ -593,20 +593,6 @@
 					icon_state = "signwrote"
 	..()
 
-/obj/structure/fluff/dryingrack
-	name = "drying rack"
-	desc = "A rack of sticks, made to dry produce and smokeleaves in the sun."
-	icon = 'icons/roguetown/misc/structure.dmi'
-	icon_state = "dryrack"
-	density = TRUE
-	anchored = TRUE
-	layer = BELOW_OBJ_LAYER
-	blade_dulling = DULLING_BASHCHOP
-	max_integrity = 150
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-
-
 /obj/structure/fluff/statue
 	name = "statue"
 	desc = ""

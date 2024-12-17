@@ -426,7 +426,7 @@
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 	/datum/reagent/water = 50)
 	tools = list(/obj/item/rogueweapon/knife/hunting)
-	structurecraft = /obj/structure/fluff/dryingrack
+	structurecraft = /obj/machinery/tanningrack
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/readingscroll

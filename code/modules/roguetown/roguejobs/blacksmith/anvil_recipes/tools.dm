@@ -50,6 +50,18 @@
 	createditem_num = 2
 	craftdiff = 0
 
+/datum/anvil_recipe/tools/scissors
+	name = "Scissors"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/knife/scissors
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/steelscissors
+	name = "Steel Scissors"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/knife/scissors/steel
+	i_type = "Tools"
+
 /datum/anvil_recipe/tools/frypan
 	name = "Pan"
 	recipe_name = "a Frypan"

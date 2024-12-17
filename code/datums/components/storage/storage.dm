@@ -553,6 +553,22 @@
 
 //This proc is called when you want to place an item into the storage item.
 /datum/component/storage/proc/attackby(datum/source, obj/item/I, mob/M, params)
+	if(isitem(parent))
+		if(istype(I, /obj/item/rogueweapon/hammer))
+			var/obj/item/storage/this_item = parent
+			//Vrell - since hammering is instant, i gotta find another option than the double click thing that needle has for a bypass.
+			//Thankfully, IIRC, no hammerable containers can hold a hammer, so not an issue ATM. For that same reason, this here is largely semi future-proofing.
+			if(this_item.anvilrepair != null && this_item.max_integrity && !this_item.obj_broken && (this_item.obj_integrity < this_item.max_integrity) && isturf(this_item.loc))
+				return FALSE
+		if(istype(I, /obj/item/needle))
+			var/obj/item/needle/sewer = I
+			var/obj/item/storage/this_item = parent
+			if(sewer.can_repair && this_item.sewrepair && this_item.max_integrity && !this_item.obj_broken && this_item.obj_integrity < this_item.max_integrity && M.mind.get_skill_level(/datum/skill/misc/sewing) >= 1 && this_item.ontable() && !being_repaired)
+				being_repaired = TRUE
+				return FALSE
+		if(M.used_intent.type == /datum/intent/snip) //This makes it so we can salvage
+			return FALSE
+	being_repaired = FALSE
 
 	if(!can_be_inserted(I, FALSE, M))
 		var/atom/real_location = real_location()

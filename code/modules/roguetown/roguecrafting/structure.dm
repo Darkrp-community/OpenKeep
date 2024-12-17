@@ -81,7 +81,7 @@
 
 /datum/crafting_recipe/roguetown/structure/dryingrack
 	name = "drying rack"
-	result = /obj/structure/fluff/dryingrack
+	result = /obj/machinery/tanningrack
 	reqs = list(/obj/item/grown/log/tree/stick = 3)
 	verbage = "construct"
 	verbage_tp = "constructs"

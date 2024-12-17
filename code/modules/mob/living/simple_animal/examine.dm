@@ -101,3 +101,4 @@
 		. += desc
 
 	. += "ᛉ ------------ ᛉ</span>"
+	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

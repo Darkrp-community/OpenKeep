@@ -13021,7 +13021,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "XC" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield)
 "XD" = (
