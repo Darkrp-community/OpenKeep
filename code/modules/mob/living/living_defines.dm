@@ -169,3 +169,8 @@
 	var/voice_pitch = 1
 
 	var/domhand = 0
+
+	///our blood drain for meathook, the less bloody the more we get
+	var/blood_drained = 0
+	///are we skinned?
+	var/skinned = FALSE

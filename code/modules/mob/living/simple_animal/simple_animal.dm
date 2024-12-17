@@ -431,6 +431,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		var/boon = user.mind.get_learning_boon(/datum/skill/labor/butchering)
 		if(held_item)
 			if((butcher_results || guaranteed_butcher_results) && held_item.get_sharpness() && held_item.wlength == WLENGTH_SHORT)
+				if(src.buckled && istype(src.buckled, /obj/structure/meathook))
+					var/obj/structure/meathook/hook = buckled
+					hook.butchery(user, src)
+					return
 				var/used_time = 210
 				if(user.mind)
 					used_time -= (user.mind.get_skill_level(/datum/skill/labor/butchering) * 30)
@@ -438,7 +442,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 				playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
 				var/amt2raise = user.STAINT // this is due to the fact that butchering is not as spammable as training a sword because you cant just spam click
 				if(do_after(user, used_time, target = src))
-					user.mind.adjust_experience(/datum/skill/labor/butchering, amt2raise * boon, FALSE)
+					user.mind.add_sleep_experience(/datum/skill/labor/butchering, amt2raise * boon, FALSE)
 					butcher(user)
 	..()
 
