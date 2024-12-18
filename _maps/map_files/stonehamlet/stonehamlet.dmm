@@ -5283,7 +5283,7 @@
 /area/rogue/indoors/town/dwarfin)
 "fhA" = (
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nightman"
+	lockid = "nitemaster"
 	},
 /obj/item/paper/scroll,
 /obj/item/paper/scroll,
@@ -5472,7 +5472,7 @@
 "fqp" = (
 /obj/structure/mineral_door/wood/fancywood{
 	locked = 1;
-	lockid = "nightman";
+	lockid = "nitemaster";
 	name = "masters room"
 	},
 /turf/open/floor/rogue/herringbone,

@@ -2587,7 +2587,7 @@
 	dir = 1;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "nightman"
+	lockid = "nitemaster"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "bfloorz"
@@ -9004,7 +9004,7 @@
 	dir = 1;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "nightman"
+	lockid = "nitemaster"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -11983,7 +11983,7 @@
 /area/rogue/outdoors/town/roofs)
 "Sm" = (
 /obj/structure/mineral_door/wood{
-	lockid = "nightman";
+	lockid = "nitemaster";
 	locked = 1
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,

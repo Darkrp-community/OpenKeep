@@ -314,11 +314,12 @@
 	color = pick(CLOTHING_PLUM_PURPLE, CLOTHING_WHITE,CLOTHING_BLOOD_RED)
 	..()
 
-//................ Silk Jacket ............... //
+//................ Expensive Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
-	name = "silk jacket"
-	icon_state = "nightman"
+	name = "expensive jacket"
+	icon_state = "nitemaster"
 	desc = "Displaying wealth while keeping your guts safe from blades with thick leather pads underneath."
+	allowed_sex = list(MALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	body_parts_covered = COVERAGE_SHIRT

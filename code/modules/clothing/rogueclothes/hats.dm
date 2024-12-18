@@ -478,7 +478,7 @@
 	name = "chef's hat"
 
 /obj/item/clothing/head/roguetown/tophat
-	name = "teller's hat"
+	name = "unusual hat"
 	icon_state = "tophat"
 	color = CLOTHING_SOOT_BLACK
 

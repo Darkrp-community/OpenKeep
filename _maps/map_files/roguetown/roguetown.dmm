@@ -14932,7 +14932,7 @@
 "pUw" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightman";
+	lockid = "nitemaster";
 	name = "Nitemaster's Chambers"
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -19168,7 +19168,7 @@
 "uIc" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nightman"
+	lockid = "nitemaster"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
