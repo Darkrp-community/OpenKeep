@@ -949,7 +949,7 @@
 /area/rogue/outdoors)
 "ct" = (
 /obj/item/roguekey/graveyard{
-	lockid = "niteman"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)

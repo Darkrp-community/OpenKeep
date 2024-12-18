@@ -134,7 +134,7 @@
 #define INNKEEP		(1<<5)
 #define COOK		(1<<6)
 #define TAILOR		(1<<7)
-#define NIGHTMAN  (1<<8)
+#define NIGHTMAN 	(1<<8)
 #define NITEMAIDEN	(1<<9)
 #define ALCHEMIST	(1<<10)
 #define SCRIBE		(1<<11)
@@ -216,7 +216,7 @@
 #define JDO_TAILOR 35
 #define JDO_INNKEEP 36
 #define JDO_COOK 36.1
-#define JDO_NITEMASTER 37.1
+#define JDO_NIGHTMAN 37.1
 #define JDO_NITEMAIDEN 37.2
 #define JDO_VILLAGER 38
 

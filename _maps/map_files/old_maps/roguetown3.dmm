@@ -10924,7 +10924,7 @@
 /area/rogue/indoors/town)
 "aIz" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "niteman"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town)
@@ -10996,7 +10996,7 @@
 /area/rogue/indoors/town)
 "aIO" = (
 /obj/structure/mineral_door/wood{
-	lockid = "niteman"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -11034,7 +11034,7 @@
 /area/rogue/indoors/town)
 "aIV" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "niteman"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town)
@@ -12004,7 +12004,7 @@
 	dir = 8;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "niteman"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
@@ -14204,7 +14204,7 @@
 	dir = 8;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "niteman"
+	lockid = "nightman"
 	},
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors)

@@ -294,11 +294,11 @@
 	icon_state = "brownkey"
 	lockid = "mason"
 
-/obj/item/roguekey/nitemaster
-	name = "nitemaster's key"
+/obj/item/roguekey/niteman
+	name = "nitemans key"
 	desc = "The master key of the bathhouse."
 	icon_state = "greenkey"
-	lockid = "niteman"
+	lockid = "nightman"
 
 /obj/item/roguekey/nitemaiden
 	name = "nitemaiden's key"

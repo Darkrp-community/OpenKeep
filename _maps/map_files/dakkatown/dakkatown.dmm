@@ -9582,7 +9582,7 @@
 /area/rogue/under/cave)
 "Kz" = (
 /obj/structure/closet/crate/chest/neu_fancy{
-	lockid = "niteman";
+	lockid = "nightman";
 	locked = 1
 	},
 /obj/item/roguecoin/silver/pile,
@@ -9824,7 +9824,7 @@
 "Lz" = (
 /obj/structure/mineral_door/wood/violet{
 	locked = 1;
-	lockid = "niteman";
+	lockid = "nightman";
 	name = "Nitemaster's Office"
 	},
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -11171,7 +11171,7 @@
 "QA" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/clothing/ring/silver,
-/obj/item/roguekey/nitemaster,
+/obj/item/roguekey/niteman,
 /obj/item/roguekey/nitemaiden,
 /obj/item/roguekey/nitemaiden,
 /turf/open/floor/rogue/ruinedwood/chevron,
@@ -11594,7 +11594,7 @@
 /obj/structure/mineral_door/wood/donjon{
 	dir = 1;
 	name = "Backdoor";
-	lockid = "niteman";
+	lockid = "nightman";
 	locked = 1
 	},
 /turf/open/floor/rogue/herringbone,
