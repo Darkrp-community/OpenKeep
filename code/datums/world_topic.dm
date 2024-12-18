@@ -28,9 +28,9 @@
 /datum/world_topic/proc/TryRun(list/input)
 	if(!config)
 		return "Configuration has not initialised yet"
-	var/comms_key = CONFIG_GET(string/comms_key)
 
 	if(require_comms_key)
+		var/comms_key = CONFIG_GET(string/comms_key)
 		if(!comms_key) // key was not set
 			return "Commskey was not set"
 		key_valid = comms_key == input["key"]
