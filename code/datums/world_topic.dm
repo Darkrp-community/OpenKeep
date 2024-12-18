@@ -28,13 +28,16 @@
 /datum/world_topic/proc/TryRun(list/input)
 	if(!config)
 		return "Configuration has not initialised yet"
-	var/comms_key = CONFIG_GET(string/comms_key)
-	if(!comms_key) // key was not set
-		return "Commskey disabled"
-	key_valid = comms_key == input["key"]
-	if(require_comms_key && !key_valid)
-		return "Bad Key"
-	input -= "key"
+
+	if(require_comms_key)
+		var/comms_key = CONFIG_GET(string/comms_key)
+		if(!comms_key) // key was not set
+			return "Commskey was not set"
+		key_valid = comms_key == input["key"]
+		if(!key_valid)
+			return "Bad Key"
+		input -= "key"
+
 	. = Run(input)
 	if(islist(.))
 		. = list2params(.)
@@ -62,7 +65,7 @@
 
 /datum/world_topic/pr_announce
 	keyword = "announce"
-	require_comms_key = TRUE
+	require_comms_key = FALSE
 	var/static/list/PRcounts = list()	//PR id -> number of times announced this round
 
 /datum/world_topic/pr_announce/Run(list/input)
@@ -81,14 +84,14 @@
 
 /datum/world_topic/ahelp_relay
 	keyword = "Ahelp"
-	require_comms_key = TRUE
+	require_comms_key = FALSE
 
 /datum/world_topic/ahelp_relay/Run(list/input)
 	relay_msg_admins("<span class='adminnotice'><b><font color=red>HELP: </font> [input["source"]] [input["message_sender"]]: [input["message"]]</b></span>")
 
 /datum/world_topic/news_report
 	keyword = "News_Report"
-	require_comms_key = TRUE
+	require_comms_key = FALSE
 
 /datum/world_topic/news_report/Run(list/input)
 	minor_announce(input["message"], "Breaking Update From [input["message_sender"]]")
@@ -105,14 +108,14 @@
 
 /datum/world_topic/adminmsg
 	keyword = "adminmsg"
-	require_comms_key = TRUE
+	require_comms_key = FALSE
 
 /datum/world_topic/adminmsg/Run(list/input)
 	return IrcPm(input[keyword], input["msg"], input["sender"])
 
 /datum/world_topic/namecheck
 	keyword = "namecheck"
-	require_comms_key = TRUE
+	require_comms_key = FALSE
 
 /datum/world_topic/namecheck/Run(list/input)
 	//Oh this is a hack, someone refactor the functionality out of the chat command PLS
@@ -124,7 +127,7 @@
 
 /datum/world_topic/adminwho
 	keyword = "adminwho"
-	require_comms_key = TRUE
+	require_comms_key = FALSE
 
 /datum/world_topic/adminwho/Run(list/input)
 	return ircadminwho()
