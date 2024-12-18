@@ -18,7 +18,7 @@
 		/datum/language/celestial,
 		/datum/language/hellspeak,
 		/datum/language/beast,
-		/datum/language/orcish
+		/datum/language/orcish,
 		/datum/language/abyssal
 	))
 
