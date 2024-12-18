@@ -51,6 +51,7 @@
 		H.change_stat("perception", 2)
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitmaiden)
 	H.grant_language(/datum/language/sign_thieves)
+	to_chat(H, "<span class='info'>I know the sign language of the Thieves guild. Add ,u before my speech.</span>")
 
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")

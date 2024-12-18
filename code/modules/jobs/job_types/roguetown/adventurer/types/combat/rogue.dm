@@ -49,6 +49,8 @@
 	neck = /obj/item/clothing/neck/roguetown/coif
 	if(prob(30))
 		mask = /obj/item/clothing/mask/rogue/shepherd/rag
+	H.grant_language(/datum/language/sign_thieves)
+	to_chat(H, "<span class='info'>I know the sign language of the Thieves guild. Add ,u before my speech.</span>")
 
 	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/rogueweapon/mace/cudgel = 1)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

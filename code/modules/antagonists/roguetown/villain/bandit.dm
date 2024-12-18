@@ -276,6 +276,9 @@
 
 	H.ambushable = FALSE
 
+	H.grant_language(/datum/language/sign_thieves)
+	to_chat(H, "<span class='info'>I know the sign language of the Thieves guild. Add ,u before my speech.</span>")
+
 /datum/antagonist/bandit/roundend_report()
 	if(owner?.current)
 		var/amt = tri_amt

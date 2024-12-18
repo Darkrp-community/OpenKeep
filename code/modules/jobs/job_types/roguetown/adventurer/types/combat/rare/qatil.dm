@@ -52,5 +52,7 @@
 		H.grant_language(/datum/language/zybantine)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
 
+	H.grant_language(/datum/language/sign_thieves)
+	to_chat(H, "<span class='info'>I know the sign language of the Thieves guild. Add ,u before my speech.</span>")
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
