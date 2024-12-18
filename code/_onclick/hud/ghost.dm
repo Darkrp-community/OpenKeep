@@ -56,12 +56,12 @@
 							// Store the current time for the player
 							GLOB.job_respawn_delays[G.ckey] = world.time + target_job.same_job_respawn_delay
 
+					verbs -= /client/proc/descend
 					for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
 						var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 						O.livingname = G.name
 						O.ckey = G.ckey
 						SSdroning.area_entered(get_area(O), O.client)
-					verbs -= /client/proc/descend
 				return
 
 //		var/take_triumph = FALSE
@@ -70,12 +70,12 @@
 			if(C.skeletons)
 				G.returntolobby()
 		if(alert("Travel with the boatman?", "", "Yes", "No") == "Yes")
+			verbs -= /client/proc/descend
 			for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
 				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 				O.livingname = G.name
 				O.ckey = G.ckey
 				SSdroning.area_entered(get_area(O), O.client)
-			verbs -= /client/proc/descend
 /*		if(world.time < G.ghostize_time + RESPAWNTIME)
 			var/ttime = round((G.ghostize_time + RESPAWNTIME - world.time) / 10)
 			var/list/thingsz = list("My connection to the world is still too strong.",\
@@ -101,23 +101,11 @@
 	var/mob/dead/observer/G = usr
 	G.dead_tele()
 
-/atom/movable/screen/ghost/pai
-	name = "pAI Candidate"
-	icon_state = "pai"
-
-/atom/movable/screen/ghost/pai/Click()
-	var/mob/dead/observer/G = usr
-	G.register_pai()
-
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/ghost()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 
@@ -155,10 +143,6 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/grain
-	using.hud = src
-	static_inventory += using
-
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
@@ -186,10 +170,6 @@
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/obs()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 

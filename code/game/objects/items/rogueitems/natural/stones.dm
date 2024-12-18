@@ -2,7 +2,7 @@
 
 /obj/item/natural/stone
 	name = "stone"
-	desc = "A piece of rough ground stone."
+	desc = "A piece of rough ground stone. It could be chiseled into a shape more conducive to construction. "
 	icon_state = "stone1"
 	gripped_intents = null
 	dropshrink = 0.75
@@ -20,7 +20,7 @@
 /obj/item/natural/stone/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(HAS_TRAIT(user, TRAIT_ROTMAN))
-		to_chat(user, span_info("The [src] slips through dead fingers..."))	
+		to_chat(user, span_info("The [src] slips through dead fingers..."))
 		user.dropItemToGround(src, TRUE)
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/user, params)
@@ -33,8 +33,17 @@
 			var/turf/front = get_step(user,user.dir)
 			S.set_up(1, 1, front)
 			S.start()
+	if(istype(W, /obj/item/rogueweapon/chisel))
+		playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
+		user.visible_message("<span class='info'>[user] chisels the stone into a block.</span>")
+		if(do_after(user, 2 SECONDS))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
+			qdel(src)
+		return
 	else
 		..()
+
 
 /obj/item/natural/rock
 	name = "rock"
@@ -110,6 +119,16 @@
 			S.set_up(1, 1, front)
 			S.start()
 		return
+	if(istype(W, /obj/item/rogueweapon/chisel))
+		playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
+		user.visible_message("<span class='info'>[user] chisels the rock into blocks.</span>")
+		if(do_after(user, 6 SECONDS))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			new /obj/item/natural/stoneblock(get_turf(src.loc))
+			playsound(src.loc, pick('sound/combat/hits/onrock/onrock (1).ogg', 'sound/combat/hits/onrock/onrock (2).ogg', 'sound/combat/hits/onrock/onrock (3).ogg', 'sound/combat/hits/onrock/onrock (4).ogg'), 100)
+			qdel(src)
+		return
 	..()
 
 //begin ore loot rocks
@@ -131,3 +150,5 @@
 /obj/item/natural/rock/copper
 	mineralType = /obj/item/rogueore/copper
 
+/obj/item/natural/rock/gemerald
+	mineralType = /obj/item/natural/rock/gemerald

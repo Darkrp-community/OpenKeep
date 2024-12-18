@@ -9,8 +9,6 @@
  */
 /client/verb/drop_item()
 	set hidden = 1
-	if(!iscyborg(mob) && mob.stat == CONSCIOUS)
-		mob.dropItemToGround(mob.get_active_held_item(), silent = FALSE)
 	return
 
 /**
@@ -115,9 +113,6 @@
 
 	if(mob.remote_control)					//we're controlling something, our movement is relayed to it
 		return mob.remote_control.relaymove(mob, direct)
-
-	if(isAI(mob))
-		return AIMove(n,direct,mob)
 
 	if(Process_Grab()) //are we restrained by someone's grip?
 		return
@@ -650,19 +645,19 @@
 /mob/living/carbon/human/check_armor_skill()
 	if(istype(src.wear_armor, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
 					return FALSE
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
 				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
 					return FALSE
@@ -675,15 +670,15 @@
 	var/heaviest = "Light"
 	if(istype(src.wear_armor, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+		if(CL.armor_class == AC_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
 			heaviest = "Heavy"
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+		if(CL.armor_class == AC_MEDIUM && heaviest == "Light")
 			heaviest = "Medium"
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == ARMOR_CLASS_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
+		if(CL.armor_class == AC_HEAVY && (heaviest == "Light" || heaviest == "Medium"))
 			heaviest = "Heavy"
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM && heaviest == "Light")
+		if(CL.armor_class == AC_MEDIUM && heaviest == "Light")
 			heaviest = "Medium"
 	return heaviest
 
@@ -695,21 +690,21 @@
 		return FALSE
 	if(istype(src.wear_armor, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			return FALSE
 	if(istype(src.wear_shirt, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			return FALSE
 	if(istype(src.wear_pants, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_pants
-		if(CL.armor_class == ARMOR_CLASS_HEAVY)
+		if(CL.armor_class == AC_HEAVY)
 			return FALSE
-		if(CL.armor_class == ARMOR_CLASS_MEDIUM)
+		if(CL.armor_class == AC_MEDIUM)
 			return FALSE
 	return TRUE
 

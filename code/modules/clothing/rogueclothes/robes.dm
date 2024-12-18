@@ -19,10 +19,10 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/suit/roguetown/shirt/robe/plain
-	color = "#7c6d5c"
+	color = CLOTHING_LINEN
 
 /obj/item/clothing/suit/roguetown/shirt/robe/black
-	color = CLOTHING_BLACK_WARM
+	color = CLOTHING_DARK_INK
 
 /obj/item/clothing/suit/roguetown/shirt/robe/white
 
@@ -66,6 +66,13 @@
 	desc = "Black robes which cover the body not unlike those in depictions of the Carriageman himself."
 	icon_state = "necrarobe"
 
+/obj/item/clothing/suit/roguetown/shirt/robe/malum
+	name = "craftsman's robes"
+	desc = "The sturdy robes of a maker-monk of Malum."
+	icon_state = "malumrobe"
+	sleeved = null
+	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0) // I just wanted to give Malumite robes a tiny bit of fire protection because they're craftspeople.
+
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
 	desc = "Holy vestments sanctified by divine hands. Caution is advised if not a faithful."
@@ -86,10 +93,10 @@
 
 //................ Wizard Robes ............... //
 /obj/item/clothing/suit/roguetown/shirt/robe/courtmage
-	color = "#6c6c6c"
+	color = CLOTHING_ASH_GREY
 
 /obj/item/clothing/suit/roguetown/shirt/robe/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	. = ..()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
@@ -112,11 +119,39 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	max_integrity = 200
 
+/obj/item/clothing/suit/roguetown/shirt/robe/bath
+	name = "bathrobe"
+	desc = "A bathrobe with a luxurious fur interior."
+	icon_state = "bathrobe"
+	toggle_icon_state = TRUE
+	adjustable = CAN_CADJUST
+	body_parts_covered = ARM_LEFT|ARM_RIGHT
+	sellprice = 12
 
+/obj/item/clothing/suit/roguetown/shirt/robe/bath/AdjustClothes(mob/user)
+	if(loc == user)
+		if(adjustable == CAN_CADJUST)
+			adjustable = CADJUSTED
+			if(toggle_icon_state)
+				icon_state = "[initial(icon_state)]_t"
+			flags_inv = null
+			if(ishuman(user))
+				var/mob/living/carbon/H = user
+				H.update_inv_armor()
+				H.update_icon()
+		else if(adjustable == CADJUSTED)
+			ResetAdjust(user)
+			flags_inv = HIDEBOOB
+			body_parts_covered = ARM_LEFT|ARM_RIGHT|CHEST|GROIN
+			if(user)
+				if(ishuman(user))
+					var/mob/living/carbon/H = user
+					H.update_inv_armor()
+					H.update_icon()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	name = "guilder jacket"
-	desc = "A fancy jacket common with members of the Mercator Guild."
+	desc = "A fancy jacket common with members of the Mercator guild."
 	icon_state = "merrobe"
 	sellprice = 30
 

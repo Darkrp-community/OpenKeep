@@ -20,7 +20,7 @@
 	var/meaty
 	var/potpie
 	var/berrypie
-	var/poisoning	
+	var/poisoning
 
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom/update_icon()
 	. = ..()
@@ -79,7 +79,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom/attackby(obj/item/I, mob/user, params)
 	if(user.mind)
 		short_cooktime = (50 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*5))
-		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))	
+		long_cooktime = (90 - ((user.mind.get_skill_level(/datum/skill/craft/cooking))*10))
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish))
 		if (process_step > 4)
 			return
@@ -252,7 +252,7 @@
 			qdel(I)
 			return
 
-	if(istype(I, /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison))
+	if(istype(I, /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -261,7 +261,7 @@
 			name = "unfinished berrypie"
 			process_step += 1
 			berrypie = TRUE
-			poisoning = TRUE	
+			poisoning = TRUE
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
 			qdel(I)
@@ -269,19 +269,19 @@
 		if(berrypie && process_step == 2 && do_after(user,short_cooktime, target = src))
 			to_chat(user, "<span class='notice'>Adding filling to the applepie. Needs more.</span>")
 			process_step += 1
-			poisoning = TRUE	
+			poisoning = TRUE
 			update_icon()
 			qdel(I)
 			return
 		if(berrypie && process_step == 3 && do_after(user,short_cooktime, target = src))
 			to_chat(user, "<span class='notice'>Filling the applepie to the brim. Still lacks a pie roof.</span>")
 			process_step += 1
-			poisoning = TRUE	
+			poisoning = TRUE
 			update_icon()
 			qdel(I)
-			return	
-	
-	else if(istype(I, /obj/item/reagent_containers/food/snacks/produce/berries/rogue))
+			return
+
+	else if(istype(I, /obj/item/reagent_containers/food/snacks/produce/jacksberry))
 		if (process_step > 4)
 			return
 		playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
@@ -305,7 +305,7 @@
 			process_step += 1
 			update_icon()
 			qdel(I)
-			return	
+			return
 
 	if(istype(I, /obj/item/reagent_containers/food/snacks/rogue/piedough))
 		playsound(get_turf(user), 'sound/foley/dropsound/gen_drop.ogg', 30, TRUE, -1)
@@ -313,6 +313,7 @@
 			name = "uncooked fish pie"
 			icon_state = "fishpie_raw"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish
+			cooked_smell = /datum/pollutant/food/fish_pie
 			filling_color = "#d44197"
 			process_step += 1
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
@@ -322,6 +323,7 @@
 			name = "uncooked meat pie"
 			icon_state = "meatpie_raw"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/meat
+			cooked_smell = /datum/pollutant/food/meat_pie
 			filling_color = "#b43628"
 			process_step += 1
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
@@ -331,6 +333,7 @@
 			name = "uncooked pot pie"
 			filling_color = "#755430"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/pot
+			cooked_smell = /datum/pollutant/food/pot_pie
 			process_step += 1
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
@@ -338,6 +341,7 @@
 		if(applepie && process_step == 4 && do_after(user,short_cooktime, target = src))
 			name = "uncooked applepie"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
+			cooked_smell = /datum/pollutant/food/apple_pie
 			process_step += 1
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
@@ -346,6 +350,7 @@
 			name = "uncooked berrypie"
 			filling_color = "#4a62cf"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry
+			cooked_smell = /datum/pollutant/food/berry_pie
 			process_step += 1
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
@@ -354,6 +359,7 @@
 			name = "uncooked berrypie"
 			filling_color = "#4a62cf"
 			cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison
+			cooked_smell = /datum/pollutant/food/berry_pie
 			process_step += 1
 			user.mind.adjust_experience(/datum/skill/craft/cooking, SIMPLE_COOKING_XPGAIN, FALSE)
 			update_icon()
@@ -371,7 +377,7 @@
 /obj/item/reagent_containers/food/snacks/rogue/pie
 	name = "pie"
 	desc = ""
-	color = "#e7e2df"	
+	color = "#e7e2df"
 	dropshrink = 0.8
 	var/stunning = FALSE
 
@@ -500,6 +506,7 @@
 	icon_state = "handpie_raw"
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/handpie
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/handpie
+	cooked_smell = /datum/pollutant/food/pie_base
 	w_class = WEIGHT_CLASS_NORMAL
 	dropshrink = 0.8
 
@@ -551,4 +558,4 @@
 	icon_state = "handpie[bitecount]"
 	if(bitecount == 1)
 		rotprocess = SHELFLIFE_DECENT
-		addtimer(CALLBACK(src, PROC_REF(begin_rotting)), 20, TIMER_CLIENT_TIME) // 
+		addtimer(CALLBACK(src, PROC_REF(begin_rotting)), 20, TIMER_CLIENT_TIME) //

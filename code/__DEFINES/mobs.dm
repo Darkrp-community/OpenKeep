@@ -79,8 +79,6 @@
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
 
 #define MONKEY_BODYPART "monkey"
-#define ALIEN_BODYPART "alien"
-#define LARVA_BODYPART "larva"
 #define DEVIL_BODYPART "devil"
 /*see __DEFINES/inventory.dm for bodypart bitflag defines*/
 
@@ -379,8 +377,6 @@
 #define MIRROR_PRIDE  (1<<2)
 //Race swap wizard event
 #define RACE_SWAP     (1<<3)
-//ERT spawn template (avoid races that don't function without correct gear)
-#define ERT_SPAWN     (1<<4)
 //xenobio black crossbreed
 #define SLIME_EXTRACT (1<<5)
 //Wabbacjack staff projectiles
@@ -395,15 +391,16 @@
 //skin tones defines
 
 //DWARF SKIN TONES
-#define SKIN_COLOR_PLATINUM "ffe0d1"
-#define SKIN_COLOR_AURUM "fcccb3"
-#define SKIN_COLOR_QUICKSILVER "edc6b3"
-#define SKIN_COLOR_BRASS "e2b9a3"
-#define SKIN_COLOR_IRON "d9a284"
-#define SKIN_COLOR_MALACHITE "c69b83"
-#define SKIN_COLOR_OBSIDIAN "3b2e27"
-#define SKIN_COLOR_BRIMSTONE "271f1a"
-#define SKIN_COLOR_CERARGYRITE "74708b"
+#define SKIN_COLOR_ARGENT "f9d5c3"
+#define SKIN_COLOR_AURUM "fcdab3"
+#define SKIN_COLOR_MERCUR "edc6b3"
+#define SKIN_COLOR_BRASS "dfb798"
+#define SKIN_COLOR_FERRO "d9a284"
+#define SKIN_COLOR_PHOSPHORITE "967e70"
+#define SKIN_COLOR_OBSIDIAN "59403b"
+#define SKIN_COLOR_PYRITE "54545d"
+#define SKIN_COLOR_QUARTZ "8b7e70"
+#define SKIN_COLOR_GRENZDWARF "ffe0d1"
 
 //DARK ELF SKIN TONES
 #define SKIN_COLOR_MAGGOT "9796a9"
@@ -413,6 +410,7 @@
 #define SKIN_COLOR_JACKPOISON "6a616d"
 #define SKIN_COLOR_HOMUNCULUS "5f5f70"
 #define SKIN_COLOR_ARACHNID_ICHOR "2F2F38"
+#define SKIN_COLOR_SCORPION "B8CEAD"
 
 //ELF SKIN TONES
 #define SKIN_COLOR_SNOW_ELF "fff0e9"
@@ -424,17 +422,16 @@
 #define SKIN_COLOR_SAND_ELF "5d4c41"
 
 //HUMEN SKIN TONES
-#define SKIN_COLOR_ICECAP "fff0e9"
-#define SKIN_COLOR_ARCTIC "ffe0d1"
-#define SKIN_COLOR_TUNDRA "fcccb3"
-#define SKIN_COLOR_CONTINENTAL "edc6b3"
-#define SKIN_COLOR_TEMPERATE "e2b9a3"
-#define SKIN_COLOR_COASTAL "d9a284"
-#define SKIN_COLOR_SUBTROPICAL "c9a893"
-#define SKIN_COLOR_TROPICALDRY "ba9882"
-#define SKIN_COLOR_TROPICALWET "ac8369"
-#define SKIN_COLOR_DESERT "9c6f52"
-#define SKIN_COLOR_CRIMSONLANDS "4e3729"
+#define SKIN_COLOR_GRENZELHOFT "ffe0d1"
+#define SKIN_COLOR_LOWLANDER "fcccb3"
+#define SKIN_COLOR_MAINLANDER "edc6b3"
+#define SKIN_COLOR_HEARTFELT "e2b9a3"
+#define SKIN_COLOR_VALORIAN "d9a284"
+#define SKIN_COLOR_STEPPE "c9a893"
+#define SKIN_COLOR_ISLANDER "ba9882"
+#define SKIN_COLOR_SOUTHLANDER "ac8369"
+#define SKIN_COLOR_ZYBANTU "9c6f52"
+#define SKIN_COLOR_CRIMSONLANDS "684e3d"
 
 //AASIMAR SKIN TONES
 #define SKIN_COLOR_PLANETAR "ffd859"

@@ -11,6 +11,7 @@
 	var/dead = FALSE
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedrat
+	cooked_smell = /datum/pollutant/food/fried_rat
 	max_integrity = 10
 	sellprice = 0
 	rotprocess = null
@@ -47,6 +48,7 @@
 	tastes = list("burnt flesh" = 1)
 	eat_effect = null
 	rotprocess = SHELFLIFE_SHORT
+	plateable = TRUE
 	sellprice = 0
 
 /obj/item/reagent_containers/food/snacks/smallrat/burning(input as num)

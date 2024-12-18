@@ -13,6 +13,28 @@
 /obj/item/paper/heartfelt/goal4
 	info = "Our lands have long been forsaken by Dendor, Our fields are failing and the famine is causing unrest in our realm. Seek royal largesse"
 
+/obj/item/paper/note_about_dwarfs
+	name = "report to Guild on steel deliveries"
+	info = "Last yils deliverie of steele from the dwarf outposte in the northeast: 83 ingots of finest steel. None hath been delivered this yil, this will not do. For the good of the Makers Guild, this must be investigated."
+
+/obj/item/paper/reminder_about_dwarfs
+	name = "note about steel deliveries"
+	info = "Makers! The northern dwarves delivery of steele is much delayed this yil. Make do or go get it from them, the Guild cannot do more to solve this."
+
+/obj/item/paper/feldsher_certificate
+	name = "feldsher health certificate"
+	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a few weeks ago)"
+	icon_state = "certificate"
+
+/obj/item/paper/feldsher_certificate/expired
+	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a smudge)"
+
+/obj/item/paper/nitemaiden_certificate/Initialize()
+	..()
+	var/type = pick(typesof(/obj/item/paper/feldsher_certificate))
+	new type(loc)
+	return INITIALIZE_HINT_QDEL
+
 /obj/item/paper/heartfelt/random/Initialize()
 	..()
 	var/type = pick(typesof(/obj/item/paper/heartfelt) - /obj/item/paper/heartfelt/random)

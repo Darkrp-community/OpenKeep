@@ -27,8 +27,11 @@
 	gender = PLURAL
 	icon_state = "blackboots"
 	item_state = "blackboots"
-	armor = list("melee" = 15, "bullet" = 5, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 10
+	
+	armor = ARMOR_LEATHER_BAD
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/shoes/roguetown/nobleboot
 	name = "noble boots"
@@ -38,9 +41,12 @@
 	gender = PLURAL
 	icon_state = "nobleboots"
 	item_state = "nobleboots"
-	armor = list("melee" = 20, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 10
 
+	armor = ARMOR_LEATHER_BAD
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_STRONGER //Durable.
+	
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
 	color = "#d5c2aa"
@@ -48,17 +54,23 @@
 	gender = PLURAL
 	icon_state = "shortboots"
 	item_state = "shortboots"
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+
+	armor = ARMOR_LEATHER_WORST
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/shoes/roguetown/ridingboots
 	name = "riding boots"
 	color = "#d5c2aa"
 	desc = "Boots designed for riding a mount."
-	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	gender = PLURAL
 	icon_state = "ridingboots"
 	item_state = "ridingboots"
 	sellprice = 10
+	
+	armor = ARMOR_LEATHER
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_STRONGER
 
 ///obj/item/clothing/shoes/roguetown/ridingboots/Initialize()
 //	. = ..()
@@ -71,7 +83,7 @@
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
 	resistance_flags = null
-	color = "#473a30"
+	color = CLOTHING_OLD_LEATHER
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/white
 	color = null
@@ -89,7 +101,7 @@
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
 	resistance_flags = null
-	color = "#cbcac9"
+	color = CLOTHING_ASH_GREY
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/gladiator
@@ -120,6 +132,10 @@
 	icon_state = "shalal"
 	item_state = "shalal"
 	sellprice = 15
+	
+	armor = ARMOR_LEATHER_BAD //Unique to a rare adventurer class
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_STANDARD
 
 /obj/item/clothing/shoes/roguetown/tribal
 	name = "tribal shoes"
@@ -127,6 +143,10 @@
 	icon_state = "tribalshoes"
 	item_state = "tribalshoes"
 	sellprice = 3
+	
+	armor = ARMOR_LEATHER_BAD
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/shoes/roguetown/boots/armor
 	name = "plated boots"
@@ -134,12 +154,8 @@
 	body_parts_covered = FEET
 	icon_state = "armorboots"
 	item_state = "armorboots"
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	color = null
 	blocksound = PLATEHIT
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 500
-	armor_class = ARMOR_CLASS_HEAVY
 	clothing_flags = CANT_SLEEP_IN
 	anvilrepair = /datum/skill/craft/armorsmithing
 	resistance_flags = FIRE_PROOF
@@ -148,28 +164,78 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
 	sellprice = 25
+	
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE
+	prevent_crits = ALL_EXCEPT_STAB
+	max_integrity = INTEGRITY_STRONG-50 //Peripheral piece, good for 7~ halberd stabs. Minorly penetrated by halberds.
 
 /obj/item/clothing/shoes/roguetown/boots/armor/light
 	name = "light plate boots"
 	icon_state = "soldierboots"
 	item_state = "soldierboots"
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 250
-	armor_class = ARMOR_CLASS_MEDIUM
 	sellprice = 20
+	
+	armor_class = AC_MEDIUM
+	armor = ARMOR_PLATE_BAD
+	prevent_crits = ALL_EXCEPT_STAB
+	max_integrity = INTEGRITY_STANDARD //Peripheral piece, good for 5~ halberd stabs. Will be pretty badly penetrated by polearms.
 
 /obj/item/clothing/shoes/roguetown/boots/leather
 	name = "leather boots"
 	//dropshrink = 0.75
 	desc = "Boots made out of sturdy leather. Providing light protection against melee attacks."
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST)
 	gender = PLURAL
 	icon_state = "leatherboots"
 	item_state = "leatherboots"
-	armor = list("melee" = 20, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	resistance_flags = FLAMMABLE
 	sellprice = 10
+	
+	armor = ARMOR_LEATHER
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_STANDARD //Slightly thicker, less durable than riding or noble boots.
+
+/obj/item/clothing/shoes/roguetown/boots/furlinedboots
+	name = "fur lined boots"
+	desc = "Leather boots lined with fur."
+	gender = PLURAL
+	icon_state = "furlinedboots"
+	item_state = "furlinedboots"
+	sewrepair = TRUE
+
+	armor = ARMOR_LEATHER
+	prevent_crits = ALL_EXCEPT_STAB
+	max_integrity = INTEGRITY_STRONG
+
+/obj/item/clothing/shoes/roguetown/boots/furlinedanklets
+	name = "fur lined anklets"
+	desc = "Leather anklets lined with fur, foot remains bare."
+	gender = PLURAL
+	icon_state = "furlinedanklets"
+	item_state = "furlinedanklets"
+	sewrepair = TRUE
+	is_barefoot = TRUE
+	
+	armor = ARMOR_LEATHER_BAD
+	prevent_crits = CUT_AND_MINOR_CRITS
+	max_integrity = INTEGRITY_POOR
+	
+	
+
+/obj/item/clothing/shoes/roguetown/boots/clothlinedanklets
+	name = "cloth lined anklets"
+	desc = "Cloth anklets lined with with fibers, foot remains bare."
+	gender = PLURAL
+	icon_state = "clothlinedanklets"
+	item_state = "furlinedanklets"
+	is_barefoot = TRUE
+	sewrepair = TRUE
+	
+	armor = ARMOR_PADDED_BAD
+	prevent_crits = MINOR_CRITICALS
+	max_integrity = INTEGRITY_POOR
+
 
 /obj/item/clothing/shoes/roguetown/jester
 	name = "funny shoes"
@@ -183,8 +249,11 @@
 	icon_state = "grenzelboots"
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	armor = list("melee" = 25, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	sellprice = 20
+	
+	armor = ARMOR_LEATHER_GOOD
+	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
+	max_integrity = INTEGRITY_STRONG
 
 /obj/item/clothing/shoes/roguetown/boots/rare
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
@@ -192,20 +261,22 @@
 	sleeved = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	sleevetype = null
 	resistance_flags = FIRE_PROOF // All of these are plated
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	pickup_sound = "rustle"
 	equip_sound = 'sound/foley/equip/equip_armor_plate.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
 	anvilrepair = /datum/skill/craft/armorsmithing
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	clothing_flags = CANT_SLEEP_IN
 	sellprice = 30
+	
+	armor_class = AC_HEAVY
+	armor = ARMOR_PLATE_GOOD
+	prevent_crits = ALL_EXCEPT_STAB
+	max_integrity = INTEGRITY_STRONGER //Peripheral piece, still good for 8~ halberd stabs.
 
 /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
 	name = "dark elvish plated boots"
 	desc = "Bizzarrely shaped boots of exquisite dark elven craftsmanship, forged from steel alloyed in ways unbeknownst to every other race."
-	body_parts_covered = FEET
 	icon_state = "elfshoes"
 	item_state = "elfshoes"
 	allowed_race = list("elf", "half-elf", "dark elf")
@@ -228,7 +299,6 @@
 	allowed_race = list("dwarf")
 	allowed_sex = list(MALE, FEMALE)
 	desc = "Laced with golden bands, these dwarven plated boots glitter with glory as they are used to kick enemy's shins."
-	body_parts_covered = FEET|LEGS
 	icon_state = "dwarfshoe"
 	item_state = "dwarfshoe"
 	color = null
@@ -240,8 +310,7 @@
 	allowed_sex = list(MALE)
 	desc = "The sabatons that march to the tune of a glorious nation. It is said that the boots \
 			are gilded with the tears of once native elves of the Grenzeholft lands, \
-			eradicated via humen conquest."
-	body_parts_covered = FEET|LEGS
+			eradicated via humen conquest." //Maybe consider getting a more serious name and description for this please.
 	icon_state = "human_swordshoes"
 	item_state = "human_swordshoes"
 	color = null
@@ -254,7 +323,6 @@
 	desc = "The segmented plate boots are a recent alteration to the Zybantu Elite, \
 			many old warriors decorate their own by tieing ribbons and other knick-knacks \
 			as a homage to the colorful socks they wore in simpler times."
-	body_parts_covered = FEET|LEGS
 	icon_state = "human_spearshoe"
 	item_state = "human_spearshoe"
 	color = null

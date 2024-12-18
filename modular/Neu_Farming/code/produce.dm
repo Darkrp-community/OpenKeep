@@ -147,7 +147,7 @@
 			if(equippedloc != H.loc)
 				H.dropItemToGround(H.head)
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue
+/obj/item/reagent_containers/food/snacks/produce/jacksberry
 	seed = /obj/item/neuFarm/seed/berryrogue
 	name = "jacksberries"
 	desc = "Common berries found throughout Rockhill. A traveler's repast, or Dendor's wrath."
@@ -158,13 +158,13 @@
 	dropshrink = 0.75
 	var/color_index = "good"
 	can_distill = TRUE
-	distill_reagent = /datum/reagent/consumable/ethanol/beer/jackberrywine
+	distill_reagent = /datum/reagent/consumable/ethanol/beer/jacksberrywine
 	rotprocess = SHELFLIFE_SHORT
 	sellprice = 0 // spoil too quickly to export
 	var/poisonous = FALSE
 	possible_potion = "antidote"
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/Initialize()
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/Initialize()
 	if(GLOB.berrycolors[color_index])
 		filling_color = GLOB.berrycolors[color_index]
 	else
@@ -177,17 +177,22 @@
 	update_icon()
 	..()
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/examine(mob/user)
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/examine(mob/living/carbon/user)
 	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
 	. += ..()
 	if(farminglvl >= 3 && poisonous == TRUE)
 		. += "These berries appear to be poisonous."
+	if(user.mind.assigned_role == "Cook"&& poisonous == TRUE)
+		. += "These berries appear to be poisonous."
+	if(user.mind.assigned_role == "Master Chef"&& poisonous == TRUE)
+		. += "These berries are POISONOUS."
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/On_Consume(mob/living/eater)
+
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/On_Consume(mob/living/eater)
 	..()
 	update_icon()
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/update_icon()
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/update_icon()
 	cut_overlays()
 	var/used_state = "berriesc5"
 	if(bitecount == 1)
@@ -202,7 +207,7 @@
 	item_overlay.color = filling_color
 	add_overlay(item_overlay)
 
-/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
+/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison
 	seed = /obj/item/neuFarm/seed/poison_berries
 	icon_state = "berries"
 	tastes = list("berry" = 1)
@@ -213,7 +218,7 @@
 	possible_potion = "poison"
 
 /*	..................   Swamp weed   ................... */
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
+/obj/item/reagent_containers/food/snacks/produce/swampweed
 	seed = /obj/item/neuFarm/seed/swampleaf
 	name = "swampweed"
 	desc = "A weed that can be dried and smoked to induce a relaxed state."
@@ -221,7 +226,7 @@
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	list_reagents = list(/datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 1)
 	tastes = list("sweet" = 1,"bitterness" = 1)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -229,7 +234,7 @@
 	dust_result = /obj/item/alch/swampdust
 	sellprice = 0 // only dried has value
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried
+/obj/item/reagent_containers/food/snacks/produce/swampweed_dried
 	seed = null
 	name = "swampweed"
 	desc = "A dried weed that can be smoked to induce a relaxed state."
@@ -245,17 +250,17 @@
 	sellprice = 2
 
 
-/*	..................   Pipe weed   ................... */
-/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
-	seed = /obj/item/neuFarm/seed/pipeweed
+/*	..................   Westleach leaf   ................... */
+/obj/item/reagent_containers/food/snacks/produce/westleach
+	seed = /obj/item/neuFarm/seed/westleach
 	name = "westleach leaf"
-	desc = "A common, strong-smelling leaf that is often dried and smoked."
+	desc = "A common, strong-smelling leaf that is often dried and smoked. Also known as pipeweed."
 	icon_state = "westleach"
 	filling_color = "#008000"
 	bitesize_mod = 1
 	foodtype = VEGETABLES
 	tastes = list("sweet" = 1,"bitterness" = 1)
-	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 5)
+	list_reagents = list(/datum/reagent/drug/nicotine = 2, /datum/reagent/consumable/nutriment = 1, /datum/reagent/berrypoison = 2)
 	grind_results = list(/datum/reagent/drug/nicotine = 5)
 	eat_effect = /datum/status_effect/debuff/badmeal
 	rotprocess = SHELFLIFE_LONG
@@ -263,9 +268,9 @@
 	dust_result = /obj/item/alch/tobaccodust
 	sellprice = 0 // only dried has value
 
-/obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed
+/obj/item/reagent_containers/food/snacks/produce/dry_westleach
 	seed = null
-	name = "westleach leaf"
+	name = "dried westleach leaf"
 	desc = "A common, strong-smelling leaf dried for smoking."
 	icon_state = "westleachd"
 	dry = TRUE
@@ -341,6 +346,7 @@
 	slices_num = 1
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/veg/potato_sliced
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/preserved/potato_baked
+	cooked_smell = /datum/pollutant/food/baked_potato
 	eat_effect = null
 	foodtype = VEGETABLES
 	chopping_sound = TRUE
@@ -398,6 +404,7 @@
 	dropshrink = 0.8
 	rotprocess = null
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/roastseeds
+	cooked_smell = /datum/pollutant/food/roasted_seeds
 
 
 /*	..................   Fyritius Flower   ................... */ // some sort of funni fire flowers. Dunno just moving them here for consistency.

@@ -206,7 +206,7 @@
 	else
 		icon_state = "streetvendor1"
 	if(held_items.len)
-		set_light(1, 1, "#1b7bf1")
+		set_light(1, 1, 1, l_color = "#1b7bf1")
 		add_overlay(mutable_appearance(icon, "vendor-gen"))
 
 /obj/structure/roguemachine/vendor/Destroy()
@@ -260,16 +260,38 @@
 
 /obj/structure/roguemachine/vendor/inn/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomii,/obj/item/roguekey/roomiii))
+	for(var/X in list(/obj/item/roguekey/roomii))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 15
+	for(var/X in list(/obj/item/roguekey/roomi,/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv,/obj/item/roguekey/roomv,/obj/item/roguekey/roomvi))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 20
-	for(var/X in list(/obj/item/roguekey/roomhunt))
+	update_icon()
+
+/obj/structure/roguemachine/vendor/inn_hamlet
+	keycontrol = "tavern"
+
+/obj/structure/roguemachine/vendor/inn_hamlet/Initialize()
+	. = ..()
+	for(var/X in list(/obj/item/roguekey/roomii))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 40
+		held_items[P]["PRICE"] = 15
+	for(var/X in list(/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 20
+	for(var/X in list(/obj/item/roguekey/roomi))
+		var/obj/P = new X(src)
+		held_items[P] = list()
+		held_items[P]["NAME"] = P.name
+		held_items[P]["PRICE"] = 30
 	update_icon()
 
 /obj/structure/roguemachine/vendor/steward
@@ -287,9 +309,12 @@
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 100
-	for(var/X in list(/obj/item/roguekey/houses/house7,/obj/item/roguekey/houses/house8))
+	for(var/X in list(/obj/item/roguekey/houses/house7))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 120
 	update_icon()
+
+/obj/structure/roguemachine/vendor/nitemaster
+	keycontrol = "nightman"

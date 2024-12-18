@@ -128,7 +128,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "aaB" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue)
 "aaC" = (
@@ -279,8 +279,8 @@
 /area/rogue)
 "abg" = (
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/rogueweapon/huntingknife/idagger,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/knife/dagger,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "abh" = (
@@ -530,7 +530,7 @@
 "abS" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/clothing/suit/roguetown/shirt/rags,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "abT" = (
@@ -834,7 +834,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/indoors/town/manor)
 "ada" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -868,7 +868,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "ade" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -1504,7 +1504,7 @@
 /area/rogue)
 "afb" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/manor)
 "afc" = (
@@ -1570,7 +1570,7 @@
 	},
 /area/rogue/indoors/town/manor)
 "afl" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -3346,7 +3346,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "akN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue)
 "akO" = (
@@ -3638,7 +3638,7 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)
 "alM" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "alN" = (
@@ -4058,7 +4058,7 @@
 /area/rogue)
 "amV" = (
 /obj/structure/fluff/psycross,
-/obj/item/rogueweapon/woodstaff/aries,
+/obj/item/rogueweapon/polearm/woodstaff/aries,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "amW" = (
@@ -4241,7 +4241,7 @@
 /area/rogue)
 "anx" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/idagger/steel,
+/obj/item/rogueweapon/knife/dagger/steel,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -4652,7 +4652,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aoH" = (
-/obj/item/rogueweapon/stoneaxe/woodcut,
+/obj/item/rogueweapon/axe/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "aoI" = (
@@ -4912,7 +4912,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "apu" = (
-/obj/effect/landmark/start/barkeep,
+/obj/effect/landmark/start/innkeep,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "apv" = (
@@ -5129,7 +5129,7 @@
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqa" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqb" = (
@@ -5263,7 +5263,7 @@
 /area/rogue)
 "aqw" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqx" = (
@@ -5336,7 +5336,7 @@
 	dir = 5
 	},
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/item/rogueweapon/huntingknife/stoneknife,
+/obj/item/rogueweapon/knife/stone,
 /turf/open/floor/rogue/woodturned,
 /area/rogue)
 "aqI" = (
@@ -5806,7 +5806,7 @@
 /obj/item/neuFarm/seed/oat,
 /obj/item/neuFarm/seed/apple,
 /obj/item/neuFarm/seed/apple,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
@@ -5853,7 +5853,7 @@
 /area/rogue)
 "asj" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors)
 "ask" = (
@@ -5932,7 +5932,7 @@
 /turf/closed/wall/mineral/rogue/wood,
 /area/rogue)
 "asy" = (
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -6018,7 +6018,7 @@
 /area/rogue)
 "asM" = (
 /obj/structure/fluff/statue/gargoyle,
-/obj/item/rogueweapon/sword/rapier/lord,
+/obj/item/rogueweapon/sword/sabre/lord,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
 	},
@@ -6771,7 +6771,7 @@
 /area/rogue)
 "auY" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/idagger,
+/obj/item/rogueweapon/knife/dagger,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "auZ" = (
@@ -7635,7 +7635,7 @@
 /area/rogue)
 "axL" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/huntingknife,
+/obj/item/rogueweapon/knife/hunting,
 /turf/open/floor/rogue/cobble,
 /area/rogue)
 "axM" = (
@@ -7751,7 +7751,7 @@
 /area/rogue)
 "aye" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/huntingknife/cleaver,
+/obj/item/rogueweapon/knife/cleaver,
 /turf/open/floor/rogue/blocks{
 	icon_state = "greenblocks"
 	},
@@ -9161,7 +9161,7 @@
 	},
 /area/rogue)
 "aCN" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw";
 	dir = 1
@@ -9369,7 +9369,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue)
 "aDt" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	icon_state = "rubble2"
 	},
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -9435,7 +9435,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "aDD" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/blocks,
 /area/rogue)
 "aDE" = (
@@ -10007,21 +10007,21 @@
 	},
 /area/rogue/indoors/town/manor)
 "aFu" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "aFv" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "aFw" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10029,7 +10029,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/manor)
 "aFx" = (
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10047,7 +10047,7 @@
 	icon_state = "chair2";
 	dir = 4
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10058,7 +10058,7 @@
 	icon_state = "largetable";
 	dir = 9
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	dir = 1;
 	icon_state = "borderfall"
 	},
@@ -10182,7 +10182,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "aFS" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor)
 "aFT" = (
@@ -10372,7 +10372,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/manor)
 "aGz" = (
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aGA" = (
@@ -10432,7 +10432,7 @@
 /area/rogue/outdoors/town)
 "aGL" = (
 /obj/structure/fluff/statue/tdummy,
-/obj/item/rogueweapon/mace/wsword,
+/obj/item/rogueweapon/mace/woodclub/train_sword,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/town)
 "aGM" = (
@@ -11366,7 +11366,7 @@
 /area/rogue/outdoors/town)
 "aKe" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/spear,
+/obj/item/rogueweapon/polearm/spear,
 /turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/town)
 "aKf" = (
@@ -11803,7 +11803,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/beach)
 "dmH" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "vertw"
 	},
@@ -12482,7 +12482,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "iRS" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "iXT" = (
@@ -12601,7 +12601,7 @@
 /turf/closed/wall/mineral/rogue/stone/moss,
 /area/rogue/outdoors/rtfield)
 "kji" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors)
 "kjj" = (
@@ -13008,7 +13008,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/beach)
 "ojs" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "omQ" = (
@@ -13443,7 +13443,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "rxb" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -13523,7 +13523,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/cave)
 "rUg" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -13916,9 +13916,9 @@
 /obj/structure/closet/crate/chest,
 /obj/item/neuFarm/seed/wheat,
 /obj/item/neuFarm/seed/apple,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
-/obj/item/neuFarm/seed/pipeweed,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
+/obj/item/neuFarm/seed/westleach,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield)
 "vga" = (

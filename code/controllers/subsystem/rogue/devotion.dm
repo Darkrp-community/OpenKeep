@@ -29,7 +29,16 @@
 	else
 		return FALSE
 
-/datum/devotion/cleric_holder/proc/update_devotion(dev_amt, prog_amt)
+// This is a proc to deduct a devotion cost out of spells when cast.
+// We do this to avoid using negative values, which BYOND calculates in a really stupid way if we do the math wrong.
+/datum/devotion/cleric_holder/proc/consume_devotion(amt as num)
+	devotion -= amt
+	var/mob/living/carbon/human/C = holder_mob
+	var/amt2raise = C.STAINT*2
+	progression += amt2raise
+
+// This spell is used to ADD devotion to the player, through prayer or job initialization.
+/datum/devotion/cleric_holder/proc/update_devotion(dev_amt as num, prog_amt)
 	var/datum/patron/P = patron
 	devotion += dev_amt
 	//Max devotion limit
@@ -132,20 +141,20 @@
 // Generation Procs
 
 /mob/living/carbon/human/proc/clericpray()
-	set name = "Give Prayer"
+	set name = "Start praying"
 	set category = "Cleric"
 
 	var/datum/devotion/cleric_holder/C = src.cleric
 	var/prayersesh = 0
 
-	visible_message("[src] kneels their head in prayer to the Gods.", "I kneel my head in prayer to [patron.name]")
+	visible_message("[src] kneels their head in prayer.", "I kneel my head in prayer to [patron.name]")
 	for(var/i in 1 to 20)
 		if(do_after(src, 30))
 			if(C.devotion >= C.max_devotion)
 				to_chat(src, "<font color='red'>I have reached the limit of my devotion...</font>")
 				break
-			C.update_devotion(2, 2)
-			prayersesh += 2
+			C.update_devotion(5, 5)
+			prayersesh += 5
 		else
 			visible_message("[src] concludes their prayer.", "I conclude my prayer.")
 			to_chat(src, "<font color='purple'>I gained [prayersesh] devotion!</font>")

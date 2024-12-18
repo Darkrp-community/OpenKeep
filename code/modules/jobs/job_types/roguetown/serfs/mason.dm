@@ -1,7 +1,7 @@
 /datum/job/roguetown/mason
 	title = "Mason"
 	flag = MASON
-	department_flag = SERFS
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -11,6 +11,7 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
+		"Aasimar"
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
@@ -35,8 +36,8 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, rand(1,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, rand(1,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/crafting, pick(2,2,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, pick(2,2,3), TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/masonry, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
@@ -48,18 +49,25 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/brimmed
+	if(prob(50))
+		head = /obj/item/clothing/head/roguetown/headband/red
 	neck = /obj/item/clothing/neck/roguetown/coif
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
+	if(prob(50))
+		cloak = /obj/item/clothing/cloak/apron/brown
 	pants = /obj/item/clothing/under/roguetown/trou
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/green//gave them the guild tunic they have on the map, blacksmiths get them too
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	belt = /obj/item/storage/belt/rogue/leather
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/red
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots//shortboots for worker roles
+	belt = /obj/item/storage/belt/rogue/leather/mason
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
+	r_hand = /obj/item/rogueweapon/chisel
 	id = /obj/item/clothing/ring/silver/makers_guild
-	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern, /obj/item/rogueweapon/huntingknife/villager)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/rogueweapon/knife/villager = 1, /obj/item/rogueweapon/handsaw=1)
 
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)

@@ -104,6 +104,12 @@
 	blend_mode = BLEND_MULTIPLY
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
+/atom/movable/screen/plane_master/lighting/Initialize()
+	. = ..()
+	filters += filter(type="alpha", render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE)
+	filters += filter(type="alpha", render_source = EMISSIVE_UNBLOCKABLE_RENDER_TARGET, flags = MASK_INVERSE)
+	filters += filter(type="alpha", render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE)
+
 /atom/movable/screen/plane_master/parallax
 	name = "parallax plane master"
 //	screen_loc = "CENTER-2"
@@ -188,3 +194,39 @@
 	render_target = FIELD_OF_VISION_BLOCKER_RENDER_TARGET
 	mouse_opacity = 0
 	appearance_flags = PLANE_MASTER
+
+/atom/movable/screen/plane_master/o_light_visual
+	name = "overlight light visual plane master"
+	layer = O_LIGHTING_VISUAL_LAYER
+	plane = O_LIGHTING_VISUAL_PLANE
+	render_target = O_LIGHTING_VISUAL_RENDER_TARGET
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	blend_mode = BLEND_MULTIPLY
+
+
+//Contains all weather overlays
+/atom/movable/screen/plane_master/weather_overlay
+	name = "weather overlay master"
+	plane = WEATHER_OVERLAY_PLANE
+	layer = WEATHER_OVERLAY_LAYER
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	render_target = WEATHER_RENDER_TARGET
+	blend_mode = BLEND_MULTIPLY
+	//render_relay_plane = null //Used as alpha filter for weather_effect fullscreen
+
+//Contains the weather effect itself
+/atom/movable/screen/plane_master/weather_effect
+	name = "weather effect plane master"
+	plane = WEATHER_EFFECT_PLANE
+	blend_mode = BLEND_OVERLAY
+	screen_loc = "CENTER-2, CENTER"
+	//render_relay_plane = RENDER_PLANE_GAME
+
+/atom/movable/screen/plane_master/weather_effect/Initialize()
+	. = ..()
+	//filters += filter(type="alpha", render_source=WEATHER_RENDER_TARGET)
+	SSoutdoor_effects.weather_planes_need_vis |= src
+
+/atom/movable/screen/plane_master/weather_effect/Destroy()
+	. = ..()
+	SSoutdoor_effects.weather_planes_need_vis -= src

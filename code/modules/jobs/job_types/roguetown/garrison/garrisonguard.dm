@@ -12,6 +12,7 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
+		"Aasimar"
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
@@ -88,6 +89,16 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
+	//Gets a steel cuirass over chain, a gorget, and a nasal helmet
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	head = /obj/item/clothing/head/roguetown/helmet/nasal
+	backr = /obj/item/rogueweapon/shield/wood
+	beltr = /obj/item/rogueweapon/sword/scimitar/messer
+	beltl = /obj/item/rogueweapon/mace
+	backpack_contents = list(/obj/item/keyring/guard)
+
 	if(H.dna?.species && H.dna.species?.id == "abyssariad") // (non-patterned) Islander equipment system
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/nanbando
@@ -138,6 +149,13 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
 	..()
+	//Gets chain over a gambeson, a gorget, and a kettle helmet
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	head = /obj/item/clothing/head/roguetown/helmet/kettle
+	beltr = /obj/item/rogueweapon/sword/scimitar/messer
+	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.dna.species?.id == "abyssariad") //I gotta try making the abyssariads guards be forced to have surnames.
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
@@ -179,10 +197,12 @@ Design philosphy:
 	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for either a spear or a bardiche
 	switch(weapontype)
 		if("Spear")
+			backr = /obj/item/rogueweapon/polearm/spear
 			backr = /obj/item/rogueweapon/spear
 			if(H.dna.species?.id == "abyssariad")
 				backr = /obj/item/rogueweapon/spear/yari
 		if("Bardiche")
+			backr = /obj/item/rogueweapon/polearm/halberd/bardiche
 			backr = /obj/item/rogueweapon/halberd/bardiche
 			if(H.dna.species?.id == "abyssariad")
 				backr = /obj/item/rogueweapon/halberd/bardiche/naginata
@@ -196,6 +216,17 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
+	//Gets a padded gambeson, leather bracers, and a chain coif
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	head = /obj/item/clothing/head/roguetown/roguehood/red
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	beltr = /obj/item/quiver/arrows
+	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
+	backpack_contents = list(/obj/item/keyring/guard)
+
 	if(H.dna.species?.id == "abyssariad")
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
@@ -251,6 +282,14 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
+	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	beltr = /obj/item/rogueweapon/sword/rapier
+	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
+	head = /obj/item/clothing/head/roguetown/roguehood/red
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.dna.species?.id == "abyssariad")
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat

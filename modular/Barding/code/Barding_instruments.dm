@@ -31,6 +31,7 @@
 	if(playing && user.get_active_held_item() != src)
 		playing = FALSE
 		soundloop.stop()
+		user.remove_status_effect(/datum/status_effect/buff/playing_music)
 	// Prevents an exploit
 	for(var/mob/living/carbon/L in viewers(7))
 		var/mob/living/carbon/buffed = L
@@ -54,13 +55,14 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogue/instrument/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	. = ..()
 
-/obj/item/rogue/instrument/dropped()
+/obj/item/rogue/instrument/dropped(mob/living/user, silent)
 	..()
 	if(soundloop)
 		soundloop.stop()
+		user.remove_status_effect(/datum/status_effect/buff/playing_music)
 	// Prevents an exploit
 	for(var/mob/living/carbon/L in viewers(7))
 		var/mob/living/carbon/buffed = L
@@ -82,6 +84,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(!playing)
+		var/note_color = "#7f7f7f" // uses MMO item rarity color grading
 		var/curfile = input(user, "Which song do you want to play?", "Pick a song", name) as null|anything in song_list
 		if(!user)
 			return
@@ -92,14 +95,25 @@
 					stressevent = /datum/stressevent/music
 				if(2)
 					stressevent = /datum/stressevent/music/two
+					note_color = "#ffffff"
 				if(3)
 					stressevent = /datum/stressevent/music/three
+					note_color = "#1eff00"
 				if(4)
 					stressevent = /datum/stressevent/music/four
+					note_color = "#0070dd"
 				if(5)
 					stressevent = /datum/stressevent/music/five
+					note_color = "#a335ee"
 				if(6)
 					stressevent = /datum/stressevent/music/six
+					note_color = "#ff8000"
+
+		if(playing)
+			playing = FALSE
+			soundloop.stop()
+			user.remove_status_effect(/datum/status_effect/buff/playing_music)
+			return
 
 		if(!(src in user.held_items))
 			return
@@ -107,6 +121,7 @@
 		if(user.get_inactive_held_item())
 			playing = FALSE
 			soundloop.stop()
+			user.remove_status_effect(/datum/status_effect/buff/playing_music)
 			if(dynamic_icon)
 				lower_from_mouth()
 				update_icon()
@@ -118,6 +133,7 @@
 			soundloop.mid_sounds = list(curfile)
 			soundloop.cursound = null
 			soundloop.start()
+			user.apply_status_effect(/datum/status_effect/buff/playing_music, stressevent, note_color)
 			if(dynamic_icon)
 				lift_to_mouth()
 				update_icon()
@@ -128,9 +144,9 @@
 						step_towards(I, user)
 						sleep(2)
 						step_towards(I, user)
-			for(var/mob/living/carbon/L in viewers(7)) // Fix: Apply the music buff only if you didn't cancel song selection.
-				if(L.can_hear()) // Only people who can hear music will get buffed
-					L.add_stress(stressevent)
+//			for(var/mob/living/carbon/L in viewers(7)) // Fix: Apply the music buff only if you didn't cancel song selection.
+//				if(L.can_hear()) // Only people who can hear music will get buffed
+//					L.add_stress(stressevent)
 
 		// BARDIC BUFFS CODE START //
 
@@ -212,6 +228,7 @@
 	else
 		playing = FALSE
 		soundloop.stop()
+		user.remove_status_effect(/datum/status_effect/buff/playing_music)
 		if(dynamic_icon)
 			lower_from_mouth()
 			update_icon()

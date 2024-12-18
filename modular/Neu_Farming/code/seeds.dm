@@ -78,7 +78,7 @@
 	seed_identity = "apple seeds"
 	plant_def_type = /datum/plant_def/apple
 
-/obj/item/neuFarm/seed/pipeweed
+/obj/item/neuFarm/seed/westleach
 	seed_identity = "westleach leaf seeds"
 	plant_def_type = /datum/plant_def/pipeweed
 

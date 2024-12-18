@@ -16,7 +16,7 @@
 /datum/antagonist/assassin/on_gain()
 	owner.current.cmode_music = list('sound/music/combat_assassin.ogg', 'sound/music/combat_assassin2.ogg')
 	if(owner.current.job != "Drifter") // This code only runs if the assassin is assigned midround and is not a drifter.
-		owner.current.patron = GLOB.patronlist[/datum/patron/inhumen/graggar]
+		owner.current.set_patron(/datum/patron/inhumen/graggar)
 		ADD_TRAIT(owner.current, TRAIT_ASSASSIN, TRAIT_GENERIC)
 		ADD_TRAIT(owner.current, TRAIT_NOSTINK, TRAIT_GENERIC)
 		ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
@@ -28,7 +28,7 @@
 			owner.current.mind.adjust_skillrank(/datum/skill/combat/knives, 4 - old_knife_skill, TRUE)
 		if(old_sneak_skill < 5) // If the assassined player has less than 5 sneak skill, get them to 5.
 			owner.current.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5 - old_sneak_skill, TRUE)
-		var/yea = /obj/item/rogueweapon/huntingknife/idagger/steel/profane
+		var/yea = /obj/item/rogueweapon/knife/dagger/steel/profane
 		owner.special_items["Profane Dagger"] = yea // Assigned assassins can get their special dagger from right clicking certain objects.
 		to_chat(owner.current, "<span class='danger'>I've blended in well up until this point, but it's time for the Hunted of Graggar to perish. I must get my dagger from where I hid it.</span>")
 	return ..()
@@ -56,7 +56,7 @@
 /datum/antagonist/assassin/roundend_report()
 	var/traitorwin = FALSE
 	for(var/obj/item/I in owner.current) // Check to see if the Assassin has their profane dagger on them, and then check the souls contained therein.
-		if(istype(I, /obj/item/rogueweapon/huntingknife/idagger/steel/profane))
+		if(istype(I, /obj/item/rogueweapon/knife/dagger/steel/profane))
 			for(var/mob/dead/observer/profane/A in I) // Each trapped soul is announced to the server
 				if(A)
 					to_chat(world, "The [A.name] has been stolen for Graggar by [owner.name].<span class='greentext'>DAMNATION!</span>")

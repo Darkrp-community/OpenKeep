@@ -188,19 +188,6 @@
 		return
 	if(Split())
 		return
-	//We check what loot we should drop.
-	var/last_legion = TRUE
-	for(var/mob/living/simple_animal/hostile/megafauna/legion/other in GLOB.mob_living_list)
-		if(other != src)
-			last_legion = FALSE
-			break
-	if(last_legion)
-		loot = list(/obj/item/staff/storm)
-		elimination = FALSE
-	else if(prob(20)) //20% chance for sick lootz.
-		loot = list(/obj/structure/closet/crate/necropolis/tendril)
-		if(!true_spawn)
-			loot = null
 	return ..()
 
 ///Splits legion into smaller skulls.
@@ -245,65 +232,6 @@
 
 //Loot
 
-/obj/item/staff/storm
-	name = "staff of storms"
-	desc = ""
-	icon_state = "staffofstorms"
-	item_state = "staffofstorms"
-	icon = 'icons/obj/guns/magic.dmi'
-	slot_flags = ITEM_SLOT_BACK
-	w_class = WEIGHT_CLASS_BULKY
-	force = 25
-	damtype = BURN
-	hitsound = 'sound/blank.ogg'
-	var/storm_type = /datum/weather/ash_storm
-	var/storm_cooldown = 0
-	var/static/list/excluded_areas = list()
-
-/obj/item/staff/storm/attack_self(mob/user)
-	if(storm_cooldown > world.time)
-		to_chat(user, "<span class='warning'>The staff is still recharging!</span>")
-		return
-
-	var/area/user_area = get_area(user)
-	var/turf/user_turf = get_turf(user)
-	if(!user_area || !user_turf || (user_area.type in excluded_areas))
-		to_chat(user, "<span class='warning'>Something is preventing you from using the staff here.</span>")
-		return
-	var/datum/weather/A
-	for(var/V in SSweather.curweathers)
-		var/datum/weather/W = V
-		if((user_turf.z in W.impacted_z_levels) && W.area_type == user_area.type)
-			A = W
-			break
-
-	if(A)
-		if(A.stage != END_STAGE)
-			if(A.stage == WIND_DOWN_STAGE)
-				to_chat(user, "<span class='warning'>The storm is already ending! It would be a waste to use the staff now.</span>")
-				return
-			user.visible_message("<span class='warning'>[user] holds [src] skywards as an orange beam travels into the sky!</span>", \
-			"<span class='notice'>I hold [src] skyward, dispelling the storm!</span>")
-			playsound(user, 'sound/blank.ogg', 200, FALSE)
-			A.wind_down()
-			log_game("[user] ([key_name(user)]) has dispelled a storm at [AREACOORD(user_turf)]")
-			return
-	else
-		A = new storm_type(list(user_turf.z))
-		A.name = "staff storm"
-		log_game("[user] ([key_name(user)]) has summoned [A] at [AREACOORD(user_turf)]")
-		if (is_special_character(user))
-			message_admins("[A] has been summoned in [ADMIN_VERBOSEJMP(user_turf)] by [ADMIN_LOOKUPFLW(user)], a non-antagonist")
-		A.area_type = user_area.type
-		A.telegraph_duration = 100
-		A.end_duration = 100
-
-	user.visible_message("<span class='warning'>[user] holds [src] skywards as red lightning crackles into the sky!</span>", \
-	"<span class='notice'>I hold [src] skyward, calling down a terrible storm!</span>")
-	playsound(user, 'sound/blank.ogg', 200, FALSE)
-	A.telegraph()
-	storm_cooldown = world.time + 200
-
 ///A basic turret that shoots at nearby mobs. Intended to be used for the legion megafauna.
 /obj/structure/legionturret
 	name = "\improper Legion sentinel"
@@ -311,7 +239,7 @@
 	icon = 'icons/mob/lavaland/lavaland_monsters.dmi'
 	icon_state = "legion_turret"
 	light_power = 0.5
-	light_range = 2
+	light_outer_range =  2
 	max_integrity = 80
 	luminosity = 6
 	anchored = TRUE

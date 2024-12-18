@@ -24,7 +24,7 @@
 	beltl = /obj/item/scomstone
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/black
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
-	beltl = /obj/item/rogueweapon/sword/long/marlin
+	beltl = /obj/item/rogueweapon/sword/long/tachi
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)

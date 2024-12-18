@@ -44,7 +44,7 @@
 
 /obj/item/grown/log/tree/small
 	name = "small log"
-	desc = "A smaller log that came from a larger log. Suitable for building."
+	desc = "A smaller log that came from a larger log. With a saw, you could turn it into wooden planks."
 	icon_state = "logsmall"
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30
@@ -54,6 +54,37 @@
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = /obj/item/rogueore/coal
+
+/obj/item/grown/log/tree/small/attackby(obj/item/I, mob/living/user, params)		// remake to use /datum/intent/axe/cut or TO DO never do maybe
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(I, /obj/item/rogueweapon/axe))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 10 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/polearm/halberd/bardiche))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 10 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/handsaw))
+		playsound(get_turf(src.loc), 'sound/items/sawing.ogg', 100)
+		if(do_after(user, 3 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	..()
 
 /obj/item/grown/log/tree/stick
 	seed = null
@@ -81,6 +112,8 @@
 		if(prob(prob2break))
 			playsound(src,'sound/items/seedextract.ogg', 100, FALSE)
 			qdel(src)
+			if (L.alpha == 0 && L.rogue_sneaking) // not anymore you're not
+				L.update_sneak_invis(TRUE)
 			L.consider_ambush()
 
 /obj/item/grown/log/tree/stick/Initialize()
@@ -124,17 +157,22 @@
 
 /obj/item/grown/log/tree/stake
 	name = "stake"
-	desc = "A sharpened piece of wood, fantastic for piercing"
+	desc = "A sharpened piece of wood, fantastic for piercing."
 	icon_state = "stake"
-	force = 2
-	throwforce = 2
-	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
+	force = 4
+	throwforce = 4
+	thrown_bclass = BCLASS_STAB
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/thrust/pick)
 	firefuel = 1 MINUTES
 	blade_dulling = 0
 	max_integrity = 20
+	associated_skill = /datum/skill/combat/knives
+	wdefense = 0
 	static_debris = null
 	obj_flags = null
+	wlength = WLENGTH_SHORT
 	w_class = WEIGHT_CLASS_SMALL
+	wbalance = 1
 	twohands_required = FALSE
 	gripped_intents = null
 	slot_flags = ITEM_SLOT_MOUTH|ITEM_SLOT_HIP

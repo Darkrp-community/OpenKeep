@@ -21,7 +21,7 @@
 	invocation = "The Treefather commands thee, be fruitful!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -15
+	devotion_cost = 15
 
 /obj/effect/proc_holder/spell/targeted/blesscrop/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -77,7 +77,7 @@
 	range = 5
 	overlay_state = "tamebeast"
 	releasedrain = 30
-	charge_max = 30 SECONDS
+	charge_max = 6 MINUTES
 	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
 	max_targets = 0
 	cast_without_targets = TRUE
@@ -86,7 +86,7 @@
 	invocation = "Be still and calm, brotherbeast."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -60
+	devotion_cost = 60
 
 /obj/effect/proc_holder/spell/targeted/beasttame/cast(list/targets,mob/user = usr)
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
@@ -118,19 +118,29 @@
 
 /obj/effect/proc_holder/spell/targeted/conjure_kneestingers/cast(list/targets,mob/user = usr)
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
+	var/turf/T = user.loc
+	var/already_grown = locate(/obj/structure/kneestingers) in (T)
+	var/area/area = get_area(T)
+
+	if(!area.outdoors)
+		to_chat(user, span_notice("The open air is more suited for Dendors miracles..."))
+		return ..()
+
+	if(already_grown)
+		to_chat(user, span_notice("There are too many mycelia here already..."))
+		return ..()
+
 	sleep(10)
 	playsound(get_turf(user), 'sound/foley/gross.ogg', 90, TRUE)
-	var/turf/T = user.loc
 	new /obj/structure/kneestingers/decaying(T)
 
-/* The old more powerful version that spwans 4 kneestingers instead of one
+/* The old terrible version made by YuiY1997 that spwans 4 kneestingers. Don't use.
 /obj/effect/proc_holder/spell/targeted/conjure_kneestingers/cast(list/targets,mob/user = usr)
 	var/turf/T = user.loc
 	for(var/X in GLOB.cardinals)
 		var/turf/TT = get_step(T, X)
 		if(!isclosedturf(TT) && !locate(/obj/structure/kneestingers) in TT)
-			if(prob(50))	// added this but meh, not good
-				new /obj/structure/kneestingers(TT)
+			new /obj/structure/kneestingers(TT)
 	return TRUE
 */
 

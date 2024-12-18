@@ -61,7 +61,7 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/HU = user
 
-		if((HU.job != "King") && (HU.job != "Queen"))
+		if((HU.job != "King") && (HU.job != "Consort") && (HU.job != "Hand"))
 			to_chat(user, "<span class='danger'>The rod doesn't obey me.</span>")
 			return
 
@@ -73,6 +73,8 @@
 
 			if(H.anti_magic_check())
 				return
+
+			if(!(H.job in GLOB.rod_jobs))
 
 			if(!(H in SStreasury.bank_accounts))
 				return

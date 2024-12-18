@@ -26,7 +26,6 @@
 
 	f_title = "Soilbride"
 	outfit = /datum/outfit/job/roguetown/farmer
-	display_order = 24
 	give_bank_account = 20
 	min_pq = -100
 	selection_color = "#553e01"
@@ -66,7 +65,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
-		beltl = /obj/item/rogueweapon/huntingknife/villager
+		beltl = /obj/item/rogueweapon/knife/villager
 	else
 		head = /obj/item/clothing/head/roguetown/armingcap
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -74,6 +73,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
+		beltl = /obj/item/rogueweapon/knife/villager
 		beltl = /obj/item/rogueweapon/huntingknife/villager
 	if(H.dna?.species)
 		if(H.dna.species?.id == "abyssariad")

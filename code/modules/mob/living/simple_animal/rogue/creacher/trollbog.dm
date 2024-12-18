@@ -1,10 +1,11 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
 	name = "bog troll"
-	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm; nowadays they are sometimes found in the company of orcs."
-	icon_state = "Troll"
+	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm."
+	icon_state = "Trolls"
 	icon_living = "Troll"
 	icon_dead = "Trolld"
+	pixel_x = -16
 
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_HEAVY
@@ -15,6 +16,7 @@
 	verb_exclaim = "roars"
 	verb_yell = "roars"
 
+	wander = FALSE		// bog trolls are ambush predators
 	turns_per_move = 4
 	see_in_dark = 10
 	move_to_delay = 7
@@ -22,11 +24,14 @@
 	aggro_vision_range = 6
 
 	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
-						/obj/item/natural/hide = 1)
+						/obj/item/natural/hide = 1,
+						/obj/item/natural/trollheart = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
-						/obj/item/natural/hide = 2)
+						/obj/item/natural/hide = 3,
+						/obj/item/natural/trollheart = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
-						/obj/item/natural/hide = 3)
+						/obj/item/natural/hide = 4,
+						/obj/item/natural/trollheart = 1)
 
 	health = BOGTROLL_HEALTH
 	maxHealth = BOGTROLL_HEALTH
@@ -34,16 +39,16 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/headbutt, /datum/intent/simple/bigbite)
+	base_intents = list(/datum/intent/simple/trollsmash, /datum/intent/simple/trollrip)
 	attack_sound = list('sound/combat/wooshes/blunt/wooshhuge (1).ogg','sound/combat/wooshes/blunt/wooshhuge (2).ogg','sound/combat/wooshes/blunt/wooshhuge (3).ogg')
 	melee_damage_lower = 30
 	melee_damage_upper = 50
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 
-	STACON = 15
+	STACON = 16
 	STASTR = 16
 	STASPD = 3
-	STAEND = 14
+	STAEND = 15
 
 	retreat_distance = 0
 	minimum_distance = 0
@@ -55,11 +60,16 @@
 	food_max = 250
 	food = 0
 
-	dodgetime = 15
+	dodgetime = 5 SECONDS
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/troll // Placeholder until Troll remains are sprited.
 	body_eater = TRUE
+
+	ai_controller = /datum/ai_controller/bog_troll
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
 	var/critvuln = FALSE
 
 
@@ -87,11 +97,16 @@
 			return pick('sound/vo/mobs/troll/cidle1.ogg','sound/vo/mobs/troll/aggro2.ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/taunted(mob/user)
+//	update_name()	didnt work for some reason
 	emote("aggro")
 	Retaliate()
 	GiveTarget(user)
 	return
-
+/*
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/proc/update_name(mob/living)
+	name = "bog troll"
+	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm."
+*/
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Life()
 	..()
 	if(pulledby)
@@ -100,15 +115,21 @@
 	if(fire_stacks <= 0)
 		adjustHealth(-rand(40,50))
 
-
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/LoseTarget()
 	..()
 	if(health > 0)
-		icon_state = "Trolls"
+		icon_state = "Trollso"
+
+/mob/living/simple_animal/hostile/retaliate/rogue/trollbog/Moved()
+	. = ..()
+	if(!icon_state == "Troll")
+		icon_state = "Troll"
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/GiveTarget()
 	..()
-	icon_state = "Troll"
+//	update_name()
+	icon_state = "Trolla"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/trollbog/simple_limb_hit(zone)
 	if(!zone)

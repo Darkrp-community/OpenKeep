@@ -44,7 +44,7 @@
 		set_light(0)
 		return
 	w_class = WEIGHT_CLASS_GIGANTIC
-	set_light(2, 2, "#9C37B5")
+	set_light(2, 2, 2, l_color =  "#9C37B5")
 
 /obj/item/roguemachine/drugtrade/Initialize()
 	. = ..()
@@ -79,7 +79,7 @@
 			var/obj/structure/roguemachine/drug_chute/E = locate() in T
 			if(!E)
 				continue
-			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust_purest, /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed_dried, /obj/item/reagent_containers/food/snacks/produce/rogue/dry_pipeweed)
+			accepted_items = list(/obj/item/reagent_containers/powder/spice, /obj/item/reagent_containers/powder/ozium, /obj/item/reagent_containers/powder/moondust, /obj/item/reagent_containers/powder/moondust_purest, /obj/item/reagent_containers/food/snacks/produce/swampweed_dried, /obj/item/reagent_containers/food/snacks/produce/dry_westleach)
 			for(var/obj/I in T)
 				if(I.anchored)
 					continue
@@ -87,7 +87,7 @@
 					continue
 				if(!(I.type in accepted_items))
 					continue
-				var/prize = I.get_real_price() * 5 // Increase price by 500% Keep in mind drug sell prices are pretty cheap to encourage more trade with the baths, also drugs are expensive.
+				var/prize = I.get_real_price() * 2 // Increase price by 500% Keep in mind drug sell prices are pretty cheap to encourage more trade with the baths, also drugs are expensive.
 				if(prize >= 1)
 					play_sound=TRUE
 					budgie += prize
@@ -131,7 +131,7 @@
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, "#8f06b5")
+	set_light(1, 1, 1, l_color =  "#8f06b5")
 	add_overlay(mutable_appearance(icon, "vendor-merch"))
 
 
@@ -253,8 +253,8 @@
 		contents += "<center>[current_cat]<BR></center>"
 		contents += "<center><a href='?src=[REF(src)];changecat=1'>\[RETURN\]</a><BR><BR></center>"
 		var/list/pax = list()
-		for(var/pack in SSshuttle.supply_packs)
-			var/datum/supply_pack/PA = SSshuttle.supply_packs[pack]
+		for(var/pack in SSmerchant.supply_packs)
+			var/datum/supply_pack/PA = SSmerchant.supply_packs[pack]
 			if(PA.group == current_cat)
 				pax += PA
 		for(var/datum/supply_pack/PA in sortList(pax))

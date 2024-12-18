@@ -1,7 +1,7 @@
 /datum/job/roguetown/royalguard
 	title = "Royal Guard"
-	flag = GUARDSMAN
-	department_flag = GARRISON
+	flag = ROYAL_GUARD
+	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -18,7 +18,7 @@
 		"Ogrun"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
-	tutorial = "You're an elite member of the Garrison, awarded with knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
+	tutorial = "You're the rulers hand-picked guard, awarded with knighthood for your prowess and loyalty. Your only oath is a personal one to your ruler, no one else may command you! Serve them until your dying breath."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
@@ -28,7 +28,7 @@
 	min_pq = 2
 	selection_color = "#920909"
 
-	cmode_music = 'sound/music/combat_rg.ogg'
+	cmode_music = 'sound/music/combat_old.ogg'
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -75,6 +75,41 @@
 
 /datum/outfit/job/roguetown/royalguard/pre_equip(mob/living/carbon/human/H)
 	..()
+	pants = /obj/item/clothing/under/roguetown/chainlegs
+	cloak = /obj/item/clothing/cloak/tabard/knight/guard
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
+	beltl = /obj/item/keyring/mguard
+	belt = /obj/item/storage/belt/rogue/leather
+	beltr = /obj/item/rogueweapon/sword/arming
+	backr = /obj/item/storage/backpack/rogue/satchel
+	backl = /obj/item/rogueweapon/shield/tower/metal
+	r_hand = /obj/item/rogueweapon/polearm/halberd
+	if(prob(30))
+		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
+	else
+		head = /obj/item/clothing/head/roguetown/helmet/sallet
+
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.change_stat("strength", 2)
+		H.change_stat("perception", 2)
+		H.change_stat("endurance", 2)
+		H.change_stat("constitution", 1)
 	if(H.dna?.species && H.dna.species?.id == "abyssariad")
 		to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened Zamurai. I hold the blood oath of my ancestors, bound to the throne - I serve the ruler's clan with utmost devotion, let death find me before dishonoring my pact.</span>"))
 		pants = /obj/item/clothing/under/roguetown/chainlegs/sendan

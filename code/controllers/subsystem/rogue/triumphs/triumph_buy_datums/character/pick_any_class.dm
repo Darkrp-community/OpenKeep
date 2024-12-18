@@ -56,6 +56,14 @@
 			continue
 		if(CTAG_MERCENARY in CHECKS.category_tags)
 			continue
+		if(CTAG_TOWNER in CHECKS.category_tags)
+			continue
+		if(CTAG_GARRISON in CHECKS.category_tags)
+			continue
+		if(CTAG_ADEPT in CHECKS.category_tags)
+			continue
+		if(CTAG_CONSORT in CHECKS.category_tags)
+			continue
 		possible_classes += CHECKS
 
 	var/datum/advclass/C = input(H.client, "What is my class?", "Adventure") as null|anything in possible_classes

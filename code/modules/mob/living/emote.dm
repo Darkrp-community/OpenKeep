@@ -35,7 +35,7 @@
 			return TRUE
 		to_chat(src, "<span class='danger'>I need a nearby Pantheon Cross for my prayers to be heard...</span>")
 		return FALSE
-	
+
 	if(istype(src.patron, /datum/patron/inhumen))
 		var/found = FALSE
 		for(var/obj/structure/fluff/psycross/P in view(7, get_turf(L)) )
@@ -51,7 +51,7 @@
 			return TRUE
 		to_chat(src, "<span class='danger'>I can not talk to Him... I need His cross on my neck!</span>")
 		return FALSE
-	
+
 	return TRUE // If you have any different god then I guess just pray whereever
 
 /datum/emote/living/pray/run_emote(mob/user, params, type_override, intentional)
@@ -408,6 +408,23 @@
 	message = "dances."
 	restraint_check = TRUE
 	emote_type = EMOTE_VISIBLE
+	var/repeats
+/datum/emote/living/dance/run_emote(mob/living/user, params, type_override, intentional, targetted)
+	. = ..()
+	if(prob(50))
+		danceanim(user)
+	else
+		dance_rotate(user, CALLBACK(user, TYPE_PROC_REF(/mob, dance_flip)))
+/datum/emote/living/dance/proc/danceanim(mob/living/user, repeats = 20)
+	var/start_y = user.pixel_y
+	var/offset = 4  // Height of the bop
+	ping_sound_through_walls(user.loc)
+	for (var/i = 1 to repeats)
+		user.pixel_y = start_y + offset  // Move up
+		sleep(2)
+		user.pixel_y = start_y  // Move down
+		sleep(2)
+	user.pixel_y = start_y  // Ensure it resets to the original position
 /mob/living/carbon/human/verb/emote_dance()
 	set name = "Dance"
 	set category = "Emotes"
@@ -425,10 +442,6 @@
 	key = ""
 	key_third_person = ""
 	message = "gasps out their last breath."
-	message_robot = "shudders violently for a moment before falling still, its eyes slowly darkening."
-	message_AI = "screeches, its screen flickering as its systems slowly halt."
-	message_alien = "lets out a waning guttural screech, and collapses onto the floor..."
-	message_larva = "lets out a sickly hiss of air and falls limply to the floor..."
 	message_monkey = "lets out a faint chimper as it collapses and stops moving..."
 	message_simple =  "falls limp."
 	stat_allowed = UNCONSCIOUS

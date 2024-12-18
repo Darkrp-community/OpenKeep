@@ -120,13 +120,13 @@
 	H.mind.add_antag_datum(new_antag)
 
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight/death
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/shoes/roguetown/boots/armor/blkknight/death
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/gloves/roguetown/plate/blk/death
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/under/roguetown/platelegs/blk/death
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK

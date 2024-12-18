@@ -77,6 +77,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		reagent_flags = TRANSPARENT
 		reagents.flags = reagent_flags
 		spillable = FALSE
+		GLOB.weather_act_upon_list -= src
 		if(!fancy)
 			desc = "A bottle with a cork."
 	else
@@ -84,6 +85,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		reagents.flags = reagent_flags
 		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
 		spillable = TRUE
+		GLOB.weather_act_upon_list |= src
 		if(!fancy)
 			desc = "An open bottle, hopefully a cork is close by."
 	update_icon()
@@ -338,11 +340,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	name = "horrifica mentata extract"
 	desc = "Buds from exotic flowers, distilled and left to settle for a decade. This is the result. The unpleasant effects on the drinker are best countered with alcohol the label says."
 	spawned_disease = /datum/disease/anxiety
-
-/obj/item/reagent_containers/glass/bottle/beesease
-	name = "Beesease culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/beesease
 
 /obj/item/reagent_containers/glass/bottle/fluspanish
 	name = "Spanish flu culture bottle"

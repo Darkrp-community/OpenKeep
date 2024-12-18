@@ -1,7 +1,7 @@
 
 /datum/job/roguetown/vagrant
 	title = "Beggar"
-	flag = APPRENTICE
+	flag = BEGGAR
 	department_flag = PEASANTS
 	faction = "Station"
 	total_positions = 15
@@ -65,8 +65,12 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, pick(1,2,3), TRUE) // Street-fu
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, pick(1,2,3), TRUE)
 		H.STALUC = rand(1, 20)
-	if(prob(5))
+	if(prob(25))
+		r_hand = /obj/item/natural/stone
+	if(prob(10))
 		r_hand = /obj/item/rogueweapon/mace/woodclub
+	if(prob(10))
+		r_hand = /obj/item/rogueweapon/knife/stone
 	H.change_stat("intelligence", -3)
 	H.change_stat("constitution", -2)
 	H.change_stat("endurance", -2)

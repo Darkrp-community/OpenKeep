@@ -54,12 +54,11 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 2,
-						/obj/item/alch/sinew = 2,
+						/obj/item/natural/head/saiga = 1,
 						/obj/item/alch/bone = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 4,
-						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1,
 						/obj/item/natural/head/saiga = 1)
 
@@ -67,7 +66,7 @@
 	maxHealth = FEMALE_MOOBEAST_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
 					/obj/item/reagent_containers/food/snacks/produce/oat,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 					/obj/item/reagent_containers/food/snacks/produce/apple)
 	tame_chance = 25
 	bonus_tame_chance = 15
@@ -97,6 +96,7 @@
 	gender = PLURAL
 	icon_state = "skele"
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
+	color = "#d6b3a5"
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/get_sound(input)
 	switch(input)
@@ -172,19 +172,19 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 3,
-						/obj/item/alch/sinew = 2,
+						/obj/item/natural/head/saiga = 1,
 						/obj/item/alch/bone = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 3,
 						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 5,
-						/obj/item/alch/sinew = 2,
+						/obj/item/natural/head/saiga = 1,
 						/obj/item/alch/bone = 1)
 
 	health = MALE_MOOBEAST_HEALTH
 	maxHealth = MALE_MOOBEAST_HEALTH
 	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
 					/obj/item/reagent_containers/food/snacks/produce/oat,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 					/obj/item/reagent_containers/food/snacks/produce/apple)
 	pooptype = /obj/item/natural/poo/horse
 

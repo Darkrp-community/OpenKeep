@@ -18,6 +18,7 @@
 	charge_max = 60 SECONDS
 
 /obj/effect/proc_holder/spell/invoked/bud/cast(list/targets, mob/living/user)
+	. = ..()
 	var/turf/T = get_turf(targets[1])
 	if(!isclosedturf(T))
 		new /obj/item/clothing/head/peaceflower(T)
@@ -56,14 +57,16 @@
 	..()
 	if(iscarbon(target))
 		var/mob/living/carbon/C = target
-		C.visible_message("<span class='info'>A purple haze shrouds [target]!</span>", "<span class='notice'>I feel much calmer.</span>")
+		C.visible_message("<span class='info'>A purple haze shrouds [target]!</span>", "<span class='notice'>I feel like I've been drinking incredible amounts of wine...</span>")
 		C.reagents.add_reagent(/datum/reagent/berrypoison, 3)
-		C.reagents.add_reagent(/datum/reagent/moondust, 3)
-		C.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/wine, 3)
+		C.apply_status_effect(/datum/status_effect/buff/drunk)
+		C.apply_status_effect(/datum/status_effect/debuff/pintledestruction)
+//		C.reagents.add_reagent(/datum/reagent/moondust, 3)
+//		C.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/wine, 3)
 		return
-	if(isanimal(target))
-		var/mob/living/simple_animal/L = target
-		L.adjustHealth(25)
+//	if(isanimal(target))
+//		var/mob/living/simple_animal/L = target
+//		L.adjustHealth(25)
 
 /obj/projectile/magic/eora/on_range()
 	var/turf/T = get_turf(src)
@@ -102,13 +105,13 @@
 		L.Paralyze(50)
 		if(iscarbon(L))
 			var/mob/living/carbon/C = L
-			C.reagents.add_reagent(/datum/reagent/berrypoison, 1)
-			C.reagents.add_reagent(/datum/reagent/moondust, 3)
-			C.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer/wine, 3)
-			C.visible_message("<span class='info'>A purple haze shrouds [L]!</span>", "<span class='notice'>I feel much calmer.</span>")
-		if(isanimal(L))
-			var/mob/living/simple_animal/A = L
-			A.adjustHealth(25)
+			C.reagents.add_reagent(/datum/reagent/berrypoison, 3)
+			C.apply_status_effect(/datum/status_effect/buff/drunk)
+			C.apply_status_effect(/datum/status_effect/debuff/pintledestruction)
+			C.visible_message("<span class='info'>A purple haze shrouds [L]!</span>", "<span class='notice'>I feel incredibly drunk...</span>")
+//		if(isanimal(L))
+//			var/mob/living/simple_animal/A = L
+//			A.adjustHealth(25)
 		qdel(src)
 	return ..()
 

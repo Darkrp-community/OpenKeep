@@ -44,8 +44,8 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
 	beltl = /obj/item/rogueweapon/hammer/claw
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/halberd/bardiche/woodcutter // A specialist in cutting trees would carry an impressive axe
-	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/huntingknife = 1)
+	backr = /obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter // A specialist in cutting trees would carry an impressive axe
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/rogueweapon/knife/hunting = 1)
 	H.change_stat("strength", 2)
 	H.change_stat("endurance", 2)
 	H.change_stat("intelligence", 1)

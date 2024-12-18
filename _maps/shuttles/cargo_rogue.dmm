@@ -9,7 +9,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	icon_state = "jagged"
 	},
 /obj/structure/fluff/railing/border{
@@ -23,7 +23,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	icon_state = "jagged"
 	},
 /turf/open/floor/rogue/ruinedwood{
@@ -34,12 +34,12 @@
 /obj/structure/fluff/railing/border{
 	dir = 1
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	icon_state = "jagged"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "e" = (
@@ -49,7 +49,7 @@
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
-/obj/effect/decal/cobbleedge{
+/obj/effect/decal/turfedge_neu{
 	icon_state = "jagged"
 	},
 /obj/structure/fluff/railing/border{
@@ -86,8 +86,8 @@
 	dir = 9
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "i" = (
@@ -100,8 +100,8 @@
 /area/shuttle/supply/buy)
 "k" = (
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "l" = (
@@ -109,8 +109,8 @@
 	dir = 5
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "m" = (
@@ -129,8 +129,8 @@
 	dir = 5
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "o" = (
@@ -138,9 +138,9 @@
 	dir = 1
 	},
 /obj/structure/fluff/railing/border,
-/obj/effect/decal/cobbleedge{
-	icon_state = "jagged";
-	dir = 4
+/obj/effect/decal/turfedge_neu{
+	dir = 4;
+	icon_state = "jagged"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -152,20 +152,13 @@
 	},
 /turf/open/floor/rogue/ruinedwood,
 /area/shuttle/supply/buy)
-"q" = (
-/obj/machinery/light/rogue/firebowl/standing/blue,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
-	},
-/area/shuttle/supply)
 "r" = (
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "s" = (
@@ -191,8 +184,8 @@
 	dir = 10
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "w" = (
@@ -200,8 +193,8 @@
 	dir = 6
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "x" = (
@@ -213,8 +206,8 @@
 	dir = 6
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "y" = (
@@ -222,9 +215,9 @@
 /obj/structure/fluff/railing/border{
 	dir = 8
 	},
-/obj/effect/decal/cobbleedge{
-	icon_state = "jagged";
-	dir = 1
+/obj/effect/decal/turfedge_neu{
+	dir = 1;
+	icon_state = "jagged"
 	},
 /obj/structure/fluff/railing/border{
 	dir = 10
@@ -235,9 +228,9 @@
 /area/shuttle/supply)
 "z" = (
 /obj/structure/fluff/railing/border,
-/obj/effect/decal/cobbleedge{
-	icon_state = "jagged";
-	dir = 1
+/obj/effect/decal/turfedge_neu{
+	dir = 1;
+	icon_state = "jagged"
 	},
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
@@ -245,13 +238,13 @@
 /area/shuttle/supply)
 "A" = (
 /obj/structure/fluff/railing/border,
-/obj/effect/decal/cobbleedge{
-	icon_state = "jagged";
-	dir = 1
+/obj/effect/decal/turfedge_neu{
+	dir = 1;
+	icon_state = "jagged"
 	},
 /turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
+	dir = 1;
+	icon_state = "vertw"
 	},
 /area/shuttle/supply)
 "B" = (
@@ -259,9 +252,9 @@
 /obj/structure/fluff/railing/border{
 	dir = 4
 	},
-/obj/effect/decal/cobbleedge{
-	icon_state = "jagged";
-	dir = 1
+/obj/effect/decal/turfedge_neu{
+	dir = 1;
+	icon_state = "jagged"
 	},
 /obj/structure/fluff/railing/border{
 	dir = 6
@@ -278,17 +271,6 @@
 	icon_state = "weird1"
 	},
 /area/shuttle/supply/sell)
-"D" = (
-/obj/docking_port/mobile/supply{
-	dwidth = 9;
-	height = 4;
-	width = 17
-	},
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "vertw";
-	dir = 1
-	},
-/area/shuttle/supply)
 "E" = (
 /obj/structure/fluff/buysign,
 /turf/open/floor/rogue/ruinedwood,
@@ -299,6 +281,13 @@
 	icon_state = "weird1"
 	},
 /area/shuttle/supply/sell)
+"T" = (
+/obj/docking_port/mobile,
+/turf/open/floor/rogue/ruinedwood{
+	dir = 1;
+	icon_state = "vertw"
+	},
+/area/shuttle/supply)
 
 (1,1,1) = {"
 a
@@ -364,11 +353,11 @@ j
 k
 "}
 (10,1,1) = {"
-k
+T
 k
 i
 k
-D
+k
 "}
 (11,1,1) = {"
 k
@@ -408,7 +397,7 @@ z
 (16,1,1) = {"
 e
 l
-q
+k
 w
 B
 "}

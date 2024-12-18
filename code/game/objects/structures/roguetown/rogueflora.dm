@@ -83,7 +83,7 @@
 /obj/structure/flora/roguetree/evil/Initialize()
 	. = ..()
 	icon_state = "wv[rand(1,2)]"
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 
 /obj/structure/flora/roguetree/evil/Destroy()
@@ -287,9 +287,9 @@
 
 /obj/structure/flora/roguegrass/bush/Initialize()
 	if(prob(88))
-		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue=5,
-					/obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison=3,
-					/obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed=2))
+		bushtype = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/jacksberry=5,
+					/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison=3,
+					/obj/item/reagent_containers/food/snacks/produce/westleach=2))
 	loot_replenish()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -496,7 +496,7 @@
 
 /obj/structure/flora/roguegrass/swampweed/Initialize()
 	if(prob(88))
-		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/rogue/swampweed = 1))
+		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/swampweed = 1))
 	loot_replenish3()
 	pixel_x += rand(-3,3)
 	return ..()
@@ -505,7 +505,7 @@
 	if(bushtype3)
 		looty3 += bushtype3
 	if(prob(66))
-		looty3 += /obj/item/reagent_containers/food/snacks/produce/rogue/swampweed
+		looty3 += /obj/item/reagent_containers/food/snacks/produce/swampweed
 
 
 
@@ -800,14 +800,14 @@
 		if(prob(30))
 			tobacco = TRUE
 			berries = FALSE
-			goodie = /obj/item/reagent_containers/food/snacks/produce/rogue/pipeweed
+			goodie = /obj/item/reagent_containers/food/snacks/produce/westleach
 		else
 			tobacco = FALSE
 			berries = TRUE
 			if(prob(60))
-				goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue
+				goodie = /obj/item/reagent_containers/food/snacks/produce/jacksberry
 			else
-				goodie = /obj/item/reagent_containers/food/snacks/produce/berries/rogue/poison
+				goodie = /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison
 	pixel_x += rand(-3,3)
 	if(prob(10))
 		trashie = /obj/item/natural/fibers
@@ -902,8 +902,8 @@
 	desc = "These large bushes are known to be well-liked by silkworms who make their nests in their dark depths."
 	icon = 'icons/roguetown/mob/monster/Trolls.dmi'
 	icon_state = "Trolls"
-	pixel_x = -15
-	pixel_y = -7
+	pixel_x = -16
+	pixel_y = -1
 	silky = TRUE
 
 
@@ -912,7 +912,7 @@
 	desc = "Squeeze hard to force out the silk string."
 	icon = 'icons/roguetown/items/natural.dmi'
 	icon_state = "grub"
-	color = CLOTHING_YELLOW
+	color = CLOTHING_MUSTARD_YELLOW
 	list_reagents = list(/datum/reagent/consumable/soup/stew/gross = 1)
 
 /obj/item/reagent_containers/food/snacks/grub/silk/attack_self(mob/living/user)

@@ -35,6 +35,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.change_stat("strength", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("speed", 1)
@@ -52,7 +53,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	backl = /obj/item/rogueweapon/spear
+	backl = /obj/item/rogueweapon/polearm/spear
 	head = /obj/item/clothing/head/roguetown/helmet/leather
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(prob(33))

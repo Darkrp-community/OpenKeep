@@ -32,7 +32,7 @@
 /obj/structure/fluff/signage{
 	name = "Stonekeep"
 	},
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "aj" = (
 /turf/closed/mineral/random/rogue/high,
@@ -143,14 +143,14 @@
 /area/rogue/outdoors/river)
 "aK" = (
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "aL" = (
 /obj/structure/fluff/traveltile/vampire{
 	aportalgoesto = "vampin";
 	aportalid = "vampexit"
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "aN" = (
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/dirt,
@@ -331,7 +331,7 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/indoors)
 "rk" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "ru" = (
@@ -344,7 +344,7 @@
 	},
 /area/rogue/indoors)
 "sc" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/transparent/openspace,
 /area/rogue/indoors)
 "sk" = (
@@ -453,7 +453,7 @@
 	aportalid = "banditexit"
 	},
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "DK" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt,
@@ -522,7 +522,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "KY" = (
-/obj/structure/roguewindow,
+/obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "horzw"
 	},
@@ -627,7 +627,7 @@
 /area/rogue/under/town/caverogue)
 "Ut" = (
 /turf/open/floor/rogue/dirt,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "UJ" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goat,
 /turf/open/floor/rogue/dirt,
@@ -649,7 +649,7 @@
 /area/rogue/outdoors/woods)
 "Ws" = (
 /turf/open/floor/rogue/grass,
-/area/rogue/under/town/caverogue)
+/area/rogue/outdoors/woods_safe)
 "WH" = (
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/indoors)
@@ -5423,8 +5423,8 @@ Jc
 jc
 Jc
 jc
-ag
-ag
+Jc
+Jc
 Jc
 Jc
 aA
@@ -5546,15 +5546,15 @@ Jc
 jc
 Jc
 jc
-ag
-ag
 Jc
 Jc
 Jc
 Jc
 Jc
-ag
-ag
+Jc
+Jc
+Jc
+Jc
 Bm
 Bm
 Jc
@@ -5676,8 +5676,8 @@ Jc
 Jc
 Jc
 Jc
-ag
-ag
+Jc
+Jc
 Jc
 Jc
 Jc
@@ -16404,8 +16404,8 @@ Jc
 Lu
 fA
 Lu
-Jc
 ai
+ub
 ab
 ab
 Jc

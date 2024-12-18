@@ -14,7 +14,7 @@
 	sewrepair = TRUE
 	anvilrepair = null
 	smeltresult = /obj/item/ash // Helmets have pre-defined smeltresults, this is for hats
-	body_parts_covered = HEAD|HAIR
+	body_parts_covered = COVERAGE_SKULL
 	sellprice = VALUE_CHEAP_CLOTHING
 
 	max_integrity = INTEGRITY_WORST
@@ -75,7 +75,10 @@
 	dynamic_hair_suffix = ""
 
 /obj/item/clothing/head/roguetown/headband/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
+
+/obj/item/clothing/head/roguetown/headband/blue
+	color = CLOTHING_MAGE_BLUE
 
 /obj/item/clothing/head/roguetown/softcap
 	name = "soft cap"
@@ -124,14 +127,13 @@
 	desc = "A comfortable and fashionable headgear."
 	icon_state = "chap_alt"
 	flags_inv = HIDEEARS
-	color = CLOTHING_PINK
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/random/Initialize()
 	. = ..()
-	color = pick(CLOTHING_TEAL, CLOTHING_GREEN, CLOTHING_ORANGE, CLOTHING_MAJENTA, CLOTHING_YELLOW,CLOTHING_SALMON, CLOTHING_PALE_BLUE, CLOTHING_PALE_ORANGE, CLOTHING_PALE_GREEN, CLOTHING_PALE_YELLOW)
+	color = pick(CLOTHING_ROYAL_TEAL, CLOTHING_FOREST_GREEN, CLOTHING_FYRITIUS_DYE, CLOTHING_ROYAL_MAJENTA, CLOTHING_MUSTARD_YELLOW,CLOTHING_SALMON, CLOTHING_SKY_BLUE, CLOTHING_YELLOW_OCHRE, CLOTHING_RED_OCHRE, CLOTHING_RUSSET)
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
-	color = CLOTHING_PURPLE
+	color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary/Initialize()
 	..()
@@ -168,8 +170,8 @@
 	icon_state = "fancyhat"
 	sellprice = VALUE_FINE_CLOTHING
 
-/obj/item/clothing/head/roguetown/courtierhat
-	name = "fancy hat"
+/obj/item/clothing/head/roguetown/fashionablehat
+	name = "fashionable hat"
 	icon_state = "courtier"
 	flags_inv = HIDEEARS
 	sellprice = VALUE_FINE_CLOTHING
@@ -202,21 +204,24 @@
 
 	body_parts_covered = NECK
 
+/obj/item/clothing/head/roguetown/roguehood/uncolored
+	color = CLOTHING_LINEN
+
 /obj/item/clothing/head/roguetown/roguehood/brown
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 
 /obj/item/clothing/head/roguetown/roguehood/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/head/roguetown/roguehood/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/head/roguetown/roguehood/random/Initialize()
-	color = pick("#544236", "#435436", "#543836", "#79763f")
+	color = pick( CLOTHING_PEASANT_BROWN, CLOTHING_SPRING_GREEN, CLOTHING_CHESTNUT, CLOTHING_YELLOW_OCHRE)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/mage/Initialize()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+	color = pick(CLOTHING_MAGE_BLUE, CLOTHING_MAGE_GREEN, CLOTHING_MAGE_ORANGE, CLOTHING_MAGE_YELLOW)
 	..()
 
 /obj/item/clothing/head/roguetown/roguehood/AdjustClothes(mob/user)
@@ -240,12 +245,6 @@
 					H.update_inv_head()
 		user.update_fov_angles()
 
-//................ Keffiyeh ............... //
-/obj/item/clothing/head/roguetown/roguehood/shalal
-	name = "keffiyeh"
-	desc = "An eastern scarf usually worn around the head and neck."
-	icon_state = "shalal"
-	dropshrink = 0.8
 
 
 /*------------\
@@ -261,7 +260,7 @@
 	default_hidden = HIDEEARS|HIDEHAIR
 	dropshrink = 0.8
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
 
@@ -269,10 +268,10 @@
 /obj/item/clothing/head/roguetown/padded/deathface
 	name = "death shroud"
 	desc = "When inducted into the cult of Necra, the supplicant must make a talisman from the remains of a deceased loved one. Many favor a chin-guard made from a jawbone."
-	icon_state = "necrahood"
+	icon_state = "deathface"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
 //................ Death Shroud ............... //	- Necra headwear that conceals indentity
@@ -319,7 +318,7 @@
 	worn_y_dimension = 64
 	resistance_flags = FIRE_PROOF // Made of metal
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 
 
 //................ Sun Hood ............... //	- Basic Astrata Acolyte
@@ -348,7 +347,7 @@
 	default_hidden = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	resistance_flags = FIRE_PROOF
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	body_parts_covered = FULL_HEAD | NECK
 	prevent_crits = MINOR_CRITICALS
 
@@ -481,7 +480,7 @@
 /obj/item/clothing/head/roguetown/tophat
 	name = "teller's hat"
 	icon_state = "tophat"
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -493,9 +492,6 @@
 \------------------*/
 
 /obj/item/clothing/head/roguetown/helmet
-	name = "nasal helmet"
-	desc = "A steel nasal helmet, usually worn by the guards of any respectable fief."
-	icon_state = "nasal"
 	equip_sound = 'sound/foley/equip/equip_armor.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
@@ -508,32 +504,83 @@
 	sellprice = VALUE_IRON_ITEM
 	clothing_flags = CANT_SLEEP_IN
 
-	armor = ARMOR_IRON_GOOD
-	body_parts_covered = HEAD|HAIR|NOSE
+	armor = ARMOR_PLATE_BAD
+	body_parts_covered = COVERAGE_SKULL
 	prevent_crits = ALL_EXCEPT_STAB
+
+
+//................ Nasal Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/nasal
+	name = "nasal helmet"
+	desc = "A steel nasal helmet, usually worn by the guards of any respectable fief."
+	icon_state = "nasal"
+	sellprice = VALUE_CHEAP_IRON_HELMET
+
+	body_parts_covered = COVERAGE_NASAL
 	max_integrity = INTEGRITY_STANDARD
+
+//................ Crimson Marauder ............... //
+/obj/item/clothing/head/roguetown/helmet/ironpot/marauder
+	name = "Jinete's Caspon"
+	desc = "A solid bronze helmet from the age of the Apotheosis war. It has been reinforced and decorated for hundreds of yils, the symbol of pride for any Jinete, if not entirely outdated and ceremonial"
+	icon_state = "crimson_marauder"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS
+	sellprice = VALUE_LEATHER_HELMET/2
+	armor =  ARMOR_PLATE
+	body_parts_covered = NECK|HAIR|EARS|HEAD
 
 //................ Skull Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/skullcap
 	name = "skull cap"
 	desc = "A humble iron helmet. The most standard and antiquated protection for one's head from harm."
 	icon_state = "skullcap"
-	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = ARMOR_IRON
-	body_parts_covered = HEAD|HAIR|EARS
 	max_integrity = INTEGRITY_POOR
+
+//............... Grenzelhoft Plume Hat ............... // - worn over a skullcap
+/obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
+	name = "grenzelhoft plume hat"
+	desc = "Slaying foul creachers or fair maidens: Grenzelhoft stands."
+	icon_state = "grenzelhat"
+	item_state = "grenzelhat"
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
+	detail_tag = "_detail"
+	dynamic_hair_suffix = ""
+	colorgrenz = TRUE
+	sellprice = VALUE_FANCY_HAT
+
+/obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+//................ Cultist Hood ............... //
+/obj/item/clothing/head/roguetown/helmet/skullcap/cult
+	name = "ominous hood"
+	desc = "It echoes with ominous laughter. Worn over a skullcap"
+	icon_state = "warlockhood"
+	dynamic_hair_suffix = ""
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+	body_parts_covered = NECK|HAIR|EARS|HEAD
+
 
 //................ Horned Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/horned
 	name = "horned cap"
 	desc = "A crude horned cap usually worn by brute barbarians to invoke fear unto their enemies."
 	icon_state = "hornedcap"
-	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
-
-	body_parts_covered = HEAD|HAIR|EARS
 
 //................ Winged Cap ............... //
 /obj/item/clothing/head/roguetown/helmet/winged
@@ -544,9 +591,6 @@
 	worn_y_dimension = 64
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
-
-	body_parts_covered = HEAD|HAIR
-
 
 //................ Kettle Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/kettle
@@ -559,23 +603,63 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	flags_inv = HIDEEARS
-	smeltresult = /obj/item/ash
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = ARMOR_STEEL_BAD
-	body_parts_covered = HEAD|HAIR
+	body_parts_covered = COVERAGE_HEAD
 
-//................ CULTIST HOOD ............... //
-/obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/cult
-	name = "ominous hood"
-	desc = "It echoes with ominous laughter."
-	icon_state = "warlockhood"
-	dynamic_hair_suffix = ""
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	sellprice = VALUE_LEATHER_HELMET/2
+//................ Kettle Helmet (Slitted)............... //
+/obj/item/clothing/head/roguetown/helmet/kettle/slit
+	name = "kettle helmet"
+	desc = "A lightweight steel helmet generally worn by crossbowmen and garrison archers. This one has eyeslits for the paranoid."
+	icon_state = "slitkettle"
 
-	armor = ARMOR_STEEL_BAD
+
+//................ Iron Pot Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/ironpot
+	name = "pot helmet"
+	desc = "Simple iron helmet with a noseguard, designs like those are outdated but they are simple to make in big numbers."
+	icon_state = "ironpot"
+	flags_inv = HIDEEARS
+	sellprice = VALUE_IRON_HELMET
+
+	body_parts_covered = COVERAGE_HEAD_NOSE
+
+
+//................ Copper Lamellar Cap ............... //
+/obj/item/clothing/head/roguetown/helmet/coppercap
+	name = "lamellar cap"
+	desc = "A heavy lamellar cap made out of copper, a primitive material with an effective design to keep the head safe"
+	icon_state = "lamellar"
+	flags_inv = HIDEEARS
+	smeltresult = /obj/item/ingot/copper
+	sellprice = VALUE_LEATHER_HELMET // until copper/new mats properly finished and integrated this is a stopgap
+
+	armor = ARMOR_PADDED_GOOD
+	body_parts_covered = COVERAGE_HEAD
+	prevent_crits = ONLY_VITAL_ORGANS
+	max_integrity = INTEGRITY_POOR
+
+//............... Battle Nun ........................... (unique kit for the role, iron coif mechanically.)
+/obj/item/clothing/head/roguetown/helmet/battlenun
+	name = "veil over coif"
+	desc = "A gleaming coif of metal half-hidden by a black veil."
+	icon_state = "battlenun"
+	dynamic_hair_suffix = ""	// this hides all hair
+	flags_inv = HIDEEARS|HIDEHAIR
+	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
+	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	blocksound = CHAINHIT
+	resistance_flags = FIRE_PROOF
+
+	armor = ARMOR_MAILLE
 	body_parts_covered = NECK|HAIR|EARS|HEAD
+	prevent_crits = ALL_EXCEPT_BLUNT
+
+
+/*-------------\
+| Steel Helmet |
+\-------------*/
 
 //................ Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet
@@ -586,9 +670,9 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	armor = ARMOR_STEEL_PARTIAL
-	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = INTEGRITY_STRONG
+	armor =  ARMOR_PLATE
+	body_parts_covered = COVERAGE_HEAD
+	max_integrity = INTEGRITY_STRONGER
 
 //................ Elf Sallet ............... //
 /obj/item/clothing/head/roguetown/helmet/sallet/elven	// blackoak merc helmet
@@ -620,78 +704,9 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	body_parts_covered = HEAD|HAIR|EARS
-	max_integrity = INTEGRITY_STRONG
+	body_parts_covered = COVERAGE_HEAD
+	max_integrity = INTEGRITY_STRONGER
 
-
-//................ Iron Pot Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/ironpot
-	name = "pot helmet"
-	desc = "Simple iron helmet with a noseguard, designs like those are outdated but they are simple to make in big numbers."
-	icon_state = "ironpot"
-	flags_inv = HIDEEARS
-	smeltresult = /obj/item/ingot/iron
-	sellprice = VALUE_IRON_HELMET
-
-	armor = ARMOR_LEATHER_BEST // splint mail, best light armor level
-	body_parts_covered = HEAD|HAIR|NOSE|EARS
-
-
-//................ Copper Lamellar Cap ............... //
-/obj/item/clothing/head/roguetown/helmet/coppercap
-	name = "lamellar cap"
-	desc = "A heavy lamellar cap made out of copper, a primitive material with an effective design to keep the head safe"
-	icon_state = "lamellar"
-	flags_inv = HIDEEARS
-	smeltresult = /obj/item/ingot/copper
-	sellprice = VALUE_LEATHER_HELMET // until copper/new mats properly finished and integrated this is a stopgap
-
-	armor = ARMOR_COPPER
-	body_parts_covered = HEAD|HAIR|EARS
-	prevent_crits = ONLY_VITAL_ORGANS
-	max_integrity = INTEGRITY_POOR
-
-//............... Battle Nun ........................... (unique kit for the role, iron coif mechanically.)
-/obj/item/clothing/head/roguetown/helmet/battlenun
-	name = "veil over coif"
-	desc = "A gleaming coif of metal half-hidden by a black veil."
-	icon_state = "battlenun"
-	dynamic_hair_suffix = ""	// this hides all hair
-	flags_inv = HIDEEARS|HIDEHAIR
-	equip_sound = 'sound/foley/equip/cloak_equip.ogg'
-	pickup_sound = 'sound/foley/equip/cloak_take_off.ogg'
-	break_sound = 'sound/foley/cloth_rip.ogg'
-	blocksound = CHAINHIT
-	resistance_flags = FIRE_PROOF
-	smeltresult = /obj/item/ash
-
-	armor = ARMOR_MAILLE
-	body_parts_covered = NECK|HAIR|EARS|HEAD
-	prevent_crits = ALL_EXCEPT_BLUNT
-
-//............... Grenzelhoft Plume Hat ............... // - worn over a skullcap
-//obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
-/obj/item/clothing/head/roguetown/grenzelhofthat
-	name = "grenzelhoft plume hat"
-	desc = "Slaying foul creachers or fair maidens: Grenzelhoft stands."
-	icon_state = "grenzelhat"
-	item_state = "grenzelhat"
-	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
-	detail_tag = "_detail"
-	dynamic_hair_suffix = ""
-	colorgrenz = TRUE
-	sellprice = VALUE_FANCY_HAT
-
-	max_integrity = INTEGRITY_WORST
-
-/obj/item/clothing/head/roguetown/grenzelhofthat/update_icon()
-	cut_overlays()
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)
 
 
 
@@ -713,8 +728,9 @@
 	smeltresult = /obj/item/ingot/steel // All visored helmets are made of steel
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_TINY
 
+	armor = ARMOR_PLATE
 	body_parts_covered = FULL_HEAD
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/visored/AdjustClothes(mob/user)
@@ -723,7 +739,7 @@
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
 			icon_state = "[initial(icon_state)]_raised"
-			body_parts_covered = HEAD|HAIR|EARS
+			body_parts_covered = COVERAGE_HEAD
 			flags_inv = HIDEEARS
 			flags_cover = null
 			prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT) // Vulnerable to eye stabbing while visor is open
@@ -733,10 +749,10 @@
 				H.update_inv_head()
 		else if(adjustable == CADJUSTED)
 			ResetAdjust(user)
-			prevent_crits = ALL_CRITICAL_HITS
-			body_parts_covered = FULL_HEAD
-			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+//			body_parts_covered = FULL_HEAD
+//			prevent_crits = ALL_CRITICAL_HITS
+//			flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+//			flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 			if(user)
 				if(ishuman(user))
 					var/mob/living/carbon/H = user
@@ -752,7 +768,6 @@
 	desc = "A steel helmet offering good overall protection. Its visor can be flipped over for higher visibility at the cost of eye protection."
 	icon_state = "sallet_visor"
 
-	armor = list("melee" = 90, "bullet" = 75, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 //............... Hounskull ............... //
 /obj/item/clothing/head/roguetown/helmet/visored/hounskull
@@ -762,9 +777,8 @@
 			at the cost of eye protection."
 	icon_state = "hounskull"
 	emote_environment = 3
-	block2add = FOV_RIGHT|FOV_LEFT
 
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE_GOOD
 
 //............... Knights Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/visored/knight
@@ -776,16 +790,11 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	adjustable = CAN_CADJUST
-	emote_environment = 3
-	block2add = FOV_RIGHT|FOV_LEFT
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	body_parts_covered = HEAD_EXCEPT_MOUTH
+	emote_environment = 3
 
 /obj/item/clothing/head/roguetown/helmet/visored/knight/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 
 
@@ -809,7 +818,7 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET
 
-	armor = ARMOR_STEEL
+	armor = ARMOR_PLATE
 	body_parts_covered = FULL_HEAD
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGEST // no moving parts, steel
@@ -829,8 +838,20 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_CHEAP_IRON_HELMET
 
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE_BAD
 	max_integrity = INTEGRITY_STRONG //isn't the same as a steel helmet but is better than a skullcap, costs 2 bars and protects the mouth
+
+//............... Rusted Barbute ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/rust
+	name = "rusted barbute"
+	desc = "A rusted barbute. Relatively fragile, and might turn your hair brown, but offers good protection."
+	icon_state = "rustbarbuta"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+	smeltresult = /obj/item/ingot/iron
+	sellprice = VALUE_LEATHER_HELMET
+
+	armor = ARMOR_PLATE_BAD
+	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
 
 
 //............... Great Helm ............... //
@@ -840,7 +861,7 @@
 	icon_state = "topfhelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
-	armor = ARMOR_STEEL_BEST
+	armor = ARMOR_PLATE
 	prevent_crits = ALL_CRITICAL_HITS
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
@@ -856,23 +877,23 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_HELMET+BONUS_VALUE_MODEST
 
-	armor = list("melee" = 90, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
-//............... Rusted Barbute ............... //
-/obj/item/clothing/head/roguetown/helmet/heavy/rust
-	name = "rusted barbute"
-	desc = "A rusted barbute. Relatively fragile, and might turn your hair brown, but offers good protection."
-	icon_state = "rustbarbuta"
-	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
-	smeltresult = /obj/item/ingot/iron
-	sellprice = VALUE_LEATHER_HELMET
+//............... Frog Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/frog
+	name = "frog helmet"
+	desc = "A thick, heavy helmet that severely obscures the wearer's vision. Still rather protective."
+	icon_state = "froghelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 
-	max_integrity = INTEGRITY_STANDARD // shitty rusted iron
-
-
+	armor = ARMOR_PLATE_GOOD
+	prevent_crits = ALL_CRITICAL_HITS
 
 //............... Temple heavy helmets ......................//
 //............... Astrata Helmet ............... //
@@ -907,7 +928,6 @@
 	desc = "A standard helmet forged in the style typical of Eoran worshippers, a simple yet practical protective piece of equipment. Upon it lays several laurels of flowers and other colorful ornaments, followed by several symbols and standards of the user's chapter, accomplishments or even punishment"
 	icon_state = "eorahelm"
 	item_state = "eorahelm"
-	armor = ARMOR_STEEL_BEST
 
 
 //............... Pestra Helmet ............... //
@@ -915,7 +935,15 @@
 	name = "pestran helmet"
 	desc = "A great helmet made of coarse, tainted steel. It is modeled after a plagued carrion, a blessed abomination of Pestra."
 	icon_state = "pestrahelm"
-	item_state = "pestraahelm"
+	item_state = "pestrahelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
+
+//................ Malum Helmet ............. //
+/obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
+	name = "malumite helmet"
+	desc = "A great helmet of sturdy dark steel. Its chiseled countenance reminds the viewer of Malum's stern gaze."
+	icon_state = "malumhelm"
+	item_state = "malumhelm"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
 
@@ -989,8 +1017,6 @@
 	desc = "A lavish hounskull which allows a crest to be mounted on top."
 	icon_state = "decorated_hounskull"
 
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/hounskull/attack_right(mob/user)
 	..()
 	if(!picked)
@@ -1011,8 +1037,6 @@
 	desc = "A lavish great helm which allows a crest to be mounted on top."
 	icon_state = "decorated_bucket"
 
-	armor = ARMOR_STEEL_BEST
-
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/bucket/attack_right(mob/user)
 	..()
 	if(!picked)
@@ -1032,8 +1056,6 @@
 	name = "gold helm"
 	desc = "A lavish gold-trimmed greathelm which allows a crest to be mounted on top."
 	icon_state = "decorated_gbucket"
-
-	armor = ARMOR_STEEL_BEST
 
 /obj/item/clothing/head/roguetown/helmet/heavy/decorated/golden/attack_right(mob/user)
 	..()
@@ -1094,9 +1116,9 @@
 	name = "headscarf"
 	desc = "Rolled cloth. Gives some protection at least."
 	icon_state = "headscarf"
-	color = CLOTHING_BROWN
+	color = CLOTHING_BARK_BROWN
 	sellprice = VALUE_LEATHER_HELMET/2
-	armor = ARMOR_GAMBESON
+	armor = ARMOR_PADDED
 	body_parts_covered = HEAD|HAIR
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
@@ -1109,7 +1131,7 @@
 	icon_state = "armingcap"
 	flags_inv = HIDEEARS
 
-	armor = ARMOR_GAMBESON
+	armor = ARMOR_PADDED
 	body_parts_covered = HEAD|HAIR|EARS
 	prevent_crits =  MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
@@ -1134,7 +1156,7 @@
 	sewrepair = TRUE
 	sellprice = VALUE_LEATHER_HELMET
 
-	armor = ARMOR_LEATHER
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
@@ -1144,6 +1166,7 @@
 	name = "buckled hat"
 	desc = "A black top hat with a buckle on top, favored by Witch Hunters and Inquisitors."
 	icon_state = "puritan_hat"
+	body_parts_covered = HEAD|HAIR
 
 //............... Ominous Hood ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous // a leather coif locked to headslot since you cannot pull it back. Crit prevent between armor items a little weird, this is leather coif, compare to helmet
@@ -1154,7 +1177,7 @@
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	sellprice = VALUE_LEATHER_HELMET/2
 
-	armor = ARMOR_GAMBESON_GOOD
+	armor = ARMOR_PADDED_GOOD
 	body_parts_covered = NECK|HAIR|EARS|HEAD
 
 //............... Hardened Helmet ............... //
@@ -1180,7 +1203,7 @@
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
 	sellprice = VALUE_LEATHER_HELMET+BONUS_VALUE_MODEST
 
-	armor = ARMOR_GAMBESON
+	armor = ARMOR_PADDED
 	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_BLUNT)
 
 	var/brightness_on = 4 //less than a torch; basically good for one person.
@@ -1213,6 +1236,37 @@
 
 /obj/item/clothing/head/roguetown/helmet/leather/minershelm/proc/turn_off(mob/user)
 	set_light(0)
+
+//............... Antler hood ............... //
+/obj/item/clothing/head/roguetown/antlerhood
+	name = "antlerhood"
+	desc = "a hood with the antlers from a saiga mounted on it."
+	color = null
+	flags_inv = HIDEEARS|HIDEHAIR
+	icon_state = "antlerhood"
+	item_state = "antlerhood"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = HEAD|HAIR|EARS|NECK
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = ""
+	max_integrity = 100
+	prevent_crits = list(BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
+
+//............... Saiga skull ............... //
+/obj/item/clothing/head/roguetown/helmet/leather/saiga
+	name = "saiga skull"
+	desc = "Skull from big game. Looks like it could withstand some damage."
+	icon_state = "saigahead"
+	item_state = "saigahead"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE
+	flags_cover = HEADCOVERSEYES
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 
 
 
@@ -1271,7 +1325,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = NO_MARKET_VALUE
 
-	armor = ARMOR_COPPER
+	armor = ARMOR_PADDED_GOOD
 	body_parts_covered = HEAD|EARS|HAIR|EYES
 	prevent_crits = ONLY_VITAL_ORGANS
 	max_integrity = INTEGRITY_POOR
@@ -1293,10 +1347,10 @@
 	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_SMALL
 
-	armor = ARMOR_STEEL_BEST
-	armor_class = ARMOR_CLASS_HEAVY
+	armor = ARMOR_PLATE_GOOD
+	armor_class = AC_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
-	max_integrity = INTEGRITY_STRONG
+	max_integrity = INTEGRITY_STRONGER
 
 
 //............... Bladesinger Helmet ............... //
@@ -1306,7 +1360,7 @@
 	icon_state = "elfhead"
 	allowed_race = list("elf", "half-elf", "dark elf")
 	clothing_flags = CANT_SLEEP_IN
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	body_parts_covered = HEAD|HAIR|NOSE
 
 /obj/item/clothing/head/roguetown/rare/elfplate/welfplate // Unique Bladesinger kit

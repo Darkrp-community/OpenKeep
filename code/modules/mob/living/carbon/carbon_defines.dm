@@ -70,7 +70,9 @@
 	var/stam_regen_start_time = 0 //used to halt stamina regen temporarily
 	var/stam_paralyzed = FALSE //knocks you down
 
-	var/domhand = 0
+
 	var/tiredness = 0
 	// How much total vitae a vampire can absorb from this mob. Once expended, you can't gain more from them.
-	var/vitae_pool = 5000
+	var/vitae_pool = 8000
+
+	var/next_smell = 0

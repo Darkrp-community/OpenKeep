@@ -77,15 +77,39 @@
 /datum/status_effect/debuff/silver_curse
 	id = "silver_curse"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/silver_curse
-	duration = 5 SECONDS
-
-/datum/status_effect/debuff/silver_curse/greater
-	duration = 10 SECONDS
+	effectedstats = list("strength" = -2,"perception" = -2,"intelligence" = -2, "constitution" = -2, "endurance" = -2,"speed" = -2)
+	duration = 45 SECONDS
 
 /atom/movable/screen/alert/status_effect/debuff/silver_curse
 	name = "Silver Curse"
 	desc = "My BANE!"
 	icon_state = "hunger3"
+
+// PINTLEDESTRUCTION
+
+/datum/status_effect/debuff/pintledestruction
+	id = "pintlegone"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/pintledestruction
+	duration = 60 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/pintledestruction
+	name = "Wine-Curse"
+	desc = "Oh Gods...it's dead..."
+	icon_state = "muscles"
+
+/datum/status_effect/debuff/pintledestruction/on_apply()
+	. = ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.add_stress(/datum/stressevent/sadfate)
+	ADD_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
+
+/datum/status_effect/debuff/pintledestruction/on_remove()
+	. = ..()
+	REMOVE_TRAIT(owner, TRAIT_LIMPDICK, TRAIT_GENERIC)
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_stress(/datum/stressevent/sadfate)
 
 
 //BROKEN CELIBACY
@@ -371,6 +395,18 @@
 	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
 	icon_state = "muscles"
 
+/datum/status_effect/debuff/chilled
+	id = "chilled"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/chilled
+	effectedstats = list("speed" = -5, "strength" = -2, "endurance" = -2)
+	duration = 15 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/chilled
+	name = "Chilled"
+	desc = "I can barely feel my limbs!"
+	icon_state = "chilled"
+
+
 
 //////////////////////Kaizoku stuff//////////////////
 
@@ -421,7 +457,7 @@
 //freezing
 
 /atom/movable/screen/alert/status_effect/debuff/freezing //the abyss is cold.
-	name = "Freezing"
+	name = "Abyssal Frostnip"
 	desc = "<span class='boldwarning'>Frost-bitten and touched by the ancient god, seeping through time and existence. The god feels, spreads and carves your skin.</span>\n" //that's abyssor.
 	icon_state = "freezing"
 	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
@@ -430,7 +466,7 @@
 	id = "freezing"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/freezing
 	duration = 30 SECONDS
-	effectedstats = list("speed" = -2, "endurance" = -2)
+	effectedstats = list("speed" = -3, "endurance" = -2)
 
 /datum/status_effect/debuff/freezing/tick()
 	owner.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
@@ -448,7 +484,7 @@
 // severe freezing
 
 /atom/movable/screen/alert/status_effect/debuff/freezing/severe //this is even worst.
-	name = "Severe Freezing"
+	name = "Abyssal Frostbite"
 	desc = "<span class='boldwarning'>Ravaged by a frozen grasp, skin violently carved as divine icy tendrils invade the muscles, spreading a chill so holy that tears through the soul.</span>\n" //that's abyssor.
 	icon_state = "freezing_severe"
 	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
@@ -457,7 +493,7 @@
 	id = "freezingsevere"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/freezing/severe
 	duration = 60 SECONDS
-	effectedstats = list("speed" = -5, "endurance" = -3)
+	effectedstats = list("speed" = -5, "endurance" = -3, "strength" = -1)
 
 /datum/status_effect/debuff/freezing/tick()
 	owner.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
@@ -474,4 +510,3 @@
 /datum/status_effect/debuff/freezing/on_remove()
 	owner.apply_status_effect(/datum/status_effect/debuff/freezing)
 	owner.remove_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN)
-

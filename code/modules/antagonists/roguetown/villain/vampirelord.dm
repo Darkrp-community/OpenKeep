@@ -113,7 +113,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
 		H.after_creation()
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.patron = GLOB.patronlist[/datum/patron/forgotten] //Servant forever of he who is forgotten.
+	H.set_patron(/datum/patron/forgotten) //Servant forever of he who is forgotten.
 
 	return TRUE
 
@@ -546,7 +546,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/portal/Initialize()
 	. = ..()
-	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 	playsound(loc, 'sound/misc/portalopen.ogg', 100, FALSE, pressure_affected = FALSE)
 	addtimer(CALLBACK(src, PROC_REF(close_portal)), 1 MINUTES)
 
@@ -561,7 +561,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/bloodpool/Initialize()
 	. = ..()
-	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 
 /obj/structure/vampire/bloodpool/examine(mob/user)
 	. = ..()
@@ -608,8 +608,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 					if(do_after(user, 100))
 						lord.handle_vitae(-1500)
 						new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/plate/vampire (src.loc)
+						new /obj/item/clothing/suit/roguetown/armor/haubergon_vampire (src.loc)
+						new /obj/item/clothing/suit/roguetown/armor/cuirass/vampire (src.loc)
 						new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
 						new /obj/item/clothing/head/roguetown/helmet/heavy/savoyard (src.loc)
 						one_time_armor = FALSE
@@ -870,7 +870,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/one/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Churchling", "Crusader")
+	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Crusader")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in churchjobs)
 			return TRUE
@@ -882,7 +882,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/two/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("King", "Queen", "Prince", "Princess", "Hand", "Steward")
+	var/list/noblejobs = list("King", "Consort", "Prince", "Princess", "Hand", "Steward")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in noblejobs)
 			return TRUE

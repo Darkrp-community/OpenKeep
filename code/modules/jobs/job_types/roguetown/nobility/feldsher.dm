@@ -1,7 +1,7 @@
 /datum/job/roguetown/feldsher
 	title = "Feldsher"
 	flag = FELDSHER
-	department_flag = NOBLEMEN
+	department_flag = TOWNERS
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

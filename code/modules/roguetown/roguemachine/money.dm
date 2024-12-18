@@ -168,9 +168,18 @@ GLOBAL_VAR(moneymaster)
 				new /obj/item/roguecoin/copper(T, budget)
 	if(!type_to_put || zenars_to_put < 1)
 		return
-	var/obj/item/roguecoin/G = new type_to_put(T, floor(zenars_to_put))
-	if(user)
-		user.put_in_hands(G)
+
+	var/stacks = CEILING(zenars_to_put / 20, 1)
+	for(var/i in 1 to stacks)
+		var/zenar_value = min(floor(zenars_to_put), 20)
+		var/obj/item/roguecoin/G = new type_to_put(T, zenar_value)
+		zenars_to_put -= zenar_value
+		G.pixel_y = rand(-4, 4)
+		G.pixel_x = rand(-4, 4)
+
+		if(user)
+			user.put_in_hands(G)
+
 	playsound(T, 'sound/misc/coindispense.ogg', 100, FALSE, -1)
 /*
 /obj/structure/roguemachine/money/attack_right(mob/user)
@@ -194,7 +203,7 @@ GLOBAL_VAR(moneymaster)
 	if(obj_broken)
 		set_light(0)
 		return
-	set_light(1, 1, "#1b7bf1")
+	set_light(1, 1, 1, l_color =  "#1b7bf1")
 
 /obj/structure/roguemachine/money/Destroy()
 	set_light(0)
@@ -231,4 +240,4 @@ GLOBAL_VAR(moneymaster)
 		add_overlay(mutable_appearance(icon, "[icon_state]-e"))
 	else
 		add_overlay(mutable_appearance(icon, "[icon_state]-b"))
-	set_light(1, 1, "#1b7bf1")
+	set_light(1, 1, 1, l_color =  "#1b7bf1")

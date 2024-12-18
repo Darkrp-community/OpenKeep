@@ -41,7 +41,7 @@ SUBSYSTEM_DEF(familytree)
 	var/excluded_jobs = list(
 		"Prince",
 		"Princess",
-		"Queen",
+		"Consort",
 		"King",
 		"Inquisitor",
 		)
@@ -56,11 +56,11 @@ SUBSYSTEM_DEF(familytree)
 		)
 
 /datum/controller/subsystem/familytree/Initialize()
-	ruling_family = new /datum/heritage(null, null, /datum/species/human/northern)
+	ruling_family = new /datum/heritage(majority_species = /datum/species/human/northern)
 	//Blank starter families that we can customize for players.
 	for(var/pioneer_household in preset_family_species)
 		for(var/I = 1 to 2)
-			families += new /datum/heritage(null, null, pioneer_household)
+			families += new /datum/heritage(majority_species = pioneer_household)
 
 	return ..()
 
@@ -241,7 +241,7 @@ SUBSYSTEM_DEF(familytree)
 		if(L == H)
 			continue
 		//They already have a spouse so skip this one.
-		if(L.spouse_name)
+		if(L.spouse_mob)
 			continue
 		//True love! They chose you and chose love them!
 		if(H.setspouse == L.real_name && L.setspouse == H.real_name)

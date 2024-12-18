@@ -103,6 +103,18 @@
 	..()
 	. = 1
 
+/datum/reagent/buff/coldfire
+	name = "Coldfire"
+	color = "#616990"
+	taste_description = "burning"
+	metabolization_rate = REAGENTS_METABOLISM
+
+/datum/reagent/buff/coldfire/on_mob_metabolize(mob/living/L)
+	ADD_TRAIT(L, TRAIT_MOB_FIRE_IMMUNE, type)
+
+/datum/reagent/buff/coldfire/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_MOB_FIRE_IMMUNE, type)
+
 //Buff potions
 /datum/reagent/buff
 	description = ""
