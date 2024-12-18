@@ -13,7 +13,7 @@
 		"Half-Elf",
 	)
 
-	tutorial = "Likely a disgraced noble who fell on hard times, for whatever reason you now have a supply of drugs and nitemaidens to employ and profit from. Some say you have connections with the Rogues and Bandits of the land but surely its just slander..."
+	tutorial = "Even nobles can be disgraced and fall on hard times. For whatever reason you have traded your reputation for a supply of drugs and nitemaidens to employ and profit from. Some accuse you of have connections with the Rogues and Bandits of the land but surely its just slander..."
 
 	allowed_sexes = list(MALE)
 	outfit = /datum/outfit/job/roguetown/nitemaster
@@ -24,15 +24,14 @@
 
 /datum/outfit/job/roguetown/nitemaster/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/tophat
-	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
+	head = /obj/item/clothing/head/roguetown/roguehood/brown
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/webs
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/leather/nitemaster
 	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
-	beltl = /obj/item/keyring/nitemaster
+	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.mind)

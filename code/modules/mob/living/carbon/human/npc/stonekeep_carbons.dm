@@ -331,7 +331,7 @@
 	H.STAEND = rand(8,10)
 	H.STAINT = 7
 
-/mob/living/carbon/human/species/human/northern/bum/skilled/after_creation()
+/mob/living/carbon/human/species/human/northern/bum/skilled/after_creation(mob/living/carbon/C)
 	..()
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
@@ -346,6 +346,7 @@
 	wander = FALSE
 	ambushable = FALSE
 	faction = list("bums", "station")
+	C.grant_language(/datum/language/common)
 
 /mob/living/carbon/human/species/human/northern/bum/skilled/proc/configure_mind()
 	if(!mind)

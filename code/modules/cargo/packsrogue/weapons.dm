@@ -73,11 +73,6 @@
 	cost = 40
 	contains = /obj/item/bomb/homemade
 
-/datum/supply_pack/rogue/weapons/crossbow
-	name = "Crossbow"
-	cost = 40
-	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-
 /datum/supply_pack/rogue/weapons/bow
 	name = "Bow"
 	cost = 30
@@ -98,17 +93,8 @@
 	cost = 40
 	contains = /obj/item/quiver/arrows
 
-/datum/supply_pack/rogue/weapons/boltquiver
-	name = "Quiver of Bolts"
-	cost = 60
-	contains = /obj/item/quiver/bolts
-
 /datum/supply_pack/rogue/weapons/arrows
 	name = "Arrow"
 	cost = 2
 	contains = /obj/item/ammo_casing/caseless/rogue/arrow
 
-/datum/supply_pack/rogue/weapons/bolts
-	name = "Crossbow Bolt"
-	cost = 3
-	contains = /obj/item/ammo_casing/caseless/rogue/bolt

@@ -480,7 +480,7 @@
 /obj/item/clothing/head/roguetown/tophat
 	name = "unusual hat"
 	icon_state = "tophat"
-	color = CLOTHING_SOOT_BLACK
+	color = "#d0a3a3"
 
 
 
@@ -1245,6 +1245,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	icon_state = "antlerhood"
 	item_state = "antlerhood"
+	dynamic_hair_suffix = "+generic"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = HEAD|HAIR|EARS|NECK
 	slot_flags = ITEM_SLOT_HEAD

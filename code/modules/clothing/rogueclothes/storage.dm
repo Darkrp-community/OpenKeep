@@ -153,8 +153,11 @@
 	new /obj/item/rogueweapon/knife/dagger(src)
 	new /obj/item/needle(src)
 
-/obj/item/storage/belt/rogue/leather/cloth/bandit
-	color = "#ff0000"
+/obj/item/storage/belt/rogue/leather/nitemaster
+	color = "#cfabcb"
+/obj/item/storage/belt/rogue/leather/nitemaster/Initialize()
+	. = ..()
+	new /obj/item/keyring/nitemaster (src)
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"
