@@ -1,3 +1,4 @@
+// ---------- NARCOTICS --------------
 /datum/supply_pack/rogue/narcotics
 	group = "Narcotics"
 	crate_name = "merchant guild's crate"
@@ -37,7 +38,7 @@
 	contains = list(/obj/item/perfume/random)
 
 
-
+// ---------- SUSPICIOUS --------------
 /datum/supply_pack/rogue/suspicious
 	group = "Suspicious"
 	crate_name = "mislabeled crate"
@@ -55,14 +56,9 @@
 	name = "Crossbow Bolt"
 	cost = 3
 	contains = /obj/item/ammo_casing/caseless/rogue/bolt
-
-/datum/supply_pack/rogue/suspicious/dagger
-	name = "Steel Dagger"
-	cost = 30
-	contains = /obj/item/rogueweapon/knife/dagger/steel
 /datum/supply_pack/rogue/suspicious/poison
 	name = "Poison Bottle"
-	cost = 70
+	cost = 60
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/poison
 /datum/supply_pack/rogue/suspicious/lockpick
 	name = "Lockpick"
@@ -71,6 +67,7 @@
 
 
 
+// ---------- OUTFITS --------------
 /datum/supply_pack/rogue/outfits
 	group = "Outfits"
 	crate_name = "outfit crate"
@@ -93,39 +90,33 @@
 	cost = 33
 	contains = /obj/item/clothing/suit/roguetown/shirt/robe/eora/alt
 
-
-
-/datum/supply_pack/rogue/narcotics_merc
+// ---------- MERCHANT --------------
+/datum/supply_pack/rogue/recreation
 	group = "Medicae"
 	crate_name = "merchant guild's crate"
 	crate_type = /obj/structure/closet/crate/chest/merchant
 
-/datum/supply_pack/rogue/narcotics_merc/sigs
+/datum/supply_pack/rogue/recreation/sigs
 	name = "Pipe Weed Zig"
 	cost = 5
 	contains = /obj/item/clothing/mask/cigarette/rollie/nicotine
-
-/datum/supply_pack/rogue/narcotics_merc/zigbox
+/datum/supply_pack/rogue/recreation/zigbox
 	name = "Zigbox"
 	cost = 30
 	contains = /obj/item/storage/fancy/cigarettes/zig
-
-/datum/supply_pack/rogue/narcotics_merc/zigboxempt
+/datum/supply_pack/rogue/recreation/zigboxempt
 	name = "Empty Zigbox"
 	cost = 1
 	contains = /obj/item/storage/fancy/cigarettes/zig/empty
-
-/datum/supply_pack/rogue/narcotics_merc/moondust
+/datum/supply_pack/rogue/recreation/moondust
 	name = "Moon Dust"
 	cost = 33
 	contains = /obj/item/reagent_containers/powder/moondust
-
-/datum/supply_pack/rogue/narcotics_merc/soap
+/datum/supply_pack/rogue/recreation/soap
 	name = "Herbal Soap"
 	cost = 20
 	contains = /obj/item/bath/soap
-
-/datum/supply_pack/rogue/narcotics_merc/perfume
+/datum/supply_pack/rogue/recreation/perfume
 	name = "Perfume"
 	cost = 25
 	contains = list(/obj/item/perfume/random)

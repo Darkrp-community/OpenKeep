@@ -23,20 +23,15 @@
 	cost = 20
 	contains = /obj/item/rogueweapon/mace
 
-/datum/supply_pack/rogue/weapons/greatmace
-	name = "Godendag"
-	cost = 28
-	contains = /obj/item/rogueweapon/mace/goden
-
 /datum/supply_pack/rogue/weapons/axe
 	name = "Iron Axe"
 	cost = 20
 	contains = /obj/item/rogueweapon/axe/iron
 
-/datum/supply_pack/rogue/weapons/huntingknife
-	name = "Hunting Knife"
+/datum/supply_pack/rogue/weapons/peasantknife
+	name = "Peasant Knife"
 	cost = 15
-	contains = /obj/item/rogueweapon/knife/hunting
+	contains = /obj/item/rogueweapon/knife/villager
 
 /datum/supply_pack/rogue/weapons/dagger
 	name = "Iron Dagger"
@@ -47,11 +42,6 @@
 	name = "Spear"
 	cost = 22
 	contains = /obj/item/rogueweapon/polearm/spear
-
-/datum/supply_pack/rogue/weapons/flail
-	name = "Iron Flail"
-	cost = 25
-	contains = /obj/item/rogueweapon/flail
 
 /datum/supply_pack/rogue/weapons/whip
 	name = "Leather Whip"

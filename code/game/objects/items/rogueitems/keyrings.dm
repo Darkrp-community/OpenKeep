@@ -272,7 +272,7 @@
 /obj/item/keyring/gravedigger
 	keys = list(/obj/item/roguekey/church, /obj/item/roguekey/graveyard)
 
-/obj/item/keyring/nitemaster
+/obj/item/keyring/niteman
 	keys = list(/obj/item/roguekey/nitemaster, /obj/item/roguekey/nitemaiden)
 
 /obj/item/keyring/hand

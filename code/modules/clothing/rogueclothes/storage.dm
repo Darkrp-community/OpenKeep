@@ -157,7 +157,7 @@
 	color = "#cfabcb"
 /obj/item/storage/belt/rogue/leather/nitemaster/Initialize()
 	. = ..()
-	new /obj/item/keyring/nitemaster (src)
+	new /obj/item/roguecoin/copper/pile (src)
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"

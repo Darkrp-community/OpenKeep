@@ -103,7 +103,7 @@ GLOBAL_LIST_INIT(towner_positions, list(
 	"Feldsher",
 	"Innkeep",
 	"Tailor",
-	"Nitemaster",
+	"Niteman",
 	"Nitemaiden",
 	"Alchemist",
 	"Scribe",

@@ -498,7 +498,6 @@
 	configure_mind()
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, the higher the skill the more powerful this is of course
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
-//	equipOutfit(new /datum/outfit/job/roguetown/npc/goblin)
 
 /mob/living/carbon/human/species/goblin/skilled/ambush/moon
 	name = "moon goblin"
@@ -507,6 +506,10 @@
 /mob/living/carbon/human/species/goblin/skilled/ambush/hell
 	name = "hell goblin"
 	race = /datum/species/goblin/hell
+
+/mob/living/carbon/human/species/goblin/skilled/hell/after_creation(mob/living/carbon/C)
+	..()
+	C.grant_language(/datum/language/hellspeak)
 
 /mob/living/carbon/human/species/goblin/skilled/ambush/cave
 	name = "cave goblin"

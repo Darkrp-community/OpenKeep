@@ -11368,7 +11368,7 @@
 /turf/open/floor/rogue/rooftop,
 /area/rogue/outdoors/town/roofs)
 "moz" = (
-/obj/effect/landmark/start/nightmaster,
+/obj/effect/landmark/start/niteman,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "moM" = (
@@ -14932,7 +14932,7 @@
 "pUw" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nitemaster";
+	lockid = "niteman";
 	name = "Nitemaster's Chambers"
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -19168,7 +19168,7 @@
 "uIc" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)

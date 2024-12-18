@@ -855,6 +855,10 @@
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "elfs"
 
+/obj/structure/fluff/statue/small/copper
+	name = "old copper statue"
+	color = "#a3bea6"
+
 /obj/structure/fluff/statue/pillar
 	name = "wooden support"
 	icon = 'icons/roguetown/misc/structure.dmi'

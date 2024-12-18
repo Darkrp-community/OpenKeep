@@ -993,7 +993,7 @@
 /area/rogue/indoors/shelter/rtfield)
 "bgN" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/bath)
@@ -2141,7 +2141,7 @@
 "cya" = (
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/bath)
@@ -2518,7 +2518,7 @@
 "cXK" = (
 /obj/item/reagent_containers/food/snacks/grown/rogue/sweetleafdry,
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /obj/item/clothing/mask/cigarette/pipe/westman,
 /obj/item/storage/box/matches,
@@ -3052,7 +3052,7 @@
 /area/rogue/indoors/town/tavern)
 "dDV" = (
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nitemaster";
+	lockid = "niteman";
 	name = "key closet"
 	},
 /obj/item/roguekey/roomvi{
@@ -4876,7 +4876,7 @@
 	})
 "fpW" = (
 /obj/structure/mineral_door/wood/fancywood{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/indoors/town/bath)
@@ -6143,7 +6143,7 @@
 /obj/structure/chair/bench/ultimacouch/r{
 	icon_state = "ultimacochright"
 	},
-/obj/effect/landmark/start/nightmaster,
+/obj/effect/landmark/start/niteman,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/bath)
 "gMb" = (
@@ -6293,7 +6293,7 @@
 	})
 "gZG" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "nitemaster";
+	lockid = "niteman";
 	locked = 1
 	},
 /turf/open/floor/rogue/greenstone,
@@ -10606,7 +10606,7 @@
 /obj/item/reagent_containers/glass/bottle/rogue/poison,
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker,
 /obj/item/reagent_containers/food/snacks/produce/jacksberry/poison,
-/obj/item/keyring/nitemaster,
+/obj/item/keyring/niteman,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue/indoors/town)
 "lGN" = (
@@ -10772,7 +10772,7 @@
 	})
 "lMS" = (
 /obj/structure/mineral_door/wood/window{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town)
@@ -15931,7 +15931,7 @@
 /area/rogue/indoors/town/bath)
 "qXU" = (
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /obj/item/candle,
 /obj/item/candle,
@@ -17612,7 +17612,7 @@
 "sMo" = (
 /obj/structure/fluff/walldeco/maidendrape,
 /obj/structure/closet/crate/roguecloset/lord{
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
 /obj/item/clothing/mask/cigarette/rollie/trippy,

@@ -2587,7 +2587,7 @@
 	dir = 1;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "bfloorz"
@@ -6251,8 +6251,8 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/dwarfin)
 "wy" = (
-/obj/effect/landmark/start/nightmaster{
-	name = "Nightmaster"
+/obj/effect/landmark/start/niteman{
+	name = "Niteman"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
@@ -9004,7 +9004,7 @@
 	dir = 1;
 	icon_state = "donjondir";
 	locked = 1;
-	lockid = "nitemaster"
+	lockid = "niteman"
 	},
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
@@ -11983,7 +11983,7 @@
 /area/rogue/outdoors/town/roofs)
 "Sm" = (
 /obj/structure/mineral_door/wood{
-	lockid = "nitemaster";
+	lockid = "niteman";
 	locked = 1
 	},
 /turf/open/floor/rogue/woodturned/nosmooth,

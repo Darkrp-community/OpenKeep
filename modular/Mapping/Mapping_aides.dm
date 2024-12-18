@@ -699,11 +699,11 @@
 
 
 /*	..................   Misc   ................... */
-/obj/item/roguestatue/silver/gnome
+/obj/item/roguestatue/gnome
 	name = "petrified gnome"
-	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
+	desc = "A literal gnome, turned to stone by powerful magicks. Rather unsettling, or a fascinating experiment, depending on your point of view."
+	icon_state = "gnome_petrified"
 	smeltresult = null
-	color = "#617163"
 
 
 // ====================		NEW WEAPONS		==========================

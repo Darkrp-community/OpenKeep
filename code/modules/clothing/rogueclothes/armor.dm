@@ -317,7 +317,7 @@
 //................ Expensive Jacket ............... //
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 	name = "expensive jacket"
-	icon_state = "nitemaster"
+	icon_state = "niteman"
 	desc = "Displaying wealth while keeping your guts safe from blades with thick leather pads underneath."
 	allowed_sex = list(MALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD

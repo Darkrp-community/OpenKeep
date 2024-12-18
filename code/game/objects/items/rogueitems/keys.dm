@@ -298,7 +298,7 @@
 	name = "nitemaster's key"
 	desc = "The master key of the bathhouse."
 	icon_state = "greenkey"
-	lockid = "nitemaster"
+	lockid = "niteman"
 
 /obj/item/roguekey/nitemaiden
 	name = "nitemaiden's key"

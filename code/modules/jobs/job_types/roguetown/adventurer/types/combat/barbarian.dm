@@ -1,6 +1,6 @@
 /datum/advclass/combat/barbarian
 	name = "Barbarian"
-	tutorial = "Wildmen and warriors all, Barbarians forego the intricacies of modern warfare in favour of raw strength and brutal cunning. Few of them can truly adjust to the civilized, docile lands of lords and ladies."
+	tutorial = "Wildmen and warriors all, Barbarians embody the fiercest and most primal aspect of Ravox. Raw strength and brutal cunning makes them excellent fighters but poorly adjusted to the civilized, docile lands of lords and ladies."
 	allowed_sexes = list(MALE)
 	allowed_races = list(
 		"Humen",
@@ -56,3 +56,5 @@
 	if(H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 
+	if(H.patron != /datum/patron/divine/ravox)
+		H.set_patron(/datum/patron/divine/ravox)

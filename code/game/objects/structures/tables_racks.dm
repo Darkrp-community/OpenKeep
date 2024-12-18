@@ -533,8 +533,8 @@
 /obj/structure/table/stone_end
 	name = "stone table"
 	desc = ""
+	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "stonetable_end"
-	icon_state = "stonetable_mid"
 	max_integrity = 200
 	smooth = 0
 	climb_offset = 10
