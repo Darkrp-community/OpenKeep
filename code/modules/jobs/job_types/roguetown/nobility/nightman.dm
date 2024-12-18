@@ -19,7 +19,7 @@
 
 	allowed_sexes = list(MALE)
 	outfit = /datum/outfit/job/roguetown/nitemaster
-	display_order = JDO_NITEMASTER
+	display_order = JDO_NIGHTMAN
 	give_bank_account = 120
 	min_pq = 0
 	bypass_lastclass = TRUE
