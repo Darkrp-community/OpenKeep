@@ -254,6 +254,8 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 /datum/sex_controller/proc/can_ejaculate()
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		return FALSE
+	if(HAS_TRAIT(user, TRAIT_MINCED))
+		return FALSE
 	return TRUE
 
 /datum/sex_controller/proc/handle_passive_ejaculation()
@@ -269,6 +271,8 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 	if(user.gender == FEMALE)
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
+		return FALSE
+	if(HAS_TRAIT(user, TRAIT_MINCED))
 		return FALSE
 	return TRUE
 
