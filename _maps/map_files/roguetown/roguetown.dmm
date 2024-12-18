@@ -11368,7 +11368,7 @@
 /turf/open/floor/rogue/rooftop,
 /area/rogue/outdoors/town/roofs)
 "moz" = (
-/obj/effect/landmark/start/niteman,
+/obj/effect/landmark/start/nightman,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)
 "moM" = (

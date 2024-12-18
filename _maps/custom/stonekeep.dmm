@@ -6251,7 +6251,7 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/indoors/town/dwarfin)
 "wy" = (
-/obj/effect/landmark/start/niteman{
+/obj/effect/landmark/start/nightman{
 	name = "Nightman"
 	},
 /turf/open/floor/carpet/royalblack,

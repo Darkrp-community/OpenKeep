@@ -253,7 +253,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/latejoin/feldsher
 	name = "Feldsher"
 
-/obj/effect/landmark/start/niteman
+/obj/effect/landmark/start/nightman
 	name = "Niteman"
 	jobspawn_override = list(	 "Niteman" )
 /obj/effect/landmark/latejoin/niteman

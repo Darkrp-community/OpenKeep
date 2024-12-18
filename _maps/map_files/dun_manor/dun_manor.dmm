@@ -4676,7 +4676,7 @@
 "ewT" = (
 /obj/structure/bed/rogue/inn/double,
 /obj/item/bedsheet/rogue/fabric_double,
-/obj/effect/landmark/start/niteman,
+/obj/effect/landmark/start/nightman,
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/bath)
 "exi" = (
