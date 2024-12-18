@@ -712,6 +712,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 						to_chat(user, "I don't have enough vitae!")
 						return
 					if(do_after(user, 100))
+						lord.handle_vitae(-5000)
 						to_chat(user, "I have summoned a knight from the underworld. I need only wait for them to materialize.")
 						var/datum/game_mode/chaosmode/C = SSticker.mode
 						C.deathknightspawn = TRUE
@@ -728,10 +729,11 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 					to_chat(user, "It's already night!")
 					return
 				if(alert(user, "Force Enigma into Night? Cost:5000","","Yes","No") == "Yes")
-					if(!lord.mypool.check_withdraw(-2500))
+					if(!lord.mypool.check_withdraw(-5000))
 						to_chat(user, "I don't have enough vitae!")
 						return
 					if(do_after(user, 100))
+						lord.handle_vitae(-5000)
 						GLOB.todoverride = "night"
 						sunstolen = TRUE
 						settod()

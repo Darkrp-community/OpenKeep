@@ -192,8 +192,6 @@
 				else
 					attacker_skill = U.mind.get_skill_level(/datum/skill/combat/unarmed)
 					prob2defend -= (attacker_skill * 20)
-			else
-				prob2defend -= U.STASTR * 3
 
 			if(!(mobility_flags & MOBILITY_STAND))	// checks if laying down and applies 20% defense malus if so
 				prob2defend *= 0.8
