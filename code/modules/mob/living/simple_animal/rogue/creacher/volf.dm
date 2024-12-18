@@ -36,7 +36,7 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/bite)
+	base_intents = list(/datum/intent/simple/critterbite)
 	attack_sound = list('sound/vo/mobs/vw/attack (1).ogg','sound/vo/mobs/vw/attack (2).ogg','sound/vo/mobs/vw/attack (3).ogg','sound/vo/mobs/vw/attack (4).ogg')
 	melee_damage_lower = 15
 	melee_damage_upper = 20
@@ -54,7 +54,7 @@
 	del_on_deaggro = 999 SECONDS
 	retreat_health = 0.4
 	food = 0
-	dodgetime = 17
+	dodgetime = 2 SECONDS
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/wolf

@@ -200,10 +200,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 			table += thing
 		if(isopenturf(thing))
 			new /obj/effect/decal/cleanable/confetti(thing)
-			if(locate(/obj/structure/bed/dogbed/ian) in thing)
-				new /obj/item/toy/balloon/corgi(thing)
-			else
-				openturfs += thing
 	//cake + knife to cut it!
 	var/turf/food_turf = get_turf(pick(table))
 	new /obj/item/kitchen/knife(food_turf)

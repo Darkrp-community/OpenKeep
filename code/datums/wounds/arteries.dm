@@ -6,7 +6,7 @@
 	sound_effect = 'sound/combat/crit.ogg'
 	whp = 50
 	sewn_whp = 20
-	bleed_rate = 25
+	bleed_rate = 20
 	sewn_bleed_rate = 0.2
 	clotting_threshold = null
 	sewn_clotting_threshold = null
@@ -19,6 +19,8 @@
 	critical = TRUE
 	sleep_healing = 0
 	embed_chance = 0
+
+	werewolf_infection_probability = 100
 
 /datum/wound/artery/can_stack_with(datum/wound/other)
 	if(istype(other, /datum/wound/artery) && (type == other.type))
@@ -42,7 +44,7 @@
 	crit_message = "Blood sprays from %VICTIM's throat!"
 	whp = 100
 	sewn_whp = 25
-	bleed_rate = 60
+	bleed_rate = 40
 	sewn_bleed_rate = 0.5
 	woundpain = 45
 	sewn_woundpain = 20
@@ -62,7 +64,7 @@
 	severity = WOUND_SEVERITY_FATAL
 	whp = 100
 	sewn_whp = 35
-	bleed_rate = 60
+	bleed_rate = 40
 	sewn_bleed_rate = 0.8
 	woundpain = 80
 	sewn_woundpain = 50
@@ -79,7 +81,7 @@
 		"MY HEART IS TORN!",
 		"MY HEART IS BLEEDING!",
 	)
-	to_chat(affected, "<span class='userdanger'>[pick(heartaches)]</span>")
+	to_chat(affected, span_userdanger("[pick(heartaches)]"))
 	if(HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
 		affected.death()
 	if(affected.mind.has_antag_datum(/datum/antagonist/vampirelord/))
@@ -100,7 +102,7 @@
 	severity = WOUND_SEVERITY_FATAL
 	whp = 100
 	sewn_whp = 25
-	bleed_rate = 50
+	bleed_rate = 30
 	sewn_bleed_rate = 0.5
 	woundpain = 60
 	sewn_woundpain = 30

@@ -69,6 +69,14 @@
 	craftdiff = 2
 	sellprice = 19
 
+/datum/crafting_recipe/roguetown/weaving/bathrobe
+	name = "bathrobe"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/bath)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fur = 1)
+	craftdiff = 2
+	sellprice = 10
+
 /datum/crafting_recipe/roguetown/weaving/mundies
 	name = "masculine smallclothes"
 	result = list(/obj/item/undies)
@@ -80,6 +88,7 @@
 	result = list(/obj/item/undies/f)
 	craftdiff = 2
 	sellprice = 20
+
 
 /*========= SKILL LEVEL: 3 REQUIRED ==========*/
 
@@ -169,6 +178,20 @@
 /datum/crafting_recipe/roguetown/weaving/astratahood
 	name = "solar hood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/astrata)
+	reqs = list(/obj/item/natural/cloth = 2)
+	craftdiff = 4
+	sellprice = 25
+
+/datum/crafting_recipe/roguetown/weaving/nocrobe
+	name = "noc robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/noc)
+	reqs = list(/obj/item/natural/cloth = 4)
+	craftdiff = 4
+	sellprice = 25
+
+/datum/crafting_recipe/roguetown/weaving/nochood
+	name = "moon hood"
+	result = list(/obj/item/clothing/head/roguetown/roguehood/nochood)
 	reqs = list(/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 25

@@ -77,6 +77,9 @@
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_BLOOD_RED
 
+/obj/item/clothing/head/roguetown/headband/blue
+	color = CLOTHING_MAGE_BLUE
+
 /obj/item/clothing/head/roguetown/softcap
 	name = "soft cap"
 	desc = "A white cap worn by most manual laborers to protect from sunburn."

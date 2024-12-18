@@ -61,7 +61,7 @@
 	desc = "Big-hearted, but small-brained."
 	icon_state = "trollheart"
 	layer = 3.1
-	sellprice = 40
+	sellprice = 50
 
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
@@ -99,3 +99,24 @@
 	var/obj/item/ssaddle
 	var/simple_detect_bonus = 0 // A flat percentage bonus to our ability to detect sneaking people only. Use in lieu of giving mobs huge STAPER bonuses if you want them to be observant.
 
+/mob/living/simple_animal/onbite(mob/living/carbon/human/user)
+	var/damage = 10*(user.STASTR/20)
+	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
+		damage = damage*2
+	playsound(user.loc, "smallslash", 100, FALSE, -1)
+	user.next_attack_msg.Cut()
+	if(stat == DEAD)
+		if(user.has_status_effect(/datum/status_effect/debuff/silver_curse))
+			to_chat(user, span_notice("My power is weakened, I cannot heal!"))
+			return
+		if(user.mind && istype(user, /mob/living/carbon/human/species/werewolf))
+			visible_message(span_danger("The werewolf ravenously consumes the [src]!"))
+			to_chat(src, span_warning("I feed on succulent flesh. I feel reinvigorated."))
+			user.reagents.add_reagent(/datum/reagent/medicine/healthpot, 30)
+			gib()
+		return
+	if(src.apply_damage(damage, BRUTE))
+		if(istype(user, /mob/living/carbon/human/species/werewolf))
+			visible_message(span_danger("The werewolf bites into [src] and thrashes!"))
+		else
+			visible_message(span_danger("[user] bites [src]! What is wrong with them?"))

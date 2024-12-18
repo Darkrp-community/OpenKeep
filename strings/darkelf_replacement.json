@@ -1,6 +1,6 @@
 {
 
-    "french": {
+    "darkelf": {
 		"shi": "shee",
 		"thi": "zee",
 		"them ": "zem ",
@@ -19,28 +19,28 @@
 		"Mother" : "Mozer",
 		"Father" : "Fazer",
 		" yes ": " yis ",
-        	" and ": " et ", 
+        	" and ": " et ",
 		"the ": "l' ",
 		"I ": "j' ",
 		"I'm ": "j' ",
         	"bye": [
            		 "adieu",
 			"au revoir"
-       		 ], 
+       		 ],
 		"cake": "gateau",
-      		  "captain": "capitaine", 
-     		   "dad": "papa", 
+      		  "captain": "capitaine",
+     		   "dad": "papa",
         "hello": [
-            "'allo", 
+            "'allo",
             "bonjour",
 			"salut"
-        ], 
-        "mom ": "mama ", 
+        ],
+        "mom ": "mama ",
 	"shit": "merde",
-        "spaghetti": "macaroni", 
-        "thanks": "merci",  
-        "thank you": "merci",   
+        "spaghetti": "macaroni",
+        "thanks": "merci",
+        "thank you": "merci",
         "wine": "vine"
 		}
-		
+
 }

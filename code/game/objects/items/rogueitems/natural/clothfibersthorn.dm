@@ -6,7 +6,7 @@
 	force = 0
 	throwforce = 0
 	obj_flags = null
-	color = "#454032"
+	color = "#766945"
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
@@ -20,6 +20,9 @@
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
 	if(move_after(user, 5 SECONDS, target = src))
 		var/fibercount = 0
+		var/obj/item/natural/fibers/W = user.get_active_held_item()
+		if(istype(W))
+			fibercount++
 		for(var/obj/item/natural/fibers/F in get_turf(src))
 			fibercount++
 		while(fibercount > 0)
@@ -33,6 +36,8 @@
 				fibercount -= clamp(fibercount, 2, 6)
 		for(var/obj/item/natural/fibers/F in get_turf(src))
 			qdel(F)
+		if(istype(W))
+			qdel(W)
 
 /obj/item/natural/silk
 	name = "silk"
@@ -56,6 +61,9 @@
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
 	if(move_after(user, 5 SECONDS, target = src))
 		var/silkcount = 0
+		var/obj/item/natural/silk/W = user.get_active_held_item()
+		if(istype(W))
+			silkcount++
 		for(var/obj/item/natural/silk/F in get_turf(src))
 			silkcount++
 		while(silkcount > 0)
@@ -69,6 +77,8 @@
 				silkcount -= clamp(silkcount, 2, 6)
 		for(var/obj/item/natural/silk/F in get_turf(src))
 			qdel(F)
+		if(istype(W))
+			qdel(W)
 
 #ifdef TESTSERVER
 
@@ -114,8 +124,6 @@
 	if(wet)
 		. += span_notice("It's wet!")
 
-/obj/item/natural/cloth/bandit
-	color = "#ff0000"
 
 // CLEANING
 
@@ -303,6 +311,9 @@
 	icon2 = "clothroll2"
 	icon2step = 10
 
+/obj/item/natural/bundle/cloth/partial
+	amount = 6
+
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"
 	desc = "A bundle of wooden sticks, weak when seperated, mighty together."
@@ -358,6 +369,9 @@
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
 	if(move_after(user, 5 SECONDS, target = src))
 		var/wormcount = 0
+		var/obj/item/natural/worms/W = user.get_active_held_item()
+		if(istype(W))
+			wormcount++
 		for(var/obj/item/natural/worms/F in get_turf(src))
 			wormcount++
 		while(wormcount > 0)
@@ -371,3 +385,5 @@
 				wormcount -= clamp(wormcount, 2, 12)
 		for(var/obj/item/natural/worms/F in get_turf(src))
 			qdel(F)
+		if(istype(W))
+			qdel(W)

@@ -732,6 +732,7 @@
 		else
 			to_chat(src, "<span class='warning'>I fail to get up!</span>")
 	update_cone_show()
+	SEND_SIGNAL(src, COMSIG_LIVING_SET_RESTING, rest)
 
 /mob/living/proc/update_resting()
 	update_rest_hud_icon()
@@ -1588,6 +1589,7 @@
 	else
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
+	update_cone_show()
 
 /*
 	if(should_be_lying || restrained || incapacitated())

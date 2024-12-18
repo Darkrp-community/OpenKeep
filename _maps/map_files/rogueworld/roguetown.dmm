@@ -10815,7 +10815,7 @@
 	},
 /area/rogue/indoors/town/warehouse)
 "KR" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/cave,
+/mob/living/carbon/human/species/goblin/skilled/ambush/cave,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "KS" = (

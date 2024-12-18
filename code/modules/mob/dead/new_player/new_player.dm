@@ -558,14 +558,13 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	var/column_counter = 0
 
 	var/list/omegalist = list()
-	omegalist += list(GLOB.noble_positions)
-	omegalist += list(GLOB.garrison_positions)
+	omegalist += list(GLOB.court_positions)
 	omegalist += list(GLOB.church_positions)
-	omegalist += list(GLOB.mercatorguild_positions)
-	omegalist += list(GLOB.makersguild_positions)
+	omegalist += list(GLOB.towner_positions)
+	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.apprentices_positions)
-	omegalist += list(GLOB.serf_positions)
+	omegalist += list(GLOB.allmig_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -596,21 +595,19 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 			var/cat_name = ""
 			switch (SSjob.name_occupations[category[1]].department_flag)
 				if (NOBLEMEN)
-					cat_name = "Nobles"
+					cat_name = "Court"
 				if (GARRISON)
 					cat_name = "Garrison"
-				if (MERCATOR_GUILD)
-					cat_name = "Mercator guild"
-				if (MAKERS_GUILD)
-					cat_name = "Makers guild"
-				if (SERFS)
-					cat_name = "Subjects"
+				if (TOWNERS)
+					cat_name = "Towners"
 				if (TEMPLE)
 					cat_name = "Temple"
 				if (PEASANTS)
 					cat_name = "Peasants"
 				if (APPRENTICES)
 					cat_name = "Apprentices"
+				if (OUTSIDERS)
+					cat_name = "Outsiders"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"
@@ -635,7 +632,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 				var/datum/job/job_datum = SSjob.name_occupations[job]
 				if(job_datum)
 					var/command_bold = ""
-					if(job in GLOB.noble_positions)
+					if(job in GLOB.court_positions)
 						command_bold = " command"
 					var/used_name = job_datum.title
 					if(client.prefs.gender == FEMALE && job_datum.f_title)
