@@ -56,4 +56,17 @@
 		backl = /obj/item/storage/backpack/rogue/satchel
 		head = /obj/item/clothing/head/roguetown/rare/elfplate/welfplate
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
+	else
+		pants = /obj/item/clothing/under/roguetown/tights/black
+		backr = /obj/item/rogueweapon/sword/long/kriegsmesser
+		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
+		belt = /obj/item/storage/belt/rogue/leather
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+		backl = /obj/item/storage/backpack/rogue/satchel
+		neck = /obj/item/clothing/neck/roguetown/chaincoif
+		shoes = /obj/item/clothing/shoes/roguetown/hoplite
+		armor = /obj/item/clothing/suit/roguetown/armor/rare/hoplite
+		head = /obj/item/clothing/head/roguetown/rare/hoplite
+		wrists = /obj/item/clothing/wrists/roguetown/bracers/hoplite
+		neck = /obj/item/clothing/neck/roguetown/gorget/hoplite
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

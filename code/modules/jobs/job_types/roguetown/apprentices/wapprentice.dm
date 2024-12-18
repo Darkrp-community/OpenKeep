@@ -6,7 +6,7 @@
 	total_positions = 1
 	spawn_positions = 1
 
-	allowed_races = ALL_RACES_LIST
+	allowed_races = ALL_PLAYER_RACES_BY_NAME
 	allowed_patrons = list(/datum/patron/divine/noc)
 	allowed_ages = list(AGE_ADULT)
 
