@@ -10,7 +10,11 @@
 	"Dwarf",
 	"Tiefling",
 	"Dark Elf",
-	"Aasimar"
+	"Aasimar",
+	"Changeling",
+	"Kenku",
+	"Ogrun",
+	"Undine"
 	)
 	var/list/allowed_patrons
 	var/list/allowed_ages

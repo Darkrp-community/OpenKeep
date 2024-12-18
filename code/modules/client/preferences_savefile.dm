@@ -328,13 +328,13 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["eye_color"]			>> eye_color
 	S["voice_color"]		>> voice_color
 	S["skin_tone"]			>> skin_tone
-	S["hairstyle_name"]	>> hairstyle
+	S["hairstyle_name"]		>> hairstyle
 	S["facial_style_name"]	>> facial_hairstyle
 	S["underwear"]			>> underwear
 	S["underwear_color"]	>> underwear_color
 	S["undershirt"]			>> undershirt
 	S["accessory"]			>> accessory
-	S["detail"]			>> detail
+	S["detail"]				>> detail
 	S["socks"]				>> socks
 	S["backpack"]			>> backpack
 	S["jumpsuit_style"]		>> jumpsuit_style

@@ -10,7 +10,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter
 
@@ -69,7 +73,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/hunter // Everything is the same
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

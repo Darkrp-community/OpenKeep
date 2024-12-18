@@ -67,6 +67,17 @@
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+				if(H.dna.species.name == "Undine")
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumhelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+
+
 	H.underwear_color = null
 	H.update_body()
 

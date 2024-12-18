@@ -23,6 +23,8 @@
 	var/wallcraft = FALSE
 	var/craftdiff = 1
 	var/sellprice = 0
+	var/req_kaizoku = FALSE
+	var/req_antikaizoku = FALSE
 	//crafting diff, every diff removes 25% chance to craft
 /*
 /datum/crafting_recipe/example

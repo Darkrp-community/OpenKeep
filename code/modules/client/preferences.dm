@@ -1955,6 +1955,8 @@ Slots: [job.spawn_positions]</span>
 						if(user.client)
 							if(bla.patreon_req > user.client.patreonlevel())
 								continue
+							if(bla.minrace_pq > get_playerquality(user.ckey)) // PQ check here
+								continue
 						else
 							continue
 						crap += bla
@@ -2469,6 +2471,10 @@ Slots: [job.spawn_positions]</span>
 		random_character(gender)
 	if(parent)
 		if(pref_species.patreon_req > parent.patreonlevel())
+			chosen_species = /datum/species/human/northern
+			pref_species = new /datum/species/human/northern
+			random_character(gender)
+		if(pref_species.minrace_pq > get_playerquality(parent.ckey))
 			chosen_species = /datum/species/human/northern
 			pref_species = new /datum/species/human/northern
 			random_character(gender)

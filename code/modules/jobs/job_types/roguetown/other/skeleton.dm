@@ -9,12 +9,16 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Elf", 
+		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = ""
 

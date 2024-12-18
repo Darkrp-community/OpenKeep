@@ -12,7 +12,12 @@
 		"Half-Elf",
 		"Dwarf",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
+
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_TEMPLE_PATRONS
@@ -67,6 +72,13 @@
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/green
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
+		if("Abyssor") //Abyssanctum should really be for abyssariads and Heartfealteans. So in a way, this is the only way.
+			head = /obj/item/clothing/head/roguetown/padded/shrinekeeper
+			neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
+			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver

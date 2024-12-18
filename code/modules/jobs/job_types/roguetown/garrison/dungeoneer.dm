@@ -13,7 +13,10 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling", //Abyssariad dungeoneers, on the standards of Rockhill, are burakumins. Their non-impure version is the Kaishakunin.
+		"Kenku",
+		"Ogrun"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
@@ -62,3 +65,12 @@
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+	if(H.dna.species?.id == "abyssariad")
+		mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
+		H.burakumin = TRUE
+		to_chat(H, "<span class='userdanger'>My honor, long forfeited, so I become the tool of torture and cruelty. Swift, painless death required by my people is no option for this filth. Perhaps one day my sins will no longer linger.</span>")
+		if(H.wear_mask)
+			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch || /obj/item/clothing/mask/rogue/eyepatch/left ))
+				qdel(H.wear_mask)
+				mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor

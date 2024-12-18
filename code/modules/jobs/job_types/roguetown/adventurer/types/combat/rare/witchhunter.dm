@@ -10,7 +10,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/puritan
 	maximum_possible_slots = 1

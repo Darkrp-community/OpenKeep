@@ -281,7 +281,7 @@ SUBSYSTEM_DEF(ticker)
 							to_chat(player, "<span class='warning'>You cannot be [V] and thus are not considered.</span>")
 							continue
 					readied_jobs.Add(V)
-	if(("King" in readied_jobs) || ("Queen" in readied_jobs))
+	/*if(("King" in readied_jobs) || ("Queen" in readied_jobs))
 		if("King" in readied_jobs)
 			rulertype = "King"
 		else
@@ -290,6 +290,7 @@ SUBSYSTEM_DEF(ticker)
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
 		return FALSE
+	*/
 
 #ifdef DEPLOY_TEST
 	var/amt_ready = 999
@@ -306,7 +307,7 @@ SUBSYSTEM_DEF(ticker)
 			continue
 		if(player.ready == PLAYER_READY_TO_PLAY)
 			amt_ready++
-	if(amt_ready < 2)
+	if(amt_ready < 0)
 		to_chat(world, "<span class='purple'>[amt_ready]/2 players ready.</span>")
 /*		failedstarts++
 		if(failedstarts > 7)
@@ -560,6 +561,7 @@ SUBSYSTEM_DEF(ticker)
 		CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/select_ruler()
+/*
 	switch(rulertype)
 		if("King")
 			for(var/mob/living/carbon/human/K in world)
@@ -575,7 +577,7 @@ SUBSYSTEM_DEF(ticker)
 				if(Q.job == "Queen")
 					rulermob = Q
 					return
-
+*/
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/P = i

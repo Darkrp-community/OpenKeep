@@ -7,7 +7,8 @@
 		"Humen",
 		"Elf",
 		"Half-Elf",
-		"Aasimar"
+		"Aasimar",
+		"Kenku"  //Abyssariad: Non-military racial specialization, so they are allowed to work on this role.
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/merchant
 	category_tags = list(CTAG_PILGRIM)

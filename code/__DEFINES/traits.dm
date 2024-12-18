@@ -43,6 +43,7 @@
 #define TRAIT_ANTIMAGIC					"Anti-Magic"
 #define TRAIT_ANTISCRYING				"Anti-Scrying"
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
+#define TRAIT_KAIZOKU					"Foglander Cultured"
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -51,6 +52,7 @@
 #define TRAIT_KNOWBANDITS "knowbandits"
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_LIMPDICK "limp_dick"
+#define TRAIT_MINCED "minced" // Punishment that exists only because I am evil. Try NOT using the mouth of MONSTER PEOPLE THAT EATS FLESH ON A WHIM next time.
 #define TRAIT_SEXPASS "sexpass"
 #define TRAIT_INTRAINING "intraining" //allows certain roles to bypass the average skill limitation of training dummies
 #define TRAIT_STEELHEARTED "steelhearted" //no bad mood from dismembering or seeing this
@@ -107,6 +109,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
 	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
+	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways at cost of the Imperial culture."
 	))
 
 // trait accessor defines

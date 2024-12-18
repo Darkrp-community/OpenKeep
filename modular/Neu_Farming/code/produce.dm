@@ -432,6 +432,29 @@
 	rotprocess = null
 	dust_result = /obj/item/reagent_containers/powder/ozium
 
+/obj/item/reagent_containers/food/snacks/produce/rice
+	seed = /obj/item/neuFarm/seed/rice
+	name = "weeperstears"
+	desc = "Weeperstears, or 'Rice', is the abyssariad's staple food. It is believed that the plants came from the tears of Weeping God."
+	icon_state = "rice"
+	icon = 'icons/roguetown/kaizoku/items/produce.dmi'
+	gender = PLURAL
+	filling_color = "#e0baa0"
+	bitesize_mod = 2
+	foodtype = GRAIN
+	tastes = list("slightly nutty" = 1)
+	can_distill = TRUE
+	distill_reagent = /datum/reagent/consumable/ethanol/sake
+	distill_amt = 24
+	grind_results = list(/datum/reagent/floure = 10) //rice flour
+	dropshrink = 0.9
+	mill_result = /obj/item/reagent_containers/powder/flour
+/obj/item/reagent_containers/food/snacks/produce/rice/examine(mob/user)
+	var/farminglvl = user.mind?.get_skill_level(/datum/skill/labor/farming)
+	. += ..()
+	if(farminglvl >= 0)
+		. += "I can easily tell that these are weeperstears grains."
+
 /*
 /obj/item/reagent_containers/food/snacks/produce/garlic
 	name = "garlic"

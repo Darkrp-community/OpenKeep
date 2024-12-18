@@ -443,3 +443,41 @@
 	desc = "The loyal companion of simple peasants, able to cut hard bread and carve wood. A versatile kitchen utensil and tool."
 	icon_state = "villagernife"
 
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
+// If the usage is desired, ask monochrome9090 for permission.   //
+// Respect the artists's will, COMMISSION them instead.          //
+// This is solely for SPRITES. The code is free for the taking.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/rogueweapon/huntingknife/kunai //Practically a villager knife with more utility. It helps others to climb walls.
+	name = "kunai"
+	desc = "A simple stabbing weapon made of iron which originated as a masonry or gardening tool, useful for climbing walls in similar ways to pitons."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "kunai"
+	force = 8
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/tanto
+	name = "tanto"
+	icon_state = "tanto"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	desc = "Initially a companion blade to the tachi in a zamurai's daisho, the tanto was later replaced by the wakizashi with the shift to infantry tactics after the Bloody Apotheosis."
+
+/obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
+	name = "kaiken"
+	desc = "The weapon laws in colonized Abyssariad islands, with high humen of elven population, forbade non-warriors from carrying blades in public, so abyssariad colonists made weapons such as this."
+	icon_state = "kaiken"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
+	w_class = WEIGHT_CLASS_TINY
+
+/obj/item/rogueweapon/huntingknife/idagger/sai //I request a coder to help me out on this. Make the sai recognize there is another sai on the other hand, and give full 8 wdefense, otherwise its 3 or 4.
+	name = "sai"
+	desc = "Recognizable by its uniqueness and typically carried in pairs, the sai features a sharply-tapered central rod with two prongs at the cross-guards. It lacks blade for cutting, but it excels in jabbing and defending against other weapons."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "sai"
+	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/thrust/pick)
+	w_class = WEIGHT_CLASS_NORMAL
+	force = 10
+	wdefense = 8 //Need code help; Increase (to 8) of Sai's wdefense only if there is a another Sai on the other hand.

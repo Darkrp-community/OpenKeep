@@ -37,3 +37,8 @@
 	name = "Drum"
 	cost = 10
 	contains = /obj/item/rogue/instrument/drum
+
+/datum/supply_pack/rogue/instruments/shamisen
+	name = "Shamisen"
+	cost = 25
+	contains = /obj/item/rogue/instrument/shamisen

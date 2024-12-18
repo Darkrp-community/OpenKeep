@@ -169,6 +169,12 @@
 	if(HAS_TRAIT(owner, TRAIT_LIMPDICK))
 		to_chat(owner, "<span class='warning'>My soldier won't stand up for me.</span>")
 		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
+		return
+	if(HAS_TRAIT(user, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>All I see is a open wound.</span>")
+		return
 	if(user.sexcon.inpussy)
 		if(user.sexcon.inpussy != owner)
 			testing("fuckfail5")
@@ -245,6 +251,9 @@
 	if(HAS_TRAIT(owner, TRAIT_LIMPDICK))
 		to_chat(owner, "<span class='warning'>My soldier won't stand up for me.</span>")
 		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
+		return
 	if(user.loc != owner.loc)
 		return
 	if(fucking)
@@ -294,6 +303,9 @@
 		return
 	if(HAS_TRAIT(owner, TRAIT_LIMPDICK))
 		to_chat(owner, "<span class='warning'>My soldier won't stand up for me.</span>")
+		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
 		return
 	if(!user.lying && !user.wallpressed && !owner.wallpressed && !owner.lying)
 		return
@@ -352,6 +364,9 @@
 	if(HAS_TRAIT(owner, TRAIT_LIMPDICK))
 		to_chat(owner, "<span class='warning'>My soldier won't stand up for me.</span>")
 		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
+		return
 	if(gender != MALE)
 		return
 	if(fucking)
@@ -377,6 +392,20 @@
 	owner.visible_message("<span class='[!user.cmode ? "love" : "warning"]'>[owner] feeds [user].</span>")
 	START_PROCESSING(SSsex, user.sexcon)
 	START_PROCESSING(SSsex, src)
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user //owner feeds user. Owner has genital exposed, so user must be Changeling.
+		if(H.dna?.species?.name == "Changeling") //They have an eldritch mouth. Neither THEY control it properly imagine YOU.
+			if(prob(15))
+				to_chat(owner, "<span class='userdanger'>You witness your genitals snap, sinews pulled free with unnatural ease as if it were never bound at all.</span>")
+				to_chat(user, "<span class='userdanger'>The fleshy taste drives you into a trance, involuntary, carnivorous hunger. Your jaws became unbidden.</span>")
+				playsound(owner, 'sound/combat/dismemberment/dismem (1).ogg', 100, TRUE, ignore_walls = FALSE)
+				ADD_TRAIT(owner, TRAIT_MINCED, TRAIT_GENERIC)
+				owner.emote("scream")
+				owner.apply_damage(80, BRUTE, BODY_ZONE_PRECISE_GROIN)
+				owner.Stun(60)
+				return
+			else
+				to_chat(user, "<span class='info'>You suppress the primal instinct, though this strain feels unnatural to your biology.</span>")
 
 /datum/sex_controller/proc/begin_mouthride(mob/living/user)
 	if(!user)
@@ -391,6 +420,9 @@
 	if(user.loc != owner.loc)
 		return
 	if(!user.lying || owner.lying)
+		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
 		return
 	if(inpussy)
 		testing("mridefail2")
@@ -427,6 +459,20 @@
 	user.sexcon.eatspeed = initial(user.sexcon.eatspeed)
 	user.sexcon.lasteat = world.time
 	user.sexcon.weeating = owner
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user //owner rides = owner genital is exposed. User must be abyssariad.
+		if(H.dna?.species?.name == "Changeling") //They have an eldritch mouth. Neither THEY control it properly imagine YOU.
+			if(prob(15))
+				to_chat(owner, "<span class='userdanger'>You witness your genitals snap, sinews pulled free with unnatural ease as if it were never bound at all.</span>")
+				to_chat(user, "<span class='userdanger'>The fleshy taste drives you into a trance, involuntary, carnivorous hunger. Your jaws became unbidden.</span>")
+				playsound(owner, 'sound/combat/dismemberment/dismem (1).ogg', 100, TRUE, ignore_walls = FALSE)
+				ADD_TRAIT(owner, TRAIT_MINCED, TRAIT_GENERIC)
+				owner.emote("scream")
+				owner.apply_damage(80, BRUTE, BODY_ZONE_PRECISE_GROIN)
+				owner.Stun(60)
+				return
+			else
+				to_chat(user, "<span class='info'>You suppress the primal instinct, though this strain feels unnatural to your biology.</span>")
 	riding = user
 	owner.visible_message("<span class='[!user.cmode ? "love" : "warning"]'>[owner] rides [riding]'s face.</span>")
 	START_PROCESSING(SSsex, user.sexcon)
@@ -453,6 +499,12 @@
 		return
 	if(HAS_TRAIT(user, TRAIT_LIMPDICK))
 		to_chat(owner, "<span class='warning'>The soldier won't stand up for me.</span>")
+		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
+		return
+	if(HAS_TRAIT(user, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>All I see is a open wound.</span>")
 		return
 	if(inpussy && !riding)
 		if(inpussy != user)
@@ -501,6 +553,9 @@
 	if(!get_location_accessible(user, BODY_ZONE_PRECISE_GROIN))
 		testing("eatfail13")
 		return
+	if(HAS_TRAIT(user, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>I will not put my mouth on a open wound.</span>")
+		return
 	if(eatingus)
 		if(eatingus == user)
 			if(!(user.lying && owner.lying))
@@ -538,6 +593,20 @@
 	weeating = user
 	user.sexcon.lasteat = world.time
 	user.sexcon.eatingus = owner
+	if(ishuman(owner))
+		var/mob/living/carbon/human/H = owner //owner is the one sugging. Owner must be the Changeling.
+		if(H.dna?.species?.name == "Changeling") //They have an eldritch mouth. Neither THEY control it properly imagine YOU.
+			if(prob(15))
+				to_chat(user, "<span class='userdanger'>You witness your genitals snap, sinews pulled free with unnatural ease as if it were never bound at all.</span>") //Functions perfectly for male AND females.
+				to_chat(owner, "<span class='userdanger'>The fleshy taste drives you into a trance, involuntary, carnivorous hunger. Your jaws became unbidden.</span>")
+				playsound(owner, 'sound/combat/dismemberment/dismem (1).ogg', 100, TRUE, ignore_walls = FALSE)
+				ADD_TRAIT(user, TRAIT_MINCED, TRAIT_GENERIC)
+				user.emote("scream")
+				user.apply_damage(80, BRUTE, BODY_ZONE_PRECISE_GROIN)
+				user.Stun(60)
+				return
+			else
+				to_chat(owner, "<span class='info'>You suppress the primal instinct, though this strain feels unnatural to your biology.</span>")
 	if(weeating.gender == MALE)
 		owner.visible_message("<span class='[!weeating.cmode ? "love" : "warning"]'>[owner] sucks [weeating].</span>")
 	else
@@ -560,6 +629,9 @@
 		return
 	if(HAS_TRAIT(owner, TRAIT_LIMPDICK))
 		to_chat(user, "<span class='warning'>The soldier won't stand up for me.</span>")
+		return
+	if(HAS_TRAIT(owner, TRAIT_MINCED))
+		to_chat(owner, "<span class='warning'>My genitals got MINCED by that slackjaw freek!</span>")
 		return
 	if(fapping)
 		testing("fapfail6")
@@ -846,6 +918,8 @@
 							stop_fucking()
 						if(adjust_horny(3, usedsource))
 							stop_fucking()
+						//if race here if(D.owner.)
+							//if abyssariad, perform the funny perk-giver.
 	if(riding)
 		if(riding.sexcon.weeating == owner)
 			var/datum/sex_controller/D = riding.sexcon

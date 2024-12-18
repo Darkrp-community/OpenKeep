@@ -370,3 +370,108 @@
 	name = "Vicious Mockery"
 	desc = "<span class='warning'>THAT SPOONY BARD! ARGH!</span>\n"
 	icon_state = "muscles"
+
+
+//////////////////////Kaizoku stuff//////////////////
+
+//frozentomb
+
+/datum/status_effect/frozentomb //Abyssor-followers should instantly break away from this coffin.
+	id = "abyssor_frozen"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = -1
+	examine_text = "You've been frozen within an abyssal tomb."
+	alert_type = /atom/movable/screen/alert/status_effect/frozen
+	var/obj/structure/abyssaltomb/tomb
+	var/attempts = 0 // special feature that increases difficulty with each failed struggle attempt against the ice coffin. Or that's what I intended for it to be.
+
+/atom/movable/screen/alert/status_effect/frozen
+	name = "Abyssal Submission"
+	desc = "Imprisoned by frozen tides, beneath the deep blue."
+	icon_state = "intomb"
+	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
+
+//code for frozentomb
+
+/datum/status_effect/frozentomb/proc/resist_tomb() //this is NOT working as it should. Please help me. Buckling is also not working for that bit.
+	if(!isliving(owner)) //I'm making this frozentomb deal brute damage slowly, as if the mob is inside the pressuring depths of the abyss. Not doing it now, because of bugs.
+		return
+	var/mob/living/L = owner
+	// Abyssor's divine immunity
+	if(L.patron == /datum/patron/divine/abyssor)
+		L.visible_message("<span class='info'>[L]'s purified body is unworthy of this punishment, their body already bound to the abyss.</span>") //Abyssor followers can easily be released from this.
+		L.status_flags &= ~GODMODE
+		UnregisterSignal(owner, COMSIG_LIVING_RESIST)
+		L.remove_status_effect(src)
+		return
+	attempts += 1
+	var/probability = CLAMP((L.STAINT - (attempts * 5)), 1, 99) // Add a penalty for each attempt
+	if(prob(probability))
+		L.visible_message("<span class='success'>[L] breaks free of the abyssal tomb!</span>")
+		L.status_flags &= ~GODMODE
+		UnregisterSignal(owner, COMSIG_LIVING_RESIST)
+		L.remove_status_effect(src)
+	else
+		L.visible_message("<span class='warning'>[L] struggles against the icy tomb but fails to break free.</span>")
+
+/datum/status_effect/frozentomb/tick(seconds_between_ticks)
+	if(!tomb || owner.loc != tomb)
+		owner.remove_status_effect(src)
+
+//freezing
+
+/atom/movable/screen/alert/status_effect/debuff/freezing //the abyss is cold.
+	name = "Freezing"
+	desc = "<span class='boldwarning'>Frost-bitten and touched by the ancient god, seeping through time and existence. The god feels, spreads and carves your skin.</span>\n" //that's abyssor.
+	icon_state = "freezing"
+	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
+
+/datum/status_effect/debuff/freezing
+	id = "freezing"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/freezing
+	duration = 30 SECONDS
+	effectedstats = list("speed" = -2, "endurance" = -2)
+
+/datum/status_effect/debuff/freezing/tick()
+	owner.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
+	if(prob(50))
+		owner.adjustFireLoss(1)
+		owner.Jitter(3)
+
+/datum/status_effect/debuff/freezing/on_apply()
+	owner.color = "#4ad0d4"
+	return ..()
+
+/datum/status_effect/debuff/freezing/on_remove()
+	owner.color = "#ffffff"
+
+// severe freezing
+
+/atom/movable/screen/alert/status_effect/debuff/freezing/severe //this is even worst.
+	name = "Severe Freezing"
+	desc = "<span class='boldwarning'>Ravaged by a frozen grasp, skin violently carved as divine icy tendrils invade the muscles, spreading a chill so holy that tears through the soul.</span>\n" //that's abyssor.
+	icon_state = "freezing_severe"
+	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
+
+/datum/status_effect/debuff/freezing/severe
+	id = "freezingsevere"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/freezing/severe
+	duration = 60 SECONDS
+	effectedstats = list("speed" = -5, "endurance" = -3)
+
+/datum/status_effect/debuff/freezing/tick()
+	owner.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
+	if(prob(50))
+		owner.adjustFireLoss(3)
+		owner.Jitter(3)
+
+/datum/status_effect/debuff/freezing/on_apply()
+	owner.color = "#2f42b3"
+	owner.remove_status_effect(/datum/status_effect/debuff/freezing)
+	owner.add_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN, multiplicative_slowdown = 2)
+	return ..()
+
+/datum/status_effect/debuff/freezing/on_remove()
+	owner.apply_status_effect(/datum/status_effect/debuff/freezing)
+	owner.remove_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN)
+

@@ -13,7 +13,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "The dead dont speak, least if youre doing your job right. Youve a pilfers dream, for few have enough to pay for your services out of pocket- So you take it from the fallen. Your job isnt considered highly, but without you: who else would disgrace the sanctity of the dead?"
 
@@ -53,3 +57,11 @@
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Operating with corpses every day.
 	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC) // In case they need to move tombs or anything.
 
+	if(H.dna.species?.id == "abyssariad")
+		to_chat(H, "<span class='warning'>Despite what some people may believe, my role on society is respected, as my abyssal honor is not put in test in a daily basis, as butchering is no death trade.")
+		if(H.gender == FEMALE)
+			pants = null
+			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/dark
+		else
+			armor = /obj/item/clothing/suit/roguetown/armor/kaizoku/haori/dark
+			pants = /obj/item/clothing/under/roguetown/tobi/dark

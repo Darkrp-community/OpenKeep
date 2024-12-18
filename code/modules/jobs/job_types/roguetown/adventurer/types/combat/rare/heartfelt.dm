@@ -12,18 +12,18 @@
 
 /datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
 	belt = /obj/item/storage/belt/rogue/leather/black
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	head = /obj/item/clothing/head/roguetown/helmet
-	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	cloak = /obj/item/clothing/cloak/heartfelt
+	head = /obj/item/clothing/head/roguetown/heartfelt
+	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+	pants = /obj/item/clothing/under/roguetown/tobi/dark
+	cloak = /obj/item/clothing/cloak/newheartfelt
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/scomstone
-	gloves = /obj/item/clothing/gloves/roguetown/leather/black
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/black
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 	beltl = /obj/item/rogueweapon/sword/long/marlin
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
@@ -47,3 +47,4 @@
 
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)

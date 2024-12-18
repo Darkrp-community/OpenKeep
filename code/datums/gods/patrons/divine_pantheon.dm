@@ -40,13 +40,18 @@
 	t2 = /obj/effect/proc_holder/spell/targeted/beasttame
 	t3 = /obj/effect/proc_holder/spell/targeted/conjure_kneestingers
 
-/datum/patron/divine/abyssor
+/datum/patron/divine/abyssor //I really gotta make this different for Abyssariads and normal Abyssor.
 	name = "Abyssor"
 	domain = "Force of Seas and Storms"
 	desc = "The World-Whale, the sovereign of the seas and storms."
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Trying to Tame the Seas"
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal/abyssal
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify //Unfinished
+	t2 = /obj/effect/proc_holder/spell/invoked/icebind //Unfinished
+	t3 = null
+//	t3 = /obj/effect/proc_holder/spell/invoked/elemental //Not finished.
 
 /datum/patron/divine/necra
 	name = "Necra"

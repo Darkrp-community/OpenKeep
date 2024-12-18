@@ -5,6 +5,10 @@
 	allowed_races = list(
 		"Half-Elf",
 		"Elf",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/blackoak
 	category_tags = list(CTAG_MERCENARY)

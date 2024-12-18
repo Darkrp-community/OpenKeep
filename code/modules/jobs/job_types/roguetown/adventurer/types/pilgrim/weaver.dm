@@ -6,7 +6,11 @@
 	"Half-Elf",
 	"Dwarf",
 	"Tiefling",
-	"Aasimar"
+	"Aasimar",
+	"Changeling",
+	"Kenku",
+	"Ogrun",
+	"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

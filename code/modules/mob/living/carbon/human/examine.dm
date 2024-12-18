@@ -5,6 +5,10 @@
 		user.add_stress(/datum/stressevent/delf)
 	if(!istiefling(user) && istiefling(src))
 		user.add_stress(/datum/stressevent/tieb)
+	if(HAS_TRAIT(user, TRAIT_KAIZOKU) && !HAS_TRAIT(src, TRAIT_KAIZOKU))
+		user.add_stress(/datum/stressevent/whaler)
+	if(!HAS_TRAIT(user, TRAIT_KAIZOKU) && HAS_TRAIT(src, TRAIT_KAIZOKU))
+		user.add_stress(/datum/stressevent/raider)
 	if(user.has_flaw(/datum/charflaw/paranoid) && (STASTR - user.STASTR) > 1)
 		user.add_stress(/datum/stressevent/parastr)
 
@@ -96,6 +100,10 @@
 		if(iszizocultist(user) || iszizolackey(user))
 			if(virginity)
 				. += "<span class='userdanger'>VIRGIN!</span>"
+
+		if(isabyssariad(user) && isabyssariad(src))
+			if(burakumin)
+				. += "<span class='userdanger'>IMPURE BURAKUMIN!</span>"
 
 		if(real_name in GLOB.outlawed_players)
 			. += "<span class='userdanger'>OUTLAW!</span>"
