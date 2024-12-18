@@ -23,20 +23,15 @@
 	result = list(/obj/item/storage/belt/rogue/pouch)
 
 /datum/crafting_recipe/roguetown/leather/gloves
-	name = "leather gloves"
+	name = "leather gloves {ip}"
 	result = /obj/item/clothing/gloves/roguetown/leather
-	name = "leather gloves (x2){ip}"
-	result = list(/obj/item/clothing/gloves/roguetown/leather,
-	/obj/item/clothing/gloves/roguetown/leather)
-	req_antikaizoku = TRUE
+
 
 /datum/crafting_recipe/roguetown/leather/bracers
-	name = "leather bracers"
+	name = "leather bracers {ip}"
 	result = /obj/item/clothing/wrists/roguetown/bracers/leather
-	name = "leather bracers (x2){ip}"
-	result = list(/obj/item/clothing/wrists/roguetown/bracers/leather,
-			/obj/item/clothing/wrists/roguetown/bracers/leather)
 	req_antikaizoku = TRUE
+
 
 /datum/crafting_recipe/roguetown/leather/pants
 	name = "leather pants {ip}"
@@ -44,11 +39,8 @@
 	req_antikaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/shoes
-	name = "leather shoes"
+	name = "leather shoes {ip}"
 	result = /obj/item/clothing/shoes/roguetown/simpleshoes
-	name = "leather shoes (x2){ip}"
-	result = list(/obj/item/clothing/shoes/roguetown/simpleshoes,
-				/obj/item/clothing/shoes/roguetown/simpleshoes,)
 	req_antikaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/boots
@@ -69,16 +61,14 @@
 	req_antikaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/hood
-	name = "leather hood"
+	name = "leather hood {ip}"
 	result = /obj/item/clothing/head/roguetown/roguehood/brown
+	reqs = list(/obj/item/natural/fur = 1)
 
 /datum/crafting_recipe/roguetown/leather/papakha
 	name = "papakha hat"
 	result = /obj/item/clothing/head/roguetown/papakha
 	reqs = list(/obj/item/natural/fur = 1)
-	name = "leather hood {ip}"
-	result = /obj/item/clothing/head/roguetown/roguehood
-	req_antikaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/cloak
 	name = "leather cloak"
@@ -145,8 +135,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/heavygloves
-	name = "fur-lined gloves"
-	name = "heavy leather gloves {ip}"
+	name = "fur-lined gloves {ip}"
 	result = /obj/item/clothing/gloves/roguetown/angle
 	reqs = list(/obj/item/natural/hide = 1,
 				/obj/item/natural/fur = 1)
@@ -190,8 +179,7 @@
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/leather/hidearmor
-	name = "fur-lined armor"
-	name = "hide armor {ip}"
+	name = "fur-lined armor {ip}"
 	result = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	reqs = list(/obj/item/natural/hide = 2,
 				/obj/item/natural/fur = 1)

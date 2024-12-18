@@ -153,6 +153,8 @@
 
 /obj/item/clothing/wrists/roguetown/shrinekeeper
 	slot_flags = ITEM_SLOT_WRISTS
+	name = "purificators"
+	desc = "Blessed gauntlets for those who believes they can punch spirits."
 	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
 	sleeved = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
