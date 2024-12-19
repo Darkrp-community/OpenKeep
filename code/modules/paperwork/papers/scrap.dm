@@ -1,5 +1,6 @@
 /obj/item/paper/bsmith
-	info = "It's easy to smith. Put ores in the smelter. Put ingots on the anvil. Use your tongs to handle ingots. Hit them with the hammer. Quench hot ingots in the barrel (there must be water in it). Steel is an alloy from iron and coal, find the golden ratio"
+	info = "It's easy to smith. Put ores in the smelter. Put ingots on the anvil. Use your tongs to handle ingots. Hit them with the hammer.   \
+	Quench hot ingots in the barrel (there must be water in it). Steel is an alloy from iron and coal, find the golden ratio"
 
 /obj/item/paper/heartfelt/goal3
 	info = "Establish a diplomatic alliance with the King of Rockhill to strengthen the relationship between Heartfelt and Rockhill."
@@ -23,17 +24,17 @@
 
 /obj/item/paper/feldsher_certificate
 	name = "feldsher health certificate"
-	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a few weeks ago)"
-	icon_state = "certificate"
-
+	info = "The wearer hath passed the feldshers monthly inspection as mandated by the pestilence laws, and is not a bearer of maladies to infect our towne.   \
+	Thus they are allowede legally to ply the nitemaidens trade. I so swear on this date. (signed by the town feldsher, the date is a few weeks ago)"
 /obj/item/paper/feldsher_certificate/expired
-	info = "This member of the nitemaidens guild hath passed the feldshers monthly inspection as mandated by the law, and is not a bearer of maladies to infect our towne. I so swear on this date. (signed by the town feldsher, the date is a smudge)"
-
-/obj/item/paper/nitemaiden_certificate/Initialize()
+	info = "The wearer hath passed the feldshers monthly inspection as mandated by the pestilence laws, and is not a bearer of maladies to infect our towne.   \
+	 Thus they are allowede legally to ply the nitemaidens trade. I so swear on this date.  (signed by the town feldsher, the date is half a year ago)"
+/obj/item/paper/feldsher_certificate/fake
+	info = "The wearer hath passed the feldshers monthly inspection as mandated by the pestilence laws, and is not a bearer of maladies to infect our towne.   \
+	Thus they are allowede legally to ply the nitemaidens trade. I so swear on this date.  (signature is undreadable, the date is a few weeks ago)"
+/obj/item/paper/feldsher_certificate/Initialize()
 	..()
-	var/type = pick(typesof(/obj/item/paper/feldsher_certificate))
-	new type(loc)
-	return INITIALIZE_HINT_QDEL
+	icon_state = "certificate"
 
 /obj/item/paper/heartfelt/random/Initialize()
 	..()

@@ -243,7 +243,7 @@
 
 	contents += "</center><BR>"
 
-	var/list/unlocked_cats = list("Narcotics","Instruments")
+	var/list/unlocked_cats = list("Narcotics","Instruments","Suspicious","Outfits")
 	if(current_cat == "1")
 		contents += "<center>"
 		for(var/X in unlocked_cats)
