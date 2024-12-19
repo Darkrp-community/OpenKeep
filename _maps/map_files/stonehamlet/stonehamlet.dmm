@@ -6824,8 +6824,8 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "gIz" = (
-/obj/structure/table/wood{
-	icon_state = "tablewood3"
+/obj/structure/table/stone{
+	dir = 4
 	},
 /obj/item/clothing/neck/roguetown/psycross,
 /turf/open/floor/rogue/blocks,
@@ -7285,9 +7285,8 @@
 /area/rogue/outdoors/mountains)
 "hlB" = (
 /obj/item/candle/yellow,
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
+/obj/structure/table/stone_end{
+	dir = 4
 	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
@@ -8378,7 +8377,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/dwarfin)
 "iqb" = (
-/obj/structure/table/church{
+/obj/structure/table/churchneu{
 	icon_state = "church_l"
 	},
 /turf/open/floor/rogue/sandstone/temple,
@@ -8579,7 +8578,7 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/magician)
 "ixB" = (
-/obj/structure/table/church,
+/obj/structure/table/churchneu,
 /obj/item/handheld_bell{
 	pixel_x = -13;
 	pixel_y = 16
@@ -8776,7 +8775,9 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
 "iGb" = (
-/obj/structure/table/wood/reinforced_alter,
+/obj/structure/table/wood/reinforced_alt{
+	dir = 8
+	},
 /obj/structure/bars/alt,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town/dwarfin)
@@ -9305,7 +9306,7 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "jlE" = (
-/obj/structure/table/church{
+/obj/structure/table/churchneu{
 	dir = 1;
 	icon_state = "church_r"
 	},
@@ -12590,9 +12591,8 @@
 /area/rogue/indoors/town)
 "mBF" = (
 /obj/item/storage/bag/tray/psy,
-/obj/structure/table/wood{
-	dir = 10;
-	icon_state = "tablewood2"
+/obj/structure/table/stone_end{
+	dir = 8
 	},
 /obj/item/reagent_containers/glass/bottle/rogue/healthpot,
 /turf/open/floor/rogue/blocks,
@@ -12609,7 +12609,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
 "mEx" = (
-/obj/structure/table/church,
+/obj/structure/table/stone_small,
 /obj/item/rogueweapon/shovel,
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/under/town/basement)
@@ -14514,7 +14514,9 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave/abandoned_mine)
 "ouq" = (
-/obj/structure/table/wood/plain_alt,
+/obj/structure/table/wood/reinforced_alt{
+	dir = 8
+	},
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
@@ -14557,6 +14559,13 @@
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
+"owE" = (
+/obj/structure/table/wood/reinforced_alt{
+	dir = 4
+	},
+/obj/structure/bars/alt,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors/town/dwarfin)
 "owT" = (
 /obj/effect/decal/turfedge_neu/rockalt_edge,
 /obj/effect/decal/turfedge_neu/rockalt_edge{
@@ -17332,7 +17341,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "qVi" = (
-/obj/structure/table/wood/reinforced_alter,
+/obj/structure/table/wood/reinforced_alt,
 /obj/structure/bars/alt,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/dwarfin)
@@ -18163,7 +18172,9 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/shop)
 "rHl" = (
-/obj/structure/table/wood/plain_alt,
+/obj/structure/table/wood/reinforced_alt{
+	dir = 4
+	},
 /obj/item/mortar{
 	pixel_y = 5
 	},
@@ -34093,7 +34104,7 @@ nSF
 lOZ
 tYR
 rJP
-iGb
+owE
 xAF
 xAF
 xAF
