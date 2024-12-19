@@ -1,8 +1,8 @@
 
 /obj/effect/landmark/mapGenerator/rogue/cave
 	mapGeneratorType = /datum/mapGenerator/cave
-	endTurfX = 255
-	endTurfY = 255
+	endTurfX = 200
+	endTurfY = 200
 	startTurfX = 1
 	startTurfY = 1
 
