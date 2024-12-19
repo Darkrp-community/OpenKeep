@@ -235,7 +235,7 @@
 	return inspect_text
 
 /*
-    // I did not find the trigger for cutting tool. So this is commented out for now. Use 'cloth' to recover the fuse.
+	// I did not find the trigger for cutting tool. So this is commented out for now. Use 'cloth' to recover the fuse.
 /obj/item/zhentianlei/attackby(obj/item/tool/cutting/C, mob/user)
 		if(fuze > 30)
 			fuze = 30

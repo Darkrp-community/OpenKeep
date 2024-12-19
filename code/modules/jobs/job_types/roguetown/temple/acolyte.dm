@@ -77,7 +77,7 @@
 			neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
 			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
-			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random

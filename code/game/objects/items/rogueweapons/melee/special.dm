@@ -77,9 +77,6 @@
 			if(!(H.job in GLOB.rod_jobs))
 				return
 
-			if(!(H in SStreasury.bank_accounts))
-				return
-
 			if(istype(user.used_intent, /datum/intent/lord_electrocute))
 				HU.visible_message("<span class='warning'>[HU] electrocutes [H] with \the [src].</span>")
 				H.electrocute_act(5, src)

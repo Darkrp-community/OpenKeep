@@ -64,9 +64,9 @@ Future plan:
 	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,0), \
 	OFFSET_NECK_F = list(0,0), OFFSET_MOUTH_F = list(0,0), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-    // Lore explanation for stats:
-    // Qualities: +Dense muscles ; higher fast-twitch fiber
-    // =>Disadvantage: -Lower Stationary Acuity; They are better at noticing movements, bad at noticing stationary objects. Bad with bows by nature. Foxes have that IRL because of nightvision. At least they have more reason to have it than Dark Elves.
+	// Lore explanation for stats:
+	// Qualities: +Dense muscles ; higher fast-twitch fiber
+	// =>Disadvantage: -Lower Stationary Acuity; They are better at noticing movements, bad at noticing stationary objects. Bad with bows by nature. Foxes have that IRL because of nightvision. At least they have more reason to have it than Dark Elves.
 	// -Low fat mass, high muscle mass. Streamlined body structure that minimizes resistance and maximizes intense muscular movements.
 	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 2, "constitution" = -1, "endurance" = 1, "speed" = 1, "fortune" = 0)
