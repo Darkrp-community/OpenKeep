@@ -84,336 +84,29 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 #endif
 	return INITIALIZE_HINT_QDEL
 
-/obj/effect/landmark/start_late
-	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "latejoin"
-/obj/effect/landmark/start_late/New()
-	GLOB.start_landmarks_list += src
-	tag = "start*[name]"
-
-
-/*
-/obj/effect/landmark/start_late/Initialize(mapload)
-	. = ..()
-	GLOB.start_landmarks_list += src
-	tag = "start*[name]"
-*/
-//..	Court starters		..
-/obj/effect/landmark/start/lord
-	name = "King"
-	jobspawn_override = list("King")
-/obj/effect/landmark/start_late/lord
-	name = "King"
-
-/obj/effect/landmark/start/steward
-	name = "Steward"
-	jobspawn_override = list("Steward")
-/obj/effect/landmark/start_late/steward
-	name = "Steward"
-
-/obj/effect/landmark/start/archivist
-	name = "Archivist"
-	jobspawn_override = list("Archivist")
-/obj/effect/landmark/start_late/archivist
-	name = "Archivist"
-
-/obj/effect/landmark/start/manorguardsman
-	name = "Royal Guard"
-	jobspawn_override = list("Royal Guard")
-/obj/effect/landmark/start_late/royalguard
-	name = "Royal Guard"
-
-
-/obj/effect/landmark/start/hand
-	name = "Hand"
-	jobspawn_override = list("Hand")
-/obj/effect/landmark/start_late/hand
-	name = "Hand"
-
-/obj/effect/landmark/start/consort
-	name = "Consort"
-	jobspawn_override = list("Consort")
-/obj/effect/landmark/start_late/consort
-	name = "Consort"
-
-/obj/effect/landmark/start/prince
-	name = "Prince"
-	jobspawn_override = list("Prince")
-/obj/effect/landmark/start_late/prince
-	name = "Prince"
-
-/obj/effect/landmark/start/jester
-	name = "Jester"
-//	jobspawn_override = list("Jester")
-/obj/effect/landmark/start_late/jester
-	name = "Jester"
-/obj/effect/landmark/start/butler
-	name = "Butler"
-//	jobspawn_override = list("Butler")
-/obj/effect/landmark/start_late/butler
-	name = "Butler"
-/obj/effect/landmark/start/servant
-	name = "Servant"
-/obj/effect/landmark/start_late/servant
-	name = "Servant"
-/obj/effect/landmark/start_late/servant/Initialize(mapload)
-	..()
-	SSjob.latejoin_trackers += loc
-	return INITIALIZE_HINT_QDEL
-
-
-
-/obj/effect/landmark/start/dungeoneer
-	name = "Dungeoneer"
-	jobspawn_override = list("Dungeoneer")
-/obj/effect/landmark/start_late/dungeoneer
-	name = "Dungeoneer"
-
-//..	Court Mage starters		..
-/obj/effect/landmark/start/magician
-	name = "Court Magician"
-	jobspawn_override = list("Court Magician")
-/obj/effect/landmark/start_late/courtmage
-	name = "Court Magician"
-
-/obj/effect/landmark/start/wapprentice
-	name = "Magician's Apprentice"
-	jobspawn_override = list("Magician's Apprentice")
-/obj/effect/landmark/start_late/wapprentice
-	name = "Magician's Apprentice"
-
-
-//..	Town Watch starters		..
-/obj/effect/landmark/start/sheriff
-	name = "Sheriff"
-	jobspawn_override = list("Sheriff")
-/obj/effect/landmark/start_late/sheriff
-	name = "Sheriff"
-
-/obj/effect/landmark/start/watchman
-	name = "Watchman"
-	jobspawn_override = list("Watchman")
-/obj/effect/landmark/start_late/watchman
-	name = "Watchman"
-
-/obj/effect/landmark/start/squire
-	name = "Squire"
-/obj/effect/landmark/start_late/squire
-	name = "Squire"
-
-
-//..	Temple starters		..
-/obj/effect/landmark/start/priest
-	name = "Priest"
-	jobspawn_override = list("Priest")
-/obj/effect/landmark/start/priest_late
-	name = "Priest"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/templar
-	name = "Templar"
-	jobspawn_override = list("Templar")
-/obj/effect/landmark/start/templar_late
-	name = "Templar"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/monk
-	name = "Acolyte"
-	jobspawn_override = list("Acolyte")
-/obj/effect/landmark/start/acolyte_late
-	name = "Acolyte"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/gravedigger
-	name = "Gravekeeper"
-	jobspawn_override = list("Gravekeeper")
-/obj/effect/landmark/start/gravedigger_late
-	name = "Gravekeeper"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/puritan
-	name = "Inquisitor"
-	icon_state = "arrow"
-/obj/effect/landmark/start/inquisitor_late
-	name = "Inquisitor"
-	icon_state = "latejoin"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/shepherd
-	name = "Adept"
-	icon_state = "arrow"
-/obj/effect/landmark/start/adept_late
-	name = "Adept"
-	icon_state = "latejoin"
-	delete_after_roundstart = FALSE
-
-//..	Townspeople starters		..
-/obj/effect/landmark/start/merchant
-	name = "Merchant"
-	jobspawn_override = list("Merchant")
-/obj/effect/landmark/start/merchant_late
-	name = "Merchant"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/stevedore
-	name = "Stevedore"
-	jobspawn_override = list("Stevedore")
-/obj/effect/landmark/start/stevedore_late
-	name = "Stevedore"
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/innkeep
-	name = "Innkeep"
-	jobspawn_override = list("Innkeep")
-/obj/effect/landmark/start/innkeep_late
-	name = "Innkeep"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/cook
-	name = "Cook"
-	jobspawn_override = list("Cook")
-/obj/effect/landmark/start/cook_late
-	name = "Cook"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/mason
-	name = "Mason"
-	jobspawn_override = list( "Mason")
-/obj/effect/landmark/start/mason_late
-	name =  "Mason"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/blacksmith
-	name = "Blacksmith"
-	jobspawn_override = list( "Blacksmith")
-/obj/effect/landmark/start/blacksmith_late
-	name =  "Blacksmith"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/sapprentice
-	name = "Smithy Apprentice"
-	jobspawn_override = list( "Smithy Apprentice")
-/obj/effect/landmark/start/sapprentice_late
-	name =  "Smithy Apprentice"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/tailor
-	name = "Tailor"
-	jobspawn_override = list("Tailor")
-/obj/effect/landmark/start/tailor_late
-	name = "Tailor"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/feldsher
-	name = "Feldsher"
-	jobspawn_override = list("Feldsher")
-/obj/effect/landmark/start/feldsher_late
-	name = "Feldsher"
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/nightman
-	name = "Niteman"
-	jobspawn_override = list(	 "Niteman" )
-/obj/effect/landmark/start/niteman_late
-	name = "Niteman"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/nightmaiden
-	name = "Nitemaiden"
-	jobspawn_override = list(	 "Nitemaiden" )
-/obj/effect/landmark/start/nitemaiden_late
-	name = "Nitemaiden"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/mercenary
-	name = "Mercenary"
-	jobspawn_override = list(	 "Mercenary" )
-/obj/effect/landmark/start/mercenary_late
-	name = "Mercenary"
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/woodsman
-	name = "Mayor"
-	jobspawn_override = list(	"Mayor" )
-/obj/effect/landmark/start/mayor_late
-	name = "Mayor"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/veteran
-	name = "Veteran"
-	jobspawn_override = list(	"Veteran" )
-/obj/effect/landmark/start/veteran_late
-	name = "Veteran"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/farmer
-	name = "Soilson"
-	jobspawn_override = list(	"Soilson" )
-/obj/effect/landmark/start/soilson_late
-	name = "Soilson"
-	delete_after_roundstart = FALSE
-/obj/effect/landmark/start/beastmonger
-	name = "Butcher"
-	jobspawn_override = list(	 "Butcher")
-/obj/effect/landmark/start/butcher_late
-	name = "Butcher"
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/vagrant
-	name = "Beggar"
-	jobspawn_override = list(	 "Beggar" )
-/obj/effect/landmark/start/beggar_late
-	name = "Beggar"
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/prisoner
-	name = "Prisoner"
-
-
-/obj/effect/landmark/start/pilgrim	// for both roundstart and latejoins, on a road on the main map
-	name = "Pilgrim"
-	icon_state = "arrow"
-	jobspawn_override = list("Pilgrim")
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/adventurer
-	name = "Adventurer"
-	jobspawn_override = list("Drifter", "Adventurer")
-	delete_after_roundstart = FALSE
-
-/obj/effect/landmark/start/adventurerlate	// obsolete
+/obj/effect/landmark/start/adventurerlate
 	name = "Adventurerlate"
 	icon_state = "arrow"
 	jobspawn_override = list("Drifter", "Adventurer")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/vagrantlate
+	name = "Beggarlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Beggar")
+	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/guardsman
-	name = "Garrison Guard"
+/obj/effect/landmark/start/orphanlate
+	name = "Orphanlate"
 	icon_state = "arrow"
+	jobspawn_override = list("Orphan")
+	delete_after_roundstart = FALSE
 
-/obj/effect/landmark/start/knight
-	name = "Knight"
+/obj/effect/landmark/start/mercenarylate
+	name = "Mercenarylate"
 	icon_state = "arrow"
-
-/obj/effect/landmark/start/captain
-	name = "Captain"
-	icon_state = "arrow"
-
-
-
-/obj/effect/landmark/start/villager
-	name = "Towner"
-	icon_state = "arrow"
-
-/obj/effect/landmark/start/cleric
-	name = "Cleric"
-	icon_state = "arrow"
-/obj/effect/landmark/start/weaponsmith
-	name = "Weaponsmith"
-	icon_state = "arrow"
-/obj/effect/landmark/start/armorsmith
-	name = "Armorer"
-	icon_state = "arrow"
-/obj/effect/landmark/start/alchemist
-	name = "Alchemist"
-	icon_state = "arrow"
-/obj/effect/landmark/start/scribe
-	name = "Scribe"
-	icon_state = "arrow"
-/obj/effect/landmark/start/hunter
-	name = "Hunter"
-	icon_state = "arrow"
-/obj/effect/landmark/start/fisher
-	name = "Fisher"
-	icon_state = "arrow"
-/obj/effect/landmark/start/lumberjack
-	name = "Lumberjack"
-	icon_state = "arrow"
+	jobspawn_override = list("Mercenary")
+	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/villagerlate
 	name = "Townerlate"
@@ -421,19 +114,233 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Towner")
 	delete_after_roundstart = FALSE
 
-
-/obj/effect/landmark/start/vagrantlate	// obsolete
-	name = "Beggarlate"
-
-/obj/effect/landmark/start/orphanlate	// obsolete
-	name = "Orphanlate"
-
-/obj/effect/landmark/start/mercenarylate	// obsolete
-	name = "Mercenarylate"
+/obj/effect/landmark/start/combatlate
+	name = "Combatlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Mercenary")
+	jobspawn_override = list("Drifter", "Adventurer", "Mercenary")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/pilgrim
+	name = "Pilgrim"
+	jobspawn_override = list("Pilgrim")
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/lord
+	name = "King"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/knight
+	name = "Knight"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/sheriff
+	name = "Captain"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/steward
+	name = "Steward"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/magician
+	name = "Court Magician"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/guardsman
+	name = "Garrison Guard"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/manorguardsman
+	name = "Royal Guard"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/veteran
+	name = "Veteran"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/dungeoneer
+	name = "Dungeoneer"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/sheriff
+	name = "Sheriff"
+	icon_state = "arrow"
+/obj/effect/landmark/start/watchman
+	name = "Watchman"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/villager
+	name = "Towner"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/woodsman
+	name = "Mayor"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/priest
+	name = "Priest"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/cleric
+	name = "Cleric"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/monk
+	name = "Acolyte"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/puritan
+	name = "Inquisitor"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/shepherd
+	name = "Adept"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/templar
+	name = "Templar"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/nightman
+	name = "Niteman"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/nightmaiden
+	name = "Nitemaiden"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/merchant
+	name = "Merchant"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/stevedore
+	name = "Stevedore"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/innkeep
+	name = "Innkeep"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/innkeep
+	name = "Innkeep"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/archivist
+	name = "Archivist"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/weaponsmith
+	name = "Weaponsmith"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/armorsmith
+	name = "Armorer"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/blacksmith
+	name = "Blacksmith"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/tailor
+	name = "Tailor"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/alchemist
+	name = "Alchemist"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/mason
+	name = "Mason"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/scribe
+	name = "Scribe"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/farmer
+	name = "Soilson"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/beastmonger
+	name = "Butcher"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/cook
+	name = "Cook"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/gravedigger
+	name = "Gravekeeper"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/mercenary
+	name = "Mercenary"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/vagrant
+	name = "Beggar"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/consort
+	name = "Consort"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/prince
+	name = "Prince"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/prisoner
+	name = "Prisoner"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/jester
+	name = "Jester"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/hand
+	name = "Hand"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/hunter
+	name = "Hunter"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/fisher
+	name = "Fisher"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/lumberjack
+	name = "Lumberjack"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/butler
+	name = "Butler"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/adventurer
+	name = "Adventurer"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/feldsher
+	name = "Feldsher"
+	icon_state = "arrow"
+
+//yrf
+
+/obj/effect/landmark/start/squire
+	name = "Squire"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/wapprentice
+	name = "Magician's Apprentice"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/servant
+	name = "Servant"
+	icon_state = "arrow"
+
+/obj/effect/landmark/start/sapprentice
+	name = "Smithy Apprentice"
+	icon_state = "arrow"
 
 
 /obj/effect/landmark/start/colonist
@@ -509,7 +416,6 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 /obj/effect/landmark/latejoin
 	name = "JoinLate"
-	icon_state = "latejoin"
 
 /obj/effect/landmark/latejoin/Initialize(mapload)
 	..()

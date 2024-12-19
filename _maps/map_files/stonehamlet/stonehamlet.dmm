@@ -1672,18 +1672,6 @@
 	},
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
-"bJE" = (
-/obj/effect/landmark/start/adept_late{
-	dir = 1
-	},
-/obj/effect/landmark/start/inquisitor_late{
-	dir = 1
-	},
-/obj/effect/landmark/latejoin{
-	dir = 1
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield/hamlet)
 "bKg" = (
 /obj/structure/fluff/railing/border{
 	dir = 9;
@@ -2623,9 +2611,6 @@
 "cGe" = (
 /obj/structure/bed/rogue/mediocre{
 	name = "apprentice bedding"
-	},
-/obj/effect/landmark/start/sapprentice_late{
-	dir = 1
 	},
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town)
@@ -5593,13 +5578,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
-"ftj" = (
-/obj/structure/closet/crate/coffin,
-/obj/effect/landmark/start/gravedigger_late{
-	dir = 8
-	},
-/turf/open/floor/rogue/cobble/alt,
-/area/rogue/under/town/basement)
 "ftC" = (
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/outdoors/rtfield/plague_district)
@@ -8155,12 +8133,6 @@
 	},
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
-"iel" = (
-/obj/effect/landmark/start_late/squire{
-	dir = 1
-	},
-/turf/open/floor/rogue/blocks,
-/area/rogue/indoors/town/garrison)
 "ieO" = (
 /obj/structure/table/wood/large/corner_blue{
 	dir = 10
@@ -8561,7 +8533,6 @@
 	dir = 1
 	},
 /obj/structure/fluff/statue/gargoyle/moss,
-/obj/effect/landmark/start/mason_late,
 /turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/indoors/town)
 "iwL" = (
@@ -9808,11 +9779,6 @@
 /obj/structure/flora/roguegrass/thorn_bush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/hamlet)
-"jHc" = (
-/obj/structure/bed/rogue/shit,
-/obj/effect/landmark/start/beggar_late,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/town/sewer)
 "jHi" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/transparent/openspace,
@@ -10823,7 +10789,6 @@
 /obj/structure/bed/rogue/shit,
 /obj/effect/decal/cleanable/dirt/cobweb,
 /obj/item/kitchen/spoon,
-/obj/effect/landmark/start/beggar_late,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "kGQ" = (
@@ -10927,9 +10892,6 @@
 "kPs" = (
 /obj/structure/bed/rogue/wool,
 /obj/item/bedsheet/rogue/fabric,
-/obj/effect/landmark/start_late/sheriff{
-	dir = 8
-	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "kPP" = (
@@ -11178,9 +11140,6 @@
 /area/rogue/outdoors/exposed/town/hamlet)
 "lcf" = (
 /obj/machinery/light/rogue/torchholder/c,
-/obj/effect/landmark/start_late/watchman{
-	dir = 8
-	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "lci" = (
@@ -12183,9 +12142,6 @@
 /area/rogue/outdoors/rtfield/plague_district)
 "lZE" = (
 /obj/structure/toilet,
-/obj/effect/landmark/start_late/watchman{
-	dir = 1
-	},
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "lZH" = (
@@ -13743,10 +13699,6 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/plague_district)
-"nDK" = (
-/obj/effect/landmark/start/beggar_late,
-/turf/open/floor/rogue/ruinedwood/spiral,
-/area/rogue/outdoors/town/roofs)
 "nDR" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/goatmale{
 	aggressive = 1;
@@ -15299,7 +15251,7 @@
 /area/rogue/under/town/basement)
 "oXi" = (
 /obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/captain{
+/obj/effect/landmark/start/sheriff{
 	dir = 1
 	},
 /turf/open/floor/rogue/cobble/alt,
@@ -20599,10 +20551,6 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
-"uhF" = (
-/obj/effect/landmark/start/beggar_late,
-/turf/open/floor/rogue/rooftop,
-/area/rogue/outdoors/town/roofs)
 "uhR" = (
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/shop)
@@ -24374,12 +24322,6 @@
 /obj/structure/bars/cemetery,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield/spooky)
-"xKO" = (
-/obj/effect/landmark/start/pilgrim{
-	dir = 8
-	},
-/turf/open/floor/rogue/ruinedwood,
-/area/rogue/outdoors/rtfield/hamlet)
 "xKP" = (
 /obj/structure/rack/rogue/shelf/notdense{
 	pixel_x = 32;
@@ -24777,6 +24719,12 @@
 "ycJ" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors)
+"ycY" = (
+/obj/effect/landmark/start/pilgrim{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/outdoors/rtfield/hamlet)
 "ydq" = (
 /obj/item/chair/rogue,
 /turf/open/floor/rogue/herringbone,
@@ -35106,7 +35054,7 @@ txE
 xqH
 mbn
 lcf
-iel
+szw
 lOZ
 inD
 lOZ
@@ -41540,7 +41488,7 @@ qSX
 kvv
 kvv
 oat
-ftj
+poF
 oat
 les
 psp
@@ -42276,7 +42224,7 @@ cZM
 cZM
 cZM
 psp
-jHc
+iRs
 fyR
 qLT
 qLT
@@ -62565,7 +62513,7 @@ hQx
 uJn
 uJn
 hQx
-bJE
+sGp
 "}
 (67,1,2) = {"
 psp
@@ -74187,8 +74135,8 @@ psp
 psp
 sfJ
 svE
-xKO
-xKO
+ycY
+ycY
 mzw
 sfJ
 sfJ
@@ -116412,7 +116360,7 @@ hZX
 hZX
 hZX
 pVp
-nDK
+qxN
 qwa
 oGx
 hZX
@@ -138691,7 +138639,7 @@ urU
 urU
 urU
 xCN
-uhF
+dxA
 dxA
 dxA
 qnG
