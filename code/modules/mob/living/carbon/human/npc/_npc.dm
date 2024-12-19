@@ -245,8 +245,8 @@
 	switch(mode)
 		if(AI_IDLE)		// idle
 			if(world.time >= next_seek)
-				next_seek = world.time + 1 SECONDS
-				var/list/around = hearers(7, src) // scan for enemies
+				next_seek = world.time + 3 SECONDS
+				var/list/around = view(7, src) // scan for enemies
 				for(var/mob/living/L in around)
 					if(should_target(L))
 						retaliate(L)

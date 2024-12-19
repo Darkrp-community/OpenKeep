@@ -93,11 +93,10 @@
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(4))
-		B.tamed(user)
 		if((B.mob_biotypes & MOB_UNDEAD))
 			continue
-		B.aggressive = 0
 		B.tamed(user)
+		B.aggressive = 0
 
 
 //===========================================================================================
@@ -118,7 +117,7 @@
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -60
+	devotion_cost = 60
 
 /obj/effect/proc_holder/spell/targeted/conjure_glowshroom/cast(list/targets,mob/user = usr)
 	..()

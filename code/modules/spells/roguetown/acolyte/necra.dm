@@ -12,7 +12,7 @@
 	invocation = "Undermaiden grant thee passage forth and spare the trials of the forgotten."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -5
+	devotion_cost = 5
 
 /obj/effect/proc_holder/spell/targeted/burialrite/cast(list/targets,mob/user = usr)
 	. = ..()
@@ -48,7 +48,7 @@
 	invocation = "Speak and be heard, by the Will of the Undermaiden."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -40
+	devotion_cost = 40
 
 /obj/effect/proc_holder/spell/targeted/soulspeak/cast(list/targets,mob/user = usr)
 	var/mob/living/carbon/spirit/capturedsoul = null
@@ -106,7 +106,7 @@
 	invocation = "The Undermaiden rebukes!"
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
-	devotion_cost = -50
+	devotion_cost = 50
 
 /obj/effect/proc_holder/spell/targeted/churn/cast(list/targets,mob/living/user = usr)
 	. = ..()
