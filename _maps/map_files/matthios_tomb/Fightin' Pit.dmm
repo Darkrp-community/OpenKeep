@@ -1,0 +1,95 @@
+"cw" = (/obj/structure/closet/crate/chest/gold,/obj/item/roguegem/green,/obj/item/roguegem/red,/obj/item/roguegem/yellow,/turf/open/floor/rogue/metal,/area/rogue)
+"ei" = (/obj/item/reagent_containers/glass/bottle/rogue/whitewine,/turf/closed/mineral/rogue/bedrock,/area/rogue)
+"es" = (/obj/structure/mineral_door/wood/donjon{dir = 8},/turf/open/floor/rogue/metal,/area/rogue)
+"hz" = (/turf/open/floor/rogue/dirt,/area/rogue)
+"iA" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/dirt,/area/rogue)
+"jx" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/dirt,/area/rogue)
+"kl" = (/obj/structure/bars,/turf/open/floor/rogue/metal,/area/rogue)
+"kH" = (/mob/living/simple_animal/hostile/retaliate/rogue/wolf,/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/metal,/area/rogue)
+"lA" = (/obj/structure/rack/rogue/shelf,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"me" = (/obj/machinery/light/rogue/torchholder{dir = 1},/turf/open/floor/rogue/dirt,/area/rogue)
+"nc" = (/turf/closed/wall/mineral/rogue/wooddark,/area/rogue)
+"ox" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/dirt,/area/rogue)
+"qp" = (/obj/effect/decal/cleanable/blood,/turf/open/floor/rogue/metal,/area/rogue)
+"sr" = (/obj/structure/stairs{dir = 4},/turf/open/transparent/openspace,/area/rogue)
+"tE" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/dirt,/area/rogue)
+"tY" = (/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"uc" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"vr" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"wX" = (/obj/effect/decal/cleanable/blood/tracks{dir = 4},/turf/open/floor/rogue/metal,/area/rogue)
+"yg" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"yA" = (/obj/structure/rack/rogue/shelf{pixel_y = -32},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"zo" = (/obj/effect/decal/cleanable/blood/splatter,/turf/open/floor/rogue/metal,/area/rogue)
+"zD" = (/obj/effect/decal/cleanable/vomit/old,/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"zM" = (/turf/closed/mineral/rogue/bedrock,/area/rogue)
+"AJ" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"AL" = (/obj/item/chair/rogue/fancy,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"BP" = (/turf/closed/wall/mineral/rogue/wooddark/vertical,/area/rogue)
+"Cf" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"Cs" = (/obj/structure/closet/crate/chest/gold,/obj/item/rogueweapon/sword/sabre/cutlass,/obj/item/rogueweapon/knife/dagger/silver,/obj/item/rogueweapon/shield/tower/metal,/turf/open/floor/rogue/metal,/area/rogue)
+"CT" = (/obj/item/reagent_containers/glass/bottle/rogue/redwine,/turf/closed/mineral/rogue/bedrock,/area/rogue)
+"DM" = (/obj/structure/chair/wood/rogue/fancy,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"DP" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Em" = (/obj/machinery/light/rogue/firebowl/standing,/turf/open/transparent/openspace,/area/rogue)
+"Fh" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"Fo" = (/obj/effect/decal/cleanable/glass,/turf/closed/wall/mineral/rogue/wooddark/vertical,/area/rogue)
+"Ga" = (/turf/open/floor/rogue/metal,/area/rogue)
+"Ge" = (/obj/structure/chair/wood/rogue/fancy,/obj/effect/decal/cleanable/dirt,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Ha" = (/turf/open/transparent/openspace,/area/rogue)
+"Hh" = (/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Hr" = (/turf/open/water/acid/mapped,/area/rogue)
+"Im" = (/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"IP" = (/obj/structure/chair/wood/rogue/fancy{dir = 8},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Je" = (/obj/effect/decal/cleanable/dirt,/obj/item/chair/rogue/fancy{dir = 4},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"JC" = (/obj/effect/decal/cleanable/blood/tracks{dir = 10},/turf/open/floor/rogue/metal,/area/rogue)
+"Ka" = (/obj/effect/decal/cleanable/blood/old,/turf/open/floor/rogue/metal,/area/rogue)
+"MC" = (/obj/structure/mineral_door/wood,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Nb" = (/mob/living/simple_animal/hostile/retaliate/rogue/wolf,/obj/effect/decal/cleanable/blood/tracks{dir = 4},/turf/open/floor/rogue/metal,/area/rogue)
+"OI" = (/obj/structure/mineral_door/wood/donjon{dir = 4},/turf/open/floor/rogue/metal,/area/rogue)
+"OY" = (/obj/machinery/light/rogue/torchholder{dir = 1},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Pn" = (/obj/effect/decal/cleanable/dirt,/obj/structure/rack/rogue/shelf{pixel_y = -32},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"RS" = (/obj/machinery/light/rogue/torchholder/c,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"SA" = (/mob/living/simple_animal/hostile/retaliate/rogue/wolf,/turf/open/floor/rogue/metal,/area/rogue)
+"Tq" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Ur" = (/obj/structure/closet/crate/chest/gold,/obj/item/clothing/head/roguetown/helmet/visored/knight,/obj/item/clothing/gloves/roguetown/plate,/turf/open/floor/rogue/metal,/area/rogue)
+"Vk" = (/obj/structure/chair/wood/rogue/fancy{dir = 1},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"Vy" = (/obj/machinery/light/rogue/torchholder/l,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"VZ" = (/turf/open/water,/area/rogue)
+"Yt" = (/obj/item/chair/rogue/fancy{dir = 1},/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"YC" = (/obj/structure/chair/wood/rogue/fancy,/obj/effect/decal/cleanable/vomit/old,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+"YL" = (/obj/machinery/light/rogue/torchholder/r,/turf/open/floor/rogue/ruinedwood/chevron,/area/rogue)
+
+(1,1,1) = {"
+zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM
+zMhzhzhzhzhzhzoxImjxnchzoxhzhzImImhzhzzM
+zMhzhzhzImhzImImImhzhzImhzhzImImImImhzzM
+zMhzhzHrHrHrHrHrHrHrHrHrHrHrHrHrHrhzhzzM
+zMhzImHrklklklklklklklklklklklklHrImhzzM
+zMvrhzHrklGaGaGaSAkHKaGaSAqpUrklHrhziAzM
+hzImImFheswXNbqpGaGaGaGaSAGaGaklHrhzhzhz
+hzhzhzHrklGaVZGazoGaqpGaGaGaCsklHrImhzhz
+hzhzImImeszoGazoqpzoGaGaGaGaGaklHrhzhzhz
+zMtEhzHrklKakHGaJCNbNbwXqpSAcwklHrhziAzM
+zMhzhzHrklklklklklklklklklklklklHrImhzzM
+zMhzImHrHrHrHrHrHrHrHrHrHrHrHrHrHrImhzzM
+zMhzImImhzImImhzhzImhzhzhzhzImImhzhzhzzM
+zMhzImhzhzhzImmehzCfnchzmehzhzImImhzhzzM
+zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM
+"}
+(1,1,2) = {"
+zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMCTzMzM
+zMFolAlAlAtYtYRStYucDPAJRStYtYlAlAlABPzM
+zMBPtYtYtYYCGeYtGetYygtYDMDMDMtYtYtYBPzM
+zMBPtYtYtYDMJeDMDMtYtYtYDMYCYttYtYtYBPzM
+zMBPVytYklklklklklklklklklklklkltYzDBPzM
+zMnctYtYklHaHaHaHaHaHaHaHaHaHaklIPIPnczM
+tYMCtYtYklHaHaHaHaHaHaHaHaHaHaklIPYtMCtY
+tYnctYtYOIImHaEmHaHaHaHaEmHaHakltYtYnctY
+tYMCtYtYklHaHaHaHaHaHaHaHaHaHaklIPIPMCtY
+zMnctYtYklHaHaHaHaHaHaHaHaHaHaklIPIPnczM
+zMBPVytYklklklklklklklklklklklkltYYLBPzM
+zMBPTqtYtYVkYtVkVktYtYtYALVkVktYtYtYBPzM
+zMBPTqTqtYVkVkVkVktYHhtYVkVkVktYTqTqBPzM
+zMBPyAPnyAtYtYOYtYucsrtYOYtYtYyAyAPnBPzM
+zMzMeizMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM
+"}

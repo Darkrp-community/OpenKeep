@@ -1,0 +1,100 @@
+"bF" = (/obj/effect/decal/remains/bigrat,/turf/open/floor/rogue/churchrough,/area/rogue)
+"bR" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"bS" = (/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"cG" = (/obj/effect/decal/cleanable/shreds,/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"cR" = (/obj/structure/rack/rogue/shelf,/obj/effect/decal/cleanable/shreds,/turf/open/floor/rogue/churchrough,/area/rogue)
+"dD" = (/obj/effect/decal/cleanable/generic,/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/churchrough,/area/rogue)
+"eH" = (/obj/machinery/light/rogue/wallfire/candle/blue/l,/turf/open/transparent/openspace,/area/rogue)
+"fH" = (/obj/machinery/light/rogue/wallfire/candle/blue/r,/obj/effect/decal/cleanable/generic,/turf/open/floor/rogue/churchrough,/area/rogue)
+"fO" = (/obj/effect/decal/remains/bigrat,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"gV" = (/obj/effect/decal/cleanable/generic,/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/rogue/churchrough,/area/rogue)
+"hl" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/rogue/churchrough,/area/rogue)
+"hm" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"hp" = (/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"is" = (/obj/item/roguegem/green,/turf/closed/wall/mineral/rogue/underbrick,/area/rogue)
+"iH" = (/obj/structure/stairs{dir = 4},/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"iK" = (/obj/effect/decal/cleanable/generic,/turf/open/floor/rogue/churchrough,/area/rogue)
+"jY" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"lr" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"lG" = (/obj/effect/decal/cleanable/generic,/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"mC" = (/obj/effect/decal/cleanable/shreds,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"mK" = (/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"nR" = (/turf/closed/wall/mineral/rogue/wooddark,/area/rogue)
+"nW" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"oO" = (/obj/structure/mineral_door/wood/violet,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"ps" = (/obj/item/natural/rock,/turf/closed/wall/mineral/rogue/underbrick,/area/rogue)
+"qk" = (/obj/structure/mineral_door/wood/violet,/turf/open/floor/rogue/churchrough,/area/rogue)
+"rq" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/rogue/churchrough,/area/rogue)
+"rO" = (/obj/effect/decal/cleanable/generic,/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"rX" = (/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"sQ" = (/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,/turf/open/floor/rogue/churchrough,/area/rogue)
+"tz" = (/turf/open/transparent/openspace/airless,/area/rogue)
+"tT" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"ue" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"ur" = (/obj/structure/stairs,/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"wU" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"xm" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"xD" = (/obj/effect/decal/cleanable/shreds,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"xE" = (/obj/effect/decal/cleanable/dirt,/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"yw" = (/obj/effect/decal/cleanable/dirt,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"zE" = (/turf/closed/mineral/rogue/bedrock,/area/rogue)
+"Ax" = (/obj/effect/decal/cleanable/dirt/cobweb{dir = 8},/obj/structure/bookcase,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"BB" = (/obj/effect/decal/cleanable/dirt,/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/churchrough,/area/rogue)
+"Ce" = (/obj/structure/fluff/railing/wood,/turf/open/floor/rogue/churchrough,/area/rogue)
+"DX" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"GC" = (/obj/effect/decal/cleanable/dirt,/obj/effect/decal/cleanable/generic,/turf/open/floor/rogue/churchrough,/area/rogue)
+"Ha" = (/turf/open/transparent/openspace,/area/rogue)
+"Hj" = (/obj/effect/decal/cleanable/dirt/cobweb,/obj/structure/rack/rogue/shelf,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"Hs" = (/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"Ht" = (/obj/structure/stairs{dir = 8},/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"Hx" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"In" = (/obj/effect/decal/cleanable/dirt/cobweb{dir = 4},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"It" = (/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/rogue/churchrough,/area/rogue)
+"IT" = (/obj/effect/decal/cleanable/generic,/obj/structure/fluff/railing/wood{dir = 8},/turf/open/floor/rogue/churchrough,/area/rogue)
+"Ku" = (/turf/open/floor/rogue/churchrough,/area/rogue)
+"LE" = (/obj/structure/stairs{dir = 1},/turf/open/floor/rogue/ruinedwood,/area/rogue)
+"NW" = (/obj/structure/fluff/railing/wood{dir = 4},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"Ra" = (/obj/effect/decal/cleanable/dirt/cobweb{dir = 4},/obj/structure/bookcase,/turf/open/floor/rogue/churchrough,/area/rogue)
+"Rg" = (/turf/closed/wall/mineral/rogue/underbrick,/area/rogue)
+"Si" = (/obj/effect/decal/remains/bigrat,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"Sr" = (/obj/effect/decal/cleanable/dirt/cobweb,/obj/structure/rack/rogue/shelf,/turf/open/floor/rogue/churchrough,/area/rogue)
+"Tw" = (/obj/effect/decal/cleanable/dirt/cobweb{dir = 8},/turf/open/floor/rogue/churchrough,/area/rogue)
+"UC" = (/obj/effect/decal/cleanable/dirt/cobweb,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"UX" = (/obj/structure/bookcase,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/obj/item/book/rogue/random_book,/turf/open/floor/rogue/churchrough,/area/rogue)
+"VP" = (/obj/structure/fluff/railing/wood{dir = 1},/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+"XA" = (/obj/structure/rack/rogue/shelf,/obj/effect/decal/cleanable/dirt/cobweb/cobweb2,/turf/open/floor/rogue/ruinedwood/darker,/area/rogue)
+
+(1,1,1) = {"
+zEzEzEzEzEKuKuKuKuKuzEzEzEzEzE
+zERgRgRgRgRgqkRgqkRgRgRgRgRgzE
+zERgRgRgjYUXKuKuKujYHsRgRgRgzE
+zERgpsrqrqGCiKKubSrqfOsQRgRgzE
+zERgSrbSrqKuCeCedDBBrqiKcRRgzE
+KuRgueDXueKurXiHrXrXITjYhmRgKu
+KuqkKuKuiKKurXiHrXrXItiKKuqkKu
+KuRgKuxDKuKurXRgururItKufHRgKu
+KuqkKuiKKuKunRHtrXrXItKuKuqkKu
+KuRgiKuejYrqnRHtrXrXIttTUXRgKu
+zERgtTbSrqrqKuhlgVhlrqrqTwRgzE
+zERgRgKurqbFKuiKKuKuKuTwRgRgzE
+zERgRgRgRalrKuKuKuuehmRgRgRgzE
+zERgRgRgRgRgqkRgqkRgRgRgRgRgzE
+zEzEzEzEzEKuKuKuKuKuzEzEzEzEzE
+"}
+(1,1,2) = {"
+zEzEzEzEzEhphphphphpzEzEzEzEzE
+zERgRgRgRgRgoORgoORgRgRgRgRgzE
+zERgRgRgwUbRywhpywhpHaRgRgRgzE
+zERgRgUCSiHahphphpywHaHaisRgzE
+zERgHjHahpmKrOmKhpmKHaHaXARgzE
+hpRgxmbRcGrXrXiHrXtzHaHahpRghp
+hpHaHahpNWrXrXiHrXtzHaHaHaHahp
+hpRgeHHaHaLELERgtztznWHahpRghp
+hpoOhpHaNWrXHttztztznWhpywoOhp
+hpRghpHxxErXHttztztznWHahpRghp
+zERgInhpywVPVPVPlGVPmCHahpRgzE
+zERgRgHahpHaHaHahphphpHaRgRgzE
+zERgRgRghpHahpHahpHxAxRgRgRgzE
+zERgRgRgRgRgoORgoORgRgRgRgRgzE
+zEzEzEzEzEhphphphphpzEzEzEzEzE
+"}
