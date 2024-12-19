@@ -344,7 +344,12 @@
 				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 
-
+/obj/item/rogueweapon/sword/sabre/scythe
+	force = DAMAGE_SWORD-2
+	name = "scythe sword"
+	desc = "A farming tool blade has been fastened to a shorter wooden handle to create an improvised weapon."
+	icon_state = "scytheblade"
+	wdefense = AVERAGE_PARRY
 
 
 /*----------\
@@ -534,7 +539,7 @@
 	max_blade_int = 180 // Neglected, unused
 	max_integrity = INTEGRITY_STRONG-50
 	static_price = TRUE
-	sellprice = 30 // Old and chipped
+	sellprice = 45 // Old and chipped
 
 
 // Repurposing this unused sword for the Paladin job as a heavy counter against vampires.
@@ -852,9 +857,4 @@
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 25//lets make the two bars worth it
 
-/obj/item/rogueweapon/sword/sabre/scythe
-	force = DAMAGE_SWORD-2
-	name = "scythe sword"
-	desc = "A farming tool blade has been fastened to a shorter wooden handle to create an improvised weapon."
-	icon_state = "scytheblade"
-	wdefense = AVERAGE_PARRY
+

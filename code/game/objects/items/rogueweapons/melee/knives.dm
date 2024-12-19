@@ -24,7 +24,7 @@
 	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
 	sharpness = IS_SHARP
-	sellprice = 10
+	sellprice = 30
 
 /obj/item/rogueweapon/knife/getonmobprop(tag)
 	. = ..()
@@ -99,7 +99,7 @@
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
 	damfactor = 2
 
-//................ Hunting Knife	(steel)	............... //
+//................ Hunting Knife ............... //
 /obj/item/rogueweapon/knife/hunting
 	force = DAMAGE_KNIFE+1
 	throwforce = DAMAGE_KNIFE
@@ -112,10 +112,10 @@
 	wdefense = MEDIOCHRE_PARRY
 	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
-	sellprice = 15
+	sellprice = 30
 
 
-//................	Cleaver	(steel)	............... //
+//................ Cleaver ............... //
 /obj/item/rogueweapon/knife/cleaver
 	name = "cleaver"
 	desc = "A chef's tool turned armament, cleave off cumbersome flesh with rudimentary ease."
@@ -137,9 +137,8 @@
 	smeltresult = /obj/item/ingot/steel
 	wbalance = 0 // Except this one, too huge and used to chop
 	dropshrink = 0.9
-	sellprice = 15
 
-//................ Hack-Knife	(iron)	............... //
+//................ Hack-Knife ............... //
 /obj/item/rogueweapon/knife/cleaver/combat
 	name = "hack-knife"
 	desc = "A short blade that even the weakest of hands can aspire to do harm with."
@@ -152,6 +151,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = /obj/item/ingot/iron
 	wbalance = 1
+	sellprice = 15
 
 /obj/item/rogueweapon/knife/cleaver/combat/getonmobprop(tag)
 	. = ..()
@@ -170,7 +170,7 @@
 	desc = "Thin, sharp, pointed death."
 	icon_state = "idagger"
 	smeltresult = null
-	sellprice = 12
+	sellprice = 15
 
 //................ Steel Dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel
@@ -181,7 +181,7 @@
 	smeltresult = null
 	wdefense = AVERAGE_PARRY
 	wbalance = VERY_HARD_TO_DODGE
-	sellprice = 15
+	sellprice = 20
 
 /obj/item/rogueweapon/knife/dagger/steel/special
 	icon_state = "sdaggeralt"
@@ -203,7 +203,7 @@
 	smeltresult = null
 	max_blade_int = 112 // .8 of steel
 	max_integrity = 240 // .8 of steel
-	sellprice = 40
+	sellprice = 45
 	last_used = 0
 	is_silver = TRUE
 
@@ -243,7 +243,7 @@
 /obj/item/rogueweapon/knife/dagger/steel/profane
 //	name = "profane dagger"
 	desc = "A profane dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
-	sellprice = 80
+	sellprice = 250
 	icon_state = "pdagger"
 	smeltresult = null
 	embedding = list("embed_chance" = 0) // Embedding the cursed dagger has the potential to cause duping issues. Keep it like this unless you want to do a lot of bug hunting.
@@ -362,7 +362,7 @@
 	max_blade_int = 28
 	wdefense = TERRIBLE_PARRY
 	smeltresult = /obj/item/ash
-	sellprice = 0
+	sellprice = 5
 
 
 //................ Villager Knife ............... //
@@ -383,6 +383,6 @@
 	associated_skill = /datum/skill/combat/knives
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	smeltresult = /obj/item/ash
-	sellprice = 3
+	sellprice = 10
 
 
