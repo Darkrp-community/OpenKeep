@@ -10,7 +10,7 @@
 	contains = /obj/item/clothing/mask/cigarette/rollie/nicotine
 /datum/supply_pack/rogue/narcotics/zigbox
 	name = "Zigbox"
-	cost = 20
+	cost = 28
 	contains = /obj/item/storage/fancy/cigarettes/zig
 /datum/supply_pack/rogue/narcotics/zigboxempt
 	name = "Empty Zigbox"
@@ -54,16 +54,20 @@
 	contains = /obj/item/quiver/bolts
 /datum/supply_pack/rogue/suspicious/bolts
 	name = "Crossbow Bolt"
-	cost = 3
+	cost = 4
 	contains = /obj/item/ammo_casing/caseless/rogue/bolt
+/datum/supply_pack/rogue/suspicious/idagger
+	name = "Iron Dagger"
+	cost = 30
+	contains = /obj/item/rogueweapon/knife/dagger
 /datum/supply_pack/rogue/suspicious/poison
 	name = "Poison Bottle"
-	cost = 60
+	cost = 65
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/poison
 /datum/supply_pack/rogue/suspicious/lockpick
 	name = "Lockpick"
-	cost = 30
-	contains = /obj/item/lockpick
+	cost = 35
+	contains = /obj/item/lockpickring/mundane
 
 
 
@@ -102,7 +106,7 @@
 	contains = /obj/item/clothing/mask/cigarette/rollie/nicotine
 /datum/supply_pack/rogue/recreation/zigbox
 	name = "Zigbox"
-	cost = 30
+	cost = 25
 	contains = /obj/item/storage/fancy/cigarettes/zig
 /datum/supply_pack/rogue/recreation/zigboxempt
 	name = "Empty Zigbox"
