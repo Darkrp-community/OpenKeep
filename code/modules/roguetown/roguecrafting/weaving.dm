@@ -192,7 +192,8 @@
 /datum/crafting_recipe/roguetown/weaving/nochood
 	name = "moon hood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/nochood)
-	reqs = list(/obj/item/natural/cloth = 2)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/ingot/silver = 1,)
 	craftdiff = 4
 	sellprice = 25
 
@@ -220,7 +221,7 @@
 /datum/crafting_recipe/roguetown/weaving/eoramask // should not be a weaving recipe, does not follow the rules. TO DO
 	name = "eora hood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/eora)
-	reqs = list(/obj/item/ingot/silver,
+	reqs = list(/obj/item/ingot/silver = 1,
 				/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 20

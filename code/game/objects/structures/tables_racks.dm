@@ -499,7 +499,7 @@
 	buildstack = /obj/item/stack/tile/carpet/royalblue
 	smooth_icon = 'icons/obj/smooth_structures/fancy_table_royalblue.dmi'
 
-/obj/structure/table/church
+/obj/structure/table/church	// old shit
 	name = "stone table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
@@ -511,8 +511,9 @@
 /obj/structure/table/church/m
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "churchtable_mid"
-/*/................	Stone tables	............... //
-/obj/structure/table/church
+
+//................	Stone tables	............... //
+/obj/structure/table/churchneu
 	name = "stone table"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
@@ -520,7 +521,7 @@
 	max_integrity = 300
 	smooth = 0
 	climb_offset = 10
-*/
+
 /obj/structure/table/stone
 	name = "stone table"
 	desc = ""

@@ -138,7 +138,7 @@
 /obj/structure/roguemachine/drugmachine/attackby(obj/item/P, mob/user, params)
 	if(istype(P, /obj/item/roguekey))
 		var/obj/item/roguekey/K = P
-		if(K.lockid == "nightman")
+		if(K.lockid == "niteman")
 			locked = !locked
 			playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 			update_icon()
@@ -150,7 +150,7 @@
 	if(istype(P, /obj/item/keyring))
 		var/obj/item/keyring/K = P
 		for(var/obj/item/roguekey/KE in K.keys)
-			if(KE.lockid == "nightman")
+			if(KE.lockid == "niteman")
 				locked = !locked
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 				update_icon()
@@ -173,7 +173,7 @@
 		var/mob/M = usr
 		var/path = text2path(href_list["buy"])
 		if(!ispath(path, /datum/supply_pack))
-			message_admins("NITEMAN [usr.key] IS TRYING TO BUY A [path] WITH THE GOLDFACE. THIS IS AN EXPLOIT.")
+			message_admins("NITEMASTER [usr.key] IS TRYING TO BUY A [path] WITH THE GOLDFACE. THIS IS AN EXPLOIT.")
 			return
 		var/datum/supply_pack/PA = new path
 		var/cost = PA.cost

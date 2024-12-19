@@ -1,24 +1,24 @@
 // Diagnose
-/obj/effect/proc_holder/spell/invoked/diagnose
+/obj/effect/proc_holder/spell/invoked/diagnose	// not really magic
 	name = "Diagnose"
 	overlay_state = "diagnose"
-	releasedrain = 10
+	releasedrain = 0
 	chargedrain = 0
 	chargetime = 0
 	range = 2
 	warnie = "sydwarning"
 	movement_interrupt = FALSE
-	sound = 'sound/magic/diagnose.ogg'
+//	sound = 'sound/magic/diagnose.ogg'
 	invocation_type = "none"
-	associated_skill = /datum/skill/magic/holy
+	associated_skill = /datum/skill/misc/medicine
 	antimagic_allowed = TRUE
-	charge_max = 5 SECONDS //very stupidly simple spell
-	miracle = TRUE
-	devotion_cost = 15 // Basic spell
+	charge_max = 10 SECONDS
+	miracle = FALSE
+
 
 /obj/effect/proc_holder/spell/invoked/diagnose/cast(list/targets, mob/living/user)
 	. = ..()
-
+	user.emote("hmm")
 	if(ishuman(targets[1]))
 		var/mob/living/carbon/human/human_target = targets[1]
 		human_target.check_for_injuries(user)

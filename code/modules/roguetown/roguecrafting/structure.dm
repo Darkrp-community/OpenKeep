@@ -41,7 +41,7 @@
 	name = "composter"
 	result = /obj/structure/composter
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	time = 2 SECONDS
+	time = 3 SECONDS
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/roguebin // Bins are easier to craft than barrels for pure convenience.
@@ -331,6 +331,24 @@
 				/obj/item/ingot/silver = 1)
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/stonetable
+	name = "stone table (long mid)"
+	result = /obj/structure/table/stone
+	reqs = list(/obj/item/natural/stoneblock = 2)
+	verbage = "build"
+	verbage_tp = "builds"
+	craftsound = 'sound/foley/Building-01.ogg'
+	time = 4 SECONDS
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 3
+/datum/crafting_recipe/roguetown/structure/stonetable/end
+	name = "stone table (long end)"
+	result = /obj/structure/table/stone_end
+
+/datum/crafting_recipe/roguetown/structure/stonetable/small
+	name = "stone table (single)"
+	result = /obj/structure/table/stone_small
 
 /*========= MISCELLANY/CRAFTING SKILL ==========*/
 

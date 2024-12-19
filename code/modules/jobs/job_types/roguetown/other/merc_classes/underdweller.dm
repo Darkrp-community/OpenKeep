@@ -12,16 +12,16 @@
 
 /datum/outfit/job/roguetown/mercenary/underdweller/pre_equip(mob/living/carbon/human/H)
 	..()
-	pants = /obj/item/clothing/under/roguetown/trou/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather//arm armor since they don't get heavy gloves like other mercs do
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather//mercenary/fighters should get the boots since they give light protection
-	belt = /obj/item/storage/belt/rogue/leather/mercenary
-	beltr = /obj/item/rogueweapon/knife/hunting
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather//arm armor since they don't get heavy gloves like other mercs do
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
+	belt = /obj/item/storage/belt/rogue/leather/merc_nokey
+	beltr = /obj/item/rogueweapon/knife/hunting
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor=1)
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/labor/mining, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
@@ -36,9 +36,10 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.change_stat("fortune", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("strength", 1)
+
+	H.change_stat("fortune", 1)
+	H.change_stat("endurance", 1)
+	H.change_stat("strength", 1)
 
 	if(H.dna.species.id == "dwarf")
 		H.cmode_music = 'sound/music/combat_dwarf.ogg'
@@ -53,6 +54,5 @@
 		backr = /obj/item/rogueweapon/shield/wood
 
 		beltl = /obj/item/rogueweapon/sword/sabre // Dark elves get a sabre as their primary weapon and swords skill, who woulda thought
-
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
