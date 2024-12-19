@@ -228,7 +228,7 @@
 			var/author = query_search_manuscripts.item[2]
 			var/title = query_search_manuscripts.item[3]
 			var/category = query_search_manuscripts.item[4]
-			dat += "<tr><td>[html_encode(author)]</td><td>[html_encode(title)]</td><td>[html_encode(category)]</td><td><a href='?src=[REF(src)];print=1;id=[id]'>Print</a></td></tr>"
+			dat += "<tr><td>[html_encode(author)]</td><td>[html_encode(title)]</td><td>[html_encode(category)]</td><td><a href='byond://?src=[REF(src)];print=1;id=[id]'>Print</a></td></tr>"
 		if (!has_results)
 			dat += "<tr><td colspan='4'>No results found.</td></tr>"
 	else

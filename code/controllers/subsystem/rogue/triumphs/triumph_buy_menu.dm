@@ -55,16 +55,16 @@
 		"}
 /*
 				<div id='triumph_close_div'>
-					<a id='triumph_close_button' href='?src=\ref[src];close_menu=1'>CLOSE MENU</a>
+					<a id='triumph_close_button' href='byond://?src=\ref[src];close_menu=1'>CLOSE MENU</a>
 				</div>
 */
 
 	data += "<hr class='fadeout_line'>"
 	for(var/cat_key in SStriumphs.central_state_data)
 		if(cat_key == current_category)
-			data += "<a class='triumph_categories_selected' href='?src=\ref[src];select_a_category=[cat_key]'><span class='bigunder_back'><span class='bigunder'></span>[cat_key]</span></a>"
+			data += "<a class='triumph_categories_selected' href='byond://?src=\ref[src];select_a_category=[cat_key]'><span class='bigunder_back'><span class='bigunder'></span>[cat_key]</span></a>"
 			continue
-		data += "<a class='triumph_categories_normal' href='?src=\ref[src];select_a_category=[cat_key]'>[cat_key]</a>"
+		data += "<a class='triumph_categories_normal' href='byond://?src=\ref[src];select_a_category=[cat_key]'>[cat_key]</a>"
 	data += "<hr class='fadeout_line'>"
 
 	data += {"
@@ -94,9 +94,9 @@
 						<td class='triumph_cost_wrapper'>[auugh.triumph_cost]</td>
 				"}
 				if(SSticker.HasRoundStarted() && auugh.pre_round_only)
-					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[auugh];'><span class='strikethru_back'>ROUND STARTED</span></a></td>"
+					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[auugh];'><span class='strikethru_back'>ROUND STARTED</span></a></td>"
 				else
-					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[auugh];'>UNBUY</a></td>"
+					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[auugh];'>UNBUY</a></td>"
 
 				data += "</tr>"
 
@@ -108,7 +108,7 @@
 				<tr class='triumph_text_row'>
 					<td class='triumph_text_desc'>CURRENTLY NOTHING</td>
 					<td class='triumph_cost_wrapper'>ACTIVE</td>
-					<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];'>HERE</a></td>
+					<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];'>HERE</a></td>
 				</tr>
 			"}
 
@@ -120,13 +120,13 @@
 					<td class='triumph_cost_wrapper'>[current_check.triumph_cost]</td>
 				"}
 
-			var/string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[current_check];'>BUY</a></td>"
+			var/string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[current_check];'>BUY</a></td>"
 			if(SSticker.HasRoundStarted() && current_check.pre_round_only)
-				string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
+				string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
 			else
 				for(var/datum/triumph_buy/conflict_check in SStriumphs.active_triumph_buy_queue)
 					if(current_check.type in conflict_check.conflicts_with) // We are in an active datum's conflicts with
-						string = "<td class='triumph_filler_cells'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
+						string = "<td class='triumph_filler_cells'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
 
 			data += string
 			data += "</tr>"
@@ -142,9 +142,9 @@
 	for(var/i in 1 to SStriumphs.central_state_data[current_category].len)
 
 		if("[i]" == current_page)
-			data += "<a class='triumph_numbers_selected' href='?src=\ref[src];select_a_page=[i]'><span class='num_bigunder_back'><span class='num_bigunder'></span>[i]</span></a>"
+			data += "<a class='triumph_numbers_selected' href='byond://?src=\ref[src];select_a_page=[i]'><span class='num_bigunder_back'><span class='num_bigunder'></span>[i]</span></a>"
 		else
-			data += "<a class='triumph_numbers_normal' href='?src=\ref[src];select_a_page=[i]'>[i]</a>"
+			data += "<a class='triumph_numbers_normal' href='byond://?src=\ref[src];select_a_page=[i]'>[i]</a>"
 
 	data += "</div>"
 	data += {"
