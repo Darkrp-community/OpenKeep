@@ -370,85 +370,74 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
-/obj/item/clothing/under/roguetown/tobi
+/obj/item/clothing/under/roguetown/trou/tobi
 	name = "tobi pants"
 	desc = "Baggy pants of abyssariad design. Suitable for those who works the field and avoid horseback."
-	gender = PLURAL
 	icon_state = "tobi"
 	item_state = "tobi"
 	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
-	sewrepair = TRUE
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT)
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
 
 /obj/item/clothing/under/roguetown/tobi/random/Initialize()
-	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/clothing/under/roguetown/tobi/thunder
 	name = "thunder tobi pants"
-	color = "#be8b48"
+	color = CLOTHING_THUNDER
 
 /obj/item/clothing/under/roguetown/tobi/storm
 	name = "storm tobi pants"
-	color = "#1a2677"
+	color = CLOTHING_STORM
 
 /obj/item/clothing/under/roguetown/tobi/ocean
 	name = "ocean tobi pants"
-	color = "#56928a"
+	color = CLOTHING_OCEAN
 
 /obj/item/clothing/under/roguetown/tobi/island
 	name = "island tobi pants"
-	color = "#bd3541"
+	color = CLOTHING_ISLAND
 
 /obj/item/clothing/under/roguetown/tobi/dark
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/under/roguetown/tobi/kabukimono
-	color = "#9b874f"
+	color = CLOTHING_KABUKIMONO
 
 /obj/item/clothing/under/roguetown/tobi/dragonslayer
 	desc = "Baggy pants of abyssariad design. This one is coated in asbestos, and may be just as dangerous."
 	color = "#3d4681"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 75,"energy" = 75, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("melee" = 20, "bullet" = 0, "laser" = 75,"energy" = 75, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
-/obj/item/clothing/under/roguetown/tobi/fur
+/obj/item/clothing/under/roguetown/trou/leather/fur
 	name = "thick tobi"
 	icon_state = "furpants"
 	desc = "A tobi made out of Dendor's beloved guardians - so Abyssor's beloved guardians can use it."
-	armor = ARMOR_LEATHER
 
 /obj/item/clothing/under/roguetown/tobi/fur/random/Initialize()
-	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/clothing/under/roguetown/tobi/fur/dragonslayer
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	color = "#7e0707"
+	color = CLOTHING_RED_OCHRE
 
-/obj/item/clothing/under/roguetown/tobi/hakama
+/obj/item/clothing/under/roguetown/tights/hakama
 	name = "hakama"
 	icon_state = "hakama"
 	alternate_worn_layer = SHOESLEEVE_LAYER
-	body_parts_covered = GROIN|LEGS|FEET
 	desc = "Suitable for the Abyssariad-cultured, in which large battle-skirts does not hurt their masculinity, differently of the frail Imperial counterpart."
-	alternate_worn_layer = SHOESLEEVE_LAYER
 
 /obj/item/clothing/under/roguetown/tobi/hakama/random/Initialize()
-	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/clothing/under/roguetown/tobi/hakama/eidolon
-	color = "#613a3f"
+	color = CLOTHING_EIDOLON
 
-/obj/item/clothing/under/roguetown/kaizoku/shinobizubon
+/obj/item/clothing/under/roguetown/trou/leather/shinobizubon
 	name = "shinobi zubon"
 	desc = "Traditional flexible pants with loose fit around the legs with hardened leather tied under the cloth and ankles to prevent snagging and noise."
 	gender = PLURAL
@@ -457,9 +446,6 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	icon_state = "shinobizubon"
 	item_state = "shinobizubon"
-	sewrepair = TRUE
-	armor = list("melee" = 15, "bullet" = 10, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	r_sleeve_status = SLEEVE_NORMAL
@@ -478,7 +464,7 @@
 	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 200
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	armor_class = ARMOR_CLASS_HEAVY
+	armor_class = AC_MEDIUM
 	body_parts_covered = GROIN|LEGS|FEET
 	blocksound = PLATEHIT
 	var/do_sound = FALSE

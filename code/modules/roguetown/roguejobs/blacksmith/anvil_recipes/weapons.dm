@@ -565,7 +565,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/greatsword/odachi
+	created_item = /obj/item/rogueweapon/sword/long/greatsword/odachi
 	craftdiff = 4
 
 /datum/anvil_recipe/weapons/tachi
@@ -588,14 +588,14 @@
 	name = "Dao sword"
 	recipe_name = "a Dao Sword"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/sword/iron/messer/dao
+	created_item = /obj/item/rogueweapon/sword/scimitar/messer/dao
 
 /datum/anvil_recipe/weapons/yuntoudao
 	name = "Yuntoudao"
 	recipe_name = "a willow-shaped sword"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+	created_item = /obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/shortjian
@@ -646,7 +646,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/mace/goden/tetsubo
+	created_item = /obj/item/rogueweapon/mace/goden/steel/tetsubo
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/iararebo
@@ -718,7 +718,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear/yari
+	created_item = /obj/item/rogueweapon/polearm/spear/yari
 	createmultiple = TRUE
 	createditem_num = 1
 
@@ -728,7 +728,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/ingot/iron)
-	created_item = /obj/item/rogueweapon/spear
+	created_item = /obj/item/rogueweapon/polearm/spear/yari/katakama
 
 /datum/anvil_recipe/weapons/jumonji
 	name = "Jumonji Yari (+w)"
@@ -736,7 +736,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/spear/billhook/jumonji
+	created_item = /obj/item/rogueweapon/polearm/spear/billhook/jumonji
 	craftdiff = 3
 
 /datum/anvil_recipe/weapons/naginata
@@ -745,7 +745,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche/naginata
+	created_item = /obj/item/rogueweapon/polearm/halberd/naginata
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/tsukushi
@@ -754,7 +754,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/halberd/bardiche/naginata/tsukushi
+	created_item = /obj/item/rogueweapon/polearm/halberd/naginata/tsukushi
 	craftdiff = 1
 	createmultiple = TRUE
 	createditem_num = 1
@@ -815,7 +815,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/mancatcher
+	created_item = /obj/item/rogueweapon/polearm/mancatcher
 	createmultiple = TRUE
 	createditem_num = 1
 

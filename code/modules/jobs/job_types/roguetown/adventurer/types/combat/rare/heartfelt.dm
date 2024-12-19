@@ -12,11 +12,11 @@
 
 /datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/heartfelt
-	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
 	pants = /obj/item/clothing/under/roguetown/tobi/dark
 	cloak = /obj/item/clothing/cloak/newheartfelt
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt

@@ -1113,17 +1113,18 @@
 	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/random/Initialize()
-	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/red
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/guard
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
+
 /obj/item/clothing/cloak/raincloak/guardiancloak/guard/Initialize()
 	. = ..()
 	if(GLOB.lordprimary)
@@ -1334,9 +1335,9 @@
 
 /obj/item/clothing/cloak/jinbaori/guard
 	desc = "A jinbaori with the lord's heraldic colors. This one is worn typically by ashigarus retainers adquired by the lords of rockhill from a pact with the Fog Islands."
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl"
-	detail_color = CLOTHING_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/jinbaori/guard/attack_right(mob/user)
 	if(picked)
@@ -1373,9 +1374,9 @@
 
 /obj/item/clothing/cloak/haramaki/odoshi/zamurai
 	desc = "The odoshi used by Foglander Zamurais bond to Rockhill's lords. It uses said lord's heraldic colors."
-	color = CLOTHING_RED
+	color = CLOTHING_BLOOD_RED
 	detail_tag = "_spl2"
-	detail_color = CLOTHING_PURPLE
+	detail_color = CLOTHING_PLUM_PURPLE
 
 /obj/item/clothing/cloak/haramaki/odoshi/zamurai/attack_right(mob/user)
 	if(picked)

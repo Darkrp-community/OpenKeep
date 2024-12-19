@@ -27,7 +27,7 @@
 	..()
 	head = /obj/item/clothing/head/roguetown/takuhatsugasa
 	neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+	shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 	cloak = /obj/item/clothing/cloak/raincloak/mino
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	belt = /obj/item/storage/belt/rogue/leather/rope

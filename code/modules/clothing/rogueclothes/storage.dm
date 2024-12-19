@@ -355,7 +355,7 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/belts.dmi'
 
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random/Initialize()
-	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja/PopulateContents()
@@ -365,19 +365,19 @@
 
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/thunder
 	name = "thunder daisho belt"
-	color = "#be8b48"
+	color = CLOTHING_THUNDER
 
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/storm
 	name = "storm daisho belt"
-	color = "#1a2677"
+	color = CLOTHING_STORM
 
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ocean
 	name = "ocean daisho belt"
-	color = "#56928a"
+	color = CLOTHING_OCEAN
 
 /obj/item/storage/belt/rogue/kaizoku/leather/daisho/island
 	name = "island daisho belt"
-	color = "#bd3541"
+	color = CLOTHING_ISLAND
 
 /obj/item/storage/backpack/rogue/satchel/ninja/PopulateContents()
 	new /obj/item/grenade/smoke_bomb(src)

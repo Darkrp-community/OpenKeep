@@ -37,7 +37,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
-	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 	pants = /obj/item/clothing/under/roguetown/tobi/random
 
 	H.become_blind("TRAIT_GENERIC")
@@ -55,7 +55,7 @@
 			if(roll <= 33)
 				beltl = /obj/item/rogueweapon/sword/short/jian
 			else if(roll <= 66)
-				beltl = /obj/item/rogueweapon/sword/iron/messer/dao
+				beltl = /obj/item/rogueweapon/sword/scimitar/messer/dao
 			else
 				beltl = /obj/item/rogueweapon/sword/iron/jian
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
@@ -119,7 +119,7 @@
 			H.set_blindness(0)
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron/kusari_zukin
-			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light/kusaritabi
 			beltl = /obj/item/rogueweapon/flail/kusarigama
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 			to_chat(H, span_warning("<span class='info'>I am a Muqian, I hail from the towers of civilization, those upheld in sturdy chains alike my body. May the dices of destiny enlight my ways.</span>"))
@@ -135,7 +135,7 @@
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
 			head = /obj/item/clothing/head/roguetown/helmet/leather/malgai/kaizoku
-			beltl = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+			beltl = /obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
 			backr = /obj/item/rogueweapon/shield/wood
 			beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)

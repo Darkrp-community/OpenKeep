@@ -51,7 +51,7 @@
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
 		wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
-		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+		shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 		pants = /obj/item/clothing/under/roguetown/tobi/hakama/eidolon
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable/tengu
 		if(H.wear_mask)
@@ -75,12 +75,12 @@
 			H.change_stat("speed", -2)
 
 		backr = /obj/item/rogueweapon/halberd/bisento
-		pants = /obj/item/clothing/under/roguetown/tobi/fur/random
+		pants = /obj/item/clothing/under/roguetown/trou/leather/fur
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-		shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+		shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
 		gloves = /obj/item/clothing/gloves/roguetown/angle/falcon
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
-		shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 		armor = /obj/item/clothing/suit/roguetown/armor/rare/myrmidon
 		head = /obj/item/clothing/head/roguetown/rare/myrmidon
 		neck = /obj/item/clothing/neck/roguetown/gorget
@@ -114,10 +114,10 @@
 		backl = /obj/item/rogueweapon/sword/dragonslayer
 		pants = /obj/item/clothing/under/roguetown/tobi/fur/dragonslayer
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/dragontabi
+		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/dragontabi
 		gloves = /obj/item/clothing/gloves/roguetown/chain/kikko
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
-		shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/dragonslayer
+		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt/dragonslayer
 		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/nanbando
 		head = /obj/item/clothing/head/roguetown/rare/dragonslayer
 		wrists = /obj/item/clothing/wrists/roguetown/kaizoku/dragonwrap

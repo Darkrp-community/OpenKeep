@@ -18,9 +18,9 @@
 
 /datum/outfit/job/roguetown/adventurer/heartfelthand/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 	belt = /obj/item/storage/belt/rogue/leather/black
-	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
 	pants = /obj/item/clothing/under/roguetown/tobi/dark
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	if(H.gender == MALE)

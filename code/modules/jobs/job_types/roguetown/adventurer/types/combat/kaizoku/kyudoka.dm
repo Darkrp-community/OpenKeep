@@ -34,7 +34,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
-	shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
 	pants = /obj/item/clothing/under/roguetown/tobi/fur/random
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random //For the drip's sake that portrays their military side.
 	if(prob(23))

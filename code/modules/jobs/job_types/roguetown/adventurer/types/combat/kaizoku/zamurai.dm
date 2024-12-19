@@ -28,7 +28,7 @@
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai/pre_equip(mob/living/carbon/human/H)
 	pants = /obj/item/clothing/under/roguetown/tobi/random //Fully intended to give them Haidate Tatami, but the armor is strong enough already.
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/suneate
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/suneate
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal //kote already protects the hands.
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare //weaker gambeson. Has way more DRIP. (Doesn't matter for balance, shutup)
@@ -71,7 +71,7 @@
 	switch(specialization)
 		if("Odashibushi(Melee)") //Not as sword-specialized as Swordmaster, but have better armor.
 			H.set_blindness(0)
-			backr = /obj/item/rogueweapon/greatsword/odachi //Less durable than the Swordmaster's weapon. But can be crafted.
+			backr = /obj/item/rogueweapon/sword/long/greatsword/odachi
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			if(H.mind)
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.

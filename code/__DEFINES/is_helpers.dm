@@ -101,7 +101,7 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 //RT Kaizoku Species
 #define isabyssariad(A) (is_species(A, /datum/species/abyssariad))
 #define ischangeling(A) (is_species(A, /datum/species/abyssariad/changeling))
-#define isoni(A) (is_species(A, /datum/species/abyssariad/ogrun))
+#define isogrun(A) (is_species(A, /datum/species/abyssariad/ogrun))
 #define iskenku(A) (is_species(A, /datum/species/abyssariad/kenku))
 
 //more carbon mobs

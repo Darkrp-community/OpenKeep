@@ -484,7 +484,7 @@
 	name = "Chainmail footwear x2"
 	recipe_name = "a pair of Kusari-Tabi"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+	created_item = /obj/item/clothing/shoes/roguetown/boots/armor/light/kusaritabi
 	createmultiple = TRUE
 	createditem_num = 1
 
@@ -492,7 +492,7 @@
 	name = "Plated shin-guards"
 	recipe_name = "some Suneate Footwear"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/suneate
+	created_item = /obj/item/clothing/shoes/roguetown/boots/armor/suneate
 	craftdiff = 3
 
 //'gloves'

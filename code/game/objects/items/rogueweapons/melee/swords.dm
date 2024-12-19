@@ -913,6 +913,7 @@
 	inhand_y_dimension = 64
 	bigboy = TRUE
 	gripsprite = TRUE
+	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/uchigatana/fire //Experimental weapon. Not to be found ingame.
 	name = "fire uchigatana"
@@ -944,7 +945,7 @@
 	pixel_y = -16
 	pixel_x = -18
 
-/obj/item/rogueweapon/greatsword/odachi
+/obj/item/rogueweapon/sword/long/greatsword/odachi
 	name = "odachi"
 	desc = "Greatsword traditionally wielded in open battlefields just as it is a ceremonial blade. Though impractical for duels, it breaks spearlines and shields on a whim, requiring momento each slash."
 	icon_state = "odachi"
@@ -957,13 +958,13 @@
 	icon_state = "jian"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
-/obj/item/rogueweapon/sword/iron/messer/dao
+/obj/item/rogueweapon/sword/scimitar/messer/dao
 	name = "iron dao"
 	desc = "A single edged iron saber of Abyssariad making for horseback use. Suitable for chopping."
 	icon_state = "dao"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
-/obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+/obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
 	name = "Yuntoudao"
 	desc = "A expensive Abyssariad saber with wide middle and tapered ends in a 'willow-leaf' shape, it concentrates the force of a strike in an axe-like blow, while retaining the swiftness of a saber."
 	icon_state = "yuntoudao"
@@ -1033,7 +1034,7 @@
 	attack_verb = list("clangs")
 	animname = "smash"
 	blade_class = BCLASS_CHOP
-	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
+	hitsound = list('sound/combat/hits/bladed/dragonslayer.ogg', 'sound/combat/hits/bladed/dragonslayer2.ogg')
 	penfactor = 30
 	damfactor = 1.2
 	chargetime = 5

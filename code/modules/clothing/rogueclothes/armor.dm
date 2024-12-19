@@ -540,20 +540,30 @@
 
 //................ Armored surcoat (Heartfelt) ............... //
 /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
-	desc = "A lordly protection in Heartfelt colors. Masterfully crafted coat of plates, for important nobility."
-	color = CLOTHING_BLOOD_RED
 	name = "heartfelt kikko gusoku"
-	desc = "A lordly protection in Heartfelt colors. Masterfully crafted coat of hexagonal plates within exotic silk, for important nobility."
-	color = CLOTHING_RED
-	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
+	desc = "A lordly protection in Heartfelt colors. Masterfully crafted coat of hexagon plates, for important nobility."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "heartfelt_kikko"
 	item_state = "heartfelt_kikko"
 	allowed_sex = list(MALE,FEMALE)
-
+	color = CLOTHING_BLOOD_RED
+	sellprice = VALUE_SNOWFLAKE_STEEL+BONUS_VALUE_SMALL
 	body_parts_covered = COVERAGE_FULL
+
+//................ Armored surcoat (Heartfelt Hand) ............... //
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand
+	name = "heartfelt kikko coat"
+	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles, using exotic silks adquired from Fog Island."
+	icon_state = "heartfelt_kikkocoat"
+	item_state = "heartfelt_kikkocoat"
+
+/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand/female
+	name = "heartfelt kikko dress"
+	desc = "A dress of armor typicially worn by distinguished retainers of Heartfeltian nobles, using exotic silks adquired from Fog Island."
+	icon_state = "heartfelt_kikkodress"
+	item_state = "heartfelt_kikkodress"
 
 //................ Coat of Plate ............... //
 /obj/item/clothing/suit/roguetown/armor/medium/coatplates
@@ -562,27 +572,6 @@
 			allowing for more movement than full plate but still giving good protection. Not as durable as maille."
 	icon_state = "coat_of_plates"
 	blocksound = PLATEHIT
-//................ Armored surcoat (Heartfelt Hand) ............... //
-/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand
-	name = "heartfelt kikko coat"
-	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles, using exotic silks adquired from Fog Island."
-	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
-	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	icon_state = "heartfelt_kikkocoat"
-	item_state = "heartfelt_kikkocoat"
-
-	sellprice = VALUE_SNOWFLAKE_STEEL
-
-	armor = ARMOR_MAILLE_GOOD
-
-
-
-/obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand/female
-	name = "heartfelt kikko dress"
-	desc = "A dress of armor typicially worn by distinguished retainers of Heartfeltian nobles, using exotic silks adquired from Fog Island."
-	icon_state = "heartfelt_kikkodress"
-	item_state = "heartfelt_kikkodress"
 
 //..................................................................................................................................
 /*---------------\
@@ -902,29 +891,16 @@
 	desc = "A simple leather chest protector for casual archers. Barely protective- almost useless."
 	icon_state = "muneate"
 	item_state = "muneate"
-	color = "#514339"
-	prevent_crits = list(BCLASS_CUT)
-	blocksound = SOFTHIT
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	blade_dulling = DULLING_BASHCHOP
-	body_parts_covered = CHEST
-	break_sound = 'sound/foley/cloth_rip.ogg'
-	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	max_integrity = 100
-	sewrepair = TRUE
-	armor_class = ARMOR_CLASS_LIGHT
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/muneate/random/Initialize()
-	color = pick("#6b5445", "#435436", "#704542", "#79763f")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/muneate/kappa
-	color = "#579447"
+	color = CLOTHING_FOREST_GREEN
 
 /obj/item/clothing/suit/roguetown/armor/plate/nanbando
 	name = "nanban-dou-sode"
@@ -991,7 +967,7 @@
 	max_integrity = 200
 	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
-	armor_class = ARMOR_CLASS_MEDIUM
+	armor_class = AC_MEDIUM
 	sellprice = 20
 
 /obj/item/clothing/suit/roguetown/armor/plate/mirror
@@ -1077,7 +1053,7 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "arisan_khuyag"
 
-/obj/item/clothing/suit/roguetown/armor/leather/studded/kikko //This one is more realistic than Studded Leather armor. A reminder that Studded leather armor is a misinterpretation of a Brigandine.
+/obj/item/clothing/suit/roguetown/armor/leather/splint/kikko //This one is more realistic than Studded Leather armor. A reminder that Studded leather armor is a misinterpretation of a Brigandine.
 	name = "kikko jacket"
 	desc = "A cheaper and lighter version of Kikko Tatami, a leather jacket with metal hexagon plates in a turtle-shell pattern."
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
@@ -1087,7 +1063,7 @@
 	adjustable = CAN_CADJUST
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
-	color = "#613a3f"
+	color = CLOTHING_EIDOLON
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/AdjustClothes(mob/user)
 	if(loc == user)
@@ -1117,7 +1093,7 @@
 	item_state = "shinobi"
 	blocksound = SOFTHIT
 
-/obj/item/clothing/suit/roguetown/armor/rattan //New armor; Iron-tier, chainmail-like, non-shirt wearable armor, but can be made in pairs. Looks fancier than the IRL version.
+/obj/item/clothing/suit/roguetown/armor/chainmail/rattan //New armor; Iron-to-steel tier.
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "rattan armor"
 	desc = "A flexible and durable full body coat made from oil-boiled rattan and layered iron wires. Used by LinYou Raiders, it can be easily repaired."
@@ -1126,95 +1102,29 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "rattan"
 	item_state = "rattan"
-	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
-	armor = list("melee" = 70, "bullet" = 70, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB)
-	blocksound = CHAINHIT
-	var/do_sound = FALSE
-	anvilrepair = /datum/skill/craft/armorsmithing
-	armor_class = ARMOR_CLASS_MEDIUM
-	smeltresult = /obj/item/ash
-	sellprice = 30
-	sewrepair = TRUE
+	sellprice = VALUE_IRON_ARMOR+10
 
-/obj/item/clothing/suit/roguetown/armor/kaizoku/haori
+	armor = ARMOR_MAILLE_IRON
+	max_integrity = INTEGRITY_STANDARD
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
+	sewrepair = TRUE //this armor's utility.
+
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/haori
 	name = "haori"
 	desc = "a traditional jacket meant to be worn over a kimono."
 	icon_state = "haori"
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	armor = null
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	body_parts_covered = CHEST|VITALS
-	break_sound = 'sound/foley/cloth_rip.ogg'
-	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
-	sewrepair = TRUE
-	r_sleeve_status = SLEEVE_NORMAL
-	l_sleeve_status = SLEEVE_NORMAL
-	nodismemsleeves = TRUE
-	boobed = TRUE
 
-/obj/item/clothing/suit/roguetown/armor/kaizoku/haori/random/Initialize()
-	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/haori/random/Initialize()
+	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/suit/roguetown/armor/kaizoku/haori/dark
-	color = CLOTHING_BLACK
-
-/obj/item/clothing/suit/roguetown/armor/ceramic
-	name = "tribal coverings"
-	desc = "A more well-designed armor made with sturdy animal bones. Suitable for tribals whom uses little mettalurgy."
-	icon_state = "nacre_covering"
-	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
-	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	body_parts_covered = CHEST|GROIN|VITALS
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Bones are ceramic-like. These are horrible against blunt.
-	armor_class = ARMOR_CLASS_MEDIUM
-	max_integrity = 150
-	anvilrepair = null //You can't repair 'ceramic' armor. You will need to make a new armor instead.
-	smeltresult = /obj/item/ash
-	sewrepair = FALSE
-	slot_flags = ITEM_SLOT_ARMOR
-
-/obj/item/clothing/suit/roguetown/armor/ceramic/reinforced
-	name = "marauder trollhunter armor"
-	desc = "The heavy armor used by the tribalistic Undine marauder forces under the flag of Abyssariads from the Flag Islands. Made of ceramic-like material from lava forges."
-	icon_state = "marauder_chest"
-	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
-	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Bones are ceramic-like. These are horrible against blunt.
-	blade_dulling = DULLING_BASHCHOP
-	body_parts_covered = CHEST|VITALS|ARMS|GROIN //Protects an acceptable large range of places for such relatively cost-y armor. I hope.
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 250
-	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_MEDIUM
-
-/obj/item/clothing/suit/roguetown/armor/ceramic/light
-	name = "bone coverings"
-	desc = "An simple, primitive armor made of chiseled bones bound with fibers and sinews. Stronger than gambesons, but requires conquering tough dendor's creatures to make."
-	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
-	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	icon_state = "ivory_coverings"
-	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	blocksound = SOFTHIT
-	blade_dulling = DULLING_BASHCHOP
-	body_parts_covered = CHEST|GROIN
-	max_integrity = 100 //breaks quickly
-	prevent_crits = list(BCLASS_CUT, BCLASS_STAB) //Bones acts similar to ceramics, it will crack with blunt damage.
-	armor_class = ARMOR_CLASS_LIGHT
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/haori/dark
+	color = CLOTHING_SOOT_BLACK
 
 //New Rare Heartfelt equipment
-
 /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/abyssariad
 	name = "abyssariad kikko gusoku"
 	desc = "The Heartfelt design reforged in the ways of Fog Islands to better supply quick-moving zamurai cavalry, replacing the heavier and costier O-Yoroi lamellar."
@@ -1234,25 +1144,17 @@
 	body_parts_covered = CHEST|VITALS|LEGS
 	sellprice = 45
 
-/obj/item/clothing/suit/roguetown/armor/shanwenkai //I dislike overused armor in unique roles. so I just made an "Officer" armor based on the chinese actual officer armor.
+/obj/item/clothing/suit/roguetown/armor/brigandine/shanwenkai //I dislike overused armor in unique roles. so I just made an "Officer" armor based on the chinese actual officer armor. Brigadine.
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "weeper-patterned championage armor" //This is the Shan Wen Kia armor, but the downwards 'Y' is upwards now, so I can't name it <mountain patterned armor>
 	desc = "The ancient godwenkai, a heavy armor made with overlapping arrangement of armor plates, assembled with the symbol of the Weeping God. This is used by Abyssariad Champions who still lingers on this world, honoring the Weeper who fed Abyssor."
 	icon_state = "shanwenkai"
-	blocksound = PLATEHIT
-	body_parts_covered = CHEST|GROIN|VITALS|ARMS
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	max_integrity = 500
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
-	allowed_sex = list(MALE, FEMALE)
-	anvilrepair = /datum/skill/craft/armorsmithing
-	equip_delay_self = 40
-	armor_class = ARMOR_CLASS_HEAVY
-	smeltresult = /obj/item/ingot/steel
-	sellprice = 95
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/shanwenkai/update_icon()
+	return
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
@@ -1272,14 +1174,14 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random/Initialize()
-	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
+	color = RANDOM_PEASANT_DYES
 	..()
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/ronin
-	color = "#861e1e"
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
-	color = "#613a3f"
+	color = CLOTHING_EIDOLON
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
 	name = "reinforced deel coat"
@@ -1289,19 +1191,11 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 
-/obj/item/clothing/suit/roguetown/armor/leather/ninjakappa //same as studded leather armor
+/obj/item/clothing/suit/roguetown/armor/leather/splint/ninjakappa //same as studded leather armor
 	name = "tribalistic bronze cuirass"
 	desc = "A layered armor with oil-boiled leather reinforced with bronze plates sew into the fabric. Light and flexible, it is used by Undines who became part of underground shinobi operations to destroy illegal gangs, drugdealers and centers of prostitution."
 	icon_state = "ninjakappa"
 	item_state = "ninjakappa"
-	blocksound = SOFTHIT
-	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_CHOP)
-	armor = list("melee" = 60, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	nodismemsleeves = TRUE
-	body_parts_covered = CHEST|GROIN|VITALS
-	max_integrity = 300
-	sellprice = 50
-	armor_class = ARMOR_CLASS_LIGHT
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
@@ -1319,4 +1213,54 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	body_parts_covered = CHEST|GROIN|ARMS|VITALS|LEGS //Pays off with not having other limbparts.
+	body_parts_covered = CHEST|GROIN|ARMS|VITALS|LEGS //Pays off by not having other limbparts.
+
+/obj/item/clothing/suit/roguetown/armor/ceramic
+	name = "tribal coverings"
+	desc = "A more well-designed armor made with sturdy animal bones. Suitable for tribals whom uses little mettalurgy."
+	icon_state = "nacre_covering"
+	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	body_parts_covered = CHEST|GROIN|VITALS
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Bones are ceramic-like. These are horrible against blunt.
+	armor_class = AC_MEDIUM
+	max_integrity = 150
+	anvilrepair = null //You can't repair 'ceramic' armor. You will need to make a new armor instead.
+	smeltresult = /obj/item/ash
+	sewrepair = FALSE
+	slot_flags = ITEM_SLOT_ARMOR
+
+/obj/item/clothing/suit/roguetown/armor/ceramic/reinforced
+	name = "marauder trollhunter armor"
+	desc = "The heavy armor used by the tribalistic Undine marauder forces under the flag of Abyssariads from the Flag Islands. Made of ceramic-like material from lava forges."
+	icon_state = "marauder_chest"
+	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Bones are ceramic-like. These are horrible against blunt.
+	blade_dulling = DULLING_BASHCHOP
+	body_parts_covered = CHEST|VITALS|ARMS|GROIN //Protects an acceptable large range of places for such relatively cost-y armor. I hope.
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	max_integrity = 250
+	equip_delay_self = 40
+	armor_class = AC_MEDIUM
+
+/obj/item/clothing/suit/roguetown/armor/ceramic/light
+	name = "bone coverings"
+	desc = "An simple, primitive armor made of chiseled bones bound with fibers and sinews. Stronger than gambesons, but requires conquering tough dendor's creatures to make."
+	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon_state = "ivory_coverings"
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	body_parts_covered = CHEST|GROIN
+	max_integrity = 100 //breaks quickly
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB) //Bones acts similar to ceramics, it will crack with blunt damage.
+	armor_class = AC_LIGHT

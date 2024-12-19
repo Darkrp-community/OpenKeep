@@ -499,14 +499,6 @@
 	craftdiff = 1
 	req_kaizoku = TRUE
 
-/datum/crafting_recipe/roguetown/sewing/haori
-	name = "haori jacket {fl}"
-	result = list(/obj/item/clothing/suit/roguetown/armor/kaizoku/haori)
-	reqs = list(/obj/item/natural/cloth = 2,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 1
-	req_kaizoku = TRUE
-
 /*.............. recipes requiring skill 2 ..............*/
 
 /datum/crafting_recipe/roguetown/sewing/ruankai
@@ -536,7 +528,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/zubon
 	name = "stealthy trousers {fl}"
-	result = list(/obj/item/clothing/under/roguetown/kaizoku/shinobizubon)
+	result = list(/obj/item/clothing/under/roguetown/trou/leather/shinobizubon)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 2

@@ -74,7 +74,6 @@
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
 		beltl = /obj/item/rogueweapon/knife/villager
-		beltl = /obj/item/rogueweapon/huntingknife/villager
 	if(H.dna?.species)
 		if(H.dna.species?.id == "abyssariad")
 			var/roll = rand(1, 100)

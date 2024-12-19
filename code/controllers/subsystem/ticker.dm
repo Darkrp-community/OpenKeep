@@ -558,7 +558,6 @@ SUBSYSTEM_DEF(ticker)
 		CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/select_ruler()
-/*
 	switch(rulertype)
 		if("King")
 			for(var/mob/living/carbon/human/K in world)
@@ -574,7 +573,7 @@ SUBSYSTEM_DEF(ticker)
 				if(H.job == "Hand")
 					rulermob = H
 					return
-*/
+
 /datum/controller/subsystem/ticker/proc/collect_minds()
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/P = i

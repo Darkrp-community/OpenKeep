@@ -11,14 +11,10 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
+		"Aasimar",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar",
-		"Changeling",
-		"Kenku",
-		"Ogrun",
-		"Undine"
+		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 

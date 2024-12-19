@@ -31,7 +31,7 @@
 	wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 	pants = /obj/item/clothing/under/roguetown/chainlegs/sendan
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+	shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	id = /obj/item/clothing/ring/silver

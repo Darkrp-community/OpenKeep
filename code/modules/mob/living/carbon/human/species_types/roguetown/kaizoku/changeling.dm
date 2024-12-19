@@ -44,7 +44,7 @@ Future plan:
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = MEAT
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/kaizoku/abyssariad_bodies/male/mt_kit.dmi'
 	limbs_icon_f = 'icons/roguetown/kaizoku/abyssariad_bodies/female/ft_kit.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -172,7 +172,7 @@ Future plan:
 /datum/species/abyssariad/changeling/random_surname()
 	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorlast.txt"))]"
 
-/datum/species/abyssariad/changeling/get_accent_list()
+/datum/species/abyssariad/changeling/get_accent(mob/living/carbon/human/H)
 	return strings("abyssal_replacement.json", "abyssal")
 
 // Commented out. All this was a code FAILURE by my part, and I require help.
@@ -216,6 +216,3 @@ Future plan:
 					message = replacetextEx(message, " [key]", " [value]")
 
 	speech_args[SPEECH_MESSAGE] = trim(message)
-
-/datum/species/abyssariad/changeling/get_accent_list()
-	return strings("abyssal_replacement.json", "abyssal")

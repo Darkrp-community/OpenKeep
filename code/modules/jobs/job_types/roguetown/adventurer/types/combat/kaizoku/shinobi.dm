@@ -47,7 +47,7 @@
 	backl = /obj/item/storage/backpack/rogue/satchel/ninja
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
-	pants = /obj/item/clothing/under/roguetown/kaizoku/shinobizubon
+	pants = /obj/item/clothing/under/roguetown/trou/leather/shinobizubon
 	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/shinobi
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja
 
@@ -56,7 +56,7 @@
 		var/TMNT = pickweight(list("Donatello" = 1, "Leonardo" = 1, "Michelangelo" = 1, "Raphael" = 1)) // is this a reference...?
 		H.become_blind("TRAIT_GENERIC")
 		pants = /obj/item/clothing/under/roguetown/kaizoku/tribal
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/ninjakappa
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/splint/ninjakappa
 		switch(TMNT) //I'm fucking autistic
 			if("Donatello")
 				mask = /obj/item/clothing/mask/rogue/kaizoku/eyeband/donatello
@@ -77,8 +77,8 @@
 				beltl = /obj/item/rogueweapon/sword/short/wakizashi
 	else
 		head = /obj/item/clothing/head/roguetown/shinobi_zukin
-		pants = /obj/item/clothing/under/roguetown/kaizoku/shinobizubon
-		shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/shinobi
+		pants = /obj/item/clothing/under/roguetown/trou/leather/shinobizubon
+		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt/shinobi
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/shozoku
 		beltr = /obj/item/quiver/arrows

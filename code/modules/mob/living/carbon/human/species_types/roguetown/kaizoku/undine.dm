@@ -34,7 +34,7 @@
 	use_f = TRUE
 	mutant_bodyparts = list("ears","tail_human")
 	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/kaizoku/abyssariad_bodies/male/ms_kappa.dmi'
 	limbs_icon_f = 'icons/roguetown/kaizoku/abyssariad_bodies/female/fs_kappa.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -135,7 +135,7 @@
 /datum/species/elf/undine/random_surname()
 	return " [pick(world.file2list("strings/rt/names/elf/elfwlast.txt"))]"
 
-/datum/species/elf/undine/get_accent_list()
+/datum/species/elf/undine/get_accent(mob/living/carbon/human/H)
 	return strings("abyssal_replacement.json", "abyssal")
 
 /datum/species/elf/undine/on_species_gain(mob/living/carbon/C, datum/species/old_species)
@@ -159,7 +159,7 @@
 	result = /obj/item/clothing/head/roguetown/helmet/leather/volfhelm
 	category = CAT_NONE
 
-/datum/species/elf/undine/get_accent_list()
+/datum/species/elf/undine/get_accent(mob/living/carbon/human/H)
 	return strings("abyssal_replacement.json", "abyssal")
 
 // Unique Undine Recipes. They are actually meant to be RACIAL. But I'm too bad at doing that.
@@ -217,5 +217,5 @@
 	name = "Obsidian Spear"
 	time = 4 SECONDS
 	reqs = list(/obj/item/grown/log/tree/lumber = 1, /obj/item/natural/cloth = 1, /obj/item/natural/stone =  2, /obj/item/ash = 1)
-	result = /obj/item/rogueweapon/spear/obsidian
+	result = /obj/item/rogueweapon/polearm/spear/stone/obsidian
 	category = CAT_NONE

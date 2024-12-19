@@ -12,7 +12,7 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
+		"Aasimar",
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
@@ -68,8 +68,9 @@
 	if(H.dna?.species && H.dna.species?.id == "abyssariad")
 		pants = /obj/item/clothing/under/roguetown/tobi/random
 		cloak = /obj/item/clothing/cloak/jinbaori/guard //I can't put these somewhere else.
-		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
+		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/shinobi
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
+		H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
 
 
 /* ! ! ! Class Selection Section Below ! ! !
@@ -89,16 +90,6 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets a steel cuirass over chain, a gorget, and a nasal helmet
-	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
-	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	head = /obj/item/clothing/head/roguetown/helmet/nasal
-	backr = /obj/item/rogueweapon/shield/wood
-	beltr = /obj/item/rogueweapon/sword/scimitar/messer
-	beltl = /obj/item/rogueweapon/mace
-	backpack_contents = list(/obj/item/keyring/guard)
-
 	if(H.dna?.species && H.dna.species?.id == "abyssariad") // (non-patterned) Islander equipment system
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/nanbando
@@ -106,7 +97,7 @@ Design philosphy:
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half //Abyssariads relies less in gorgets, more in masks.
 		head = /obj/item/clothing/head/roguetown/helmet/zijinguan //Hopefully the feather colors will be fixed.
 		backr = /obj/item/rogueweapon/shield/rattan
-		beltr = /obj/item/rogueweapon/sword/iron/messer/dao
+		beltr = /obj/item/rogueweapon/sword/scimitar/messer/dao
 		beltl = /obj/item/rogueweapon/mace/ararebo
 		backpack_contents = list(/obj/item/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
@@ -117,9 +108,9 @@ Design philosphy:
 		armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 		shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 		neck = /obj/item/clothing/neck/roguetown/gorget
-		head = /obj/item/clothing/head/roguetown/helmet
+		head = /obj/item/clothing/head/roguetown/helmet/nasal
 		backr = /obj/item/rogueweapon/shield/wood
-		beltr = /obj/item/rogueweapon/sword/iron/messer
+		beltr = /obj/item/rogueweapon/sword/scimitar/messer
 		beltl = /obj/item/rogueweapon/mace
 		backpack_contents = list(/obj/item/keyring/guard)
 	//Stats for class
@@ -149,20 +140,13 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/pikeman/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets chain over a gambeson, a gorget, and a kettle helmet
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	head = /obj/item/clothing/head/roguetown/helmet/kettle
-	beltr = /obj/item/rogueweapon/sword/scimitar/messer
-	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.dna.species?.id == "abyssariad") //I gotta try making the abyssariads guards be forced to have surnames.
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		head = /obj/item/clothing/head/roguetown/helmet/jingasa
-		beltr = /obj/item/rogueweapon/sword/iron/messer/dao
+		beltr = /obj/item/rogueweapon/sword/scimitar/messer/dao
 		backpack_contents = list(/obj/item/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>If I am bound to the king, I must be one with my bloodline.</span>")
@@ -173,7 +157,7 @@ Design philosphy:
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
-		beltr = /obj/item/rogueweapon/sword/iron/messer
+		beltr = /obj/item/rogueweapon/sword/scimitar/messer
 		backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
@@ -198,14 +182,12 @@ Design philosphy:
 	switch(weapontype)
 		if("Spear")
 			backr = /obj/item/rogueweapon/polearm/spear
-			backr = /obj/item/rogueweapon/spear
 			if(H.dna.species?.id == "abyssariad")
-				backr = /obj/item/rogueweapon/spear/yari
+				backr = /obj/item/rogueweapon/polearm/spear/yari
 		if("Bardiche")
 			backr = /obj/item/rogueweapon/polearm/halberd/bardiche
-			backr = /obj/item/rogueweapon/halberd/bardiche
 			if(H.dna.species?.id == "abyssariad")
-				backr = /obj/item/rogueweapon/halberd/bardiche/naginata
+				backr = /obj/item/rogueweapon/polearm/halberd/naginata
 
 /datum/advclass/garrison/archer
 	name = "Garrison Archer"
@@ -216,17 +198,6 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets a padded gambeson, leather bracers, and a chain coif
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-	head = /obj/item/clothing/head/roguetown/roguehood/red
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	beltr = /obj/item/quiver/arrows
-	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
-	backpack_contents = list(/obj/item/keyring/guard)
-
 	if(H.dna.species?.id == "abyssariad")
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
@@ -250,7 +221,7 @@ Design philosphy:
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		beltr = /obj/item/quiver/arrows
-		beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+		beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 		backpack_contents = list(/obj/item/keyring/guard)
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
@@ -283,16 +254,10 @@ Design philosphy:
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
 	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	beltr = /obj/item/rogueweapon/sword/rapier
-	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
-	head = /obj/item/clothing/head/roguetown/roguehood/red
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	backpack_contents = list(/obj/item/keyring/guard)
 	if(H.dna.species?.id == "abyssariad")
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/splint/kikko
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 		beltr = /obj/item/rogueweapon/sword/rapier
 		head = /obj/item/clothing/head/roguetown/tengai/gasa
@@ -304,10 +269,10 @@ Design philosphy:
 			clanfication(H)
 	else
 		//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 		beltr = /obj/item/rogueweapon/sword/rapier
-		beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+		beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 		head = /obj/item/clothing/head/roguetown/roguehood/red
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 		backpack_contents = list(/obj/item/keyring/guard)

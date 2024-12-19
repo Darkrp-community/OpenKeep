@@ -406,7 +406,7 @@
 	force = 10
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/mace/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
+	gripped_intents = list(/datum/intent/mace/strike/heavy, /datum/intent/mace/smash/heavy)
 	name = "otsuchi"
 	desc = "A wooden greathammer of Abyssariad make, heavy enough to give any warrior pause. Often used by Yamabushi warriors."
 	icon_state = "otsuchi"
@@ -429,24 +429,13 @@
 	gripsprite = TRUE
 
 /obj/item/rogueweapon/mace/goden/kanabo
-	possible_item_intents = list(/datum/intent/mace/heavy/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
+
 	name = "kanabo"
 	desc = "A heavy two handed club, reinforced with an iron sleeve. Most commonly seen in the hands of Onis and Yamabushis."
 	icon_state = "kanabo"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
-	sharpness = IS_BLUNT
-	//dropshrink = 0.75
-	wlength = WLENGTH_LONG
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	associated_skill = /datum/skill/combat/axesmaces
-	smeltresult = /obj/item/ingot/iron
 	parrysound = "parrywood"
 	swingsound = BLUNTWOOSH_MED
-	max_integrity = 400
-	minstr = 12//Favored weapon of the Oni
-	wdefense = 3
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -455,34 +444,15 @@
 	gripsprite = TRUE
 	slowdown = 1
 
-/obj/item/rogueweapon/mace/goden/tetsubo
-	force = 20
-	force_wielded = 40
-	possible_item_intents = list(/datum/intent/mace/heavy/strike)
-	gripped_intents = list(/datum/intent/mace/heavy/strike, /datum/intent/mace/heavy/smash)
+/obj/item/rogueweapon/mace/goden/steel/tetsubo
 	name = "tetsubo"
 	desc = "A heavier variant of the kanabo, fitted with a steel sleeve bearing menacing spikes and favored by Ogrun Warlords. Requires immense strength to use, but hits like a raging bull."
 	icon_state = "tetsubo"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
-	sharpness = IS_SHARP
-	//dropshrink = 0.75
-	wlength = WLENGTH_LONG
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	associated_skill = /datum/skill/combat/axesmaces
-	smeltresult = /obj/item/ingot/steel
-	parrysound = "parrywood"
-	swingsound = BLUNTWOOSH_MED
-	max_integrity = 600
-	minstr = 14 //Favored weapon of the Oni
-	wdefense = 4
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
-	bigboy = TRUE
-	gripsprite = TRUE
-	slowdown = 1
 
 /obj/item/rogueweapon/mace/ararebo
 	name = "ararebo"

@@ -112,8 +112,8 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
 	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
-	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways at cost of the Imperial culture."
-	TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames."),
+	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways at cost of the Imperial culture.",
+	TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames.")
 	))
 
 // trait accessor defines

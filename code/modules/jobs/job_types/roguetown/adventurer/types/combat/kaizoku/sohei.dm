@@ -40,7 +40,7 @@
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/sai
 
 	var/background = pickweight(list("thunder" = 1, "storm" = 1, "ocean" = 1, "island" = 1)) //This is just flavour. Mostly unwritten portrayal how different Soheis were of each other. Leave it up to the players to interact.
-	var/weapontype = pickweight(list("yari" = 6, "tsukushi" = 5, "katakama" = 3, "jumonji" = 1)) // Rolls for various polearms.
+	var/weapontype = pickweight(list("yari" = 6, "tsukushi" = 5, "katakama" = 3)) // Rolls for various polearms.
 	switch(background)
 		if("thunder")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/thunder
@@ -64,13 +64,11 @@
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
 	switch(weapontype)
 		if("tsukushi")
-			backr = /obj/item/rogueweapon/halberd/bardiche/naginata/tsukushi //weaker naginata, mass-produced iron tier. Slightly more rare than Yari.
-		if("jumonji")
-			backr = /obj/item/rogueweapon/spear/billhook/jumonji //Steel, more combat-effective than Katakama - but rarer.
+			backr = /obj/item/rogueweapon/polearm/halberd/naginata/tsukushi //weaker naginata, mass-produced iron tier. Slightly more rare than Yari.
 		if("katakama")
-			backr = /obj/item/rogueweapon/spear/yari/katakama //Steel, more combat-effective and rarer than iron Yari.
+			backr = /obj/item/rogueweapon/polearm/spear/yari/katakama//Steel, more combat-effective and rarer than iron Yari.
 		if("yari")
-			backr = /obj/item/rogueweapon/spear/yari //just a simple iron spear.
+			backr = /obj/item/rogueweapon/polearm/spear/yari //just a simple iron spear.
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) //The true focus of this class.

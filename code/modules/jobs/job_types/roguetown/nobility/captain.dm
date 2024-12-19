@@ -66,11 +66,11 @@
 		to_chat(H, "<span class='userdanger'>As a Abyssal Guardian, I follow the desires of Abyssor's son to now be bound to the Rockhill throne - I serve the ruler's clan with utmost devotion, let death find me before dishonoring my pact.")
 		head = /obj/item/clothing/head/roguetown/helmet/visored/zunari
 		gloves = /obj/item/clothing/gloves/roguetown/plate/lamellaetekko
-		armor = /obj/item/clothing/suit/roguetown/armor/shanwenkai
+		armor = /obj/item/clothing/suit/roguetown/armor/brigandine/shanwenkai
 		pants = /obj/item/clothing/under/roguetown/platelegs/weepershanwenkai
 		neck = /obj/item/clothing/neck/roguetown/gorget
-		shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
-		shoes = /obj/item/clothing/shoes/roguetown/nobleboot/gutal
+		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
+		shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
 		beltl = /obj/item/rogueweapon/sword/sabre/piandao
 		beltr = /obj/item/rogueweapon/mace/cudgel/jitte
 		backl = /obj/item/rogueweapon/shield/tower/abyssal

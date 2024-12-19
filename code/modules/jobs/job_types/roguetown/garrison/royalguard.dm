@@ -75,54 +75,19 @@
 
 /datum/outfit/job/roguetown/royalguard/pre_equip(mob/living/carbon/human/H)
 	..()
-	pants = /obj/item/clothing/under/roguetown/chainlegs
-	cloak = /obj/item/clothing/cloak/tabard/knight/guard
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
-	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	beltl = /obj/item/keyring/mguard
-	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/rogueweapon/sword/arming
-	backr = /obj/item/storage/backpack/rogue/satchel
-	backl = /obj/item/rogueweapon/shield/tower/metal
-	r_hand = /obj/item/rogueweapon/polearm/halberd
-	if(prob(30))
-		head = /obj/item/clothing/head/roguetown/helmet/visored/knight
-	else
-		head = /obj/item/clothing/head/roguetown/helmet/sallet
-
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("perception", 2)
-		H.change_stat("endurance", 2)
-		H.change_stat("constitution", 1)
 	if(H.dna?.species && H.dna.species?.id == "abyssariad")
 		to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened Zamurai. I hold the blood oath of my ancestors, bound to the throne - I serve the ruler's clan with utmost devotion, let death find me before dishonoring my pact.</span>"))
 		pants = /obj/item/clothing/under/roguetown/chainlegs/sendan
 		neck = null //Abyssariads rarely uses gorgets. For that they use menpos.
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
 		cloak = /obj/item/clothing/cloak/haramaki/odoshi/zamurai
-		shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 		armor = /obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/royal
-		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/boots/armor/kusaritabi
+		shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light/kusaritabi
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 		beltr = /obj/item/rogueweapon/sword/uchigatana
 		backr = /obj/item/storage/backpack/rogue/satchel
-		r_hand = /obj/item/rogueweapon/halberd/bardiche/naginata
+		r_hand = /obj/item/rogueweapon/polearm/halberd/naginata
 		backl = /obj/item/rogueweapon/shield/tower/abyssal
 		if(prob(30))
 			head = /obj/item/clothing/head/roguetown/helmet/visored/zunari
@@ -131,6 +96,8 @@
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='warning'>The King acquired my clan - so I have to belong to one before reaching this royal duty I serve.</span>")
 			clanfication(H)
+		H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
+
 	if(H.dna?.species && H.dna.species?.id != "abyssariad")
 		pants = /obj/item/clothing/under/roguetown/chainlegs
 		cloak = /obj/item/clothing/cloak/tabard/knight/guard
@@ -150,7 +117,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/sallet
 	if(H.dna.species.name == "Ogrun")
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
-		r_hand = /obj/item/rogueweapon/mace/goden/tetsubo
+		r_hand = /obj/item/rogueweapon/mace/goden/steel/tetsubo
 	else
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)

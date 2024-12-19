@@ -13,11 +13,7 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar",
-		"Changeling",
-		"Kenku",
-		"Ogrun",
-		"Undine"
+		"Aasimar"
 	)
 
 	tutorial = "Liquor, lodging, and lavish meals... You're the one who provides the the hardworking townsfolk with a place to eat and drink their sorrows away, and accommodations for weary travelers passing through."

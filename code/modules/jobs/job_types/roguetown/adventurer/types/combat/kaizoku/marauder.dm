@@ -11,7 +11,7 @@
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/marauder
 	category_tags = list(CTAG_ADVENTURER)
-	tutorial = "Ever since Grezenholft invasions on Fog Islands, the Undine Tribes became allies of many Abyssariad clans and guardians. Even if untrue for the entire government itself, Undine Marauders take part of Abyssariad expeditions as ''allies'' and formidable annihilators of Humens and Goblins alike."
+	tutorial = "Ever since Grenzelhoft invasions on Fog Islands, the Undine Tribes became allies of many Abyssariad clans and guardians. Even if untrue for the entire government itself, Undine Marauders take part of Abyssariad expeditions as ''allies'' and formidable annihilators of Humens and Goblins alike."
 
 /datum/outfit/job/roguetown/adventurer/marauder/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -39,15 +39,15 @@
 			pants = /obj/item/clothing/under/roguetown/kaizoku/ceramic
 			beltl = /obj/item/rogueweapon/mace/cudgel/rungu
 			backl = /obj/item/rogueweapon/mace/ararebo/obsidian
-			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
-			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/tribal
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/tribal
 			belt = /obj/item/storage/belt/rogue/leather/rope
 
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 
-			to_chat(H, span_warning( "<span class='info'>I am a warrior from Boneclad Clan! Revenge against paumpers-folk! No more shall we pity the fool! To be forced to work is only for weaklings and the disgraced!</span>"))
+			to_chat(H, span_warning( "<span class='info'>I am a warrior from Boneclad Clan! Revenge against paupers-folk! No more shall we pity the fool! To be forced to work is only for weaklings and the disgraced!</span>"))
 
 			//same as normal warriors.
 			H.change_stat("strength", 2)
@@ -61,19 +61,19 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/ceramic
 			head = /obj/item/clothing/head/roguetown/helmet/ceramic/medium
 			pants = /obj/item/clothing/under/roguetown/kaizoku/ceramic/light
-			backr = /obj/item/rogueweapon/spear/obsidian
+			backr = /obj/item/rogueweapon/polearm/spear/stone/obsidian
 			backl = /obj/item/rogueweapon/shield/rattan
 			beltr = /obj/item/rogueweapon/mace/cudgel/rungu
 			beltl = /obj/item/rogueweapon/huntingknife/kunai
-			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
-			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/tribal
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/tribal
 			belt = /obj/item/storage/belt/rogue/leather/rope
 
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 
-			to_chat(H, span_warning( "<span class='info'>I hold the banner of my ancestors with all that is left, the grief long eternal. We've long suffered under the deathly sickle of the Humens. How long we shall last in war?</span>"))
+			to_chat(H, span_warning( "<span class='info'>We've suffered under the yoke of humens for ages, and so I hold the banner of my ancestors with all my strength. How long must we suffer war?</span>"))
 
 			//same as normal warriors.
 			H.change_stat("strength", 2)
@@ -89,7 +89,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/armor/ceramic/light
 			head = /obj/item/clothing/head/roguetown/helmet/ceramic
 			pants = /obj/item/clothing/under/roguetown/kaizoku/tribal
-			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 			beltl = /obj/item/flashlight/flare/torch/lantern

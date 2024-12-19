@@ -257,17 +257,17 @@
 	sleeved = 'icons/roguetown/kaizoku/clothing/gloves.dmi'
 
 /obj/item/clothing/gloves/roguetown/leather/abyssal/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/gloves/roguetown/leather/abyssal/kabukimono
 	name = "kabuki-maru abyssal gloves"
 	desc = "Flexible, sturdy gloves of abyssariad making, but with colours well know from being used by criminals of low level from the fog islands."
-	color = "#9b874f"
+	color = CLOTHING_KABUKIMONO
 
 /obj/item/clothing/gloves/roguetown/leather/abyssal/toweryakko
 	name = "tower-yakko abyssal gloves"
 	desc = "Flexible, sturdy gloves of abyssariad making, but with colours well know from being used by criminals of low level from the fog islands."
-	color = "#804d97"
+	color = CLOTHING_TOWERYAKKO
 
 /obj/item/clothing/gloves/roguetown/angle/falcon
 	name = "falconry gloves"

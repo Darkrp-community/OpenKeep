@@ -245,12 +245,18 @@
 
 /datum/crafting_recipe/roguetown/leather/cloudhead
 	name = "cloudhead shoes {fl}"
-	result = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
+	result = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/geta
 	name = "geta sandals {fl}"
-	result = /obj/item/clothing/shoes/roguetown/kaizoku/geta
+	result = /obj/item/clothing/shoes/roguetown/sandals/geta
+	req_kaizoku = TRUE
+
+/datum/crafting_recipe/roguetown/leather/haori
+	name = "haori jacket {fl}"
+	result = list(/obj/item/clothing/suit/roguetown/armor/leather/jacket/haori)
+	reqs = list(/obj/item/natural/hide = 2)
 	req_kaizoku = TRUE
 
 /*.............. recipes requiring skill 1 ..............*/

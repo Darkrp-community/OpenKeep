@@ -75,6 +75,7 @@
 				return
 
 			if(!(H.job in GLOB.rod_jobs))
+				return
 
 			if(!(H in SStreasury.bank_accounts))
 				return
@@ -294,3 +295,9 @@
 
 			cooldown = world.time
 		H.Stun(60)
+
+/obj/item/throwing_star/ninja
+	name = "throwing star"
+	desc = "a simple distracting tool used to cause a commotion and bleeding so its user can scramble."
+	icon_state = "shuriken"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'

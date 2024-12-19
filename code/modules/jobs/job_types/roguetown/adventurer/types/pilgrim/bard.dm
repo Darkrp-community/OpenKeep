@@ -70,10 +70,10 @@
 			backr = /obj/item/rogue/instrument/shamisen // Why do our shamisens sounds so rock-y? Consider it a 'Abyssariad Interation' of the japanese kind. Remember, not everything must be equal.
 			cloak = /obj/item/clothing/cloak/raincloak/guardiancloak/red
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
-			shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead/red
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead
 			head = /obj/item/clothing/head/roguetown/bardhat/bloodhunter
 			beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
-			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/looseshirt/random
+			shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 			gloves = /obj/item/clothing/gloves/roguetown/fingerless/yugake
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

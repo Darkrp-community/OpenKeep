@@ -76,7 +76,9 @@
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
-
+//				if(H.dna.species.id == "Abyssariad"||H.dna.species.name == "Undine") // Not finished yet because I can't test it now.
+//					if(H.patron == /datum/patron/divine/abyssor)
+//						H.set_patron(/datum/patron/goodabyssanctum/abyssor) //so they spawn with their unique powers.
 
 	H.underwear_color = null
 	H.update_body()

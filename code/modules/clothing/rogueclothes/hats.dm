@@ -1710,19 +1710,19 @@
 
 /obj/item/clothing/head/roguetown/soheicloth/thunder
 	name = "thunder sohei coverings"
-	color = "#be8b48"
+	color = CLOTHING_THUNDER
 
 /obj/item/clothing/head/roguetown/soheicloth/storm
 	name = "storm sohei coverings"
-	color = "#1a2677"
+	color = CLOTHING_STORM
 
 /obj/item/clothing/head/roguetown/soheicloth/ocean
 	name = "ocean sohei coverings"
-	color = "#56928a"
+	color = CLOTHING_OCEAN
 
 /obj/item/clothing/head/roguetown/soheicloth/island
 	name = "island sohei coverings"
-	color = "#bd3541"
+	color = CLOTHING_ISLAND
 
 /obj/item/clothing/head/roguetown/shinobi_zukin
 	name = "shinobi hood"
@@ -1742,22 +1742,22 @@
 /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/thunder
 	name = "thunder hachi-gane"
 	desc = "Simple, lamellar head protection. Marked in yellow for the mountainous magicians and monks who praises Abyssor's thunders."
-	color = "#be8b48"
+	color = CLOTHING_THUNDER
 
 /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/storm
 	name = "storm hachi-gane"
 	desc = "Simple, lamellar head protection. Marked in dark blue for the lighthouse keepers of Abyssanctum's faith, who keeps the eternal fire going."
-	color = "#1a2677"
+	color = CLOTHING_STORM
 
 /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/ocean
 	name = "ocean hachi-gane"
 	desc = "Simple, lamellar head protection. Marked in light blue for the expeditionary magicians and monks of Abyssanctum's faith, long married to the ocean."
-	color = "#56928a"
+	color = CLOTHING_OCEAN
 
 /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
 	name = "island hachi-gane"
 	desc = "Simple, lamellar head protection. Marked in red for the soilgazers of Abyssanctum's faith, those bent in ensuring no plague shall reach their blessed islands. "
-	color = "#bd3541"
+	color = CLOTHING_ISLAND
 
 /obj/item/clothing/head/roguetown/helmet/zijinguan
 	name = "zijinguan" //This is actually a ming dynasty helmet
@@ -1784,7 +1784,7 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
-/obj/item/clothing/head/roguetown/helmet/jingasa //the same as a Kettle
+/obj/item/clothing/head/roguetown/helmet/jingasa //the same as a Kettle. Just don't want the 64x64 bits.
 	name = "jingasa"
 	desc = "A metal gasa in conical shape. Mainly worn by Ashigarus, it protects against \
 	arrows and direct blow. Most efficient together with padding underneath due to the \
@@ -1797,9 +1797,10 @@
 	bloody_icon_state = "helmetblood_big"
 	flags_inv = HIDEEARS
 	smeltresult = /obj/item/ash
+	flags_inv = HIDEEARS
 	sellprice = VALUE_CHEAP_IRON_HELMET
-	armor = ARMOR_STEEL_BAD
-	body_parts_covered = HEAD|HAIR
+
+	body_parts_covered = COVERAGE_HEAD
 
 /obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto
 	name = "tosei kabuto"
@@ -1860,8 +1861,8 @@
 	emote_environment = 3
 	sellprice = VALUE_STEEL_HELMET+BONUS_VALUE_SMALL
 	clothing_flags = CANT_SLEEP_IN
-	armor = ARMOR_STEEL_BEST
-	armor_class = ARMOR_CLASS_HEAVY
+	armor = ARMOR_PLATE
+	armor_class = AC_HEAVY
 	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = INTEGRITY_STRONG
 
@@ -2004,61 +2005,6 @@
 
 // 'bone-tier' Undine equipments.
 
-/obj/item/clothing/head/roguetown/helmet/ceramic
-	name = "bone tribal helmet"
-	icon_state = "ivory_head"
-	desc = "a simple, protective bone helmet made from the creatures of the land."
-	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
-	body_parts_covered = HEAD|HAIR
-	prevent_crits = list(BCLASS_STAB) //This one is too thin to actually protect someone beyond stabbing wounds. Cut would have too much 'blunt'.
-	resistance_flags = FIRE_PROOF
-	icon_state = "ivory_head"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	anvilrepair = null
-	smeltresult = /obj/item/ash
-	sewrepair = FALSE
-	blocksound = SOFTHIT
-	sellprice = 10
-	max_integrity = 150
-	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
-
-/obj/item/clothing/head/roguetown/helmet/ceramic/medium
-	name = "bone ravanger helmet"
-	icon_state = "ravager_head"
-	desc = "The helmets commonly used by Undine warriors or common riverdwellers who took upon themselves to protect their heads against goblinoid invasions."
-	prevent_crits = list(BCLASS_CUT, BCLASS_STAB) //Bones are not good against blunt.
-	body_parts_covered = HEAD|HAIR|EARS
-	flags_inv = HIDEEARS
-	max_integrity = 200
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-
-/obj/item/clothing/head/roguetown/helmet/ceramic/reinforced
-	name = "marauder trollhunter helmet"
-	icon_state = "marauder_head"
-	desc = "The full bone helmet that became the symbol of the unison of the Undine tribes and the Abyssariads, taking reference from the Championage's Dragonslayer helmets."
-	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) //Bones are not good against blunt.
-	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|FACE
-	flags_inv = HIDEEARS
-	max_integrity = 250
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	block2add = FOV_RIGHT|FOV_LEFT
-	bloody_icon_state = null
-	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
-	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
-	bloody_icon = 'icons/effects/blood64x64.dmi'
-	bloody_icon_state = "helmetblood_big"
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-
 /obj/item/clothing/head/roguetown/wizhat/onmyoji
 	name = "onmyoji warhat"
 	desc = "Surprisingly huge hats used by Onmyojis whom take part of the abyssal championage in warfare. The hat shadows hides the eyes from the lower castes."
@@ -2066,7 +2012,6 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
-	sellprice = 100
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	resistance_flags = FLAMMABLE
@@ -2079,22 +2024,22 @@
 
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/thunder
 	name = "thunder onmyoji warhat"
-	color = "#be8b48"
+	color = CLOTHING_THUNDER
 
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/storm
 	name = "storm onmyoji warhat"
-	color = "#1a2677"
+	color = CLOTHING_STORM
 
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/ocean
 	name = "ocean onmyoji warhat"
-	color = "#56928a"
+	color = CLOTHING_OCEAN
 
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/island
 	name = "island onmyoji warhat"
-	color = "#bd3541"
+	color = CLOTHING_ISLAND
 
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/black
-	color = CLOTHING_BLACK
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi
 	name = "eboshi hat"
@@ -2110,9 +2055,9 @@
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
 
-/obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi/random/Initialize()
-	. = ..()
-	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
+/obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi/Initialize()
+	color = RANDOM_NOBLE_DYES
+	..()
 
 /obj/item/clothing/head/roguetown/rare/myrmidon
 	name = "myrmidon helmet"
@@ -2175,6 +2120,60 @@
 	icon_state = "shrinekeeper_kabuto"
 	flags_inv = HIDEEARS | HIDEHAIR | HIDEFACIALHAIR
 
-	armor = ARMOR_MINOR
+	armor = ARMOR_WEAK
 	prevent_crits = MINOR_CRITICALS
 
+/obj/item/clothing/head/roguetown/helmet/ceramic
+	name = "bone tribal helmet"
+	icon_state = "ivory_head"
+	desc = "a simple, protective bone helmet made from the creatures of the land."
+	slot_flags = ITEM_SLOT_HEAD|ITEM_SLOT_HIP
+	body_parts_covered = HEAD|HAIR
+	prevent_crits = list(BCLASS_STAB) //This one is too thin to actually protect someone beyond stabbing wounds. Cut would have too much 'blunt'.
+	resistance_flags = FIRE_PROOF
+	icon_state = "ivory_head"
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	anvilrepair = null
+	smeltresult = /obj/item/ash
+	sewrepair = FALSE
+	blocksound = SOFTHIT
+	sellprice = 10
+	max_integrity = 150
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+
+/obj/item/clothing/head/roguetown/helmet/ceramic/medium
+	name = "bone ravanger helmet"
+	icon_state = "ravager_head"
+	desc = "The helmets commonly used by Undine warriors or common riverdwellers who took upon themselves to protect their heads against goblinoid invasions."
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB) //Bones are not good against blunt.
+	body_parts_covered = HEAD|HAIR|EARS
+	flags_inv = HIDEEARS
+	max_integrity = 200
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/helmet/ceramic/reinforced
+	name = "marauder trollhunter helmet"
+	icon_state = "marauder_head"
+	desc = "The full bone helmet that became the symbol of the unison of the Undine tribes and the Abyssariads, taking reference from the Championage's Dragonslayer helmets."
+	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) //Bones are not good against blunt.
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|FACE
+	flags_inv = HIDEEARS
+	max_integrity = 250
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	block2add = FOV_RIGHT|FOV_LEFT
+	bloody_icon_state = null
+	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	bloody_icon = 'icons/effects/blood64x64.dmi'
+	bloody_icon_state = "helmetblood_big"
+	worn_x_dimension = 64
+	worn_y_dimension = 64

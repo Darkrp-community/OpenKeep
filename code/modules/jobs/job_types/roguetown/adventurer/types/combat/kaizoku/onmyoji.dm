@@ -25,13 +25,13 @@
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	backr = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	backl = /obj/item/rogueweapon/woodstaff/bostaff
-	armor = /obj/item/clothing/suit/roguetown/shirt/kaizoku/robe/random
-	head = /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi/random
+	armor = /obj/item/clothing/suit/roguetown/shirt/kaizoku/robe
+	head = /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi
 	pants = /obj/item/clothing/under/roguetown/tobi/dark
 
 	var/yesno = list("Yes. I am Iron-hearted.","No. I am Civilian.")
