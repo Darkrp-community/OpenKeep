@@ -16,7 +16,7 @@
 	cloak = /obj/item/clothing/cloak/half/red
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/elven
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather/mercenary/black
+	belt = /obj/item/storage/belt/rogue/leather/merc_nokey/black
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/elven
 	backr = /obj/item/rogueweapon/polearm/spear
 	backl = /obj/item/storage/backpack/rogue/satchel

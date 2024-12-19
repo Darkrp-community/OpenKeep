@@ -71,6 +71,16 @@
 	new /obj/item/natural/cloth(src)
 	new /obj/item/roguekey/mercenary(src)
 
+/obj/item/storage/belt/rogue/leather/merc_nokey/PopulateContents()
+	new /obj/item/natural/cloth (src)
+	new /obj/item/roguecoin/copper/pile (src)
+/obj/item/storage/belt/rogue/leather/merc_nokey/shalal
+	name = "shalal belt"
+	icon_state = "shalal"
+/obj/item/storage/belt/rogue/leather/merc_nokey/black
+	name = "black belt"
+	icon_state = "blackbelt"
+
 /obj/item/storage/belt/rogue/leather/mason/PopulateContents()
 	new /obj/item/keyring/mason(src)
 
@@ -83,15 +93,6 @@
 	new /obj/item/rogueweapon/knife/dagger(src)
 	new /obj/item/needle/thorn(src)
 	new /obj/item/keyring/guard(src)
-
-/obj/item/storage/belt/rogue/leather/mercenary/shalal
-	name = "shalal belt"
-	icon_state = "shalal"
-
-/obj/item/storage/belt/rogue/leather/mercenary/black
-	name = "black belt"
-	icon_state = "blackbelt"
-
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -262,6 +263,9 @@
 	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
 	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
 
+/obj/item/storage/belt/rogue/pouch/burglar/PopulateContents()
+	new /obj/item/roguecoin/copper/pile (src)
+	new /obj/item/lockpick (src)
 
 
 /obj/item/storage/backpack/rogue/satchel

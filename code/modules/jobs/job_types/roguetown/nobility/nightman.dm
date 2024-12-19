@@ -1,4 +1,4 @@
-/datum/job/roguetown/nitemaster
+/datum/job/roguetown/niteman
 	title = "Niteman"
 	flag = NIGHTMAN
 	department_flag = TOWNERS
@@ -18,13 +18,13 @@
 	Some accuse you of have connections with the Rogues and Bandits of the land but surely its just slander..."
 
 	allowed_sexes = list(MALE)
-	outfit = /datum/outfit/job/roguetown/nitemaster
+	outfit = /datum/outfit/job/roguetown/niteman
 	display_order = JDO_NITEMAN
 	give_bank_account = 120
 	min_pq = 0
 	bypass_lastclass = TRUE
 
-/datum/outfit/job/roguetown/nitemaster/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/niteman/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/brown
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
