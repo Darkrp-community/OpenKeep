@@ -390,6 +390,7 @@
 
 /obj/item/sleepingbag
 	name = "roll of sleepcloth"
+	desc = "If placed on the ground it can be unrolled from the middle to provide a resting place."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "sleepingcloth_rolled"
 	w_class = WEIGHT_CLASS_NORMAL
