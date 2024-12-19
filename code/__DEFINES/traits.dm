@@ -55,7 +55,7 @@
 #define TRAIT_VAMPMANSION "vampiremansion"
 #define TRAIT_INHUMENCAMP "inhumencamp"
 #define TRAIT_LIMPDICK "limp_dick"
-#define TRAIT_MINCED "minced" // Punishment that exists only because I am evil. Try NOT using the mouth of MONSTER PEOPLE THAT EATS FLESH ON A WHIM next time.
+#define TRAIT_MINCED "minced" // from monochrome/catalaria. your dick fell off
 #define TRAIT_SEXPASS "sexpass"
 #define TRAIT_INTRAINING "intraining" //allows certain roles to bypass the average skill limitation of training dummies
 #define TRAIT_STEELHEARTED "steelhearted" //no bad mood from dismembering or seeing this

@@ -164,11 +164,6 @@
 	max_stacks = 3
 	desc = "<span class='red'>I puked on myself!</span>"
 
-/datum/stressevent/cumbad
-	timer = 5 MINUTES
-	stressadd = 5
-	desc = "<span class='red'>I was violated.</span>"
-
 /datum/stressevent/blueb
 	timer = 1 MINUTES
 	stressadd = 2
