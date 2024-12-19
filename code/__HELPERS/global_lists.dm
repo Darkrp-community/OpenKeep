@@ -91,6 +91,8 @@
 	// Patron Gods
 	for(var/path in subtypesof(/datum/patron))
 		var/datum/patron/patron = new path()
+		if(patron.non_faith)
+			continue
 		GLOB.patronlist[path] = patron
 		LAZYINITLIST(GLOB.patrons_by_faith[patron.associated_faith])
 		GLOB.patrons_by_faith[patron.associated_faith][path] = patron
