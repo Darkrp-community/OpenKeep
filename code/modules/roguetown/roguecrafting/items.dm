@@ -416,19 +416,6 @@
 	skillcraft = /datum/skill/craft/engineering
 	craftdiff = 0 // Something to practice engineering with.
 
-/datum/crafting_recipe/roguetown/paperscroll
-	name = "parchment scroll x5"
-	result = list(/obj/item/paper/scroll,
-				/obj/item/paper/scroll,
-				/obj/item/paper/scroll,
-				/obj/item/paper/scroll,
-				/obj/item/paper/scroll)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/datum/reagent/water = 50)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	structurecraft = /obj/machinery/tanningrack
-	craftdiff = 1
-
 /datum/crafting_recipe/roguetown/readingscroll
 	name = "novice's guide to literature"
 	result = list(/obj/item/literary)
