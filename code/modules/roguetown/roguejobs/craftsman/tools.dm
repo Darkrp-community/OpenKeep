@@ -25,7 +25,7 @@
 
 /obj/item/rogueweapon/handsaw/crude
 	name = "crude sawing tool"
-	desc = "A serrated piece of flint with a bone handle."
+	desc = "A stick with sharp pieces of flint added."
 	icon_state = "stonesaw"
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY

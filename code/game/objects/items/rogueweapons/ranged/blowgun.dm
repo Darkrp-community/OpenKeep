@@ -1,22 +1,22 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
 	name = "blowgun"
-	desc = "A primitive tool used for hunting. Sometimes favored by Rogues for its ease of use and easy obtainability."
+	desc = "A primitive tool used for hunting. To use most accuratly, hold your breath for a moment before releasing."
 	icon = 'icons/roguetown/weapons/bows.dmi'
 	icon_state = "blowgun"
 	possible_item_intents = list(/datum/intent/shoot/blowgun, /datum/intent/arc/blowgun, INTENT_GENERIC)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/blowgun
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
-	randomspread = 1
+	randomspread = 0
 	spread = 0
 	can_parry = FALSE
 	pin = /obj/item/firing_pin
-	force = 10
+	force = 6
 	var/cocked = FALSE
 	cartridge_wording = "dart"
 	fire_sound = 'sound/combat/Ranged/blowgun_shot.ogg'
-	associated_skill = /datum/skill/combat/crossbows
+	associated_skill =  /datum/skill/combat/bows
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun/getonmobprop(tag)
 	. = ..()
@@ -93,34 +93,22 @@
 	start_empty = TRUE
 
 /datum/intent/shoot/blowgun
-	chargetime = 0.5
+	chargetime = 1
 	chargedrain = 1
 	charging_slowdown = 1
 
 /datum/intent/shoot/blowgun/can_charge()
 	if(mastermob)
-		if(mastermob.get_num_arms(FALSE) < 2)
-			return FALSE
-		if(mastermob.get_inactive_held_item())
+		if(mastermob.get_num_arms(FALSE) < 1)
 			return FALSE
 	return TRUE
 
-/datum/intent/shoot/blowgun/prewarning()
-	if(mastermob)
-		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath!</span>")
-
 /datum/intent/shoot/blowgun/get_chargetime()
 	if(mastermob && chargetime)
+		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath!</span>")
 		var/newtime = 0
-		//skill block
-		newtime = newtime + 10
-		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/bows) * (10/6))
-		//str block //rtd replace 10 with drawdiff on bows that are hard and scale str more (10/20 = 0.5)
-		newtime = newtime + 10
-		newtime = newtime - (mastermob.STASTR * (10/20))
-		//per block
-		newtime = newtime + 20
-		newtime = newtime - (mastermob.STAPER * 1) //20/20 is 1
+		newtime = newtime + 3 SECONDS
+		newtime = newtime - (mastermob.mind.get_skill_level(/datum/skill/combat/bows) * (5))- (mastermob.STAPER * 0.5)
 		if(newtime > 0)
 			return newtime
 		else
@@ -128,7 +116,7 @@
 	return chargetime
 
 /datum/intent/arc/blowgun
-	chargetime = 0.5
+	chargetime = 1 SECONDS
 	chargedrain = 1
 	charging_slowdown = 1
 
@@ -140,12 +128,9 @@
 			return FALSE
 	return TRUE
 
-/datum/intent/arc/blowgun/prewarning()
-	if(mastermob)
-		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath!</span>")
-
 /datum/intent/arc/blowgun/get_chargetime()
 	if(mastermob && chargetime)
+		mastermob.visible_message("<span class='warning'>[mastermob] takes a deep breath!</span>")
 		var/newtime = 0
 		//skill block
 		newtime = newtime + 10
