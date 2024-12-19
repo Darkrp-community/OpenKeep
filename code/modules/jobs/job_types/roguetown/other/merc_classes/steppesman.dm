@@ -32,6 +32,10 @@
 	pants = /obj/item/clothing/under/roguetown/tights/red
 	neck = /obj/item/clothing/neck/roguetown/coif//some light neck and head armor
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	if(H.dna?.species && H.dna.species?.id == "abyssariad")
+		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
+		beltr = /obj/item/rogueweapon/sword/sabre/piandao
+		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1)
 	if(H.mind)//quick fighter that has Dodge Expert and a bow for ranged attacks, 4 weapon skills

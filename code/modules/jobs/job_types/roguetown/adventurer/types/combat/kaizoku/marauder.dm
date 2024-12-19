@@ -105,6 +105,6 @@
 			H.change_stat("perception", 2)
 			H.change_stat("speed", 2)
 
-			to_chat(H, span_warning( "<span class='info'>We suffered on the veil of night, but no longer shall we suffer, as my clan will rain death on the whalers - and I shall make part of that.</span>"))
+			to_chat(H, span_warning( "<span class='info'>We suffered under the veil of night, but no longer shall we suffer, as my clan will rain death on the whalers - and I shall take part in this.</span>"))
 
 	H.cure_blind("TRAIT_GENERIC")

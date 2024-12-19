@@ -215,7 +215,7 @@
 			return //If abyssariad of someone from Heartfell, you can't make imperial crafts. Hopefully this will be brought over to Smithing too.
 	if(R.req_antikaizoku) //Requires Imperial or 'else' culture.
 		if(!HAS_TRAIT(user, TRAIT_KAIZOKU))
-			to_chat(user, "<span class='warning'>I literally can't fathom how islanders do this. Differential hardening? Steel folding? Lost-wax casting? Tatami? What is that?</span>")
+			to_chat(user, "<span class='warning'>I literally can't fanthom how islanders do this. Differential hardening? Steel folding? Lost-wax casting? Tatami? What is that?</span>")
 			return //If not Abyssariad or someone from Heartfell, you can't make islander crafts. Hopefully this will be brought over to Smithing too.
 	if(R.req_table)
 		if(!(locate(/obj/structure/table) in T))
