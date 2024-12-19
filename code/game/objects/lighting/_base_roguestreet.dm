@@ -5,7 +5,7 @@
 	brightness = 10
 	//nightshift_allowed = FALSE
 	fueluse = 0
-	bulb_colour = "#f9e080"
+	bulb_colour = "#e4ff6c"
 	bulb_power = 1
 	max_integrity = 0
 	pass_flags = LETPASSTHROW
