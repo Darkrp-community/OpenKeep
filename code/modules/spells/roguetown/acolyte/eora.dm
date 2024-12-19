@@ -140,6 +140,6 @@
 	unconscious_amount_caster = 200 //how much the caster is stunned for after the spell
 	unconscious_amount_victim = 200 //how much the victim is stunned for after the spell
 	miracle = TRUE
-	devotion_cost = -100
+	devotion_cost = 100
 	action_icon_state = "mindswap"
 	associated_skill = /datum/skill/magic/holy

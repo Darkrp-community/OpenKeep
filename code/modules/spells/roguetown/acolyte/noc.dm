@@ -14,7 +14,7 @@
 	antimagic_allowed = TRUE
 	charge_max = 15 SECONDS
 	miracle = TRUE
-	devotion_cost = -30
+	devotion_cost = 30
 
 /obj/effect/proc_holder/spell/invoked/blindness/cast(list/targets, mob/user = usr)
 	..()
@@ -71,7 +71,7 @@
 	timestop_range = 4
 	timestop_duration = 100
 	miracle = TRUE
-	devotion_cost = -45
+	devotion_cost = 45
 	clothes_req = FALSE
 	associated_skill = /datum/skill/magic/holy
 

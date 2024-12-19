@@ -459,7 +459,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 	if(miracle)
 		var/mob/living/carbon/human/C = user
 		var/datum/devotion/cleric_holder/D = C.cleric
-		D.update_devotion(devotion_cost)
+		D.update_devotion(-devotion_cost)
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			var/boon = H?.mind?.get_learning_boon(/datum/skill/magic/holy)
