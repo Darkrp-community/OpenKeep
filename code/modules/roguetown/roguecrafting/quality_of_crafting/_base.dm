@@ -6,7 +6,7 @@
 	var/output_amount = 1
 	var/list/requirements = list()
 	var/list/reagent_requirements = list()
-	///this is a list of tool usage in their order which executes after requirements and reagents are fufilled
+	///this is a list of tool usage in their order which executes after requirements and reagents are fufilled these are assoc lists going path = list(text, sound)
 	var/list/tool_usage = list()
 
 	///our sellprice
@@ -62,6 +62,9 @@
 	if(required_table && !table)
 		return FALSE
 
+	var/list/copied_requirements = requirements.Copy()
+	var/list/copied_reagent_requirements = reagent_requirements.Copy()
+	var/list/copied_tool_usage = tool_usage.Copy()
 	var/list/usable_contents = list()
 	if(uses_attacking_atom)
 		usable_contents |= attacked_item.type
@@ -92,6 +95,13 @@
 				return FALSE
 			if(total_list[path] < requirements[required_path])
 				return FALSE
+			copied_requirements -= required_path
+
+	for(var/path as anything in total_list)
+		for(var/required_path as anything in tool_usage)
+			if(!ispath(path, required_path))
+				continue
+			copied_tool_usage -= required_path
 
 	if(length(reagent_requirements))
 		var/list/reagent_values = list()
@@ -113,6 +123,10 @@
 					continue
 				if(reagent_values[path] < reagent_requirements[required_path])
 					return FALSE
+				copied_reagent_requirements -= required_path
+
+	if(length(copied_requirements)|| length(copied_reagent_requirements) || length(copied_tool_usage))
+		return FALSE
 
 	return TRUE
 
@@ -217,6 +231,9 @@
 				for(var/obj/structure/table/table in range(1, user))
 					user.transferItemToLoc(active_item, get_turf(table), TRUE)
 					active_item = null
+					break
+				if(active_item)
+					user.transferItemToLoc(active_item, get_turf(user), TRUE)
 
 			if(isnull(active_item))
 				for(var/obj/item/item in usable_contents)
@@ -364,11 +381,14 @@
 				for(var/obj/item/potential_tool in storage_contents)
 					if(!istype(potential_tool, tool_path))
 						continue
+					var/list/tool_path_extra = copied_tool_usage[tool_path]
 					if(put_items_in_hand)
 						if(!do_after(user, storage_use_time, target = potential_tool))
 							continue
 						user.put_in_active_hand(potential_tool)
-					user.visible_message("[user] starts to use [potential_tool] on [name].", "You start to use [potential_tool] on [name].")
+					user.visible_message("[user] [tool_path_extra[1]].", "You [tool_path_extra[2]].")
+					if(length(tool_path_extra) >= 2)
+						playsound(get_turf(user), tool_path_extra[3], 100, FALSE)
 					if(!do_after(user, tool_use_time, target = potential_tool))
 						continue
 					copied_tool_usage -= tool_path
@@ -380,6 +400,7 @@
 				for(var/obj/item/potential_tool in usable_contents)
 					if(!istype(potential_tool, tool_path))
 						continue
+					var/list/tool_path_extra = copied_tool_usage[tool_path]
 					var/turf/container_loc = get_turf(potential_tool)
 					var/stored_pixel_x = potential_tool.pixel_x
 					var/stored_pixel_y = potential_tool.pixel_y
@@ -387,7 +408,9 @@
 						if(!do_after(user, storage_use_time, target = potential_tool))
 							continue
 						user.put_in_active_hand(potential_tool)
-					user.visible_message("[user] starts to use [potential_tool] on [name].", "You start to use [potential_tool] on [name].")
+					user.visible_message("[user] [tool_path_extra[1]].", "You [tool_path_extra[2]].")
+					if(length(tool_path_extra) >= 2)
+						playsound(get_turf(user), tool_path_extra[3], 100, FALSE)
 					if(!do_after(user, tool_use_time, target = potential_tool))
 						continue
 					copied_tool_usage -= tool_path

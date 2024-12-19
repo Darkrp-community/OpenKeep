@@ -1,12 +1,10 @@
-// LEATHER AND FUR CRAFTING RECIPES
-
 /datum/repeatable_crafting_recipe/leather
 	abstract_type = /datum/repeatable_crafting_recipe/leather
 	requirements = list(
 		/obj/item/natural/hide/cured = 1
 	)
 	tool_usage = list(
-		/obj/item/needle
+		/obj/item/needle = list("starts to sew", "start to sew")
 	)
 
 	starting_atom = /obj/item/needle
