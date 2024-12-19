@@ -10,7 +10,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf"
+		"Dark Elf",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
 	maximum_possible_slots = 1

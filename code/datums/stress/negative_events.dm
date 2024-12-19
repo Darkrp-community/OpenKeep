@@ -288,3 +288,13 @@
 	timer = 60 MINUTES
 	stressadd = 1
 	desc = "<span class='red'>I feel useless...</span>"
+
+/datum/stressevent/raider
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>Vicious sea raider, they prey on fellow men.</span>"
+
+/datum/stressevent/whaler
+	timer = 1 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>Filthy corrupted whaler. Never forget the Storm Lord.</span>"

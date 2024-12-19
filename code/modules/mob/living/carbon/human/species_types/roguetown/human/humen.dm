@@ -57,7 +57,7 @@
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
 		/datum/customizer/bodypart_feature/hair/facial/humanoid,
-		/datum/customizer/bodypart_feature/accessory,
+		/datum/customizer/bodypart_feature/accessory
 	)
 	body_markings = list(
 		/datum/body_marking/tonage,

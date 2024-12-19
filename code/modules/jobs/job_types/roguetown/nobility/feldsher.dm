@@ -20,7 +20,8 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
