@@ -216,7 +216,7 @@
 #define JDO_TAILOR 35
 #define JDO_INNKEEP 36
 #define JDO_COOK 36.1
-#define JDO_NIGHTMAN 37.1
+#define JDO_NITEMAN 37.1
 #define JDO_NITEMAIDEN 37.2
 #define JDO_VILLAGER 38
 
