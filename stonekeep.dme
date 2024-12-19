@@ -1848,7 +1848,6 @@
 #include "code\modules\language\roguetown\oldpsydonic.dm"
 #include "code\modules\language\roguetown\orc.dm"
 #include "code\modules\language\roguetown\sandspeak.dm"
-#include "code\modules\language\roguetown\signlanguage.dm"
 #include "code\modules\language\roguetown\undead.dm"
 #include "code\modules\language\roguetown\zybantine.dm"
 #include "code\modules\library\book.dm"
