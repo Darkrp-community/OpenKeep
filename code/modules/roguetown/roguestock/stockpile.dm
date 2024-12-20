@@ -59,6 +59,16 @@
 	export_price = 12
 	importexport_amt = 10
 
+/datum/roguestock/stockpile/cured
+	name = "Cured Leather"
+	desc = "Cured Leather ready to be worked."
+	item_type = /obj/item/natural/hide/cured
+	held_items = 2
+	payout_price = 5
+	withdraw_price = 7
+	export_price = 7
+	importexport_amt = 10
+
 /datum/roguestock/stockpile/fur
 	name = "Fur"
 	desc = "Hide with a long winter coat from animals."

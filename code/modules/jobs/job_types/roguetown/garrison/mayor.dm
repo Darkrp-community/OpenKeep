@@ -1,5 +1,5 @@
 /datum/job/roguetown/mayor
-	title = "Mayor"
+	title = "Town Elder"
 	flag = MAYOR
 	department_flag = GARRISON
 	faction = "Station"

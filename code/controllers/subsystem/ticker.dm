@@ -70,7 +70,7 @@ SUBSYSTEM_DEF(ticker)
 	var/end_state = "undefined"
 	var/job_change_locked = FALSE
 	var/list/royals_readied = list()
-	var/rulertype = "King" // reports whether king or queen rules
+	var/rulertype = "Monarch" // reports whether king or queen rules
 	var/rulermob = null // reports what the ruling mob is.
 	var/failedstarts = 0
 	var/list/manualmodes = list()
@@ -151,22 +151,6 @@ SUBSYSTEM_DEF(ticker)
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
 	login_music = pick('sound/music/title.ogg','sound/music/title2.ogg')
-
-	if(!GLOB.syndicate_code_phrase)
-		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
-
-		var/codewords = jointext(GLOB.syndicate_code_phrase, "|")
-		var/regex/codeword_match = new("([codewords])", "ig")
-
-		GLOB.syndicate_code_phrase_regex = codeword_match
-
-	if(!GLOB.syndicate_code_response)
-		GLOB.syndicate_code_response = generate_code_phrase(return_list=TRUE)
-
-		var/codewords = jointext(GLOB.syndicate_code_response, "|")
-		var/regex/codeword_match = new("([codewords])", "ig")
-
-		GLOB.syndicate_code_response_regex = codeword_match
 
 	start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 	if(CONFIG_GET(flag/randomize_shift_time))
@@ -260,10 +244,10 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/checkreqroles()
 	var/list/readied_jobs = list()
-	var/list/required_jobs = list("Queen","King")
+	var/list/required_jobs = list("Monarch")
 #ifdef DEPLOY_TEST
 	required_jobs = list()
-	readied_jobs = list("King")
+	readied_jobs = list("Monarch")
 #endif
 #ifdef ROGUEWORLD
 	required_jobs = list()
@@ -280,11 +264,8 @@ SUBSYSTEM_DEF(ticker)
 							continue
 					readied_jobs.Add(V)
 
-	if(("King" in readied_jobs) || ("Queen" in readied_jobs))
-		if("King" in readied_jobs)
-			rulertype = "King"
-		else
-			rulertype = "Queen"
+	if(("Monarch" in readied_jobs))
+		rulertype = "Monarch"
 	else
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of ROGUETOWN without a Ruler?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
@@ -411,9 +392,6 @@ SUBSYSTEM_DEF(ticker)
 		equip_characters()
 		log_game("GAME SETUP: equip characters success")
 
-		GLOB.data_core.manifest()
-		log_game("GAME SETUP: manifest success")
-
 		transfer_characters()	//transfer keys to the new mobs
 		log_game("GAME SETUP: transfer characters success")
 
@@ -535,19 +513,12 @@ SUBSYSTEM_DEF(ticker)
 
 /datum/controller/subsystem/ticker/proc/select_ruler()
 	switch(rulertype)
-		if("King")
+		if("Monarch")
 			for(var/mob/living/carbon/human/K in world)
 				if(istype(K, /mob/living/carbon/human/dummy))
 					continue
-				if(K.job == "King")
+				if(K.job == "Monarch")
 					rulermob = K
-					return
-		if("Queen")
-			for(var/mob/living/carbon/human/Q in world)
-				if(istype(Q, /mob/living/carbon/human/dummy))
-					continue
-				if(Q.job == "Queen")
-					rulermob = Q
 					return
 
 /datum/controller/subsystem/ticker/proc/collect_minds()
