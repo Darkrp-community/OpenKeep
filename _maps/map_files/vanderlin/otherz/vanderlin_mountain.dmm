@@ -53,10 +53,6 @@
 /mob/living/carbon/human/species/skeleton/npc/peasant,
 /turf/open/floor/rogue/church,
 /area/rogue/under/mountains/anvil/lower/building)
-"aA" = (
-/obj/structure/fluff/dryingrack,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/mountains/anvil/lower)
 "aB" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/effect/spawner/roguemap/loot/armor,
@@ -742,10 +738,6 @@
 /obj/item/natural/feather,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/mountains/anvil/lower/building)
-"gN" = (
-/obj/structure/fluff/dryingrack,
-/turf/open/floor/rogue/ruinedwood/darker,
-/area/rogue/indoors/mountains/anvil/surface/building)
 "gP" = (
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
@@ -1306,12 +1298,6 @@
 /obj/structure/bed/rogue/mediocre,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/lower)
-"ly" = (
-/obj/structure/fluff/dryingrack,
-/turf/open/floor/rogue/ruinedwood{
-	icon_state = "weird1"
-	},
-/area/rogue/indoors/mountains/anvil/surface/building)
 "lE" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 1
@@ -1732,7 +1718,6 @@
 /area/rogue/indoors/mountains/anvil/surface/building)
 "pK" = (
 /obj/effect/decal/cleanable/blood,
-/obj/structure/fluff/dryingrack,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /turf/open/floor/rogue/cobblerock,
@@ -131147,7 +131132,7 @@ yH
 Lp
 Pm
 Pm
-ly
+Pm
 pW
 vd
 Pm
@@ -169426,7 +169411,7 @@ YS
 YS
 YS
 yH
-gN
+Ez
 Ez
 js
 Ez
@@ -171159,7 +171144,7 @@ Jv
 Jv
 DR
 DR
-aA
+Jv
 Jv
 Jv
 Jv
