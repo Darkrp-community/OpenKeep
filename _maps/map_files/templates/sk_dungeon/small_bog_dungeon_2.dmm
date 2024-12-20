@@ -66,7 +66,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "oK" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/effect/decal/cleanable/blood/gibs/core,
 /obj/item/natural/hide,
 /turf/open/floor/rogue/dirt/road,
@@ -237,7 +237,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "Yg" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /obj/effect/decal/cleanable/blood/gibs/core,
 /turf/open/floor/rogue/dirt/road,

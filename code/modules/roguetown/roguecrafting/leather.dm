@@ -2,11 +2,11 @@
 
 /datum/crafting_recipe/roguetown/leather
 	tools = list(/obj/item/needle)
-	structurecraft = /obj/structure/fluff/dryingrack
+	structurecraft = /obj/machinery/tanningrack
 	skillcraft = /datum/skill/craft/tanning
 	craftdiff = 0
 	subtype_reqs = TRUE // so you can use any subtype of fur
-	reqs = list(/obj/item/natural/hide = 1)
+	reqs = list(/obj/item/natural/hide/cured = 1)
 
 /datum/crafting_recipe/roguetown/leather/volfhelm
 	name = "volf helm"
@@ -18,10 +18,8 @@
 
 /datum/crafting_recipe/roguetown/leather/pouch
 	name = "leather pouch"
-	result = list(/obj/item/storage/belt/rogue/pouch,
-				/obj/item/storage/belt/rogue/pouch)
-	reqs = list(/obj/item/natural/hide = 1,
-				/obj/item/natural/fibers = 1)
+	result = list(/obj/item/storage/belt/rogue/pouch)
+	reqs = list(/obj/item/natural/hide/cured = 1)
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/leather/gloves
@@ -54,7 +52,7 @@
 /datum/crafting_recipe/roguetown/leather/gladiator
 	name = "gladiator sandals"
 	result = /obj/item/clothing/shoes/roguetown/gladiator
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2)
 	sellprice = 17
 
 /datum/crafting_recipe/roguetown/leather/hood
@@ -64,18 +62,18 @@
 /datum/crafting_recipe/roguetown/leather/cloak
 	name = "leather cloak"
 	result = /obj/item/clothing/cloak/raincloak/brown
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2)
 
 /datum/crafting_recipe/roguetown/leather/cloakfur
 	name = "fur cloak"
 	result = /obj/item/clothing/cloak/raincloak/furcloak
-	reqs = list(/obj/item/natural/hide = 2,
+	reqs = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fur = 1)
 
 /datum/crafting_recipe/roguetown/leather/quiver
 	name = "quiver"
 	result = /obj/item/quiver
-	reqs = list(/obj/item/natural/hide = 2, /obj/item/natural/fibers = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2, /obj/item/natural/fibers = 2)
 
 /datum/crafting_recipe/roguetown/leather/tribal_cloak
 	name = "tribal pelt"
@@ -87,7 +85,7 @@
 
 /datum/crafting_recipe/roguetown/leather/furlinedanklets
 	name = "fur lined anklets"
-	reqs = list(/obj/item/natural/hide = 1,
+	reqs = list(/obj/item/natural/hide/cured = 1,
 				/obj/item/natural/fur = 1)
 	result = /obj/item/clothing/shoes/roguetown/boots/furlinedanklets
 
@@ -96,13 +94,13 @@
 /datum/crafting_recipe/roguetown/leather/saddle
 	name = "saddle"
 	result = /obj/item/natural/saddle
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/satchel
 	name = "leather satchel"
 	result = /obj/item/storage/backpack/rogue/satchel
-	reqs = list(/obj/item/natural/hide = 2,
+	reqs = list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
@@ -123,20 +121,20 @@
 /datum/crafting_recipe/roguetown/leather/heavygloves
 	name = "heavy leather gloves"
 	result = /obj/item/clothing/gloves/roguetown/angle
-	reqs = list(/obj/item/natural/hide = 1,
+	reqs = list(/obj/item/natural/hide/cured = 1,
 				/obj/item/natural/fur = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/helmet
 	name = "leather helmet"
 	result = /obj/item/clothing/head/roguetown/helmet/leather
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/armor
 	name = "leather armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather
-	reqs = list(/obj/item/natural/hide = 2)
+	reqs = list(/obj/item/natural/hide/cured = 2)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/papakha
@@ -155,7 +153,7 @@
 /datum/crafting_recipe/roguetown/leather/furlinedboots
 	name = "fur lined boots"
 	result = /obj/item/clothing/shoes/roguetown/boots/furlinedboots
-	reqs = 	list(/obj/item/natural/hide = 2,
+	reqs = 	list(/obj/item/natural/hide/cured = 2,
 				/obj/item/natural/fur = 2)
 	craftdiff = 1
 
@@ -165,7 +163,7 @@
 /datum/crafting_recipe/roguetown/leather/backpack
 	name = "leather backpack"
 	result = /obj/item/storage/backpack/rogue/backpack
-	reqs = list(/obj/item/natural/hide = 3,
+	reqs = list(/obj/item/natural/hide/cured = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 2
 
@@ -188,13 +186,13 @@
 /datum/crafting_recipe/roguetown/leather/leatherjacket
 	name = "leather jacket"
 	result = list(/obj/item/clothing/suit/roguetown/armor/leather/jacket)
-	reqs = list(/obj/item/natural/hide = 1)
+	reqs = list(/obj/item/natural/hide/cured = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/brimmedhat
 	name = "brimmed hat x2"
 	result = list(/obj/item/clothing/head/roguetown/brimmed)
-	reqs = list(/obj/item/natural/hide = 1)
+	reqs = list(/obj/item/natural/hide/cured = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/leather/volfmantle

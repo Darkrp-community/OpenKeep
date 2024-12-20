@@ -35,7 +35,7 @@
 	robust_searching = TRUE
 
 	botched_butcher_results = list(/obj/item/alch/bone = 1) // 50% chance to get if skill 0 in butchery
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat = 1)
 	perfect_butcher_results = list(/obj/item/natural/hide = 1) // level 5 butchery bonus
 
 	health = 40
@@ -373,12 +373,6 @@
 		else
 			if(prob(8))
 				emote("idle")
-//			for(var/direction in shuffle(list(1,2,4,8,5,6,9,10)))
-//				var/step = get_step(src, direction)
-//				if(step)
-//					var/obj/item/reagent_containers/food/I = locate(/obj/item/reagent_containers/food) in step
-//					if(is_type_in_list(I, food_type))
-//						Move(step, get_dir(src, step))
 			if(adult_growth)
 				growth_prog += 0.5
 				if(growth_prog >= 100)

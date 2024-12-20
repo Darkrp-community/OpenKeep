@@ -40,12 +40,12 @@
 /obj/structure/mineral_door/secret/update_icon()
 
 /obj/structure/mineral_door/secret/vault
-	vip = list("King", "Queen", "Steward", "Hand")
-	vipmessage = "King, Queen, Steward and Hand"
+	vip = list("Monarch", "Consort", "Steward", "Hand")
+	vipmessage = "Monarch, Consort, Steward and Hand"
 
 /obj/structure/mineral_door/secret/keep
-	vip = list("King", "Queen", "Royal Heir", "Hand")
-	vipmessage = "King, Queen, Royal Heir and Hand"
+	vip = list("Monarch", "Consort", "Royal Heir", "Hand")
+	vipmessage = "Monarch, Consort, Royal Heir and Hand"
 
 /obj/structure/mineral_door/secret/merchant
 	vip = list("Merchant", "Shop Hand")

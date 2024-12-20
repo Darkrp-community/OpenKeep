@@ -3849,7 +3849,7 @@
 /area/rogue/indoors/town/manor)
 "nE" = (
 /obj/structure/chair/bench/throne,
-/obj/effect/landmark/start/lady,
+/obj/effect/landmark/start/consort,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/manor)
 "nF" = (
@@ -10351,7 +10351,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/dwarfin)
 "Lr" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/needle/thorn,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield)

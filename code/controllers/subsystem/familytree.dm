@@ -41,8 +41,8 @@ SUBSYSTEM_DEF(familytree)
 	var/excluded_jobs = list(
 		"Prince",
 		"Princess",
-		"Queen",
-		"King",
+		"Consort",
+		"Monarch",
 		"Hand",
 		"Inquisitor",
 		"Adept",

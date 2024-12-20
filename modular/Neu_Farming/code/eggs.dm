@@ -31,3 +31,6 @@
 		O.pixel_y = rand(-8,8)
 		visible_message("<span class='warning'>[H] crushes [src] underfoot.</span>")
 		qdel(src)
+
+/obj/item/reagent_containers/food/snacks/egg/proc/hatch(mob/living/simple_animal/hostile/retaliate/rogue/chicken/parent)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/chicken/chick(get_turf(parent))

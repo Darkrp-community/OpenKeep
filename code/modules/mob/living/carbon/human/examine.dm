@@ -108,6 +108,9 @@
 			if(mind && mind.special_role == "Vampire Lord")
 				. += "<span class='userdanger'>A MONSTER!</span>"
 
+		if(HAS_TRAIT(src, TRAIT_THIEVESGUILD) && HAS_TRAIT(user, TRAIT_THIEVESGUILD))
+			. += span_green("They are also a member of the Thieves Guild.")
+
 		var/list/known_frumentarii = user.mind.cached_frumentarii
 		if(name in known_frumentarii)
 			. += span_greentext("<b>[m1] an agent of the court!</b>")
@@ -150,7 +153,7 @@
 	//head
 	if(head && !(SLOT_HEAD in obscured))
 		. += "[m3] [head.get_examine_string(user)] on [m2] head."
-	//suit/armor
+	//suit/armorF
 	if(wear_armor && !(SLOT_ARMOR in obscured))
 		. += "[m3] [wear_armor.get_examine_string(user)]."
 		//suit/armor storage

@@ -933,7 +933,7 @@
 		var/datum/antagonist/A = M.mind.has_antag_datum(/datum/antagonist/)
 		if(A)
 			poll_message = "[poll_message] Status:[A.name]."
-	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_PAI, null, FALSE, 100, M)
+	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_ASPIRANT, null, FALSE, 100, M)
 
 	if(LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
@@ -1049,4 +1049,11 @@
 		used_title = J.title
 		if((gender == FEMALE) && J.f_title)
 			used_title = J.f_title
+
+		if(J.title == "Monarch")
+			if(gender == FEMALE)
+				used_title = "Queen"
+			else
+				used_title = "King"
+
 	return used_title

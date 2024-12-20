@@ -488,7 +488,7 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/do_required_jobs()
 	var/amt_picked = 0
-	var/list/require = list("King", "Merchant")
+	var/list/require = list("Monarch", "Merchant")
 	for(var/X in require)
 		var/datum/job/job = GetJob(X)
 		if(!job)
@@ -836,46 +836,6 @@ SUBSYSTEM_DEF(job)
 		CRASH(msg)
 
 
-///////////////////////////////////
-//Keeps track of all living heads//
-///////////////////////////////////
-/datum/controller/subsystem/job/proc/get_living_heads()
-	. = list()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/player = i
-		if(player.stat != DEAD && player.mind && (player.mind.assigned_role in GLOB.command_positions))
-			. |= player.mind
-
-
-////////////////////////////
-//Keeps track of all heads//
-////////////////////////////
-/datum/controller/subsystem/job/proc/get_all_heads()
-	. = list()
-	for(var/i in GLOB.mob_list)
-		var/mob/player = i
-		if(player.mind && (player.mind.assigned_role in GLOB.command_positions))
-			. |= player.mind
-
-//////////////////////////////////////////////
-//Keeps track of all living security members//
-//////////////////////////////////////////////
-/datum/controller/subsystem/job/proc/get_living_sec()
-	. = list()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/player = i
-		if(player.stat != DEAD && player.mind && (player.mind.assigned_role in GLOB.security_positions))
-			. |= player.mind
-
-////////////////////////////////////////
-//Keeps track of all  security members//
-////////////////////////////////////////
-/datum/controller/subsystem/job/proc/get_all_sec()
-	. = list()
-	for(var/i in GLOB.human_list)
-		var/mob/living/carbon/human/player = i
-		if(player.mind && (player.mind.assigned_role in GLOB.security_positions))
-			. |= player.mind
 
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
