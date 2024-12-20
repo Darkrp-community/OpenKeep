@@ -695,6 +695,10 @@
 "DI" = (
 /turf/closed/wall/mineral/rogue/wooddark/end,
 /area/rogue/indoors)
+"DU" = (
+/obj/effect/landmark/mapGenerator/rogue/mountain,
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/mountains)
 "Ef" = (
 /obj/structure/bed/rogue/inn,
 /turf/open/floor/rogue/ruinedwood{
@@ -795,6 +799,10 @@
 /obj/structure/flora/newtree,
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
+"In" = (
+/obj/effect/landmark/mapGenerator/rogue/forest,
+/turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/woods)
 "IA" = (
 /obj/item/reagent_containers/glass/bucket/pot,
@@ -1215,135 +1223,135 @@ Sy
 Sy
 Sy
 Sy
-Aj
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-Aj
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
 eP
 eP
-Aj
-Aj
-Aj
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-yg
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
-Xw
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+Sy
+In
 "}
 (2,1,1) = {"
 Sy
@@ -1545,7 +1553,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (3,1,1) = {"
 Sy
@@ -1747,7 +1755,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (4,1,1) = {"
 Sy
@@ -1949,7 +1957,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (5,1,1) = {"
 Sy
@@ -2151,7 +2159,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (6,1,1) = {"
 Sy
@@ -2353,7 +2361,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (7,1,1) = {"
 Sy
@@ -2555,7 +2563,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (8,1,1) = {"
 Sy
@@ -2757,7 +2765,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (9,1,1) = {"
 Sy
@@ -2959,7 +2967,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (10,1,1) = {"
 Sy
@@ -3161,7 +3169,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (11,1,1) = {"
 Sy
@@ -3363,7 +3371,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (12,1,1) = {"
 Sy
@@ -3565,7 +3573,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (13,1,1) = {"
 Sy
@@ -3767,7 +3775,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (14,1,1) = {"
 Sy
@@ -3969,7 +3977,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (15,1,1) = {"
 Sy
@@ -4171,7 +4179,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (16,1,1) = {"
 Sy
@@ -4373,7 +4381,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (17,1,1) = {"
 Sy
@@ -4575,7 +4583,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (18,1,1) = {"
 Sy
@@ -4777,7 +4785,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (19,1,1) = {"
 Sy
@@ -4979,7 +4987,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (20,1,1) = {"
 Sy
@@ -5181,7 +5189,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (21,1,1) = {"
 Sy
@@ -5383,7 +5391,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (22,1,1) = {"
 Sy
@@ -5585,7 +5593,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (23,1,1) = {"
 Sy
@@ -5787,7 +5795,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (24,1,1) = {"
 Sy
@@ -5989,7 +5997,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (25,1,1) = {"
 Sy
@@ -6191,7 +6199,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (26,1,1) = {"
 Sy
@@ -6393,7 +6401,7 @@ yg
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (27,1,1) = {"
 Sy
@@ -6595,7 +6603,7 @@ yg
 yg
 Xw
 Xw
-Xw
+Sy
 "}
 (28,1,1) = {"
 Sy
@@ -6797,7 +6805,7 @@ yg
 yg
 Xw
 Xw
-Xw
+Sy
 "}
 (29,1,1) = {"
 Sy
@@ -6999,7 +7007,7 @@ yg
 yg
 yg
 Xw
-Xw
+Sy
 "}
 (30,1,1) = {"
 Sy
@@ -7201,7 +7209,7 @@ yg
 yg
 yg
 yg
-Xw
+Sy
 "}
 (31,1,1) = {"
 Sy
@@ -7403,7 +7411,7 @@ yg
 yg
 yg
 yg
-yg
+Sy
 "}
 (32,1,1) = {"
 Sy
@@ -7605,7 +7613,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (33,1,1) = {"
 Sy
@@ -7807,7 +7815,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (34,1,1) = {"
 Sy
@@ -8009,7 +8017,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (35,1,1) = {"
 Sy
@@ -8211,7 +8219,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (36,1,1) = {"
 Sy
@@ -8413,7 +8421,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (37,1,1) = {"
 Sy
@@ -8615,7 +8623,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (38,1,1) = {"
 Sy
@@ -8817,7 +8825,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (39,1,1) = {"
 Sy
@@ -9019,7 +9027,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (40,1,1) = {"
 Sy
@@ -9221,7 +9229,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (41,1,1) = {"
 Sy
@@ -9423,7 +9431,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (42,1,1) = {"
 Sy
@@ -9625,7 +9633,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (43,1,1) = {"
 Sy
@@ -9827,7 +9835,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (44,1,1) = {"
 Sy
@@ -10029,7 +10037,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (45,1,1) = {"
 Sy
@@ -10231,7 +10239,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (46,1,1) = {"
 Sy
@@ -10433,7 +10441,7 @@ Xw
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (47,1,1) = {"
 Sy
@@ -10635,7 +10643,7 @@ Xw
 Zb
 Xw
 Xw
-Xw
+Sy
 "}
 (48,1,1) = {"
 Sy
@@ -10837,7 +10845,7 @@ Aj
 Xw
 Xw
 Xw
-Xw
+Sy
 "}
 (49,1,1) = {"
 Sy
@@ -11039,7 +11047,7 @@ Aj
 Aj
 Xw
 Xw
-Xw
+Sy
 "}
 (50,1,1) = {"
 Sy
@@ -11241,7 +11249,7 @@ wV
 Aj
 Aj
 Xw
-Xw
+Sy
 "}
 (51,1,1) = {"
 Sy
@@ -11443,7 +11451,7 @@ wV
 wV
 Aj
 Aj
-Xw
+Sy
 "}
 (52,1,1) = {"
 Sy
@@ -11645,7 +11653,7 @@ tR
 wV
 wV
 Aj
-Aj
+Sy
 "}
 (53,1,1) = {"
 Sy
@@ -11847,7 +11855,7 @@ tR
 tR
 wV
 wV
-Aj
+Sy
 "}
 (54,1,1) = {"
 Sy
@@ -41744,7 +41752,7 @@ Su
 Su
 Su
 Su
-Su
+DU
 "}
 (2,1,2) = {"
 Su
@@ -82145,7 +82153,7 @@ Su
 Su
 Su
 Su
-Su
+DU
 "}
 (2,1,3) = {"
 Su
