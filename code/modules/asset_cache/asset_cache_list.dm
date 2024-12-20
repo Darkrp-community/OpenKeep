@@ -1,3 +1,8 @@
+/datum/asset/simple/vv
+	assets = list(
+		"view_variables.css" = 'html/admin/view_variables.css'
+	)
+
 /datum/asset/simple/namespaced/common
 	assets = list("padlock.png"	= 'html/padlock.png')
 	parents = list("common.css" = 'html/browser/common.css')

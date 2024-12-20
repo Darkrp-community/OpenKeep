@@ -81,8 +81,6 @@
 	set waitfor = 0
 	if(!parent)
 		return
-	if(parent.is_new_player())
-		return
 //	last_preview_update = world.time
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob
@@ -97,6 +95,7 @@
 	copy_to(mannequin, 1, TRUE, TRUE)
 
 	if(previewJob)
+		message_admins("FUCK2")
 		testing("previewjob")
 		mannequin.job = previewJob.title
 		previewJob.equip(mannequin, TRUE, preference_source = parent)
