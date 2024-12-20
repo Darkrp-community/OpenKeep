@@ -192,36 +192,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 /datum/preferences/proc/ShowChoices(mob/user, tabchoice)
 	if(!user || !user.client)
 		return
-	///this is called so hyper early you need to fetch assets at this stage
-	SSassets.transport.send_assets(user.client, list("try5_border.png", "try5.png", "slop_menustyle2.css"))
 	if(slot_randomized)
 		load_character(default_slot) // Reloads the character slot. Prevents random features from overwriting the slot if saved.
 		slot_randomized = FALSE
-	var/list/dat = list()
-	dat += {"
-		<html>
-			<head>
-				<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"/>
-				<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>
-				<style>
-					@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-					@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-					@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
-					body {
-						background-color: rgb(31, 20, 24);
-						background:
-							url('[SSassets.transport.get_asset_url("try5_border.png")]'),
-							url('[SSassets.transport.get_asset_url("try5.png")]');
-						background-repeat: no-repeat;
-						background-attachment: fixed;
-						background-size: 100% 100%;
-					}
-				</style>
-				<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("slop_menustyle2.css")]'>
-			</head>
-		"}
-	dat += "<body>"
-	dat += "<center>"
+	var/list/dat = list("<center>")
 	if(tabchoice)
 		current_tab = tabchoice
 	if(tabchoice == 4)
@@ -232,7 +206,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/used_title
 	switch(current_tab)
 		if (0) // Character Settings#
-			used_title = "<div id='character_sheet'> Character Sheet </div>"
+			used_title = "Character Sheet"
 
 			// Top-level menu table
 			dat += "<table style='width: 100%; line-height: 20px;'>"
@@ -367,13 +341,20 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
+
+//				dat += APPEARANCE_CATEGORY_COLUMN
 				var/skin_tone_wording = pref_species.skin_tone_wording // Both the skintone names and the word swap here is useless fluff
 
 				dat += "<b>[skin_tone_wording]: </b><a href='?_src_=prefs;preference=s_tone;task=input'>Change </a>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SKIN_TONE]'>[(randomise[RANDOM_SKIN_TONE]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
 
 			var/mutant_colors
 			if((MUTCOLORS in pref_species.species_traits) || (MUTCOLORS_PARTSONLY in pref_species.species_traits))
+
+//				if(!use_skintones)
+//					dat += APPEARANCE_CATEGORY_COLUMN
+
 				dat += "<h3>Mutant color</h3>"
 
 				dat += "<span style='border: 1px solid #161616; background-color: #[features["mcolor"]];'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=mutant_color;task=input'>Change</a><BR>"
@@ -382,10 +363,20 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 
 			if((EYECOLOR in pref_species.species_traits) && !(NOEYESPRITES in pref_species.species_traits))
+
+//				if(!use_skintones && !mutant_colors)
+//					dat += APPEARANCE_CATEGORY_COLUMN
+
+//				dat += "<h3>Eye Color</h3>"
 				dat += "<b>Eye Color: </b><a href='?_src_=prefs;preference=eyes;task=input'>Change </a>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_EYE_COLOR]'>[(randomise[RANDOM_EYE_COLOR]) ? "Lock" : "Unlock"]</A>"
 				dat += "<br>"
 				dat += "<b>Voice Color: </b><a href='?_src_=prefs;preference=voice;task=input'>Change</a>"
 				dat += "<br>"
+//				dat += "<br><b>Features:</b> <a href='?_src_=prefs;preference=customizers;task=menu'>Change</a>"
+//				dat += "<br>"
+//				dat += "<br><b>Markings:</b> <a href='?_src_=prefs;preference=markings;task=menu'>Change</a>"
+//				dat += "<br>" // These can be commented back in whenever someone figures out how to add markings to the menu. I'm a bad coder, so someone who's really smart and good at coding should take up my sword.
 				dat += "<br><b>Descriptors:</b> <a href='?_src_=prefs;preference=descriptors;task=menu'>Change</a>"
 				dat += "<br>"
 				if(HAIR in pref_species.species_traits)
@@ -397,11 +388,44 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					dat += "<b>Hair Color: </b>  <a href='?_src_=prefs;preference=hair;task=input'>Change</a>"
 					dat += "<br>"
 				dat += "<b>Face Detail:</b> <a href='?_src_=prefs;preference=detail;task=input'>[detail]</a>"
-
+//				dat += "<br>"
+//				dat += "<b>Body Detail:</b> <a href='?_src_=prefs;preference=bdetail;task=input'>None</a>"
+//				if(gender == FEMALE)
+//					dat += "<br>"
 				dat += "<br></td>"
+//				dat += "<span style='border: 1px solid #161616; background-color: #[detail_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=detail_color;task=input'>Change</a>"
 			else if(use_skintones || mutant_colors)
 				dat += "</td>"
 
+//			if(HAIR in pref_species.species_traits)
+
+//				dat += APPEARANCE_CATEGORY_COLUMN
+
+//				dat += "<h3>Hairstyle</h3>"
+
+//				dat += "<a href='?_src_=prefs;preference=hairstyle;task=input'>[hairstyle]</a>"
+//				dat += "<a href='?_src_=prefs;preference=previous_hairstyle;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hairstyle;task=input'>&gt;</a>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIRSTYLE]'>[(randomise[RANDOM_HAIRSTYLE]) ? "Lock" : "Unlock"]</A>"
+
+//				dat += "<br><span style='border:1px solid #161616; background-color: #[hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_HAIR_COLOR]'>[(randomise[RANDOM_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
+
+//				if(gender == MALE)
+//					dat += "<BR><h3>Facial Hair</h3>"
+//					dat += "<a href='?_src_=prefs;preference=facial_hairstyle;task=input'>[facial_hairstyle]</a>"
+	//					dat += "<a href='?_src_=prefs;preference=previous_facehairstyle;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehairstyle;task=input'>&gt;</a>"
+
+//				if(gender == FEMALE)
+//					dat += "<BR><h3>Accessory</h3>"
+//					dat += "<a href='?_src_=prefs;preference=accessory;task=input'>[accessory]</a>"
+		//					dat += "<a href='?_src_=prefs;preference=previous_accessory;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_accessory;task=input'>&gt;</a>"
+
+
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIRSTYLE]'>[(randomise[RANDOM_FACIAL_HAIRSTYLE]) ? "Lock" : "Unlock"]</A>"
+
+//				dat += "<br><span style='border: 1px solid #161616; background-color: #[facial_hair_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a>"
+//				dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_FACIAL_HAIR_COLOR]'>[(randomise[RANDOM_FACIAL_HAIR_COLOR]) ? "Lock" : "Unlock"]</A>"
+//				dat += "<br></td>"
 
 			//Mutant stuff
 			var/mutant_category = 0
@@ -431,6 +455,19 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+
+/*			if("horns" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Horns</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=horns;task=input'>[features["horns"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0*/
 
 			if("frills" in pref_species.default_features)
 				if(!mutant_category)
@@ -833,15 +870,10 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	if(user.client.is_new_player())
 		dat = list("<center>REGISTER!</center>")
 
-	dat += {"
-			</body>
-		</head>
-	</html>
-	"}
 	winshow(user, "stonekeep_prefwin", TRUE)
 	winshow(user, "stonekeep_prefwin.character_preview_map", TRUE)
 	var/datum/browser/noclose/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
-	popup.set_window_options("can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0;border=0")
+	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 	update_preview_icon()
