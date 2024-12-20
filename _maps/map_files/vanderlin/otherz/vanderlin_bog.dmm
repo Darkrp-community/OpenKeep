@@ -153,7 +153,7 @@
 /area/rogue/outdoors/bog)
 "cf" = (
 /obj/structure/mineral_door/wood/donjon{
-	locked = 1
+	lockid = "garrison"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -729,8 +729,8 @@
 /area/rogue/outdoors/bog)
 "jk" = (
 /obj/structure/winch{
-	redstone_id = "s";
-	name = "Northern Gate"
+	redstone_id = "BogSouth";
+	name = "Southern Gate"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
@@ -1036,7 +1036,7 @@
 /area/rogue/outdoors/bog)
 "nK" = (
 /obj/structure/winch{
-	redstone_id = "ss";
+	redstone_id = "BogSouth";
 	name = "Southern Gate"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1196,7 +1196,7 @@
 /area/rogue/indoors/shelter/bog)
 "pF" = (
 /obj/structure/gate/bars{
-	redstone_id = "Bopsouth"
+	redstone_id = "BogSouth"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/bog)
@@ -1276,8 +1276,8 @@
 /area/rogue/indoors/shelter/bog)
 "qT" = (
 /obj/structure/winch{
-	redstone_id = "ss";
-	name = "Southern Gate"
+	redstone_id = "BogNorth";
+	name = "Northern Gate"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
@@ -2947,7 +2947,8 @@
 /area/rogue/indoors/shelter/bog)
 "Pl" = (
 /obj/structure/mineral_door/wood/donjon{
-	locked = 1
+	locked = 1;
+	lockid = "garrison"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
@@ -2993,7 +2994,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/shelter/bog)
 "PQ" = (
-/turf/closed,
+/turf/open/floor/rogue/concrete,
 /area/rogue/outdoors/bog)
 "PS" = (
 /obj/structure/mineral_door/wood,
@@ -3099,7 +3100,7 @@
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/shelter/bog)
 "RK" = (
-/turf/open/floor/rogue/concrete,
+/turf/closed,
 /area/rogue/outdoors/bog)
 "RN" = (
 /turf/closed/wall/mineral/rogue/stone/moss,
@@ -3210,7 +3211,7 @@
 /area/rogue/indoors/shelter/bog)
 "Th" = (
 /obj/structure/winch{
-	redstone_id = "s";
+	redstone_id = "BogNorth";
 	name = "Northern Gate"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
@@ -3817,11 +3818,11 @@ MQ
 MQ
 MQ
 MQ
-PQ
-PQ
-PQ
-PQ
-PQ
+RK
+RK
+RK
+RK
+RK
 MQ
 MQ
 MQ
@@ -27133,14 +27134,14 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
-RK
-RK
-RK
-RK
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -27335,14 +27336,14 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -27521,15 +27522,15 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
-RK
-RK
-RK
-RK
-RK
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -27537,14 +27538,14 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -27723,29 +27724,29 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
-cQ
-cQ
-cQ
-cQ
+PQ
 cQ
 cQ
 cQ
 cQ
-RK
 cQ
 cQ
 cQ
 cQ
-RK
+PQ
+cQ
+cQ
+cQ
+cQ
+PQ
 cQ
 cQ
 cQ
@@ -27760,7 +27761,7 @@ cQ
 MQ
 "}
 (120,1,1) = {"
-PQ
+RK
 MQ
 kZ
 Ej
@@ -27925,28 +27926,28 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
-cQ
-cQ
-cQ
-cQ
+PQ
 cQ
 cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
+cQ
+cQ
+cQ
+cQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -27962,7 +27963,7 @@ cQ
 MQ
 "}
 (121,1,1) = {"
-PQ
+RK
 MQ
 kZ
 kZ
@@ -28128,13 +28129,13 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
+PQ
+PQ
+PQ
 cQ
-RK
-RK
-RK
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -28164,7 +28165,7 @@ cQ
 MQ
 "}
 (122,1,1) = {"
-PQ
+RK
 QR
 La
 La
@@ -28349,10 +28350,10 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -28366,7 +28367,7 @@ cQ
 MQ
 "}
 (123,1,1) = {"
-PQ
+RK
 NA
 jS
 La
@@ -28554,7 +28555,7 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -28568,7 +28569,7 @@ cQ
 MQ
 "}
 (124,1,1) = {"
-PQ
+RK
 NA
 jS
 jS
@@ -28738,9 +28739,9 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -28755,7 +28756,7 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -28770,7 +28771,7 @@ cQ
 MQ
 "}
 (125,1,1) = {"
-PQ
+RK
 NA
 jS
 jS
@@ -28939,15 +28940,11 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
-cQ
-cQ
-cQ
-cQ
+PQ
 cQ
 cQ
 cQ
@@ -28955,10 +28952,14 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
+cQ
+cQ
+cQ
+cQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -28972,7 +28973,7 @@ cQ
 MQ
 "}
 (126,1,1) = {"
-PQ
+RK
 QR
 kZ
 La
@@ -29141,11 +29142,11 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -29174,7 +29175,7 @@ cQ
 MQ
 "}
 (127,1,1) = {"
-PQ
+RK
 MQ
 kZ
 kZ
@@ -29343,15 +29344,11 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
-cQ
-cQ
-cQ
-cQ
+PQ
 cQ
 cQ
 cQ
@@ -29359,10 +29356,14 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
+cQ
+cQ
+cQ
+cQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -29376,7 +29377,7 @@ cQ
 MQ
 "}
 (128,1,1) = {"
-PQ
+RK
 MQ
 La
 kZ
@@ -29546,9 +29547,9 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -29562,7 +29563,7 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -29763,7 +29764,7 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -29965,7 +29966,7 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -30152,15 +30153,12 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
+PQ
+PQ
+PQ
 cQ
 cQ
-RK
-cQ
-cQ
-cQ
+PQ
 cQ
 cQ
 cQ
@@ -30168,9 +30166,12 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
+cQ
+cQ
+cQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -30353,14 +30354,14 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -30555,28 +30556,28 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
-RK
-cQ
-cQ
-cQ
-cQ
+PQ
 cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
 cQ
 cQ
-RK
+cQ
+cQ
+PQ
+PQ
+PQ
+cQ
+cQ
+PQ
 cQ
 cQ
 cQ
@@ -30757,29 +30758,29 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
+PQ
+PQ
 cQ
-RK
-RK
-cQ
-cQ
-RK
+PQ
+PQ
 cQ
 cQ
+PQ
 cQ
 cQ
 cQ
 cQ
 cQ
-RK
+cQ
+cQ
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -30960,28 +30961,28 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
-RK
-cQ
-cQ
-cQ
-RK
+PQ
 cQ
 cQ
+cQ
+PQ
 cQ
 cQ
 cQ
 cQ
 cQ
-RK
+cQ
+cQ
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -31161,13 +31162,13 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
-RK
-RK
-RK
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
@@ -31176,14 +31177,14 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
+PQ
+PQ
 cQ
-RK
-RK
+PQ
+PQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -31379,13 +31380,13 @@ cQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
-RK
+PQ
 cQ
 cQ
 cQ
@@ -31580,13 +31581,13 @@ cQ
 cQ
 cQ
 cQ
-RK
-RK
-RK
-RK
-RK
-RK
-RK
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
+PQ
 cQ
 cQ
 cQ
