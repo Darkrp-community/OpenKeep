@@ -27,3 +27,4 @@ SUBSYSTEM_DEF(assets)
 			get_asset_datum(type)
 
 	transport.Initialize(cache)
+	return ..()
