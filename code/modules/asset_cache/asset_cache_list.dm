@@ -55,6 +55,7 @@
 	name ="achievements"
 
 /datum/asset/simple/permissions
+	name = "Permissions"
 	assets = list(
 		"search.js" = 'html/admin/search.js',
 		"panels.css" = 'html/admin/panels.css'
@@ -68,7 +69,9 @@
 	)
 
 /datum/asset/simple/notes
+	name = "Notes"
 
 /datum/asset/spritesheet/goonchat
+	name = "Goonchat"
 
 /datum/asset/group/tgui
