@@ -4,7 +4,7 @@
 /client/New()
 	. = ..()
 	if(byond_version >= 516) // Enable 516 compat browser storage mechanisms
-		winset(src, "", "browser-options=devtools,byondstorage,find")
+		winset(src, null, "browser-options=devtools,byondstorage,find")
 	if(!crafting_book)
 		crafting_book = new
 
