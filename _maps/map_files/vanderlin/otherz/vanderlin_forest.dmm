@@ -796,9 +796,6 @@
 /obj/structure/flora/newtree,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"In" = (
-/turf/closed,
-/area/rogue)
 "IA" = (
 /obj/item/reagent_containers/glass/bucket/pot,
 /obj/structure/closet/crate/chest/neu,
@@ -1346,7 +1343,7 @@ Xw
 Xw
 Xw
 Xw
-In
+Xw
 "}
 (2,1,1) = {"
 Sy
