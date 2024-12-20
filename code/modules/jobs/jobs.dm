@@ -16,7 +16,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	"Royal Guard",
 	"Veteran",
 	"Garrison Guard",
-	"Watchman",
+	"Gatekeeper",
 	"Jailor",
 	"Dungeoneer",
 	"Mayor",

@@ -1,6 +1,5 @@
 /datum/job/roguetown/watchman
-	title = "Watchman"
-	f_title = "Sentry"
+	title = "Gatekeeper"
 	flag = WATCHMAN
 	department_flag = GARRISON
 	display_order = JDO_WATCHMAN
@@ -51,8 +50,8 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-		H.change_stat("strength", -2)
-		H.change_stat("perception", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", 2)
+		H.change_stat("strength", 2)
+		H.change_stat("perception", 2)
+		H.change_stat("endurance", -3)
+		H.change_stat("speed", -1)
 		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
