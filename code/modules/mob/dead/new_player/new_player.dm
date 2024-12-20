@@ -65,6 +65,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 
 /mob/dead/new_player/proc/new_player_panel()
 /*
+	var/datum/asset/asset_datum = get_asset_datum(/datum/asset/simple/lobby)
+	asset_datum.send(client)
 	var/output = "<center>"
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		switch(ready)
