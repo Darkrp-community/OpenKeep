@@ -106,11 +106,11 @@
 		dat += "No item inserted."
 	else
 		dat += "Item inserted: [inserted]<HR>"
-		dat += "<A href='?src=\ref[src];select=1'>Select new color.</A><BR>"
+		dat += "<A href='byond://?src=\ref[src];select=1'>Select new color.</A><BR>"
 		dat += "Color: <font color='[activecolor]'>&#9899;</font>"
-		dat += "<A href='?src=\ref[src];paint=1'>Apply new dye.</A><BR><BR>"
-		dat += "<A href='?src=\ref[src];clear=1'>Bleach out the color.</A><BR><BR>"
-		dat += "<A href='?src=\ref[src];eject=1'>Remove item.</A><BR><BR>"
+		dat += "<A href='byond://?src=\ref[src];paint=1'>Apply new dye.</A><BR><BR>"
+		dat += "<A href='byond://?src=\ref[src];clear=1'>Bleach out the color.</A><BR><BR>"
+		dat += "<A href='byond://?src=\ref[src];eject=1'>Remove item.</A><BR><BR>"
 
 	var/datum/browser/menu = new(user, "colormate","Dye Station", 400, 400, src)
 	menu.set_content(dat.Join(""))
@@ -273,11 +273,11 @@
 		dat += "No item inserted."
 	else
 		dat += "Item inserted: [inserted]<HR>"
-		dat += "<A href='?src=\ref[src];select=1'>Select new color.</A><BR>"
+		dat += "<A href='byond://?src=\ref[src];select=1'>Select new color.</A><BR>"
 		dat += "Color: <font color='[activecolor]'>&#9899;</font>"
-		dat += "<A href='?src=\ref[src];paint=1'>Apply new dye.</A><BR><BR>"
-		dat += "<A href='?src=\ref[src];clear=1'>Bleach out the color.</A><BR><BR>"
-		dat += "<A href='?src=\ref[src];eject=1'>Remove item.</A><BR><BR>"
+		dat += "<A href='byond://?src=\ref[src];paint=1'>Apply new dye.</A><BR><BR>"
+		dat += "<A href='byond://?src=\ref[src];clear=1'>Bleach out the color.</A><BR><BR>"
+		dat += "<A href='byond://?src=\ref[src];eject=1'>Remove item.</A><BR><BR>"
 
 	var/datum/browser/menu = new(user, "colormate","Dye Station", 400, 400, src)
 	menu.set_content(dat.Join(""))

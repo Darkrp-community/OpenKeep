@@ -218,23 +218,23 @@
 		if(TAB_MAIN)
 			contents += "<center>MASTER OF NERVES<BR>"
 			contents += "--------------<BR>"
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_BANK]'>\[Bank\]</a><BR>"
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_STOCK]'>\[Stockpile\]</a><BR>"
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_IMPORT]'>\[Import\]</a><BR>"
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_BOUNTIES]'>\[Bounties\]</a><BR>"
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_LOG]'>\[Log\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_BANK]'>\[Bank\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_STOCK]'>\[Stockpile\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_IMPORT]'>\[Import\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_BOUNTIES]'>\[Bounties\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_LOG]'>\[Log\]</a><BR>"
 			contents += "</center>"
 		if(TAB_BANK)
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
 			contents += "<center>Bank<BR>"
 			contents += "--------------<BR>"
 			contents += "Treasury: [SStreasury.treasury_value]m</center><BR>"
-			contents += "<a href='?src=\ref[src];payroll=1'>\[Pay by Class\]</a><BR><BR>"
+			contents += "<a href='byond://?src=\ref[src];payroll=1'>\[Pay by Class\]</a><BR><BR>"
 			for(var/mob/living/A in SStreasury.bank_accounts)
 				contents += "[A.real_name] - [SStreasury.bank_accounts[A]]m<BR>"
-				contents += "<a href='?src=\ref[src];givemoney=\ref[A]'>\[Give Money\]</a> <a href='?src=\ref[src];fineaccount=\ref[A]'>\[Fine Account\]</a><BR><BR>"
+				contents += "<a href='byond://?src=\ref[src];givemoney=\ref[A]'>\[Give Money\]</a> <a href='byond://?src=\ref[src];fineaccount=\ref[A]'>\[Fine Account\]</a><BR><BR>"
 		if(TAB_STOCK)
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
 			contents += "<center>Stockpile<BR>"
 			contents += "--------------<BR>"
 			contents += "Treasury: [SStreasury.treasury_value]m<BR>"
@@ -244,14 +244,14 @@
 				contents += "[A.name]<BR>"
 				contents += "[A.desc]<BR>"
 				contents += "Stockpiled Amount: [A.held_items]<BR>"
-				contents += "Bounty Price: <a href='?src=\ref[src];setbounty=\ref[A]'>[A.payout_price]</a><BR>"
-				contents += "Withdraw Price: <a href='?src=\ref[src];setprice=\ref[A]'>[A.withdraw_price]</a><BR>"
+				contents += "Bounty Price: <a href='byond://?src=\ref[src];setbounty=\ref[A]'>[A.payout_price]</a><BR>"
+				contents += "Withdraw Price: <a href='byond://?src=\ref[src];setprice=\ref[A]'>[A.withdraw_price]</a><BR>"
 				contents += "Demand: [A.demand2word()]<BR>"
 				if(A.importexport_amt)
-					contents += "<a href='?src=\ref[src];import=\ref[A]'>\[Import [A.importexport_amt] ([A.get_import_price()])\]</a> <a href='?src=\ref[src];export=\ref[A]'>\[Export [A.importexport_amt] ([A.get_export_price()])\]</a> <BR>"
-				contents += "<a href='?src=\ref[src];togglewithdraw=\ref[A]'>\[[A.withdraw_disabled ? "Enable" : "Disable"] Withdrawing\]</a><BR><BR>"
+					contents += "<a href='byond://?src=\ref[src];import=\ref[A]'>\[Import [A.importexport_amt] ([A.get_import_price()])\]</a> <a href='byond://?src=\ref[src];export=\ref[A]'>\[Export [A.importexport_amt] ([A.get_export_price()])\]</a> <BR>"
+				contents += "<a href='byond://?src=\ref[src];togglewithdraw=\ref[A]'>\[[A.withdraw_disabled ? "Enable" : "Disable"] Withdrawing\]</a><BR><BR>"
 		if(TAB_IMPORT)
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
 			contents += "<center>Imports<BR>"
 			contents += "--------------<BR>"
 			contents += "Treasury: [SStreasury.treasury_value]m<BR>"
@@ -262,9 +262,9 @@
 				contents += "[A.desc]<BR>"
 				if(!A.stable_price)
 					contents += "Demand: [A.demand2word()]<BR>"
-				contents += "<a href='?src=\ref[src];import=\ref[A]'>\[Import [A.importexport_amt] ([A.get_import_price()])\]</a><BR><BR>"
+				contents += "<a href='byond://?src=\ref[src];import=\ref[A]'>\[Import [A.importexport_amt] ([A.get_import_price()])\]</a><BR><BR>"
 		if(TAB_BOUNTIES)
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
 			contents += "<center>Bounties<BR>"
 			contents += "--------------<BR>"
 			contents += "Treasury: [SStreasury.treasury_value]m<BR>"
@@ -274,11 +274,11 @@
 				contents += "[A.desc]<BR>"
 				contents += "Total Collected: [A.held_items]<BR>"
 				if(A.percent_bounty)
-					contents += "Bounty Price: <a href='?src=\ref[src];setbounty=\ref[A]'>[A.payout_price]%</a><BR><BR>"
+					contents += "Bounty Price: <a href='byond://?src=\ref[src];setbounty=\ref[A]'>[A.payout_price]%</a><BR><BR>"
 				else
-					contents += "Bounty Price: <a href='?src=\ref[src];setbounty=\ref[A]'>[A.payout_price]</a><BR><BR>"
+					contents += "Bounty Price: <a href='byond://?src=\ref[src];setbounty=\ref[A]'>[A.payout_price]</a><BR><BR>"
 		if(TAB_LOG)
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
+			contents += "<a href='byond://?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a><BR>"
 			contents += "<center>Log<BR>"
 			contents += "--------------</center><BR><BR>"
 			for(var/i = SStreasury.log_entries.len to 1 step -1)

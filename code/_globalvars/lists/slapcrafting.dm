@@ -81,3 +81,15 @@ GLOBAL_LIST_EMPTY(orderless_slapcraft_recipes)
 		if(!(recipe.starting_item in recipe_list))
 			recipe_list[recipe.starting_item] = list()
 		recipe_list[recipe.starting_item] |= recipe
+
+GLOBAL_LIST_EMPTY(repeatable_crafting_recipes)
+/proc/init_crafting_repeatable_recipes()
+	var/list/recipe_list = GLOB.repeatable_crafting_recipes
+	for(var/datum/type as anything in typesof(/datum/repeatable_crafting_recipe))
+		if(is_abstract(type))
+			continue
+		var/datum/repeatable_crafting_recipe/recipe = new type()
+		///this is so we can easily get a list of all recipes from the attacked_item
+		if(!(recipe.starting_atom in recipe_list))
+			recipe_list[recipe.starting_atom] = list()
+		recipe_list[recipe.starting_atom] |= recipe

@@ -135,40 +135,40 @@
 
 /datum/role_ban_panel/proc/show_ui(mob/user)
 	var/list/dat = list()
-	dat += "<center><a href='?src=[REF(src)];task=apply'>APPLY BAN TO CKEY</a> - <a href='?src=[REF(src)];task=reset'>Reset</a> - <a href='?src=[REF(src)];task=check_bans'>Check Role Bans</a> </center>"
-	dat += "<BR><b>CKEY:</b> [selected_ckey] <a href='?src=[REF(src)];task=ckey'>Change</a>"
-	dat += "<BR><b>Permanent:</b> <a href='?src=[REF(src)];task=permanent'>[selected_is_permanent ? "Yes": "No"]</a>"
+	dat += "<center><a href='byond://?src=[REF(src)];task=apply'>APPLY BAN TO CKEY</a> - <a href='byond://?src=[REF(src)];task=reset'>Reset</a> - <a href='byond://?src=[REF(src)];task=check_bans'>Check Role Bans</a> </center>"
+	dat += "<BR><b>CKEY:</b> [selected_ckey] <a href='byond://?src=[REF(src)];task=ckey'>Change</a>"
+	dat += "<BR><b>Permanent:</b> <a href='byond://?src=[REF(src)];task=permanent'>[selected_is_permanent ? "Yes": "No"]</a>"
 	if(!selected_is_permanent)
-		dat += "<BR><b>Duration:</b> [selected_duration / (24 HOURS)] days <a href='?src=[REF(src)];task=duration'>Change</a>"
-	dat += "<BR><b>Reason:</b> [selected_reason] <a href='?src=[REF(src)];task=reason'>Change</a>"
+		dat += "<BR><b>Duration:</b> [selected_duration / (24 HOURS)] days <a href='byond://?src=[REF(src)];task=duration'>Change</a>"
+	dat += "<BR><b>Reason:</b> [selected_reason] <a href='byond://?src=[REF(src)];task=reason'>Change</a>"
 	dat += "<HR>"
-	dat += "<b>Banned Roles:</b> <a href='?src=[REF(src)];task=add_role'>Add</a>"
+	dat += "<b>Banned Roles:</b> <a href='byond://?src=[REF(src)];task=add_role'>Add</a>"
 	for(var/role_name in selected_roles)
-		dat += "<BR> - [role_name] <a href='?src=[REF(src)];task=remove_role;role_name=[role_name]'>Remove</a>"
+		dat += "<BR> - [role_name] <a href='byond://?src=[REF(src)];task=remove_role;role_name=[role_name]'>Remove</a>"
 
-	dat += "<BR><BR><b>Banned Migrants:</b> <a href='?src=[REF(src)];task=add_migrant'>Add</a>"
+	dat += "<BR><BR><b>Banned Migrants:</b> <a href='byond://?src=[REF(src)];task=add_migrant'>Add</a>"
 	for(var/migrant_name in selected_migrants)
-		dat += "<BR> - [migrant_name] <a href='?src=[REF(src)];task=remove_migrant;migrant_name=[migrant_name]'>Remove</a>"
+		dat += "<BR> - [migrant_name] <a href='byond://?src=[REF(src)];task=remove_migrant;migrant_name=[migrant_name]'>Remove</a>"
 
-	dat += "<BR><BR><b>Banned Adv Classes:</b> <a href='?src=[REF(src)];task=add_advclass'>Add</a>"
+	dat += "<BR><BR><b>Banned Adv Classes:</b> <a href='byond://?src=[REF(src)];task=add_advclass'>Add</a>"
 	for(var/adv_name in selected_advclasses)
-		dat += "<BR> - [adv_name] <a href='?src=[REF(src)];task=remove_advclass;advclass_name=[adv_name]'>Remove</a>"
+		dat += "<BR> - [adv_name] <a href='byond://?src=[REF(src)];task=remove_advclass;advclass_name=[adv_name]'>Remove</a>"
 
-	dat += "<BR><BR><b>Banned Antags:</b> <a href='?src=[REF(src)];task=add_antag'>Add</a>"
+	dat += "<BR><BR><b>Banned Antags:</b> <a href='byond://?src=[REF(src)];task=add_antag'>Add</a>"
 	for(var/antag_name in selected_antags)
-		dat += "<BR> - [antag_name] <a href='?src=[REF(src)];task=remove_antag;antag_name=[antag_name]'>Remove</a>"
+		dat += "<BR> - [antag_name] <a href='byond://?src=[REF(src)];task=remove_antag;antag_name=[antag_name]'>Remove</a>"
 
-	dat += "<BR><BR><b>Applied Ban Traits:</b> <a href='?src=[REF(src)];task=add_trait'>Add From Preset</a> <a href='?src=[REF(src)];task=add_trait_any'>Add Any</a>"
+	dat += "<BR><BR><b>Applied Ban Traits:</b> <a href='byond://?src=[REF(src)];task=add_trait'>Add From Preset</a> <a href='byond://?src=[REF(src)];task=add_trait_any'>Add Any</a>"
 	for(var/trait_name in selected_traits)
-		dat += "<BR> - [trait_name] <a href='?src=[REF(src)];task=remove_trait;trait_name=[trait_name]'>Remove</a>"
+		dat += "<BR> - [trait_name] <a href='byond://?src=[REF(src)];task=remove_trait;trait_name=[trait_name]'>Remove</a>"
 
-	dat += "<BR><BR><b>Applied Misc Bans:</b> <a href='?src=[REF(src)];task=add_misc'>Add</a>"
+	dat += "<BR><BR><b>Applied Misc Bans:</b> <a href='byond://?src=[REF(src)];task=add_misc'>Add</a>"
 	for(var/misc_ban in selected_misc)
-		dat += "<BR> - [misc_ban] <a href='?src=[REF(src)];task=remove_misc;misc_ban=[misc_ban]'>Remove</a>"
+		dat += "<BR> - [misc_ban] <a href='byond://?src=[REF(src)];task=remove_misc;misc_ban=[misc_ban]'>Remove</a>"
 
-	dat += "<BR><BR><b>Applied Curses:</b> <a href='?src=[REF(src)];task=add_curse'>Add</a>"
+	dat += "<BR><BR><b>Applied Curses:</b> <a href='byond://?src=[REF(src)];task=add_curse'>Add</a>"
 	for(var/curse_ban in selected_curses)
-		dat += "<BR> - [curse_ban] <a href='?src=[REF(src)];task=remove_curse;curse_ban=[curse_ban]'>Remove</a>"
+		dat += "<BR> - [curse_ban] <a href='byond://?src=[REF(src)];task=remove_curse;curse_ban=[curse_ban]'>Remove</a>"
 
 	var/datum/browser/popup = new(user, "role_ban_panel", "Role Ban Panel", 550, 500)
 	popup.set_content(dat.Join())
@@ -336,7 +336,7 @@
 	for(var/datum/role_ban_instance/instance as anything in bans.bans)
 		var/list/ban_string = instance.get_ban_string_list()
 		i++
-		dat += "Actions: <a href='?src=[REF(src)];task=remove_ckey_role_ban;ckey=[chosen_ckey];ban_index=[i];ban_apply_date=[instance.apply_date]'>Remove</a><BR>"
+		dat += "Actions: <a href='byond://?src=[REF(src)];task=remove_ckey_role_ban;ckey=[chosen_ckey];ban_index=[i];ban_apply_date=[instance.apply_date]'>Remove</a><BR>"
 		if(!instance.permanent && world.realtime >= instance.apply_date + instance.duration)
 			dat += "<b>EXPIRED</b><BR>"
 		dat += ban_string.Join("<BR>")
