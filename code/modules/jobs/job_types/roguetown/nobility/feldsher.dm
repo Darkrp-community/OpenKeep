@@ -12,7 +12,6 @@
 	give_bank_account = 100
 	min_pq = 1
 
-	//Reason all races allowed is you are basically a very talented court physician; even 'lower races' would find this to be one of the only ways to obtain a sort of nobility.
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -53,10 +52,19 @@
 
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose)
 	H.change_stat("strength", -1)
 	H.change_stat("intelligence", 4)
 	H.change_stat("constitution", -1)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+
+/*	.................   Unique Feldsher recipes   ................... */
+/datum/crafting_recipe/nitmaiden_license
+	name = "Nitemaiden health license"
+	time = 4 SECONDS
+	reqs = list(/obj/item/paper = 1,
+		/obj/item/natural/feather = 1)
+	result = /obj/item/paper/feldsher_certificate
+	category = CAT_NONE

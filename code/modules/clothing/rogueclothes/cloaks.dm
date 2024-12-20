@@ -1068,7 +1068,6 @@
 	add_overlay(mutable_appearance('icons/roguetown/clothing/cloaks.dmi', "clasp"))
 	..()
 
-
 //................ Silk Pantaloons ............... //
 /obj/item/clothing/under/roguetown/pantaloons
 	name = "silk pantaloons"
