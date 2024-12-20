@@ -807,6 +807,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/mob/dead/new_player/N = user
 	if(istype(N))
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
+			dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
 			switch(N.ready)
 				if(PLAYER_NOT_READY)
 					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
@@ -838,6 +839,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	</html>
 	"}
 	winshow(user, "stonekeep_prefwin", TRUE)
+	winshow(user, "stonekeep_prefwin.character_preview_map", TRUE)
 	var/datum/browser/noclose/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
 	popup.set_window_options("can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0;border=0")
 	popup.set_content(dat.Join())

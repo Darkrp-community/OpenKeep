@@ -95,7 +95,6 @@
 	copy_to(mannequin, 1, TRUE, TRUE)
 
 	if(previewJob)
-		message_admins("FUCK2")
 		testing("previewjob")
 		mannequin.job = previewJob.title
 		previewJob.equip(mannequin, TRUE, preference_source = parent)
