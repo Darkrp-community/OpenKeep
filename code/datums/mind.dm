@@ -84,6 +84,8 @@
 
 	var/list/notes = list() //RTD add notes button
 
+	var/list/cached_frumentarii = list()
+
 	var/datum/sleep_adv/sleep_adv = null
 
 /datum/mind/New(key)
@@ -448,13 +450,6 @@
 		return antaggy.isgoodguy
 
 
-/datum/mind/proc/remove_traitor()
-	remove_antag_datum(/datum/antagonist/traitor)
-
-
-/datum/mind/proc/remove_all_antag() //For the Lazy amongst us.
-	remove_traitor()
-
 /datum/mind/proc/equip_traitor(employer = "The Syndicate", silent = FALSE, datum/antagonist/uplink_owner)
 	return
 
@@ -526,12 +521,6 @@
 			to_chat(usr, span_warning("Invalid antagonist ref to be removed."))
 			return
 		A.admin_remove(usr)
-
-	if (href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in sortList(get_all_jobs())
-		if (!new_role)
-			return
-		assigned_role = new_role
 
 	else if (href_list["memory_edit"])
 		var/new_memo = copytext(sanitize(input("Write new memory", "Memory", memory) as null|message),1,MAX_MESSAGE_LEN)
@@ -667,17 +656,13 @@
 		obj_count++
 
 
-/datum/mind/proc/make_Traitor()
-	if(!(has_antag_datum(/datum/antagonist/traitor)))
-		add_antag_datum(/datum/antagonist/traitor)
-
-
 /datum/mind/proc/AddSpell(obj/effect/proc_holder/spell/S)
 	if(!S)
 		return
 	if(has_spell(S))
 		return
 	spell_list += S
+	to_chat(current, "<span class='boldnotice'>I have learned a new spell: [S]</span>")
 	S.action.Grant(current)
 
 /datum/mind/proc/check_learnspell(obj/effect/proc_holder/spell/S)

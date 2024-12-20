@@ -56,7 +56,6 @@
 /datum/migrant_wave/crusade_down_four
 	name = "The Holy Crusade"
 	shared_wave_type = /datum/migrant_wave/crusade
-	downgrade_wave = /datum/migrant_wave/crusade_down_four
 	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/inquisitor = 1,

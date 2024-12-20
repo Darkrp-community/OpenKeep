@@ -13,6 +13,7 @@ hr
 {
 	background-color: #000000;
 	height: 2px;
+	border: 0;
 }
 
 a, button, a:link, a:visited, a:active, .linkOn, .linkOff
@@ -32,7 +33,7 @@ a:hover
 	color: #eac0b9;
 	background: #000000;
 	border-color: #000000;
-	text-decoration-line: underline; 
+	text-decoration-line: underline;
 }
 
 a.white, a.white:link, a.white:visited, a.white:active
@@ -50,7 +51,7 @@ a.white:hover
 {
 	color: #eac0b9;
 	background: #000000;
-	text-decoration-line: underline; 
+	text-decoration-line: underline;
 }
 
 .linkOn, a.linkOn:link, a.linkOn:visited, a.linkOn:active, a.linkOn:hover

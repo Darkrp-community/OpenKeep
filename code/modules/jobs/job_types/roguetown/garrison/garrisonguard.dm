@@ -17,7 +17,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
-	tutorial = "You are a soldier in the ruler's garrison. Your experience, training, and equipment may vary... but you are the first line of defense against the horrors that encroach on Rockhill."
+	tutorial = "You are a soldier in the ruler's garrison. Your experience, training, and equipment may vary... but you are the first line of defense against the horrors that encroach on Vanderlin."
 	display_order = JDO_GARRISONGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
@@ -25,7 +25,7 @@
 	outfit = /datum/outfit/job/roguetown/guardsman	//Default outfit.
 	advclass_cat_rolls = list(CTAG_GARRISON = 20)	//Handles class selection.
 	give_bank_account = 30
-	min_pq = 0
+	min_pq = 1
 
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
@@ -77,7 +77,7 @@ Design philosphy:
 	backr = /obj/item/rogueweapon/shield/wood
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	beltl = /obj/item/rogueweapon/mace
-	backpack_contents = list(/obj/item/keyring/guard)
+	backpack_contents = list(/obj/item/storage/keyring/guard)
 
 	//Stats for class
 	H.mind?.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
@@ -112,7 +112,7 @@ Design philosphy:
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
 	beltr = /obj/item/rogueweapon/sword/scimitar/messer
-	backpack_contents = list(/obj/item/keyring/guard)
+	backpack_contents = list(/obj/item/storage/keyring/guard)
 
 	//Stats for class
 	H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
@@ -157,7 +157,7 @@ Design philosphy:
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/quiver/arrows
 	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
-	backpack_contents = list(/obj/item/keyring/guard)
+	backpack_contents = list(/obj/item/storage/keyring/guard)
 
 	//Stats for class
 	H.mind?.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
@@ -197,7 +197,7 @@ Design philosphy:
 	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	backpack_contents = list(/obj/item/keyring/guard)
+	backpack_contents = list(/obj/item/storage/keyring/guard)
 
 	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)

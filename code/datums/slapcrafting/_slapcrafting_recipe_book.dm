@@ -3,6 +3,8 @@
 
 /client/New()
 	. = ..()
+	if(byond_version >= 516) // Enable 516 compat browser storage mechanisms
+		winset(src, null, "browser-options=devtools,byondstorage,find")
 	if(!crafting_book)
 		crafting_book = new
 
@@ -21,7 +23,7 @@
 	// This step links to some recipe, linkify the description with a href
 	. = craft_step.desc
 	. = replacetext(., "%ENDLINK%", "</a>")
-	. = replacetext(., "%LINK%", "<a href='?src=[REF(src)];preference=popup_recipe;recipe=[craft_step.recipe_link]'>")
+	. = replacetext(., "%LINK%", "<a href='byond://?src=[REF(src)];preference=popup_recipe;recipe=[craft_step.recipe_link]'>")
 
 /datum/slapcraft_handbook/proc/print_recipe(datum/slapcraft_recipe/recipe, in_handbook = FALSE, background_color = "#23273C")
 	var/list/dat = list()
@@ -29,11 +31,11 @@
 	var/first_cell
 	var/second_cell
 	if(in_handbook)
-		first_cell = "<a href='?src=[REF(src)];preference=set_recipe;recipe=[recipe_type]' [current_recipe == recipe_type ? "class='linkOn'" : ""]>[recipe.name]</a>"
-		second_cell = "<a href='?src=[REF(src)];preference=popup_recipe;recipe=[recipe_type]'>Popup Recipe</a>"
+		first_cell = "<a href='byond://?src=[REF(src)];preference=set_recipe;recipe=[recipe_type]' [current_recipe == recipe_type ? "class='linkOn'" : ""]>[recipe.name]</a>"
+		second_cell = "<a href='byond://?src=[REF(src)];preference=popup_recipe;recipe=[recipe_type]'>Popup Recipe</a>"
 	else
 		first_cell = "[recipe.name]"
-		second_cell = "<a href='?src=[REF(src)];preference=goto_recipe;recipe=[recipe_type]'>Goto Recipe</a>"
+		second_cell = "<a href='byond://?src=[REF(src)];preference=goto_recipe;recipe=[recipe_type]'>Goto Recipe</a>"
 	dat += "<tr style='vertical-align:top; background-color: [background_color];'>"
 	dat += "<td>[first_cell]</td><td>[second_cell]</td>"
 	dat += "</tr>"
@@ -76,11 +78,11 @@
 	var/list/dat = list()
 
 	for(var/category in GLOB.slapcraft_categorized_recipes)
-		dat += "<a href='?src=[REF(src)];preference=set_category;tab=[category]' [category == current_category ? "class='linkOn'" : ""]>[category]</a> "
+		dat += "<a href='byond://?src=[REF(src)];preference=set_category;tab=[category]' [category == current_category ? "class='linkOn'" : ""]>[category]</a> "
 	dat += "<hr>"
 	var/list/subcategory_list = GLOB.slapcraft_categorized_recipes[current_category]
 	for(var/subcategory in subcategory_list)
-		dat += "<a href='?src=[REF(src)];preference=set_subcategory;tab=[subcategory]' [subcategory == current_subcategory ? "class='linkOn'" : ""]>[current_subcategory]</a> "
+		dat += "<a href='byond://?src=[REF(src)];preference=set_subcategory;tab=[subcategory]' [subcategory == current_subcategory ? "class='linkOn'" : ""]>[current_subcategory]</a> "
 	dat += "<hr>"
 
 	dat += "<table align='center'; width='100%'; height='100%'; style='background-color:#13171C'><tr><td width='65%'></td><td width='35%'></td></tr>"

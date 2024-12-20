@@ -225,7 +225,7 @@
 
 				for(var/i in 1 to plus_factor)
 					plus_str += "+" */
-			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
+			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
 	else if(!showing_combat_classes)
 		for(var/datum/advclass/datums in rolled_classes)
 			var/plus_str = ""
@@ -234,11 +234,11 @@
 
 				for(var/i in 1 to plus_factor)
 					plus_str += "+" */
-			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
+			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
 
 	if(special_session_queue && special_session_queue.len)
 		for(var/datum/advclass/datums in special_session_queue)
-			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];special_selected=1;selected_special=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
+			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];special_selected=1;selected_special=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
 
 	if(showing_combat_classes)
 		for(var/datum/advclass/datums in rolled_classes)
@@ -250,7 +250,7 @@
 
 				for(var/i in 1 to plus_factor)
 					plus_str += "+" */
-			data += "<div class='class_bar_div'><a class='vagrant' href='?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
+			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
 	data += "</div>"
 
 	//Buttondiv Segment
@@ -258,7 +258,7 @@
 
 	if(H.job == "Drifter")
 		data += {"
-			<a class='mo_bottom_buttons' href='?src=\ref[src];show_combat_class=1'>[showing_combat_classes ? "Show Combat Classes" : "Show Pilgrim Classes"]</a>
+			<a class='mo_bottom_buttons' href='byond://?src=\ref[src];show_combat_class=1'>[showing_combat_classes ? "Show Combat Classes" : "Show Pilgrim Classes"]</a>
 		</div>
 		"}
 
@@ -290,8 +290,8 @@
 				<span class="title_shit">Description:</span> <span class="post_title_shit">[cur_picked_class.tutorial]</span>
 			</div>
 				<div id='button_div'>
-					<a class='class_desc_YES_LINK' href='?src=\ref[src];yes_to_class_select=1;special_class=0;'>This is my background</a><br>
-					<a class='bottom_buttons' href='?src=\ref[src];no_to_class_select=1'>I reject this background</a>
+					<a class='class_desc_YES_LINK' href='byond://?src=\ref[src];yes_to_class_select=1;special_class=0;'>This is my background</a><br>
+					<a class='bottom_buttons' href='byond://?src=\ref[src];no_to_class_select=1'>I reject this background</a>
 				</div>
 			</div>
 		</body>

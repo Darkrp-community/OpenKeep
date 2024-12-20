@@ -14,7 +14,7 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
+	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Vanderlin, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_TEMPLE_PATRONS
 	outfit = /datum/outfit/job/roguetown/monk
 
@@ -22,6 +22,7 @@
 	give_bank_account = TRUE
 	min_pq = -10
 	bypass_lastclass = TRUE
+	cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 
 /datum/outfit/job/roguetown/monk
 	name = "Acolyte"
@@ -33,7 +34,7 @@
 	H.virginity = TRUE
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	beltl = /obj/item/roguekey/church
+	beltl = /obj/item/key/church
 	backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	backpack_contents = list(/obj/item/needle)
 	switch(A.name)

@@ -95,9 +95,10 @@
 				. += "<span class='warning'><B>[t_He] look[p_s()] much weaker than I.</B></span>"
 
 	if(Adjacent(user) && HAS_TRAIT(src, TRAIT_SIMPLE_WOUNDS))
-		. += "<a href='?src=[REF(src)];inspect_animal=1'>Inspect Wounds</a>"
+		. += "<a href='byond://?src=[REF(src)];inspect_animal=1'>Inspect Wounds</a>"
 
 	if(desc)
 		. += desc
 
 	. += "ᛉ ------------ ᛉ</span>"
+	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

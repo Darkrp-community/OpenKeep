@@ -7,7 +7,7 @@
 	recipe_name = "five Blank Keys"
 	req_bar = /obj/item/ingot/iron
 	appro_skill = /datum/skill/craft/engineering // To train engineering
-	created_item = /obj/item/customblank
+	created_item = /obj/item/key_custom_blank
 	createmultiple = TRUE
 	createditem_num = 4
 	craftdiff = 0
@@ -49,6 +49,18 @@
 	createmultiple = TRUE
 	createditem_num = 2
 	craftdiff = 0
+
+/datum/anvil_recipe/tools/scissors
+	name = "Scissors"
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/knife/scissors
+	i_type = "Tools"
+
+/datum/anvil_recipe/tools/steelscissors
+	name = "Steel Scissors"
+	req_bar = /obj/item/ingot/steel
+	created_item = /obj/item/rogueweapon/knife/scissors/steel
+	i_type = "Tools"
 
 /datum/anvil_recipe/tools/frypan
 	name = "Pan"
@@ -104,7 +116,7 @@
 	name = "3x Keyrings"
 	recipe_name = "three Keyrings"
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/keyring
+	created_item = /obj/item/storage/keyring
 	createmultiple = TRUE
 	createditem_num = 2
 	craftdiff = 0
@@ -150,6 +162,12 @@
 	created_item = /obj/item/restraints/legcuffs/beartrap/crafted
 	appro_skill = /datum/skill/craft/traps
 	craftdiff = 0
+
+/datum/anvil_recipe/tools/fishinghooks
+	name = "3x Fishing hooks"
+	req_bar = /obj/item/ingot/iron
+	created_item = list(/obj/item/fishing/hook/iron, /obj/item/fishing/hook/iron, /obj/item/fishing/hook/iron)
+	i_type = "Tools"
 
 /datum/anvil_recipe/tools/pick
 	name = "Pick (+Stick)"

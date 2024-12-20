@@ -7,7 +7,6 @@
 	desc = ""
 	bitesize = 3
 	list_reagents = list(/datum/reagent/consumable/nutriment = 3) //Meat has fats that a food processor can process into cooking oil
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
 	slices_num = 3
 	filling_color = "#FF0000"
@@ -30,7 +29,6 @@
 
 /obj/item/reagent_containers/food/snacks/meat/slab/human
 	name = "meat"
-	cooked_type = /obj/item/reagent_containers/food/snacks/meat/steak/plain/human
 	slice_path = /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	tastes = list("tender meat" = 1)
 	foodtype = MEAT | RAW | GROSS
@@ -126,57 +124,6 @@
 	desc = ""
 	foodtype = RAW | MEAT | GROSS
 
-
-////////////////////////////////////// MEAT STEAKS ///////////////////////////////////////////////////////////
-
-
-/obj/item/reagent_containers/food/snacks/meat/steak
-	name = "steak"
-	desc = ""
-	icon_state = "meatsteak"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	bonus_reagents = list(/datum/reagent/consumable/nutriment = 2, /datum/reagent/consumable/nutriment/vitamin = 1)
-	trash = /obj/item/trash/plate
-	filling_color = "#B22222"
-	foodtype = MEAT
-	tastes = list("meat" = 1)
-
-/obj/item/reagent_containers/food/snacks/meat/steak/plain
-	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/meat/steak/plain/human
-	tastes = list("tender meat" = 1)
-	foodtype = MEAT | GROSS
-
-/obj/item/reagent_containers/food/snacks/meat/steak/killertomato
-	name = "killer tomato steak"
-	tastes = list("tomato" = 1)
-	foodtype = FRUIT
-
-/obj/item/reagent_containers/food/snacks/meat/steak/bear
-	name = "bear steak"
-	tastes = list("meat" = 1, "salmon" = 1)
-
-/obj/item/reagent_containers/food/snacks/meat/steak/xeno
-	name = "xeno steak"
-	tastes = list("meat" = 1, "acid" = 1)
-
-/obj/item/reagent_containers/food/snacks/meat/steak/goliath
-	name = "goliath steak"
-	desc = ""
-	resistance_flags = LAVA_PROOF | FIRE_PROOF
-	icon_state = "goliathsteak"
-	trash = null
-	tastes = list("meat" = 1, "rock" = 1)
-	foodtype = MEAT
-
-/obj/item/reagent_containers/food/snacks/meat/steak/gondola
-	name = "gondola steak"
-	tastes = list("meat" = 1, "tranquility" = 1)
-
-/obj/item/reagent_containers/food/snacks/meat/steak/penguin
-	name = "penguin steak"
-	tastes = list("beef" = 1, "cod fish" = 1)
 
 //////////////////////////////// MEAT CUTLETS ///////////////////////////////////////////////////////
 

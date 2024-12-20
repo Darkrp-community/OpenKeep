@@ -1,26 +1,27 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/mob/living/carbon/human/species/goblin/npc/ambush{
-	name = "Grippy"
-	},
-/turf/open/floor/rogue/twig,
+/obj/structure/roguetent,
+/turf/closed/wall/mineral/rogue/tent,
 /area/rogue/outdoors/bog)
 "aS" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/twig,
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Tighty"
+	},
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "bq" = (
 /obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "co" = (
-/obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/rotten/meat,
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Grippy"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "ct" = (
-/obj/structure/bed/rogue/shit,
-/turf/open/floor/rogue/dirt,
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "cN" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga,
@@ -49,29 +50,21 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "gJ" = (
-/obj/structure/roguetent,
-/turf/closed/wall/mineral/rogue/tent,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "gP" = (
-/obj/effect/decal/cleanable/blood/old,
-/mob/living/carbon/human/species/orc/marauder{
-	name = "Blarg"
-	},
+/obj/structure/table/wood/plain,
+/obj/item/clothing/ring/gold,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "he" = (
-/obj/structure/bed/rogue/shit,
+/obj/item/bodypart/head,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "hA" = (
-/obj/structure/table/wood/plain,
-/obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/wooden,
-/obj/item/reagent_containers/glass/cup/wooden,
+/mob/living/carbon/human/species/orc/ambush{
+	name = "Grog"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "hU" = (
@@ -101,7 +94,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "kp" = (
-/obj/structure/fluff/psycross/crafted/shrine/dendor_volf,
+/obj/machinery/tanningrack,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/natural/hide,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "lP" = (
@@ -121,7 +116,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "nA" = (
-/obj/effect/decal/remains/wolf,
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/food/snacks/rotten/mince,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "oc" = (
@@ -139,7 +135,9 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "oS" = (
-/turf/closed/wall/mineral/rogue/tent,
+/obj/item/bodypart/head,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "pa" = (
 /obj/structure/fluff/railing/fence{
@@ -151,8 +149,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "pf" = (
-/obj/item/bodypart/head,
-/obj/effect/decal/cleanable/blood/old,
+/obj/structure/fermenting_barrel/random/beer,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "pk" = (
@@ -165,10 +162,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "pF" = (
-/obj/structure/fluff/dryingrack,
-/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
-/obj/item/natural/hide,
-/turf/open/floor/rogue/twig,
+/turf/closed/wall/mineral/rogue/tent,
 /area/rogue/outdoors/bog)
 "pQ" = (
 /mob/living/carbon/human/species/goblin/npc/ambush{
@@ -195,12 +189,11 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "rj" = (
-/obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/meat/cutlet/plain,
+/obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "rF" = (
-/obj/machinery/light/rogue/firebowl/stump,
+/obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "sh" = (
@@ -211,7 +204,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "sD" = (
-/turf/open/floor/rogue/twig,
+/turf/closed/wall/mineral/rogue/wood,
 /area/rogue/outdoors/bog)
 "tc" = (
 /obj/structure/fluff/railing/wood{
@@ -245,8 +238,9 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "vX" = (
-/obj/structure/table/wood/plain,
-/obj/item/reagent_containers/glass/cup/golden,
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Whitey"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "wp" = (
@@ -301,13 +295,18 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "zA" = (
-/obj/machinery/light/rogue/campfire/densefire,
-/turf/open/floor/rogue/grass,
+/obj/structure/fluff/psycross/crafted/shrine/dendor_volf,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "zN" = (
-/mob/living/carbon/human/species/goblin/npc/ambush{
-	name = "Whitey"
-	},
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "zR" = (
@@ -315,7 +314,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "At" = (
-/obj/structure/fermenting_barrel/random/beer,
+/obj/effect/decal/remains/wolf,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "Bi" = (
@@ -353,9 +352,7 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "DN" = (
-/mob/living/carbon/human/species/goblin/npc/ambush{
-	name = "Rippy"
-	},
+/obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "DY" = (
@@ -363,10 +360,10 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "Ei" = (
-/mob/living/carbon/human/species/goblin/npc/ambush{
-	name = "Tighty"
+/mob/living/carbon/human/species/orc/warlord/skilled{
+	name = "Gragnar, the Knight Slayer"
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "Es" = (
 /obj/effect/decal/remains/wolf,
@@ -408,11 +405,14 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/bog)
 "HT" = (
-/obj/item/bodypart/head,
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/food/snacks/meat/cutlet/plain,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "Jk" = (
-/turf/closed/wall/mineral/rogue/wood,
+/obj/structure/table/wood/plain,
+/obj/item/clothing/head/roguetown/crown/circlet/stink,
+/turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "JF" = (
 /mob/living/carbon/human/species/goblin/npc/ambush{
@@ -421,8 +421,10 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
 "Kl" = (
-/obj/structure/table/wood/plain,
-/obj/item/clothing/head/roguetown/helmet/heavy/crusader,
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/carbon/human/species/orc/marauder{
+	name = "Blarg"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "KF" = (
@@ -444,17 +446,17 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "MK" = (
-/obj/machinery/light/rogue/torchholder/l,
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/glass/cup/golden,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "ML" = (
 /obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/rotten/mince,
+/obj/item/clothing/head/roguetown/helmet/heavy/crusader,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "Nj" = (
-/obj/structure/table/wood/plain,
-/obj/item/clothing/head/roguetown/crown/circlet/stink,
+/obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "No" = (
@@ -484,14 +486,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "St" = (
-/mob/living/carbon/human/species/orc/warlord/skilled{
-	name = "Gragnar, the Knight Slayer"
-	},
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/bog)
-"Ta" = (
-/obj/effect/decal/cleanable/blood/old,
-/turf/open/floor/rogue/twig,
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "Tg" = (
 /mob/living/carbon/human/species/goblin/npc/ambush{
@@ -505,6 +501,11 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
+"UN" = (
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/food/snacks/rotten/meat,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
 "Vw" = (
 /obj/structure/flora/roguegrass,
 /turf/open/water/swamp,
@@ -514,8 +515,9 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "XD" = (
-/obj/structure/table/wood/plain,
-/obj/item/clothing/ring/gold,
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Rippy"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
 "Yt" = (
@@ -523,10 +525,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
 "YK" = (
-/mob/living/carbon/human/species/orc/ambush{
-	name = "Grog"
-	},
-/turf/open/floor/rogue/twig,
+/obj/machinery/light/rogue/campfire/densefire,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "YQ" = (
 /obj/structure/fluff/railing/fence,
@@ -546,24 +546,14 @@
 /area/rogue/outdoors/bog)
 
 (1,1,1) = {"
-fV
-fV
-fV
-fV
-fV
-fV
-fV
-fV
-fV
-DY
-fV
-fV
-fV
-DY
+tR
 fV
 tR
+gh
+gh
 tR
-tR
+fV
+fV
 tR
 tR
 fV
@@ -575,15 +565,165 @@ fV
 fV
 fV
 fV
-FO
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+fV
+tR
+tR
+tR
 "}
 (2,1,1) = {"
+tR
+fV
+fV
+gh
+tR
+tR
+fV
+fV
+fV
+tR
+tR
+fV
+fV
+tR
+tR
+gh
+gh
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+gh
+fV
+fV
+fV
+tR
+tR
+gh
+gh
+fV
+fV
+tR
+"}
+(3,1,1) = {"
+tR
+fV
+gh
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+gh
+tR
+fV
+fV
+"}
+(4,1,1) = {"
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+DY
+fV
+fV
+fV
+DY
+fV
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+gh
+tR
+fV
+fV
+"}
+(5,1,1) = {"
+fV
+fV
+fV
+tR
 fV
 gh
 gh
 tR
 tR
-FO
+fV
 fV
 tR
 tR
@@ -608,8 +748,18 @@ fV
 fV
 fV
 fV
+fV
+fV
+gh
+gh
+tR
+fV
 "}
-(3,1,1) = {"
+(6,1,1) = {"
+tR
+tR
+fV
+tR
 fV
 gh
 tR
@@ -640,8 +790,18 @@ ZI
 uf
 fV
 fV
+fV
+fV
+fV
+gh
+gh
+tR
 "}
-(4,1,1) = {"
+(7,1,1) = {"
+fV
+tR
+fV
+fV
 fV
 tR
 fV
@@ -672,11 +832,21 @@ gh
 dY
 fV
 gh
+fV
+tR
+tR
+fV
+fV
+fV
 "}
-(5,1,1) = {"
+(8,1,1) = {"
+fV
+tR
 fV
 fV
-FO
+fV
+fV
+fV
 DY
 fV
 gh
@@ -704,8 +874,18 @@ gh
 dY
 fV
 gh
+fV
+tR
+tR
+fV
+fV
+fV
 "}
-(6,1,1) = {"
+(9,1,1) = {"
+tR
+tR
+fV
+fV
 DY
 fV
 fV
@@ -736,8 +916,18 @@ gh
 dY
 fV
 gh
+fV
+tR
+fV
+fV
+fV
+tR
 "}
-(7,1,1) = {"
+(10,1,1) = {"
+tR
+tR
+tR
+fV
 fV
 DY
 fV
@@ -768,8 +958,18 @@ gh
 dY
 fV
 fV
+fV
+tR
+tR
+fV
+tR
+tR
 "}
-(8,1,1) = {"
+(11,1,1) = {"
+fV
+fV
+tR
+fV
 fV
 fV
 fV
@@ -779,7 +979,7 @@ tR
 tR
 fV
 fV
-FO
+fV
 fV
 tR
 tR
@@ -798,10 +998,20 @@ Dy
 fV
 gh
 dY
-FO
+fV
+fV
+fV
+fV
+tR
+fV
+tR
 fV
 "}
-(9,1,1) = {"
+(12,1,1) = {"
+fV
+fV
+tR
+gh
 fV
 fV
 tR
@@ -832,8 +1042,18 @@ gh
 dY
 fV
 tR
+fV
+fV
+gh
+fV
+fV
+fV
 "}
-(10,1,1) = {"
+(13,1,1) = {"
+fV
+fV
+tR
+gh
 fV
 fV
 fV
@@ -864,20 +1084,30 @@ fV
 YQ
 tR
 tR
+fV
+gh
+gh
+fV
+tR
+fV
 "}
-(11,1,1) = {"
+(14,1,1) = {"
+fV
+fV
+fV
+gh
 fV
 fV
 fV
 yC
 fV
-Jk
-oS
-oS
-oS
-oS
-oS
-Jk
+sD
+pF
+pF
+pF
+pF
+pF
+sD
 tR
 fV
 Yt
@@ -890,26 +1120,36 @@ fV
 fV
 DY
 fV
-oS
-sD
-oS
+pF
+gJ
+pF
 YQ
 tR
 tR
+fV
+gh
+fV
+fV
+tR
+fV
 "}
-(12,1,1) = {"
-FO
+(15,1,1) = {"
+fV
+fV
+fV
+gh
+fV
 DY
 fV
 yC
 fV
-oS
-he
-MK
-co
-sD
-he
-oS
+pF
+rj
+DN
+UN
+gJ
+rj
+pF
 tR
 fV
 ed
@@ -922,26 +1162,36 @@ fV
 pR
 fV
 pR
-zN
+vX
 tR
-he
+rj
 YQ
 tR
 tR
+fV
+fV
+fV
+fV
+tR
+fV
 "}
-(13,1,1) = {"
+(16,1,1) = {"
+fV
+fV
+gh
+fV
 fV
 fV
 fV
 yC
 tR
-oS
-sD
-ac
-sD
-gP
-sD
-oS
+pF
+gJ
+co
+gJ
+Kl
+gJ
+pF
 fV
 DY
 tR
@@ -954,26 +1204,36 @@ pR
 fV
 pR
 tR
-oS
-sD
-zA
+pF
+gJ
+YK
 qv
 fV
 fV
+fV
+fV
+fV
+tR
+tR
+fV
 "}
-(14,1,1) = {"
+(17,1,1) = {"
+fV
+fV
+gh
+fV
 fV
 fV
 fV
 hU
 tR
-oS
-sD
-sD
-sD
-sD
-ML
-oS
+pF
+gJ
+gJ
+gJ
+gJ
+nA
+pF
 fV
 fV
 fV
@@ -986,26 +1246,36 @@ fV
 fV
 tR
 tR
-oS
-ct
-sD
+pF
+St
+gJ
 qv
 gh
 fV
+tR
+tR
+tR
+tR
+fV
+gh
 "}
-(15,1,1) = {"
+(18,1,1) = {"
+fV
+gh
+tR
+fV
 fV
 fV
 fV
 yC
 fV
-oS
-he
-sD
-he
-sD
-sD
-oS
+pF
+rj
+gJ
+rj
+gJ
+gJ
+pF
 fV
 lP
 DY
@@ -1018,26 +1288,36 @@ DY
 fV
 tR
 fV
-oS
-Ei
-oS
+pF
+aS
+pF
 qv
 gh
 fV
+tR
+fV
+tR
+tR
+gh
+gh
 "}
-(16,1,1) = {"
+(19,1,1) = {"
+fV
+fV
+tR
+fV
 fV
 fV
 DY
 yC
 tR
-oS
-sD
-Ta
-sD
-sD
-sD
-oS
+pF
+gJ
+rF
+gJ
+gJ
+gJ
+pF
 fV
 pQ
 tR
@@ -1056,20 +1336,30 @@ fV
 qv
 gh
 fV
+tR
+fV
+fV
+fV
+gh
+gh
 "}
-(17,1,1) = {"
+(20,1,1) = {"
+fV
+fV
+tR
+fV
 DY
 tR
 tR
 yC
 fV
-oS
-sD
-YK
-sD
-DN
-Ta
-oS
+pF
+gJ
+hA
+gJ
+XD
+rF
+pF
 fV
 fV
 tR
@@ -1088,20 +1378,30 @@ fV
 qv
 gh
 fV
+fV
+fV
+tR
+fV
+gh
+gh
 "}
-(18,1,1) = {"
+(21,1,1) = {"
+fV
+tR
+tR
+fV
 fV
 fV
 tR
 yC
 fV
-oS
-he
+pF
 rj
-he
-aS
-he
-oS
+HT
+rj
+ct
+rj
+pF
 tR
 tm
 tm
@@ -1120,20 +1420,30 @@ fV
 qv
 gh
 tR
+fV
+tR
+tR
+tR
+gh
+gh
 "}
-(19,1,1) = {"
+(22,1,1) = {"
+fV
+tR
+fV
+fV
 fV
 fV
 tR
 hU
 NK
-Jk
-oS
-oS
-gJ
-oS
-oS
-Jk
+sD
+pF
+pF
+ac
+pF
+pF
+sD
 tR
 tR
 pR
@@ -1152,8 +1462,18 @@ fV
 qv
 fV
 tR
+fV
+fV
+tR
+fV
+fV
+gh
 "}
-(20,1,1) = {"
+(23,1,1) = {"
+tR
+fV
+fV
+fV
 fV
 Es
 xU
@@ -1168,14 +1488,14 @@ pR
 pR
 pR
 pR
-Jk
-oS
-oS
-oS
-oS
-oS
-oS
-Jk
+sD
+pF
+pF
+pF
+pF
+pF
+pF
+sD
 pR
 pR
 tR
@@ -1184,8 +1504,18 @@ fV
 qv
 tR
 tR
+fV
+fV
+tR
+tR
+tR
+tR
 "}
-(21,1,1) = {"
+(24,1,1) = {"
+tR
+fV
+fV
+fV
 fV
 fV
 ka
@@ -1200,14 +1530,14 @@ fV
 fV
 pR
 pR
-oS
-hA
-At
-sD
-rF
-sD
+pF
+zN
 pf
+gJ
+Nj
+gJ
 oS
+pF
 fV
 pR
 pR
@@ -1216,8 +1546,18 @@ tR
 qv
 tR
 tR
+fV
+gh
+fV
+tR
+fV
+fV
 "}
-(22,1,1) = {"
+(25,1,1) = {"
+tR
+tR
+fV
+fV
 fV
 pR
 pR
@@ -1232,14 +1572,14 @@ yC
 fV
 mt
 fV
-oS
-sD
-sD
-Ta
-sD
-sD
-sD
-oS
+pF
+gJ
+gJ
+rF
+gJ
+gJ
+gJ
+pF
 fV
 fV
 pR
@@ -1248,8 +1588,18 @@ tR
 qv
 Dn
 tR
+fV
+fV
+gh
+fV
+fV
+fV
 "}
-(23,1,1) = {"
+(26,1,1) = {"
+fV
+fV
+fV
+fV
 pR
 fV
 pR
@@ -1264,14 +1614,14 @@ hU
 tR
 fV
 Yt
-oS
-sD
-sD
-sD
-sD
-sD
-XD
-oS
+pF
+gJ
+gJ
+gJ
+gJ
+gJ
+gP
+pF
 iN
 iN
 tR
@@ -1280,8 +1630,18 @@ TV
 qv
 tR
 tR
+fV
+fV
+fV
+gh
+tR
+fV
 "}
-(24,1,1) = {"
+(27,1,1) = {"
+fV
+fV
+fV
+fV
 fV
 fV
 zR
@@ -1296,14 +1656,14 @@ hU
 tR
 tR
 pR
-oS
-Ta
-sD
-sD
-sD
-sD
-vX
-oS
+pF
+rF
+gJ
+gJ
+gJ
+gJ
+MK
+pF
 fV
 Yt
 tR
@@ -1312,8 +1672,18 @@ Tg
 qv
 fV
 tR
+fV
+fV
+fV
+fV
+tR
+fV
 "}
-(25,1,1) = {"
+(28,1,1) = {"
+fV
+fV
+fV
+fV
 fV
 DY
 fV
@@ -1328,14 +1698,14 @@ pR
 Yt
 pR
 pR
+ac
 gJ
-sD
-sD
-St
-sD
-sD
-kp
-oS
+gJ
+Ei
+gJ
+gJ
+zA
+pF
 fV
 KF
 fV
@@ -1344,8 +1714,18 @@ fV
 qv
 fV
 tR
+fV
+fV
+fV
+fV
+tR
+fV
 "}
-(26,1,1) = {"
+(29,1,1) = {"
+gh
+gh
+tR
+fV
 bq
 fV
 fV
@@ -1360,14 +1740,14 @@ Zr
 pR
 tR
 tR
-oS
-sD
-sD
-sD
-sD
-sD
-Kl
-oS
+pF
+gJ
+gJ
+gJ
+gJ
+gJ
+ML
+pF
 fV
 DY
 fV
@@ -1376,8 +1756,18 @@ Yt
 qv
 DY
 fV
+fV
+fV
+fV
+fV
+tR
+fV
 "}
-(27,1,1) = {"
+(30,1,1) = {"
+fV
+gh
+tR
+fV
 fV
 gh
 fV
@@ -1392,14 +1782,14 @@ fV
 pR
 fV
 tR
-oS
-sD
-sD
-sD
-Ta
-sD
-Nj
-oS
+pF
+gJ
+gJ
+gJ
+rF
+gJ
+Jk
+pF
 Yt
 fV
 fV
@@ -1408,8 +1798,18 @@ fV
 qv
 fV
 DY
+fV
+fV
+fV
+tR
+fV
+fV
 "}
-(28,1,1) = {"
+(31,1,1) = {"
+fV
+gh
+tR
+fV
 fV
 gh
 gh
@@ -1424,14 +1824,14 @@ fV
 Sc
 JF
 fV
+pF
+At
 oS
-nA
-pf
-sD
-sD
-sD
-sD
-oS
+gJ
+gJ
+gJ
+gJ
+pF
 tR
 tR
 tR
@@ -1440,8 +1840,18 @@ fV
 qv
 fV
 fV
+fV
+fV
+tR
+tR
+fV
+fV
 "}
-(29,1,1) = {"
+(32,1,1) = {"
+fV
+gh
+fV
+fV
 fV
 gh
 gh
@@ -1456,14 +1866,14 @@ Oh
 pR
 fV
 fV
-oS
 pF
-sD
-sD
-rF
-sD
-HT
-oS
+kp
+gJ
+gJ
+Nj
+gJ
+he
+pF
 tR
 hU
 Lc
@@ -1472,8 +1882,18 @@ DY
 qv
 fV
 fV
+fV
+fV
+tR
+tR
+fV
+fV
 "}
-(30,1,1) = {"
+(33,1,1) = {"
+fV
+gh
+gh
+fV
 DY
 gh
 gh
@@ -1488,14 +1908,14 @@ fV
 fV
 Gy
 fV
-Jk
-oS
-oS
-oS
-oS
-oS
-oS
-Jk
+sD
+pF
+pF
+pF
+pF
+pF
+pF
+sD
 tR
 hU
 tR
@@ -1504,8 +1924,18 @@ fV
 qv
 DY
 FO
+fV
+fV
+tR
+tR
+tR
+fV
 "}
-(31,1,1) = {"
+(34,1,1) = {"
+fV
+tR
+gh
+fV
 fV
 Vw
 gh
@@ -1536,8 +1966,18 @@ Yt
 YQ
 fV
 tR
+fV
+fV
+fV
+tR
+tR
+fV
 "}
-(32,1,1) = {"
+(35,1,1) = {"
+fV
+tR
+gh
+fV
 tR
 xU
 Vw
@@ -1568,8 +2008,18 @@ oO
 YQ
 tR
 gh
+fV
+fV
+fV
+tR
+tR
+fV
 "}
-(33,1,1) = {"
+(36,1,1) = {"
+fV
+gh
+gh
+fV
 tR
 tR
 Vw
@@ -1600,8 +2050,18 @@ tm
 wC
 tR
 gh
+fV
+fV
+fV
+tR
+tR
+fV
 "}
-(34,1,1) = {"
+(37,1,1) = {"
+fV
+gh
+gh
+fV
 tR
 tR
 Vw
@@ -1632,8 +2092,18 @@ DY
 tR
 gh
 gh
+fV
+fV
+fV
+tR
+fV
+gh
 "}
-(35,1,1) = {"
+(38,1,1) = {"
+tR
+fV
+fV
+fV
 tR
 tR
 tR
@@ -1651,7 +2121,7 @@ tR
 tR
 fV
 fV
-FO
+fV
 fV
 tR
 fV
@@ -1660,6 +2130,96 @@ fV
 DY
 DY
 DY
+fV
+gh
+gh
+gh
+fV
+fV
+fV
+tR
+gh
+gh
+"}
+(39,1,1) = {"
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+gh
+gh
+"}
+(40,1,1) = {"
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
 fV
 gh
 gh

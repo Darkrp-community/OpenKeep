@@ -25,7 +25,7 @@
 
 	outfit = /datum/outfit/job/roguetown/veteran
 	give_bank_account = 50
-	min_pq = 1
+	min_pq = 2
 
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
@@ -40,7 +40,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/scale
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	beltl = /obj/item/keyring/veteran
+	beltl = /obj/item/storage/keyring/veteran
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/arming
 	backl = /obj/item/storage/backpack/rogue/satchel

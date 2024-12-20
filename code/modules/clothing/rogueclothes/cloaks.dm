@@ -593,6 +593,7 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/cloak/apron/brown
 	color = CLOTHING_BARK_BROWN
@@ -651,6 +652,7 @@
 	inhand_mod = TRUE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood
 	toggle_icon_state = FALSE
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/wash_act(clean)
 	. = ..()
@@ -725,6 +727,8 @@
 	icon_state = "furgrey"
 	inhand_mod = FALSE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood/furhood
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/fur
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted/Initialize()
 	. = ..()
@@ -895,7 +899,7 @@
 	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
 	icon_state = "shadowcloak"
 	color = null
-	allowed_race = list("elf", "dark elf")
+	//allowed_race = list("elf", "dark elf")
 
 /obj/item/clothing/cloak/half/shadowcloak/cult
 	name = "ominous cloak"

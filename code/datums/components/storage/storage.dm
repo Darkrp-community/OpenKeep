@@ -40,10 +40,11 @@
 	var/allow_quick_empty = FALSE					//allow empty verb which allows dumping on the floor of everything inside quickly.
 	var/allow_quick_gather = FALSE					//allow toggle mob verb which toggles collecting all items from a tile.
 
-	var/allow_dump_out = FALSE
+	var/allow_dump_out = FALSE						//allow dumping out contents via LMB click-dragging
 
 	var/collection_mode = COLLECT_EVERYTHING
 
+	var/insert_verb = "tuck"						//you "tuck" things into a bag
 	var/insert_preposition = "in"					//you put things "in" a bag, but "on" a tray.
 
 	var/display_numerical_stacking = FALSE			//stack things of the same type and show as a single object with a number.
@@ -59,11 +60,11 @@
 	var/datum/action/item_action/storage_gather_mode/modeswitch_action
 
 	//Screen variables: Do not mess with these vars unless you know what you're doing. They're not defines so storage that isn't in the same location can be supported in the future.
-	var/screen_max_columns = 7							//These two determine maximum screen sizes.
-	var/screen_max_rows = INFINITY
+	var/screen_max_columns = INFINITY							//These two determine maximum screen sizes.
+	var/screen_max_rows = 9
 	var/screen_pixel_x = 16								//These two are pixel values for screen loc of boxes and closer
 	var/screen_pixel_y = 16
-	var/screen_start_x = 4								//These two are where the storage starts being rendered, screen_loc wise.
+	var/screen_start_x = 1								//These two are where the storage starts being rendered, screen_loc wise.
 	var/screen_start_y = 2
 	//End
 
@@ -71,6 +72,7 @@
 
 	//Vrell - Used for repair bypass clicks
 	var/being_repaired = FALSE
+
 
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
 	if(!isatom(parent))
@@ -391,8 +393,8 @@
 		numbered_contents = _process_numerical_display()
 		adjusted_contents = numbered_contents.len
 
-	var/columns = CLAMP(max_items, 1, screen_max_columns)
-	var/rows = CLAMP(CEILING(adjusted_contents / columns, 1), 1, screen_max_rows)
+	var/rows = CLAMP(max_items, 1, screen_max_rows)
+	var/columns = CLAMP(CEILING(adjusted_contents / rows, 1), 1, screen_max_columns)
 	standard_orient_objs(rows, columns, numbered_contents)
 
 //This proc draws out the inventory and places the items on it. It uses the standard position.
@@ -551,6 +553,22 @@
 
 //This proc is called when you want to place an item into the storage item.
 /datum/component/storage/proc/attackby(datum/source, obj/item/I, mob/M, params)
+	if(isitem(parent))
+		if(istype(I, /obj/item/rogueweapon/hammer))
+			var/obj/item/storage/this_item = parent
+			//Vrell - since hammering is instant, i gotta find another option than the double click thing that needle has for a bypass.
+			//Thankfully, IIRC, no hammerable containers can hold a hammer, so not an issue ATM. For that same reason, this here is largely semi future-proofing.
+			if(this_item.anvilrepair != null && this_item.max_integrity && !this_item.obj_broken && (this_item.obj_integrity < this_item.max_integrity) && isturf(this_item.loc))
+				return FALSE
+		if(istype(I, /obj/item/needle))
+			var/obj/item/needle/sewer = I
+			var/obj/item/storage/this_item = parent
+			if(sewer.can_repair && this_item.sewrepair && this_item.max_integrity && !this_item.obj_broken && this_item.obj_integrity < this_item.max_integrity && M.mind.get_skill_level(/datum/skill/misc/sewing) >= 1 && this_item.ontable() && !being_repaired)
+				being_repaired = TRUE
+				return FALSE
+		if(M.used_intent.type == /datum/intent/snip) //This makes it so we can salvage
+			return FALSE
+	being_repaired = FALSE
 
 	if(!can_be_inserted(I, FALSE, M))
 		var/atom/real_location = real_location()
@@ -756,11 +774,11 @@
 		playsound(parent, "rustle", 50, TRUE, -5)
 	for(var/mob/viewing in viewers(user, null))
 		if(M == viewing)
-			to_chat(usr, "<span class='notice'>I tuck [I] [insert_preposition]to [parent].</span>")
+			to_chat(usr, "<span class='notice'>I [insert_verb] [I] [insert_preposition]to [parent].</span>")
 		else if(in_range(M, viewing)) //If someone is standing close enough, they can tell what it is...
-			viewing.show_message("<span class='notice'>[M] tucks [I] [insert_preposition]to [parent].</span>", MSG_VISUAL)
+			viewing.show_message("<span class='notice'>[M] [insert_verb]s [I] [insert_preposition]to [parent].</span>", MSG_VISUAL)
 		else
-			viewing.show_message("<span class='notice'>[M] tucks something [insert_preposition]to [parent].</span>", MSG_VISUAL)
+			viewing.show_message("<span class='notice'>[M] [insert_verb]s something [insert_preposition]to [parent].</span>", MSG_VISUAL)
 
 /datum/component/storage/proc/update_icon()
 	if(isobj(parent))

@@ -44,6 +44,8 @@ SUBSYSTEM_DEF(death_arena)
 	start_fight()
 
 /datum/controller/subsystem/death_arena/proc/add_fighter(mob/living/fighter,time_of_death = 0)
+	if(!fighter.client)
+		return
 	waiting_fighters += fighter
 	tollless_clients[fighter.client.key] = (world.time + 8 MINUTES) - (time_of_death == 0 ? 0 : (world.time - time_of_death))
 	RegisterSignal(fighter, COMSIG_PARENT_QDELETING, PROC_REF(remove_fighter), fighter)
@@ -53,6 +55,10 @@ SUBSYSTEM_DEF(death_arena)
 
 /datum/controller/subsystem/death_arena/proc/start_fight()
 	fighting = TRUE
+	for(var/mob/living/carbon/spirit/spirit in waiting_fighters)
+		if(!spirit?.client)
+			remove_fighter(spirit)
+			continue
 
 	var/mob/living/carbon/spirit/first = pick(waiting_fighters)
 	remove_fighter(first)
@@ -112,6 +118,7 @@ SUBSYSTEM_DEF(death_arena)
 			qdel(carbon)
 		else
 			carbon.returntolobby()
+			qdel(carbon)
 	fighters = list()
 
 	fighting = FALSE
@@ -157,8 +164,6 @@ SUBSYSTEM_DEF(death_arena)
 
 /datum/outfit/job/roguetown/arena_skeleton/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	..()
-	H.change_stat(STATKEY_STR, 1, TRUE)
-	H.change_stat(STATKEY_END, 1, TRUE)
 
 	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)

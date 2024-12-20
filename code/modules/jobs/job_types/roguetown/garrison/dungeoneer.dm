@@ -1,7 +1,7 @@
 /datum/job/roguetown/dungeoneer
 	title = "Dungeoneer"
 	flag = DUNGEONEER
-	department_flag = GARRISON
+	department_flag = GARRISON // we should move this to the keep since that is where they now work, tending to the prisoners.
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -23,10 +23,10 @@
 	tutorial = "Be you an instrument of sadism for the King or the guarantor of his merciful hospitality, your duties are a service paid for most handsomely. Perhaps you were promoted from the garrison down to these cells to get your brutality off the town streets where cracked skulls caused outcries, or maybe your soft-hearted lord wanted to be sure his justice was done without malice. In either case, your little world is the lowest office in the Realm; from it your guests see only hell." // changed to reduce dictation of character. Nikov.
 
 	outfit = /datum/outfit/job/roguetown/dungeoneer
-	give_bank_account = 50	// Bought loyalty was previously the same as any guardsman, now in line with village elder, etc. N.
-	min_pq = 2
+	give_bank_account = 50
+	min_pq = 3
 
-	cmode_music = 'sound/music/cmode/combat_weird.ogg'
+	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
 
 /datum/outfit/job/roguetown/dungeoneer/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -38,7 +38,7 @@
 	cloak = /obj/item/clothing/cloak/stabard/dungeon
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/whip/antique
-	beltl = /obj/item/keyring/dungeoneer
+	beltl = /obj/item/storage/keyring/dungeoneer
 	backr = /obj/item/storage/backpack/rogue/satchel	// lack of satchel requires dealing with the merchant to correct, which requires entering town; not ideal. N.
 
 	if(H.mind)

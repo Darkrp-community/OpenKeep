@@ -45,11 +45,13 @@
 	desc = "A crude way to conceal one's identity, these are usually worn by local brigands to not get recognised."
 	icon_state = "menacing"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	fiber_salvage = FALSE
 
 /obj/item/clothing/head/roguetown/strawhat
 	name = "crude straw hat"
 	desc = "Welcome to the grain fields, thou plowerer of the fertile."
 	icon_state = "strawhat"
+	salvage_result = /obj/item/natural/fibers
 
 /obj/item/clothing/head/roguetown/fisherhat
 	name = "straw hat"
@@ -73,6 +75,8 @@
 	desc = "A piece of cloth worn around the temple."
 	icon_state = "headband"
 	dynamic_hair_suffix = ""
+	fiber_salvage = FALSE
+	salvage_amount = 1
 
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_BLOOD_RED
@@ -198,6 +202,8 @@
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/helmet/leather/saiga
 	name = "saiga skull"
@@ -231,6 +237,8 @@
 	var/default_hidden = null
 
 	body_parts_covered = NECK
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/roguehood/uncolored
 	color = CLOTHING_LINEN
@@ -474,7 +482,7 @@
 \------------*/
 
 /obj/item/clothing/head/roguetown/crown/serpcrown
-	name = "crown of Rockhill"
+	name = "crown of Vanderlin"
 	desc = "Heavy is the weight of the crown, and even heavier the responsability it infers to its wearer."
 	icon_state = "serpcrown"
 	sellprice = VALUE_EXTREME
@@ -486,7 +494,7 @@
 
 /obj/item/clothing/head/roguetown/crown/serpcrown/surplus
 	name = "crown"
-	desc = "A replacement for the Crown of Rockhill, every bit as valid as proof of sovereignity as the original."
+	desc = "A replacement for the Crown of Vanderlin, every bit as valid as proof of sovereignity as the original."
 	icon_state = "serpcrowno"
 	sellprice = VALUE_GOLD_ITEM
 
@@ -1178,6 +1186,28 @@
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide/cured
+
+/obj/item/clothing/head/roguetown/helmet/leather/advanced
+	name = "hardened leather helmet"
+	desc = "Sturdy, durable, flexible. A confortable and reliable hood made of hardened leather."
+	max_integrity = 250
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("blunt" = 70, "slash" = 60, "stab" = 30, "piercing" = 20, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/head/roguetown/helmet/leather/masterwork
+	name = "masterwork leather helmet"
+	desc = "This helmet is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	max_integrity = 300
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
+	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/head/roguetown/helmet/leather/masterwork/Initialize()
+	. = ..()
+	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 
 //............... Buckled Hat ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/inquisitor

@@ -12,6 +12,10 @@
 	equip_sound = 'sound/blank.ogg'
 	content_overlays = FALSE
 	bloody_icon_state = "bodyblood"
+	sewrepair = TRUE
+	fiber_salvage = TRUE
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide/cured
 	var/heldz_items = 3
 
 /obj/item/storage/belt/rogue/ComponentInitialize()
@@ -64,12 +68,12 @@
 //Bandit's belt starts with a simple needle and a key to their hideout.
 /obj/item/storage/belt/rogue/leather/bandit/PopulateContents()
 	new /obj/item/needle/thorn(src)
-	new /obj/item/roguekey/bandit(src)
+	new /obj/item/key/bandit(src)
 
 //Bandit's belt starts with a bandage and a key to their guildhall.
 /obj/item/storage/belt/rogue/leather/mercenary/PopulateContents()
 	new /obj/item/natural/cloth(src)
-	new /obj/item/roguekey/mercenary(src)
+	new /obj/item/key/mercenary(src)
 
 /obj/item/storage/belt/rogue/leather/mercenary/shalal
 	name = "shalal belt"
@@ -115,12 +119,14 @@
 	item_state = "rope"
 	color = "#b9a286"
 	heldz_items = 1
+	salvage_result = /obj/item/rope
 
 /obj/item/storage/belt/rogue/leather/cloth
 	name = "cloth sash"
 	desc = "A simple cloth sash."
 	icon_state = "cloth"
 	heldz_items = 1
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/storage/belt/rogue/leather/cloth/lady
 	color = "#575160"
@@ -144,6 +150,7 @@
 	equip_sound = 'sound/blank.ogg'
 	content_overlays = FALSE
 	bloody_icon_state = "bodyblood"
+	fiber_salvage = FALSE
 
 /obj/item/storage/belt/rogue/pouch/ComponentInitialize()
 	. = ..()
@@ -224,6 +231,11 @@
 	new /obj/item/ammo_casing/caseless/rogue/dart(src)
 
 
+/obj/item/storage/backpack/rogue //holding salvage vars for children
+	sewrepair = TRUE
+	fiber_salvage = TRUE
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/storage/backpack/rogue/satchel
 	name = "satchel"

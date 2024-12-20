@@ -190,7 +190,7 @@
 	return image(icon = 'icons/mob/radial.dmi', icon_state = "radial_rotate")
 
 /// User has finished the recipe in an assembly.
-/datum/slapcraft_recipe/proc/finish_recipe(mob/living/user, obj/item/slapcraft_assembly/assembly)
+/datum/slapcraft_recipe/proc/finish_recipe(mob/living/user, obj/item/slapcraft_assembly/assembly, last_type, obj/item/last_item)
 	var/prob2craft = 25
 	var/prob2fail = 1
 	if(craftdiff)
@@ -216,15 +216,25 @@
 		prob2craft = CLAMP(prob2craft, 5, 99)
 		if(prob(prob2fail)) //critical fail
 			to_chat(user, "<span class='danger'>MISTAKE! I've completely fumbled completing \the [name]!</span>")
-			dispose_assembly(assembly)
+			breakdown_assembly(assembly)
 			return
 		if(!prob(prob2craft))
 			if(user.client?.prefs.showrolls)
 				to_chat(user, "<span class='danger'>I've failed to complete \the [name]. (Success chance: [prob2craft]%)</span>")
-				breakdown_assembly(assembly)
+				assembly.step_states[last_type] = FALSE
+				var/datum/slapcraft_step/next_step = assembly.recipe.next_suitable_step(user, last_item, assembly.step_states)
+				if(!next_step)
+					return
+				// Try and do it
+				next_step.perform(user, last_item, assembly)
 				return
 			to_chat(user, "<span class='danger'>I've failed to complete \the [name].</span>")
-			breakdown_assembly(assembly)
+			assembly.step_states[last_type] = FALSE
+			var/datum/slapcraft_step/next_step = assembly.recipe.next_suitable_step(user, last_item, assembly.step_states)
+			if(!next_step)
+				return
+			// Try and do it
+			next_step.perform(user, last_item, assembly)
 			return
 
 	if(show_finish_text)

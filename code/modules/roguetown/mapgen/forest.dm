@@ -1,8 +1,8 @@
 //genstuff
 /obj/effect/landmark/mapGenerator/rogue/forest
 	mapGeneratorType = /datum/mapGenerator/forest
-	endTurfX = 255
-	endTurfY = 255
+	endTurfX = 200
+	endTurfY = 200
 	startTurfX = 1
 	startTurfY = 1
 
@@ -18,8 +18,8 @@
 	spawnableAtoms = list(/obj/structure/flora/newtree = 5,
 							/obj/structure/flora/roguegrass/bush_meagre = 6,
 							/obj/structure/flora/roguegrass/thorn_bush = 2,
-							/obj/structure/flora/roguegrass = 95,
-							/obj/structure/flora/roguegrass/herb/random = 50,
+							/obj/structure/flora/roguegrass = 100,
+							/obj/structure/flora/roguegrass/herb/random = 70,
 							/obj/item/natural/stone = 5,
 							/obj/item/natural/rock = 6,
 							/obj/structure/flora/roguegrass/pyroclasticflowers = 1,
