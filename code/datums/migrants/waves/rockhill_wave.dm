@@ -1,6 +1,6 @@
 /datum/migrant_role/rockhill/mayor
 	name = "Mayor of Rockhill"
-	greet_text = "You are the mayor of Rockhill, you've come to Vanderlin to see your liege and discuss important matters."
+	greet_text = "You are the mayor of Rockhill, you've come to Vanderlin to discuss important matters with their Monarch."
 	outfit = /datum/outfit/job/roguetown/rockhill/mayor
 	allowed_sexes = list(MALE,FEMALE)
 	allowed_races = list("Humen","Dwarf")
@@ -129,7 +129,7 @@
 
 /datum/migrant_role/rockhill/sergeant_at_arms
 	name = "Serjeant at arms"
-	greet_text = "The mayor of rockhill has conscripted you and your mens to go see your liege, the rulers of Vanderlin."
+	greet_text = "The mayor of rockhill has conscripted you and your mens to go see the rulers of Vanderlin."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -185,7 +185,7 @@
 
 /datum/migrant_role/footman_guard
 	name = "Guardsmen of Rockhill"
-	greet_text = "Your serjeant-at-arms has been conscripted by the mayor of rockhill to guard them as they visit your liege, the rulers of Vanderlin. Ensure they live."
+	greet_text = "Your serjeant-at-arms has been conscripted by the mayor of rockhill to guard them as they visit the rulers of Vanderlin. Ensure they live."
 	outfit = /datum/outfit/job/roguetown/footman_bannerman
 	allowed_races = list("Humen","Dwarf","Aasimar","Elf","Half-Elf")
 	grant_lit_torch = TRUE
