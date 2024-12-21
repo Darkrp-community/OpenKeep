@@ -81,8 +81,6 @@
 	set waitfor = 0
 	if(!parent)
 		return
-	if(parent.is_new_player())
-		return
 //	last_preview_update = world.time
 	// Determine what job is marked as 'High' priority, and dress them up as such.
 	var/datum/job/previewJob

@@ -870,6 +870,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		dat = list("<center>REGISTER!</center>")
 
 	winshow(user, "stonekeep_prefwin", TRUE)
+	winshow(user, "stonekeep_prefwin.character_preview_map", TRUE)
 	var/datum/browser/noclose/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())

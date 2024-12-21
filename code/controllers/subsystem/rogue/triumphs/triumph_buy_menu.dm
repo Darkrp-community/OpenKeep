@@ -30,29 +30,35 @@
 	if(!linked_client)
 		return
 	var/data = {"
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<html>
 		<head>
+			<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"/>
+			<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>
 			<style>
 				@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+				body {
+					background-color: rgb(31, 20, 24);
+					background:
+						url('[SSassets.transport.get_asset_url("try5_border.png")]'),
+						url('[SSassets.transport.get_asset_url("try5.png")]');
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					background-size: 100% 100%;
+				}
 			</style>
-			<link rel='stylesheet' type='text/css' href='slop_menustyle3.css'>
+			<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("slop_menustyle3.css")]'>
 		</head>
-	"}
-
-	data += {"
 		<body>
-			<div id='top_container_div'>
-				<div id='triumph_quantity_div'>
+			<div id=\"top_container_div\">
+				<div id=\"triumph_quantity_div\">
 					I have [SStriumphs.get_triumphs(linked_client.ckey)] Triumphs
 				</div>
 			</div>
-			<div style='width:100%;float:left'>
-		"}
+			<div style=\"width:100%;float:left\">
+	"}
 /*
 				<div id='triumph_close_div'>
 					<a id='triumph_close_button' href='byond://?src=\ref[src];close_menu=1'>CLOSE MENU</a>
@@ -62,19 +68,19 @@
 	data += "<hr class='fadeout_line'>"
 	for(var/cat_key in SStriumphs.central_state_data)
 		if(cat_key == current_category)
-			data += "<a class='triumph_categories_selected' href='byond://?src=\ref[src];select_a_category=[cat_key]'><span class='bigunder_back'><span class='bigunder'></span>[cat_key]</span></a>"
-			continue
-		data += "<a class='triumph_categories_normal' href='byond://?src=\ref[src];select_a_category=[cat_key]'>[cat_key]</a>"
-	data += "<hr class='fadeout_line'>"
+			data += "<a class=\"triumph_categories_selected\" href=\"byond://?src=\ref[src];select_a_category=[cat_key]\"><span class=\"bigunder_back\"><span class=\"bigunder\"></span>[cat_key]</span></a>"
+		else
+			data += "<a class=\"triumph_categories_normal\" href=\"byond://?src=\ref[src];select_a_category=[cat_key]\">[cat_key]</a>"
 
-	data += {"
-			</div>
+	data +={"
+	<hr class=\"fadeout_line\">
+		</div>
 			<table>
 				<thead>
 					<tr>
-						<th class='triumph_text_head'>Description</th>
-						<th class='triumph_text_head'>Cost</th>
-						<th class='triumph_text_head_redeem'>Redeem</th>
+						<th class=\"triumph_text_head\">Description</th>
+						<th class=\"triumph_text_head\">Cost</th>
+						<th class=\"triumph_text_head_redeem\">Redeem</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -151,7 +157,10 @@
 		</body>
 	</html>
 	"}
-
+	data += {"
+		</head>
+	</html>
+	"}
 	linked_client << browse(data, "window=triumph_buy_window;size=500x760;can_close=1;can_minimize=0;can_maximize=0;can_resize=0;titlebar=1")
 
 	// We setup the href_list "close" call if they hit the x on the top right

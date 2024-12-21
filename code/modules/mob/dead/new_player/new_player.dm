@@ -64,56 +64,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	return
 
 /mob/dead/new_player/proc/new_player_panel()
-/*
-	var/datum/asset/asset_datum = get_asset_datum(/datum/asset/simple/lobby)
-	asset_datum.send(client)
-	var/output = "<center>"
-	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		switch(ready)
-			if(PLAYER_NOT_READY)
-				output += "<p>[LINKIFY_READY("READY", PLAYER_READY_TO_PLAY)] | <b>UNREADY</b></p>"
-			if(PLAYER_READY_TO_PLAY)
-				output += "<p><b>READY</b> | [LINKIFY_READY("UNREADY", PLAYER_NOT_READY)]</p>"
-			if(PLAYER_READY_TO_OBSERVE)
-				output += "<p>[LINKIFY_READY("READY", PLAYER_READY_TO_PLAY)]</p>"
-				output += "<p>[LINKIFY_READY("UNREADY", PLAYER_NOT_READY)]</p>"
-	else
-//		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
-//		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>FOLK</a></p>"
-		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>LATEJOIN</a></p>"
-	output += "<p><a href='byond://?src=[REF(src)];show_preferences=1'>CHARACTER</a></p>"
-
-//	output += "<p><a href='byond://?src=[REF(src)];show_options=1'>OPTIONS</a></p>"
-
-	output += "<p><a href='byond://?src=[REF(src)];show_keybinds=1'>KEYBINDS</a></p>"
-
-	if(!IsGuestKey(src.key))
-		if (SSdbcore.Connect())
-			var/isadmin = 0
-			if(src.client && src.client.holder)
-				isadmin = 1
-			var/datum/DBQuery/query_get_new_polls = SSdbcore.NewQuery("SELECT id FROM [format_table_name("poll_question")] WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM [format_table_name("poll_vote")] WHERE ckey = \"[sanitizeSQL(ckey)]\") AND id NOT IN (SELECT pollid FROM [format_table_name("poll_textreply")] WHERE ckey = \"[sanitizeSQL(ckey)]\")")
-			var/rs = REF(src)
-			if(query_get_new_polls.Execute())
-				var/newpoll = 0
-				if(query_get_new_polls.NextRow())
-					newpoll = 1
-
-				if(newpoll)
-					output += "<p><b><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
-				else
-					output += "<p><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A></p>"
-			qdel(query_get_new_polls)
-			if(QDELETED(src))
-				return
-
-	output += "</center>"
-
-	//src << browse(output,"window=playersetup;size=210x240;can_close=0")
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>LOBBY MENU</div>", 250, 200)
-	popup.set_window_options("can_close=0")
-	popup.set_content(output)
-	popup.open(FALSE)*/
+	if(!SSassets.initialized)
+		sleep(0.5 SECONDS)
+		new_player_panel()
+		return
 	if(client)
 		if(client.prefs)
 			client.prefs.ShowChoices(src, 4)
