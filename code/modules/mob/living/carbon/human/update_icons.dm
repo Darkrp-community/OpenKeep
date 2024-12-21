@@ -725,18 +725,21 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
+							var/list/offsets = H.dna.species.offset_features
+							if(H.age == AGE_CHILD)
+								offsets = H.dna.species.offset_features_child
 							if(gender == MALE)
-								if(OFFSET_BELT in H.dna.species.offset_features)
-									onbelt_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BELT][1]
-									onbelt_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BELT][2]
-									onbelt_behind.pixel_x += H.dna.species.offset_features[OFFSET_BELT][1]
-									onbelt_behind.pixel_y += H.dna.species.offset_features[OFFSET_BELT][2]
+								if(OFFSET_BELT in offsets)
+									onbelt_overlay.pixel_x += offsets[OFFSET_BELT][1]
+									onbelt_overlay.pixel_y += offsets[OFFSET_BELT][2]
+									onbelt_behind.pixel_x += offsets[OFFSET_BELT][1]
+									onbelt_behind.pixel_y += offsets[OFFSET_BELT][2]
 							else
-								if(OFFSET_BELT_F in H.dna.species.offset_features)
-									onbelt_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BELT_F][1]
-									onbelt_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BELT_F][2]
-									onbelt_behind.pixel_x += H.dna.species.offset_features[OFFSET_BELT_F][1]
-									onbelt_behind.pixel_y += H.dna.species.offset_features[OFFSET_BELT_F][2]
+								if(OFFSET_BELT_F in offsets)
+									onbelt_overlay.pixel_x += offsets[OFFSET_BELT_F][1]
+									onbelt_overlay.pixel_y += offsets[OFFSET_BELT_F][2]
+									onbelt_behind.pixel_x += offsets[OFFSET_BELT_F][1]
+									onbelt_behind.pixel_y += offsets[OFFSET_BELT_F][2]
 					standing_front += onbelt_overlay
 					standing_behind += onbelt_behind
 			else
@@ -777,18 +780,21 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
+							var/list/offsets = H.dna.species.offset_features
+							if(H.age == AGE_CHILD)
+								offsets = H.dna.species.offset_features_child
 							if(gender == MALE)
-								if(OFFSET_BELT in H.dna.species.offset_features)
-									onbelt_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BELT][1]
-									onbelt_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BELT][2]
-									onbelt_behind.pixel_x += H.dna.species.offset_features[OFFSET_BELT][1]
-									onbelt_behind.pixel_y += H.dna.species.offset_features[OFFSET_BELT][2]
+								if(OFFSET_BELT in offsets)
+									onbelt_overlay.pixel_x += offsets[OFFSET_BELT][1]
+									onbelt_overlay.pixel_y += offsets[OFFSET_BELT][2]
+									onbelt_behind.pixel_x += offsets[OFFSET_BELT][1]
+									onbelt_behind.pixel_y += offsets[OFFSET_BELT][2]
 							else
-								if(OFFSET_BELT_F in H.dna.species.offset_features)
-									onbelt_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BELT_F][1]
-									onbelt_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BELT_F][2]
-									onbelt_behind.pixel_x += H.dna.species.offset_features[OFFSET_BELT_F][1]
-									onbelt_behind.pixel_y += H.dna.species.offset_features[OFFSET_BELT_F][2]
+								if(OFFSET_BELT_F in offsets)
+									onbelt_overlay.pixel_x += offsets[OFFSET_BELT_F][1]
+									onbelt_overlay.pixel_y += offsets[OFFSET_BELT_F][2]
+									onbelt_behind.pixel_x += offsets[OFFSET_BELT_F][1]
+									onbelt_behind.pixel_y += offsets[OFFSET_BELT_F][2]
 					standing_front += onbelt_overlay
 					standing_behind += onbelt_behind
 			else
@@ -946,17 +952,20 @@ There are several things that need to be remembered:
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
 							if(gender == MALE)
-								if(OFFSET_BACK in H.dna.species.offset_features)
-									back_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK][1]
-									back_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK][2]
-									behindback_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK][1]
-									behindback_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK][2]
+								var/list/offsets = H.dna.species.offset_features
+								if(H.age == AGE_CHILD)
+									offsets = H.dna.species.offset_features_child
+								if(OFFSET_BACK in offsets)
+									back_overlay.pixel_x += offsets[OFFSET_BACK][1]
+									back_overlay.pixel_y += offsets[OFFSET_BACK][2]
+									behindback_overlay.pixel_x += offsets[OFFSET_BACK][1]
+									behindback_overlay.pixel_y += offsets[OFFSET_BACK][2]
 							else
-								if(OFFSET_BACK_F in H.dna.species.offset_features)
-									back_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK_F][1]
-									back_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK_F][2]
-									behindback_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK_F][1]
-									behindback_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK_F][2]
+								if(OFFSET_BACK_F in offsets)
+									back_overlay.pixel_x += offsets[OFFSET_BACK_F][1]
+									back_overlay.pixel_y += offsets[OFFSET_BACK_F][2]
+									behindback_overlay.pixel_x += offsets[OFFSET_BACK_F][1]
+									behindback_overlay.pixel_y += offsets[OFFSET_BACK_F][2]
 					overcloaks += back_overlay
 					backbehind += behindback_overlay
 			else
@@ -998,18 +1007,21 @@ There are several things that need to be remembered:
 					if(ishuman(src))
 						var/mob/living/carbon/human/H = src
 						if(H.dna && H.dna.species)
+							var/list/offsets = H.dna.species.offset_features
+							if(H.age == AGE_CHILD)
+								offsets = H.dna.species.offset_features_child
 							if(gender == MALE)
-								if(OFFSET_BACK in H.dna.species.offset_features)
-									back_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK][1]
-									back_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK][2]
-									behindback_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK][1]
-									behindback_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK][2]
+								if(OFFSET_BACK in offsets)
+									back_overlay.pixel_x += offsets[OFFSET_BACK][1]
+									back_overlay.pixel_y += offsets[OFFSET_BACK][2]
+									behindback_overlay.pixel_x += offsets[OFFSET_BACK][1]
+									behindback_overlay.pixel_y += offsets[OFFSET_BACK][2]
 							else
-								if(OFFSET_BACK_F in H.dna.species.offset_features)
-									back_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK_F][1]
-									back_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK_F][2]
-									behindback_overlay.pixel_x += H.dna.species.offset_features[OFFSET_BACK_F][1]
-									behindback_overlay.pixel_y += H.dna.species.offset_features[OFFSET_BACK_F][2]
+								if(OFFSET_BACK_F in offsets)
+									back_overlay.pixel_x += offsets[OFFSET_BACK_F][1]
+									back_overlay.pixel_y += offsets[OFFSET_BACK_F][2]
+									behindback_overlay.pixel_x += offsets[OFFSET_BACK_F][1]
+									behindback_overlay.pixel_y += offsets[OFFSET_BACK_F][2]
 					overcloaks += back_overlay
 					backbehind += behindback_overlay
 			else

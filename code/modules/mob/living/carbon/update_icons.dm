@@ -162,18 +162,21 @@
 			if(ishuman(src))
 				var/mob/living/carbon/human/H = src
 				if(H.dna && H.dna.species)
+					var/list/offsets = H.dna.species.offset_features
+					if(H.age == AGE_CHILD)
+						offsets = H.dna.species.offset_features_child
 					if(gender == MALE)
-						if(OFFSET_HANDS in H.dna.species.offset_features)
-							inhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS][1]
-							inhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS][2]
-							behindhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS][1]
-							behindhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS][2]
+						if(OFFSET_HANDS in offsets)
+							inhand_overlay.pixel_x += offsets[OFFSET_HANDS][1]
+							inhand_overlay.pixel_y += offsets[OFFSET_HANDS][2]
+							behindhand_overlay.pixel_x += offsets[OFFSET_HANDS][1]
+							behindhand_overlay.pixel_y += offsets[OFFSET_HANDS][2]
 					else
-						if(OFFSET_HANDS_F in H.dna.species.offset_features)
-							inhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS_F][1]
-							inhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS_F][2]
-							behindhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS_F][1]
-							behindhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS_F][2]
+						if(OFFSET_HANDS_F in offsets)
+							inhand_overlay.pixel_x += offsets[OFFSET_HANDS_F][1]
+							inhand_overlay.pixel_y += offsets[OFFSET_HANDS_F][2]
+							behindhand_overlay.pixel_x += offsets[OFFSET_HANDS_F][1]
+							behindhand_overlay.pixel_y += offsets[OFFSET_HANDS_F][2]
 
 			hands += inhand_overlay
 			behindhands += behindhand_overlay
@@ -185,14 +188,17 @@
 			if(ishuman(src))
 				var/mob/living/carbon/human/H = src
 				if(H.dna && H.dna.species.sexes)
+					var/list/offsets = H.dna.species.offset_features
+					if(H.age == AGE_CHILD)
+						offsets = H.dna.species.offset_features_child
 					if(gender == MALE)
-						if(OFFSET_HANDS in H.dna.species.offset_features)
-							inhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS][1]
-							inhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS][2]
+						if(OFFSET_HANDS in offsets)
+							inhand_overlay.pixel_x += offsets[OFFSET_HANDS][1]
+							inhand_overlay.pixel_y += offsets[OFFSET_HANDS][2]
 					else
-						if(OFFSET_HANDS_F in H.dna.species.offset_features)
-							inhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS_F][1]
-							inhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS_F][2]
+						if(OFFSET_HANDS_F in offsets)
+							inhand_overlay.pixel_x += offsets[OFFSET_HANDS_F][1]
+							inhand_overlay.pixel_y += offsets[OFFSET_HANDS_F][2]
 			hands += inhand_overlay
 
 	update_inv_cloak() //cloak held items
@@ -316,14 +322,17 @@
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
 			if(H.dna && H.dna.species.sexes)
+				var/list/offsets = H.dna.species.offset_features
+				if(H.age == AGE_CHILD)
+					offsets = H.dna.species.offset_features_child
 				if(gender == MALE)
-					if(OFFSET_HANDS in H.dna.species.offset_features)
-						inhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS][1]
-						inhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS][2]
+					if(OFFSET_HANDS in offsets)
+						inhand_overlay.pixel_x += offsets[OFFSET_HANDS][1]
+						inhand_overlay.pixel_y += offsets[OFFSET_HANDS][2]
 				else
-					if(OFFSET_HANDS_F in H.dna.species.offset_features)
-						inhand_overlay.pixel_x += H.dna.species.offset_features[OFFSET_HANDS_F][1]
-						inhand_overlay.pixel_y += H.dna.species.offset_features[OFFSET_HANDS_F][2]
+					if(OFFSET_HANDS_F in offsets)
+						inhand_overlay.pixel_x += offsets[OFFSET_HANDS_F][1]
+						inhand_overlay.pixel_y += offsets[OFFSET_HANDS_F][2]
 
 		overlays_standing[HANDCUFF_LAYER] = inhand_overlay
 		apply_overlay(HANDCUFF_LAYER)

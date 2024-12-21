@@ -149,6 +149,20 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	/// List all of body markings that the player can choose from in customization. Body markings from sets get added to here
 	var/list/body_markings
 
+	///can we be a youngling?
+	var/can_be_youngling = TRUE
+	var/child_icon = 'icons/roguetown/mob/bodies/c/child.dmi'
+	var/list/offset_features_child = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0),\
+	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,-4), \
+	OFFSET_FACE = list(0,0), OFFSET_BELT = list(0,0), OFFSET_BACK = list(0,0), \
+	OFFSET_NECK = list(0,-4), OFFSET_MOUTH = list(0,0), OFFSET_PANTS = list(0,0), \
+	OFFSET_SHIRT = list(0,0), OFFSET_ARMOR = list(0,0), OFFSET_HANDS = list(0,-3), \
+	OFFSET_ID_F = list(0,0), OFFSET_GLOVES_F = list(0,0), OFFSET_HANDS_F = list(0,0), \
+	OFFSET_CLOAK_F = list(0,0), OFFSET_FACEMASK_F = list(0,0), OFFSET_HEAD_F = list(0,0), \
+	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,0), \
+	OFFSET_NECK_F = list(0,0), OFFSET_MOUTH_F = list(0,0), OFFSET_PANTS_F = list(0,0), \
+	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0))
+
 ///////////
 // PROCS //
 ///////////
@@ -671,6 +685,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	SEND_SIGNAL(C, COMSIG_SPECIES_LOSS, src)
 
 /datum/species/proc/handle_hair(mob/living/carbon/human/H, forced_colour)
+	var/list/offsets = H.dna.species.offset_features
+	if(H.age == AGE_CHILD)
+		offsets = H.dna.species.offset_features_child
 	H.remove_overlay(HAIR_LAYER)
 	H.remove_overlay(HAIREXTRA_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
@@ -752,13 +769,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 			facial_overlay.alpha = hair_alpha
 			if(H.gender == "male")
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					facial_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					facial_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				if(OFFSET_FACE in offsets)
+					facial_overlay.pixel_x += offsets[OFFSET_FACE][1]
+					facial_overlay.pixel_y += offsets[OFFSET_FACE][2]
 			else
-				if(OFFSET_FACE_F in H.dna.species.offset_features)
-					facial_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-					facial_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+				if(OFFSET_FACE_F in offsets)
+					facial_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+					facial_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 			standing += facial_overlay
 
 	if(H.head)
@@ -834,13 +851,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					hair_overlay.color = forced_colour
 				hair_overlay.alpha = hair_alpha
 				if(H.gender == "male")
-					if(OFFSET_FACE in H.dna.species.offset_features)
-						hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-						hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+					if(OFFSET_FACE in offsets)
+						hair_overlay.pixel_x += offsets[OFFSET_FACE][1]
+						hair_overlay.pixel_y += offsets[OFFSET_FACE][2]
 				else
-					if(OFFSET_FACE_F in H.dna.species.offset_features)
-						hair_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-						hair_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+					if(OFFSET_FACE_F in offsets)
+						hair_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+						hair_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 		if(hair_overlay.icon)
 			S = GLOB.hairstyles_list[H.hairstyle]
 			if(S)
@@ -859,6 +876,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	H.apply_overlay(HAIREXTRA_LAYER)
 
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
+	var/list/offsets = H.dna.species.offset_features
+	if(H.age == AGE_CHILD)
+		offsets = H.dna.species.offset_features_child
 	H.remove_overlay(BODY_LAYER)
 	H.remove_overlay(ABOVE_BODY_FRONT_LAYER)
 
@@ -872,13 +892,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/mutable_appearance/lip_overlay = mutable_appearance('icons/mob/human_face.dmi', "lips_[H.lip_style]", -BODY_LAYER)
 			lip_overlay.color = H.lip_color
 			if(H.gender == MALE)
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				if(OFFSET_FACE in offsets)
+					lip_overlay.pixel_x += offsets[OFFSET_FACE][1]
+					lip_overlay.pixel_y += offsets[OFFSET_FACE][2]
 			else
-				if(OFFSET_FACE_F in H.dna.species.offset_features)
-					lip_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-					lip_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+				if(OFFSET_FACE_F in offsets)
+					lip_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+					lip_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 			standing += lip_overlay
 
 		// eyes
@@ -892,13 +912,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if((EYECOLOR in species_traits) && E)
 				eye_overlay.color = "#" + H.eye_color
 			if(H.gender == FEMALE)
-				if(OFFSET_FACE_F in H.dna.species.offset_features)
-					eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-					eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+				if(OFFSET_FACE_F in offsets)
+					eye_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+					eye_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 			else
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					eye_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					eye_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				if(OFFSET_FACE in offsets)
+					eye_overlay.pixel_x += offsets[OFFSET_FACE][1]
+					eye_overlay.pixel_y += offsets[OFFSET_FACE][2]
 			standing += eye_overlay
 
 		//detail
@@ -913,13 +933,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					else
 						accessory_overlay.color = "#" + H.detail_color
 				if(H.gender == FEMALE)
-					if(OFFSET_FACE_F in H.dna.species.offset_features)
-						accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-						accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+					if(OFFSET_FACE_F in offsets)
+						accessory_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+						accessory_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 				else
-					if(OFFSET_FACE in H.dna.species.offset_features)
-						accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-						accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+					if(OFFSET_FACE in offsets)
+						accessory_overlay.pixel_x += offsets[OFFSET_FACE][1]
+						accessory_overlay.pixel_y += offsets[OFFSET_FACE][2]
 				standing += accessory_overlay
 
 		if(H.accessory)
@@ -928,13 +948,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(accessory)
 				accessory_overlay = mutable_appearance(accessory.icon, "[accessory.icon_state]_BODY", -BODY_LAYER)
 				if(H.gender == FEMALE)
-					if(OFFSET_FACE_F in H.dna.species.offset_features)
-						accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-						accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+					if(OFFSET_FACE_F in offsets)
+						accessory_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+						accessory_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 				else
-					if(OFFSET_FACE in H.dna.species.offset_features)
-						accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-						accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+					if(OFFSET_FACE in offsets)
+						accessory_overlay.pixel_x += offsets[OFFSET_FACE][1]
+						accessory_overlay.pixel_y += offsets[OFFSET_FACE][2]
 				standing += accessory_overlay
 
 #ifdef MATURESERVER
@@ -967,13 +987,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			if(underwear)
 				underwear_overlay = mutable_appearance(underwear.icon, underwear.icon_state, -BODY_LAYER)
 				if(H.gender == FEMALE)
-					if(OFFSET_FACE_F in H.dna.species.offset_features)
-						underwear_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-						underwear_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+					if(OFFSET_FACE_F in offsets)
+						underwear_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+						underwear_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 				else
-					if(OFFSET_FACE in H.dna.species.offset_features)
-						underwear_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-						underwear_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+					if(OFFSET_FACE in offsets)
+						underwear_overlay.pixel_x += offsets[OFFSET_FACE][1]
+						underwear_overlay.pixel_y += offsets[OFFSET_FACE][2]
 				if(!underwear.use_static)
 					if(H.underwear_color)
 						underwear_overlay.color = H.underwear_color
@@ -983,9 +1003,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				standing += underwear_overlay
 				if(!hide_boob && H.gender == FEMALE)
 					underwear_overlay = mutable_appearance(underwear.icon, "[underwear.icon_state]_boob", -BODY_LAYER)
-					if(OFFSET_FACE_F in H.dna.species.offset_features)
-						underwear_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-						underwear_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+					if(OFFSET_FACE_F in offsets)
+						underwear_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+						underwear_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 					if(!underwear.use_static)
 						if(H.underwear_color)
 							underwear_overlay.color = H.underwear_color
@@ -1015,6 +1035,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	handle_mutant_bodyparts(H)
 
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
+	var/list/offsets = H.dna.species.offset_features
+	if(H.age == AGE_CHILD)
+		offsets = H.dna.species.offset_features_child
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
 	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
@@ -1086,13 +1109,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(accessory)
 			accessory_overlay = mutable_appearance(accessory.icon, "[accessory.icon_state]_FRONT", -BODY_FRONT_LAYER)
 			if(H.gender == FEMALE)
-				if(OFFSET_FACE_F in H.dna.species.offset_features)
-					accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE_F][1]
-					accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE_F][2]
+				if(OFFSET_FACE_F in offsets)
+					accessory_overlay.pixel_x += offsets[OFFSET_FACE_F][1]
+					accessory_overlay.pixel_y += offsets[OFFSET_FACE_F][2]
 			else
-				if(OFFSET_FACE in H.dna.species.offset_features)
-					accessory_overlay.pixel_x += H.dna.species.offset_features[OFFSET_FACE][1]
-					accessory_overlay.pixel_y += H.dna.species.offset_features[OFFSET_FACE][2]
+				if(OFFSET_FACE in offsets)
+					accessory_overlay.pixel_x += offsets[OFFSET_FACE][1]
+					accessory_overlay.pixel_y += offsets[OFFSET_FACE][2]
 			standing += accessory_overlay
 
 	if("wings" in mutant_bodyparts)
@@ -1221,7 +1244,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 						accessory_overlay.pixel_x += offset_features[OFFSET_FACE_F][1]
 						accessory_overlay.pixel_y += offset_features[OFFSET_FACE_F][2]
 				else
-					if(OFFSET_FACE in H.dna.species.offset_features)
+					if(OFFSET_FACE in offsets)
 						accessory_overlay.pixel_x += offset_features[OFFSET_FACE][1]
 						accessory_overlay.pixel_y += offset_features[OFFSET_FACE][2]
 
