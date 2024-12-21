@@ -51,7 +51,7 @@
 			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 		if("Eora")
-			head = /obj/item/clothing/head/roguetown/padded/rabbetvisage
+			head = /obj/item/clothing/head/roguetown/padded/operavisage
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/eora
