@@ -8,7 +8,7 @@
 
 /datum/outfit/job/roguetown/dark_itinerant_knight/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/visored/sallet
+	head = /obj/item/clothing/head/roguetown/rare/elfplate
 	cloak = /obj/item/clothing/cloak/half/shadowcloak
 	wrists = /obj/item/clothing/wrists/roguetown/nocwrappings
 	gloves = /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
