@@ -250,6 +250,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		inhand_y_dimension = 32
 	update_transform()
 
+GLOBAL_LIST_INIT(IconStates_cache, list())
 
 /obj/item/proc/update_transform()
 	transform = null

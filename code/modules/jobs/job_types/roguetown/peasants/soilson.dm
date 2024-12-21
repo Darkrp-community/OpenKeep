@@ -24,7 +24,7 @@
 	outfit = /datum/outfit/job/roguetown/farmer
 	give_bank_account = 20
 	min_pq = -100
-	selection_color = "#553e01"
+	selection_color = "#654d0b"
 
 /datum/outfit/job/roguetown/farmer/pre_equip(mob/living/carbon/human/H)
 	..()

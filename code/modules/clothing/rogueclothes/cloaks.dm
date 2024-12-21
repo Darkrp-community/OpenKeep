@@ -1068,17 +1068,3 @@
 	add_overlay(mutable_appearance('icons/roguetown/clothing/cloaks.dmi', "clasp"))
 	..()
 
-
-//................ Silk Pantaloons ............... //
-/obj/item/clothing/under/roguetown/pantaloons
-	name = "silk pantaloons"
-	icon_state = "pantaloons"
-	item_state = "pantaloons"
-	color = CLOTHING_WET
-	r_sleeve_status = SLEEVE_NOMOD
-	l_sleeve_status = SLEEVE_NOMOD
-	adjustable = FALSE
-
-/obj/item/clothing/under/roguetown/pantaloons/random/Initialize()
-	color = RANDOM_NOBLE_DYES
-	..()

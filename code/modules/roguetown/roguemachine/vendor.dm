@@ -277,21 +277,21 @@
 
 /obj/structure/roguemachine/vendor/inn_hamlet/Initialize()
 	. = ..()
-	for(var/X in list(/obj/item/roguekey/roomii))
+	for(var/X in list(/obj/item/roguekey/roomii/wanderer))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
 		held_items[P]["PRICE"] = 15
-	for(var/X in list(/obj/item/roguekey/roomiii,/obj/item/roguekey/roomiv))
+	for(var/X in list(/obj/item/roguekey/roomiii/yeoman,/obj/item/roguekey/roomiv/castellan))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 20
-	for(var/X in list(/obj/item/roguekey/roomi))
+		held_items[P]["PRICE"] = 25
+	for(var/X in list(/obj/item/roguekey/roomi/duchess))
 		var/obj/P = new X(src)
 		held_items[P] = list()
 		held_items[P]["NAME"] = P.name
-		held_items[P]["PRICE"] = 30
+		held_items[P]["PRICE"] = 50
 	update_icon()
 
 /obj/structure/roguemachine/vendor/steward

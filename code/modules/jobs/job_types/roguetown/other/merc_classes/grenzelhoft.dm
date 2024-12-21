@@ -14,6 +14,19 @@
 
 /datum/outfit/job/roguetown/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	head = /obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
+	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
+	belt = /obj/item/storage/belt/rogue/leather/merc_nokey
+	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+	beltl = /obj/item/rogueweapon/mace/cudgel
+	pants = /obj/item/clothing/under/roguetown/grenzelpants
+	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
+	backr = /obj/item/rogueweapon/sword/long/greatsword/zwei
+
 	if(H.mind)//big weapon user that can interchange for a mace/shield, 4 weapon skills, warrior has 7 skills
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
@@ -33,30 +46,18 @@
 		H.underwear = "Femleotard"
 		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
-
 	if(H.dna.species.id == "dwarf")
 		H.skin_tone = SKIN_COLOR_GRENZDWARF
 	if(H.dna.species.id == "human")
 		H.skin_tone = SKIN_COLOR_GRENZELHOFT
-
-	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
-	pants = /obj/item/clothing/under/roguetown/grenzelpants
-	shoes = /obj/item/clothing/shoes/roguetown/grenzelhoft
-	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
-	belt = /obj/item/storage/belt/rogue/leather/mercenary
-	beltl = /obj/item/rogueweapon/mace/cudgel
-	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-	head = /obj/item/clothing/head/roguetown/helmet/skullcap/grenzelhoft
-	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
-	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/sword/long/greatsword/zwei
 	if(!H.has_language(/datum/language/oldpsydonic))
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
+	H.set_patron(/datum/patron/forgotten) // SCREAM IF YOU LOVE THE FORGOTTEN GOD
 
 	H.change_stat("strength", 2) // They need this to roll at least min STR for the Zwei.
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 2)
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	H.set_patron(/datum/patron/forgotten) // SCREAM IF YOU LOVE THE FORGOTTEN GOD
+

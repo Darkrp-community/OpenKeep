@@ -101,11 +101,6 @@
 	result = list(/obj/item/clothing/head/roguetown/fisherhat)
 	reqs = list(/obj/item/natural/fibers = 3)
 
-/datum/crafting_recipe/roguetown/sewing/zigbox
-	name = "paper zigbox"
-	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
-	reqs = list(/obj/item/paper = 1)
-
 /datum/crafting_recipe/roguetown/sewing/sack
 	name = "sack hood"
 	result = list(/obj/item/clothing/head/roguetown/menacing)

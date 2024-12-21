@@ -241,6 +241,24 @@
 		add_overlay(pic)
 
 
+//................ Silk Pantaloons ............... //
+/obj/item/clothing/under/roguetown/pantaloons
+	name = "silk pantaloons"
+	icon_state = "pantaloons"
+	item_state = "pantaloons"
+	color = CLOTHING_WET
+	r_sleeve_status = SLEEVE_NOMOD
+	l_sleeve_status = SLEEVE_NOMOD
+	adjustable = FALSE
+
+/obj/item/clothing/under/roguetown/pantaloons/random/Initialize()
+	color = RANDOM_NOBLE_DYES
+	..()
+
+/obj/item/clothing/under/roguetown/pantaloons/dark
+	color = CLOTHING_DARK_INK
+
+
 //..................................................................................................................................
 /*---------------\
 |			 	 |

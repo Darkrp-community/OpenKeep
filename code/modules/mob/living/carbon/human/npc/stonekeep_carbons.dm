@@ -331,7 +331,7 @@
 	H.STAEND = rand(8,10)
 	H.STAINT = 7
 
-/mob/living/carbon/human/species/human/northern/bum/skilled/after_creation()
+/mob/living/carbon/human/species/human/northern/bum/skilled/after_creation(mob/living/carbon/C)
 	..()
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
@@ -346,6 +346,7 @@
 	wander = FALSE
 	ambushable = FALSE
 	faction = list("bums", "station")
+	C.grant_language(/datum/language/common)
 
 /mob/living/carbon/human/species/human/northern/bum/skilled/proc/configure_mind()
 	if(!mind)
@@ -497,7 +498,6 @@
 	configure_mind()
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, the higher the skill the more powerful this is of course
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
-//	equipOutfit(new /datum/outfit/job/roguetown/npc/goblin)
 
 /mob/living/carbon/human/species/goblin/skilled/ambush/moon
 	name = "moon goblin"
@@ -506,6 +506,10 @@
 /mob/living/carbon/human/species/goblin/skilled/ambush/hell
 	name = "hell goblin"
 	race = /datum/species/goblin/hell
+
+/mob/living/carbon/human/species/goblin/skilled/hell/after_creation(mob/living/carbon/C)
+	..()
+	C.grant_language(/datum/language/hellspeak)
 
 /mob/living/carbon/human/species/goblin/skilled/ambush/cave
 	name = "cave goblin"

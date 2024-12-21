@@ -132,6 +132,13 @@
 	reqs = list(/obj/item/natural/hide = 2)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/leather/antlerhood
+	name = "antler hood"
+	result = /obj/item/clothing/head/roguetown/antlerhood
+	reqs = list(/obj/item/natural/hide = 1,
+	/obj/item/natural/head/saiga = 1)
+	craftdiff = 1
+
 /datum/crafting_recipe/roguetown/leather/armor
 	name = "leather armor"
 	result = /obj/item/clothing/suit/roguetown/armor/leather
