@@ -1,5 +1,3 @@
-#define LOWMEMORYMODE //uncomment this to load centcom and roguetest and thats it.
-
 #ifndef LOWMEMORYMODE
 	#include "map_files\generic\CentCom.dmm"
 	#ifdef ALL_MAPS
