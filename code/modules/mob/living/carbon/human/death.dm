@@ -141,7 +141,7 @@
 		log_message("has died (BRUTE: [src.getBruteLoss()], BURN: [src.getFireLoss()], TOX: [src.getToxLoss()], OXY: [src.getOxyLoss()], CLONE: [src.getCloneLoss()])", LOG_ATTACK)
 
 /mob/living/carbon/human/proc/zombie_check()
-	if(!mind)
+	if(!mind || !key)
 		return
 	if(mind.has_antag_datum(/datum/antagonist/vampirelord))
 		return
