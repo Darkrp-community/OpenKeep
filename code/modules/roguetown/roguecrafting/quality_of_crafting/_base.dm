@@ -52,8 +52,14 @@
 	var/list/pass_types_in_end = list()
 
 /datum/repeatable_crafting_recipe/proc/check_start(obj/item/attacked_item, obj/item/attacking_item, mob/user)
-	if(!istype(attacked_item, attacking_atom))
+	if(!istype(attacked_item, attacking_atom) && !istype(attacked_item, /obj/item/natural/bundle))
 		return FALSE
+
+	if(istype(attacked_item, /obj/item/natural/bundle))
+		var/bundle_path = attacked_item:stacktype
+		if(!ispath(bundle_path, attacking_atom))
+			return FALSE
+
 
 	if(required_intent && user.used_intent != required_intent)
 		return FALSE
@@ -71,20 +77,35 @@
 		usable_contents[attacked_item.type]++
 
 	for(var/obj/item/I in user.held_items)
-		usable_contents |= I.type
-		usable_contents[I.type]++
+		if(istype(I, /obj/item/natural/bundle))
+			var/bundle_path = I:stacktype
+			usable_contents |= bundle_path
+			usable_contents[bundle_path] += attacked_item:amount
+		else
+			usable_contents |= I.type
+			usable_contents[I.type]++
 
 	var/obj/item/inactive_hand = user.get_inactive_held_item()
 	if(is_type_in_list(inactive_hand, offhand_repeat_check))
 		for(var/obj/item in inactive_hand.contents)
-			usable_contents |= item.type
-			usable_contents[item.type] ++
+			if(istype(item, /obj/item/natural/bundle))
+				var/bundle_path = item:stacktype
+				usable_contents |= bundle_path
+				usable_contents[bundle_path] += item:amount
+			else
+				usable_contents |= item.type
+				usable_contents[item.type] ++
 
 	if(check_around_owner)
 		for(var/turf/listed_turf in range(1, user))
 			for(var/obj/item in listed_turf.contents)
-				usable_contents |= item.type
-				usable_contents[item.type]++
+				if(istype(item, /obj/item/natural/bundle))
+					var/bundle_path = item:stacktype
+					usable_contents |= bundle_path
+					usable_contents[bundle_path] += item:amount
+				else
+					usable_contents |= item.type
+					usable_contents[item.type]++
 
 	var/list/total_list = usable_contents
 	for(var/path as anything in total_list)
@@ -137,20 +158,35 @@
 		usable_contents[attacked_item.type]++
 
 	for(var/obj/item/I in user.held_items)
-		usable_contents |= I.type
-		usable_contents[I.type]++
+		if(istype(I, /obj/item/natural/bundle))
+			var/bundle_path = I:stacktype
+			usable_contents |= bundle_path
+			usable_contents[bundle_path] += I:amount
+		else
+			usable_contents |= I.type
+			usable_contents[I.type]++
 
 	var/obj/item/inactive_hand = user.get_inactive_held_item()
 	if(is_type_in_list(inactive_hand, offhand_repeat_check))
 		for(var/obj/item in inactive_hand.contents)
-			usable_contents |= item.type
-			usable_contents[item.type] ++
+			if(istype(item, /obj/item/natural/bundle))
+				var/bundle_path = item:stacktype
+				usable_contents |= bundle_path
+				usable_contents[bundle_path] += item:amount
+			else
+				usable_contents |= item.type
+				usable_contents[item.type] ++
 
 	if(check_around_owner)
 		for(var/turf/listed_turf in range(1, user))
 			for(var/obj/item in listed_turf.contents)
-				usable_contents |= item.type
-				usable_contents[item.type]++
+				if(istype(item, /obj/item/natural/bundle))
+					var/bundle_path = item:stacktype
+					usable_contents |= bundle_path
+					usable_contents[bundle_path] += item:amount
+				else
+					usable_contents |= item.type
+					usable_contents[item.type]++
 
 	var/max_crafts = 10000
 	var/list/total_list = usable_contents
@@ -196,8 +232,14 @@
 		return
 	actual_crafts = CLAMP(actual_crafts, 1, max_crafts)
 
-	if(!istype(attacked_item, attacking_atom))
+	if(!istype(attacked_item, attacking_atom) && !istype(attacked_item, /obj/item/natural/bundle))
 		return FALSE
+
+	if(istype(attacked_item, /obj/item/natural/bundle))
+		var/bundle_path = attacked_item:stacktype
+		if(!ispath(bundle_path, attacking_atom))
+			return FALSE
+
 	var/list/usable_contents = list()
 	var/list/storage_contents = list()
 
@@ -234,13 +276,42 @@
 					break
 				if(active_item)
 					user.transferItemToLoc(active_item, get_turf(user), TRUE)
+					active_item = null
 
 			if(isnull(active_item))
 				for(var/obj/item/item in usable_contents)
 					if(!length(copied_requirements))
 						break
-					if(!is_type_in_list(item, copied_requirements))
+					if(!is_type_in_list(item, copied_requirements) && !istype(item, /obj/item/natural/bundle))
 						continue
+					if(istype(item, /obj/item/natural/bundle))
+						var/bundle_path = item:stacktype
+						var/early_break = FALSE
+						for(var/path in copied_requirements)
+							if(QDELETED(item))
+								break
+							if(!ispath(bundle_path, path))
+								continue
+							item:amount--
+							var/obj/item/sub_item = new bundle_path(get_turf(item))
+							usable_contents += sub_item
+							if(item:amount == 0)
+								usable_contents -= item
+								qdel(item)
+							user.visible_message("[user] starts picking up [sub_item]", "You start picking up [sub_item]")
+							if(do_after(user, ground_use_time, target = item))
+								if(put_items_in_hand)
+									user.put_in_active_hand(sub_item)
+								for(var/requirement in copied_requirements)
+									if(!istype(sub_item, requirement))
+										continue
+									copied_requirements[requirement]--
+									active_item = sub_item
+									early_break = TRUE
+									break
+						if(early_break)
+							break
+
 					user.visible_message("[user] starts picking up [item]", "You start picking up [item]")
 					if(do_after(user, ground_use_time, target = item))
 						user.put_in_active_hand(item)
@@ -251,8 +322,36 @@
 				for(var/obj/item/item in storage_contents)
 					if(!length(copied_requirements))
 						break
-					if(!is_type_in_list(item, copied_requirements))
+					if(!is_type_in_list(item, copied_requirements) && !istype(item, /obj/item/natural/bundle))
 						continue
+					if(istype(item, /obj/item/natural/bundle))
+						var/bundle_path = item:stacktype
+						var/early_break = FALSE
+						for(var/path in copied_requirements)
+							if(QDELETED(item))
+								break
+							if(!ispath(bundle_path, path))
+								continue
+							item:amount--
+							var/obj/item/sub_item = new bundle_path(get_turf(item))
+							usable_contents += sub_item
+							if(item:amount == 0)
+								usable_contents -= item
+								qdel(item)
+							to_chat(user, "You start grabbing [item] from your bag.")
+							if(do_after(user, storage_use_time, target = item))
+								if(put_items_in_hand)
+									user.put_in_active_hand(sub_item)
+								for(var/requirement in copied_requirements)
+									if(!istype(sub_item, requirement))
+										continue
+									copied_requirements[requirement]--
+									active_item = sub_item
+									early_break = TRUE
+									break
+						if(early_break)
+							break
+
 					to_chat(user, "You start grabbing [item] from your bag.")
 					if(do_after(user, storage_use_time, target = item))
 						user.put_in_active_hand(item)
@@ -276,8 +375,40 @@
 		for(var/obj/item/item in usable_contents)
 			if(!length(copied_requirements))
 				break
-			if(!is_type_in_list(item, copied_requirements))
+			if(!is_type_in_list(item, copied_requirements) && !istype(item, /obj/item/natural/bundle))
 				continue
+			if(istype(item, /obj/item/natural/bundle))
+				var/continue_early = FALSE
+				var/bundle_path = item:stacktype
+				for(var/path in copied_requirements)
+					if(QDELETED(item))
+						break
+					if(!ispath(bundle_path, path))
+						continue
+					for(var/i = 1 to item:amount)
+						item:amount--
+						var/obj/item/sub_item = new bundle_path(get_turf(item))
+						if(item:amount == 0)
+							usable_contents -= item
+							qdel(item)
+						user.visible_message("[user] starts picking up [sub_item]", "You start picking up [sub_item]")
+						if(do_after(user, ground_use_time, target = item))
+							if(put_items_in_hand)
+								user.put_in_active_hand(item)
+							for(var/requirement in copied_requirements)
+								if(!istype(sub_item, requirement))
+									continue
+								copied_requirements[requirement]--
+								to_delete += sub_item
+								sub_item.forceMove(locate(1,1,1)) ///the fucking void of items
+								if(copied_requirements[requirement] <= 0)
+									copied_requirements -= requirement
+									continue_early = TRUE
+									break
+				if(continue_early)
+					continue
+
+
 			user.visible_message("[user] starts picking up [item]", "You start picking up [item]")
 			if(do_after(user, ground_use_time, target = item))
 				if(put_items_in_hand)
@@ -409,7 +540,7 @@
 							continue
 						user.put_in_active_hand(potential_tool)
 					user.visible_message("[user] [tool_path_extra[1]].", "You [tool_path_extra[2]].")
-					if(length(tool_path_extra) >= 2)
+					if(length(tool_path_extra) >= 3)
 						playsound(get_turf(user), tool_path_extra[3], 100, FALSE)
 					if(!do_after(user, tool_use_time, target = potential_tool))
 						continue

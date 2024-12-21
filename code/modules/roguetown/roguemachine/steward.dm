@@ -213,7 +213,32 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
+	SSassets.transport.send_assets(user?.client, list("try4_border.png", "try5.png", "slop_menustyle2.css"))
 	var/contents
+	contents += {"
+	<!DOCTYPE html>
+	<html lang='en'>
+	<head>
+		<meta charset='UTF-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
+			body {
+				background-color: rgb(31, 20, 24);
+				background:
+					url('[SSassets.transport.get_asset_url("try4_border.png")]'),
+					url('[SSassets.transport.get_asset_url("try5.png")]');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+			}
+		</style>
+		<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("slop_menustyle2.css")]'>
+	</head> "}
+
 	switch(current_tab)
 		if(TAB_MAIN)
 			contents += "<center>MASTER OF NERVES<BR>"
@@ -284,10 +309,15 @@
 			for(var/i = SStreasury.log_entries.len to 1 step -1)
 				contents += "<span class='info'>[SStreasury.log_entries[i]]</span><BR>"
 
+	contents += {"
+		</head>
+	</html>
+	"}
 	if(!canread)
 		contents = stars(contents)
 	var/datum/browser/popup = new(user, "VENDORTHING", "", 370, 220)
 	popup.set_content(contents)
+	popup.set_window_options("can_minimize=0;can_maximize=0")
 	popup.open()
 
 #undef TAB_MAIN
