@@ -20,8 +20,6 @@ endmap
 
 #until vanderlin is working roguetown should be default
 map roguetown
-	default
-	votable
 endmap
 
 map dun_manor

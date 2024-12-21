@@ -14199,9 +14199,6 @@
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 8
 	},
-/obj/effect/landmark/start/veteran{
-	dir = 8
-	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/garrison)
 "mjG" = (
@@ -17910,6 +17907,13 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"pCX" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/veteran{
+	dir = 1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "pDn" = (
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/rogue/churchmarble,
@@ -93342,7 +93346,7 @@ toB
 toB
 toB
 has
-aCo
+pCX
 jZz
 jZz
 jZz
@@ -108175,9 +108179,9 @@ rBu
 rBu
 rBu
 eaa
-eaa
-eaa
-eaa
+byA
+hCq
+hCq
 eaa
 aDa
 byA
