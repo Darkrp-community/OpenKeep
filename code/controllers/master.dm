@@ -62,6 +62,8 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	//used by CHECK_TICK as well so that the procs subsystems call can obey that SS's tick limits
 	var/static/current_ticklimit = TICK_LIMIT_RUNNING
 
+	var/static/initialized_all = FALSE
+
 /datum/controller/master/New()
 	if(!config)
 		config = new
@@ -190,7 +192,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 //#ifndef TESTSERVER
 //	var/thing_done = FALSE
 //#endif
-
+	#ifndef LOWMEMORYMODE
 	current_ticklimit = CONFIG_GET(number/tick_limit_mc_init)
 	for (var/datum/controller/subsystem/SS in subsystems)
 		if (SS.flags & SS_NO_INIT)
@@ -198,6 +200,17 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		SS.Initialize(REALTIMEOFDAY)
 		CHECK_TICK
 	current_ticklimit = TICK_LIMIT_RUNNING
+	#else
+	current_ticklimit = CONFIG_GET(number/tick_limit_mc_init)
+	for (var/datum/controller/subsystem/SS in subsystems)
+		if (SS.flags & SS_NO_INIT)
+			continue
+		if(SS.lazy_load)
+			continue
+		SS.Initialize(REALTIMEOFDAY)
+		CHECK_TICK
+	current_ticklimit = TICK_LIMIT_RUNNING
+	#endif
 	var/time = (REALTIMEOFDAY - start_timeofday) / 10
 
 	var/msg = "Initializations complete within [time] second[time == 1 ? "" : "s"]!"
@@ -212,7 +225,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	setup_cargo_boat()
 	// Sort subsystems by display setting for easy access.
-	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))
+	#ifndef LOWMEMORYMODE
+		sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))
+	#endif
 	// Set world options.
 	world.change_fps(CONFIG_GET(number/fps))
 	var/initialized_tod = REALTIMEOFDAY
@@ -226,6 +241,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	initializations_finished_with_no_players_logged_in = initialized_tod < REALTIMEOFDAY - 10
 	// Loop.
 	Master.StartProcessing(0)
+	#ifdef LOWMEMORYMODE
+	low_memory_force_start()
+	#endif
 
 /datum/controller/master/proc/SetRunLevel(new_runlevel)
 	var/old_runlevel = current_runlevel
@@ -258,6 +276,27 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 // Main loop.
 /datum/controller/master/proc/Loop()
 	. = -1
+	#ifdef LOWMEMORYMODE
+	if(!initialized_all)
+		var/total_count = length(subsystems)
+		for (var/datum/controller/subsystem/SS in subsystems)
+			if(SS.initialized)
+				total_count--
+				continue
+			if (SS.flags & SS_NO_INIT)
+				total_count--
+				continue
+			if(!SS.lazy_load)
+				total_count--
+				continue
+			SS.Initialize(REALTIMEOFDAY)
+			CHECK_TICK
+			total_count--
+		if(total_count <= 0)
+			initialized_all = TRUE
+			sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))
+	#endif
+
 	//Prep the loop (most of this is because we want MC restarts to reset as much state as we can, and because
 	//	local vars rock
 

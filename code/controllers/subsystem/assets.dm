@@ -1,5 +1,6 @@
 SUBSYSTEM_DEF(assets)
 	name = "Assets"
+	lazy_load = FALSE
 	init_order = INIT_ORDER_ASSETS
 	flags = SS_NO_FIRE
 	var/list/cache = list()
@@ -14,7 +15,7 @@ SUBSYSTEM_DEF(assets)
 
 	if (newtransporttype == transport.type)
 		return
-
+`
 	var/datum/asset_transport/newtransport = new newtransporttype ()
 	if (newtransport.validate_config())
 		transport = newtransport

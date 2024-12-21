@@ -15,11 +15,12 @@
 * in human.dna called parent_mix that could be
 * used for intrigue but currently it has
 * no use and is only changed by the
-* heritage datum BloodTies() proc.
+* heritage datum BloodTies() proc.`
 */
 SUBSYSTEM_DEF(familytree)
 	name = "familytree"
 	flags = SS_NO_FIRE
+	lazy_load = FALSE
 
 	/*
 	* The family that kings, queens, and princes
