@@ -1504,7 +1504,6 @@ generate/load female uniform sprites matching all previously decided variables
 			standing = wear_dismembered_version(t_state,file2use,layer2use,sleeveindex,sleevejazz)
 		else
 			sleeveindex = 4
-	message_admins(t_state)
 	if(!standing)
 		standing = mutable_appearance(file2use, t_state, -layer2use)
 
