@@ -15,7 +15,7 @@ SUBSYSTEM_DEF(assets)
 
 	if (newtransporttype == transport.type)
 		return
-`
+
 	var/datum/asset_transport/newtransport = new newtransporttype ()
 	if (newtransport.validate_config())
 		transport = newtransport
