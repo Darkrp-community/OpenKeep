@@ -68,11 +68,13 @@ SUBSYSTEM_DEF(outdoor_effects)
 			GLOB.SUNLIGHT_QUEUE_WORK += T
 
 /datum/controller/subsystem/outdoor_effects/Initialize(timeofday)
+	#ifndef LOWMEMORYMODE
 	if(!initialized)
 		get_time_of_day()
 		InitializeTurfs()
 		initialized = TRUE
 	fire(FALSE, TRUE)
+	#endif
 	..()
 
 /datum/controller/subsystem/outdoor_effects/stat_entry(msg)

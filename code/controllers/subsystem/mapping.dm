@@ -241,7 +241,7 @@ SUBSYSTEM_DEF(mapping)
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaforest.json")
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkamountain.json")
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaswamp.json")*/
-
+	#ifndef LOWMEMORYMODE
 	if(config.map_name == "Vanderlin") // Vanderlin
 		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_forest.json") /* FUCK FUCK FUCK ABORT ABORT (Temporarily we hope.)
 		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_mountain.json")
@@ -251,7 +251,7 @@ SUBSYSTEM_DEF(mapping)
 		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallforest.json")
 		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smalldecap.json")
 		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallswamp.json")
-
+	#endif
 	//For all maps
 	otherZ += load_map_config("_maps/map_files/roguetown/otherz/underworld.json")
 //	otherZ += load_map_config("_maps/map_files/roguetown/otherz/special.json")
