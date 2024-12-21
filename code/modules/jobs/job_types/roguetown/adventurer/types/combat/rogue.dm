@@ -46,41 +46,30 @@
 /datum/outfit/job/roguetown/adventurer/rogue/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
 	// Give them their cloak- as well as the ability to choose what color they want.
-	var/thiefcloak_color_selection = input(usr,"What color was I again?","The Cloak","Ashen Black") in list("Fyritius Dye","Winestain Red","Maroon","Blood Red","Forest Green","Bog Green","Spring Green","Royal Teal","Mana Blue","Berry","Lavender Purple","Majenta","Bark Brown","Russet","Chestnut","Old Leather","Ashen Black")
+	var/list/thiefcloak_colors = list(\
+		// Red Colors
+		"Fyritius Dye"	="#b47011",\
+		"Winestain Red"	="#6b3737",\
+		"Maroon"		="#672c0d",\
+		"Blood Red"		="#770d0d",\
+		// Green Colors
+		"Forest Green"	="#3f8b24",\
+		"Bog Green"		="#58793f",\
+		"Spring Green"	="#435436",\
+		// Blue Colors
+		"Royal Teal"	="#249589",\
+		"Mana Blue"		="#1b3c7a",\
+		"Berry"			="#38455b",\
+		"Lavender"		="#865c9c",\
+		"Majenta"		="#822b52",\
+		// Brown Colors
+		"Bark Brown"	="#685542",\
+		"Russet"		="#685542",\
+		"Chestnut"		="#5f3d21",\
+		"Old Leather"	="#473a30",\
+		"Ashen Black"	="#2f352f",\
+		)
+	var/thiefcloak_color_selection = input(usr,"What color was I again?","The Cloak","Ashen Black") in thiefcloak_colors
 	var/obj/item/clothing/cloak/raincloak/thiefcloak = new()
-	switch(thiefcloak_color_selection)
-		if("Fyritius Dye")
-			thiefcloak.color="#b47011"
-		if("Winestain Red")
-			thiefcloak.color="#6b3737"
-		if("Maroon")
-			thiefcloak.color="#672c0d"
-		if("Blood Red")
-			thiefcloak.color="#770d0d"
-		if("Forest Green")
-			thiefcloak.color="#3f8b24"
-		if("Bog Green")
-			thiefcloak.color="#58793f"
-		if("Spring Green")
-			thiefcloak.color="#435436"
-		if("Royal Teal")
-			thiefcloak.color="#249589"
-		if("Mana Blue")
-			thiefcloak.color="#1b3c7a"
-		if("Berry")
-			thiefcloak.color="#38455b"
-		if("Lavender Purple")
-			thiefcloak.color="#865c9c"
-		if("Majenta")
-			thiefcloak.color="#822b52"
-		if("Bark Brown")
-			thiefcloak.color="#685542"
-		if("Russet")
-			thiefcloak.color="#685542"
-		if("Chestnut")
-			thiefcloak.color="#5f3d21"
-		if("Old Leather")
-			thiefcloak.color="#473a30"
-		if("Ashen Black")
-			thiefcloak.color="#2f352f"
+	thiefcloak.color = thiefcloak_colors[thiefcloak_color_selection]
 	H.equip_to_slot(thiefcloak, SLOT_CLOAK, TRUE)
