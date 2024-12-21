@@ -1461,6 +1461,7 @@
 /obj/item/rogueweapon/pick,
 /obj/item/rogueweapon/tongs,
 /obj/item/rogueweapon/tongs,
+/obj/item/flint,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/dwarfin)
 "bkg" = (
@@ -4691,17 +4692,18 @@
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town/steward)
 "dUb" = (
-/obj/item/storage/belt/rogue/pouch{
-	pixel_x = -4;
-	pixel_y = -8
-	},
-/obj/item/storage/belt/rogue/pouch{
-	pixel_x = 9;
-	pixel_y = -2
-	},
 /obj/structure/table/wood{
 	dir = 9;
 	icon_state = "largetable"
+	},
+/obj/item/paper,
+/obj/item/paper{
+	pixel_x = 2;
+	pixel_y = 5
+	},
+/obj/item/paper{
+	pixel_x = -1;
+	pixel_y = 6
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/shop)
@@ -6449,6 +6451,14 @@
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/clinic_large)
+"frX" = (
+/obj/structure/mineral_door/wood{
+	locked = 1;
+	lockid = "garrison";
+	name = "garrison door"
+	},
+/turf/open/floor/rogue/tile,
+/area/rogue/indoors/town/garrison)
 "fsl" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/paper/scroll{
@@ -12577,6 +12587,12 @@
 /obj/item/natural/cloth,
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
+"kEA" = (
+/obj/structure/roguemachine/atm{
+	pixel_y = -32
+	},
+/turf/open/floor/rogue/hexstone,
+/area/rogue/indoors/town/shop)
 "kFd" = (
 /obj/structure/rack/rogue,
 /obj/item/natural/cloth,
@@ -12963,6 +12979,14 @@
 /obj/structure/table/wood{
 	icon_state = "largetable";
 	dir = 5
+	},
+/obj/item/storage/belt/rogue/pouch{
+	pixel_x = 9;
+	pixel_y = -2
+	},
+/obj/item/storage/belt/rogue/pouch{
+	pixel_x = -4;
+	pixel_y = -8
 	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/shop)
@@ -14462,6 +14486,11 @@
 /obj/item/bedsheet/rogue/pelt,
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
+"mya" = (
+/obj/structure/rack/rogue,
+/obj/item/flint,
+/turf/open/floor/rogue/blocks/newstone/alt,
+/area/rogue/indoors/town/smithy)
 "myF" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/produce/pear,
@@ -16157,6 +16186,10 @@
 /obj/structure/closet/crate/chest/old_crate,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
+"nUr" = (
+/obj/machinery/light/rogue/wallfire/candle/blue,
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/shop)
 "nUw" = (
 /obj/structure/fluff/statue/knight/interior/r,
 /obj/machinery/light/rogue/wallfire/candle,
@@ -50488,7 +50521,7 @@ lml
 lml
 vdE
 ogO
-ogO
+bET
 ogO
 jZU
 nYn
@@ -89527,7 +89560,7 @@ sSS
 lEs
 svp
 aHp
-rvF
+mya
 rvF
 foJ
 mTz
@@ -92351,7 +92384,7 @@ nWe
 nWe
 lef
 lxU
-aOh
+lxU
 kWO
 nWe
 nWe
@@ -92554,11 +92587,11 @@ cqR
 cKz
 cKz
 cKz
-lxU
+kEA
 nWe
-hsJ
-hsJ
-hsJ
+nUr
+jcc
+sSD
 nWe
 fIx
 uqd
@@ -92757,7 +92790,7 @@ cKz
 ttp
 cKz
 lxU
-nnM
+pKh
 nnM
 nnM
 nnM
@@ -92958,9 +92991,9 @@ sZK
 cKz
 cKz
 cKz
-lxU
+aOh
 nWe
-hsJ
+nUr
 nnM
 nnM
 akr
@@ -93162,7 +93195,7 @@ qlE
 jdj
 dUb
 nWe
-hsJ
+qrH
 nnM
 nnM
 akr
@@ -129951,7 +129984,7 @@ nDY
 kdZ
 dZC
 nDY
-aIA
+frX
 maf
 edW
 edW
