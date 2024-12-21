@@ -226,7 +226,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	setup_cargo_boat()
 	// Sort subsystems by display setting for easy access.
 	#ifndef LOWMEMORYMODE
-		sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))
+	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))
 	#endif
 	// Set world options.
 	world.change_fps(CONFIG_GET(number/fps))
