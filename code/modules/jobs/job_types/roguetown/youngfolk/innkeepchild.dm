@@ -33,7 +33,6 @@
 		H.change_stat("endurance", 1)
 		H.change_stat("strength", -1)
 		H.change_stat("constitution", -1)
-	head = /obj/item/clothing/head/roguetown/cookhat
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
