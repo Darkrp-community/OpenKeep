@@ -844,7 +844,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/mob/dead/new_player/N = user
 	if(istype(N))
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
-			dat += "<a href='?_src_=prefs;preference=finished'>DONE</a>"
 			switch(N.ready)
 				if(PLAYER_NOT_READY)
 					dat += "<b>UNREADY</b> <a href='byond://?src=[REF(N)];ready=[PLAYER_READY_TO_PLAY]'>READY</a>"
