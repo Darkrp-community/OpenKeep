@@ -44,6 +44,12 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
+"co" = (
+/obj/structure/fluff/signage{
+	name = "Vanderlin - East"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/woods)
 "cy" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -17718,7 +17724,7 @@ Wh
 Wh
 Wh
 wV
-wV
+co
 cA
 cA
 RF
@@ -21146,7 +21152,7 @@ cA
 cA
 Qd
 Qd
-UR
+Jg
 Xk
 UR
 wV
@@ -26595,7 +26601,7 @@ wV
 wV
 wV
 UR
-UR
+Jg
 Qd
 cA
 cA
@@ -28418,7 +28424,7 @@ UR
 Qd
 cA
 cA
-UR
+Jg
 Xk
 wV
 UR
@@ -31034,7 +31040,7 @@ wV
 wV
 UR
 UR
-UR
+Jg
 UR
 cA
 Qd
@@ -31236,7 +31242,7 @@ wV
 wV
 wV
 wV
-UR
+Jg
 UR
 UR
 Qd
@@ -33457,7 +33463,7 @@ UR
 Qd
 cA
 cA
-Qd
+Cd
 Qd
 tR
 tR
@@ -34463,7 +34469,7 @@ wV
 Xk
 UR
 wV
-wV
+kW
 Qd
 Qd
 Qd
@@ -37895,7 +37901,7 @@ UR
 Xk
 Xk
 Xk
-UR
+Jg
 Qd
 cA
 cA
@@ -39502,7 +39508,7 @@ wV
 tR
 wV
 wV
-wV
+kW
 Qd
 Qd
 Qd
@@ -40708,8 +40714,8 @@ UR
 wV
 wV
 UR
-UR
-wV
+Jg
+co
 Qd
 Qd
 cA
