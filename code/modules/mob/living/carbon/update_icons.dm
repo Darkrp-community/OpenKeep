@@ -89,6 +89,11 @@
 /mob/living/carbon/update_inv_hands()
 	remove_overlay(HANDS_LAYER)
 	remove_overlay(HANDS_BEHIND_LAYER)
+	var/age = AGE_ADULT
+	if(ishuman(src))
+		var/mob/living/carbon/human/human = src
+		age = human.age
+
 	if (handcuffed)
 		drop_all_held_items()
 		return
@@ -184,7 +189,7 @@
 			var/icon_file = I.lefthand_file
 			if(get_held_index_of_item(I) % 2 == 0)
 				icon_file = I.righthand_file
-			inhand_overlay = I.build_worn_icon(default_layer = HANDS_LAYER, default_icon_file = icon_file, isinhands = TRUE)
+			inhand_overlay = I.build_worn_icon(age = age, default_layer = HANDS_LAYER, default_icon_file = icon_file, isinhands = TRUE)
 			if(ishuman(src))
 				var/mob/living/carbon/human/H = src
 				if(H.dna && H.dna.species.sexes)
@@ -256,6 +261,10 @@
 
 /mob/living/carbon/update_inv_wear_mask()
 	remove_overlay(MASK_LAYER)
+	var/age = AGE_ADULT
+	if(ishuman(src))
+		var/mob/living/carbon/human/human = src
+		age = human.age
 
 	if(!get_bodypart(BODY_ZONE_HEAD)) //Decapitated
 		return
@@ -266,13 +275,17 @@
 
 	if(wear_mask)
 		if(!(SLOT_WEAR_MASK in check_obscured_slots()))
-			overlays_standing[MASK_LAYER] = wear_mask.build_worn_icon(default_layer = MASK_LAYER, default_icon_file = 'icons/mob/clothing/mask.dmi')
+			overlays_standing[MASK_LAYER] = wear_mask.build_worn_icon(age = age, default_layer = MASK_LAYER, default_icon_file = 'icons/mob/clothing/mask.dmi')
 		update_hud_wear_mask(wear_mask)
 
 	apply_overlay(MASK_LAYER)
 
 /mob/living/carbon/update_inv_neck()
 	remove_overlay(NECK_LAYER)
+	var/age = AGE_ADULT
+	if(ishuman(src))
+		var/mob/living/carbon/human/human = src
+		age = human.age
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_NECK])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_NECK]
@@ -280,26 +293,35 @@
 
 	if(wear_neck)
 		if(!(SLOT_NECK in check_obscured_slots()))
-			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(default_layer = NECK_LAYER, default_icon_file = 'icons/roguetown/clothing/neck.dmi')
+			overlays_standing[NECK_LAYER] = wear_neck.build_worn_icon(age = age, default_layer = NECK_LAYER, default_icon_file = 'icons/roguetown/clothing/neck.dmi')
 		update_hud_neck(wear_neck)
 
 	apply_overlay(NECK_LAYER)
 
 /mob/living/carbon/update_inv_back()
 	remove_overlay(BACK_LAYER)
+	var/age = AGE_ADULT
+	if(ishuman(src))
+		var/mob/living/carbon/human/human = src
+		age = human.age
 
 	if(client && hud_used && hud_used.inv_slots[SLOT_BACK])
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_BACK]
 		inv.update_icon()
 
 	if(back)
-		overlays_standing[BACK_LAYER] = back.build_worn_icon(default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi')
+		overlays_standing[BACK_LAYER] = back.build_worn_icon(age = age, default_layer = BACK_LAYER, default_icon_file = 'icons/mob/clothing/back.dmi')
 		update_hud_back(back)
 
 	apply_overlay(BACK_LAYER)
 
 /mob/living/carbon/update_inv_head()
 	remove_overlay(HEAD_LAYER)
+
+	var/age = AGE_ADULT
+	if(ishuman(src))
+		var/mob/living/carbon/human/human = src
+		age = human.age
 
 	if(!get_bodypart(BODY_ZONE_HEAD)) //Decapitated
 		return
@@ -309,7 +331,7 @@
 		inv.update_icon()
 
 	if(head)
-		overlays_standing[HEAD_LAYER] = head.build_worn_icon(default_layer = HEAD_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/head.dmi')
+		overlays_standing[HEAD_LAYER] = head.build_worn_icon(age = age, default_layer = HEAD_LAYER, default_icon_file = 'icons/roguetown/clothing/onmob/head.dmi')
 		update_hud_head(head)
 
 	apply_overlay(HEAD_LAYER)
