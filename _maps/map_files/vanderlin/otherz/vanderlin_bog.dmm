@@ -3617,7 +3617,10 @@
 /area/rogue/indoors/cave)
 "XW" = (
 /obj/structure/chair/bench/throne,
-/mob/living/carbon/human/species/orc/warlord/skilled,
+/mob/living/carbon/human/species/goblin/hell{
+	real_name = "King Fartknocker";
+	name = "King Fartknocker"
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/shelter/bog)
 "XZ" = (
