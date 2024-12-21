@@ -11,17 +11,37 @@
 // Cleric Holder Datums
 
 /datum/devotion/cleric_holder
-	var/holder_mob = null
+	var/mob/living/carbon/human/holder_mob = null
 	var/patron = null
 	var/devotion = 0
 	var/max_devotion = 1000
 	var/progression = 0
 	var/level = CLERIC_T0
+	/// How much devotion is gained per process call
+	var/passive_devotion_gain = 0
+	/// How much progression is gained per process call
+	var/passive_progression_gain = 0
+	/// How much devotion is gained per prayer cycle
+	var/prayer_effectiveness = 2
 
 /datum/devotion/cleric_holder/New(mob/living/carbon/human/holder, god)
 	holder_mob = holder
 	holder.cleric = src
 	patron = god
+
+/datum/devotion/cleric_holder/Destroy(force)
+	. = ..()
+	holder_mob?.cleric = null
+	holder_mob = null
+	patron = null
+	STOP_PROCESSING(SSpersecond, src)
+
+/datum/devotion/cleric_holder/process()
+	if(!passive_devotion_gain && !passive_progression_gain)
+		return PROCESS_KILL
+	if(holder_mob.stat >= DEAD)
+		return
+	update_devotion(passive_devotion_gain, passive_progression_gain)
 
 /datum/devotion/cleric_holder/proc/check_devotion(req)
 	if(abs(req) <= devotion)
@@ -35,7 +55,6 @@
 	//Max devotion limit
 	if(devotion > max_devotion)
 		devotion = max_devotion
-		to_chat(holder_mob, "<font color='red'>I have reached the limit of my devotion...</font>")
 	if(!prog_amt) // no point in the rest if it's just an expenditure
 		return
 	progression += prog_amt
@@ -85,7 +104,9 @@
 			continue
 		H.mind.AddSpell(new spell_type)
 	level = CLERIC_T3
+	passive_devotion_gain = 1 //1 devotion per second
 	update_devotion(300, 900)
+	START_PROCESSING(SSpersecond, src)
 
 /datum/devotion/cleric_holder/proc/grant_spells(mob/living/carbon/human/H)
 	if(!H || !H.mind)
@@ -141,7 +162,7 @@
 	var/changeamt = input(src, "My devotion is [C.devotion]. How much to change?", "How much to change?") as null|num
 	if(!changeamt)
 		return
-	C.devotion += changeamt
+	C.update_devotion(changeamt)
 
 // Generation Procs
 
@@ -150,18 +171,21 @@
 	set category = "Cleric"
 
 	var/datum/devotion/cleric_holder/C = src.cleric
+	if(!C)
+		return
+	if(C.devotion >= C.max_devotion)
+		to_chat(src, "<font color='red'>I have reached the limit of my devotion...</font>")
+		return
 	var/prayersesh = 0
-
-	visible_message("[src] kneels their head in prayer to the Gods.", "I kneel my head in prayer to [patron.name].")
-	for(var/i in 1 to 20)
+	visible_message("[src] kneels their head in prayer.", "I kneel my head in prayer to [patron.name].")
+	for(var/i in 1 to 50)
 		if(do_after(src, 30))
 			if(C.devotion >= C.max_devotion)
 				to_chat(src, "<font color='red'>I have reached the limit of my devotion...</font>")
 				break
-			C.update_devotion(2, 2)
-			prayersesh += 2
+			C.update_devotion(C.prayer_effectiveness, C.prayer_effectiveness)
+			prayersesh += C.prayer_effectiveness
 		else
 			visible_message("[src] concludes their prayer.", "I conclude my prayer.")
-			to_chat(src, "<font color='purple'>I gained [prayersesh] devotion!</font>")
-			return
+			break
 	to_chat(src, "<font color='purple'>I gained [prayersesh] devotion!</font>")
