@@ -330,10 +330,10 @@
 	user.adjustBruteLoss(4)
 
 
-//................ Rabbet Visage ............... //	- Basic Eora Acolyte
-/obj/item/clothing/head/roguetown/padded/rabbetvisage
-	name = "rabbet visage"
-	desc = "A painted wooden rabbet worn by the faithful of Eora, usually during their rituals."
+//................ Opera Visage ............... //	- Basic Eora Acolyte
+/obj/item/clothing/head/roguetown/padded/operavisage
+	name = "opera visage"
+	desc = "A painted wooden opera mask worn by the faithful of Eora, usually during their rituals."
 	icon_state = "eoramask"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -342,10 +342,10 @@
 	worn_y_dimension = 64
 	dynamic_hair_suffix = ""
 
-//................ Rabbet Hood ............... //	- The "upgraded" headwear for Eoran acolytes
+//................ Opera Hood ............... //	- The "upgraded" headwear for Eoran acolytes
 /obj/item/clothing/head/roguetown/roguehood/eora
-	name = "rabbet hood"
-	desc = "A silver rabbet mask worn by the faithful of Eora, usually during their rituals. Comes with a hood that can be pulled up for warmth."
+	name = "opera hood"
+	desc = "A silver opera mask worn by the faithful of Eora, usually during their rituals. Comes with a hood that can be pulled up for warmth."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "eorahood"
 	bloody_icon = 'icons/effects/blood64x64.dmi'

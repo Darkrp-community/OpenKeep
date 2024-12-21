@@ -4393,10 +4393,6 @@
 /obj/structure/fluff/railing/wood,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/mountains/anvil/castle)
-"NX" = (
-/obj/effect/landmark/map_load_mark/malum_dungeon,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/mountains/anvil/dungeon)
 "NZ" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle{
 	dir = 1
@@ -4453,10 +4449,6 @@
 	},
 /obj/item/paper/scroll,
 /turf/open/floor/rogue/blocks,
-/area/rogue/under/mountains/anvil/lower/building)
-"OH" = (
-/mob/living/carbon/human/species/orc/warlord/skilled,
-/turf/open/floor/rogue/twig,
 /area/rogue/under/mountains/anvil/lower/building)
 "OI" = (
 /obj/effect/decal/cleanable/blood/drip,
@@ -5192,10 +5184,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/church,
 /area/rogue/under/mountains/anvil/lower/building)
-"VD" = (
-/mob/living/carbon/human/species/orc/warlord/skilled,
-/turf/open/floor/rogue/twig,
-/area/rogue/indoors/mountains/anvil/surface/building)
 "VF" = (
 /turf/open/floor/rogue/wood/nosmooth/saiga,
 /area/rogue/indoors/mountains/anvil/surface/building)
@@ -120311,7 +120299,7 @@ CP
 CP
 CP
 CP
-NX
+CP
 Oq
 "}
 (192,1,2) = {"
@@ -126518,7 +126506,7 @@ cd
 Te
 lk
 Te
-VD
+Te
 fV
 to
 MM
@@ -167299,7 +167287,7 @@ DR
 Bn
 BA
 BA
-OH
+BA
 BA
 bx
 DR

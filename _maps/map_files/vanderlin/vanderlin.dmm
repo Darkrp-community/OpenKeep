@@ -14199,9 +14199,6 @@
 /obj/structure/chair/wood/rogue/chair3{
 	dir = 8
 	},
-/obj/effect/landmark/start/veteran{
-	dir = 8
-	},
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/garrison)
 "mjG" = (
@@ -27598,6 +27595,16 @@
 "xSf" = (
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town/theatre)
+"xSI" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/veteran{
+	dir = 1
+	},
+/obj/effect/landmark/hammer/dev_text{
+	name = "DO NOT MOVE THESE TWO. This is intentional placement, they should spawn together. This was discussed."
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "xSV" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/machinery/light/rogue/hearth,
@@ -93342,7 +93349,7 @@ toB
 toB
 toB
 has
-aCo
+xSI
 jZz
 jZz
 jZz
@@ -108175,9 +108182,9 @@ rBu
 rBu
 rBu
 eaa
-eaa
-eaa
-eaa
+byA
+hCq
+hCq
 eaa
 aDa
 byA

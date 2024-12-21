@@ -4149,7 +4149,7 @@
 	icon_state = "largetable_mid"
 	},
 /obj/item/clothing/mask/rogue/druid,
-/obj/item/clothing/head/roguetown/padded/rabbetvisage,
+/obj/item/clothing/head/roguetown/padded/operavisage,
 /obj/item/clothing/head/roguetown/priestmask,
 /turf/open/floor/rogue/wood,
 /area/rogue)
