@@ -1,11 +1,18 @@
 #define ROUND_START_MUSIC_LIST "strings/round_start_sounds.txt"
 
+/proc/low_memory_force_start()
+	for(var/i in GLOB.new_player_list)
+		var/mob/dead/new_player/player = i
+		player.ready = PLAYER_READY_TO_PLAY
 
+	SSticker.start_immediately = TRUE
+	SSticker.fire()
 GLOBAL_VAR_INIT(round_timer, INITIAL_ROUND_TIMER)
 
 SUBSYSTEM_DEF(ticker)
 	name = "Ticker"
 	init_order = INIT_ORDER_TICKER
+	lazy_load = FALSE
 
 	priority = FIRE_PRIORITY_TICKER
 	flags = SS_KEEP_TIMING

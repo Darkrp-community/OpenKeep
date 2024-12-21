@@ -1,5 +1,6 @@
 SUBSYSTEM_DEF(assets)
 	name = "Assets"
+	lazy_load = FALSE
 	init_order = INIT_ORDER_ASSETS
 	flags = SS_NO_FIRE
 	var/list/cache = list()
