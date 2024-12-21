@@ -763,6 +763,10 @@
 "jS" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
+"jT" = (
+/mob/living/carbon/human/species/orc/warlord/skilled,
+/turf/open/floor/rogue/twig,
+/area/rogue/indoors/shelter/bog)
 "kc" = (
 /obj/structure/fluff/walldeco/painting/seraphina,
 /turf/closed/wall/mineral/rogue/decowood/vert,
@@ -35527,7 +35531,7 @@ La
 La
 kz
 XW
-bj
+jT
 bj
 bj
 bj
