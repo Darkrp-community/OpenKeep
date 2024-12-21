@@ -6,6 +6,7 @@ SUBSYSTEM_DEF(skills)
 	name = "Skills"
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_SKILLS
+	lazy_load = FALSE
 	///Dictionary of skill.type || skill ref
 	var/list/all_skills = list()
 	///Static assoc list of levels (ints) - strings
