@@ -161,7 +161,7 @@
 "cg" = (
 /obj/structure/lever/wall{
 	dir = 8;
-	redstone_id = "forestprison"
+	redstone_id = "bogprison"
 	},
 /obj/effect/decal/cleanable/blood/gibs/limb,
 /obj/effect/decal/cleanable/blood,
@@ -435,9 +435,9 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/cave)
 "fn" = (
-/obj/structure/fluff/grindwheel,
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/bog)
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/shelter/bog)
 "fq" = (
 /obj/structure/fluff/railing/border{
 	dir = 9
@@ -467,7 +467,7 @@
 	name = "bog chicken"
 	},
 /turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/bog)
+/area/rogue/indoors/shelter/bog)
 "fG" = (
 /obj/structure/table/vtable,
 /obj/item/natural/feather{
@@ -873,6 +873,10 @@
 "lC" = (
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/indoors/shelter/bog)
+"lE" = (
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/shelter/bog)
 "lG" = (
 /obj/item/rogueweapon/knife/dagger/steel,
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1036,8 +1040,9 @@
 /area/rogue/outdoors/bog)
 "nK" = (
 /obj/structure/winch{
-	redstone_id = "BogSouth";
-	name = "Southern Gate"
+	redstone_id = "bogsouth";
+	name = "Southern Gate";
+	gid = "bogsouth"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -1196,7 +1201,8 @@
 /area/rogue/indoors/shelter/bog)
 "pF" = (
 /obj/structure/gate/bars{
-	redstone_id = "BogSouth"
+	redstone_id = "bogsouth";
+	gid = "bogsouth"
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors/shelter/bog)
@@ -1612,7 +1618,7 @@
 	name = "bog chicken"
 	},
 /turf/open/floor/rogue/grass,
-/area/rogue/outdoors/bog)
+/area/rogue/indoors/shelter/bog)
 "vM" = (
 /obj/structure/chair/bench/church/r,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -1849,7 +1855,7 @@
 "za" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/twig,
-/area/rogue/outdoors/bog)
+/area/rogue/indoors/shelter/bog)
 "zc" = (
 /obj/structure/closet/crate/chest/wicker,
 /obj/item/reagent_containers/food/snacks/produce/wheat,
@@ -2010,7 +2016,7 @@
 /area/rogue/indoors/shelter/bog)
 "Bz" = (
 /obj/structure/bars/passage{
-	redstone_id = "s"
+	redstone_id = "bogprison"
 	},
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/shelter/bog)
@@ -2660,6 +2666,10 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
+"KM" = (
+/obj/structure/well,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/shelter/bog)
 "KN" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -2771,7 +2781,8 @@
 /area/rogue/indoors/shelter/bog)
 "Nc" = (
 /obj/structure/gate/bars{
-	redstone_id = "BogNorth"
+	redstone_id = "bognorth";
+	gid = "bognorth"
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/indoors/shelter/bog)
@@ -2835,6 +2846,10 @@
 "NL" = (
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/outdoors/bog)
+"NQ" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/indoors/shelter/bog)
 "NV" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -3211,8 +3226,9 @@
 /area/rogue/indoors/shelter/bog)
 "Th" = (
 /obj/structure/winch{
-	redstone_id = "BogNorth";
-	name = "Northern Gate"
+	redstone_id = "bognorth";
+	name = "Northern Gate";
+	gid = "bognorth"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -3359,8 +3375,9 @@
 /turf/closed,
 /area/rogue/indoors/shelter/bog)
 "UN" = (
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/bog)
+/obj/structure/flora/roguegrass/bush,
+/turf/open/floor/rogue/grass,
+/area/rogue/indoors/shelter/bog)
 "US" = (
 /obj/structure/fermenting_barrel/water,
 /turf/open/floor/rogue/woodturned/nosmooth,
@@ -27561,14 +27578,14 @@ MQ
 (119,1,1) = {"
 MQ
 MQ
-La
+Xx
 hf
-kZ
-kZ
-La
-La
-kZ
-kZ
+YW
+YW
+Xx
+Xx
+YW
+YW
 hf
 BG
 fs
@@ -27763,14 +27780,14 @@ MQ
 (120,1,1) = {"
 RK
 MQ
-kZ
-Ej
-La
-kZ
-be
-kZ
-Kx
-Ej
+YW
+lE
+Xx
+YW
+KM
+YW
+UN
+lE
 hf
 uo
 uo
@@ -27965,14 +27982,14 @@ MQ
 (121,1,1) = {"
 RK
 MQ
-kZ
-kZ
-La
-La
-La
-TM
-TM
-La
+YW
+YW
+Xx
+Xx
+Xx
+fn
+fn
+Xx
 Pl
 uo
 ca
@@ -28167,14 +28184,14 @@ MQ
 (122,1,1) = {"
 RK
 QR
-La
-La
-La
-La
-TM
-TM
-TM
-kZ
+Xx
+Xx
+Xx
+Xx
+fn
+fn
+fn
+YW
 hf
 hf
 hf
@@ -28369,14 +28386,14 @@ MQ
 (123,1,1) = {"
 RK
 NA
-jS
-La
-jS
-jS
-jS
-jS
-La
-jS
+oG
+Xx
+oG
+oG
+oG
+oG
+Xx
+oG
 Nc
 Xx
 Ci
@@ -28571,14 +28588,14 @@ MQ
 (124,1,1) = {"
 RK
 NA
-jS
-jS
-jS
-La
-jS
-jS
-jS
-jS
+oG
+oG
+oG
+Xx
+oG
+oG
+oG
+oG
 Xx
 oG
 oG
@@ -28773,14 +28790,14 @@ MQ
 (125,1,1) = {"
 RK
 NA
-jS
-jS
-jS
-jS
-La
-jS
-La
-jS
+oG
+oG
+oG
+oG
+Xx
+oG
+Xx
+oG
 oG
 oG
 aS
@@ -28975,14 +28992,14 @@ MQ
 (126,1,1) = {"
 RK
 QR
-kZ
-La
-La
-La
-La
-kZ
-La
-La
+YW
+Xx
+Xx
+Xx
+Xx
+YW
+Xx
+Xx
 hf
 hf
 hf
@@ -29177,15 +29194,15 @@ MQ
 (127,1,1) = {"
 RK
 MQ
-kZ
-kZ
-La
-La
-La
+YW
+YW
+Xx
+Xx
+Xx
 vD
-Kx
-La
-La
+UN
+Xx
+Xx
 hf
 VY
 uo
@@ -29379,15 +29396,15 @@ MQ
 (128,1,1) = {"
 RK
 MQ
-La
-kZ
+Xx
+YW
 za
-UN
-La
+bj
+Xx
 fx
-kZ
-kZ
-La
+YW
+YW
+Xx
 cf
 uo
 uo
@@ -29582,14 +29599,14 @@ MQ
 MQ
 MQ
 MQ
-La
-La
-La
-La
+Xx
+Xx
+Xx
+Xx
 fx
-fn
-La
-La
+hc
+Xx
+Xx
 hf
 nR
 QZ
@@ -29786,12 +29803,12 @@ MQ
 MQ
 MQ
 za
-UN
-La
+bj
+Xx
 vD
-kZ
-La
-La
+YW
+Xx
+Xx
 hf
 hf
 hf
@@ -29987,11 +30004,11 @@ MQ
 MQ
 MQ
 MQ
-La
-La
-La
-La
-kZ
+Xx
+Xx
+Xx
+Xx
+YW
 hf
 hf
 hf
@@ -30190,10 +30207,10 @@ MQ
 MQ
 MQ
 za
-UN
-kZ
-La
-kZ
+bj
+YW
+Xx
+YW
 hf
 TE
 uo
@@ -30390,12 +30407,12 @@ MQ
 MQ
 MQ
 MQ
-kZ
-kZ
-kZ
-kZ
-QR
-La
+YW
+YW
+YW
+YW
+NQ
+Xx
 hf
 uD
 Cv
@@ -30591,13 +30608,13 @@ MQ
 (134,1,1) = {"
 MQ
 MQ
-kZ
-kZ
-La
-kZ
-La
-La
-La
+YW
+YW
+Xx
+YW
+Xx
+Xx
+Xx
 hf
 QV
 rv
@@ -30797,9 +30814,9 @@ MQ
 MQ
 MQ
 MQ
-La
-kZ
-La
+Xx
+YW
+Xx
 hf
 zl
 rv
@@ -30998,10 +31015,10 @@ MQ
 MQ
 MQ
 MQ
-La
-kZ
-kZ
-kZ
+Xx
+YW
+YW
+YW
 ga
 NV
 FY
@@ -31201,9 +31218,9 @@ MQ
 MQ
 MQ
 MQ
-La
-kZ
-kZ
+Xx
+YW
+YW
 ga
 CM
 uo
