@@ -52,8 +52,10 @@
 #endif								//	1 to use the default behaviour;
 									//	2 for preloading absolutely everything;
 
+//#define LOWMEMORYMODE //uncomment this to load centcom and roguetest and thats it.
+
 #ifdef LOWMEMORYMODE
-#define FORCE_MAP "_maps/runtimestation.json"
+#define FORCE_MAP "_maps/roguetest.json"
 #endif
 
 //Update this whenever you need to take advantage of more recent byond features

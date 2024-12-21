@@ -97,7 +97,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	var/lord_dead = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		if(H.mind)
-			if(H.job == "King" || H.job == "Queen")
+			if(H.job == "Monarch")
 				lord_found = TRUE
 				if(H.stat == DEAD)
 					lord_dead = TRUE
@@ -199,8 +199,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
 	banditgoal = rand(200,400)
-	restricted_jobs = list("King",
-	"Queen",
+	restricted_jobs = list("Monarch",
+	"Consort",
 	"Merchant",
 	"Priest",
 	"Knight",
@@ -341,8 +341,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_maniac()
-	restricted_jobs = list("King",
-	"Queen")
+	restricted_jobs = list("Monarch",
+	"Consort")
 	antag_candidates = get_players_for_role(ROLE_VILLAIN)
 	var/datum/mind/villain = pick_n_take(antag_candidates)
 	if(villain)
@@ -363,8 +363,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 
 /datum/game_mode/chaosmode/proc/pick_cultist()
 	var/remaining = 3 // 1 heresiarch, 2 cultists
-	restricted_jobs = list("King",
-	"Queen",
+	restricted_jobs = list("Monarch",
+	"Consort",
 	"Priest",
 	"Merchant",
 	"Bandit",
@@ -407,8 +407,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 /datum/game_mode/chaosmode/proc/pick_lich()
 
 	restricted_jobs = list(
-	"King",
-	"Queen",
+	"Monarch",
+	"Consort",
 	"Dungeoneer",
 	"Inquisitor",
 	"Confessor",
@@ -453,8 +453,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 /datum/game_mode/chaosmode/proc/pick_vampires()
 	var/vampsremaining = 3
 	restricted_jobs = list(
-	"King",
-	"Queen",
+	"Monarch",
+	"Consort",
 	"Dungeoneer",
 	"Inquisitor",
 	"Confessor",
@@ -507,8 +507,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 /datum/game_mode/chaosmode/proc/pick_werewolves()
 	// Ideally we want adventurers/pilgrims/towners to roll it
 	restricted_jobs = list(
-	"King",
-	"Queen",
+	"Monarch",
+	"Consort",
 	"Dungeoneer",
 	"Inquisitor",
 	"Confessor",

@@ -55,6 +55,7 @@
 	block2add = FOV_RIGHT
 	body_parts_covered = RIGHT_EYE
 	resistance_flags = FLAMMABLE
+	salvage_amount = 1
 
 /obj/item/clothing/mask/rogue/eyepatch/left
 	desc = "An eyepatch, fitted for the left eye."
@@ -136,6 +137,7 @@
 	resistance_flags = FLAMMABLE
 	toggle_icon_state = TRUE
 	experimental_onhip = TRUE
+	salvage_amount = 1
 
 /obj/item/clothing/mask/rogue/shepherd/AdjustClothes(mob/user)
 	if(loc == user)

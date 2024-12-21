@@ -114,9 +114,6 @@
 
 	return INITIALIZE_HINT_NORMAL
 
-/turf/proc/Initalize_Atmos(times_fired)
-	CALCULATE_ADJACENT_TURFS(src)
-
 /turf/Destroy(force)
 	. = QDEL_HINT_IWILLGC
 	if(!changing_turf)
@@ -176,6 +173,7 @@
 			return can_see_sky()
 
 /turf/proc/update_see_sky()
+	/*
 	can_see_sky = null
 	var/can = can_see_sky()
 	var/area/A = get_area(src)
@@ -219,6 +217,7 @@
 				A.contents -= src
 				nuarea.contents += src
 				change_area(A, nuarea)
+	*/
 
 /turf/attack_hand(mob/user)
 	. = ..()

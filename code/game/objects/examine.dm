@@ -23,7 +23,7 @@
 					. += "<span class='warning'>It's a little damaged.</span>"
 
 //	if(has_inspect_verb || (obj_integrity < max_integrity))
-//		. += "<span class='notice'><a href='?src=[REF(src)];inspect=1'>Inspect</a></span>"
+//		. += "<span class='notice'><a href='byond://?src=[REF(src)];inspect=1'>Inspect</a></span>"
 
 	if(get_real_price() > 0 && (HAS_TRAIT(user, TRAIT_SEEPRICES) || simpleton_price))
 		. += "<span class='info'>Value: [get_real_price()] mammon</span>"
@@ -52,7 +52,7 @@
 				baitquality = "good"
 			if(10)
 				baitquality = "passable"
-		. += "<span class='info'>It is \a [baitquality] bait for fish.</span>"		
+		. += "<span class='info'>It is \a [baitquality] bait for fish.</span>"
 
 	for(var/datum/examine_effect/E in examine_effects)
 		E.trigger(user)

@@ -81,3 +81,4 @@
 		"NONE OF THIS IS REAL!",
 		"WHO AM I WORSHIPPING!"
 	)
+	non_faith = TRUE

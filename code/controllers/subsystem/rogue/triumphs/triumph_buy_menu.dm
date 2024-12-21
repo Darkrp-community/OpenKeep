@@ -30,51 +30,57 @@
 	if(!linked_client)
 		return
 	var/data = {"
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<html>
 		<head>
+			<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"/>
+			<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>
 			<style>
 				@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+				body {
+					background-color: rgb(31, 20, 24);
+					background:
+						url('[SSassets.transport.get_asset_url("try5_border.png")]'),
+						url('[SSassets.transport.get_asset_url("try5.png")]');
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+					background-size: 100% 100%;
+				}
 			</style>
-			<link rel='stylesheet' type='text/css' href='slop_menustyle3.css'>
+			<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("slop_menustyle3.css")]'>
 		</head>
-	"}
-
-	data += {"
 		<body>
-			<div id='top_container_div'>
-				<div id='triumph_quantity_div'>
+			<div id=\"top_container_div\">
+				<div id=\"triumph_quantity_div\">
 					I have [SStriumphs.get_triumphs(linked_client.ckey)] Triumphs
 				</div>
 			</div>
-			<div style='width:100%;float:left'>
-		"}
+			<div style=\"width:100%;float:left\">
+	"}
 /*
 				<div id='triumph_close_div'>
-					<a id='triumph_close_button' href='?src=\ref[src];close_menu=1'>CLOSE MENU</a>
+					<a id='triumph_close_button' href='byond://?src=\ref[src];close_menu=1'>CLOSE MENU</a>
 				</div>
 */
 
 	data += "<hr class='fadeout_line'>"
 	for(var/cat_key in SStriumphs.central_state_data)
 		if(cat_key == current_category)
-			data += "<a class='triumph_categories_selected' href='?src=\ref[src];select_a_category=[cat_key]'><span class='bigunder_back'><span class='bigunder'></span>[cat_key]</span></a>"
-			continue
-		data += "<a class='triumph_categories_normal' href='?src=\ref[src];select_a_category=[cat_key]'>[cat_key]</a>"
-	data += "<hr class='fadeout_line'>"
+			data += "<a class=\"triumph_categories_selected\" href=\"byond://?src=\ref[src];select_a_category=[cat_key]\"><span class=\"bigunder_back\"><span class=\"bigunder\"></span>[cat_key]</span></a>"
+		else
+			data += "<a class=\"triumph_categories_normal\" href=\"byond://?src=\ref[src];select_a_category=[cat_key]\">[cat_key]</a>"
 
-	data += {"
-			</div>
+	data +={"
+	<hr class=\"fadeout_line\">
+		</div>
 			<table>
 				<thead>
 					<tr>
-						<th class='triumph_text_head'>Description</th>
-						<th class='triumph_text_head'>Cost</th>
-						<th class='triumph_text_head_redeem'>Redeem</th>
+						<th class=\"triumph_text_head\">Description</th>
+						<th class=\"triumph_text_head\">Cost</th>
+						<th class=\"triumph_text_head_redeem\">Redeem</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -94,9 +100,9 @@
 						<td class='triumph_cost_wrapper'>[auugh.triumph_cost]</td>
 				"}
 				if(SSticker.HasRoundStarted() && auugh.pre_round_only)
-					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[auugh];'><span class='strikethru_back'>ROUND STARTED</span></a></td>"
+					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[auugh];'><span class='strikethru_back'>ROUND STARTED</span></a></td>"
 				else
-					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[auugh];'>UNBUY</a></td>"
+					data += "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[auugh];'>UNBUY</a></td>"
 
 				data += "</tr>"
 
@@ -108,7 +114,7 @@
 				<tr class='triumph_text_row'>
 					<td class='triumph_text_desc'>CURRENTLY NOTHING</td>
 					<td class='triumph_cost_wrapper'>ACTIVE</td>
-					<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];'>HERE</a></td>
+					<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];'>HERE</a></td>
 				</tr>
 			"}
 
@@ -120,13 +126,13 @@
 					<td class='triumph_cost_wrapper'>[current_check.triumph_cost]</td>
 				"}
 
-			var/string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[current_check];'>BUY</a></td>"
+			var/string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[current_check];'>BUY</a></td>"
 			if(SSticker.HasRoundStarted() && current_check.pre_round_only)
-				string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
+				string = "<td class='triumph_buy_wrapper'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
 			else
 				for(var/datum/triumph_buy/conflict_check in SStriumphs.active_triumph_buy_queue)
 					if(current_check.type in conflict_check.conflicts_with) // We are in an active datum's conflicts with
-						string = "<td class='triumph_filler_cells'><a class='triumph_text_buy' href='?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
+						string = "<td class='triumph_filler_cells'><a class='triumph_text_buy' href='byond://?src=\ref[src];handle_buy_button=\ref[current_check];'><span class='strikethru_back'>CONFLICT</span></a></td>"
 
 			data += string
 			data += "</tr>"
@@ -142,16 +148,19 @@
 	for(var/i in 1 to SStriumphs.central_state_data[current_category].len)
 
 		if("[i]" == current_page)
-			data += "<a class='triumph_numbers_selected' href='?src=\ref[src];select_a_page=[i]'><span class='num_bigunder_back'><span class='num_bigunder'></span>[i]</span></a>"
+			data += "<a class='triumph_numbers_selected' href='byond://?src=\ref[src];select_a_page=[i]'><span class='num_bigunder_back'><span class='num_bigunder'></span>[i]</span></a>"
 		else
-			data += "<a class='triumph_numbers_normal' href='?src=\ref[src];select_a_page=[i]'>[i]</a>"
+			data += "<a class='triumph_numbers_normal' href='byond://?src=\ref[src];select_a_page=[i]'>[i]</a>"
 
 	data += "</div>"
 	data += {"
 		</body>
 	</html>
 	"}
-
+	data += {"
+		</head>
+	</html>
+	"}
 	linked_client << browse(data, "window=triumph_buy_window;size=500x760;can_close=1;can_minimize=0;can_maximize=0;can_resize=0;titlebar=1")
 
 	// We setup the href_list "close" call if they hit the x on the top right

@@ -1702,7 +1702,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors)
 "VO" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/rtfield)
 "VU" = (

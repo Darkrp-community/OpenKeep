@@ -21,10 +21,6 @@
 		undershirt = random_undershirt(gender)
 	if(randomise[RANDOM_SOCKS])
 		socks = random_socks()
-	if(randomise[RANDOM_BACKPACK])
-		backpack = random_backpack()
-	if(randomise[RANDOM_JUMPSUIT_STYLE])
-		jumpsuit_style = pick(GLOB.jumpsuitlist)
 	if(randomise[RANDOM_HAIRSTYLE])
 		hairstyle = pref_species.random_hairstyle(gender)
 	if(randomise[RANDOM_FACIAL_HAIRSTYLE])
@@ -84,8 +80,6 @@
 /datum/preferences/proc/update_preview_icon()
 	set waitfor = 0
 	if(!parent)
-		return
-	if(parent.is_new_player())
 		return
 //	last_preview_update = world.time
 	// Determine what job is marked as 'High' priority, and dress them up as such.

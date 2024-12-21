@@ -168,6 +168,24 @@
 /obj/item/rogueweapon/shield/heater/crafted
 	sellprice = 6
 
+// --------- Ammo -----------
+
+/datum/artificer_recipe/iron/ammo/lead_bullet
+	name = "Lead Bullet"
+	hammers_per_item = 2
+	created_item = /obj/item/ammo_casing/caseless/rogue/bullet
+	required_item = /obj/item/ingot/iron
+	i_type = "Ammo"
+	craftdiff = 2
+
+/datum/artificer_recipe/iron/ammo/bolts
+	name = "Crossbow bolt"
+	required_item = /obj/item/ingot/iron
+	additional_items = list(/obj/item/grown/log/tree/stick)
+	created_item = /obj/item/ammo_casing/caseless/rogue/bolt
+	hammers_per_item = 2
+	i_type = "Ammo"
+	craftdiff = 1
 // --------- PROSTHETICS -----------
 
 /datum/artificer_recipe/wood/prosthetics
@@ -272,3 +290,105 @@
 /datum/artificer_recipe/iron/prosthetic/leg_right
 	name = "Iron Right Leg (+1 Cog)"
 	created_item = /obj/item/bodypart/r_leg/prosthetic/iron
+
+// --------- Psycross -----------
+
+/datum/artificer_recipe/wood/psycross
+	name = "Psycross"
+	required_item = /obj/item/natural/wood/plank
+	created_item = /obj/item/clothing/neck/roguetown/psycross
+	hammers_per_item = 5
+	craftdiff = 1
+	i_type = "Psycross"
+
+/datum/artificer_recipe/silver/psycross
+	name = "silver Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/gold/psycross
+	name = "golden Psycross"
+	required_item = /obj/item/ingot/gold
+	created_item = /obj/item/clothing/neck/roguetown/psycross/g
+	hammers_per_item = 7
+	craftdiff = 3
+
+/datum/artificer_recipe/wood/psycross/noc
+	name = "Noc Psycross"
+	required_item = /obj/item/natural/wood/plank
+	created_item = /obj/item/clothing/neck/roguetown/psycross/noc
+	hammers_per_item = 5
+	craftdiff = 1
+
+/datum/artificer_recipe/silver/psycross/astrata
+	name = "Astrata Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/dendor
+	name = "Dendor Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/abyssor
+	name = "Abyssor Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/abyssor
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/necra
+	name = "Necra Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/ravox
+	name = "Ravox Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/xylix
+	name = "Xylix Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/xylix
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/eora
+	name = "Eora Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/eora
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/pestra
+	name = "Pestra Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/malum
+	name = "Malum silver Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/malum
+	hammers_per_item = 5
+	craftdiff = 2
+
+/datum/artificer_recipe/silver/psycross/malum_steel
+	name = "Malum steel Psycross"
+	required_item = /obj/item/ingot/silver
+	created_item = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+	additional_items = list(/obj/item/ingot/steel = 1)
+	hammers_per_item = 7
+	craftdiff = 3

@@ -52,4 +52,3 @@
 
 /datum/element/ai_flee_while_injured/proc/cancel_flee(mob/living/source)
 	source?.ai_controller?.set_blackboard_key(BB_BASIC_MOB_FLEEING, FALSE)
-	source?.ai_controller?.CancelActions()

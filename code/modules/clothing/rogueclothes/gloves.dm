@@ -17,6 +17,9 @@
 	anvilrepair = null
 	smeltresult = /obj/item/ash
 	max_integrity = INTEGRITY_WORST
+	sewrepair = TRUE
+	fiber_salvage = FALSE
+	salvage_amount = 1
 
 
 //..................................................................................................................................
@@ -38,9 +41,28 @@
 	armor = ARMOR_PADDED_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_POOR
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/gloves/roguetown/leather/black
 	color = CLOTHING_SOOT_BLACK
+
+/obj/item/clothing/gloves/roguetown/leather/advanced
+	name = "hardened leather gloves"
+	desc = "Sturdy, durable, flexible. A marvel of the dark ages that exists solely to protect your fingers."
+	max_integrity = 200
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("blunt" = 50, "slash" = 40, "stab" = 20, "piercing" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/gloves/roguetown/leather/masterwork
+	name = "masterwork leather gloves"
+	desc = "These gloves are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	max_integrity = 300
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
+	armor = list("blunt" = 80, "slash" = 60, "stab" = 40, "piercing" = 0, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/gloves/roguetown/leather/masterwork/Initialize()
+	. = ..()
+	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 
 /obj/item/clothing/gloves/roguetown/leather/feld
 	name = "feldsher's gloves"
@@ -81,6 +103,7 @@
 	armor = ARMOR_LEATHER
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 	max_integrity = INTEGRITY_STANDARD
+	salvage_result = /obj/item/natural/fur
 
 /obj/item/clothing/gloves/roguetown/angle/grenzel
 	name = "grenzelhoft gloves"
@@ -116,6 +139,7 @@
 	armor = ARMOR_MAILLE
 	prevent_crits = ALL_EXCEPT_BLUNT
 	max_integrity = INTEGRITY_STRONGEST
+	sewrepair = FALSE
 
 /obj/item/clothing/gloves/roguetown/chain/iron
 	name = "iron chain gauntlets"

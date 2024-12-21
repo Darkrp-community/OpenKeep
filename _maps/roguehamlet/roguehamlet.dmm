@@ -206,7 +206,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/garrison)
 "amZ" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/reagent_containers/food/snacks/rogue/raisins,
 /turf/open/floor/rogue/greenstone,
 /area/rogue/indoors/town/manor{
@@ -3231,7 +3231,7 @@
 /area/rogue/indoors/shelter/town/dwarf)
 "dGK" = (
 /obj/structure/chair/wood/rogue/chair_noble,
-/obj/effect/landmark/start/lady,
+/obj/effect/landmark/start/consort,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/manor{
 	first_time_text = "Blackwine Manor"
@@ -5831,7 +5831,7 @@
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town/tavern/saiga)
 "gdJ" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/reagent_containers/food/snacks/produce/dry_westleach,
 /turf/open/floor/rogue/tile,
 /area/rogue/indoors/town/manor{
@@ -11740,7 +11740,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "mnK" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /obj/item/needle/thorn,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/town)
@@ -15059,7 +15059,7 @@
 	first_time_text = "Blackwine Manor"
 	})
 "pwa" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town)
 "pwc" = (
@@ -15627,7 +15627,7 @@
 	},
 /area/rogue/outdoors/exposed/manorgarri)
 "qel" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/bog)
 "qer" = (
@@ -16429,7 +16429,7 @@
 /turf/open/water/sewer,
 /area/rogue/under/town/sewer)
 "qTI" = (
-/obj/structure/fluff/dryingrack,
+/obj/machinery/tanningrack,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town)
 "qTS" = (

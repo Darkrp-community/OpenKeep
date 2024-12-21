@@ -2,6 +2,7 @@ SUBSYSTEM_DEF(mapping)
 	name = "Mapping"
 	init_order = INIT_ORDER_MAPPING
 	flags = SS_NO_FIRE
+	lazy_load = FALSE
 
 	var/list/nuke_tiles = list()
 	var/list/nuke_threats = list()
@@ -241,17 +242,17 @@ SUBSYSTEM_DEF(mapping)
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaforest.json")
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkamountain.json")
 	otherZ += load_map_config("_maps/map_files/dakkatown/otherz/dakkaswamp.json")*/
-
+	#ifndef LOWMEMORYMODE
 	if(config.map_name == "Vanderlin") // Vanderlin
-		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_forest.json") /* FUCK FUCK FUCK ABORT ABORT (Temporarily we hope.)
-		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_mountain.json")
-		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_bog.json") */
+		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_forest.json")
+		//otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_mountain.json")
+		otherZ += load_map_config("_maps/map_files/vanderlin/otherz/vanderlin_bog.json")
 		// Add dungeon map files here later, maybe we can pick from a list of them?
 	else //For Rogue map
 		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallforest.json")
 		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smalldecap.json")
 		otherZ += load_map_config("_maps/map_files/roguetown/otherz/smallswamp.json")
-
+	#endif
 	//For all maps
 	otherZ += load_map_config("_maps/map_files/roguetown/otherz/underworld.json")
 //	otherZ += load_map_config("_maps/map_files/roguetown/otherz/special.json")

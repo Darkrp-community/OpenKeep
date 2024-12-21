@@ -122,3 +122,4 @@
 		var/datum/orderless_slapcraft/recipe = passed_recipes[1]
 		attacked_object.in_progress_slapcraft = new recipe.type(null, attacked_object)
 		return attacked_object.in_progress_slapcraft.try_process_item(attacking_item, src)
+
