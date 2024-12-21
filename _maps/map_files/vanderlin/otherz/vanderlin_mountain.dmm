@@ -4926,6 +4926,10 @@
 	},
 /turf/open/floor/rogue/tile/tilerg,
 /area/rogue/under/mountains/anvil/lower)
+"SW" = (
+/obj/effect/landmark/map_load_mark/malum_dungeon,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/mountains/anvil/dungeon/lower)
 "SX" = (
 /obj/structure/fluff/railing/wood,
 /obj/machinery/light/rogue/firebowl/standing,
@@ -54763,7 +54767,7 @@ Xu
 Xu
 Xu
 Xu
-Xu
+SW
 Oq
 "}
 (192,1,1) = {"
