@@ -133,6 +133,7 @@
 
 /datum/sleep_adv/proc/show_ui(mob/living/user)
 	var/list/dat = list()
+	SSassets.transport.send_assets(user.client, list("try4_border.png", "try4.png", "slop_menustyle2.css"))
 	dat += {"
 		<!DOCTYPE html>
 		<html lang='en'>
