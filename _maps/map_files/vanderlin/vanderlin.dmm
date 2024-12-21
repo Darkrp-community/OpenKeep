@@ -17907,13 +17907,6 @@
 /obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
-"pCX" = (
-/obj/structure/chair/stool/rogue,
-/obj/effect/landmark/start/veteran{
-	dir = 1
-	},
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/tavern)
 "pDn" = (
 /obj/structure/fluff/walldeco/church/line,
 /turf/open/floor/rogue/churchmarble,
@@ -27602,6 +27595,16 @@
 "xSf" = (
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town/theatre)
+"xSI" = (
+/obj/structure/chair/stool/rogue,
+/obj/effect/landmark/start/veteran{
+	dir = 1
+	},
+/obj/effect/landmark/hammer/dev_text{
+	name = "DO NOT MOVE THESE TWO. This is intentional placement, they should spawn together. This was discussed."
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town/tavern)
 "xSV" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/machinery/light/rogue/hearth,
@@ -93346,7 +93349,7 @@ toB
 toB
 toB
 has
-pCX
+xSI
 jZz
 jZz
 jZz
