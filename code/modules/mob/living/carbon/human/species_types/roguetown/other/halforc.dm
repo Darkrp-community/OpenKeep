@@ -17,7 +17,8 @@
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "ears" = "ElfH", "wings" = "None")
+	mutant_bodyparts = list("ears")
 	use_skintones = 1
 	disliked_food = NONE
 	liked_food = NONE
