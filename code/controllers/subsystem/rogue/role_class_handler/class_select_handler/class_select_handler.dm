@@ -191,111 +191,146 @@
 		return
 	//Opening tags and empty head
 	var/data = {"
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<html>
-		<head>
-			<style>
-				@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-				@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-				@import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap");
-			</style>
-			<link rel='stylesheet' type='text/css' href='slop_menustyle2.css'>
-		</head>
+	<!DOCTYPE html>
+	<html lang='en'>
+	<head>
+		<meta charset='UTF-8'>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'/>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
+			body {
+				background-color: rgb(31, 20, 24);
+				background:
+					url('[SSassets.transport.get_asset_url("try4_border.png")]'),
+					url('[SSassets.transport.get_asset_url("try4.png")]');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+			}
+		</style>
+		<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("slop_menustyle2.css")]'>
+	</head>
+	<body>
+		<div id='top_handwriting'> The stars align... </div>
+		<div id='class_select_box_div'>
 	"}
 
-	//Body tag start
-	data += "<body>"
-
-	//Class href fill-in
-	data += "<div id='top_handwriting'> The stars align... </div>"
-	data += "<div id='class_select_box_div'>"
 	var/mob/living/carbon/human/H = linked_client.mob
 	if(!H.job)
 		return
+
 	if(H.job == "Drifter" && !showing_combat_classes)
 		for(var/datum/advclass/datums in rolled_classes)
 			if(!(CTAG_ADVENTURER in datums.category_tags))
 				continue
-			if((CTAG_BANDIT in datums.category_tags) && HAS_TRAIT(H, TRAIT_VILLAIN)) //so VLs and stuff cant pick bandit
+			if((CTAG_BANDIT in datums.category_tags) && HAS_TRAIT(H, TRAIT_VILLAIN))
 				continue
 			var/plus_str = ""
-/*			if(rolled_classes[datums] > 0)
-				var/plus_factor = rolled_classes[datums]
+			data += {"
+			<div class='class_bar_div'>
+				<a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+					[datums.name]
+					<span id='green_plussa'>[plus_str]</span>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+				</a>
+			</div>
+	"}
 
-				for(var/i in 1 to plus_factor)
-					plus_str += "+" */
-			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
 	else if(!showing_combat_classes)
 		for(var/datum/advclass/datums in rolled_classes)
 			var/plus_str = ""
-/*			if(rolled_classes[datums] > 0)
-				var/plus_factor = rolled_classes[datums]
-
-				for(var/i in 1 to plus_factor)
-					plus_str += "+" */
-			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
+			data += {"
+			<div class='class_bar_div'>
+				<a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+					[datums.name]
+					<span id='green_plussa'>[plus_str]</span>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+				</a>
+			</div>
+	"}
 
 	if(special_session_queue && special_session_queue.len)
 		for(var/datum/advclass/datums in special_session_queue)
-			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];special_selected=1;selected_special=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
+			data += {"
+			<div class='class_bar_div'>
+				<a class='vagrant' href='byond://?src=\ref[src];special_selected=1;selected_special=\ref[datums];'>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+					[datums.name]
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+				</a>
+			</div>
+	"}
 
 	if(showing_combat_classes)
 		for(var/datum/advclass/datums in rolled_classes)
 			if(!(CTAG_PILGRIM in datums.category_tags))
 				continue
 			var/plus_str = ""
-/*			if(rolled_classes[datums] > 0)
-				var/plus_factor = rolled_classes[datums]
+			data += {"
+			<div class='class_bar_div'>
+				<a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+					[datums.name]
+					<span id='green_plussa'>[plus_str]</span>
+					<img class='ninetysskull' src='[SSassets.transport.get_asset_url("gragstar.gif")]' width=32 height=32>
+				</a>
+			</div>
+	"}
 
-				for(var/i in 1 to plus_factor)
-					plus_str += "+" */
-			data += "<div class='class_bar_div'><a class='vagrant' href='byond://?src=\ref[src];class_selected=1;selected_class=\ref[datums];'><img class='ninetysskull' src='gragstar.gif' width=32 height=32>[datums.name]<span id='green_plussa'>[plus_str]</span><img class='ninetysskull' src='gragstar.gif' width=32 height=32></a></div>"
-	data += "</div>"
-
-	//Buttondiv Segment
-	data += "<div class='footer'>"
-
-	if(H.job == "Drifter")
-		data += {"
-			<a class='mo_bottom_buttons' href='byond://?src=\ref[src];show_combat_class=1'>[showing_combat_classes ? "Show Combat Classes" : "Show Pilgrim Classes"]</a>
-		</div>
-		"}
-
-	//Closing Tags
 	data += {"
-		</body>
+		</div> <!-- end of class_select_box_div -->
+	</body>
 	</html>
 	"}
+
 
 	linked_client << browse(data, "window=class_handler_main;size=330x430;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0;border=0")
 
 /datum/class_select_handler/proc/class_select_slop()
 
 	var/data = {"
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<html>
-		<head>
-			<style>
-				@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
-				@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
-				@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
-			</style>
-			<link rel='stylesheet' type='text/css' href='slop_menustyle2.css'>
-		</head>
-		<body>
-			<div id="button_div">
-				<span class="title_shit">Class Name:</span> <span class="post_title_shit">[cur_picked_class]</span><br>
-				<span class="title_shit">Description:</span> <span class="post_title_shit">[cur_picked_class.tutorial]</span>
-			</div>
-				<div id='button_div'>
-					<a class='class_desc_YES_LINK' href='byond://?src=\ref[src];yes_to_class_select=1;special_class=0;'>This is my background</a><br>
-					<a class='bottom_buttons' href='byond://?src=\ref[src];no_to_class_select=1'>I reject this background</a>
-				</div>
-			</div>
-		</body>
+	<!DOCTYPE html> <!-- Add doctype to ensure proper rendering -->
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Charm&display=swap');
+			body {
+				background-color: rgb(31, 20, 24);
+				background:
+					url('[SSassets.transport.get_asset_url("try4_border.png")]'),
+					url('[SSassets.transport.get_asset_url("try4.png")]');
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+				background-size: 100% 100%;
+			}
+		</style>
+		<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("slop_menustyle2.css")]'>
+	</head>
+	<body>
+		<div id="button_div">
+			<span class="title_shit">Class Name:</span>
+			<span class="post_title_shit">[cur_picked_class]</span><br>
+			<span class="title_shit">Description:</span>
+			<span class="post_title_shit">[cur_picked_class.tutorial]</span>
+		</div>
+
+		<div id='button_div'>
+			<a class='class_desc_YES_LINK' href='byond://?src=\ref[src];yes_to_class_select=1;special_class=0;'>This is my background</a><br>
+			<a class='bottom_buttons' href='byond://?src=\ref[src];no_to_class_select=1'>I reject this background</a>
+		</div>
+	</body>
 	</html>
+
 	"}
 
 	linked_client << browse(data, "window=class_select_yea;size=610x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0;border=0")

@@ -1798,10 +1798,6 @@
 /atom/movable/screen/char_preview
 	name = "Me."
 	icon_state = ""
-//	var/list/prevcolors = list("background-color=#000000","background-color=#242f28","background-color=#302323","background-color=#999a63","background-color=#7e7e7e")
-
-//atom/movable/screen/char_preview/Click()
-//	winset(usr.client, "preferencess_window.character_preview_map", pick(prevcolors))
 
 #define READ_RIGHT 1
 #define READ_LEFT 2
