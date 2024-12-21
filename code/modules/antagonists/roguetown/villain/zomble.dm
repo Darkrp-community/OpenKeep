@@ -99,6 +99,8 @@
 
 /datum/antagonist/zombie/on_removal()
 	var/mob/living/carbon/human/zombie = owner?.current
+	if(!zombie)
+		return
 	if(zombie)
 		zombie.cut_overlay(rotflies)
 		zombie.verbs -= /mob/living/carbon/human/proc/zombie_seek
