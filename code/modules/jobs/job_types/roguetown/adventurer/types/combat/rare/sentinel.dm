@@ -22,9 +22,26 @@
 		horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled
 	return ..()
 
-
 /datum/outfit/job/roguetown/adventurer/sentinel/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	head = /obj/item/clothing/head/roguetown/helmet/leather
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+	belt = /obj/item/storage/belt/rogue/leather
+	beltl = /obj/item/quiver/arrows
+	if(H.gender == MALE)
+		pants = /obj/item/clothing/under/roguetown/trou/leather
+	else
+		pants = /obj/item/clothing/under/roguetown/tights
+		if(prob(50))
+			pants = /obj/item/clothing/under/roguetown/tights/black
+	shoes = /obj/item/clothing/shoes/roguetown/ridingboots
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long
+	backl = /obj/item/rogueweapon/polearm/spear
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
@@ -36,26 +53,11 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.change_stat("strength", 1)
-		H.change_stat("perception", 2)
-		H.change_stat("speed", 1)
 
-	if(H.gender == MALE)
-		pants = /obj/item/clothing/under/roguetown/trou/leather
-	else
-		pants = /obj/item/clothing/under/roguetown/tights
-		if(prob(50))
-			pants = /obj/item/clothing/under/roguetown/tights/black
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long
-	beltl = /obj/item/quiver/arrows
-	shoes = /obj/item/clothing/shoes/roguetown/ridingboots
-	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
-	backl = /obj/item/rogueweapon/polearm/spear
-	head = /obj/item/clothing/head/roguetown/helmet/leather
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	H.change_stat("strength", 1)
+	H.change_stat("perception", 2)
+	H.change_stat("speed", 1)
+
 	if(prob(33))
 		if(!H.has_language(/datum/language/elvish))
 			H.grant_language(/datum/language/elvish)

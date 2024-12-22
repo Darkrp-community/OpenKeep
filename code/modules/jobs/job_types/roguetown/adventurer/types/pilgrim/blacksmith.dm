@@ -1,5 +1,5 @@
 /datum/advclass/pilgrim/blacksmith
-	name = "Wandering smith"
+	name = "Wandering Smith"
 	tutorial = "Hardy worksmen that are at home in the forge, dedicating their lives \
 	to ceaselessly toil in dedication to Malum."
 	allowed_sexes = list(MALE, FEMALE)

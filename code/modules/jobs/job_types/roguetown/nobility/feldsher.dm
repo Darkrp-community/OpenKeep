@@ -17,11 +17,10 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Changeling"
-	)
+		"Changeling")
+
 	allowed_sexes = list(MALE, FEMALE)
 
 	cmode_music = 'sound/music/combat_physician.ogg'

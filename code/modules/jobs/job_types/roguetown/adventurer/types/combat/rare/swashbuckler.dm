@@ -2,7 +2,9 @@
 
 /datum/advclass/combat/swashbuckler
 	name = "Swashbuckler"
-	tutorial = "Woe the Sea King! You awake, dazed from a true festivity of revelry and feasting. The last thing you remember? Your mateys dumping you over the side of the boat as a joke. Now on some Gods foresaken rock, Abyssor will present you with booty and fun, no doubt."
+	tutorial = "Woe the Sea King! You awake, dazed from a true festivity of revelry and feasting.<br>\
+	The last thing you remember? Your mateys dumping you over the side of the boat as a joke. <br>\
+	Now on some Gods foresaken rock, Abyssor will present you with booty and fun, no doubt."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -22,15 +24,15 @@
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/swashbuckler
+
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
 	pants = /obj/item/clothing/under/roguetown/tights/sailor
 	belt = /obj/item/storage/belt/rogue/leather
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea
-	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/quiver/bolts
-	beltl = /obj/item/rogueweapon/sword/sabre/cutlass
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+	beltr = /obj/item/rogueweapon/sword/sabre/cutlass
+	beltl = /obj/item/quiver/bolts
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 
 /datum/outfit/job/roguetown/adventurer/swashbuckler/pre_equip(mob/living/carbon/human/H)
 	..()

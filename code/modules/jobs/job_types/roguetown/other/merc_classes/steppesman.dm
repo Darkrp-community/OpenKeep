@@ -33,11 +33,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1)
 	if(H.dna?.species && H.dna.species?.id == "abyssariad")
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 		beltr = /obj/item/rogueweapon/sword/sabre/piandao
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+  backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1)
 
 	if(H.mind)//quick fighter that has Dodge Expert and a bow for ranged attacks, 4 weapon skills
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)

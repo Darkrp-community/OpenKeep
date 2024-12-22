@@ -23,21 +23,24 @@
 
 /datum/outfit/job/roguetown/adventurer/gravedigger/pre_equip(mob/living/carbon/human/H)
 	..()
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	backl = /obj/item/storage/backpack/rogue/satchel
-	belt = /obj/item/storage/belt/rogue/leather/rope
-	backpack_contents = list(/obj/item/rogueweapon/pick = 1, /obj/item/rogueweapon/knife/hunting = 1, /obj/item/lockpickring/mundane)
-	gloves = /obj/item/clothing/gloves/roguetown/fingerless
-	cloak = /obj/item/clothing/cloak/raincloak/mortus
-	armor = /obj/item/clothing/suit/roguetown/armor/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	beltr = /obj/item/flashlight/flare/torch/lantern
-	beltl = /obj/item/rogueweapon/whip // You know why.
-	backr = /obj/item/rogueweapon/shovel
+
 	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
 	neck = /obj/item/storage/belt/rogue/pouch
+	cloak = /obj/item/clothing/cloak/raincloak/mortus
+	gloves = /obj/item/clothing/gloves/roguetown/fingerless
+	armor = /obj/item/clothing/suit/roguetown/armor/leather
+	if(prob(50))
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	belt = /obj/item/storage/belt/rogue/leather/rope
+	beltr = /obj/item/flashlight/flare/torch/lantern
+	beltl = /obj/item/rogueweapon/whip // You know why.
+	pants = /obj/item/clothing/under/roguetown/tights/black
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	backr = /obj/item/rogueweapon/shovel
+	backl = /obj/item/storage/backpack/rogue/satchel
+	backpack_contents = list(/obj/item/rogueweapon/pick = 1, /obj/item/rogueweapon/knife/hunting = 1, /obj/item/lockpickring/mundane)
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
@@ -52,12 +55,14 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.change_stat("strength", 1)
-		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", 1)
-		H.change_stat("fortune", -1) // Tradeoff for never being cursed when graverobbing.
-		ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
+
+	H.change_stat("strength", 1)
+	H.change_stat("perception", 2)
+	H.change_stat("intelligence", 1)
+	H.change_stat("endurance", 2)
+	H.change_stat("speed", 1)
+	H.change_stat("fortune", -1) // Tradeoff for never being cursed when graverobbing.
+
+	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_GRAVEROBBER, TRAIT_GENERIC)

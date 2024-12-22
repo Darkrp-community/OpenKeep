@@ -19,7 +19,7 @@
 	whitelist_req = FALSE
 	min_pq = 4
 	give_bank_account = 500
-	selection_color = "#7851A9"
+	selection_color = "#786194"
 
 	cmode_music = 'sound/music/combat_noble.ogg'
 

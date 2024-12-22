@@ -1,7 +1,9 @@
 
 /datum/advclass/combat/puritan
 	name = "Witch Hunter"
-	tutorial = "Witch Hunters dedicate their lives to the eradication of the varied evils infesting Grimoria. They know the vile sorcery of the necromancer, the insidious nature of the cultist and monstrousness of vampires and werevolfs. They also know how best to end them."
+	tutorial = "Witch Hunters dedicate their lives to the eradication of the varied evils infesting Grimoria.<br>\
+	They know the vile sorcery of the necromancer, the insidious nature of the cultist and monstrousness of vampires and werevolfs.<br>\
+	They also know how best to end them."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -24,16 +26,17 @@
 
 /datum/outfit/job/roguetown/adventurer/puritan/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	cloak = /obj/item/clothing/cloak/cape/puritan
+	gloves = /obj/item/clothing/gloves/roguetown/leather
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	belt = /obj/item/storage/belt/rogue/leather
-	shoes = /obj/item/clothing/shoes/roguetown/boots
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	cloak = /obj/item/clothing/cloak/cape/puritan
-	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
-	gloves = /obj/item/clothing/gloves/roguetown/leather
 	beltl = /obj/item/rogueweapon/whip/antique/silver
 	beltr = /obj/item/rogueweapon/sword/rapier/silver
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	shoes = /obj/item/clothing/shoes/roguetown/boots
+	pants = /obj/item/clothing/under/roguetown/tights/black
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
@@ -49,10 +52,7 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("strength", 1)
-		H.change_stat("perception", 2)
-		H.change_stat("constitution", 2)
+
 		switch(H.patron?.name)
 			if("Astrata")
 				wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
@@ -62,6 +62,13 @@
 				wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 			else
 				wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+
+	H.change_stat("intelligence", 1)
+	H.change_stat("strength", 1)
+	H.change_stat("perception", 2)
+	H.change_stat("constitution", 2)
+
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)		//If they have torture variables, they shouldn't be effected by stuff.

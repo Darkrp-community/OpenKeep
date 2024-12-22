@@ -6252,7 +6252,7 @@
 /area/rogue/indoors/town/dwarfin)
 "wy" = (
 /obj/effect/landmark/start/nightman{
-	name = "Nightman"
+	name = "Niteman"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)

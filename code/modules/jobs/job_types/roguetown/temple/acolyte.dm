@@ -66,7 +66,7 @@
 			shoes = /obj/item/clothing/shoes/roguetown/sandals
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 		if("Malum")
-			head = /obj/item/clothing/head/roguetown/roguehood/black
+			head = /obj/item/clothing/head/roguetown/roguehood/red
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/malum
 			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 			pants = /obj/item/clothing/under/roguetown/tights/red

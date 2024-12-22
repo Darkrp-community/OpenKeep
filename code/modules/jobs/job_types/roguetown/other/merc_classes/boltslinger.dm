@@ -22,20 +22,20 @@
 
 /datum/outfit/job/roguetown/mercenary/boltslinger/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
-	cloak = /obj/item/clothing/cloak/half
+
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+	cloak = /obj/item/clothing/cloak/half
 	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltr = /obj/item/rogueweapon/sword/iron
 	beltl = /obj/item/quiver/bolts
-	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	backl = /obj/item/storage/backpack/rogue/satchel
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/roguetown/tights/black
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/knife/hunting)
+	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+
 	if(H.mind)//crossbow mercenary with armor training 4 weapon skills and a ranged weapon
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -53,8 +53,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 
+	H.change_stat("perception", 3)
+	H.change_stat("endurance", 1)
+	H.change_stat("strength", 1)
 
-		H.change_stat("perception", 3)
-		H.change_stat("endurance", 1)
-		H.change_stat("strength", 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

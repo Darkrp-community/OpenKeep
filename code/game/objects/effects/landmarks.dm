@@ -31,7 +31,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start
 	name = "start"
 	icon = 'icons/mob/landmarks.dmi'
-	icon_state = "x"
+	icon_state = "arrow"
 	anchored = TRUE
 	layer = MOB_LAYER
 	var/list/jobspawn_override = list()
@@ -87,7 +87,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/adventurerlate
 	name = "Adventurerlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Drifter", "Pilgrim", "Adventurer")
+	jobspawn_override = list("Drifter", "Adventurer")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vagrantlate
@@ -117,7 +117,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/combatlate
 	name = "Combatlate"
 	icon_state = "arrow"
-	jobspawn_override = list("Drifter", "Pilgrim", "Adventurer", "Mercenary")
+	jobspawn_override = list("Drifter", "Adventurer", "Mercenary")
+	delete_after_roundstart = FALSE
+
+/obj/effect/landmark/start/pilgrim
+	name = "Pilgrim"
+	jobspawn_override = list("Pilgrim")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/lord
@@ -128,7 +133,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Knight"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/captain
+/obj/effect/landmark/start/sheriff
 	name = "Captain"
 	icon_state = "arrow"
 

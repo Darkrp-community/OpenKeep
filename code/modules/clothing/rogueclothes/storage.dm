@@ -71,6 +71,16 @@
 	new /obj/item/natural/cloth(src)
 	new /obj/item/roguekey/mercenary(src)
 
+/obj/item/storage/belt/rogue/leather/merc_nokey/PopulateContents()
+	new /obj/item/natural/cloth (src)
+	new /obj/item/roguecoin/copper/pile (src)
+/obj/item/storage/belt/rogue/leather/merc_nokey/shalal
+	name = "shalal belt"
+	icon_state = "shalal"
+/obj/item/storage/belt/rogue/leather/merc_nokey/black
+	name = "black belt"
+	icon_state = "blackbelt"
+
 /obj/item/storage/belt/rogue/leather/mason/PopulateContents()
 	new /obj/item/keyring/mason(src)
 
@@ -83,15 +93,6 @@
 	new /obj/item/rogueweapon/knife/dagger(src)
 	new /obj/item/needle/thorn(src)
 	new /obj/item/keyring/guard(src)
-
-/obj/item/storage/belt/rogue/leather/mercenary/shalal
-	name = "shalal belt"
-	icon_state = "shalal"
-
-/obj/item/storage/belt/rogue/leather/mercenary/black
-	name = "black belt"
-	icon_state = "blackbelt"
-
 
 /obj/item/storage/belt/rogue/leather/plaquegold
 	name = "plaque belt"
@@ -153,8 +154,11 @@
 	new /obj/item/rogueweapon/knife/dagger(src)
 	new /obj/item/needle(src)
 
-/obj/item/storage/belt/rogue/leather/cloth/bandit
-	color = "#ff0000"
+/obj/item/storage/belt/rogue/leather/nitemaster
+	color = "#cfabcb"
+/obj/item/storage/belt/rogue/leather/nitemaster/Initialize()
+	. = ..()
+	new /obj/item/roguecoin/copper/pile (src)
 
 /obj/item/storage/belt/rogue/pouch
 	name = "pouch"
@@ -246,16 +250,22 @@
 
 //Nitemaiden pouch
 /obj/item/storage/belt/rogue/pouch/nitemaiden/PopulateContents()
-	new /obj/item/natural/cloth(src)
+	if(prob(50))
+		new /obj/item/paper/feldsher_certificate(src)
+	else
+		new /obj/item/paper/feldsher_certificate/expired(src)
 	new /obj/item/bath/soap(src)
 	new /obj/item/roguecoin/copper/pile(src)
 
-//Amazon pouch
-/obj/item/storage/belt/rogue/pouch/amazon/PopulateContents()
-	new /obj/item/natural/cloth(src)
-	new /obj/item/ammo_casing/caseless/rogue/dart(src)
-	new /obj/item/ammo_casing/caseless/rogue/dart(src)
+//Darts pouch
+/obj/item/storage/belt/rogue/pouch/blowgun/PopulateContents()
+	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
+	new /obj/item/ammo_casing/caseless/rogue/dart/poison(src)
 
+/obj/item/storage/belt/rogue/pouch/burglar/PopulateContents()
+	new /obj/item/roguecoin/copper/pile (src)
+	new /obj/item/lockpick (src)
 
 
 /obj/item/storage/backpack/rogue/satchel

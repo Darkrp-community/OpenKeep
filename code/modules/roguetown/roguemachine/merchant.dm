@@ -209,14 +209,6 @@
 			options += "Enable Paying Taxes"
 		else
 			options += "Stop Paying Taxes"
-		/*
-		if(!(upgrade_flags & UPGRADE_ARMOR))
-			options += "Purchase Armors License (50)"
-		if(!(upgrade_flags & UPGRADE_WEAPONS))
-			options += "Purchase Weapons License (35)"
-		if(!(upgrade_flags & UPGRADE_FOOD))
-			options += "Purchase Pantry License (10)"
-		*/
 		var/select = input(usr, "Please select an option.", "", null) as null|anything in options
 		if(!select)
 			return
@@ -229,38 +221,6 @@
 			if("Stop Paying Taxes")
 				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			/*
-			if("Purchase Armors License (50)")
-				if(upgrade_flags & UPGRADE_ARMOR)
-					return
-				if(budget <50)
-					say("Ask again when you're serious.")
-					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-					return
-				budget -= 50
-				upgrade_flags |= UPGRADE_ARMOR
-				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Purchase Weapons License (35)")
-				if(upgrade_flags & UPGRADE_WEAPONS)
-					return
-				if(budget <35)
-					say("Ask again when you're serious.")
-					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-					return
-				budget -= 35
-				upgrade_flags |= UPGRADE_WEAPONS
-				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			if("Purchase Pantry License (10)")
-				if(upgrade_flags & UPGRADE_FOOD)
-					return
-				if(budget <10)
-					say("Ask again when you're serious.")
-					playsound(src, 'sound/misc/machinetalk.ogg', 100, FALSE, -1)
-					return
-				budget -= 10
-				upgrade_flags |= UPGRADE_FOOD
-				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
-			*/
 	return attack_hand(usr)
 
 /obj/structure/roguemachine/merchantvend/attack_hand(mob/living/user)
@@ -288,15 +248,7 @@
 
 	contents += "</center><BR>"
 
-	var/list/unlocked_cats = list("Apparel","Armor","Consumable","Jewelry","Tools","Seeds","Weapons")
-/*
-	if(upgrade_flags & UPGRADE_ARMOR)
-		unlocked_cats+="Armor"
-	if(upgrade_flags & UPGRADE_WEAPONS)
-		unlocked_cats+="Weapons"
-	if(upgrade_flags & UPGRADE_FOOD)
-		unlocked_cats+="Consumable"
-*/
+	var/list/unlocked_cats = list("Apparel","Armor","Consumable","Jewelry","Tools","Seeds","Weapons","Medicae","Instruments")
 
 	if(current_cat == "1")
 		contents += "<center>"
@@ -338,7 +290,5 @@
 /obj/structure/roguemachine/merchantvend/Initialize()
 	. = ..()
 	update_icon()
-//	held_items[/obj/item/reagent_containers/glass/bottle/rogue/wine] = list("PRICE" = rand(23,33),"NAME" = "vino")
-//	held_items[/obj/item/dmusicbox] = list("PRICE" = rand(444,777),"NAME" = "Music Box")
 
 #undef UPGRADE_NOTAX
