@@ -37,7 +37,7 @@
 /datum/alch_cauldron_recipe/gender_potion
 	recipe_name = "Gender Potion"
 	smells_like = "living beings"
-	output_reagents = list(/datum/reagent/medicine/gender_potion = 81)
+	output_reagents = list(/datum/reagent/medicine/gender_potion = 9)
 
 //Healing potions
 /datum/alch_cauldron_recipe/health_potion
