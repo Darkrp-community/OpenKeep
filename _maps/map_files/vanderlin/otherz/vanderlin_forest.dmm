@@ -1,4 +1,11 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ad" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 8
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "aK" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -67,10 +74,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"dm" = (
-/obj/effect/landmark/start/adventurerlate,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "dq" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt,
@@ -289,12 +292,6 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"mz" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "mA" = (
 /obj/structure/stairs{
 	dir = 4;
@@ -361,12 +358,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "pO" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 1
-	},
+/obj/effect/landmark/start/adventurerlate,
 /obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "pX" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 8
@@ -386,13 +381,6 @@
 /obj/structure/closet/dirthole/closed/loot,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"qu" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
-	},
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
 "qB" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/twig,
@@ -583,6 +571,13 @@
 /obj/structure/table/wood/plain,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/indoors/cave)
+"xz" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "xF" = (
 /obj/structure/mineral_door/wood/deadbolt{
 	dir = 4
@@ -640,7 +635,7 @@
 /obj/structure/fluff/signage{
 	name = "Vanderlin - East"
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "zu" = (
 /obj/structure/bed/rogue/sleepingbag,
@@ -693,11 +688,13 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
-"Co" = (
-/obj/effect/landmark/start/adventurerlate,
+"Cm" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 1
+	},
 /obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "CC" = (
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/grass,
@@ -746,7 +743,7 @@
 /area/rogue/indoors)
 "Fw" = (
 /obj/effect/landmark/start/adventurerlate{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
@@ -845,6 +842,13 @@
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
+"JR" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 8
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "Kr" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/dirt,
@@ -904,10 +908,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"LS" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
 "LT" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
@@ -921,8 +921,10 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "MB" = (
-/obj/machinery/light/rogue/campfire/longlived,
-/turf/open/floor/rogue/dirt/road,
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "ML" = (
 /obj/structure/fluff/railing/border{
@@ -944,13 +946,6 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains)
-"Ot" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 4
-	},
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "OI" = (
 /obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/twig,
@@ -1026,6 +1021,10 @@
 /obj/structure/roguerock,
 /turf/open/water/river,
 /area/rogue/outdoors/woods)
+"Ry" = (
+/obj/machinery/light/rogue/campfire/longlived,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "RD" = (
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/indoors)
@@ -1079,17 +1078,14 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "TF" = (
+/obj/effect/landmark/start/adventurerlate,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
+"TG" = (
 /obj/structure/fluff/signage{
 	name = "Vanderlin - East"
 	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
-"TG" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
-	},
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/cobblerock,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "UF" = (
 /obj/structure/stairs/stone,
@@ -1113,6 +1109,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"VW" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "Wh" = (
 /turf/closed/mineral/random/rogue/med,
 /area/rogue/indoors/cave)
@@ -10679,7 +10679,7 @@ wV
 wV
 Qd
 wV
-Fw
+MB
 Kr
 Aj
 Xw
@@ -10879,10 +10879,10 @@ tR
 wV
 UR
 tR
-dm
+TF
 Qd
 wV
-MB
+Ry
 cA
 Aj
 Xw
@@ -11083,7 +11083,7 @@ UR
 wV
 Qd
 Qd
-LS
+VW
 Qd
 Kr
 Aj
@@ -11286,7 +11286,7 @@ UR
 UR
 UR
 Qd
-mz
+Fw
 Qd
 cA
 Aj
@@ -17752,7 +17752,7 @@ Wh
 Wh
 Wh
 wV
-TF
+zg
 cA
 cA
 RF
@@ -18749,7 +18749,7 @@ UR
 UR
 Xk
 Xk
-dm
+TF
 Qd
 Qd
 Xk
@@ -19153,7 +19153,7 @@ tR
 Xk
 tR
 tR
-zg
+TG
 wV
 Qd
 cA
@@ -19260,7 +19260,7 @@ UR
 dq
 UR
 wV
-Ot
+xz
 wV
 UR
 wV
@@ -19461,9 +19461,9 @@ wV
 wV
 wV
 wV
-Co
+pO
 Qd
-MB
+Ry
 sX
 wV
 UR
@@ -19866,7 +19866,7 @@ wV
 wV
 wV
 Qd
-TG
+JR
 wV
 Qd
 UR
@@ -20669,7 +20669,7 @@ wV
 wV
 Xk
 tR
-zg
+TG
 cA
 dq
 wV
@@ -31270,7 +31270,7 @@ wV
 wV
 wV
 wV
-Jg
+UR
 UR
 UR
 Qd
@@ -32622,7 +32622,7 @@ Qd
 UR
 cA
 Qd
-kW
+wV
 tR
 wV
 wV
@@ -34054,13 +34054,13 @@ tR
 tR
 wV
 wV
-TF
+zg
 wV
 wV
 wV
 wV
 Nn
-pO
+Cm
 Wh
 Wh
 Wh
@@ -34263,7 +34263,7 @@ wV
 wV
 dh
 Nn
-pO
+Cm
 Wh
 Wh
 Wh
@@ -34666,7 +34666,7 @@ wV
 tR
 wV
 wV
-qu
+ad
 Nn
 Wh
 CU
@@ -40743,7 +40743,7 @@ wV
 wV
 UR
 Jg
-TF
+zg
 Qd
 Qd
 cA
