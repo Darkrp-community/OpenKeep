@@ -2652,9 +2652,7 @@
 #include "modular\Neu_Food\code\raw\NeuFood_meat.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_processed.dm"
 #include "modular\Neu_Food\code\raw\NeuFood_veggies.dm"
-// END_INCLUDE
-
-
+// KAIZOKU FILES
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\kaizoku\kyudoka.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\kaizoku\champion.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\kaizoku\marauder.dm"
@@ -2675,3 +2673,4 @@
 #include "code\modules\mob\living\carbon\human\voicepacks\female\abyssariad.dm"
 #include "code\modules\mob\living\carbon\human\voicepacks\male\abyssariad.dm"
 #include "code\modules\mob\living\simple_animal\hostile\roguetown\fogfrog.dm"
+// END_INCLUDE
