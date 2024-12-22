@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/hell,
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/mountains/anvil/lower)
 "ah" = (
@@ -2450,7 +2450,7 @@
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/mountains/anvil/surface/building)
 "wE" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/hell,
+/mob/living/carbon/human/species/goblin/npc/ambush/cave,
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/mountains/anvil/lower/building)
 "wG" = (
@@ -4710,6 +4710,10 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/mountains/anvil/lower/building)
+"QH" = (
+/obj/structure/stairs/stone,
+/turf/open/floor/rogue/cobble,
+/area/rogue/indoors/mountains/anvil/surface/building)
 "QJ" = (
 /obj/structure/table/wood,
 /obj/structure/bars{
@@ -5614,6 +5618,16 @@
 "Zc" = (
 /turf/closed/wall/mineral/rogue/roofwall/middle,
 /area/rogue/indoors/mountains/anvil/surface/building)
+"Zd" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -1;
+	pixel_y = -10
+	},
+/obj/structure/stairs/stone{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobble,
+/area/rogue/under/mountains/anvil/lower/building)
 "Ze" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/mountains/anvil/lavaexposed)
@@ -150728,7 +150742,7 @@ DR
 DR
 DR
 Dc
-WJ
+Zd
 SY
 Ns
 SY
@@ -215756,7 +215770,7 @@ to
 to
 to
 gx
-to
+QH
 Yu
 Pv
 Pv
