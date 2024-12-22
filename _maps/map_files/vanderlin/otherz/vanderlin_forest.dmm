@@ -44,12 +44,6 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
-"co" = (
-/obj/structure/fluff/signage{
-	name = "Vanderlin - East"
-	},
-/turf/open/floor/rogue/dirt,
-/area/rogue/outdoors/woods)
 "cy" = (
 /obj/structure/fluff/railing/border{
 	dir = 1
@@ -73,6 +67,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"dm" = (
+/obj/effect/landmark/start/adventurerlate,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "dq" = (
 /obj/effect/spawner/roguemap/stump,
 /turf/open/floor/rogue/dirt,
@@ -291,6 +289,12 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"mz" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 8
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "mA" = (
 /obj/structure/stairs{
 	dir = 4;
@@ -358,10 +362,11 @@
 /area/rogue/outdoors/woods)
 "pO" = (
 /obj/effect/landmark/start/adventurerlate{
-	dir = 4
+	dir = 1
 	},
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/woods)
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "pX" = (
 /obj/structure/fluff/railing/stonehedge{
 	dir = 8
@@ -381,6 +386,13 @@
 /obj/structure/closet/dirthole/closed/loot,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"qu" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 8
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "qB" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/twig,
@@ -625,10 +637,10 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "zg" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 4
+/obj/structure/fluff/signage{
+	name = "Vanderlin - East"
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "zu" = (
 /obj/structure/bed/rogue/sleepingbag,
@@ -681,6 +693,11 @@
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
+"Co" = (
+/obj/effect/landmark/start/adventurerlate,
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "CC" = (
 /obj/structure/stairs/stone,
 /turf/open/floor/rogue/grass,
@@ -728,11 +745,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "Fw" = (
-/obj/structure/fluff/traveltile{
-	aportalgoesto = "vanderlin-forest_town-town";
-	aportalid = "vanderlin-forest_town-forest"
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "FA" = (
 /obj/structure/fluff/railing/border{
@@ -888,6 +904,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"LS" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "LT" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
@@ -901,10 +921,8 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "MB" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 1
-	},
-/turf/open/floor/rogue/dirt,
+/obj/machinery/light/rogue/campfire/longlived,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/woods)
 "ML" = (
 /obj/structure/fluff/railing/border{
@@ -926,6 +944,13 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains)
+"Ot" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "OI" = (
 /obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/twig,
@@ -1054,14 +1079,17 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "TF" = (
-/obj/effect/landmark/start/adventurerlate,
-/turf/open/floor/rogue/grass,
+/obj/structure/fluff/signage{
+	name = "Vanderlin - East"
+	},
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "TG" = (
 /obj/effect/landmark/start/adventurerlate{
-	dir = 1
+	dir = 8
 	},
-/turf/open/floor/rogue/grass,
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "UF" = (
 /obj/structure/stairs/stone,
@@ -1980,7 +2008,7 @@ Sy
 UR
 wV
 UR
-TF
+UR
 wV
 wV
 UR
@@ -2237,7 +2265,7 @@ UR
 wV
 wV
 UR
-TG
+UR
 UR
 wV
 UR
@@ -3870,7 +3898,7 @@ UR
 UR
 UR
 wV
-MB
+wV
 UR
 wV
 UR
@@ -4092,7 +4120,7 @@ UR
 wV
 wV
 UR
-pO
+UR
 wV
 UR
 Xk
@@ -7594,7 +7622,7 @@ wV
 wV
 wV
 UR
-pO
+UR
 UR
 UR
 wV
@@ -10448,7 +10476,7 @@ UR
 tR
 wV
 wV
-wV
+cA
 Aj
 Aj
 Aj
@@ -10649,10 +10677,10 @@ wV
 wV
 wV
 wV
-UR
+Qd
 wV
-wV
-wV
+Fw
+Kr
 Aj
 Xw
 Zb
@@ -10851,11 +10879,11 @@ tR
 wV
 UR
 tR
+dm
+Qd
 wV
-UR
-wV
-wV
-wV
+MB
+cA
 Aj
 Xw
 Xw
@@ -10906,7 +10934,7 @@ UR
 UR
 UR
 UR
-pO
+UR
 wV
 wV
 Xk
@@ -11053,11 +11081,11 @@ UR
 UR
 UR
 wV
-UR
-wV
-UR
-wV
-wV
+Qd
+Qd
+LS
+Qd
+Kr
 Aj
 Aj
 Xw
@@ -11257,10 +11285,10 @@ UR
 UR
 UR
 UR
-wV
-wV
-wV
-wV
+Qd
+mz
+Qd
+cA
 Aj
 Aj
 Xw
@@ -11350,7 +11378,7 @@ wV
 wV
 tR
 Xk
-zg
+wV
 wV
 UR
 UR
@@ -11459,8 +11487,8 @@ Xk
 UR
 wV
 Xk
-wV
-wV
+Qd
+Qd
 wV
 wV
 wV
@@ -11662,7 +11690,7 @@ UR
 wV
 Xk
 Xk
-UR
+Qd
 tR
 tR
 wV
@@ -11863,8 +11891,8 @@ UR
 UR
 Xk
 Xk
-UR
 wV
+Qd
 wV
 tR
 tR
@@ -12064,9 +12092,9 @@ UR
 UR
 Xk
 UR
-UR
-UR
-UR
+wV
+Qd
+wV
 UR
 UR
 tR
@@ -12265,8 +12293,8 @@ Xk
 wV
 UR
 Xk
-UR
-UR
+Qd
+Qd
 UR
 UR
 UR
@@ -12467,7 +12495,7 @@ UR
 UR
 UR
 UR
-wV
+Qd
 wV
 tR
 tR
@@ -12669,7 +12697,7 @@ wV
 wV
 wV
 UR
-wV
+Qd
 tR
 wV
 wV
@@ -12871,7 +12899,7 @@ UR
 wV
 wV
 wV
-wV
+Qd
 wV
 UR
 wV
@@ -13073,7 +13101,7 @@ wV
 UR
 Xk
 Xk
-UR
+Qd
 wV
 UR
 wV
@@ -13275,8 +13303,8 @@ wV
 Xk
 tR
 tR
-UR
-wV
+Qd
+Qd
 wV
 UR
 Xk
@@ -13477,9 +13505,9 @@ tR
 tR
 wV
 UR
-UR
+Qd
 wV
-wV
+kW
 Xk
 tR
 UR
@@ -13679,7 +13707,7 @@ tR
 UR
 UR
 Xk
-UR
+Qd
 wV
 UR
 Xk
@@ -13880,7 +13908,7 @@ Xk
 tR
 UR
 wV
-UR
+Qd
 UR
 Xk
 UR
@@ -14080,9 +14108,9 @@ Xk
 tR
 UR
 UR
-wV
-UR
-wV
+Qd
+Qd
+Qd
 UR
 wV
 tR
@@ -14482,8 +14510,8 @@ UR
 wV
 UR
 UR
-UR
-UR
+Qd
+Qd
 UR
 UR
 UR
@@ -14683,8 +14711,8 @@ UR
 UR
 UR
 wV
-UR
-UR
+Qd
+Qd
 tR
 tR
 Xk
@@ -14885,7 +14913,7 @@ UR
 UR
 Xk
 UR
-UR
+Qd
 wV
 wV
 Xk
@@ -15286,8 +15314,8 @@ UR
 UR
 UR
 UR
-UR
-UR
+Qd
+Qd
 Xk
 UR
 Xk
@@ -15459,7 +15487,7 @@ UR
 UR
 wV
 UR
-zg
+wV
 UR
 UR
 wV
@@ -15488,7 +15516,7 @@ UR
 UR
 Xk
 UR
-UR
+Qd
 UR
 UR
 Xk
@@ -15689,8 +15717,8 @@ wV
 UR
 UR
 UR
-UR
-wV
+Qd
+Qd
 UR
 tR
 Xk
@@ -15890,9 +15918,9 @@ Xk
 UR
 UR
 wV
-UR
-UR
-wV
+Qd
+Qd
+Qd
 wV
 tR
 UR
@@ -16092,7 +16120,7 @@ UR
 UR
 UR
 wV
-UR
+Qd
 UR
 tR
 UR
@@ -16294,7 +16322,7 @@ UR
 UR
 Xk
 Xk
-UR
+wV
 UR
 UR
 wV
@@ -16495,9 +16523,9 @@ UR
 Xk
 UR
 UR
-UR
-UR
-UR
+kW
+wV
+Qd
 wV
 UR
 tR
@@ -16697,9 +16725,9 @@ wV
 UR
 wV
 UR
-UR
-UR
-UR
+wV
+wV
+Qd
 tR
 UR
 wV
@@ -17103,7 +17131,7 @@ UR
 UR
 wV
 wV
-UR
+Qd
 UR
 UR
 tR
@@ -17305,7 +17333,7 @@ UR
 UR
 Xk
 UR
-UR
+Qd
 wV
 Xk
 UR
@@ -17507,7 +17535,7 @@ UR
 wV
 UR
 UR
-UR
+Qd
 wV
 UR
 wV
@@ -17525,7 +17553,7 @@ UR
 wV
 wV
 cA
-Qd
+RF
 Zf
 "}
 (82,1,1) = {"
@@ -17709,7 +17737,7 @@ UR
 Xk
 UR
 wV
-UR
+Qd
 UR
 UR
 UR
@@ -17724,7 +17752,7 @@ Wh
 Wh
 Wh
 wV
-co
+TF
 cA
 cA
 RF
@@ -17911,7 +17939,7 @@ Xk
 tR
 tR
 wV
-UR
+Qd
 UR
 UR
 UR
@@ -17929,7 +17957,7 @@ tR
 Qd
 cA
 Qd
-Qd
+RF
 Zf
 "}
 (84,1,1) = {"
@@ -18113,8 +18141,8 @@ Xk
 Xk
 tR
 UR
-UR
-UR
+Qd
+Qd
 Xk
 tR
 UR
@@ -18315,9 +18343,9 @@ tR
 UR
 wV
 UR
-UR
-UR
-wV
+Qd
+Qd
+Qd
 Xk
 Xk
 wV
@@ -18519,8 +18547,8 @@ UR
 UR
 UR
 wV
-UR
-UR
+Qd
+Qd
 UR
 tR
 wV
@@ -18721,9 +18749,9 @@ UR
 UR
 Xk
 Xk
-wV
-UR
-wV
+dm
+Qd
+Qd
 Xk
 wV
 wV
@@ -18924,9 +18952,9 @@ Xk
 Xk
 tR
 wV
-wV
-UR
-wV
+Qd
+Qd
+cA
 wV
 Xk
 tR
@@ -19030,8 +19058,8 @@ wV
 wV
 wV
 wV
-UR
-wV
+Qd
+Qd
 wV
 UR
 wV
@@ -19125,10 +19153,10 @@ tR
 Xk
 tR
 tR
-UR
-UR
-UR
-UR
+zg
+wV
+Qd
+cA
 wV
 Xk
 wV
@@ -19232,7 +19260,7 @@ UR
 dq
 UR
 wV
-wV
+Ot
 wV
 UR
 wV
@@ -19327,9 +19355,9 @@ wV
 wV
 Xk
 Xk
-UR
-wV
-UR
+cA
+Qd
+Qd
 tR
 Xk
 wV
@@ -19433,9 +19461,9 @@ wV
 wV
 wV
 wV
-wV
-wV
-UR
+Co
+Qd
+MB
 sX
 wV
 UR
@@ -19529,8 +19557,8 @@ wV
 UR
 UR
 UR
-wV
-UR
+cA
+Qd
 Xk
 tR
 Xk
@@ -19635,8 +19663,8 @@ wV
 UR
 UR
 dq
-wV
-wV
+Qd
+Qd
 sX
 UR
 UR
@@ -19731,7 +19759,7 @@ tR
 UR
 UR
 UR
-wV
+Qd
 Xk
 tR
 UR
@@ -19837,10 +19865,10 @@ wV
 wV
 wV
 wV
+Qd
+TG
 wV
-wV
-wV
-UR
+Qd
 UR
 UR
 UR
@@ -19934,7 +19962,7 @@ wV
 UR
 wV
 wV
-UR
+Qd
 wV
 UR
 UR
@@ -20038,9 +20066,9 @@ wV
 wV
 dq
 dq
+cA
 wV
-wV
-wV
+Qd
 UR
 wV
 UR
@@ -20136,7 +20164,7 @@ wV
 UR
 Xk
 UR
-UR
+Qd
 UR
 UR
 Xk
@@ -20239,8 +20267,8 @@ Xk
 UR
 wV
 wV
-UR
-wV
+Qd
+Qd
 dq
 wV
 UR
@@ -20440,7 +20468,7 @@ tR
 tR
 tR
 wV
-wV
+Qd
 UR
 UR
 wV
@@ -20540,7 +20568,7 @@ tR
 tR
 tR
 tR
-UR
+Qd
 UR
 Xk
 UR
@@ -20641,8 +20669,8 @@ wV
 wV
 Xk
 tR
-UR
-wV
+zg
+cA
 dq
 wV
 UR
@@ -20705,7 +20733,7 @@ UR
 wV
 UR
 wV
-zg
+wV
 UR
 tR
 UR
@@ -20743,7 +20771,7 @@ wV
 Xk
 UR
 UR
-UR
+Qd
 wV
 Qd
 UR
@@ -20843,8 +20871,8 @@ Qd
 wV
 tR
 Xk
-UR
-wV
+Qd
+cA
 UR
 wV
 tR
@@ -21045,7 +21073,7 @@ Qd
 Qd
 wV
 Xk
-UR
+Qd
 sX
 UR
 tR
@@ -21246,8 +21274,8 @@ Qd
 cA
 Qd
 wV
-wV
-UR
+Qd
+Qd
 UR
 wV
 UR
@@ -21448,8 +21476,8 @@ Qd
 Qd
 cA
 Qd
-wV
-wV
+Qd
+Qd
 UR
 UR
 UR
@@ -22257,7 +22285,7 @@ UR
 Qd
 cA
 cA
-wV
+kW
 wV
 wV
 wV
@@ -22600,7 +22628,7 @@ tR
 wV
 UR
 UR
-zg
+wV
 UR
 UR
 UR
@@ -25692,7 +25720,7 @@ wV
 wV
 wV
 UR
-Qd
+Cd
 Qd
 Qd
 Qd
@@ -28052,7 +28080,7 @@ Xk
 Xk
 UR
 UR
-pO
+UR
 UR
 UR
 UR
@@ -29336,7 +29364,7 @@ wV
 wV
 tR
 tR
-wV
+kW
 wV
 Qd
 Qd
@@ -30006,7 +30034,7 @@ UR
 tR
 tR
 wV
-zg
+wV
 wV
 wV
 Xk
@@ -32594,7 +32622,7 @@ Qd
 UR
 cA
 Qd
-wV
+kW
 tR
 wV
 wV
@@ -32796,7 +32824,7 @@ Qd
 UR
 cA
 cA
-wV
+kW
 wV
 wV
 wV
@@ -34026,13 +34054,13 @@ tR
 tR
 wV
 wV
-wV
+TF
 wV
 wV
 wV
 wV
 Nn
-Nn
+pO
 Wh
 Wh
 Wh
@@ -34233,9 +34261,9 @@ wV
 Qd
 wV
 wV
+dh
 Nn
-Nn
-Nn
+pO
 Wh
 Wh
 Wh
@@ -34638,7 +34666,7 @@ wV
 tR
 wV
 wV
-Nn
+qu
 Nn
 Wh
 CU
@@ -35225,7 +35253,7 @@ tR
 tR
 wV
 wV
-Qd
+Cd
 Qd
 cA
 cA
@@ -36242,9 +36270,9 @@ UR
 Qd
 UR
 UR
-UR
+Qd
 cA
-UR
+Qd
 cA
 cA
 Qd
@@ -36446,7 +36474,7 @@ UR
 UR
 UR
 cA
-UR
+Qd
 cA
 cA
 Qd
@@ -37255,7 +37283,7 @@ wV
 wV
 UR
 UR
-Qd
+Cd
 tB
 cA
 cA
@@ -37868,7 +37896,7 @@ Qd
 Qd
 cA
 cA
-UR
+Qd
 tB
 tR
 UR
@@ -38069,8 +38097,8 @@ Qd
 Qd
 Qd
 Qd
-UR
-UR
+Qd
+Qd
 tB
 tR
 Xk
@@ -38271,7 +38299,7 @@ cA
 Qd
 UR
 UR
-UR
+cA
 Qd
 tB
 wV
@@ -38474,9 +38502,9 @@ Qd
 wV
 UR
 UR
-UR
 cA
-UR
+cA
+Qd
 wV
 tR
 tR
@@ -38676,9 +38704,9 @@ UR
 tR
 tR
 UR
-UR
+Qd
 cA
-UR
+Qd
 Qd
 wV
 wV
@@ -38880,7 +38908,7 @@ tR
 wV
 Qd
 Qd
-UR
+Qd
 cA
 wV
 wV
@@ -40715,7 +40743,7 @@ wV
 wV
 UR
 Jg
-co
+TF
 Qd
 Qd
 cA
@@ -41323,7 +41351,7 @@ sH
 sH
 WP
 cA
-UR
+cA
 cA
 WP
 sH
@@ -41525,8 +41553,8 @@ Sy
 Sy
 WP
 dW
-Fw
-Fw
+dW
+dW
 WP
 Sy
 Sy
