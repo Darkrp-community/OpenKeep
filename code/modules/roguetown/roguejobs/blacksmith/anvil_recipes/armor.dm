@@ -397,7 +397,7 @@
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
 	craftdiff = 2
 
- //huh. We can make these uniquely then. Since we can't make the iron chainmail for the european counterparts?... why?
+// huh. We can make these uniquely then. Since we can't make the iron chainmail for the european counterparts?... why?
 /datum/anvil_recipe/armor/irontatami
 	name = "Iron foldeable armor"
 	recipe_name = "a Tatami Karuta-Gane"
