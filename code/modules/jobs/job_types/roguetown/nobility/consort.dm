@@ -53,7 +53,7 @@
 /datum/advclass/consort
 	displays_adv_job = FALSE
 /datum/advclass/consort/highborn
-	name = "Highborn"
+	name = "Highborn Consort"
 	tutorial = "Of a minor noble house, yours is a rather typical tale; you were trained in manners, literature, and intrigue, all to be married off to the next ruler of this backwater island."
 	outfit = /datum/outfit/job/roguetown/consort/highborn
 
@@ -91,7 +91,7 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 
 /datum/advclass/consort/courtesan
-	name = "Courtesan"
+	name = "Courtesan Consort"
 	tutorial = "Though initially none envied your lot in life, it's certain that your midnight talents haven't gone to waste. Your honeyed words and charm have brought you right to being a ruler's beloved consort."
 	outfit = /datum/outfit/job/roguetown/consort/courtesan
 
@@ -130,8 +130,8 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 
 /datum/advclass/consort/lowborn
-	name = "Lowborn"
-	tutorial = "You never could have dreamed your life would be like this. Though your origins are humble, something special about you - whether it was your good looks, your kind heart, or your bravery - has brought you into Rockhill Keep."
+	name = "Lowborn Consort"
+	tutorial = "You never could have dreamed your life would be like this. Though your origins are humble, something special about you - whether it was your good looks, your kind heart, or your bravery - has brought you into Vanderlin Keep."
 	outfit = /datum/outfit/job/roguetown/consort/lowborn
 
 	category_tags = list(CTAG_CONSORT)
@@ -170,7 +170,7 @@
 	ADD_TRAIT(H, TRAIT_NUTCRACKER, TRAIT_GENERIC)
 
 /datum/advclass/consort/courtesan/night_spy
-	name = "Night-Mother's Spy"
+	name = "Night-Mother's Spy Consort"
 	tutorial = "Raised by the guild to report on all the Monarch's action. Using your honeyed words and charm have brought you right to being a ruler's beloved consort."
 	outfit = /datum/outfit/job/roguetown/consort/courtesan/spy
 
