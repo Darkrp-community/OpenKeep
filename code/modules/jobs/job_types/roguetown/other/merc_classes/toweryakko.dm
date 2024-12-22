@@ -17,7 +17,7 @@
 
 /datum/outfit/job/roguetown/mercenary/toweryakko/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead/toweryakkos
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead/toweryakkos
 	head = /obj/item/clothing/head/roguetown/helmet/jingasa
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/toweryakko
 	mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
@@ -26,7 +26,7 @@
 	cloak = /obj/item/clothing/cloak/haramaki/odoshi/toweryakko
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
 	backr = /obj/item/rogueweapon/shield/abyssaltower
-	beltr = /obj/item/rogueweapon/sword/sabre/messer/yuntoudao
+	beltr = /obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
 	pants = /obj/item/clothing/under/roguetown/chainlegs/iron/haidate_tatami

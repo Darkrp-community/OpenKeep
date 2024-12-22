@@ -37,7 +37,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/kabukimono
 	pants = /obj/item/clothing/under/roguetown/tobi/kabukimono
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/geta/cloudhead/kabukimono
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead/kabukimono
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/kabukimono
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace/cudgel/jitte
@@ -46,7 +46,7 @@
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/nanbando
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backr = /obj/item/rogueweapon/greatsword/odachi
+	backr = /obj/item/rogueweapon/sword/long/greatsword/odachi
 	if(!H.has_language(/datum/language/abyssal))
 		H.grant_language(/datum/language/abyssal)
 		to_chat(H, "<span class='info'>I can speak Abyssal with ,a before my speech.</span>")
