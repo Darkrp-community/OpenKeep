@@ -67,11 +67,9 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"dp" = (
-/obj/structure/fluff/signage{
-	name = "Vanderlin - East"
-	},
-/turf/open/floor/rogue/dirt,
+"dm" = (
+/obj/effect/landmark/start/adventurerlate,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "dq" = (
 /obj/effect/spawner/roguemap/stump,
@@ -291,6 +289,12 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"mz" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 8
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "mA" = (
 /obj/structure/stairs{
 	dir = 4;
@@ -326,12 +330,6 @@
 	dir = 4
 	},
 /area/rogue/indoors)
-"nr" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "nL" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -388,6 +386,13 @@
 /obj/structure/closet/dirthole/closed/loot,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"qu" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 8
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/indoors/cave)
 "qB" = (
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/twig,
@@ -485,17 +490,6 @@
 "ut" = (
 /turf/closed/wall/mineral/rogue/tent,
 /area/rogue/indoors/cave)
-"uz" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 4
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
-"uV" = (
-/obj/effect/landmark/start/adventurerlate,
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "vc" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/natural/cloth,
@@ -643,12 +637,11 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "zg" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
+/obj/structure/fluff/signage{
+	name = "Vanderlin - East"
 	},
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/indoors/cave)
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "zu" = (
 /obj/structure/bed/rogue/sleepingbag,
 /turf/open/floor/rogue/naturalstone,
@@ -671,10 +664,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"Ag" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/woods)
 "Aj" = (
 /turf/open/water/cleanshallow,
 /area/rogue/outdoors/woods)
@@ -703,6 +692,11 @@
 "Cd" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
+"Co" = (
+/obj/effect/landmark/start/adventurerlate,
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "CC" = (
 /obj/structure/stairs/stone,
@@ -751,10 +745,10 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
 "Fw" = (
-/obj/structure/fluff/signage{
-	name = "Vanderlin - East"
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/woods)
 "FA" = (
 /obj/structure/fluff/railing/border{
@@ -784,13 +778,6 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
-"Hg" = (
-/obj/effect/landmark/start/adventurerlate{
-	dir = 8
-	},
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/woods)
 "Ht" = (
 /obj/structure/fluff/railing/fence{
 	dir = 4
@@ -917,6 +904,10 @@
 	icon_state = "horzw"
 	},
 /area/rogue/indoors)
+"LS" = (
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "LT" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/indoors)
@@ -953,6 +944,13 @@
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/mountains)
+"Ot" = (
+/obj/effect/landmark/start/adventurerlate{
+	dir = 4
+	},
+/obj/structure/chair/stool/rogue,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/woods)
 "OI" = (
 /obj/structure/bed/rogue/hay,
 /turf/open/floor/rogue/twig,
@@ -1081,12 +1079,14 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/woods)
 "TF" = (
-/obj/effect/landmark/start/adventurerlate,
-/turf/open/floor/rogue/cobblerock,
+/obj/structure/fluff/signage{
+	name = "Vanderlin - East"
+	},
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
 "TG" = (
 /obj/effect/landmark/start/adventurerlate{
-	dir = 4
+	dir = 8
 	},
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/cobblerock,
@@ -10679,7 +10679,7 @@ wV
 wV
 Qd
 wV
-uz
+Fw
 Kr
 Aj
 Xw
@@ -10879,7 +10879,7 @@ tR
 wV
 UR
 tR
-TF
+dm
 Qd
 wV
 MB
@@ -11083,7 +11083,7 @@ UR
 wV
 Qd
 Qd
-Ag
+LS
 Qd
 Kr
 Aj
@@ -11286,7 +11286,7 @@ UR
 UR
 UR
 Qd
-nr
+mz
 Qd
 cA
 Aj
@@ -17752,7 +17752,7 @@ Wh
 Wh
 Wh
 wV
-dp
+TF
 cA
 cA
 RF
@@ -18749,7 +18749,7 @@ UR
 UR
 Xk
 Xk
-TF
+dm
 Qd
 Qd
 Xk
@@ -19153,7 +19153,7 @@ tR
 Xk
 tR
 tR
-Fw
+zg
 wV
 Qd
 cA
@@ -19260,7 +19260,7 @@ UR
 dq
 UR
 wV
-TG
+Ot
 wV
 UR
 wV
@@ -19461,7 +19461,7 @@ wV
 wV
 wV
 wV
-uV
+Co
 Qd
 MB
 sX
@@ -19866,7 +19866,7 @@ wV
 wV
 wV
 Qd
-Hg
+TG
 wV
 Qd
 UR
@@ -20669,7 +20669,7 @@ wV
 wV
 Xk
 tR
-Fw
+zg
 cA
 dq
 wV
@@ -34054,7 +34054,7 @@ tR
 tR
 wV
 wV
-dp
+TF
 wV
 wV
 wV
@@ -34666,7 +34666,7 @@ wV
 tR
 wV
 wV
-zg
+qu
 Nn
 Wh
 CU
@@ -40743,7 +40743,7 @@ wV
 wV
 UR
 Jg
-dp
+TF
 Qd
 Qd
 cA
