@@ -301,10 +301,11 @@
 			var/multiplier = 0
 			if((skill in apprentice_training_skills))
 				multiplier = apprentice_training_skills[skill]
-			if(apprentice.mind.get_skill_level(skill) <= (current.get_skill_level(skill) - 1))
+			if(apprentice.mind.get_skill_level(skill) <= (get_skill_level(skill) - 1))
 				multiplier += 0.25 //this means a base 35% of your xp is also given to nearby apprentices plus skill modifiers.
 			var/apprentice_amt = amt * 0.1 + multiplier
-			apprentice.mind.adjust_experience(skill, apprentice_amt, FALSE, FALSE)
+			if(apprentice.mind.adjust_experience(skill, apprentice_amt, FALSE, FALSE))
+				current.add_stress(/datum/stressevent/apprentice_making_me_proud)
 
 	if(known_skills[S] == old_level)
 		return //same level or we just started earning xp towards the first level.
@@ -316,6 +317,7 @@
 			S.skill_level_effect(src, known_skills[S])
 		if(skill == /datum/skill/magic/arcane)
 			adjust_spellpoints(1)
+		return TRUE
 	else
 		to_chat(current, span_warning("My [S.name] has weakened to [SSskills.level_names[known_skills[S]]]!"))
 
@@ -826,8 +828,24 @@
 	boon += get_skill_level(skill) / 10
 	return boon
 
-/datum/mind/proc/add_sleep_experience(skill, amt, silent = FALSE)
-	sleep_adv.add_sleep_experience(skill, amt, silent)
+/datum/mind/proc/add_sleep_experience(skill, amt, silent = FALSE, check_apprentice = TRUE)
+	if(length(apprentices) && check_apprentice)
+		for(var/datum/weakref/apprentice_ref as anything in apprentices)
+			var/mob/living/apprentice = apprentice_ref.resolve()
+			if(!istype(apprentice))
+				continue
+			if(!(apprentice in view(7, current)))
+				continue
+			var/multiplier = 0
+			if((skill in apprentice_training_skills))
+				multiplier = apprentice_training_skills[skill]
+			if(apprentice.mind.get_skill_level(skill) <= (get_skill_level(skill) - 1))
+				multiplier += 0.25 //this means a base 35% of your xp is also given to nearby apprentices plus skill modifiers.
+			var/apprentice_amt = amt * 0.1 + multiplier
+			if(apprentice.mind.add_sleep_experience(skill, apprentice_amt, FALSE, FALSE))
+				current.add_stress(/datum/stressevent/apprentice_making_me_proud)
+	if(sleep_adv.add_sleep_experience(skill, amt, silent))
+		return TRUE
 
 /datum/mind/proc/make_apprentice(mob/living/youngling)
 	if(youngling?.mind.apprentice)
