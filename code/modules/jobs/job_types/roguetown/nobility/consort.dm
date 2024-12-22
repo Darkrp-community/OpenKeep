@@ -23,6 +23,7 @@
 	give_bank_account = 500
 
 	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
+	can_have_apprentices = FALSE
 
 /datum/job/roguetown/consort/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -49,7 +50,8 @@
 - Courtesan: Ex-classy or not-so-classy prostitute. Concerningly good with that knife and sneaking around. A little dumb.
 - Lowborn: A good wholesome peasant spouse. Can cook and swing a pitchfork good. Not so smart or perceptive.
 */
-
+/datum/advclass/consort
+	displays_adv_job = FALSE
 /datum/advclass/consort/highborn
 	name = "Highborn"
 	tutorial = "Of a minor noble house, yours is a rather typical tale; you were trained in manners, literature, and intrigue, all to be married off to the next ruler of this backwater island."
