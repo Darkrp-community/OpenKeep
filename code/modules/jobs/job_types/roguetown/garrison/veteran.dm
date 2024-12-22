@@ -21,6 +21,7 @@
 	whitelist_req = TRUE
 	give_bank_account = 35
 	min_pq = 5 //Should...probably actually be a veteran of at least a few weeks before trying to teach others
+	can_have_apprentices = FALSE
 
 
 /datum/job/roguetown/veteran/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

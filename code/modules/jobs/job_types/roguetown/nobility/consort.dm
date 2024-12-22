@@ -23,6 +23,7 @@
 	give_bank_account = 500
 
 	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
+	can_have_apprentices = FALSE
 
 /datum/job/roguetown/consort/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

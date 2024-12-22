@@ -69,6 +69,13 @@
 
 	var/force_escaped = FALSE  // Set by Into The Sunset command of the shuttle manipulator
 
+	var/apprentice = FALSE
+	var/max_apprentices = 0
+	var/apprentice_name
+
+	///our apprentice name
+	var/our_apprentice_name
+
 	var/list/learned_recipes //List of learned recipe TYPES.
 
 	///Assoc list of skills - level
@@ -88,6 +95,10 @@
 
 	var/datum/sleep_adv/sleep_adv = null
 
+	var/list/apprentice_training_skills = list()
+
+	var/list/apprentices = list()
+
 /datum/mind/New(key)
 	src.key = key
 	soulOwner = src
@@ -99,6 +110,7 @@
 	QDEL_NULL(sleep_adv)
 	if(islist(antag_datums))
 		QDEL_LIST(antag_datums)
+	apprentices = null
 	return ..()
 
 /proc/get_minds(role)
@@ -259,7 +271,7 @@
 	new_character.update_fov_angles()
 
 	///Adjust experience of a specific skill
-/datum/mind/proc/adjust_experience(skill, amt, silent = FALSE)
+/datum/mind/proc/adjust_experience(skill, amt, silent = FALSE, check_apprentice = TRUE)
 	var/datum/skill/S = GetSkillRef(skill)
 	skill_experience[S] = max(0, skill_experience[S] + amt) //Prevent going below 0
 	var/old_level = get_skill_level(skill)
@@ -278,6 +290,22 @@
 			known_skills[S] = SKILL_LEVEL_NOVICE
 		if(0 to SKILL_EXP_NOVICE)
 			known_skills[S] = SKILL_LEVEL_NONE
+
+	if(length(apprentices) && check_apprentice)
+		for(var/datum/weakref/apprentice_ref as anything in apprentices)
+			var/mob/living/apprentice = apprentice_ref.resolve()
+			if(!istype(apprentice))
+				continue
+			if(!(apprentice in view(7, current)))
+				continue
+			var/multiplier = 0
+			if((skill in apprentice_training_skills))
+				multiplier = apprentice_training_skills[skill]
+			if(apprentice.mind.get_skill_level(skill) <= (current.get_skill_level(skill) - 1))
+				multiplier += 0.25 //this means a base 35% of your xp is also given to nearby apprentices plus skill modifiers.
+			var/apprentice_amt = amt * 0.1 + multiplier
+			apprentice.mind.adjust_experience(skill, apprentice_amt, FALSE, FALSE)
+
 	if(known_skills[S] == old_level)
 		return //same level or we just started earning xp towards the first level.
 	if(silent)
@@ -800,3 +828,22 @@
 
 /datum/mind/proc/add_sleep_experience(skill, amt, silent = FALSE)
 	sleep_adv.add_sleep_experience(skill, amt, silent)
+
+/datum/mind/proc/make_apprentice(mob/living/youngling)
+	if(youngling?.mind.apprentice)
+		return
+	if(length(apprentices) >= max_apprentices)
+		return
+
+	var/choice = input(youngling, "Do you wish to become [current.name]'s apprentice?") as anything in list("Yes", "No")
+	if(choice != "Yes")
+		return
+	apprentices |= WEAKREF(youngling)
+	youngling.mind.apprentice = TRUE
+
+	var/datum/job/J = SSjob.GetJob(current:job)
+	var/title = "[J.title] Apprentice"
+	if(apprentice_name)
+		title = apprentice_name
+	youngling.mind.our_apprentice_name = "[current.name]'s [title]"
+	to_chat(current, span_notice("[youngling.name] has become your apprentice."))
