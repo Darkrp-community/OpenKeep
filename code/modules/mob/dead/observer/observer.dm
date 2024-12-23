@@ -209,11 +209,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 
 	if(!T)
 		testing("NO T")
-		var/list/turfs = get_area_turfs(/area/shuttle/arrival)
-		if(turfs.len)
-			T = pick(turfs)
-		else
-			T = SSmapping.get_station_center()
+		T = SSmapping.get_station_center()
 
 	forceMove(T)
 

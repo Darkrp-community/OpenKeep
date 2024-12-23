@@ -98,6 +98,7 @@ SUBSYSTEM_DEF(ticker)
 	var/end_party = FALSE
 	var/last_lobby = 0
 	var/reboot_anyway
+	var/round_end = FALSE
 
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
@@ -430,8 +431,6 @@ SUBSYSTEM_DEF(ticker)
 	log_game("GAME SETUP: Game start took [(world.timeofday - init_start)/10]s")
 	round_start_time = world.time
 	round_start_irl = REALTIMEOFDAY
-//	SSshuttle.emergency.startTime = world.time
-//	SSshuttle.emergency.setTimer(ROUNDTIMERBOAT)
 
 	SSdbcore.SetRoundStart()
 
@@ -619,8 +618,6 @@ SUBSYSTEM_DEF(ticker)
 /datum/controller/subsystem/ticker/proc/check_maprotate()
 	if (!CONFIG_GET(flag/maprotation))
 		return
-	if (SSshuttle.emergency && SSshuttle.emergency.mode != SHUTTLE_ESCAPE || SSshuttle.canRecall())
-		return
 	if (maprotatechecked)
 		return
 
@@ -719,8 +716,6 @@ SUBSYSTEM_DEF(ticker)
 			news_message = "The project started by [station_name()] to upgrade their silicon units with advanced equipment have been largely successful, though they have thus far refused to release schematics in a violation of company policy."
 		if(CLOCK_PROSELYTIZATION)
 			news_message = "The burst of energy released near [station_name()] has been confirmed as merely a test of a new weapon. However, due to an unexpected mechanical error, their communications system has been knocked offline."
-		if(SHUTTLE_HIJACK)
-			news_message = "During routine evacuation procedures, the emergency shuttle of [station_name()] had its navigation protocols corrupted and went off course, but was recovered shortly after."
 
 	if(news_message)
 		send2otherserver(news_source, news_message,"News_Report")
@@ -786,12 +781,14 @@ SUBSYSTEM_DEF(ticker)
 
 	to_chat(world, "<span class='boldannounce'>Rebooting World in [DisplayTimeText(delay)].</span>")
 
+	round_end = TRUE
 	var/start_wait = world.time
 	UNTIL(round_end_sound_sent || (world.time - start_wait) > (delay * 2))	//don't wait forever
 	sleep(delay - (world.time - start_wait))
 
 	if(delay_end && !skip_delay)
 		to_chat(world, "<span class='boldannounce'>Reboot was cancelled by an admin.</span>")
+		round_end = FALSE
 		return
 	if(end_string)
 		end_state = end_string

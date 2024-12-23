@@ -172,52 +172,6 @@
 			can_see_sky = SEE_SKY_NO
 			return can_see_sky()
 
-/turf/proc/update_see_sky()
-	/*
-	can_see_sky = null
-	var/can = can_see_sky()
-	var/area/A = get_area(src)
-	if(istype(A,/area/shuttle))
-		return
-	if(can)
-		if(!A.outdoors)
-			var/area2new = /area/rogue/outdoors
-			if(A.converted_type)
-				area2new = A.converted_type
-			var/area/nuarea
-			if(primary_area)
-				nuarea = type2area(primary_area)
-				if(!nuarea.outdoors)
-					nuarea = null
-			if(!nuarea)
-				nuarea = type2area(area2new)
-				primary_area = A.type
-			if(nuarea)
-				A.contents -= src
-				nuarea.contents += src
-				change_area(A, nuarea)
-	else
-		if(A.outdoors)
-			var/area2new = /area/rogue/indoors/shelter
-			if(A.converted_type)
-				area2new = A.converted_type
-			var/area/nuarea
-			if(primary_area)
-				nuarea = type2area(primary_area)
-				if(nuarea.outdoors)
-					nuarea = null
-			if(!nuarea)
-				nuarea = type2area(area2new)
-				primary_area = A.type
-			if(!nuarea)
-				var/area/NA = new area2new()
-				nuarea = NA
-				primary_area = NA.type
-			if(nuarea)
-				A.contents -= src
-				nuarea.contents += src
-				change_area(A, nuarea)
-	*/
 
 /turf/attack_hand(mob/user)
 	. = ..()
@@ -458,12 +412,6 @@
 	for(var/obj/O in src)
 		if(O.level == 1 && (O.flags_1 & INITIALIZED_1))
 			O.hide(src.intact)
-
-// Removes all signs of lattice on the pos of the turf -Donkieyo
-/turf/proc/RemoveLattice()
-	var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-	if(L && (L.flags_1 & INITIALIZED_1))
-		qdel(L)
 
 /turf/proc/phase_damage_creatures(damage,mob/U = null)//>Ninja Code. Hurts and knocks out creatures on this turf //NINJACODE
 	for(var/mob/living/M in src)
