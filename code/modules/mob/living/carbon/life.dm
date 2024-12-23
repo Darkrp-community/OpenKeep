@@ -245,6 +245,9 @@
 	else if(turf_temp <= T0C)
 		breath_effect_prob = 15
 
+	if(snow_shiver > world.time)
+		breath_effect_prob += 50
+
 	if(prob(breath_effect_prob))
 		// Breathing into your mask, no particle. We can add fogged up glasses later
 		if(is_mouth_covered())
@@ -261,7 +264,7 @@
 	var/breath_dir = dir
 
 	var/list/particle_grav = list(0, 0.1, 0)
-	var/list/particle_pos = list(0, 2, 0)
+	var/list/particle_pos = list(0, 6, 0)
 	if(breath_dir & NORTH)
 		particle_grav[2] = 0.2
 		breath_particle.rotation = pick(-45, 45)

@@ -32,6 +32,7 @@
 //Makes you a little chilly
 /datum/particle_weather/snow_gentle/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(1,3))
+	L.snow_shiver = world.time + 7 SECONDS
 
 
 /datum/particle_weather/snow_storm
@@ -52,8 +53,10 @@
 	target_trait = PARTICLEWEATHER_SNOW
 
 //Makes you a lot little chilly
+/mob/living/var/snow_shiver
 /datum/particle_weather/snow_storm/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5,15))
+	L.snow_shiver = world.time + 10 SECONDS
 
 /particles/fog
 	icon = 'icons/effects/particles/smoke.dmi'
