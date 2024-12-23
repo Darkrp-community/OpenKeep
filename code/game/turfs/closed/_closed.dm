@@ -214,11 +214,6 @@
 	to_chat(user, "<span class='warning'>I crawl up the wall.</span>")
 	. = ..()
 
-
-/turf/closed/AfterChange()
-	..()
-	SSair.high_pressure_delta -= src
-
 /turf/closed/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	return FALSE
 

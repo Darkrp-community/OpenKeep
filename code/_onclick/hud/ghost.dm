@@ -93,22 +93,6 @@
 			to_chat(G, "<span class='warning'>[pick(thingsz)] ([ttime])</span>")
 			return */ //Disabling this since the underworld will exist
 
-/atom/movable/screen/ghost/reenter_corpse
-	name = "Reenter corpse"
-	icon_state = "reenter_corpse"
-
-/atom/movable/screen/ghost/reenter_corpse/Click()
-	var/mob/dead/observer/G = usr
-	G.reenter_corpse()
-
-/atom/movable/screen/ghost/teleport
-	name = "Teleport"
-	icon_state = "teleport"
-
-/atom/movable/screen/ghost/teleport/Click()
-	var/mob/dead/observer/G = usr
-	G.dead_tele()
-
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/atom/movable/screen/using

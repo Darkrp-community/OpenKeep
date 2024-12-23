@@ -150,7 +150,7 @@
 
 /obj/item/rogueweapon/surgery/cautery/get_temperature()
 	if(heated)
-		return FIRE_MINIMUM_TEMPERATURE_TO_SPREAD
+		return 150+T0C
 	return ..()
 
 /obj/item/rogueweapon/surgery/cautery/proc/update_heated(new_heated)

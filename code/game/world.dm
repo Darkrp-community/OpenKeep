@@ -234,14 +234,6 @@ GLOBAL_VAR(restart_counter)
 	qdel(src)	//shut it down
 
 /world/Reboot(reason = 0, fast_track = FALSE)
-//	if (reason || fast_track) //special reboot, do none of the normal stuff
-//		if (usr)
-//			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
-//			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-//		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request.</span>")
-//	else
-//	to_chat(world, "<span class='boldannounce'><b><u><a href='byond://winset?command=.reconnect'>CLICK TO RECONNECT</a></u></b></span>")
-
 	var/round_end_sound = pick('sound/roundend/knave.ogg',
 	'sound/roundend/twohours.ogg',
 	'sound/roundend/rest.ogg',
