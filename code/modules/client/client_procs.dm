@@ -38,7 +38,6 @@ GLOBAL_LIST_EMPTY(respawncounts)
 /client
 	var/commendedsomeone
 	var/whitelisted = 2
-	var/blacklisted = 2
 
 /client/Topic(href, href_list, hsrc)
 	if(!usr || usr != mob)	//stops us calling Topic for somebody else's client. Also helps prevent usr=null
@@ -54,37 +53,38 @@ GLOBAL_LIST_EMPTY(respawncounts)
 			completed_asset_jobs += asset_cache_job
 			return
 
-	var/mtl = CONFIG_GET(number/minute_topic_limit)
-	if (!holder && mtl)
-		var/minute = round(world.time, 600)
-		if (!topiclimiter)
-			topiclimiter = new(LIMITER_SIZE)
-		if (minute != topiclimiter[CURRENT_MINUTE])
-			topiclimiter[CURRENT_MINUTE] = minute
-			topiclimiter[MINUTE_COUNT] = 0
-		topiclimiter[MINUTE_COUNT] += 1
-		if (topiclimiter[MINUTE_COUNT] > mtl)
-			var/msg = "Your previous action was ignored because you've done too many in a minute."
-			if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
-				topiclimiter[ADMINSWARNED_AT] = minute
-				msg += " Administrators have been informed."
-				log_game("[key_name(src)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
-				message_admins("[ADMIN_LOOKUPFLW(usr)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
-//			to_chat(src, "<span class='danger'>[msg]</span>")
-			return
+	if(!holder && href_list["window_id"] != "statbrowser")
+		var/mtl = CONFIG_GET(number/minute_topic_limit)
+		if (mtl)
+			var/minute = round(world.time, 1 MINUTES)
+			if (!topiclimiter)
+				topiclimiter = new(LIMITER_SIZE)
+			if (minute != topiclimiter[CURRENT_MINUTE])
+				topiclimiter[CURRENT_MINUTE] = minute
+				topiclimiter[MINUTE_COUNT] = 0
+			topiclimiter[MINUTE_COUNT] += 1
+			if (topiclimiter[MINUTE_COUNT] > mtl)
+				var/msg = "Your previous action was ignored because you've done too many in a minute."
+				if (minute != topiclimiter[ADMINSWARNED_AT]) //only one admin message per-minute. (if they spam the admins can just boot/ban them)
+					topiclimiter[ADMINSWARNED_AT] = minute
+					msg += " Administrators have been informed."
+					log_game("[key_name(src)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
+					message_admins("[ADMIN_LOOKUPFLW(usr)] [ADMIN_KICK(usr)] Has hit the per-minute topic limit of [mtl] topic calls in a given game minute")
+				to_chat(src, span_danger("[msg]"))
+				return
 
-	var/stl = CONFIG_GET(number/second_topic_limit)
-	if (!holder && stl)
-		var/second = round(world.time, 10)
-		if (!topiclimiter)
-			topiclimiter = new(LIMITER_SIZE)
-		if (second != topiclimiter[CURRENT_SECOND])
-			topiclimiter[CURRENT_SECOND] = second
-			topiclimiter[SECOND_COUNT] = 0
-		topiclimiter[SECOND_COUNT] += 1
-		if (topiclimiter[SECOND_COUNT] > stl)
-//			to_chat(src, "<span class='danger'>My previous action was ignored because you've done too many in a second</span>")
-			return
+		var/stl = CONFIG_GET(number/second_topic_limit)
+		if (stl)
+			var/second = round(world.time, 1 SECONDS)
+			if (!topiclimiter)
+				topiclimiter = new(LIMITER_SIZE)
+			if (second != topiclimiter[CURRENT_SECOND])
+				topiclimiter[CURRENT_SECOND] = second
+				topiclimiter[SECOND_COUNT] = 0
+			topiclimiter[SECOND_COUNT] += 1
+			if (topiclimiter[SECOND_COUNT] > stl)
+				to_chat(src, span_danger("Your previous action was ignored because you've done too many in a second"))
+				return
 
 	//Logs all hrefs, except chat pings
 	if(!(href_list["_src_"] == "chat" && href_list["proc"] == "ping" && LAZYLEN(href_list) == 2))
@@ -273,9 +273,6 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	///////////
 	//CONNECT//
 	///////////
-#if (PRELOAD_RSC == 0)
-GLOBAL_LIST_EMPTY(external_rsc_urls)
-#endif
 
 /client/New(TopicData)
 	var/tdata = TopicData //save this for later use
@@ -992,32 +989,26 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	if(inactivity > duration)
 		return inactivity
 	return FALSE
-
-//send resources to the client. It's here in its own proc so we can move it around easiliy if need be
+/// Send resources to the client.
+/// Sends both game resources and browser assets.
 /client/proc/send_resources()
 #if (PRELOAD_RSC == 0)
 	var/static/next_external_rsc = 0
-	if(GLOB.external_rsc_urls && GLOB.external_rsc_urls.len)
-		next_external_rsc = WRAP(next_external_rsc+1, 1, GLOB.external_rsc_urls.len+1)
-		preload_rsc = GLOB.external_rsc_urls[next_external_rsc]
+	var/list/external_rsc_urls = CONFIG_GET(keyed_list/external_rsc_urls)
+	if(length(external_rsc_urls))
+		next_external_rsc = WRAP(next_external_rsc+1, 1, external_rsc_urls.len+1)
+		preload_rsc = external_rsc_urls[next_external_rsc]
 #endif
-	//get the common files
-	getFiles(
-		'html/search.js',
-		'html/panels.css',
-		'html/browser/common.css',
-		'html/browser/scannernew.css',
-		'html/browser/playeroptions.css',
-		)
-	spawn (10) //removing this spawn causes all clients to not get verbs.
+
+	spawn (10) //removing this spawn causes all clients to not get verbs. (this can't be addtimer because these assets may be needed before the mc inits)
+
+		//load info on what assets the client has
+		src << browse('code/modules/asset_cache/validate_assets.html', "window=asset_cache_browser")
+
 		//Precache the client with all other assets slowly, so as to not block other browse() calls
-		getFilesSlow(src, SSassets.preload, register_asset = FALSE)
-//		#if (PRELOAD_RSC == 0)
-//		for (var/name in GLOB.vox_sounds)
-//			var/file = GLOB.vox_sounds[name]
-//			Export("##action=load_rsc", file)
-//			stoplag()
-//		#endif
+		if (CONFIG_GET(flag/asset_simple_preload))
+			addtimer(CALLBACK(SSassets.transport, TYPE_PROC_REF(/datum/asset_transport, send_assets_slow), src, SSassets.transport.preload), 5 SECONDS)
+
 
 //Hook, override it to run code when dir changes
 //Like for /atoms, but clients are their own snowflake FUCK
@@ -1152,16 +1143,6 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		else
 			whitelisted = 0
 		return whitelisted
-
-/client/proc/blacklisted()
-	if(blacklisted != 2)
-		return blacklisted
-	else
-		if(check_blacklist(ckey))
-			blacklisted = 1
-		else
-			blacklisted = 0
-		return blacklisted
 
 /client/proc/commendsomeone(forced = FALSE)
 	set category = "OOC"

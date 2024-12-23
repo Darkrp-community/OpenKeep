@@ -20,14 +20,15 @@
 	tutorial = "For a crime, or false allegation; as a hostage against another, or held for ransom: your fate until this day has been ill-starred save its first. You are of noble birth. Perhaps your story, which none but you recall, will move some pity from callous hearts or promises of riches parole your release. Maybe your old associates conspire now to release you in a daring rescue. Yet it is far surer that your tears will rust this cursed mask than the sun shine upon your face a freed soul once more." // changed to reduce dictation of character. Nikov.
 
 	outfit = /datum/outfit/job/roguetown/prisoner
-	bypass_jobban = TRUE
+	banned_leprosy = FALSE
 	display_order = JDO_PRISONER
 	give_bank_account = 173
 	min_pq = -100
 	can_random = FALSE
 	bypass_lastclass = TRUE
 
-	cmode_music = 'sound/music/combat_bum.ogg'
+	cmode_music = 'sound/music/cmode/towner/CombatTowner.ogg'
+	can_have_apprentices = FALSE
 
 /datum/outfit/job/roguetown/prisoner/pre_equip(mob/living/carbon/human/H)
 	..()

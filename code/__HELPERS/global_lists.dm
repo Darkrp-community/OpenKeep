@@ -60,6 +60,10 @@
 
 	init_slapcraft_steps()
 	init_slapcraft_recipes()
+	init_curse_names()
+
+	init_orderless_slapcraft_recipes()
+	init_crafting_repeatable_recipes()
 
 	GLOB.emote_list = init_emote_list()
 
@@ -88,6 +92,8 @@
 	// Patron Gods
 	for(var/path in subtypesof(/datum/patron))
 		var/datum/patron/patron = new path()
+		if(patron.non_faith)
+			continue
 		GLOB.patronlist[path] = patron
 		LAZYINITLIST(GLOB.patrons_by_faith[patron.associated_faith])
 		GLOB.patrons_by_faith[patron.associated_faith][path] = patron
@@ -112,3 +118,11 @@
 			L+= path
 		return L
 
+
+/proc/init_curse_names()
+	GLOB.curse_names = list()
+	for(var/datum/curse/curse_type as anything in subtypesof(/datum/curse))
+		if(is_abstract(curse_type))
+			continue
+		GLOB.curse_names |= initial(curse_type.name)
+		GLOB.curse_names[initial(curse_type.name)] = new curse_type

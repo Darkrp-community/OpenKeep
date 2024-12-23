@@ -41,7 +41,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	H.set_patron(/datum/patron/inhumen/zizo)
 
 	owner.special_role = "Zizoid Lackey"
-	H.cmode_music = 'sound/music/combat_cult.ogg'
+	H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 	owner.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	owner.current.playsound_local(get_turf(owner.current), 'sound/music/maniac.ogg', 80, FALSE, pressure_affected = FALSE)
 	owner.current.verbs |= /mob/living/carbon/human/proc/praise
@@ -537,7 +537,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 			BP.skeletonize()
 		H.base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/simple/claw)
 		H.update_a_intents()
-		H.cmode_music = 'sound/music/combat_cult.ogg'
+		H.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 		H.set_patron(/datum/patron/inhumen/zizo)
 		var/obj/item/organ/eyes/eyes = H.getorganslot(ORGAN_SLOT_EYES)
 		if(eyes)
@@ -562,7 +562,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.verbs |= /mob/living/carbon/human/proc/communicate
 
 		ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOSTAMINA, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOHUNGER, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBREATH, TRAIT_GENERIC)
@@ -599,7 +599,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 						return
 					if(istype(HL.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 						return
-					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
+					if(HAS_TRAIT(HL, TRAIT_NOSTAMINA))
 						return
 					to_chat(HL.mind, "<span class='warning'>I'm so sleepy...</span>")
 					HL.SetSleeping(30)

@@ -14,7 +14,11 @@
 	job_rank = ROLE_VAMPIRE
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "vampire"
-	confess_lines = list("I WANT YOUR BLOOD!", "DRINK THE BLOOD!", "CHILD OF KAIN!")
+	confess_lines = list(
+		"I WANT YOUR BLOOD!",
+		"DRINK THE BLOOD!",
+		"CHILD OF KAIN!",
+	)
 	var/disguised = TRUE
 	var/vitae = 2000
 	var/last_transform
@@ -63,7 +67,7 @@
 	ADD_TRAIT(owner.current, TRAIT_TOXIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(owner.current, TRAIT_VILLAIN, TRAIT_GENERIC)
-	owner.current.cmode_music = 'sound/music/combat_vamp2.ogg'
+	owner.current.cmode_music = 'sound/music/cmode/antag/combat_vamp2.ogg'
 	var/obj/item/organ/eyes/eyes = owner.current.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
 		eyes.Remove(owner.current,1)

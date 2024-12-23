@@ -2,7 +2,7 @@
 
 /obj/structure/kneestingers
 	name = "kneestingers"
-	desc = ""
+	desc = "They're said to glow with Dendor's wrath."
 	anchored = TRUE
 	opacity = 0
 	density = FALSE
@@ -12,30 +12,14 @@
 	max_integrity = 30
 	blade_dulling = DULLING_CUT
 	resistance_flags = FLAMMABLE
+	var/burned = FALSE
 
 /obj/structure/kneestingers/fire_act(added, maxstacks)
-	visible_message(span_warning("[src] catches fire!"))
-	var/turf/T = get_turf(src)
-	qdel(src)
-	new /obj/effect/hotspot(T)
-
-/obj/structure/kneestingers/CanPass(atom/movable/mover, turf/target)
-	if(isliving(mover) && mover.z == z)
-//		var/throwdir = get_dir(src, mover)
-		var/mob/living/L = mover
-
-		if(HAS_TRAIT(L, TRAIT_KNEESTINGER_IMMUNITY)) //Dendor kneestinger immunity
-			return TRUE
-
-		if(L.electrocute_act(30, src))
-			L.consider_ambush()
-			if(L.throwing)
-				L.throwing.finalize(FALSE)
-//			if(mover.loc != loc && L.stat == CONSCIOUS)
-//				L.throw_at(get_step(L, throwdir), 1, 1, L, spin = FALSE)
-			return FALSE
-	. = ..()
-
+	if(!burned)
+		burned = TRUE
+		visible_message(span_warning("[src] catches fire!"))
+		new /obj/effect/hotspot(get_turf(src))
+		qdel(src)
 
 /obj/structure/kneestingers/Crossed(AM as mob|obj)
 	if(isliving(AM))
@@ -46,6 +30,8 @@
 					L.emote("painscream")
 					L.update_sneak_invis(TRUE)
 					L.consider_ambush()
+					if(L.throwing)
+						L.throwing.finalize(FALSE)
 	. = ..()
 
 /obj/structure/kneestingers/attackby(obj/item/W, mob/user, params)

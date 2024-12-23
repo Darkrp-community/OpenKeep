@@ -64,6 +64,10 @@
 	return FALSE
 
 /obj/attackby(obj/item/I, mob/living/user, params)
+	if(user.try_repeatable_craft(src, I, user))
+		user.changeNext_move(CLICK_CD_FAST)
+		return TRUE
+
 	if(I.obj_flags_ignore)
 		return I.attack_obj(src, user)
 	else
@@ -115,8 +119,6 @@
 //		user.emote("attackgrunt")
 	var/datum/intent/cached_intent = user.used_intent
 	if(user.used_intent.swingdelay)
-		if(!user.used_intent.noaa)
-			user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 		sleep(user.used_intent.swingdelay)
 	if(user.a_intent != cached_intent)
 		return
@@ -130,13 +132,12 @@
 		return
 	if((M.mobility_flags & MOBILITY_STAND))
 		if(M.checkmiss(user))
-			if(!user.used_intent.swingdelay)
-				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 			return
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
-		user.rogfat_add(10)
+		user.adjust_stamina(10)
 	if(istype(user.rmb_intent, /datum/rmb_intent/swift))
-		user.rogfat_add(10)
+		user.adjust_stamina(10)
+	var/turf/turf_before = get_turf(M)
 	if(M.checkdefense(user.used_intent, user))
 		if(M.d_intent == INTENT_PARRY)
 			if(!M.get_active_held_item() && !M.get_inactive_held_item()) //we parried with a bracer, redirect damage
@@ -155,9 +156,10 @@
 				add_fingerprint(user)
 		if(M.d_intent == INTENT_DODGE)
 			if(!user.used_intent.swingdelay)
-				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
+				user.do_attack_animation(turf_before, visual_effect_icon = user.used_intent.animname)
 		return
-
+	if(!user.used_intent.noaa)
+		user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 	if(user.zone_selected == BODY_ZONE_PRECISE_R_INHAND)
 		var/offh = 0
 		var/obj/item/W = M.held_items[1]
@@ -381,7 +383,7 @@
 	var/verbu = "hits"
 	verbu = pick(user.used_intent.attack_verb)
 	if(newforce > 1)
-		if(user.rogfat_add(5))
+		if(user.adjust_stamina(5))
 			user.visible_message("<span class='danger'>[user] [verbu] [src] with [I]!</span>")
 		else
 			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")
@@ -408,7 +410,7 @@
 	var/verbu = "hits"
 	verbu = pick(user.used_intent.attack_verb)
 	if(newforce > 1)
-		if(user.rogfat_add(5))
+		if(user.adjust_stamina(5))
 			user.visible_message("<span class='danger'>[user] [verbu] [src] with [I]!</span>")
 		else
 			user.visible_message("<span class='warning'>[user] [verbu] [src] with [I]!</span>")

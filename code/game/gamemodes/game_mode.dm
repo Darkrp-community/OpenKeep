@@ -51,6 +51,9 @@
 	var/gamemode_ready = FALSE //Is the gamemode all set up and ready to start checking for ending conditions.
 	var/setup_error		//What stopepd setting up the mode.
 
+	var/roundvoteend = FALSE
+	var/round_ends_at
+
 	var/list/datum/mind/villains = list() //Murders Runtimes via shoving this into parent
 	var/list/datum/mind/liches = list()
 	var/list/datum/mind/vampires = list()
@@ -58,6 +61,7 @@
 	var/list/datum/mind/werewolves = list()
 	var/list/datum/mind/bandits = list()
 	var/list/datum/mind/cultists = list()
+	var/list/datum/mind/aspirants = list()
 
 	var/list/datum/mind/pre_villains = list()
 	var/list/datum/mind/pre_liches = list()
@@ -67,6 +71,7 @@
 	var/list/datum/mind/pre_delfs = list()
 	var/list/datum/mind/pre_rebels = list()
 	var/list/datum/mind/pre_cultists = list()
+	var/list/datum/mind/pre_aspirants = list()
 
 /datum/game_mode/proc/announce() //Shows the gamemode's name and a fast description.
 	to_chat(world, "<b>The gamemode is: <span class='[announce_span]'>[name]</span>!</b>")
@@ -376,6 +381,14 @@
 	// Ultimate randomizing code right here
 	for(var/i in GLOB.new_player_list)
 		var/mob/dead/new_player/player = i
+		if(is_misc_banned(player.ckey, BAN_MISC_LEPROSY))
+			continue
+		if(is_misc_banned(player.ckey, BAN_MISC_LUNATIC))
+			continue
+		if(is_antag_banned(player.ckey, role))
+			continue
+		if(is_total_antag_banned(player.ckey))
+			continue
 		if(player.ready == PLAYER_READY_TO_PLAY && player.check_preferences())
 //			if(player.client && player.client.whitelisted() && !player.client.blacklisted())
 			players += player
@@ -391,7 +404,6 @@
 				if(get_playerquality(player.ckey) <= -10)
 					continue
 			if(role in player.client.prefs.be_special)
-//				if(!is_banned_from(player.ckey, list(role, ROLE_SYNDICATE)) && !QDELETED(player))
 				candidates += player.mind				// Get a list of all the people who want to be the antagonist for this round
 				continue
 			if(role == ROLE_NBEAST)
@@ -406,33 +418,6 @@
 				if(pre_do)
 					if(player.current.client.prefs.job_preferences[job] == JP_HIGH)
 						candidates -= player
-
-/*
-	if(candidates.len < recommended_enemies)
-		for(var/mob/dead/new_player/player in players)
-			if(player.client && player.ready == PLAYER_READY_TO_PLAY)
-				if(!(role in player.client.prefs.be_special)) // We don't have enough people who want to be antagonist, make a separate list of people who don't want to be one
-					if(!is_banned_from(player.ckey, list(role, ROLE_SYNDICATE)) && !QDELETED(player))
-						drafted += player.mind
-
-	if(restricted_jobs)
-		for(var/datum/mind/player in drafted)				// Remove people who can't be an antagonist
-			for(var/job in restricted_jobs)
-				if(player.assigned_role == job)
-					drafted -= player
-
-	drafted = shuffle(drafted) // Will hopefully increase randomness, Donkie
-
-	while(candidates.len < recommended_enemies)				// Pick randomlly just the number of people we need and add them to our list of candidates
-		if(drafted.len > 0)
-			applicant = pick(drafted)
-			if(applicant)
-				candidates += applicant
-				drafted.Remove(applicant)
-
-		else												// Not enough scrubs, ABORT ABORT ABORT
-			break
-*/
 	return candidates		// Returns: The number of people who had the antagonist role set to yes, regardless of recomended_enemies, if that number is greater than recommended_enemies
 							//			recommended_enemies if the number of people with that role set to yes is less than recomended_enemies,
 							//			Less if there are not enough valid players in the game entirely to make recommended_enemies.
@@ -448,16 +433,15 @@
 
 /proc/reopen_roundstart_suicide_roles()
 	var/list/valid_positions = list()
-	valid_positions += GLOB.engineering_positions
-	valid_positions += GLOB.medical_positions
-	valid_positions += GLOB.science_positions
-	valid_positions += GLOB.supply_positions
-	valid_positions += GLOB.civilian_positions
-	valid_positions += GLOB.security_positions
-	if(CONFIG_GET(flag/reopen_roundstart_suicide_roles_command_positions))
-		valid_positions += GLOB.command_positions //add any remaining command positions
-	else
-		valid_positions -= GLOB.command_positions //remove all command positions that were added from their respective department positions lists.
+	valid_positions += GLOB.youngfolk_positions
+	valid_positions += GLOB.noble_positions
+	valid_positions += GLOB.church_positions
+	valid_positions += GLOB.garrison_positions
+	valid_positions += GLOB.serf_positions
+	valid_positions += GLOB.peasant_positions
+	valid_positions += GLOB.apprentices_positions
+	valid_positions += GLOB.youngfolk_positions
+
 
 	var/list/reopened_jobs = list()
 	for(var/X in GLOB.suicided_mob_list)

@@ -1,4 +1,7 @@
 /mob/living/carbon/examine(mob/user)
+	var/aghost_privilege = IsAdminGhost(user)
+	var/datum/antagonist/maniac/maniac = user.mind?.has_antag_datum(/datum/antagonist/maniac)
+
 	var/t_He = p_they(TRUE)
 	var/t_his = p_their()
 	var/t_has = p_have()
@@ -31,12 +34,6 @@
 	if (back)
 		. += "[m3] [back.get_examine_string(user)] on [m2] back."
 	var/appears_dead = 0
-/*	if (stat == DEAD)
-		appears_dead = 1
-		if(getorgan(/obj/item/organ/brain))
-			. += "<span class='dead'>[t_He] [t_is] limp and unresponsive, with no signs of life.</span>"
-		else if(get_bodypart(BODY_ZONE_HEAD))
-			. += "<span class='dead'>It appears that [t_his] brain is missing...</span>"*/
 
 	var/list/missing = get_missing_limbs()
 	for(var/t in missing)
@@ -108,6 +105,22 @@
 				. += "<span class='warning'>[t_He] look[p_s()] stronger than I.</span>"
 			else
 				. += "<span class='warning'><B>[t_He] look[p_s()] stronger than I.</B></span>"
+
+		if(maniac)
+			var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+			if(heart)
+				var/inscryption_key = LAZYACCESS(heart.inscryption_keys, maniac) // SPECIFICALLY the key that WE wrote
+				if(inscryption_key && (inscryption_key in maniac.key_nums))
+					. += span_danger("[t_He] know[p_s()] [inscryption_key], I AM SURE OF IT!")
+
+	if(aghost_privilege)
+		var/obj/item/organ/heart/heart = getorganslot(ORGAN_SLOT_HEART)
+		if(heart && heart.maniacs)
+			for(var/datum/antagonist/maniac/M in heart.maniacs)
+				var/K = LAZYACCESS(heart.inscryptions, M)
+				var/W = LAZYACCESS(heart.maniacs2wonder_ids, M)
+				var/N = M.owner?.name
+				. += span_notice("Inscryption[N ? " by [N]'s " : ""][W ? "Wonder #[W]" : ""]: [K ? K : ""]")
 
 	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
 	if(mood)

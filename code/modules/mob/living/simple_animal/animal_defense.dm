@@ -167,13 +167,12 @@
 	if(user.check_leg_grabbed(1) || user.check_leg_grabbed(2))
 		to_chat(user, "<span class='notice'>I can't move my leg!</span>")
 		return
-	if(user.rogfat >= user.maxrogfat)
+	if(user.stamina >= user.maximum_stamina)
 		return FALSE
 	if(user.loc == target.loc)
 		to_chat(user, "<span class='warning'>I'm too close to get a good kick in.</span>")
 		return FALSE
 	else
-		user.do_attack_animation(target, ATTACK_EFFECT_DISARM)
 		playsound(target, 'sound/combat/hits/kick/kick.ogg', 100, TRUE, -1)
 
 		var/shove_dir = get_dir(user.loc, target.loc)
@@ -190,7 +189,7 @@
 		target.lastattackerckey = user.ckey
 		if(target.mind)
 			target.mind.attackedme[user.real_name] = world.time
-		user.rogfat_add(15)
+		user.adjust_stamina(15)
 
 /mob/living/simple_animal/proc/attack_threshold_check(damage, damagetype = BRUTE, armorcheck = "blunt")
 	var/temp_damage = damage

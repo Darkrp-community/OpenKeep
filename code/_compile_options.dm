@@ -19,6 +19,7 @@
 #define MODE_RESTART
 //comment out if you want to restart the server instead of shutting down
 
+#define DEBUG 1
 // Comment this out if you are debugging problems that might be obscured by custom error handling in world/Error
 #ifdef DEBUG
 #define USE_CUSTOM_ERROR_HANDLER
@@ -51,8 +52,10 @@
 #endif								//	1 to use the default behaviour;
 									//	2 for preloading absolutely everything;
 
+//#define LOWMEMORYMODE //uncomment this to load centcom and roguetest and thats it.
+
 #ifdef LOWMEMORYMODE
-#define FORCE_MAP "_maps/runtimestation.json"
+#define FORCE_MAP "_maps/roguetest.json"
 #endif
 
 //Update this whenever you need to take advantage of more recent byond features

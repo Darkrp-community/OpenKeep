@@ -43,7 +43,7 @@
 	for(var/datum/mind/MF in get_minds())
 		owner.become_unknown_to(MF)
 	var/mob/living/carbon/human/L = owner.current
-	ADD_TRAIT(L, TRAIT_NOROGSTAM, "[type]")
+	ADD_TRAIT(L, TRAIT_NOSTAMINA, "[type]")
 	ADD_TRAIT(L, TRAIT_NOHUNGER, "[type]")
 	ADD_TRAIT(L, TRAIT_NOBREATH, "[type]")
 	ADD_TRAIT(L, TRAIT_NOPAIN, "[type]")
@@ -60,7 +60,7 @@
 	ADD_TRAIT(L, TRAIT_HEAVYARMOR, "[type]")
 	ADD_TRAIT(L, TRAIT_CABAL, "[type]")
 	ADD_TRAIT(L, TRAIT_DEATHSIGHT, "[type]")
-	L.cmode_music = 'sound/music/combat_cult.ogg'
+	L.cmode_music = 'sound/music/cmode/antag/combat_cult.ogg'
 	L.faction = list("undead")
 	if(L.charflaw)
 		QDEL_NULL(L.charflaw)

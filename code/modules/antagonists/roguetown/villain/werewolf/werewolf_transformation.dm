@@ -91,7 +91,7 @@
 	W.stored_mob = src
 	W.limb_destroyer = TRUE
 	W.ambushable = FALSE
-	W.cmode_music = 'sound/music/combat_werewolf.ogg'
+	W.cmode_music = 'sound/music/cmode/antag/combat_werewolf.ogg'
 	W.skin_armor = new /obj/item/clothing/suit/roguetown/armor/skin_armor/werewolf_skin(W)
 	playsound(W.loc, pick('sound/combat/gib (1).ogg','sound/combat/gib (2).ogg'), 200, FALSE, 3)
 	W.spawn_gibs(FALSE)
@@ -130,7 +130,7 @@
 	ADD_TRAIT(W, TRAIT_STRONGBITE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_ZJUMP, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_NOFALLDAMAGE1, TRAIT_GENERIC)
-	ADD_TRAIT(W, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+	ADD_TRAIT(W, TRAIT_NOSTAMINA, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_BASHDOORS, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC)
 	ADD_TRAIT(W, TRAIT_STEELHEARTED, TRAIT_GENERIC)

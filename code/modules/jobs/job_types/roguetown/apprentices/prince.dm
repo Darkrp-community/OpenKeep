@@ -8,7 +8,8 @@
 	spawn_positions = 2
 	allowed_races = list(
 		"Humen",
-		"Half-Elf"
+		"Half-Elf",
+		"Elf"
 	)
 
 	spells = list(
@@ -17,7 +18,7 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT)
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 	advclass_cat_rolls = list(CTAG_HEIR = 20)
 
 	tutorial = "You’ve never felt the gnawing of the winter, never known the bite of hunger and certainly have never known a honest day's work. You are as free as any bird in the sky, and you may revel in your debauchery for as long as your parents remain upon the throne: But someday you’ll have to grow up, and that will be the day your carelessness will cost you more than a few mammons."
@@ -26,6 +27,9 @@
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE
 	min_pq = 1
+
+	can_have_apprentices = FALSE
+
 
 /datum/job/roguetown/prince/after_spawn(mob/living/H, mob/M, latejoin)
 	. = ..()
@@ -53,7 +57,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/sword
-	beltr = /obj/item/roguekey/manor
+	beltr = /obj/item/key/manor
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	backr = /obj/item/storage/backpack/rogue/satchel
 	if(H.mind)
@@ -86,7 +90,7 @@
 	..()
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/roguekey/manor
+	beltl = /obj/item/key/manor
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights
@@ -100,7 +104,7 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/princess
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		pants = /obj/item/clothing/under/roguetown/tights/random
-
+	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(0,1), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
@@ -130,7 +134,7 @@
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/roguekey/manor
+	beltl = /obj/item/key/manor
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights

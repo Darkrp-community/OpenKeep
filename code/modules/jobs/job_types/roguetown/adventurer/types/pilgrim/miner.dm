@@ -15,6 +15,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/miner
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	apprentice_name = "Miner"
 
 /datum/outfit/job/roguetown/adventurer/miner/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -50,6 +51,6 @@
 
 	if(H.dna.species.id == "dwarf")
 		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
-		H.cmode_music = 'sound/music/combat_dwarf.ogg'
+		H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'
 	else
 		beltr = /obj/item/flashlight/flare/torch/lantern

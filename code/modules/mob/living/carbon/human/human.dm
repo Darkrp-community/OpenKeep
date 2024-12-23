@@ -158,20 +158,20 @@
 	dat += "<table>"
 
 	if(handcuffed)
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'>Remove [handcuffed]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_HANDCUFFED]'>Remove [handcuffed]</A></td></tr>"
 	if(legcuffed)
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_LEGCUFFED]'>Remove [legcuffed]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_LEGCUFFED]'>Remove [legcuffed]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
 	for(var/i in 1 to held_items.len)
 		var/obj/item/I = get_item_for_held_index(i)
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_HANDS];hand_index=[i]'>[(I && !(I.item_flags & ABSTRACT)) ? I : "<font color=grey>[get_held_index_name(i)]</font>"]</a></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_HANDS];hand_index=[i]'>[(I && !(I.item_flags & ABSTRACT)) ? I : "<font color=grey>[get_held_index_name(i)]</font>"]</a></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
 //	if(has_breathable_mask && istype(back, /obj/item/tank))
-//		dat += "&nbsp;<A href='?src=[REF(src)];internal=[SLOT_BACK]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
+//		dat += "&nbsp;<A href='byond://?src=[REF(src)];internal=[SLOT_BACK]'>[internal ? "Disable Internals" : "Set Internals"]</A>"
 
 //	dat += "<tr><td><B>HEAD</B></td></tr>"
 
@@ -179,22 +179,22 @@
 	if(SLOT_HEAD in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_HEAD]'>[(head && !(head.item_flags & ABSTRACT)) ? head : "<font color=grey>Head</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_HEAD]'>[(head && !(head.item_flags & ABSTRACT)) ? head : "<font color=grey>Head</font>"]</A></td></tr>"
 
 	if(SLOT_WEAR_MASK in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_WEAR_MASK]'>[(wear_mask && !(wear_mask.item_flags & ABSTRACT)) ? wear_mask : "<font color=grey>Mask</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_WEAR_MASK]'>[(wear_mask && !(wear_mask.item_flags & ABSTRACT)) ? wear_mask : "<font color=grey>Mask</font>"]</A></td></tr>"
 
 	if(SLOT_MOUTH in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_MOUTH]'>[(mouth && !(mouth.item_flags & ABSTRACT)) ? mouth : "<font color=grey>Mouth</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_MOUTH]'>[(mouth && !(mouth.item_flags & ABSTRACT)) ? mouth : "<font color=grey>Mouth</font>"]</A></td></tr>"
 
 	if(SLOT_NECK in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_NECK]'>[(wear_neck && !(wear_neck.item_flags & ABSTRACT)) ? wear_neck : "<font color=grey>Neck</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_NECK]'>[(wear_neck && !(wear_neck.item_flags & ABSTRACT)) ? wear_neck : "<font color=grey>Neck</font>"]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
@@ -203,17 +203,17 @@
 	if(SLOT_CLOAK in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_CLOAK]'>[(cloak && !(cloak.item_flags & ABSTRACT)) ? cloak : "<font color=grey>Cloak</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_CLOAK]'>[(cloak && !(cloak.item_flags & ABSTRACT)) ? cloak : "<font color=grey>Cloak</font>"]</A></td></tr>"
 
 	if(SLOT_BACK_R in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_BACK_R]'>[(backr && !(backr.item_flags & ABSTRACT)) ? backr : "<font color=grey>Back</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_BACK_R]'>[(backr && !(backr.item_flags & ABSTRACT)) ? backr : "<font color=grey>Back</font>"]</A></td></tr>"
 
 	if(SLOT_BACK_L in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_BACK_L]'>[(backl && !(backl.item_flags & ABSTRACT)) ? backl : "<font color=grey>Back</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_BACK_L]'>[(backl && !(backl.item_flags & ABSTRACT)) ? backl : "<font color=grey>Back</font>"]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
@@ -222,27 +222,27 @@
 	if(SLOT_ARMOR in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_ARMOR]'>[(wear_armor && !(wear_armor.item_flags & ABSTRACT)) ? wear_armor : "<font color=grey>Armor</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_ARMOR]'>[(wear_armor && !(wear_armor.item_flags & ABSTRACT)) ? wear_armor : "<font color=grey>Armor</font>"]</A></td></tr>"
 
 	if(SLOT_SHIRT in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_SHIRT]'>[(wear_shirt && !(wear_shirt.item_flags & ABSTRACT)) ? wear_shirt : "<font color=grey>Shirt</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_SHIRT]'>[(wear_shirt && !(wear_shirt.item_flags & ABSTRACT)) ? wear_shirt : "<font color=grey>Shirt</font>"]</A></td></tr>"
 
 	if(SLOT_GLOVES in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_GLOVES]'>[(gloves && !(gloves.item_flags & ABSTRACT)) ? gloves : "<font color=grey>Gloves</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_GLOVES]'>[(gloves && !(gloves.item_flags & ABSTRACT)) ? gloves : "<font color=grey>Gloves</font>"]</A></td></tr>"
 
 	if(SLOT_RING in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_RING]'>[(wear_ring && !(wear_ring.item_flags & ABSTRACT)) ? wear_ring : "<font color=grey>Ring</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_RING]'>[(wear_ring && !(wear_ring.item_flags & ABSTRACT)) ? wear_ring : "<font color=grey>Ring</font>"]</A></td></tr>"
 
 	if(SLOT_WRISTS in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_WRISTS]'>[(wear_wrists && !(wear_wrists.item_flags & ABSTRACT)) ? wear_wrists : "<font color=grey>Wrists</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_WRISTS]'>[(wear_wrists && !(wear_wrists.item_flags & ABSTRACT)) ? wear_wrists : "<font color=grey>Wrists</font>"]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
@@ -251,17 +251,17 @@
 	if(SLOT_BELT in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_BELT]'>[(belt && !(belt.item_flags & ABSTRACT)) ? belt : "<font color=grey>Belt</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_BELT]'>[(belt && !(belt.item_flags & ABSTRACT)) ? belt : "<font color=grey>Belt</font>"]</A></td></tr>"
 
 	if(SLOT_BELT_R in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_BELT_R]'>[(beltr && !(beltr.item_flags & ABSTRACT)) ? beltr : "<font color=grey>Hip</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_BELT_R]'>[(beltr && !(beltr.item_flags & ABSTRACT)) ? beltr : "<font color=grey>Hip</font>"]</A></td></tr>"
 
 	if(SLOT_BELT_L in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_BELT_L]'>[(beltl && !(beltl.item_flags & ABSTRACT)) ? beltl : "<font color=grey>Hip</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_BELT_L]'>[(beltl && !(beltl.item_flags & ABSTRACT)) ? beltl : "<font color=grey>Hip</font>"]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
@@ -270,12 +270,12 @@
 	if(SLOT_PANTS in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_PANTS]'>[(wear_pants && !(wear_pants.item_flags & ABSTRACT)) ? wear_pants : "<font color=grey>Trousers</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_PANTS]'>[(wear_pants && !(wear_pants.item_flags & ABSTRACT)) ? wear_pants : "<font color=grey>Trousers</font>"]</A></td></tr>"
 
 	if(SLOT_SHOES in obscured)
 		dat += "<tr><td><font color=grey>Obscured</font></td></tr>"
 	else
-		dat += "<tr><td><A href='?src=[REF(src)];item=[SLOT_SHOES]'>[(shoes && !(shoes.item_flags & ABSTRACT)) ? shoes : "<font color=grey>Boots</font>"]</A></td></tr>"
+		dat += "<tr><td><A href='byond://?src=[REF(src)];item=[SLOT_SHOES]'>[(shoes && !(shoes.item_flags & ABSTRACT)) ? shoes : "<font color=grey>Boots</font>"]</A></td></tr>"
 
 	dat += "<tr><td><hr></td></tr>"
 
@@ -480,86 +480,57 @@
 				else
 					hud_used.bloods.icon_state = "damelse"
 
-/*		if(hud_used.healthdoll)
-			hud_used.healthdoll.cut_overlays()
+		if(hud_used.stamina)
 			if(stat != DEAD)
-				hud_used.healthdoll.icon_state = "healthdoll_OVERLAY"
-				for(var/X in bodyparts)
-					var/obj/item/bodypart/BP = X
-					var/damage = BP.burn_dam + BP.brute_dam
-					var/comparison = (BP.max_damage/5)
-					var/icon_num = 0
-					if(damage)
-						icon_num = 1
-					if(damage > (comparison))
-						icon_num = 2
-					if(damage > (comparison*2))
-						icon_num = 3
-					if(damage > (comparison*3))
-						icon_num = 4
-					if(damage > (comparison*4))
-						icon_num = 5
-					if(hal_screwyhud == SCREWYHUD_HEALTHY)
-						icon_num = 0
-					if(icon_num)
-						hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[BP.body_zone][icon_num]"))
-				for(var/t in get_missing_limbs()) //Missing limbs
-					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]6"))
-				for(var/t in get_disabled_limbs()) //Disabled limbs
-					hud_used.healthdoll.add_overlay(mutable_appearance('icons/mob/screen_gen.dmi', "[t]7"))
-			else
-				hud_used.healthdoll.icon_state = "healthdoll_DEAD"*/
+				. = 1
+				if(stamina >= maximum_stamina)
+					hud_used.stamina.icon_state = "fat0"
+				else if(stamina > maximum_stamina*0.90)
+					hud_used.stamina.icon_state = "fat10"
+				else if(stamina > maximum_stamina*0.80)
+					hud_used.stamina.icon_state = "fat20"
+				else if(stamina > maximum_stamina*0.70)
+					hud_used.stamina.icon_state = "fat30"
+				else if(stamina > maximum_stamina*0.60)
+					hud_used.stamina.icon_state = "fat40"
+				else if(stamina > maximum_stamina*0.50)
+					hud_used.stamina.icon_state = "fat50"
+				else if(stamina > maximum_stamina*0.40)
+					hud_used.stamina.icon_state = "fat60"
+				else if(stamina > maximum_stamina*0.30)
+					hud_used.stamina.icon_state = "fat70"
+				else if(stamina > maximum_stamina*0.20)
+					hud_used.stamina.icon_state = "fat80"
+				else if(stamina > maximum_stamina*0.10)
+					hud_used.stamina.icon_state = "fat90"
+				else if(stamina >= 0)
+					hud_used.stamina.icon_state = "fat100"
 
-		if(hud_used.fats)
+		if(hud_used.energy)
 			if(stat != DEAD)
 				. = 1
-				if(rogfat >= maxrogfat)
-					hud_used.fats.icon_state = "fat0"
-				else if(rogfat > maxrogfat*0.90)
-					hud_used.fats.icon_state = "fat10"
-				else if(rogfat > maxrogfat*0.80)
-					hud_used.fats.icon_state = "fat20"
-				else if(rogfat > maxrogfat*0.70)
-					hud_used.fats.icon_state = "fat30"
-				else if(rogfat > maxrogfat*0.60)
-					hud_used.fats.icon_state = "fat40"
-				else if(rogfat > maxrogfat*0.50)
-					hud_used.fats.icon_state = "fat50"
-				else if(rogfat > maxrogfat*0.40)
-					hud_used.fats.icon_state = "fat60"
-				else if(rogfat > maxrogfat*0.30)
-					hud_used.fats.icon_state = "fat70"
-				else if(rogfat > maxrogfat*0.20)
-					hud_used.fats.icon_state = "fat80"
-				else if(rogfat > maxrogfat*0.10)
-					hud_used.fats.icon_state = "fat90"
-				else if(rogfat >= 0)
-					hud_used.fats.icon_state = "fat100"
-		if(hud_used.stams)
-			if(stat != DEAD)
-				. = 1
-				if(rogstam <= 0)
-					hud_used.stams.icon_state = "stam0"
-				else if(rogstam > maxrogstam*0.90)
-					hud_used.stams.icon_state = "stam100"
-				else if(rogstam > maxrogstam*0.80)
-					hud_used.stams.icon_state = "stam90"
-				else if(rogstam > maxrogstam*0.70)
-					hud_used.stams.icon_state = "stam80"
-				else if(rogstam > maxrogstam*0.60)
-					hud_used.stams.icon_state = "stam70"
-				else if(rogstam > maxrogstam*0.50)
-					hud_used.stams.icon_state = "stam60"
-				else if(rogstam > maxrogstam*0.40)
-					hud_used.stams.icon_state = "stam50"
-				else if(rogstam > maxrogstam*0.30)
-					hud_used.stams.icon_state = "stam40"
-				else if(rogstam > maxrogstam*0.20)
-					hud_used.stams.icon_state = "stam30"
-				else if(rogstam > maxrogstam*0.10)
-					hud_used.stams.icon_state = "stam20"
-				else if(rogstam > 0)
-					hud_used.stams.icon_state = "stam10"
+				if(energy <= 0)
+					hud_used.energy.icon_state = "stam0"
+				else if(energy > max_energy*0.90)
+					hud_used.energy.icon_state = "stam100"
+				else if(energy > max_energy*0.80)
+					hud_used.energy.icon_state = "stam90"
+				else if(energy > max_energy*0.70)
+					hud_used.energy.icon_state = "stam80"
+				else if(energy > max_energy*0.60)
+					hud_used.energy.icon_state = "stam70"
+				else if(energy > max_energy*0.50)
+					hud_used.energy.icon_state = "stam60"
+				else if(energy > max_energy*0.40)
+					hud_used.energy.icon_state = "stam50"
+				else if(energy > max_energy*0.30)
+					hud_used.energy.icon_state = "stam40"
+				else if(energy > max_energy*0.20)
+					hud_used.energy.icon_state = "stam30"
+				else if(energy > max_energy*0.10)
+					hud_used.energy.icon_state = "stam20"
+				else if(energy > 0)
+					hud_used.energy.icon_state = "stam10"
 
 		if(hud_used.zone_select)
 			hud_used.zone_select.update_icon()

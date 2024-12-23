@@ -16,7 +16,7 @@
 		"Aasimar"
 	)
 
-	tutorial = "Liquor, lodging, and lavish meals... your business is the beating heart of Rockhill. You're the one who provides the the hardworking townsfolk with a place to eat and drink their sorrows away, and accommodations for weary travelers passing through."
+	tutorial = "Liquor, lodging, and lavish meals... your business is the beating heart of Vanderlin. You're the one who provides the the hardworking townsfolk with a place to eat and drink their sorrows away, and accommodations for weary travelers passing through."
 
 	outfit = /datum/outfit/job/roguetown/innkeep
 	display_order = JDO_INNKEEP
@@ -40,7 +40,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
-		neck = /obj/item/keyring/innkeep
+		neck = /obj/item/storage/keyring/innkeep
 		cloak = /obj/item/clothing/cloak/apron/waist
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 1)
@@ -49,7 +49,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 		belt = /obj/item/storage/belt/rogue/leather
-		beltl = /obj/item/keyring/innkeep
+		beltl = /obj/item/storage/keyring/innkeep
 		beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 		H.change_stat("endurance", 1)
 		H.change_stat("constitution", 1)

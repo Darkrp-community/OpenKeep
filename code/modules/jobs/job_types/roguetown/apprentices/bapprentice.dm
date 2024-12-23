@@ -17,6 +17,8 @@
 	min_pq = -10
 	bypass_lastclass = TRUE
 
+	can_have_apprentices = FALSE
+
 /datum/outfit/job/roguetown/bapprentice/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
@@ -35,7 +37,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		shirt = null
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/key/blacksmith
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest
 		backr = /obj/item/storage/backpack/rogue/satchel
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
@@ -46,7 +48,7 @@
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltr = /obj/item/roguekey/blacksmith
+		beltr = /obj/item/key/blacksmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backr = /obj/item/storage/backpack/rogue/satchel
 		H.change_stat("endurance", 2)

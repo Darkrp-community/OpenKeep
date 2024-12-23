@@ -5,7 +5,6 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	f_title = "Apothecary"
 
 	allowed_races = list(
 		"Humen",
@@ -26,13 +25,14 @@
 	give_bank_account = 100
 	min_pq = 1
 	bypass_lastclass = TRUE
+	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
 
 /datum/outfit/job/roguetown/niteman/pre_equip(mob/living/carbon/human/H)
 	..()
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	belt = /obj/item/storage/belt/rogue/leather/rope
-	beltr = /obj/item/keyring/niteman
+	beltr = /obj/item/storage/keyring/niteman
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

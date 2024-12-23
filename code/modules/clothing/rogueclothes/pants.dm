@@ -82,6 +82,7 @@
 /obj/item/clothing/under/roguetown/tights/vagrant
 	r_sleeve_status = SLEEVE_TORN
 	body_parts_covered = GROIN|LEG_LEFT
+	torn_sleeve_number = 1
 
 /obj/item/clothing/under/roguetown/tights/vagrant/l
 	r_sleeve_status = SLEEVE_NORMAL
@@ -104,6 +105,7 @@
 	item_state = "webs"
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	salvage_result = /obj/item/natural/silk
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
 	name = "mourning trousers"
@@ -114,8 +116,13 @@
 /obj/item/clothing/under/roguetown/trou/shadowpants
 	name = "silk tights"
 	desc = "Form-fitting legwear. Almost too form-fitting."
+	mob_overlay_icon = 'icons/roguetown/clothing/newclothes/onmob/onmobsilkpants.dmi'
+	sleeved = 'icons/roguetown/clothing/newclothes/onmob/sleeves_pants.dmi'
 	icon_state = "shadowpants"
-	allowed_race = list("elf", "dark elf")
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/silk
 
 /obj/item/clothing/under/roguetown/loincloth
 	name = "loincloth"
@@ -125,9 +132,14 @@
 //	adjustable = CAN_CADJUST
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
+	fiber_salvage = FALSE
+	salvage_amount = 1
 
 /obj/item/clothing/under/roguetown/loincloth/brown
 	color = CLOTHING_BARK_BROWN
+
+/obj/item/clothing/under/roguetown/loincloth/black
+	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/under/roguetown/loincloth/pink
 	color = "#b98ae3"
@@ -155,6 +167,8 @@
 
 	armor = ARMOR_PADDED_BAD
 	prevent_crits = MINOR_CRITICALS
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/under/roguetown/trou/leather
 	name = "leather trousers"
@@ -162,6 +176,24 @@
 	icon_state = "leathertrou"
 	armor = ARMOR_LEATHER
 	max_integrity = INTEGRITY_POOR
+
+/obj/item/clothing/under/roguetown/trou/leather/advanced
+	name = "hardened leather chausses"
+	desc = "Sturdy, durable, flexible. The finest leather to protect your nether regions."
+	max_integrity = 200
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("blunt" = 70, "slash" = 60, "stab" = 30, "piercing" = 20,"fire" = 0, "acid" = 0)
+
+/obj/item/clothing/under/roguetown/trou/leather/masterwork
+	name = "masterwork leather chausses"
+	desc = "These chausses are a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	max_integrity = 250
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP)
+	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 20, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/under/roguetown/trou/leather/masterwork/Initialize()
+	. = ..()
+	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 
 /obj/item/clothing/under/roguetown/grenzelpants
 	name = "grenzelhoftian paumpers"

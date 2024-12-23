@@ -677,6 +677,8 @@
 		playsound_local(src, 'sound/misc/comboff.ogg', 100)
 		SSdroning.play_area_sound(get_area(src), client)
 		cmode = FALSE
+		if(client && HAS_TRAIT(src, TRAIT_SCHIZO_AMBIENCE) && !HAS_TRAIT(src, TRAIT_SCREENSHAKE))
+			animate(client, pixel_y) // stops screenshake if you're not on 4th wonder yet.
 	else
 		cmode = TRUE
 		playsound_local(src, 'sound/misc/combon.ogg', 100)
@@ -689,7 +691,7 @@
 /mob
 	var/last_aimhchange = 0
 	var/aimheight = 11
-	var/cmode_music = 'sound/music/combat.ogg'
+	var/cmode_music = 'sound/music/cmode/combat.ogg'
 
 /mob/proc/aimheight_change(input)
 	var/old_zone = zone_selected
@@ -856,7 +858,7 @@
 			continue
 		var/orbit_link
 		if (source && action == NOTIFY_ORBIT)
-			orbit_link = " <a href='?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
+			orbit_link = " <a href='byond://?src=[REF(O)];follow=[REF(source)]'>(Orbit)</a>"
 		to_chat(O, "<span class='ghostalert'>[message][(enter_link) ? " [enter_link]" : ""][orbit_link]</span>")
 		if(ghost_sound)
 			SEND_SOUND(O, sound(ghost_sound, volume = notify_volume))
@@ -931,7 +933,7 @@
 		var/datum/antagonist/A = M.mind.has_antag_datum(/datum/antagonist/)
 		if(A)
 			poll_message = "[poll_message] Status:[A.name]."
-	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_PAI, null, FALSE, 100, M)
+	var/list/mob/dead/observer/candidates = pollCandidatesForMob(poll_message, ROLE_ASPIRANT, null, FALSE, 100, M)
 
 	if(LAZYLEN(candidates))
 		var/mob/dead/observer/C = pick(candidates)
@@ -1047,4 +1049,12 @@
 		used_title = J.title
 		if((gender == FEMALE) && J.f_title)
 			used_title = J.f_title
+
+		if(J.title == "Monarch")
+			if(gender == FEMALE)
+				used_title = "Queen"
+			else
+				used_title = "King"
+	if(mind?.apprentice)
+		used_title = mind.our_apprentice_name
 	return used_title

@@ -27,7 +27,9 @@
 	job_reopens_slots_on_death = FALSE //no endless stream of bandits, unless the migration waves deem it so
 	same_job_respawn_delay = 30 MINUTES
 
-	cmode_music = 'sound/music/combat_bandit2.ogg'
+	cmode_music = 'sound/music/cmode/antag/combat_bandit2.ogg'
+	can_have_apprentices = FALSE
+
 
 /datum/job/roguetown/bandit/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

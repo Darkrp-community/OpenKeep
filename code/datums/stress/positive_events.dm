@@ -176,3 +176,13 @@
 	stressadd = -1
 	desc = span_green("A soothing fragrance envelops me.")
 	timer = 10 MINUTES
+
+/datum/stressevent/divine_beauty
+	stressadd = -5
+	desc = span_green("A soothing fragrance envelops me, and I feel clean as a whistle.")
+	timer = 5 MINUTES
+
+/datum/stressevent/apprentice_making_me_proud
+	timer = 5 MINUTES
+	stressadd = -3
+	desc = span_green("My apprentice is getting better.")

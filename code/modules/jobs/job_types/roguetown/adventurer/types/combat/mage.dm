@@ -16,9 +16,9 @@
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
 	maximum_possible_slots = 2
+	cmode_music = 'sound/music/cmode/adventurer/CombatSorcerer.ogg'
 
 /datum/outfit/job/roguetown/adventurer/mage
-	allowed_patrons = list(/datum/patron/divine/noc)
 
 /datum/outfit/job/roguetown/adventurer/mage/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -30,6 +30,9 @@
 	beltl = /obj/item/reagent_containers/glass/bottle/rogue/manapot
 	r_hand = /obj/item/rogueweapon/polearm/woodstaff
 	if(H.mind)
+		if(H.patron != /datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc)
+
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)

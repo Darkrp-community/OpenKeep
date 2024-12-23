@@ -15,11 +15,12 @@
 * in human.dna called parent_mix that could be
 * used for intrigue but currently it has
 * no use and is only changed by the
-* heritage datum BloodTies() proc.
+* heritage datum BloodTies() proc.`
 */
 SUBSYSTEM_DEF(familytree)
 	name = "familytree"
 	flags = SS_NO_FIRE
+	lazy_load = FALSE
 
 	/*
 	* The family that kings, queens, and princes
@@ -41,10 +42,12 @@ SUBSYSTEM_DEF(familytree)
 	var/excluded_jobs = list(
 		"Prince",
 		"Princess",
-		"Queen",
-		"King",
-		"Inquisitor",
+		"Consort",
+		"Monarch",
 		"Hand",
+		"Inquisitor",
+		"Adept",
+		"Jailor",
 		)
 	//This creates 2 families for each race roundstart so that siblings dont fail to be added to a family.
 	var/list/preset_family_species = list(

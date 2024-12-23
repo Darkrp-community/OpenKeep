@@ -16,7 +16,6 @@
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD, AGE_IMMORTAL)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAGICIAN
-	allowed_patrons = list(/datum/patron/divine/noc)
 	tutorial = "Dream interpreter, soothsayer, astrologer and valued courtier, blessed by Noc. \
 	Indebted to the ruler for funding yils of mystical studies in these dark times, \
 	only wisdom and arcane knowledge amassed during a long life will allow a mage to unlock their full potential."
@@ -25,7 +24,7 @@
 	bypass_lastclass = TRUE
 	give_bank_account = 120
 	min_pq = 4
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/cmode/nobility/CombatCourtMagician.ogg'
 
 /datum/outfit/job/roguetown/magician/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -35,11 +34,14 @@
 	cloak = /obj/item/clothing/cloak/black_cloak
 	id = /obj/item/clothing/ring/gold
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltr = /obj/item/keyring/mage
+	beltr = /obj/item/storage/keyring/mage
 	backl = /obj/item/rogueweapon/polearm/woodstaff
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backpack_contents = list(/obj/item/scrying = 1)
 	if(H.mind)
+		if(H.patron != /datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc)
+
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)

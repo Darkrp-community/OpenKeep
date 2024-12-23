@@ -33,7 +33,14 @@
 
 ///Basic Mob Keys
 
+///Tipped blackboards
+///Bool that means a basic mob will start reacting to being tipped in it's planning
+#define BB_BASIC_MOB_TIP_REACTING "BB_basic_tip_reacting"
+///the motherfucker who tipped us
+#define BB_BASIC_MOB_TIPPER "BB_basic_tip_tipper"
+
 ///Targetting subtrees
+#define BB_TARGETED_ACTION "BB_targeted_action"
 #define BB_BASIC_MOB_CURRENT_TARGET "BB_basic_current_target"
 #define BB_BASIC_MOB_CURRENT_TARGET_HIDING_LOCATION "BB_basic_current_target_hiding_location"
 #define BB_TARGETTING_DATUM "targetting_datum"
@@ -50,6 +57,7 @@
 
 /// Flag to set on or off if you want your mob to prioritise running away
 #define BB_BASIC_MOB_FLEEING "BB_basic_fleeing"
+#define BB_BASIC_MOB_NEXT_FLEEING "BB_nex_flee"
 
 ///List of mobs who have damaged us
 #define BB_BASIC_MOB_RETALIATE_LIST "BB_basic_mob_shitlist"

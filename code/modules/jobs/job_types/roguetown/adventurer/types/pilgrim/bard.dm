@@ -18,6 +18,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	apprentice_name = "Bard"
 
 /datum/outfit/job/roguetown/adventurer/bard/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -56,7 +57,7 @@
 			backr = /obj/item/rogue/instrument/lute
 		if(H.dna.species.id == "dwarf")
 			backr = /obj/item/rogue/instrument/accord
-			H.cmode_music = 'sound/music/combat_dwarf.ogg'
+			H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'
 		if(H.dna.species.id == "elf")
 			backr = /obj/item/rogue/instrument/harp
 		if(H.dna.species.id == "tiefling")

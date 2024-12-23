@@ -10,7 +10,7 @@
 
 	outfit = null
 	outfit_female = null
-	bypass_jobban = FALSE
+	banned_leprosy = FALSE
 	advclass_cat_rolls = list(CTAG_PILGRIM = 15)
 
 	display_order = JDO_PILGRIM
@@ -18,6 +18,7 @@
 	always_show_on_latechoices = TRUE
 	same_job_respawn_delay = 0
 	bypass_lastclass = TRUE
+	can_have_apprentices = FALSE
 
 
 /datum/job/roguetown/pilgrim/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

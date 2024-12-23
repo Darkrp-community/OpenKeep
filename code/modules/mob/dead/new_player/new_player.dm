@@ -64,54 +64,10 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	return
 
 /mob/dead/new_player/proc/new_player_panel()
-/*
-	var/output = "<center>"
-	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		switch(ready)
-			if(PLAYER_NOT_READY)
-				output += "<p>[LINKIFY_READY("READY", PLAYER_READY_TO_PLAY)] | <b>UNREADY</b></p>"
-			if(PLAYER_READY_TO_PLAY)
-				output += "<p><b>READY</b> | [LINKIFY_READY("UNREADY", PLAYER_NOT_READY)]</p>"
-			if(PLAYER_READY_TO_OBSERVE)
-				output += "<p>[LINKIFY_READY("READY", PLAYER_READY_TO_PLAY)]</p>"
-				output += "<p>[LINKIFY_READY("UNREADY", PLAYER_NOT_READY)]</p>"
-	else
-//		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>View the Crew Manifest</a></p>"
-//		output += "<p><a href='byond://?src=[REF(src)];manifest=1'>FOLK</a></p>"
-		output += "<p><a href='byond://?src=[REF(src)];late_join=1'>LATEJOIN</a></p>"
-	output += "<p><a href='byond://?src=[REF(src)];show_preferences=1'>CHARACTER</a></p>"
-
-//	output += "<p><a href='byond://?src=[REF(src)];show_options=1'>OPTIONS</a></p>"
-
-	output += "<p><a href='byond://?src=[REF(src)];show_keybinds=1'>KEYBINDS</a></p>"
-
-	if(!IsGuestKey(src.key))
-		if (SSdbcore.Connect())
-			var/isadmin = 0
-			if(src.client && src.client.holder)
-				isadmin = 1
-			var/datum/DBQuery/query_get_new_polls = SSdbcore.NewQuery("SELECT id FROM [format_table_name("poll_question")] WHERE [(isadmin ? "" : "adminonly = false AND")] Now() BETWEEN starttime AND endtime AND id NOT IN (SELECT pollid FROM [format_table_name("poll_vote")] WHERE ckey = \"[sanitizeSQL(ckey)]\") AND id NOT IN (SELECT pollid FROM [format_table_name("poll_textreply")] WHERE ckey = \"[sanitizeSQL(ckey)]\")")
-			var/rs = REF(src)
-			if(query_get_new_polls.Execute())
-				var/newpoll = 0
-				if(query_get_new_polls.NextRow())
-					newpoll = 1
-
-				if(newpoll)
-					output += "<p><b><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A> (NEW!)</b></p>"
-				else
-					output += "<p><a href='byond://?src=[rs];showpoll=1'>Show Player Polls</A></p>"
-			qdel(query_get_new_polls)
-			if(QDELETED(src))
-				return
-
-	output += "</center>"
-
-	//src << browse(output,"window=playersetup;size=210x240;can_close=0")
-	var/datum/browser/popup = new(src, "playersetup", "<div align='center'>LOBBY MENU</div>", 250, 200)
-	popup.set_window_options("can_close=0")
-	popup.set_content(output)
-	popup.open(FALSE)*/
+	if(!SSassets.initialized)
+		sleep(0.5 SECONDS)
+		new_player_panel()
+		return
 	if(client)
 		if(client.prefs)
 			client.prefs.ShowChoices(src, 4)
@@ -227,9 +183,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 					to_chat(usr, "<span class='notice'>Thou have been added to the queue to join the game. Your position in queue is [SSticker.queued_players.len].</span>")
 				return
 		LateChoices()
-
-	if(href_list["manifest"])
-		ViewManifest()
 
 	if(href_list["SelectedJob"])
 		if(!SSticker?.IsRoundInProgress())
@@ -391,11 +344,17 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 //				return JOB_UNAVAILABLE_GENERIC //we can't play adventurer if there isn't 1 of every other job that we can play
 	if(is_banned_from(ckey, rank))
 		return JOB_UNAVAILABLE_BANNED
-	if((!job.bypass_jobban) && (client.blacklisted()))
-		return JOB_UNAVAILABLE_GENERIC
 	if(CONFIG_GET(flag/usewhitelist))
 		if(job.whitelist_req && (!client.whitelisted()))
 			return JOB_UNAVAILABLE_GENERIC
+
+	if(is_role_banned(client.ckey, job.title))
+		return JOB_UNAVAILABLE_BANNED
+	if(job.banned_leprosy && is_misc_banned(client.ckey, BAN_MISC_LEPROSY))
+		return JOB_UNAVAILABLE_BANNED
+	if(job.banned_lunatic && is_misc_banned(client.ckey, BAN_MISC_LUNATIC))
+		return JOB_UNAVAILABLE_BANNED
+
 	if(QDELETED(src))
 		return JOB_UNAVAILABLE_GENERIC
 	if(!job.player_old_enough(client))
@@ -435,18 +394,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	if(SSticker.late_join_disabled)
 		alert(src, "Something went bad.")
 		return FALSE
-/*
-	var/arrivals_docked = TRUE
-	if(SSshuttle.arrivals)
-		close_spawn_windows()	//In case we get held up
-		if(SSshuttle.arrivals.damaged && CONFIG_GET(flag/arrivals_shuttle_require_safe_latejoin))
-			src << alert("WEIRD!")
-			return FALSE
-
-		if(CONFIG_GET(flag/arrivals_shuttle_require_undocked))
-			SSshuttle.arrivals.RequireUndocked(src)
-		arrivals_docked = SSshuttle.arrivals.mode != SHUTTLE_CALL
-*/
+	if(!client.prefs.allowed_respawn())
+		to_chat(src, span_boldwarning("You cannot respawn."))
+		return FALSE
 
 	//Remove the player from the join queue if he was in one and reset the timer
 	SSticker.queued_players -= src
@@ -521,6 +471,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.apprentices_positions)
 	omegalist += list(GLOB.serf_positions)
+	omegalist += list(GLOB.youngfolk_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -613,15 +564,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 
 	var/mob/living/carbon/human/H = new(loc)
 
-	var/frn = CONFIG_GET(flag/force_random_names)
-	if(!frn)
-		frn = is_banned_from(ckey, "Appearance")
-		if(QDELETED(src))
-			return
-	if(frn)
-		client.prefs.random_character()
-		client.prefs.real_name = client.prefs.pref_species.random_name(gender,1)
-
 	var/is_antag
 	if(mind in GLOB.pre_setup_antags)
 		is_antag = TRUE
@@ -665,12 +607,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 		new_character = null
 		qdel(src)
 
-/mob/dead/new_player/proc/ViewManifest()
-	var/dat = "<html><body>"
-	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest(OOC = 1)
-
-	src << browse(dat, "window=manifest;size=387x420;can_close=1")
 
 /mob/dead/new_player/Move()
 	return 0

@@ -1,60 +1,63 @@
-/mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
-	maxrogfat = maxrogstam / 10
+/mob/living/proc/update_stamina() //update hud and regen after last_fatigued delay on taking
+	maximum_stamina = max_energy / 10
 
 	if(world.time > last_fatigued + 20) //regen fatigue
-		var/added = rogstam / maxrogstam
+		var/added = energy / max_energy
 		added = round(-10+ (added*-40))
 		if(HAS_TRAIT(src, TRAIT_MISSING_NOSE))
 			added = round(added * 0.5, 1)
-		if(rogfat >= 1)
-			rogfat_add(added)
+		if(stamina >= 1)
+			adjust_stamina(added)
 		else
-			rogfat = 0
+			stamina = 0
 
 	update_health_hud()
 
-/mob/living/proc/update_rogstam()
+/mob/living/proc/update_energy()
+	///this is kinda weird and not at the same time for energy being tied to this,
+	/// since energy is both a magical and physical system
 	var/athletics_skill = 0
 	if(mind)
 		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
-	maxrogstam = (STAEND + (athletics_skill/2 ) ) * 100
+	max_energy = (STAEND + (athletics_skill / 2) ) * 100
 	if(cmode)
 		if(!HAS_TRAIT(src, TRAIT_BREADY))
-			rogstam_add(-2)
+			adjust_energy(-2)
 
-/mob/proc/rogstam_add(added as num)
+/mob/proc/adjust_energy(added as num)
 	return
 
-/mob/living/rogstam_add(added as num)
-	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
+/mob/living/adjust_energy(added as num)
+	///this trait affects both stamina and energy since they are part of the same system.
+	if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 		return TRUE
 	if(m_intent == MOVE_INTENT_RUN)
 		var/boon = mind.get_learning_boon(/datum/skill/misc/athletics)
 		mind.adjust_experience(/datum/skill/misc/athletics, (STAINT*0.02) * boon)
-	rogstam += added
-	if(rogstam > maxrogstam)
-		rogstam = maxrogstam
+	energy += added
+	if(energy > max_energy)
+		energy = max_energy
 		update_health_hud()
 		return FALSE
 	else
-		if(rogstam <= 0)
-			rogstam = 0
+		if(energy <= 0)
+			energy = 0
 			if(m_intent == MOVE_INTENT_RUN) //can't sprint at zero stamina
 				toggle_rogmove_intent(MOVE_INTENT_WALK)
 		update_health_hud()
 		return TRUE
 
-/mob/proc/rogfat_add(added as num)
+/mob/proc/adjust_stamina(added as num)
 	return TRUE
 
-/mob/living/rogfat_add(added as num, emote_override, force_emote = TRUE) //call update_rogfat here and set last_fatigued, return false when not enough fatigue left
-	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
+/mob/living/adjust_stamina(added as num, emote_override, force_emote = TRUE) //call update_stamina here and set last_fatigued, return false when not enough fatigue left
+	if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 		return TRUE
-	rogfat = CLAMP(rogfat+added, 0, maxrogfat)
+	stamina = CLAMP(stamina+added, 0, maximum_stamina)
 	if(added > 0)
-		rogstam_add(added * -1)
+		adjust_energy(added * -1)
 	if(added >= 5)
-		if(rogstam <= 0)
+		if(energy <= 0)
 			if(iscarbon(src))
 				var/mob/living/carbon/C = src
 				if(!HAS_TRAIT(C, TRAIT_NOHUNGER))
@@ -62,8 +65,8 @@
 						if(C.hydration <= 0)
 							C.heart_attack()
 							return FALSE
-	if(rogfat >= maxrogfat)
-		rogfat = maxrogfat
+	if(stamina >= maximum_stamina)
+		stamina = maximum_stamina
 		update_health_hud()
 		if(m_intent == MOVE_INTENT_RUN) //can't sprint at full fatigue
 			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
@@ -76,7 +79,7 @@
 		stop_attack()
 		changeNext_move(CLICK_CD_EXHAUSTED)
 		flash_fullscreen("blackflash")
-		if(rogstam <= 0)
+		if(energy <= 0)
 			addtimer(CALLBACK(src, PROC_REF(Knockdown), 30), 10)
 		addtimer(CALLBACK(src, PROC_REF(Immobilize), 30), 10)
 		if(iscarbon(src))
@@ -97,7 +100,7 @@
 	var/heart_attacking = FALSE
 
 /mob/living/carbon/proc/heart_attack()
-	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
+	if(HAS_TRAIT(src, TRAIT_NOSTAMINA))
 		return
 	if(!heart_attacking)
 		var/mob/living/carbon/C = src
@@ -145,7 +148,7 @@
 			animate(whole_screen, transform = newmatrix, time = 1, easing = QUAD_EASING)
 			animate(transform = -newmatrix, time = 30, easing = QUAD_EASING)
 
-/mob/living/proc/rogfat_reset()
-	rogfat = 0
+/mob/living/proc/stamina_reset()
+	stamina = 0
 	last_fatigued = 0
 	return

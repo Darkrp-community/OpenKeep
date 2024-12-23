@@ -55,7 +55,7 @@
 				var/obj/AM = A
 				if(istype(AM) && !AM.anchored)
 					var/jadded = max(100-(STASTR*10),5)
-					if(rogfat_add(jadded))
+					if(adjust_stamina(jadded))
 						visible_message(span_info("[src] pushes [AM]."))
 						PushAM(AM, MOVE_FORCE_STRONG)
 					else
@@ -94,6 +94,14 @@
 //		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.face_atom(src)
+
+	if(!user.get_active_held_item() && !user.cmode)
+		if(ishuman(src) && ishuman(user))
+			var/mob/living/carbon/human/target = src
+			if(target.age == AGE_CHILD && target.mind && !target.mind.apprentice)
+				user.mind?.make_apprentice(target)
+				return
+
 	if(user.cmode)
 		if(user.rmb_intent)
 			user.rmb_intent.special_attack(user, src)
@@ -182,6 +190,7 @@
 		to_chat(user, span_warning("Nothing to bite."))
 		return
 
+	user.do_attack_animation(src, ATTACK_EFFECT_BITE)
 	next_attack_msg.Cut()
 
 	var/nodmg = FALSE
@@ -347,7 +356,7 @@
 					if(!H.check_armor_skill())
 						jadded += 50
 						jrange = 1
-				if(rogfat_add(min(jadded,100)))
+				if(adjust_stamina(min(jadded,100)))
 					if(jextra)
 						throw_at(A, jrange, 1, src, spin = FALSE)
 						while(src.throwing)
@@ -384,6 +393,8 @@
 				return
 			if(INTENT_STEAL)
 				if(!A.Adjacent(src))
+					return
+				if(A == src)
 					return
 				if(ishuman(A))
 					var/mob/living/carbon/human/U = src
@@ -444,7 +455,7 @@
 				if(ranged_ability?.InterceptClickOn(src, params, A))
 					changeNext_move(mmb_intent.clickcd)
 					if(mmb_intent.releasedrain)
-						rogfat_add(mmb_intent.releasedrain)
+						adjust_stamina(mmb_intent.releasedrain)
 				return
 
 //Return TRUE to cancel other attack hand effects that respect it.
@@ -548,7 +559,7 @@
 			var/obj/structure/AM = A
 			if(istype(AM) && !AM.anchored)
 				var/jadded = max(100-(STASTR*10),5)
-				if(rogfat_add(jadded))
+				if(adjust_stamina(jadded))
 					visible_message(span_info("[src] pushes [AM]."))
 					PushAM(AM, MOVE_FORCE_STRONG)
 				else
@@ -642,7 +653,7 @@
 	if(dextrous && !ismob(A))
 		..()
 	else
-		AttackingTarget()
+		AttackingTarget(A)
 
 
 

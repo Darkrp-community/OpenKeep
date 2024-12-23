@@ -23,6 +23,7 @@
 	var/next_passive_detect = 0
 	var/flee_in_pain = FALSE
 	var/stand_attempts = 0
+	var/ai_currently_active = FALSE
 	var/attack_speed = 0
 
 	var/returning_home = FALSE
@@ -144,7 +145,7 @@
 				for(var/i = 0; i < maxStepsTick; ++i)
 					if(!IsDeadOrIncap())
 						if(myPath.len >= 1)
-							walk_to(src,myPath[1],0,update_movespeed())
+							walk_to(src,turf_of_target,0,update_movespeed())
 							myPath -= myPath[1]
 				return 1
 	else

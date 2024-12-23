@@ -3,7 +3,7 @@
 	name = "hat"
 	desc = ""
 	icon = 'icons/roguetown/clothing/head.dmi'
-	icon_state = "top_hat"
+	icon_state = "surghood"
 	dynamic_hair_suffix = "+generic"
 	bloody_icon_state = "helmetblood"
 	equip_sound = "rustle"
@@ -45,11 +45,13 @@
 	desc = "A crude way to conceal one's identity, these are usually worn by local brigands to not get recognised."
 	icon_state = "menacing"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+	fiber_salvage = FALSE
 
 /obj/item/clothing/head/roguetown/strawhat
 	name = "crude straw hat"
 	desc = "Welcome to the grain fields, thou plowerer of the fertile."
 	icon_state = "strawhat"
+	salvage_result = /obj/item/natural/fibers
 
 /obj/item/clothing/head/roguetown/fisherhat
 	name = "straw hat"
@@ -73,6 +75,8 @@
 	desc = "A piece of cloth worn around the temple."
 	icon_state = "headband"
 	dynamic_hair_suffix = ""
+	fiber_salvage = FALSE
+	salvage_amount = 1
 
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_BLOOD_RED
@@ -198,6 +202,8 @@
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/helmet/leather/saiga
 	name = "saiga skull"
@@ -231,6 +237,8 @@
 	var/default_hidden = null
 
 	body_parts_covered = NECK
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide
 
 /obj/item/clothing/head/roguetown/roguehood/uncolored
 	color = CLOTHING_LINEN
@@ -322,10 +330,10 @@
 	user.adjustBruteLoss(4)
 
 
-//................ Rabbet Visage ............... //	- Basic Eora Acolyte
-/obj/item/clothing/head/roguetown/padded/rabbetvisage
-	name = "rabbet visage"
-	desc = "A painted wooden rabbet worn by the faithful of Eora, usually during their rituals."
+//................ Opera Visage ............... //	- Basic Eora Acolyte
+/obj/item/clothing/head/roguetown/padded/operavisage
+	name = "opera visage"
+	desc = "A painted wooden opera mask worn by the faithful of Eora, usually during their rituals."
 	icon_state = "eoramask"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -334,10 +342,10 @@
 	worn_y_dimension = 64
 	dynamic_hair_suffix = ""
 
-//................ Rabbet Hood ............... //	- The "upgraded" headwear for Eoran acolytes
+//................ Opera Hood ............... //	- The "upgraded" headwear for Eoran acolytes
 /obj/item/clothing/head/roguetown/roguehood/eora
-	name = "rabbet hood"
-	desc = "A silver rabbet mask worn by the faithful of Eora, usually during their rituals. Comes with a hood that can be pulled up for warmth."
+	name = "opera hood"
+	desc = "A silver opera mask worn by the faithful of Eora, usually during their rituals. Comes with a hood that can be pulled up for warmth."
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	icon_state = "eorahood"
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -474,7 +482,7 @@
 \------------*/
 
 /obj/item/clothing/head/roguetown/crown/serpcrown
-	name = "crown of Rockhill"
+	name = "crown of Vanderlin"
 	desc = "Heavy is the weight of the crown, and even heavier the responsability it infers to its wearer."
 	icon_state = "serpcrown"
 	sellprice = VALUE_EXTREME
@@ -486,7 +494,7 @@
 
 /obj/item/clothing/head/roguetown/crown/serpcrown/surplus
 	name = "crown"
-	desc = "A replacement for the Crown of Rockhill, every bit as valid as proof of sovereignity as the original."
+	desc = "A replacement for the Crown of Vanderlin, every bit as valid as proof of sovereignity as the original."
 	icon_state = "serpcrowno"
 	sellprice = VALUE_GOLD_ITEM
 
@@ -1178,6 +1186,28 @@
 	body_parts_covered = HEAD|HAIR|EARS|NOSE
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/hide/cured
+
+/obj/item/clothing/head/roguetown/helmet/leather/advanced
+	name = "hardened leather helmet"
+	desc = "Sturdy, durable, flexible. A confortable and reliable hood made of hardened leather."
+	max_integrity = 250
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST)
+	armor = list("blunt" = 70, "slash" = 60, "stab" = 30, "piercing" = 20, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/head/roguetown/helmet/leather/masterwork
+	name = "masterwork leather helmet"
+	desc = "This helmet is a craftsmanship marvel. Made with the finest leather. Strong, nimible, reliable."
+	max_integrity = 300
+	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES|MOUTH
+	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT, BCLASS_TWIST, BCLASS_CHOP) //we're adding chop here!
+	armor = list("blunt" = 100, "slash" = 70, "stab" = 40, "piercing" = 10, "fire" = 0, "acid" = 0)
+
+/obj/item/clothing/head/roguetown/helmet/leather/masterwork/Initialize()
+	. = ..()
+	filters += filter(type="drop_shadow", x=0, y=0, size=0.5, offset=1, color=rgb(218, 165, 32))
 
 //............... Buckled Hat ............... //
 /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
@@ -1301,26 +1331,12 @@
 | Unique helmets & hats |	- Unique means no crafting them, no importing, nothing but spawn with the intended class
 \----------------------*/
 
-//............... Orc Helmet ............... //
-/obj/item/clothing/head/roguetown/helmet/orc
-	name = "orc helmet"
-	icon_state = "marauder_helm_item"
-	item_state = "marauder_helm"
-	icon = 'icons/roguetown/mob/monster/orc.dmi'
-	allowed_race = list("orc")
-	smeltresult = /obj/item/ingot/iron
-	sellprice = NO_MARKET_VALUE
-
-	armor = ARMOR_PADDED_GOOD
-	body_parts_covered = HEAD|EARS|HAIR|EYES
-	prevent_crits = ONLY_VITAL_ORGANS
-	max_integrity = INTEGRITY_POOR
-
 
 //............... Rare Helmets ............... //
 ///obj/item/clothing/head/roguetown/helmet/rare
 /obj/item/clothing/head/roguetown/rare
 	name = "rare helmet template"
+	icon_state = "elfhead"
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'
 	bloody_icon = 'icons/effects/blood32x64.dmi'
@@ -1546,12 +1562,6 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ITEM
-
-/obj/item/clothing/head/roguetown/reqhat
-	name = "serpent crown"
-	desc = ""
-	icon_state = "reqhat"
-	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/roguetown/priesthat // bishops mitre really
 	name = "priest's hat"

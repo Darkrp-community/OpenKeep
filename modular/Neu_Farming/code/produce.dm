@@ -3,7 +3,7 @@
 	dried_type = null
 	resistance_flags = FLAMMABLE
 	w_class = WEIGHT_CLASS_SMALL
-	sellprice = 1
+	sellprice = 0
 	force = 0
 	throwforce = 0
 	var/list/pipe_reagents = list()
@@ -150,7 +150,7 @@
 /obj/item/reagent_containers/food/snacks/produce/jacksberry
 	seed = /obj/item/neuFarm/seed/berryrogue
 	name = "jacksberries"
-	desc = "Common berries found throughout Rockhill. A traveler's repast, or Dendor's wrath."
+	desc = "Common berries found throughout Enigma. A traveler's repast, or Dendor's wrath."
 	icon_state = "berries"
 	tastes = list("berry" = 1)
 	bitesize = 5

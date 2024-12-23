@@ -264,34 +264,34 @@
 	<HR>
 	<B><FONT size=3>[name]</FONT></B>
 	<HR>
-	<BR><B>Head:</B> <A href='?src=[REF(src)];item=[SLOT_HEAD]'>[(head && !(head.item_flags & ABSTRACT)) ? head : "Nothing"]</A>"}
+	<BR><B>Head:</B> <A href='byond://?src=[REF(src)];item=[SLOT_HEAD]'>[(head && !(head.item_flags & ABSTRACT)) ? head : "Nothing"]</A>"}
 
 	var/list/obscured = check_obscured_slots()
 
 	if(SLOT_NECK in obscured)
 		dat += "<BR><B>Neck:</B> Obscured"
 	else
-		dat += "<BR><B>Neck:</B> <A href='?src=[REF(src)];item=[SLOT_NECK]'>[(wear_neck && !(wear_neck.item_flags & ABSTRACT)) ? (wear_neck) : "Nothing"]</A>"
+		dat += "<BR><B>Neck:</B> <A href='byond://?src=[REF(src)];item=[SLOT_NECK]'>[(wear_neck && !(wear_neck.item_flags & ABSTRACT)) ? (wear_neck) : "Nothing"]</A>"
 
 	if(SLOT_WEAR_MASK in obscured)
 		dat += "<BR><B>Mask:</B> Obscured"
 	else
-		dat += "<BR><B>Mask:</B> <A href='?src=[REF(src)];item=[SLOT_WEAR_MASK]'>[(wear_mask && !(wear_mask.item_flags & ABSTRACT))	? wear_mask	: "Nothing"]</a>"
+		dat += "<BR><B>Mask:</B> <A href='byond://?src=[REF(src)];item=[SLOT_WEAR_MASK]'>[(wear_mask && !(wear_mask.item_flags & ABSTRACT))	? wear_mask	: "Nothing"]</a>"
 
 	for(var/i in 1 to held_items.len)
 		var/obj/item/I = get_item_for_held_index(i)
-		dat += "<BR><B>[get_held_index_name(i)]:</B> </td><td><A href='?src=[REF(src)];item=[SLOT_HANDS];hand_index=[i]'>[(I && !(I.item_flags & ABSTRACT)) ? I : "Nothing"]</a>"
+		dat += "<BR><B>[get_held_index_name(i)]:</B> </td><td><A href='byond://?src=[REF(src)];item=[SLOT_HANDS];hand_index=[i]'>[(I && !(I.item_flags & ABSTRACT)) ? I : "Nothing"]</a>"
 
-	dat += "<BR><B>Back:</B> <A href='?src=[REF(src)];item=[SLOT_BACK]'>[back ? back : "Nothing"]</A>"
+	dat += "<BR><B>Back:</B> <A href='byond://?src=[REF(src)];item=[SLOT_BACK]'>[back ? back : "Nothing"]</A>"
 
 	if(handcuffed)
-		dat += "<BR><A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'>Handcuffed</A>"
+		dat += "<BR><A href='byond://?src=[REF(src)];item=[SLOT_HANDCUFFED]'>Handcuffed</A>"
 	if(legcuffed)
-		dat += "<BR><A href='?src=[REF(src)];item=[SLOT_LEGCUFFED]'>Legcuffed</A>"
+		dat += "<BR><A href='byond://?src=[REF(src)];item=[SLOT_LEGCUFFED]'>Legcuffed</A>"
 
 	dat += {"
 	<BR>
-	<BR><A href='?src=[REF(user)];mach_close=mob[REF(src)]'>Close</A>
+	<BR><A href='byond://?src=[REF(user)];mach_close=mob[REF(src)]'>Close</A>
 	"}
 	user << browse(dat, "window=mob[REF(src)];size=325x500")
 	onclose(user, "mob[REF(src)]")
@@ -569,7 +569,7 @@
 		if(HAS_TRAIT(src, TRAIT_NOHUNGER))
 			return TRUE
 		add_nausea(-100)
-		rogstam_add(-50)
+		adjust_energy(-50)
 		if(is_mouth_covered()) //make this add a blood/vomit overlay later it'll be hilarious
 			if(message)
 				visible_message("<span class='danger'>[src] throws up all over [p_them()]self!</span>", \
@@ -656,7 +656,6 @@
 		return
 	var/total_burn	= 0
 //	var/total_brute	= 0
-	var/total_stamina = 0
 	var/total_tox = getToxLoss()
 	var/total_oxy = getOxyLoss()
 	var/used_damage = 0
@@ -675,7 +674,6 @@
 	if(used_damage < total_oxy)
 		used_damage = total_oxy
 	health = round(maxHealth - used_damage, DAMAGE_PRECISION)
-	staminaloss = round(total_stamina, DAMAGE_PRECISION)
 	update_stat()
 	update_mobility()
 
@@ -685,27 +683,12 @@
 		remove_movespeed_modifier(MOVESPEED_ID_CARBON_SOFTCRIT, TRUE)
 	SEND_SIGNAL(src, COMSIG_LIVING_HEALTH_UPDATE)
 
-/mob/living/carbon/update_stamina()
-	var/stam = getStaminaLoss()
-	if(stam > DAMAGE_PRECISION && (maxHealth - stam) <= crit_threshold && !stat)
-		enter_stamcrit()
-	else if(stam_paralyzed)
-		stam_paralyzed = FALSE
-	else
-		return
-	update_health_hud()
-
 /mob/living/carbon
 	var/lightning_flashing = FALSE
 
 /mob/living/carbon/update_sight()
 	if(!client)
 		return
-//	if(stat == DEAD)
-//		sight = (SEE_TURFS|SEE_MOBS|SEE_OBJS)
-//		see_in_dark = 8
-//		see_invisible = SEE_INVISIBLE_OBSERVER
-//		return
 
 	sight = initial(sight)
 	lighting_alpha = initial(lighting_alpha)
@@ -858,7 +841,7 @@
 			succumb_timer = world.time
 		overlay_fullscreen("crit", /atom/movable/screen/fullscreen/crit, severity)
 		overlay_fullscreen("DD", /atom/movable/screen/fullscreen/crit/death)
-		overlay_fullscreen("DDZ", /atom/movable/screen/fullscreen/crit/zeth)
+		overlay_fullscreen("DDZ", /atom/movable/screen/fullscreen/crit/dying)
 	else
 		if(succumb_timer)
 			succumb_timer = 0

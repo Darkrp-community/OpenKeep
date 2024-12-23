@@ -18,23 +18,22 @@
 	Many tieflings resign to seeking a solitary and nomadic life, huddled in groups outside the watchful eyes of others. \
 	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side. \
 	Oddly positioned scales, hollow bones, and other varying oddities that may appear in a tiefling's biology \
-	make them considerably fragile. If to make matters worse, their hellish progenitors have left them a destiny of misfortune. \
+	make them considerably fragile. If to make matters worse, their hellish progenitors have left them a destiny of misfortune, \
+	though perhaps their immunity to fire opens new opportunities... \
 	A tiefling may develop any number of hellish features, a wide range of horns, potential hooves, odd spines and spikes, or scales. \
-	It is not uncommon for a tiefling to be generally unpleasant to look at. \
+	It is not uncommon for a tiefling to be generally unpleasant to look at in the eye of the commonfolk. \
 	\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK.\
-	CHALLENGE RACE: LOW STATS + DISCRIMINATION"
+	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
 
 	skin_tone_wording = "Progenitor"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP,TRAIT_MOB_FIRE_IMMUNE)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "tail_human" = "TiebTail", "horns" = "TiebHorns")
 	use_skintones = 1
-	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
@@ -55,7 +54,7 @@
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
 	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
-	specstats_f = list("strength" = 0, "perception" = 3, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 1, "fortune" = -1)
+	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -135,6 +134,11 @@
 	"black - cave" = "201616",
 	"black - rogue" = "2b201b",
 	"black - midnight" = "1d1b2b",
+
+	"blond - pale" = "9d8d6e",
+	"blond - dirty" = "88754f",
+	"blond - drywheat" = "d5ba7b",
+	"blond - strawberry" = "c69b71",
 
 	"purple - arcane" = "3f2f42",
 

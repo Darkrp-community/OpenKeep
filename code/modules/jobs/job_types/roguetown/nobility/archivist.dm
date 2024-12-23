@@ -1,6 +1,6 @@
 /datum/job/roguetown/archivist
 	title = "Archivist"
-	tutorial = "A well-traveled and well-learned seeker of knowledge, the Archivist's mind has been touched by Noc himself. They settled in Rockhill some time ago, coming to the Isle of Enigma with the hope of unraveling its mysteries. If they can expand their library and teach the masses, Psydonia may yet enter a new age of enlightenment."
+	tutorial = "A well-traveled and well-learned seeker of knowledge, the Archivist's mind has been touched by Noc himself. They settled in Vanderlin some time ago, coming to the Isle of Enigma with the hope of unraveling its mysteries. If they can expand their library and teach the masses, Psydonia may yet enter a new age of enlightenment."
 	flag = ARCHIVIST
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -17,7 +17,6 @@
 		"Aasimar"
 	)
 	spells = list(/obj/effect/proc_holder/spell/self/learnspell, /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
-	allowed_patrons = list(/datum/patron/divine/noc)
 
 	outfit = /datum/outfit/job/roguetown/archivist
 	display_order = 19
@@ -40,12 +39,15 @@
 	H.virginity = TRUE
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/keyring/archivist
+	beltl = /obj/item/storage/keyring/archivist
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/clothing/neck/roguetown/psycross/noc
 	backpack_contents = list(/obj/item/literary/apprentice = 1)
 
 	if(H.mind)
+		if(H.patron != /datum/patron/divine/noc)
+			H.set_patron(/datum/patron/divine/noc)
+
 		H.grant_language(/datum/language/elvish)
 		H.grant_language(/datum/language/dwarvish)
 		H.grant_language(/datum/language/zybantine)

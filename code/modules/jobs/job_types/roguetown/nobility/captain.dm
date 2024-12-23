@@ -21,7 +21,7 @@
 	give_bank_account = 120
 	min_pq = 4
 
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/cmode/antag/CombatSausageMaker.ogg'
 
 /datum/job/roguetown/captain/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -50,7 +50,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
 	cloak = /obj/item/clothing/cloak/cape/guard
-	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/storage/keyring/captain = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)

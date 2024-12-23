@@ -1,6 +1,7 @@
 GLOBAL_LIST_EMPTY(outlawed_players)
 GLOBAL_LIST_EMPTY(lord_decrees)
 GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
+GLOBAL_LIST_EMPTY(roundstart_court_agents)
 
 /proc/initialize_laws_of_the_land()
 	var/list/laws = strings("laws_of_the_land.json", "lawsets")
@@ -214,7 +215,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 			return
 		newtax = CLAMP(newtax, 1, 99)
 		SStreasury.tax_value = newtax / 100
-		priority_announce("The new tax in Rockhill shall be [newtax] percent.", "The Generous [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
+		priority_announce("The new tax in Vanderlin shall be [newtax] percent.", "The Generous [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
 
 /obj/structure/roguemachine/titan/proc/give_job_popup(mob/living/carbon/human/user)
 	if(!Adjacent(user))
@@ -225,7 +226,7 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 	if(isnull(victim) || !Adjacent(user))
 		return
 
-	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "King"
+	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "Monarch"
 	var/new_pos = input(user, "Select their new position", src, null) as anything in possible_positions
 
 	if(isnull(new_pos) || !Adjacent(user))
@@ -284,13 +285,13 @@ GLOBAL_LIST_INIT(laws_of_the_land, initialize_laws_of_the_land())
 		var/used_title = J.title
 		if(user.gender == FEMALE && J.f_title)
 			used_title = J.f_title
-		if(used_title != "King")
+		if(used_title != "Monarch")
 			return
 	else
 		return
 	if(raw_message in GLOB.outlawed_players)
 		GLOB.outlawed_players -= raw_message
-		priority_announce("[raw_message] is no longer an outlaw in Rockhill lands.", "The [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
+		priority_announce("[raw_message] is no longer an outlaw in Vanderlin lands.", "The [user.get_role_title()] Decrees", 'sound/misc/alert.ogg', "Captain")
 		return FALSE
 	var/found = FALSE
 	for(var/mob/living/carbon/human/H in GLOB.player_list)

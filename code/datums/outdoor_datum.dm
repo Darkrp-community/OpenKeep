@@ -106,7 +106,7 @@ Sunlight System
 		if(T.opacity) /* get_corners used to do opacity checks for arse */
 			continue
 		if (!T.lighting_corners_initialised)
-			T.generate_missing_corners()
+			T.lighting_build_overlay()
 		corners |= T.corners
 		turfs += T
 

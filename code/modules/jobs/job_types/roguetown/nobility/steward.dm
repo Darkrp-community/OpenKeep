@@ -19,7 +19,7 @@
 	outfit = /datum/outfit/job/roguetown/steward
 	give_bank_account = 100
 	min_pq = 2
-	cmode_music = 'sound/music/combat_noble.ogg'
+	cmode_music = 'sound/music/cmode/nobility/combat_noble.ogg'
 
 /datum/outfit/job/roguetown/steward/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -35,7 +35,7 @@
 	head = /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltr = /obj/item/keyring/steward
+	beltr = /obj/item/storage/keyring/steward
 	beltl = /obj/item/rogueweapon/knife/dagger/steel
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)

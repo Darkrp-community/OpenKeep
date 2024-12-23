@@ -33,7 +33,6 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
-	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
 	possible_ages = list(AGE_IMMORTAL)
@@ -56,8 +55,8 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
-	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 

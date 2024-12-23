@@ -10,7 +10,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	possible_transfer_amounts = list(6)
 	volume = 45
 	fill_icon_thresholds = list(0, 25, 50, 75, 100)
-	dropshrink = 0.5
+	dropshrink = 0.8
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
 	obj_flags = CAN_BE_HIT
 	spillable = FALSE
@@ -77,6 +77,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		reagent_flags = TRANSPARENT
 		reagents.flags = reagent_flags
 		spillable = FALSE
+		GLOB.weather_act_upon_list -= src
 		if(!fancy)
 			desc = "A bottle with a cork."
 	else
@@ -84,6 +85,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		reagents.flags = reagent_flags
 		playsound(user.loc,'sound/items/uncork.ogg', 100, TRUE)
 		spillable = TRUE
+		GLOB.weather_act_upon_list |= src
 		if(!fancy)
 			desc = "An open bottle, hopefully a cork is close by."
 	update_icon()
@@ -178,11 +180,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	name = "pancuronium bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/pancuronium = 30)
-
-/obj/item/reagent_containers/glass/bottle/sodium_thiopental
-	name = "sodium thiopental bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/toxin/sodium_thiopental = 30)
 
 /obj/item/reagent_containers/glass/bottle/coniine
 	name = "coniine bottle"
@@ -348,7 +345,7 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 /obj/item/reagent_containers/glass/bottle/vial
 	name = "vial"
 	desc = "A vial with a cork."
-	icon = 'icons/roguetown/misc/alchemy.dmi'
+	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "clear_vial1"
 	amount_per_transfer_from_this = 6
 	possible_transfer_amounts = list(6)

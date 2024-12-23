@@ -9,7 +9,9 @@
 /datum/admins/proc/edit_admin_permissions(action, target, operation, page)
 	if(!check_rights(R_PERMISSIONS))
 		return
-	var/list/output = list("<link rel='stylesheet' type='text/css' href='panels.css'><a href='?_src_=holder;[HrefToken()];editrightsbrowser=1'>\[Permissions\]</a>")
+	var/datum/asset/asset_cache_datum = get_asset_datum(/datum/asset/group/permissions)
+	asset_cache_datum.send(usr)
+	var/list/output = list("<link rel='stylesheet' type='text/css' href='[SSassets.transport.get_asset_url("panels.css")]'><a href='?_src_=holder;[HrefToken()];editrightsbrowser=1'>\[Permissions\]</a>")
 	if(action)
 		output += " | <a href='?_src_=holder;[HrefToken()];editrightsbrowserlog=1;editrightspage=0'>\[Log\]</a> | <a href='?_src_=holder;[HrefToken()];editrightsbrowsermanage=1'>\[Management\]</a><hr style='background:#000000; border:0; height:3px'>"
 	else
@@ -92,12 +94,12 @@
 		<head>
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 		<title>Permissions Panel</title>
-		<script type='text/javascript' src='search.js'></script>
+		<script type='text/javascript' src='[SSassets.transport.get_asset_url("search.js")]'></script>
 		</head>
 		<body onload='selectTextField();updateSearch();'>
 		<div id='main'><table id='searchable' cellspacing='0'>
 		<tr class='title'>
-		<th style='width:150px;'>CKEY <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=add'>\[+\]</a></th>
+		<th style='width:150px;'>CKEY <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=add'>\[+\]</a></th>
 		<th style='width:125px;'>RANK</th>
 		<th style='width:40%;'>PERMISSIONS</th>
 		<th style='width:20%;'>DENIED</th>
@@ -114,15 +116,15 @@
 			if(D.owner)
 				adm_ckey = D.owner.key
 			if (D.deadmined)
-				deadminlink = " <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=activate;key=[adm_ckey]'>\[RA\]</a>"
+				deadminlink = " <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=activate;key=[adm_ckey]'>\[RA\]</a>"
 			else
-				deadminlink = " <a class='small' href='?src=[REF(src)];[HrefToken()];editrights=deactivate;key=[adm_ckey]'>\[DA\]</a>"
+				deadminlink = " <a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=deactivate;key=[adm_ckey]'>\[DA\]</a>"
 			output += "<tr>"
-			output += "<td style='text-align:center;'>[adm_ckey]<br>[deadminlink]<a class='small' href='?src=[REF(src)];[HrefToken()];editrights=remove;key=[adm_ckey]'>\[-\]</a><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=sync;key=[adm_ckey]'>\[SYNC TGDB\]</a></td>"
-			output += "<td><a href='?src=[REF(src)];[HrefToken()];editrights=rank;key=[adm_ckey]'>[D.rank.name]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.include_rights," ")]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.exclude_rights," ", "-")]</a></td>"
-			output += "<td><a class='small' href='?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.can_edit_rights," ", "*")]</a></td>"
+			output += "<td style='text-align:center;'>[adm_ckey]<br>[deadminlink]<a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=remove;key=[adm_ckey]'>\[-\]</a><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=sync;key=[adm_ckey]'>\[SYNC TGDB\]</a></td>"
+			output += "<td><a href='byond://?src=[REF(src)];[HrefToken()];editrights=rank;key=[adm_ckey]'>[D.rank.name]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.include_rights," ")]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.exclude_rights," ", "-")]</a></td>"
+			output += "<td><a class='small' href='byond://?src=[REF(src)];[HrefToken()];editrights=permissions;key=[adm_ckey]'>[rights2text(D.rank.can_edit_rights," ", "*")]</a></td>"
 			output += "</tr>"
 		output += "</table></div><div id='top'><b>Search:</b> <input type='text' id='filter' value='' style='width:70%;' onkeyup='updateSearch();'></div></body>"
 	if(QDELETED(usr))
@@ -137,7 +139,7 @@
 	if(IsAdminAdvancedProcCall())
 		to_chat(usr, "<span class='admin prefix'>Admin Edit blocked: Advanced ProcCall detected.</span>")
 		return
-	var/datum/asset/permissions_assets = get_asset_datum(/datum/asset/simple/permissions)
+	var/datum/asset/permissions_assets = get_asset_datum(/datum/asset/simple/namespaced/common)
 	permissions_assets.send(src)
 	var/admin_key = href_list["key"]
 	var/admin_ckey = ckey(admin_key)

@@ -15,8 +15,7 @@
 		"Dwarf",
 		"Aasimar"
 	)
-	allowed_patrons = list(/datum/patron/divine/astrata)
-	tutorial = "The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Rockhill. It is up to you to shepard the flock into a god-fearing future."
+	tutorial = "You are a devoted follower of Astrata. The divine is all that matters in an immoral world. The Sun Queen and her pantheon rule over all, and you will preach their wisdom to Vanderlin. It is up to you to shepard the flock into a god-fearing future."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 	outfit = /datum/outfit/job/roguetown/priest
@@ -37,7 +36,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	beltl = /obj/item/keyring/priest
+	beltl = /obj/item/storage/keyring/priest
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	backl = /obj/item/storage/backpack/rogue/satchel
@@ -48,7 +47,7 @@
 
 
 	if(H.mind)
-		if(H.patron != /datum/patron/divine/dendor)					// Astratans rule the church
+		if(H.patron != /datum/patron/divine/astrata) // For some stupid reason this was checking for Dendor before.
 			H.set_patron(/datum/patron/divine/astrata)
 
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
@@ -90,7 +89,7 @@
 	for(var/mob/living/carbon/human/HU in get_step(src, src.dir))
 		if(!HU.mind)
 			continue
-		if(HU.mind.assigned_role == "King")
+		if(HU.mind.assigned_role == "Monarch")
 			continue
 		if(!HU.head)
 			continue
@@ -98,27 +97,27 @@
 			continue
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.mind)
-				if(HL.mind.assigned_role == "King")
-					HL.mind.assigned_role = "Ex-King"
-			if(HL.job == "King")
-				HL.job = "Ex-King"
+				if(HL.mind.assigned_role == "Monarch")
+					HL.mind.assigned_role = "Ex-Monarch"
+			if(HL.job == "Monarch")
+				HL.job = "Ex-Monarch"
 			if(HL.mind)
-				if(HL.mind.assigned_role == "Queen")
-					HL.mind.assigned_role = "Ex-Queen"
-			if(HL.job == "Queen")
-				HL.job = "Ex-Queen"
+				if(HL.mind.assigned_role == "Consort")
+					HL.mind.assigned_role = "Ex-Consort"
+			if(HL.job == "Consort")
+				HL.job = "Ex-Consort"
 		switch(HU.gender)
 			if("male")
-				HU.mind.assigned_role = "King"
-				HU.job = "King"
+				HU.mind.assigned_role = "Monarch"
+				HU.job = "Monarch"
 			if("female")
-				HU.mind.assigned_role = "Queen"
-				HU.job = "Queen"
+				HU.mind.assigned_role = "Monarch"
+				HU.job = "Monarch"
 		SSticker.rulermob = HU
 		var/dispjob = mind.assigned_role
 		GLOB.badomens -= "nolord"
-		say("By the authority of the gods, I pronounce you Ruler of all Rockhill!")
-		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of Rockhill!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
+		say("By the authority of the gods, I pronounce you Ruler of all Vanderlin!")
+		priority_announce("[real_name] the [dispjob] has named [HU.real_name] the inheritor of Vanderlin!", title = "Long Live [HU.real_name]!", sound = 'sound/misc/bell.ogg')
 		return
 
 /mob/living/carbon/human/proc/churchexcommunicate()

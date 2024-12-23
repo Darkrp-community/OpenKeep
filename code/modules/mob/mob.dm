@@ -30,6 +30,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	GLOB.alive_mob_list -= src
 	GLOB.mob_directory -= tag
 	focus = null
+
 	for (var/alert in alerts)
 		clear_alert(alert, TRUE)
 	if(observers && observers.len)
@@ -778,11 +779,14 @@ GLOBAL_VAR_INIT(mobids, 1)
 		if(!TurfAdjacent(listed_turf))
 			listed_turf = null
 		else
-			statpanel(listed_turf.name, null, listed_turf)
+			var/obj/structure/mineral_door/secret/secret_door =  locate(/obj/structure/mineral_door/secret) in listed_turf
+			if(!secret_door)
+				statpanel(listed_turf.name, null, listed_turf)
 			var/list/overrides = list()
 			for(var/image/I in client.images)
 				if(I.loc && I.loc.loc == listed_turf && I.override)
 					overrides += I.loc
+
 			for(var/atom/A in listed_turf)
 				if(!A.mouse_opacity)
 					continue

@@ -40,12 +40,31 @@
 	scatter(get_turf(src))
 	..()
 
+/obj/item/roguecoin/pickup(mob/user)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_MATTHIOS_CURSE))
+		var/mob/living/carbon/human/H = user
+		to_chat(H, span_warning("The idea repulses me!"))
+		H.cursed_freak_out()
+		H.Paralyze(20)
+		return
+
 /obj/item/roguecoin/proc/scatter(turf/T)
 	pixel_x = rand(-8, 8)
 	pixel_y = rand(-5, 5)
 	if(isturf(T) && quantity > 1)
 		for(var/i in 2 to quantity) // exclude the first coin
-			var/obj/item/roguecoin/new_coin = new type
+			var/spawned_type = type
+			if(base_type)
+				switch(base_type)
+					if(CTYPE_GOLD)
+						spawned_type = /obj/item/roguecoin/gold
+					if(CTYPE_SILV)
+						spawned_type = /obj/item/roguecoin/silver
+					else
+						spawned_type = /obj/item/roguecoin/copper
+
+			var/obj/item/roguecoin/new_coin = new spawned_type
 			new_coin.forceMove(T)
 			new_coin.set_quantity(1) // prevent exploits with coin piles
 			new_coin.pixel_x = rand(-8, 8)

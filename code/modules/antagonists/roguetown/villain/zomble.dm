@@ -24,7 +24,7 @@
 	var/has_turned = FALSE
 	/// Traits applied to the owner mob when we turn into a zombie
 	var/static/list/traits_zombie = list(
-		TRAIT_NOROGSTAM,
+		TRAIT_NOSTAMINA,
 		TRAIT_NOMOOD,
 		TRAIT_NOLIMBDISABLE,
 		TRAIT_NOHUNGER,
@@ -82,14 +82,12 @@
 		rotflies = mutable_appearance('icons/roguetown/mob/rotten.dmi', "deadite")
 		zombie.add_overlay(rotflies)
 	base_intents = zombie.base_intents
-//	TOTALSTR = zombie.STASTR-1
-//	TOTALSPD = zombie.STASPD-5
-//	TOTALINT = zombie.STAINT-5
-//	zombie.TOTALCON = 5
+	zombie.TOTALSTR = 6
+	zombie.TOTALCON = 5
 	zombie.TOTALSPD = 2
 	zombie.TOTALINT = 1
 	cmode_music = zombie.cmode_music
-//	cmode_music ='sound/music/combat_weird.ogg'
+	cmode_music ='sound/music/cmode/combat_weird.ogg'
 	zombie.vitae_pool = 0 // Deadites have no vitae to drain from
 	zombie.remove_all_languages()
 //	zombie.remove_language(/datum/language/common)
@@ -101,6 +99,8 @@
 
 /datum/antagonist/zombie/on_removal()
 	var/mob/living/carbon/human/zombie = owner?.current
+	if(!zombie)
+		return
 	if(zombie)
 		zombie.cut_overlay(rotflies)
 		zombie.verbs -= /mob/living/carbon/human/proc/zombie_seek
@@ -194,7 +194,7 @@
 			zombie_part.rotted = TRUE
 		zombie_part.update_disabled()
 	zombie.update_body()
-	zombie.cmode_music = 'sound/music/combat_weird.ogg'
+	zombie.cmode_music = 'sound/music/cmode/combat_weird.ogg'
 
 	zombie.TOTALSPD = 2
 	zombie.TOTALINT = 1

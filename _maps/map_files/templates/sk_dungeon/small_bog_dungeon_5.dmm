@@ -1,0 +1,2227 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ac" = (
+/obj/structure/roguetent,
+/turf/closed/wall/mineral/rogue/tent,
+/area/rogue/outdoors/bog)
+"aS" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Tighty"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"bq" = (
+/obj/effect/decal/remains/wolf,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"co" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Grippy"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"ct" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"cN" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/saiga,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"dY" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"ed" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Loopy"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"fV" = (
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"gh" = (
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"gE" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"gJ" = (
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"gP" = (
+/obj/structure/table/wood/plain,
+/obj/item/clothing/ring/gold,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"he" = (
+/obj/item/bodypart/head,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"hA" = (
+/mob/living/carbon/human/species/orc/ambush{
+	name = "Grog"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"hU" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"iN" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"jH" = (
+/obj/structure/fluff/walldeco/skullspike,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"jJ" = (
+/obj/structure/mineral_door/wood/deadbolt{
+	dir = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"ka" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"kp" = (
+/obj/machinery/tanningrack,
+/obj/item/reagent_containers/food/snacks/meat/rawcutlet,
+/obj/item/natural/hide,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"lP" = (
+/obj/structure/bed/rogue/sleepingbag,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"lX" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"mt" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Goony"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"nA" = (
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/food/snacks/rotten/mince,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"oc" = (
+/obj/structure/fluff/nest,
+/mob/living/simple_animal/hostile/retaliate/rogue/chicken,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"oj" = (
+/obj/structure/fluff/nest,
+/mob/living/simple_animal/hostile/retaliate/rogue/goat,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"oO" = (
+/obj/structure/table/wood/treestump/burnt,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"oS" = (
+/obj/item/bodypart/head,
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"pa" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"pf" = (
+/obj/structure/fermenting_barrel/random/beer,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"pk" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"pF" = (
+/turf/closed/wall/mineral/rogue/tent,
+/area/rogue/outdoors/bog)
+"pQ" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Mork"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"pR" = (
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/bog)
+"qv" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"qH" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/obj/structure/table/wood/treestump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"qW" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/chicken,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"rj" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"rF" = (
+/obj/effect/decal/cleanable/blood/old,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"sh" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"sD" = (
+/turf/closed/wall/mineral/rogue/wood,
+/area/rogue/outdoors/bog)
+"tc" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7;
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"tm" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"tR" = (
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"tU" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Blarg"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"uf" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/obj/structure/fluff/railing/fence,
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"vX" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Whitey"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"wp" = (
+/obj/structure/fluff/railing/wood{
+	pixel_y = -4
+	},
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"wC" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"wG" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"xf" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7;
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"xy" = (
+/obj/structure/table/wood/treestump,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"xU" = (
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"yC" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"zA" = (
+/obj/structure/fluff/psycross/crafted/shrine/dendor_volf,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"zN" = (
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/reagent_containers/glass/cup/wooden,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"zR" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"At" = (
+/obj/effect/decal/remains/wolf,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"Bi" = (
+/obj/structure/fluff/railing/wood{
+	dir = 1;
+	layer = 2.7;
+	pixel_x = 2;
+	pixel_y = 7
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Dn" = (
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"Dy" = (
+/obj/structure/table/wood/treestump,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"DH" = (
+/obj/structure/fluff/railing/wood{
+	pixel_y = -4
+	},
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	pixel_y = -1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"DM" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/goat,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"DN" = (
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"DY" = (
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Ei" = (
+/mob/living/carbon/human/species/orc/warlord/skilled{
+	name = "Gragnar, the Knight Slayer"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"Es" = (
+/obj/effect/decal/remains/wolf,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"Fu" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Twigie"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"FH" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"FO" = (
+/obj/structure/flora/newtree,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Gy" = (
+/obj/structure/bed/rogue/sleepingbag,
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/bog)
+"GE" = (
+/obj/structure/fluff/railing/wood{
+	dir = 4
+	},
+/obj/structure/fluff/railing/wood{
+	pixel_y = -4
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"Hk" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"HT" = (
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/food/snacks/meat/cutlet/plain,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"Jk" = (
+/obj/structure/table/wood/plain,
+/obj/item/clothing/head/roguetown/crown/circlet/stink,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"JF" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Gobbie"
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/bog)
+"Kl" = (
+/obj/effect/decal/cleanable/blood/old,
+/mob/living/carbon/human/species/orc/marauder{
+	name = "Blarg"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"KF" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Zeekie"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Lc" = (
+/mob/living/carbon/human/species/orc/warrior{
+	name = "Twarg"
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"LE" = (
+/obj/structure/fluff/railing/wood{
+	pixel_y = -4
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"MK" = (
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/glass/cup/golden,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"ML" = (
+/obj/structure/table/wood/plain,
+/obj/item/clothing/head/roguetown/helmet/heavy/crusader,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"Nj" = (
+/obj/machinery/light/rogue/firebowl/stump,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"No" = (
+/obj/structure/fluff/railing/fence{
+	dir = 4
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/outdoors/bog)
+"NK" = (
+/obj/structure/fluff/walldeco/skullspike,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Oh" = (
+/mob/living/carbon/human/species/orc/tribal{
+	name = "Yloz"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"OD" = (
+/obj/structure/fluff/railing/wood{
+	pixel_y = -4
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Sc" = (
+/obj/machinery/light/rogue/campfire/longlived,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"St" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"Tg" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Zookie"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"TV" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"UN" = (
+/obj/structure/table/wood/plain,
+/obj/item/reagent_containers/food/snacks/rotten/meat,
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"Vw" = (
+/obj/structure/flora/roguegrass,
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+"Vz" = (
+/obj/structure/table/wood/treestump/burnt,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"XD" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Rippy"
+	},
+/turf/open/floor/rogue/twig,
+/area/rogue/outdoors/bog)
+"Yt" = (
+/obj/structure/bed/rogue/sleepingbag,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"YK" = (
+/obj/machinery/light/rogue/campfire/densefire,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"YQ" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/bog)
+"Zr" = (
+/mob/living/carbon/human/species/goblin/npc/ambush{
+	name = "Sloppy"
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/bog)
+"ZI" = (
+/obj/structure/fluff/railing/fence{
+	dir = 8
+	},
+/turf/open/water/swamp,
+/area/rogue/outdoors/bog)
+
+(1,1,1) = {"
+tR
+fV
+tR
+gh
+gh
+tR
+fV
+fV
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+fV
+tR
+tR
+tR
+"}
+(2,1,1) = {"
+tR
+fV
+fV
+gh
+tR
+tR
+fV
+fV
+fV
+tR
+tR
+fV
+fV
+tR
+tR
+gh
+gh
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+gh
+fV
+fV
+fV
+tR
+tR
+gh
+gh
+fV
+fV
+tR
+"}
+(3,1,1) = {"
+tR
+fV
+gh
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+gh
+tR
+fV
+fV
+"}
+(4,1,1) = {"
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+DY
+fV
+fV
+fV
+DY
+fV
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+gh
+tR
+fV
+fV
+"}
+(5,1,1) = {"
+fV
+fV
+fV
+tR
+fV
+gh
+gh
+tR
+tR
+fV
+fV
+tR
+tR
+fV
+fV
+DY
+fV
+fV
+fV
+gh
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+gh
+gh
+tR
+fV
+"}
+(6,1,1) = {"
+tR
+tR
+fV
+tR
+fV
+gh
+tR
+fV
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+gh
+gh
+Vw
+gh
+pa
+TV
+xf
+TV
+TV
+iN
+wp
+ZI
+ZI
+ZI
+ZI
+uf
+fV
+fV
+fV
+fV
+fV
+gh
+gh
+tR
+"}
+(7,1,1) = {"
+fV
+tR
+fV
+fV
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+gh
+gh
+fV
+yC
+fV
+tc
+oc
+DM
+fV
+qW
+DH
+gh
+gh
+gh
+dY
+fV
+gh
+fV
+tR
+tR
+fV
+fV
+fV
+"}
+(8,1,1) = {"
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+DY
+fV
+gh
+gh
+Vw
+gh
+gh
+gh
+gh
+Vw
+gh
+gh
+fV
+yC
+fV
+tc
+tR
+fV
+fV
+fV
+OD
+gh
+gh
+gh
+dY
+fV
+gh
+fV
+tR
+tR
+fV
+fV
+fV
+"}
+(9,1,1) = {"
+tR
+tR
+fV
+fV
+DY
+fV
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+gh
+Vw
+gh
+gh
+gh
+fV
+fV
+yC
+fV
+tc
+cN
+tR
+fV
+oj
+LE
+gh
+gh
+gh
+dY
+fV
+gh
+fV
+tR
+fV
+fV
+fV
+tR
+"}
+(10,1,1) = {"
+tR
+tR
+tR
+fV
+fV
+DY
+fV
+fV
+gh
+Vw
+tR
+fV
+fV
+fV
+gh
+gh
+gh
+gh
+gh
+fV
+yC
+fV
+Bi
+gE
+jJ
+gE
+gE
+GE
+tR
+gh
+gh
+dY
+fV
+fV
+fV
+tR
+tR
+fV
+tR
+tR
+"}
+(11,1,1) = {"
+fV
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+gh
+tR
+hU
+fV
+fV
+fV
+pR
+fV
+tR
+tR
+Dy
+fV
+gh
+dY
+fV
+fV
+fV
+fV
+tR
+fV
+tR
+fV
+"}
+(12,1,1) = {"
+fV
+fV
+tR
+gh
+fV
+fV
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+fV
+fV
+fV
+hU
+fV
+Dy
+fV
+pR
+fV
+fV
+fV
+DY
+fV
+gh
+dY
+fV
+tR
+fV
+fV
+gh
+fV
+fV
+fV
+"}
+(13,1,1) = {"
+fV
+fV
+tR
+gh
+fV
+fV
+fV
+pk
+iN
+iN
+iN
+iN
+iN
+iN
+iN
+TV
+TV
+iN
+TV
+TV
+iN
+tR
+tR
+tR
+fV
+pR
+Vz
+fV
+fV
+fV
+fV
+YQ
+tR
+tR
+fV
+gh
+gh
+fV
+tR
+fV
+"}
+(14,1,1) = {"
+fV
+fV
+fV
+gh
+fV
+fV
+fV
+yC
+fV
+sD
+pF
+pF
+pF
+pF
+pF
+sD
+tR
+fV
+Yt
+fV
+fV
+fV
+DY
+pR
+fV
+fV
+DY
+fV
+pF
+gJ
+pF
+YQ
+tR
+tR
+fV
+gh
+fV
+fV
+tR
+fV
+"}
+(15,1,1) = {"
+fV
+fV
+fV
+gh
+fV
+DY
+fV
+yC
+fV
+pF
+rj
+DN
+UN
+gJ
+rj
+pF
+tR
+fV
+ed
+tR
+tR
+qv
+tR
+pR
+fV
+pR
+fV
+pR
+vX
+tR
+rj
+YQ
+tR
+tR
+fV
+fV
+fV
+fV
+tR
+fV
+"}
+(16,1,1) = {"
+fV
+fV
+gh
+fV
+fV
+fV
+fV
+yC
+tR
+pF
+gJ
+co
+gJ
+Kl
+gJ
+pF
+fV
+DY
+tR
+tR
+fV
+qv
+tR
+fV
+pR
+fV
+pR
+tR
+pF
+gJ
+YK
+qv
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+"}
+(17,1,1) = {"
+fV
+fV
+gh
+fV
+fV
+fV
+fV
+hU
+tR
+pF
+gJ
+gJ
+gJ
+gJ
+nA
+pF
+fV
+fV
+fV
+Sc
+fV
+qv
+fV
+pR
+fV
+fV
+tR
+tR
+pF
+St
+gJ
+qv
+gh
+fV
+tR
+tR
+tR
+tR
+fV
+gh
+"}
+(18,1,1) = {"
+fV
+gh
+tR
+fV
+fV
+fV
+fV
+yC
+fV
+pF
+rj
+gJ
+rj
+gJ
+gJ
+pF
+fV
+lP
+DY
+fV
+Yt
+fV
+fV
+pR
+DY
+fV
+tR
+fV
+pF
+aS
+pF
+qv
+gh
+fV
+tR
+fV
+tR
+tR
+gh
+gh
+"}
+(19,1,1) = {"
+fV
+fV
+tR
+fV
+fV
+fV
+DY
+yC
+tR
+pF
+gJ
+rF
+gJ
+gJ
+gJ
+pF
+fV
+pQ
+tR
+fV
+Fu
+fV
+pR
+pR
+pR
+fV
+fV
+fV
+fV
+fV
+fV
+qv
+gh
+fV
+tR
+fV
+fV
+fV
+gh
+gh
+"}
+(20,1,1) = {"
+fV
+fV
+tR
+fV
+DY
+tR
+tR
+yC
+fV
+pF
+gJ
+hA
+gJ
+XD
+rF
+pF
+fV
+fV
+tR
+tm
+lX
+pR
+pR
+fV
+pR
+pR
+fV
+DY
+fV
+fV
+fV
+qv
+gh
+fV
+fV
+fV
+tR
+fV
+gh
+gh
+"}
+(21,1,1) = {"
+fV
+tR
+tR
+fV
+fV
+fV
+tR
+yC
+fV
+pF
+rj
+HT
+rj
+ct
+rj
+pF
+tR
+tm
+tm
+pR
+pR
+pR
+fV
+Vz
+fV
+pR
+fV
+tR
+tR
+fV
+fV
+qv
+gh
+tR
+fV
+tR
+tR
+tR
+gh
+gh
+"}
+(22,1,1) = {"
+fV
+tR
+fV
+fV
+fV
+fV
+tR
+hU
+NK
+sD
+pF
+pF
+ac
+pF
+pF
+sD
+tR
+tR
+pR
+pR
+fV
+fV
+fV
+fV
+fV
+pR
+pR
+tR
+tR
+tR
+fV
+qv
+fV
+tR
+fV
+fV
+tR
+fV
+fV
+gh
+"}
+(23,1,1) = {"
+tR
+fV
+fV
+fV
+fV
+Es
+xU
+hU
+fV
+fV
+fV
+fV
+pR
+tR
+pR
+pR
+pR
+pR
+sD
+pF
+pF
+pF
+pF
+pF
+pF
+sD
+pR
+pR
+tR
+xy
+fV
+qv
+tR
+tR
+fV
+fV
+tR
+tR
+tR
+tR
+"}
+(24,1,1) = {"
+tR
+fV
+fV
+fV
+fV
+fV
+ka
+pR
+tR
+fV
+Dy
+pR
+fV
+fV
+fV
+fV
+pR
+pR
+pF
+zN
+pf
+gJ
+Nj
+gJ
+oS
+pF
+fV
+pR
+pR
+tR
+tR
+qv
+tR
+tR
+fV
+gh
+fV
+tR
+fV
+fV
+"}
+(25,1,1) = {"
+tR
+tR
+fV
+fV
+fV
+pR
+pR
+pR
+pR
+pR
+fV
+pR
+pR
+tR
+yC
+fV
+mt
+fV
+pF
+gJ
+gJ
+rF
+gJ
+gJ
+gJ
+pF
+fV
+fV
+pR
+tR
+tR
+qv
+Dn
+tR
+fV
+fV
+gh
+fV
+fV
+fV
+"}
+(26,1,1) = {"
+fV
+fV
+fV
+fV
+pR
+fV
+pR
+tR
+tR
+pR
+pR
+pR
+tR
+tR
+hU
+tR
+fV
+Yt
+pF
+gJ
+gJ
+gJ
+gJ
+gJ
+gP
+pF
+iN
+iN
+tR
+TV
+TV
+qv
+tR
+tR
+fV
+fV
+fV
+gh
+tR
+fV
+"}
+(27,1,1) = {"
+fV
+fV
+fV
+fV
+fV
+fV
+zR
+tR
+tR
+tR
+fV
+pR
+fV
+tR
+hU
+tR
+tR
+pR
+pF
+rF
+gJ
+gJ
+gJ
+gJ
+MK
+pF
+fV
+Yt
+tR
+tR
+Tg
+qv
+fV
+tR
+fV
+fV
+fV
+fV
+tR
+fV
+"}
+(28,1,1) = {"
+fV
+fV
+fV
+fV
+fV
+DY
+fV
+hU
+jH
+tR
+DY
+fV
+pR
+pR
+pR
+Yt
+pR
+pR
+ac
+gJ
+gJ
+Ei
+gJ
+gJ
+zA
+pF
+fV
+KF
+fV
+fV
+fV
+qv
+fV
+tR
+fV
+fV
+fV
+fV
+tR
+fV
+"}
+(29,1,1) = {"
+gh
+gh
+tR
+fV
+bq
+fV
+fV
+yC
+tR
+tR
+fV
+fV
+fV
+pR
+Zr
+pR
+tR
+tR
+pF
+gJ
+gJ
+gJ
+gJ
+gJ
+ML
+pF
+fV
+DY
+fV
+fV
+Yt
+qv
+DY
+fV
+fV
+fV
+fV
+fV
+tR
+fV
+"}
+(30,1,1) = {"
+fV
+gh
+tR
+fV
+fV
+gh
+fV
+yC
+fV
+tR
+tR
+DY
+yC
+fV
+fV
+pR
+fV
+tR
+pF
+gJ
+gJ
+gJ
+rF
+gJ
+Jk
+pF
+Yt
+fV
+fV
+Sc
+fV
+qv
+fV
+DY
+fV
+fV
+fV
+tR
+fV
+fV
+"}
+(31,1,1) = {"
+fV
+gh
+tR
+fV
+fV
+gh
+gh
+yC
+fV
+DY
+fV
+fV
+yC
+fV
+fV
+Sc
+JF
+fV
+pF
+At
+oS
+gJ
+gJ
+gJ
+gJ
+pF
+tR
+tR
+tR
+fV
+fV
+qv
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+fV
+"}
+(32,1,1) = {"
+fV
+gh
+fV
+fV
+fV
+gh
+gh
+yC
+fV
+fV
+fV
+fV
+yC
+Yt
+Oh
+pR
+fV
+fV
+pF
+kp
+gJ
+gJ
+Nj
+gJ
+he
+pF
+tR
+hU
+Lc
+fV
+DY
+qv
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+fV
+"}
+(33,1,1) = {"
+fV
+gh
+gh
+fV
+DY
+gh
+gh
+FH
+fV
+Dy
+fV
+fV
+yC
+fV
+fV
+fV
+Gy
+fV
+sD
+pF
+pF
+pF
+pF
+pF
+pF
+sD
+tR
+hU
+tR
+tU
+fV
+qv
+DY
+FO
+fV
+fV
+tR
+tR
+tR
+fV
+"}
+(34,1,1) = {"
+fV
+tR
+gh
+fV
+fV
+Vw
+gh
+FH
+gh
+tR
+fV
+DY
+fV
+fV
+lX
+lX
+No
+pR
+fV
+fV
+fV
+pR
+pR
+pR
+pR
+tR
+tR
+tR
+hU
+fV
+Yt
+YQ
+fV
+tR
+fV
+fV
+fV
+tR
+tR
+fV
+"}
+(35,1,1) = {"
+fV
+tR
+gh
+fV
+tR
+xU
+Vw
+FH
+gh
+tR
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+pR
+pR
+pR
+pR
+pR
+fV
+fV
+pR
+pR
+pR
+pR
+pR
+DY
+oO
+YQ
+tR
+gh
+fV
+fV
+fV
+tR
+tR
+fV
+"}
+(36,1,1) = {"
+fV
+gh
+gh
+fV
+tR
+tR
+Vw
+wG
+Hk
+tm
+lX
+sh
+lX
+qH
+tm
+tm
+lX
+tm
+lX
+lX
+lX
+lX
+lX
+lX
+tm
+tm
+tm
+lX
+lX
+lX
+tm
+wC
+tR
+gh
+fV
+fV
+fV
+tR
+tR
+fV
+"}
+(37,1,1) = {"
+fV
+gh
+gh
+fV
+tR
+tR
+Vw
+Vw
+tR
+fV
+fV
+fV
+fV
+DY
+fV
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+DY
+tR
+gh
+gh
+fV
+fV
+fV
+tR
+fV
+gh
+"}
+(38,1,1) = {"
+tR
+fV
+fV
+fV
+tR
+tR
+tR
+xU
+DY
+fV
+fV
+DY
+fV
+gh
+gh
+gh
+gh
+tR
+tR
+fV
+fV
+fV
+fV
+tR
+fV
+fV
+fV
+DY
+DY
+DY
+fV
+gh
+gh
+gh
+fV
+fV
+fV
+tR
+gh
+gh
+"}
+(39,1,1) = {"
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+gh
+gh
+"}
+(40,1,1) = {"
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+tR
+tR
+tR
+tR
+fV
+fV
+fV
+fV
+fV
+tR
+fV
+fV
+fV
+fV
+fV
+fV
+fV
+tR
+tR
+fV
+gh
+gh
+gh
+"}

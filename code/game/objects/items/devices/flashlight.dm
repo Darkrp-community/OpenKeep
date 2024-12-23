@@ -132,7 +132,7 @@
 	item_state = "torch"
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
-	light_color = "#ff7b00"
+	light_color = "#ffb773"
 	on_damage = 2
 	flags_1 = null
 	possible_item_intents = list(/datum/intent/hit, /datum/intent/use)
@@ -206,6 +206,7 @@
 	damtype = BRUTE
 
 /obj/item/flashlight/flare/torch/fire_act(added, maxstacks)
+	. = ..()
 	if(fuel)
 		if(!on)
 			playsound(src.loc, 'sound/items/firelight.ogg', 100)
@@ -218,7 +219,7 @@
 				var/mob/M = loc
 				M.update_inv_hands()
 			START_PROCESSING(SSobj, src)
-	..()
+			return TRUE
 
 /obj/item/flashlight/flare/torch/afterattack(atom/movable/A, mob/user, proximity)
 	. = ..()

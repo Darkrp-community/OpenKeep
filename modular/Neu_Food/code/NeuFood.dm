@@ -5,7 +5,6 @@
  *						*
  * * * * * * * * * * * **/
 
-
 #define SIMPLE_COOKING_XPGAIN 10
 #define COMPLEX_COOKING_XPGAIN 25
 
@@ -22,7 +21,6 @@
 	foodtype = GRAIN
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 	cooktime = 30 SECONDS
-	var/process_step // used for pie making and other similar modular foods
 
 /obj/item/reagent_containers/food/snacks/rogue/Initialize()
 	. = ..()
@@ -436,7 +434,7 @@
 	if(M.mind.assigned_role == "Beggar") // beggars gets revitalized, a little
 		M.adjustBruteLoss(-0.1*REM, 0)
 		M.adjustFireLoss(-0.1*REM, 0)
-		M.rogstam_add(2)
+		M.adjust_energy(2)
 		return
 	if(HAS_TRAIT(M, TRAIT_NASTY_EATER ))
 		return
@@ -469,7 +467,7 @@
 			M.blood_volume = min(M.blood_volume+2, BLOOD_VOLUME_MAXIMUM)
 		M.adjustBruteLoss(-0.2*REM, 0)
 		M.adjustFireLoss(-0.2*REM, 0)
-		M.rogstam_add(5)
+		M.adjust_energy(5)
 		return
 	else
 		if(prob(12))

@@ -2,9 +2,9 @@
 	icon = 'icons/roguetown/mob/monster/trolls.dmi'
 	name = "troll"
 	desc = "Elven legends say these monsters were servants of Dendor tasked to guard his realm; nowadays they are sometimes found in the company of orcs."
-	icon_state = "Troll2"
-	icon_living = "Troll2"
-	icon_dead = "Troll2d"
+	icon_state = "Troll"
+	icon_living = "Troll"
+	icon_dead = "Trolld"
 	pixel_x = -16
 
 	faction = list("orcs")
@@ -151,8 +151,8 @@
 /obj/effect/decal/remains/troll
 	name = "remains"
 	gender = PLURAL
-	icon_state = "mole_bones"
-	icon = 'icons/roguetown/mob/monster/mole.dmi' // mole bones is a placeholder
+	icon_state = "Trolld"
+
 
 // You know I had to. Hostile, killer cabbit. Strong. Fast. But not as durable.
 // The most foul, cruel and bad tempered feline-rodent you ever set eyes on.

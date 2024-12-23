@@ -12,14 +12,14 @@
 	id = "human"
 	desc = "<b>Half Elf</b><br>\
 	The child of an Elf and Humen, Half-Elves are generally frowned \
-	upon by more conservative peoples, although as racial tensions lower, \
+	upon by more conservative peoples, although as species tensions lower, \
 	more and more half-elves are being born. To the point that some scholars \
 	worry that someday, it may be impossible to distinguish the two species. \
 	Half-Elves are extremely diverse, as they bring in humen and elvish culture\
 	and it is widely considered that Half-Elf culture is simply a melting pot of \
 	various others condensing into one vibrant entity. \
 	Their longevity spanning too long for a human and short for an elf lead them to congregate together. \
-	Due to their heritage, Half-Elves tend to gain racial traits depending on how strong their fathers, or mothers, genes were. \
+	Due to their heritage, Half-Elves tend to gain species traits depending on how strong their fathers, or mothers, genes were. \
 	Half-Elves also typically try to find identity."
 
 	skin_tone_wording = "Half-Elven Identity"
@@ -31,10 +31,10 @@
 	mutant_bodyparts = list("ears")
 	mutanteyes = /obj/item/organ/eyes/elf/less
 	use_skintones = 1
-	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	skinned_type = /obj/item/stack/sheet/animalhide/human
+	possible_ages = list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	disliked_food = NONE
 	liked_food = NONE
+	max_age = 500
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
@@ -53,8 +53,8 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 0, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 0)
-	specstats_f = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	specstats = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = 1, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 
 	customizers = list(

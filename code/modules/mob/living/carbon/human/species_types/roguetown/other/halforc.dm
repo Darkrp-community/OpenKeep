@@ -17,12 +17,12 @@
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
 	inherent_traits = list(TRAIT_NOMOBSWAP)
-	default_features = list("mcolor" = "FFF", "wings" = "None")
+	default_features = list("mcolor" = "FFF", "ears" = "ElfH", "wings" = "None")
+	mutant_bodyparts = list("ears")
 	use_skintones = 1
-	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mt_muscular.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft_muscular.dmi'
@@ -41,8 +41,8 @@
 	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0)
-	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats = list("strength" = 2, "perception" = -2, "intelligence" = -2, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = 2, "perception" = -2, "intelligence" = -1, "constitution" = 1, "endurance" = 1, "speed" = 0, "fortune" = 0)
 	enflamed_icon = "widefire"
 
 /datum/species/halforc/check_roundstart_eligible()
@@ -111,6 +111,7 @@
 	"brown - bark" = "2d1300",
 
 	"green - maneater" = "458745",
+	"green - swampgrass" = "2A3B2B",
 
 	"black - charcoal" = "201616"
 	))

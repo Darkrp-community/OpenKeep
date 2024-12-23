@@ -73,8 +73,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/accessory = "Nothing"
 	var/detail = "Nothing"
 	var/socks = "Nude"					//socks type
-	var/backpack = DBACKPACK				//backpack type
-	var/jumpsuit_style = PREF_SUIT		//suit/skirt
 	var/hairstyle = "Bald"				//Hair type
 	var/hair_color = "000"				//Hair color
 	var/facial_hairstyle = "Shaved"	//Face hair type
@@ -87,13 +85,11 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/datum/patron/selected_patron
 	var/static/datum/patron/default_patron = /datum/patron/divine/astrata
 	var/list/features = MANDATORY_FEATURE_LIST
-	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_BACKPACK = TRUE, RANDOM_JUMPSUIT_STYLE = FALSE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
+	var/list/randomise = list(RANDOM_UNDERWEAR = TRUE, RANDOM_UNDERWEAR_COLOR = TRUE, RANDOM_UNDERSHIRT = TRUE, RANDOM_SOCKS = TRUE, RANDOM_HAIRSTYLE = TRUE, RANDOM_HAIR_COLOR = TRUE, RANDOM_FACIAL_HAIRSTYLE = TRUE, RANDOM_FACIAL_HAIR_COLOR = TRUE, RANDOM_SKIN_TONE = TRUE, RANDOM_EYE_COLOR = TRUE)
 	var/list/friendlyGenders = list("Male" = "male", "Female" = "female")
 	var/phobia = "spiders"
 
 	var/list/custom_names = list()
-	var/preferred_ai_core_display = "Blue"
-	var/prefered_security_department = SEC_DEPT_RANDOM
 
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
 	var/list/job_preferences = list()
@@ -123,8 +119,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	var/lastclass
 
-	var/uplink_spawn_loc = UPLINK_PDA
-
 	var/list/exp = list()
 	var/list/menuoptions
 
@@ -151,6 +145,8 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 	var/list/preference_message_list = list()
 
+	/// Tracker to whether the person has ever spawned into the round, for purposes of applying the respawn ban
+	var/has_spawned = FALSE
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -170,7 +166,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/loaded_preferences_successfully = load_preferences()
 	if(loaded_preferences_successfully)
 		if(load_character())
-			if(check_nameban(C.ckey) || (C.blacklisted() == 1))
+			if(check_nameban(C.ckey))
 				real_name = pref_species.random_name(gender,1)
 			return
 	//we couldn't load character data so just randomize the character appearance + name
@@ -284,8 +280,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 // 			-----------START OF IDENT TABLE-----------
 			dat += "<h2>Identity</h2>"
 			dat += "<table width='100%'><tr><td width='75%' valign='top'>"
-			if(is_banned_from(user.ckey, "Appearance"))
-				dat += "<b>Thou are banned from using custom names and appearances. Thou can continue to adjust thy characters, but thee will be randomised once thee joins the game.</b><br>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME]'>Always Random Name: [(randomise[RANDOM_NAME]) ? "Yes" : "No"]</a>"
 //			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_NAME_ANTAG]'>When Antagonist: [(randomise[RANDOM_NAME_ANTAG]) ? "Yes" : "No"]</a>"
 			dat += "<b>Name:</b> "
@@ -331,24 +325,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			if(family == FAMILY_FULL || family == FAMILY_NEWLYWED)
 				dat += "<b>Preferred Spouse:</b> <a href='?_src_=prefs;preference=setspouse'>[setspouse ? setspouse : "None"]</a><BR>"
 			dat += "<b>Dominance:</b> <a href='?_src_=prefs;preference=domhand'>[domhand == 1 ? "Left-handed" : "Right-handed"]</a><BR>"
-
-/*
-			dat += "<br><br><b>Special Names:</b><BR>"
-			var/old_group
-			for(var/custom_name_id in GLOB.preferences_custom_names)
-				var/namedata = GLOB.preferences_custom_names[custom_name_id]
-				if(!old_group)
-					old_group = namedata["group"]
-				else if(old_group != namedata["group"])
-					old_group = namedata["group"]
-					dat += "<br>"
-				dat += "<a href ='?_src_=prefs;preference=[custom_name_id];task=input'><b>[namedata["pref_name"]]:</b> [custom_names[custom_name_id]]</a> "
-			dat += "<br><br>"
-
-			dat += "<b>Custom Job Preferences:</b><BR>"
-			dat += "<a href='?_src_=prefs;preference=ai_core_icon;task=input'><b>Preferred AI Core Display:</b> [preferred_ai_core_display]</a><br>"
-			dat += "<a href='?_src_=prefs;preference=sec_dept;task=input'><b>Preferred Security Department:</b> [prefered_security_department]</a><BR></td>"
-*/
 			dat += "</tr></table>"
 // 			-----------END OF IDENT TABLE-----------
 
@@ -359,41 +335,9 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			// Rightmost column, 40% width
 			dat += "<td width=40% valign='top'>"
 			dat += "<h2>Body</h2>"
-//			dat += "<a href='?_src_=prefs;preference=all;task=random'>Random Body</A><BR>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_BODY]'>Always Random Body: [(randomise[RANDOM_BODY]) ? "Yes" : "No"]</A>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_BODY_ANTAG]'>When Antagonist: [(randomise[RANDOM_BODY_ANTAG]) ? "Yes" : "No"]</A><br>"
-
-
-//			dat += "<BR><b>Underwear:</b> <a href ='?_src_=prefs;preference=underwear;task=input'>[underwear]</a><BR>"
-
-
-//			dat += "<table width='100%'><tr><td width='24%' valign='top'>"
-
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERWEAR]'>[(randomise[RANDOM_UNDERWEAR]) ? "Lock" : "Unlock"]</A>"
 
 //			-----------START OF BODY TABLE-----------
 			dat += "<table width='100%'><tr><td width='1%' valign='top'>"
-
-//			dat += "<br><b>Underwear Color:</b><BR><span style='border: 1px solid #161616; background-color: #[underwear_color];'>&nbsp;&nbsp;&nbsp;</span> <a href='?_src_=prefs;preference=underwear_color;task=input'>Change</a>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERWEAR_COLOR]'>[(randomise[RANDOM_UNDERWEAR_COLOR]) ? "Lock" : "Unlock"]</A>"
-
-//			dat += "<BR><b>Undershirt:</b><BR><a href ='?_src_=prefs;preference=undershirt;task=input'>[undershirt]</a>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_UNDERSHIRT]'>[(randomise[RANDOM_UNDERSHIRT]) ? "Lock" : "Unlock"]</A>"
-
-
-//			dat += "<br><b>Socks:</b><BR><a href ='?_src_=prefs;preference=socks;task=input'>[socks]</a>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_SOCKS]'>[(randomise[RANDOM_SOCKS]) ? "Lock" : "Unlock"]</A>"
-
-
-//			dat += "<br><b>Backpack:</b><BR><a href ='?_src_=prefs;preference=bag;task=input'>[backpack]</a>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_BACKPACK]'>[(randomise[RANDOM_BACKPACK]) ? "Lock" : "Unlock"]</A>"
-
-
-//			dat += "<br><b>Jumpsuit Style:</b><BR><a href ='?_src_=prefs;preference=suit;task=input'>[jumpsuit_style]</a>"
-//			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_JUMPSUIT_STYLE]'>[(randomise[RANDOM_JUMPSUIT_STYLE]) ? "Lock" : "Unlock"]</A>"
-
-
-//			dat += "<br><b>Uplink Spawn Location:</b><BR><a href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc]</a><BR></td>"
 
 			var/use_skintones = pref_species.use_skintones
 			if(use_skintones)
@@ -752,18 +696,18 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 
 			dat += "<h2>Special Role Settings</h2>"
 
-			if(is_banned_from(user.ckey, ROLE_SYNDICATE))
+			if(is_total_antag_banned(user.ckey))
 				dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 				src.be_special = list()
 
 
 			for (var/i in GLOB.special_roles_rogue)
-				if(is_banned_from(user.ckey, i))
+				if(is_antag_banned(user.ckey, i))
 					dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 				else
 					var/days_remaining = null
-					if(ispath(GLOB.special_roles[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
-						var/mode_path = GLOB.special_roles[i]
+					if(ispath(GLOB.special_roles_rogue[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
+						var/mode_path = GLOB.special_roles_rogue[i]
 						var/datum/game_mode/temp_mode = new mode_path
 						days_remaining = temp_mode.get_remaining_days(user.client)
 
@@ -926,6 +870,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 		dat = list("<center>REGISTER!</center>")
 
 	winshow(user, "stonekeep_prefwin", TRUE)
+	winshow(user, "stonekeep_prefwin.character_preview_map", TRUE)
 	var/datum/browser/noclose/popup = new(user, "preferences_browser", "<div align='center'>[used_title]</div>")
 	popup.set_window_options("can_close=0")
 	popup.set_content(dat.Join())
@@ -1019,7 +964,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 			if(gender == FEMALE && job.f_title)
 				used_name = "[job.f_title]"
 			lastJob = job
-			if(is_banned_from(user.ckey, rank))
+			if(is_role_banned(user.ckey, job.title))
 				HTML += "[used_name]</td> <td><a href='?_src_=prefs;bancheck=[rank]'> BANNED</a></td></tr>"
 				continue
 			var/required_playtime_remaining = job.required_playtime_remaining(user.client)
@@ -1034,9 +979,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				if(job.whitelist_req && (!user.client.whitelisted()))
 					HTML += "<font color=#6183a5>[used_name]</font></td> <td> </td></tr>"
 					continue
-			if((!job.bypass_jobban) && (user.client.blacklisted()))
-				HTML += "<font color=#a36c63>[used_name]</font></td> <td> </td></tr>"
-				continue
 			if(job.plevel_req > user.client.patreonlevel())
 				HTML += "<font color=#a59461>[used_name]</font></td> <td> </td></tr>"
 				continue
@@ -1296,18 +1238,18 @@ Slots: [job.spawn_positions]</span>
 	dat += "<center><a href='?_src_=prefs;preference=antag;task=close'>Done</a></center><br>"
 
 
-	if(is_banned_from(user.ckey, ROLE_SYNDICATE))
+	if(is_total_antag_banned(user.ckey))
 		dat += "<font color=red><b>I am banned from antagonist roles.</b></font><br>"
 		src.be_special = list()
 
 
 	for (var/i in GLOB.special_roles_rogue)
-		if(is_banned_from(user.ckey, i))
+		if(is_antag_banned(user.ckey, i))
 			dat += "<b>[capitalize(i)]:</b> <a href='?_src_=prefs;bancheck=[i]'>BANNED</a><br>"
 		else
 			var/days_remaining = null
-			if(ispath(GLOB.special_roles[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
-				var/mode_path = GLOB.special_roles[i]
+			if(ispath(GLOB.special_roles_rogue[i]) && CONFIG_GET(flag/use_age_restriction_for_jobs)) //If it's a game mode antag, check if the player meets the minimum age
+				var/mode_path = GLOB.special_roles_rogue[i]
 				var/datum/game_mode/temp_mode = new mode_path
 				days_remaining = temp_mode.get_remaining_days(user.client)
 
@@ -1375,10 +1317,7 @@ Slots: [job.spawn_positions]</span>
 			if("random")
 				switch(joblessrole)
 					if(RETURNTOLOBBY)
-						if(is_banned_from(user.ckey, SSjob.overflow_role))
-							joblessrole = BERANDOMJOB
-						else
-							joblessrole = BERANDOMJOB
+						joblessrole = BERANDOMJOB
 					if(BEOVERFLOW)
 						joblessrole = BERANDOMJOB
 					if(BERANDOMJOB)
@@ -1566,10 +1505,6 @@ Slots: [job.spawn_positions]</span>
 					random_species()
 					accessory = "Nothing"
 					detail = "Nothing"
-				if("bag")
-					backpack = pick(GLOB.backpacklist)
-				if("suit")
-					jumpsuit_style = PREF_SUIT
 				if("all")
 					random_character(gender)
 					accessory = "Nothing"
@@ -1623,13 +1558,8 @@ Slots: [job.spawn_positions]</span>
 					GLOB.name_adjustments |= "[parent] changed their characters name to [new_name]."
 					log_character("[parent] changed their characters name to [new_name].")
 
-//				if("age")
-//					var/new_age = input(user, "Choose your character's age:\n([AGE_MIN]-[AGE_MAX])", "Years Dead") as num|null
-//					if(new_age)
-//						age = max(min( round(text2num(new_age)), AGE_MAX),AGE_MIN)
-
 				if("age")
-					var/new_age = input(user, "Choose your character's age (18-[pref_species.max_age])", "Yils Dead") as null|anything in pref_species.possible_ages
+					var/new_age = input(user, "Choose your character's age (Youngling-[pref_species.max_age])", "Yils Dead") as null|anything in pref_species.possible_ages
 					if(new_age)
 						age = new_age
 						var/list/hairs
@@ -1943,32 +1873,6 @@ Slots: [job.spawn_positions]</span>
 					var/new_asaycolor = input(user, "Choose your ASAY color:", "Game Preference",asaycolor) as color|null
 					if(new_asaycolor)
 						asaycolor = new_asaycolor
-
-				if("bag")
-					var/new_backpack = input(user, "Choose your character's style of bag:", "Character Preference")  as null|anything in GLOB.backpacklist
-					if(new_backpack)
-						backpack = new_backpack
-
-				if("suit")
-					if(jumpsuit_style == PREF_SUIT)
-						jumpsuit_style = PREF_SUIT
-					else
-						jumpsuit_style = PREF_SUIT
-
-				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
-					if(new_loc)
-						uplink_spawn_loc = new_loc
-
-				if("ai_core_icon")
-					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
-					if(ai_core_icon)
-						preferred_ai_core_display = ai_core_icon
-
-				if("sec_dept")
-					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
-					if(department)
-						prefered_security_department = department
 
 				if ("preferred_map")
 					var/maplist = list()
@@ -2385,15 +2289,10 @@ Slots: [job.spawn_positions]</span>
 	character.hairstyle = hairstyle
 	character.facial_hairstyle = facial_hairstyle
 	character.underwear = underwear
-//	character.underwear_color = underwear_color
 	character.undershirt = undershirt
-//	character.accessory = accessory
 	character.detail = detail
 	character.socks = socks
 	character.set_patron(selected_patron)
-	character.backpack = backpack
-
-	character.jumpsuit_style = jumpsuit_style
 
 	if(charflaw)
 		var/obj/item/bodypart/O = character.get_bodypart(BODY_ZONE_R_ARM)
@@ -2415,12 +2314,20 @@ Slots: [job.spawn_positions]</span>
 	character.dna.real_name = character.real_name
 
 	if(parent)
-		var/list/L = get_player_curses(parent.ckey)
-		if(L)
-			for(var/X in L)
-				var/curse = curse2trait(X)
-				if (curse)
-					ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
+		var/datum/role_bans/bans = get_role_bans_for_ckey(parent.ckey)
+		for(var/datum/role_ban_instance/ban as anything in bans.bans)
+			if(!ban.curses)
+				continue
+			for(var/curse_name as anything in ban.curses)
+				var/datum/curse/curse = GLOB.curse_names[curse_name]
+				character.add_curse(curse.type)
+
+	apply_trait_bans(character, parent.ckey)
+
+	if(is_misc_banned(parent.ckey, BAN_MISC_LEPROSY))
+		ADD_TRAIT(character, TRAIT_LEPROSY, TRAIT_BAN_PUNISHMENT)
+	if(is_misc_banned(parent.ckey, BAN_MISC_PUNISHMENT_CURSE))
+		ADD_TRAIT(character, TRAIT_PUNISHMENT_CURSE, TRAIT_BAN_PUNISHMENT)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
@@ -2466,5 +2373,12 @@ Slots: [job.spawn_positions]</span>
 	if(!migrant)
 		return FALSE
 	if(!migrant.active)
+		return FALSE
+	return TRUE
+
+/datum/preferences/proc/allowed_respawn()
+	if(!has_spawned)
+		return TRUE
+	if(is_misc_banned(parent.ckey, BAN_MISC_RESPAWN))
 		return FALSE
 	return TRUE

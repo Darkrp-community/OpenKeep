@@ -120,6 +120,64 @@
 	sellprice = 30
 
 
+/obj/item/rogueweapon/knife/scissors
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut, /datum/intent/snip)
+	max_integrity = 100
+	name = "iron scissors"
+	desc = "Scissors made of iron that may be used to salvage usable materials from clothing."
+	icon_state = "iscissors"
+
+/datum/intent/snip // The salvaging intent! Used only for the scissors for now!
+	name = "snip"
+	icon_state = "insnip"
+	chargetime = 0
+	noaa = TRUE
+	candodge = FALSE
+	canparry = FALSE
+	misscost = 0
+	no_attack = TRUE
+	releasedrain = 0
+	blade_class = BCLASS_PUNCH
+
+/obj/item/rogueweapon/knife/scissors/attack_obj(obj/O, mob/living/user) //This is scissor action! We're putting this here not to lose sight of it!
+	if(user.used_intent.type == /datum/intent/snip && istype(O, /obj/item))
+		var/obj/item/item = O
+		if(item.sewrepair && item.salvage_result) // We can only salvage objects which can be sewn!
+			var/salvage_time = 70
+			salvage_time = (70 - ((user.mind.get_skill_level(/datum/skill/misc/sewing)) * 10))
+			if(!do_after(user, salvage_time, target = user))
+				return
+			if(item.fiber_salvage) //We're getting fiber as base if fiber is present on the item
+				new /obj/item/natural/fibers(get_turf(item))
+			if(istype(item, /obj/item/storage))
+				var/obj/item/storage/bag = item
+				bag.emptyStorage()
+			var/skill_level = user.mind.get_skill_level(/datum/skill/misc/sewing)
+			if(prob(50 - (skill_level * 10))) // We are dumb and we failed!
+				to_chat(user, span_info("I ruined some of the materials due to my lack of skill..."))
+				playsound(item, 'sound/foley/cloth_rip.ogg', 50, TRUE)
+				qdel(item)
+				user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //Getting exp for failing
+				return //We are returning early if the skill check fails!
+			item.salvage_amount -= item.torn_sleeve_number
+			for(var/i = 1; i <= item.salvage_amount; i++) // We are spawning salvage result for the salvage amount minus the torn sleves!
+				var/obj/item/Sr = new item.salvage_result(get_turf(item))
+				Sr.color = item.color
+			user.visible_message(span_notice("[user] salvages [item] into usable materials."))
+			playsound(item, 'sound/items/flint.ogg', 100, TRUE) //In my mind this sound was more fitting for a scissor
+			qdel(item)
+			user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //We're getting experience for salvaging!
+	..()
+
+
+/obj/item/rogueweapon/knife/scissors/steel
+	force = 14
+	max_integrity = 150
+	name = "steel scissors"
+	desc = "Scissors made of solid steel that may be used to salvage usable materials from clothing, more durable and a tad more deadly than their iron conterpart."
+	icon_state = "sscissors"
+	smeltresult = /obj/item/ingot/steel
+
 //................ Cleaver ............... //
 /obj/item/rogueweapon/knife/cleaver
 	name = "cleaver"
@@ -389,3 +447,41 @@
 	sellprice = 10
 
 
+/obj/item/rogueweapon/knife/throwingknife
+	name = "iron tossblade"
+	desc = ""
+	item_state = "bone_dagger"
+	force = 12
+	throwforce = 25
+	throw_speed = 4
+	max_integrity = 50
+	wdefense = 1
+	icon_state = "throw_knifei"
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 25, "embedded_fall_chance" = 20)
+
+/obj/item/rogueweapon/knife/throwingknife/steel
+	name = "steel tossblade"
+	desc = ""
+	item_state = "bone_dagger"
+	force = 12
+	throwforce = 25
+	throw_speed = 4
+	max_integrity = 100
+	wdefense = 1
+	icon_state = "throw_knifes"
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 30, "embedded_fall_chance" = 15)
+
+/obj/item/rogueweapon/knife/throwingknife/psydon
+	name = "psydonian tossblade"
+	desc = "An unconventional method of delivering silver to a heretic; but one PSYDON smiles at, all the same. Doubles as an 'actual' knife in a pinch."
+	item_state = "bone_dagger"
+	force = 12
+	throwforce = 25
+	throw_speed = 4
+	max_integrity = 150
+	wdefense = 3
+	icon_state = "throw_knifes"
+	embedding = list("embedded_pain_multiplier" = 4, "embed_chance" = 50, "embedded_fall_chance" = 0)
+	is_silver = TRUE
+	sellprice = 65
+	smeltresult = /obj/item/ingot/silver

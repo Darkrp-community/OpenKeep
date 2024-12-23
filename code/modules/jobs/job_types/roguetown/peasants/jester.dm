@@ -35,7 +35,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights
 	armor = /obj/item/clothing/suit/roguetown/shirt/jester
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/keyring/jester
+	beltr = /obj/item/storage/keyring/jester
 	beltl = /obj/item/storage/belt/rogue/pouch
 	head = /obj/item/clothing/head/roguetown/jester
 	neck = /obj/item/clothing/neck/roguetown/coif
@@ -64,9 +64,9 @@
 		H.TOTALSPD = rand(1, 20)
 
 		if(H.STASTR > 16)
-			H.cmode_music = 'sound/music/combat_jester3.ogg'
+			H.cmode_music = 'sound/music/cmode/nobility/CombatJesterSTR.ogg'
 		else
-			H.cmode_music = pick("sound/music/combat_jester.ogg","sound/music/combat_jester2.ogg")
+			H.cmode_music = pick("sound/music/cmode/nobility/CombatJester1.ogg","sound/music/cmode/nobility/CombatJester2.ogg")
 
 /*		if(H.gender == MALE)
 			if(H.dna?.species)

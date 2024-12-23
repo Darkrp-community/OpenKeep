@@ -902,7 +902,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return
 	var/bt = world.time
 	SEND_SOUND(src, sound('sound/misc/notice (2).ogg'))
-	if(alert(src, "A lich has summoned you to destroy Rockhill!", "Join the Horde", "Yes", "No") == "Yes")
+	if(alert(src, "A lich has summoned you to destroy Vanderlin!", "Join the Horde", "Yes", "No") == "Yes")
 		if(world.time > bt + 5 MINUTES)
 			to_chat(src, "<span class='warning'>Too late.</span>")
 			return FALSE
@@ -965,18 +965,6 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 		return FALSE
 	usr.visible_message("<span class='deadsay'><b>[src]</b> points to [A].</span>")
 	return TRUE
-
-/mob/dead/observer/verb/view_manifest()
-	set name = "View Crew Manifest"
-	set category = "Ghost"
-	set hidden = 1
-	if(!check_rights(0))
-		return
-	var/dat
-	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest()
-
-	src << browse(dat, "window=manifest;size=387x420;can_close=1")
 
 //this is called when a ghost is drag clicked to something.
 /mob/dead/observer/MouseDrop(atom/over)

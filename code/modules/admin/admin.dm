@@ -46,18 +46,25 @@
 		body += "\[ <a href='?_src_=holder;[HrefToken()];showrelatedacc=cid;client=[REF(M.client)]'>CID</a> | "
 		body += "<a href='?_src_=holder;[HrefToken()];showrelatedacc=ip;client=[REF(M.client)]'>IP</a> \]"
 
-		var/patron = "NA"
-		if(isliving(M))
-			var/mob/living/living = M
-			patron = initial(living.patron.name)
-		body += "<br><br>Current Patron: [patron]"
-
 		var/pq = get_playerquality(M.ckey, TRUE)
 		var/pq_num = get_playerquality(M.ckey, FALSE)
 		body += "<br><br>Player Quality: [pq] ([pq_num])"
 		body += "<br><a href='?_src_=holder;[HrefToken()];editpq=add;mob=[REF(M)]'>\[Modify PQ\]</a> "
 		body += "<a href='?_src_=holder;[HrefToken()];showpq=add;mob=[REF(M)]'>\[Check PQ\]</a> "
 		body += "<br>"
+
+		var/patron = "NA"
+		if(isliving(M))
+			var/mob/living/living = M
+			patron = initial(living.patron.name)
+		body += "<br><br>Current Patron: [patron]"
+
+		var/curse_string = ""
+		if(ishuman(M))
+			var/mob/living/carbon/human/living = M
+			for(var/datum/curse/curse in living.curses)
+				curse_string += "<br> - [curse.name]"
+		body += "<br>Curses: [curse_string]"
 
 		var/full_version = "Unknown"
 		if(M.client.byond_version)
@@ -73,8 +80,6 @@
 		body += "<a href='?_src_=holder;[HrefToken()];initmind=[REF(M)]'>Init Mind</a> - "
 	body += "<a href='?priv_msg=[M.ckey]'>PM</a> - "
 	body += "<a href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>SM</a> - "
-	if (ishuman(M) && M.mind)
-		body += "<a href='?_src_=holder;[HrefToken()];HeadsetMessage=[REF(M)]'>HM</a> - "
 	body += "<a href='?_src_=holder;[HrefToken()];adminplayerobservefollow=[REF(M)]'>FLW</a> - "
 	//Default to client logs if available
 	var/source = LOGSRC_MOB
@@ -92,7 +97,6 @@
 
 	body += "<A href='?_src_=holder;[HrefToken()];showmessageckey=[M.ckey]'>Notes | Messages | Watchlist</A> | "
 	if(M.client)
-		body += "| <A href='?_src_=holder;[HrefToken()];sendtoprison=[REF(M)]'>Prison</A> | "
 		body += "\ <A href='?_src_=holder;[HrefToken()];sendbacktolobby=[REF(M)]'>Send back to Lobby</A> | "
 		var/muted = M.client.prefs.muted
 		body += "<br><b>Mute: </b> "
@@ -112,21 +116,7 @@
 	body += "<A href='?_src_=holder;[HrefToken()];traitor=[REF(M)]'>Traitor panel</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];narrateto=[REF(M)]'>Narrate to</A> | "
 	body += "<A href='?_src_=holder;[HrefToken()];subtlemessage=[REF(M)]'>Subtle message</A> | "
-	body += "<A href='?_src_=holder;[HrefToken()];languagemenu=[REF(M)]'>Language Menu</A>"
-
-	if (M.client)
-		if(!isnewplayer(M))
-			body += "<br><br>"
-			body += "<b>Rudimentary transformation:</b><font size=2><br>These transformations only create a new mob type and copy stuff over. They do not take into account MMIs and similar mob-specific things. The buttons in 'Transformations' are preferred, when possible.</font><br>"
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=observer;mob=[REF(M)]'>Observer</A> | "
-			body += "<A href='?_src_=holder;[HrefToken()];simplemake=human;mob=[REF(M)]'>Human</A> "
-			body += "<br>"
-
-	if (M.client)
-		body += "<br><br>"
-		body += "<b>Other actions:</b>"
-		body += "<br>"
-		body += "<A href='?_src_=holder;[HrefToken()];forcespeech=[REF(M)]'>Forcesay</A> | "
+	//body += "<A href='?_src_=holder;[HrefToken()];languagemenu=[REF(M)]'>Language Menu</A>"
 
 	body += "<br>"
 	body += "</body></html>"
@@ -146,6 +136,40 @@
 	M.fully_heal(admin_revive = TRUE)
 	message_admins("<span class='danger'>Admin [key_name_admin(usr)] healed / revived [key_name_admin(M)]!</span>")
 	log_admin("[key_name(usr)] healed / Revived [key_name(M)].")
+
+/datum/admins/proc/admin_curse(mob/living/carbon/human/M in GLOB.mob_list)
+	set name = "Curse"
+	set desc = "Curse or lift a curse from a character"
+	set category = "GameMaster"
+	if(!check_rights())
+		return FALSE
+
+	var/category = input("Category") as null|anything in list("Ten", "Inhuman", "Special")
+	if(!category)
+		return FALSE
+
+	var/curse
+	switch(category)
+		if("Ten")
+			curse = input("Curse") as null|anything in TEN_CURSES
+		if("Inhuman")
+			curse = input("Curse") as null|anything in INHUMEN_CURSES
+		if("Special")
+			curse = input("Curse") as null|anything in SPECIAL_CURSES
+
+	if(!curse)
+		return FALSE
+	var/datum/curse/C = curse
+	if(M.add_curse(C))
+		message_admins(span_danger("Admin [key_name_admin(usr)] cursed [key_name_admin(M)] with [C.name]!"))
+		log_admin("[key_name(usr)] cursed [key_name(M)] with [C.name].")
+		return TRUE
+	else if(M.remove_curse(C))
+		message_admins(span_danger("Admin [key_name_admin(usr)] lifted [C.name] from [key_name_admin(M)]!"))
+		log_admin("[key_name(usr)] lifted [C.name] from [key_name(M)].")
+		return TRUE
+	else
+		return FALSE
 
 /datum/admins/proc/checkpq(mob/living/M in GLOB.mob_list)
 	set name = "Check PQ"
@@ -232,41 +256,43 @@
 	if(!check_rights(0))
 		return
 
-	var/dat = {"
+	var/dat = "<html><meta charset='UTF-8'><head><title>Game Panel</title></head><body>"
+	dat += {"
 		<center><B>Game Panel</B></center><hr>\n
-		<A href='?src=[REF(src)];[HrefToken()];c_mode=1'>Change Game Mode</A><br>
+		<A href='byond://?src=[REF(src)];[HrefToken()];c_mode=1'>Change Game Mode</A><br>
 		"}
 	if(GLOB.master_mode == "secret")
-		dat += "<A href='?src=[REF(src)];[HrefToken()];f_secret=1'>(Force Secret Mode)</A><br>"
+		dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_secret=1'>(Force Secret Mode)</A><br>"
 	if(GLOB.master_mode == "dynamic")
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart=1'>(Force Roundstart Rulesets)</A><br>"
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart=1'>(Force Roundstart Rulesets)</A><br>"
 			if (GLOB.dynamic_forced_roundstart_ruleset.len > 0)
 				for(var/datum/dynamic_ruleset/roundstart/rule in GLOB.dynamic_forced_roundstart_ruleset)
-					dat += {"<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_remove=\ref[rule]'>-> [rule.name] <-</A><br>"}
-				dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_clear=1'>(Clear Rulesets)</A><br>"
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_options=1'>(Dynamic mode options)</A><br>"
+					dat += {"<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_remove=\ref[rule]'>-> [rule.name] <-</A><br>"}
+				dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_clear=1'>(Clear Rulesets)</A><br>"
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_options=1'>(Dynamic mode options)</A><br>"
 		else if (SSticker.IsRoundInProgress())
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_latejoin=1'>(Force Next Latejoin Ruleset)</A><br>"
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_latejoin=1'>(Force Next Latejoin Ruleset)</A><br>"
 			if (SSticker && SSticker.mode && istype(SSticker.mode,/datum/game_mode/dynamic))
 				var/datum/game_mode/dynamic/mode = SSticker.mode
 				if (mode.forced_latejoin_rule)
-					dat += {"<A href='?src=[REF(src)];[HrefToken()];f_dynamic_latejoin_clear=1'>-> [mode.forced_latejoin_rule.name] <-</A><br>"}
-			dat += "<A href='?src=[REF(src)];[HrefToken()];f_dynamic_midround=1'>(Execute Midround Ruleset!)</A><br>"
+					dat += {"<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_latejoin_clear=1'>-> [mode.forced_latejoin_rule.name] <-</A><br>"}
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_midround=1'>(Execute Midround Ruleset!)</A><br>"
 		dat += "<hr/>"
 	if(SSticker.IsRoundInProgress())
-		dat += "<a href='?src=[REF(src)];[HrefToken()];gamemode_panel=1'>(Game Mode Panel)</a><BR>"
+		dat += "<a href='byond://?src=[REF(src)];[HrefToken()];gamemode_panel=1'>(Game Mode Panel)</a><BR>"
 	dat += {"
 		<BR>
-		<A href='?src=[REF(src)];[HrefToken()];create_object=1'>Create Object</A><br>
-		<A href='?src=[REF(src)];[HrefToken()];quick_create_object=1'>Quick Create Object</A><br>
-		<A href='?src=[REF(src)];[HrefToken()];create_turf=1'>Create Turf</A><br>
-		<A href='?src=[REF(src)];[HrefToken()];create_mob=1'>Create Mob</A><br>
+		<A href='byond://?src=[REF(src)];[HrefToken()];create_object=1'>Create Object</A><br>
+		<A href='byond://?src=[REF(src)];[HrefToken()];quick_create_object=1'>Quick Create Object</A><br>
+		<A href='byond://?src=[REF(src)];[HrefToken()];create_turf=1'>Create Turf</A><br>
+		<A href='byond://?src=[REF(src)];[HrefToken()];create_mob=1'>Create Mob</A><br>
 		"}
 
 	if(marked_datum && istype(marked_datum, /atom))
-		dat += "<A href='?src=[REF(src)];[HrefToken()];dupe_marked_datum=1'>Duplicate Marked Datum</A><br>"
+		dat += "<A href='byond://?src=[REF(src)];[HrefToken()];dupe_marked_datum=1'>Duplicate Marked Datum</A><br>"
 
+	dat += "</body></html>"
 	usr << browse(dat, "window=admin2;size=240x280")
 	return
 
@@ -615,15 +641,15 @@
 		dat += "</td>"
 		dat += "<td>"
 		if(job.total_positions >= 0)
-			dat += "<A href='?src=[REF(src)];[HrefToken()];customjobslot=[job.title]'>Custom</A> | "
-			dat += "<A href='?src=[REF(src)];[HrefToken()];addjobslot=[job.title]'>Add 1</A> | "
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];customjobslot=[job.title]'>Custom</A> | "
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];addjobslot=[job.title]'>Add 1</A> | "
 			if(job.total_positions > job.current_positions)
-				dat += "<A href='?src=[REF(src)];[HrefToken()];removejobslot=[job.title]'>Remove</A> | "
+				dat += "<A href='byond://?src=[REF(src)];[HrefToken()];removejobslot=[job.title]'>Remove</A> | "
 			else
 				dat += "Remove | "
-			dat += "<A href='?src=[REF(src)];[HrefToken()];unlimitjobslot=[job.title]'>Unlimit</A></td>"
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];unlimitjobslot=[job.title]'>Unlimit</A></td>"
 		else
-			dat += "<A href='?src=[REF(src)];[HrefToken()];limitjobslot=[job.title]'>Limit</A></td>"
+			dat += "<A href='byond://?src=[REF(src)];[HrefToken()];limitjobslot=[job.title]'>Limit</A></td>"
 
 	browser.height = min(100 + count * 20, 650)
 	browser.set_content(dat.Join())
@@ -636,33 +662,33 @@
 		<h3>Common options</h3>
 		<i>All these options can be changed midround.</i> <br/>
 		<br/>
-		<b>Force extended:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_force_extended=1'> <b>[GLOB.dynamic_forced_extended ? "ON" : "OFF"]</a></b>.
+		<b>Force extended:</b> - Option is <a href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_force_extended=1'> <b>[GLOB.dynamic_forced_extended ? "ON" : "OFF"]</a></b>.
 		<br/>This will force the round to be extended. No rulesets will be drafted. <br/>
 		<br/>
-		<b>No stacking:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_no_stacking=1'> <b>[GLOB.dynamic_no_stacking ? "ON" : "OFF"]</b></a>.
+		<b>No stacking:</b> - Option is <a href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_no_stacking=1'> <b>[GLOB.dynamic_no_stacking ? "ON" : "OFF"]</b></a>.
 		<br/>Unless the threat goes above [GLOB.dynamic_stacking_limit], only one "round-ender" ruleset will be drafted. <br/>
 		<br/>
-		<b>Classic secret mode:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_classic_secret=1'> <b>[GLOB.dynamic_classic_secret ? "ON" : "OFF"]</b></a>.
+		<b>Classic secret mode:</b> - Option is <a href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_classic_secret=1'> <b>[GLOB.dynamic_classic_secret ? "ON" : "OFF"]</b></a>.
 		<br/>Only one roundstart ruleset will be drafted. Only traitors and minor roles will latespawn. <br/>
 		<br/>
 		<br/>
-		<b>Forced threat level:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_forced_threat=1'><b>[GLOB.dynamic_forced_threat_level]</b></a>.
+		<b>Forced threat level:</b> Current value : <a href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_forced_threat=1'><b>[GLOB.dynamic_forced_threat_level]</b></a>.
 		<br/>The value threat is set to if it is higher than -1.<br/>
 		<br/>
-		<b>High population limit:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_high_pop_limit=1'><b>[GLOB.dynamic_high_pop_limit]</b></a>.
+		<b>High population limit:</b> Current value : <a href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_high_pop_limit=1'><b>[GLOB.dynamic_high_pop_limit]</b></a>.
 		<br/>The threshold at which "high population override" will be in effect. <br/>
 		<br/>
-		<b>Stacking threeshold:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_stacking_limit=1'><b>[GLOB.dynamic_stacking_limit]</b></a>.
+		<b>Stacking threeshold:</b> Current value : <a href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_stacking_limit=1'><b>[GLOB.dynamic_stacking_limit]</b></a>.
 		<br/>The threshold at which "round-ender" rulesets will stack. A value higher than 100 ensure this never happens. <br/>
 		<h3>Advanced parameters</h3>
-		Curve centre: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_centre=1'>-> [GLOB.dynamic_curve_centre] <-</A><br>
-		Curve width: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_width=1'>-> [GLOB.dynamic_curve_width] <-</A><br>
+		Curve centre: <A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_centre=1'>-> [GLOB.dynamic_curve_centre] <-</A><br>
+		Curve width: <A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_width=1'>-> [GLOB.dynamic_curve_width] <-</A><br>
 		Latejoin injection delay:<br>
-		Minimum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_latejoin_min=1'>-> [GLOB.dynamic_latejoin_delay_min / 60 / 10] <-</A> Minutes<br>
-		Maximum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_latejoin_max=1'>-> [GLOB.dynamic_latejoin_delay_max / 60 / 10] <-</A> Minutes<br>
+		Minimum: <A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_latejoin_min=1'>-> [GLOB.dynamic_latejoin_delay_min / 60 / 10] <-</A> Minutes<br>
+		Maximum: <A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_latejoin_max=1'>-> [GLOB.dynamic_latejoin_delay_max / 60 / 10] <-</A> Minutes<br>
 		Midround injection delay:<br>
-		Minimum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_midround_min=1'>-> [GLOB.dynamic_midround_delay_min / 60 / 10] <-</A> Minutes<br>
-		Maximum: <A href='?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_midround_max=1'>-> [GLOB.dynamic_midround_delay_max / 60 / 10] <-</A> Minutes<br>
+		Minimum: <A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_midround_min=1'>-> [GLOB.dynamic_midround_delay_min / 60 / 10] <-</A> Minutes<br>
+		Maximum: <A href='byond://?src=[REF(src)];[HrefToken()];f_dynamic_roundstart_midround_max=1'>-> [GLOB.dynamic_midround_delay_max / 60 / 10] <-</A> Minutes<br>
 		"}
 
 	user << browse(dat, "window=dyn_mode_options;size=900x650")

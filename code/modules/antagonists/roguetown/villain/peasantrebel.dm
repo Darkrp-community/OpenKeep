@@ -11,7 +11,7 @@
 	show_in_roundend = FALSE
 	isgoodguy = TRUE // Previous townies, still should get buffs, make chaos.
 	confess_lines = list(
-		"VIVA!", 
+		"VIVA!",
 		"DEATH TO THE NOBLES!",
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",
@@ -30,7 +30,7 @@
 	. = ..()
 	owner.special_role = ROLE_PREBEL
 	var/mob/living/carbon/human/H = owner.current
-	H.cmode_music = 'sound/music/combat_bandit.ogg'
+	H.cmode_music = 'sound/music/cmode/antag/CombatSausageMaker.ogg'
 	H.add_stress(/datum/stressevent/prebel)
 	ADD_TRAIT(H, TRAIT_VILLAIN, TRAIT_GENERIC)
 

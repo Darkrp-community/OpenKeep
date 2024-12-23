@@ -44,78 +44,6 @@
 	eat_effect = null
 	rotprocess = null
 
-
-/*------------------\
-| Drying Rack foods |
-\------------------*/
-
-/*	........   Drying Rack recipes   ................ */
-/datum/crafting_recipe/roguetown/cooking/salami
-	name = "salumoi"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/rogue/meat/sausage = 1,
-		/obj/item/reagent_containers/powder/salt = 1)
-	result = /obj/item/reagent_containers/food/snacks/rogue/meat/salami
-	req_table = FALSE
-	structurecraft = /obj/structure/fluff/dryingrack
-	craftdiff = 0
-
-/datum/crafting_recipe/roguetown/cooking/coppiette
-	name = "coppiette"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-		/obj/item/reagent_containers/powder/salt = 1)
-	result = /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
-	req_table = FALSE
-	craftdiff = 0
-	structurecraft = /obj/structure/fluff/dryingrack
-
-/datum/crafting_recipe/roguetown/cooking/salo
-	name = "salo"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fat = 1,
-		/obj/item/reagent_containers/powder/salt = 1)
-	result = /obj/item/reagent_containers/food/snacks/fat/salo
-	craftdiff = 0
-	structurecraft = /obj/structure/fluff/dryingrack
-	req_table = FALSE
-
-/datum/crafting_recipe/roguetown/cooking/saltfish
-	name = "saltfish"
-	reqs = list(
-		/obj/item/reagent_containers/food/snacks/fish = 1,
-		/obj/item/reagent_containers/powder/salt = 1)
-	parts = list(
-		/obj/item/reagent_containers/food/snacks/fish = 1)
-	result = /obj/item/reagent_containers/food/snacks/rogue/saltfish
-	req_table = FALSE
-	craftdiff = 0
-	subtype_reqs = TRUE
-	structurecraft = /obj/structure/fluff/dryingrack
-
-/datum/crafting_recipe/roguetown/cooking/raisins
-	name = "raisins"
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1)
-	parts = list(
-		/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1)
-	blacklist = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison)
-	result = /obj/item/reagent_containers/food/snacks/rogue/raisins
-	structurecraft = /obj/structure/fluff/dryingrack
-	req_table = FALSE
-	craftdiff = 0
-	subtype_reqs = TRUE
-
-/datum/crafting_recipe/roguetown/cooking/raisins_poison
-	name = "raisins"
-	reqs = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
-	parts = list(
-		/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
-	result = /obj/item/reagent_containers/food/snacks/rogue/raisins/poison
-	structurecraft = /obj/structure/fluff/dryingrack
-	req_table = FALSE
-	craftdiff = 0
-	subtype_reqs = TRUE
-
 // -------------- RAISINS -----------------
 /obj/item/reagent_containers/food/snacks/rogue/raisins
 	name = "raisins"
@@ -327,11 +255,11 @@
 		if(!reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15) && !reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))
 			to_chat(user, "<span class='warning'>Not enough salted milk.</span>")
 			return
-		user.rogfat_add(40) // forgot rogfat is our lovely stamloss proc here
+		user.adjust_stamina(40) // forgot stamina is our lovely stamloss proc here
 		user.visible_message("<span class='info'>[user] churns butter...</span>")
 		playsound(get_turf(user), 'modular/Neu_Food/sound/churn.ogg', 100, TRUE, -1)
 		if(do_after(user,long_cooktime, target = src))
-			user.rogfat_add(50)
+			user.adjust_stamina(50)
 			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted, 15))
 				reagents.remove_reagent(/datum/reagent/consumable/milk/salted, 15)
 			if(reagents.has_reagent(/datum/reagent/consumable/milk/salted_gote, 15))

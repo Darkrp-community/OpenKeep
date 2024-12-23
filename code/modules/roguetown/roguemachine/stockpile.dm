@@ -38,8 +38,8 @@
 	var/contents = "<center>TOWN STOCKPILE<BR>"
 	contents += "--------------<BR>"
 
-	contents += "<a href='?src=[REF(src)];navigate=withdraw'>EXTRACT</a><BR>"
-	contents += "<a href='?src=[REF(src)];navigate=deposit'>FEED</a></center><BR><BR>"
+	contents += "<a href='byond://?src=[REF(src)];navigate=withdraw'>EXTRACT</a><BR>"
+	contents += "<a href='byond://?src=[REF(src)];navigate=deposit'>FEED</a></center><BR><BR>"
 
 	return contents
 
@@ -48,7 +48,7 @@
 
 /obj/structure/roguemachine/stockpile/proc/get_deposit_contents()
 	var/contents = "<center>FEED THE STOCKPILE<BR>"
-	contents += "<a href='?src=[REF(src)];navigate=directory'>(back)</a><BR>"
+	contents += "<a href='byond://?src=[REF(src)];navigate=directory'>(back)</a><BR>"
 	contents += "----------<BR>"
 	contents += "</center>"
 
@@ -158,16 +158,16 @@
 /datum/withdraw_tab/proc/get_contents(title, show_back)
 	var/contents = "<center>[title]<BR>"
 	if(show_back)
-		contents += "<a href='?src=[REF(parent_structure)];navigate=directory'>(back)</a><BR>"
+		contents += "<a href='byond://?src=[REF(parent_structure)];navigate=directory'>(back)</a><BR>"
 
 	contents += "--------------<BR>"
-	contents += "<a href='?src=[REF(parent_structure)];change=1'>Stored Mammon: [budget]</a><BR>"
-	contents += "<a href='?src=[REF(parent_structure)];compact=1'>Compact Mode: [compact ? "ENABLED" : "DISABLED"]</a></center><BR>"
+	contents += "<a href='byond://?src=[REF(parent_structure)];change=1'>Stored Mammon: [budget]</a><BR>"
+	contents += "<a href='byond://?src=[REF(parent_structure)];compact=1'>Compact Mode: [compact ? "ENABLED" : "DISABLED"]</a></center><BR>"
 
 	if(compact)
 		for(var/datum/roguestock/stockpile/A in SStreasury.stockpile_datums)
 			if(!A.withdraw_disabled)
-				contents += "<b>[A.name]:</b> <a href='?src=[REF(parent_structure)];withdraw=[REF(A)]'>LCL: [A.held_items] at [A.withdraw_price]m</a> /"
+				contents += "<b>[A.name]:</b> <a href='byond://?src=[REF(parent_structure)];withdraw=[REF(A)]'>LCL: [A.held_items] at [A.withdraw_price]m</a><BR>"
 
 			else
 				contents += "<b>[A.name]:</b> Withdrawing Disabled..."
@@ -178,7 +178,7 @@
 			contents += "[A.desc]<BR>"
 			contents += "Stockpiled Amount: [A.held_items]<BR>"
 			if(!A.withdraw_disabled)
-				contents += "<a href='?src=[REF(parent_structure)];withdraw=[REF(A)]'>\[Withdraw ([A.withdraw_price])\] </a>"
+				contents += "<a href='byond://?src=[REF(parent_structure)];withdraw=[REF(A)]'>\[Withdraw ([A.withdraw_price])\] </a><BR>"
 			else
 				contents += "Withdrawing Disabled...<BR><BR>"
 

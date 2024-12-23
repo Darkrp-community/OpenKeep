@@ -593,6 +593,7 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/cloak/apron/brown
 	color = CLOTHING_BARK_BROWN
@@ -651,6 +652,7 @@
 	inhand_mod = TRUE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood
 	toggle_icon_state = FALSE
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/wash_act(clean)
 	. = ..()
@@ -725,6 +727,8 @@
 	icon_state = "furgrey"
 	inhand_mod = FALSE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood/furhood
+	salvage_amount = 1
+	salvage_result = /obj/item/natural/fur
 
 /obj/item/clothing/cloak/raincloak/furcloak/crafted/Initialize()
 	. = ..()
@@ -784,19 +788,7 @@
 
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"
-	icon_state = "roguecape"
-	item_state = "roguecape"
-
-/obj/item/clothing/cloak/cape/hood
-	name = "hooded cape"
-	icon_state = "hoodcape"
-	item_state = "hoodcape"
-
-/obj/item/clothing/cloak/cape/fur
-	name = "fur cape"
-	icon_state = "furcape"
-	item_state = "furcape"
-	inhand_mod = TRUE
+	icon_state = "chasuble"
 
 /obj/item/clothing/cloak/chasuble
 	name = "chasuble"
@@ -906,8 +898,15 @@
 	name = "stalker cloak"
 	desc = "A heavy leather cloak held together by a gilded pin. The pin depicts a spider with disconnected legs."
 	icon_state = "shadowcloak"
+	item_state = "shadowcloak"
 	color = null
-	allowed_race = list("elf", "dark elf")
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	mob_overlay_icon = 'icons/roguetown/clothing/newclothes/onmob/shadowcloak.dmi'
+	sleeved = 'icons/roguetown/clothing/newclothes/onmob/shadowcloak.dmi'
+	nodismemsleeves = TRUE
+	inhand_mod = TRUE
+	toggle_icon_state = FALSE
+	salvage_result = /obj/item/natural/silk
 
 /obj/item/clothing/cloak/half/shadowcloak/cult
 	name = "ominous cloak"

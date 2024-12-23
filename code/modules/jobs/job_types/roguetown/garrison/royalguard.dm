@@ -25,7 +25,7 @@
 	min_pq = 2
 	selection_color = "#920909"
 
-	cmode_music = 'sound/music/nobility/CombatKnight.ogg'
+	cmode_music = 'sound/music/cmode/nobility/CombatKnight.ogg'
 
 /datum/job/roguetown/royalguard/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
@@ -56,7 +56,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine // Wear the King's colors.
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
-	beltl = /obj/item/keyring/mguard
+	beltl = /obj/item/storage/keyring/mguard
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/arming
 	backr = /obj/item/storage/backpack/rogue/satchel

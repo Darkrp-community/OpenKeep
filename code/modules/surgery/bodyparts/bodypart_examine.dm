@@ -9,7 +9,7 @@
 	var/list/head_status = list()
 	if(!brain)
 		head_status += "<span class='dead'>The brain is missing.</span>"
-	/*		
+	/*
 	else if(brain.suicided || brainmob?.suiciding)
 		. += "<span class='info'>There's a pretty dumb expression on [real_name]'s face; they must have really hated life. There is no hope of recovery.</span>"
 	else if(brain.brain_death || brainmob?.health <= HEALTH_THRESHOLD_DEAD)
@@ -33,7 +33,7 @@
 
 	if(!tongue)
 		head_status += "<span class='warning'>The tongue is missing.</span>"
-	
+
 	if(length(head_status))
 		. += "<B>Organs:</B>"
 		. += head_status
@@ -66,7 +66,7 @@
 			bodypart_status += "[src] is skeletonized."
 		else if(rotted)
 			bodypart_status += "[src] is necrotic."
-		
+
 		var/brute = brute_dam
 		var/burn = burn_dam
 		if(user?.hallucinating())
@@ -101,19 +101,19 @@
 				var/usedclass = "notice"
 				if(bandage.return_blood_DNA())
 					usedclass = "bloody"
-				bodypart_status += "<a href='?src=[owner_ref];bandage=[REF(bandage)];bandaged_limb=[REF(src)]' class='[usedclass]'>Bandaged</a>"
+				bodypart_status += "<a href='byond://?src=[owner_ref];bandage=[REF(bandage)];bandaged_limb=[REF(src)]' class='[usedclass]'>Bandaged</a>"
 			if(!bandage || observer_privilege)
 				for(var/datum/wound/wound as anything in wounds)
 					bodypart_status += wound.get_visible_name(user)
-		
+
 	if(length(bodypart_status) <= 1)
 		bodypart_status += "[src] is healthy."
 
 	if(length(embedded_objects))
 		bodypart_status += "<B>Embedded objects:</B>"
 		for(var/obj/item/embedded as anything in embedded_objects)
-			bodypart_status += "<a href='?src=[owner_ref];embedded_object=[REF(embedded)];embedded_limb=[REF(src)]'>[embedded.name]</a>"
-	
+			bodypart_status += "<a href='byond://?src=[owner_ref];embedded_object=[REF(embedded)];embedded_limb=[REF(src)]'>[embedded.name]</a>"
+
 	return bodypart_status
 
 /obj/item/bodypart/proc/check_for_injuries(mob/user, advanced = FALSE)
@@ -131,7 +131,7 @@
 
 /obj/item/bodypart/proc/get_injury_status(mob/user, advanced = FALSE)
 	var/list/status = list()
-	
+
 	var/brute = brute_dam
 	var/burn = burn_dam
 	if(user?.hallucinating())
@@ -156,7 +156,7 @@
 					status += "<span class='danger'>[medium_brute_msg]</span>"
 				else
 					status += "<span class='warning'>[light_brute_msg]</span>"
-		
+
 		if(burn >= DAMAGE_PRECISION)
 			switch(burn/max_damage)
 				if(0.75 to INFINITY)
@@ -167,14 +167,14 @@
 					status += "<span class='danger'>[medium_burn_msg]</span>"
 				else
 					status += "<span class='warning'>[light_burn_msg]</span>"
-	
+
 	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
 		if(bleed_rate > 1) //Totally arbitrary value
 			status += "<span class='bloody'><B>BLEEDING</B></span>"
 		else
 			status += "<span class='bloody'>BLEEDING</span>"
-	
+
 	var/list/wound_strings = list()
 	for(var/datum/wound/wound as anything in wounds)
 		if(!wound.check_name)
@@ -190,15 +190,15 @@
 	var/owner_ref = owner ? REF(owner) : REF(src)
 	for(var/obj/item/embedded as anything in embedded_objects)
 		if(embedded.embedding?.embedded_bloodloss)
-			status += "<a href='?src=[owner_ref];embedded_limb=[REF(src)];embedded_object=[REF(embedded)];' class='danger'>[uppertext(embedded.name)]</a>"
+			status += "<a href='byond://?src=[owner_ref];embedded_limb=[REF(src)];embedded_object=[REF(embedded)];' class='danger'>[uppertext(embedded.name)]</a>"
 		else
-			status += "<a href='?src=[owner_ref];embedded_limb=[REF(src)];embedded_object=[REF(embedded)];' class='info'>[uppertext(embedded.name)]</a>"
+			status += "<a href='byond://?src=[owner_ref];embedded_limb=[REF(src)];embedded_object=[REF(embedded)];' class='info'>[uppertext(embedded.name)]</a>"
 
 	if(bandage)
 		if(HAS_BLOOD_DNA(bandage))
-			status += "<a href='?src=[owner_ref];bandaged_limb=[REF(src)];bandage=[REF(bandage)]' class='bloody'>[uppertext(bandage.name)]</a>"
+			status += "<a href='byond://?src=[owner_ref];bandaged_limb=[REF(src)];bandage=[REF(bandage)]' class='bloody'>[uppertext(bandage.name)]</a>"
 		else
-			status += "<a href='?src=[owner_ref];bandaged_limb=[REF(src)];bandage=[REF(bandage)]' class='info'>[uppertext(bandage.name)]</a>"
+			status += "<a href='byond://?src=[owner_ref];bandaged_limb=[REF(src)];bandage=[REF(bandage)]' class='info'>[uppertext(bandage.name)]</a>"
 
 	if(disabled)
 		status += "<span class='deadsay'>CRIPPLED</span>"
@@ -257,7 +257,7 @@
 		to_chat(src, "\t <span class='[no_damage ? "notice" : "warning"]'>My [name][isdisabled][self_aware ? " has " : " is "][status].</span>")
 
 		for(var/obj/item/I in embedded_objects)
-			to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] in my [name]!</a>")
+			to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>There is \a [I] in my [name]!</a>")
 
 	for(var/t in missing)
 		to_chat(src, "<span class='boldannounce'>My [parse_zone(t)] is missing!</span>")
@@ -410,5 +410,5 @@
 	to_chat(src, "\t <span class='[no_damage ? "notice" : "warning"]'>My [isdisabled][FB.name] [status].</span>")
 
 	for(var/obj/item/I in FB.embedded_objects)
-		to_chat(src, "\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(FB)]' class='warning'>There is \a [I] in my [FB.name]!</a>")
+		to_chat(src, "\t <a href='byond://?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(FB)]' class='warning'>There is \a [I] in my [FB.name]!</a>")
 */

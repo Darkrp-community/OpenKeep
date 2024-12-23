@@ -10,6 +10,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/seamstress
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
+	apprentice_name = "Weaver"
 
 /datum/outfit/job/roguetown/adventurer/seamstress/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -28,9 +29,8 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	beltr = /obj/item/rogueweapon/knife/villager
+	beltr = /obj/item/rogueweapon/knife/scissors
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
-	beltl = /obj/item/needle
 	backpack_contents = list(/obj/item/natural/cloth = 1, /obj/item/natural/cloth = 1, /obj/item/natural/bundle/fibers = 1, /obj/item/needle = 1)
 	H.change_stat("intelligence", 2)
 	H.change_stat("speed", 2)

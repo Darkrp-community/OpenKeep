@@ -12,15 +12,19 @@
 		"Half-Elf",
 		"Dwarf",
 		"Dark Elf",
+		"Tiefling",
+		"Aasimar",
+		"Half-Orc"
 	)
 	allowed_sexes = list(MALE, FEMALE)
-	tutorial = "You were a convicted criminal, the lowest scum of Rockhill. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to Psydon. You will not let him down."
+	tutorial = "You were a convicted criminal, the lowest scum of Vanderlin. Your master, the Inquisitor, saved you from the gallows and has given you true purpose in service to Psydon. You will not let him down."
 
 	outfit = /datum/outfit/job/roguetown/adept
 	advclass_cat_rolls = list(CTAG_ADEPT = 20)
 	display_order = JDO_SHEPHERD
 	bypass_lastclass = TRUE
 	min_pq = 0
+	can_have_apprentices = FALSE
 
 /datum/outfit/job/roguetown/adept
 	name = "Adept"
@@ -42,6 +46,7 @@
 	outfit = /datum/outfit/job/roguetown/adept/bzealot
 
 	category_tags = list(CTAG_ADEPT)
+	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adept/bzealot/pre_equip(mob/living/carbon/human/H)
@@ -53,7 +58,7 @@
 	beltl = /obj/item/rogueweapon/mace/spiked
 	backr = /obj/item/rogueweapon/shield/wood/adept
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	backpack_contents = list(/obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
+	backpack_contents = list(/obj/item/storage/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
 
 	//Stats for class
 	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -83,6 +88,7 @@
 	outfit = /datum/outfit/job/roguetown/adept/rthief
 
 	category_tags = list(CTAG_ADEPT)
+	cmode_music = 'sound/music/cmode/adventurer/CombatRogue.ogg'
 	maximum_possible_slots = 2
 
 /datum/outfit/job/roguetown/adept/rthief/pre_equip(mob/living/carbon/human/H)
@@ -95,7 +101,7 @@
 	backl = /obj/item/quiver/bolts
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
-	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
+	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/storage/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
 
 	//Stats for class
 	H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)

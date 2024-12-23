@@ -12,6 +12,7 @@
 #define CHANNEL_MUSIC 1014
 #define CHANNEL_CMUSIC 1013
 #define CHANNEL_WEATHER 1012
+#define CHANNEL_IMSICK 1011
 
 //THIS SHOULD ALWAYS BE THE LOWEST ONE!
 //KEEP IT UPDATED
@@ -197,21 +198,25 @@ GLOBAL_LIST_INIT(ambience_files, list(
 	'sound/music/area/catacombs.ogg',
 	'sound/music/area/caves.ogg',
 	'sound/music/area/church.ogg',
+	'sound/music/area/churchnight.ogg',
 	'sound/music/area/decap.ogg',
+	'sound/music/area/deliverer.ogg',
 	'sound/music/area/dungeon.ogg',
 	'sound/music/area/dwarf.ogg',
 	'sound/music/area/field.ogg',
 	'sound/music/area/forest.ogg',
+	'sound/music/area/forestnight.ogg',
+	'sound/music/area/indoor.ogg',
 	'sound/music/area/magiciantower.ogg',
 	'sound/music/area/manor.ogg',
 	'sound/music/area/manor2.ogg',
 	'sound/music/area/manorgarri.ogg',
 	'sound/music/area/manorgarr_alt.ogg',
+	'sound/music/area/night.ogg',
 	'sound/music/area/sargoth.ogg',
 	'sound/music/area/septimus.ogg',
 	'sound/music/area/sewers.ogg',
 	'sound/music/area/shop.ogg',
-	'sound/music/area/siege.ogg',
 	'sound/music/area/sleeping.ogg',
 	'sound/music/area/spidercave.ogg',
 	'sound/music/area/towngen.ogg',

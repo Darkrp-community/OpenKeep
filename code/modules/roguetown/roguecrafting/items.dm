@@ -293,12 +293,11 @@
 
 /datum/crafting_recipe/roguetown/mantrap
 	name = "mantrap"
-	result = list(/obj/item/restraints/legcuffs/beartrap,
-				/obj/item/restraints/legcuffs/beartrap)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/fibers = 2,
-				/obj/item/ingot/iron = 1)
-	req_table = TRUE
+	result = list(/obj/item/restraints/legcuffs/beartrap) // Intentionally old. Don't change.
+	reqs = list(/obj/item/grown/log/tree/stake = 1,
+				/obj/item/natural/fibers = 1,
+				/obj/item/rope = 1)
+	req_table = FALSE
 	skillcraft = /datum/skill/craft/traps
 	craftdiff = 1
 	verbage = "put together"
@@ -416,19 +415,6 @@
 			/obj/item/ingot/iron = 1)
 	skillcraft = /datum/skill/craft/engineering
 	craftdiff = 0 // Something to practice engineering with.
-
-/datum/crafting_recipe/roguetown/paperscroll
-	name = "parchment scroll x5"
-	result = list(/obj/item/paper/scroll,
-				/obj/item/paper/scroll,
-				/obj/item/paper/scroll,
-				/obj/item/paper/scroll,
-				/obj/item/paper/scroll)
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/datum/reagent/water = 50)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	structurecraft = /obj/structure/fluff/dryingrack
-	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/readingscroll
 	name = "novice's guide to literature"

@@ -30,8 +30,6 @@
 		perc += (ourskill - theirskill)*15 	//skill is of the essence
 		perc += (user.STAINT - L.STAINT)*10	//but it's also mostly a mindgame
 		perc += (user.STASPD - L.STASPD)*5 	//yet a speedy feint is hard to counter
-	if(L.d_intent == INTENT_DODGE)
-		perc = 0
 	if(!L.cmode)
 		perc = 0
 	if(L.has_status_effect(/datum/status_effect/debuff/feinted))

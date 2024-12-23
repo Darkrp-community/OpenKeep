@@ -1764,24 +1764,24 @@
 		if(R.stage == 2)
 			add_overlay("rainlay")
 
-/atom/movable/screen/rogfat
+/atom/movable/screen/stamina
 	name = "stamina"
 	icon_state = "fat100"
 	icon = 'icons/mob/rogueheat.dmi'
-	screen_loc = rogueui_fat
+	screen_loc = stamina_loc
 
-/atom/movable/screen/rogstam
-	name = "fatigue"
+/atom/movable/screen/energy
+	name = "energy"
 	icon_state = "stam100"
 	icon = 'icons/mob/rogueheat.dmi'
-	screen_loc = rogueui_fat
+	screen_loc = stamina_loc
 
 /atom/movable/screen/heatstamover
 	name = ""
 	mouse_opacity = 0
 	icon_state = "heatstamover"
 	icon = 'icons/mob/rogueheat.dmi'
-	screen_loc = rogueui_fat
+	screen_loc = stamina_loc
 	layer = HUD_LAYER+0.1
 
 /atom/movable/screen/scannies
@@ -1798,10 +1798,6 @@
 /atom/movable/screen/char_preview
 	name = "Me."
 	icon_state = ""
-//	var/list/prevcolors = list("background-color=#000000","background-color=#242f28","background-color=#302323","background-color=#999a63","background-color=#7e7e7e")
-
-//atom/movable/screen/char_preview/Click()
-//	winset(usr.client, "preferencess_window.character_preview_map", pick(prevcolors))
 
 #define READ_RIGHT 1
 #define READ_LEFT 2

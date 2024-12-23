@@ -302,8 +302,8 @@
 						else
 							playsound(get_turf(src), used_intent.miss_sound, 100, FALSE)
 							if(used_intent.miss_text)
-								visible_message("<span class='warning'>[src] [used_intent.miss_text]!</span>", \
-												"<span class='warning'>I [used_intent.miss_text]!</span>")
+								visible_message("<span class='warning'>[src] [used_intent.miss_text]</span>", \
+												"<span class='warning'>I [used_intent.miss_text]</span>")
 					aftermiss()
 					atkswinging = null
 					//update_warning()
@@ -359,7 +359,7 @@
 /mob/proc/aftermiss()
 	if(ishuman(src))
 		var/mob/living/carbon/human/H = src
-		H.rogfat_add(used_intent.misscost)
+		H.adjust_stamina(used_intent.misscost)
 
 //Is the atom obscured by a PREVENT_CLICK_UNDER_1 object above it
 /atom/proc/IsObscured()
