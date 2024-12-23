@@ -18,7 +18,6 @@
 	allowed_ages = list(AGE_OLD, AGE_IMMORTAL)
 	advclass_cat_rolls = list(CTAG_VETERAN = 20)
 	display_order = JDO_VET
-	whitelist_req = TRUE
 	give_bank_account = 35
 	min_pq = 5 //Should...probably actually be a veteran of at least a few weeks before trying to teach others
 	can_have_apprentices = FALSE
