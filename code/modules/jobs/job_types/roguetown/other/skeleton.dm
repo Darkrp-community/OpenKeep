@@ -100,7 +100,7 @@
 	if(prob(10))
 		armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/rust
 
-	switch(pick(1,9))
+	switch(rand(1,9))
 		if (1)
 			head = /obj/item/clothing/head/roguetown/helmet/kettle
 		if (2)
@@ -123,7 +123,7 @@
 	if(prob(20))
 		backr = /obj/item/rogueweapon/shield/wood
 
-	switch(pick(1,6))
+	switch(rand(1,6))
 		if (1)
 			var/obj/item/rogueweapon/sword/short/P = new()
 			H.put_in_hands(P, forced = TRUE)

@@ -31,7 +31,7 @@
 
 	if(isliving(the_target)) //Targetting vs living mobs
 		var/mob/living/L = the_target
-		if(faction_check(living_mob, L) || L.stat)
+		if(faction_check(living_mob, L) || L.stat || (living_mob.owner == L))
 			return FALSE
 		return TRUE
 

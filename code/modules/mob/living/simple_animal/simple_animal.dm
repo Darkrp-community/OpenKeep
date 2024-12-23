@@ -154,7 +154,6 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	///Added success chance after every failed tame attempt.
 	var/bonus_tame_chance
 
-	var/mob/owner = null
 
 	///I don't want to confuse this with client registered_z.
 	var/my_z
