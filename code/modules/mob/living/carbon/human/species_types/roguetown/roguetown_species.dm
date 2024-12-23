@@ -30,7 +30,14 @@
 		if(message[1])
 			if(message[1] != "*")
 				message = " [message]"
-				var/list/accent_words = strings("accent_universal.json", "universal")
+				var/list/accent_words = ""
+				var/mob/living/carbon/human/H
+				if(ismob(source))
+					H = source
+					if(H.mind?.assigned_role in GLOB.noble_positions)
+						accent_words = strings("accent_universal.json", "royal")
+					else
+						accent_words = strings("accent_universal.json", "universal")
 
 				for(var/key in accent_words)
 					var/value = accent_words[key]
