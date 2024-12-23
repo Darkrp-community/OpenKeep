@@ -6,7 +6,6 @@
 	density = TRUE
 	opacity = FALSE
 	anchored = FALSE
-	pressure_resistance = 2 * ONE_ATMOSPHERE
 	w_class = WEIGHT_CLASS_BULKY
 	max_integrity = 300
 	drag_slowdown = 2

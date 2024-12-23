@@ -10,8 +10,6 @@
 	baseturfs = list(/turf/open/floor/rogue/naturalstone)
 	opacity = 1
 	density = TRUE
-//	layer = EDGED_TURF_LAYER
-	temperature = TCMB
 	var/environment_type = "asteroid"
 	var/turf/open/floor/turf_type = /turf/open/floor
 	var/obj/item/mineralType = null
@@ -209,7 +207,6 @@
 	smooth = SMOOTH_TRUE | SMOOTH_MORE
 	smooth_icon = 'icons/turf/walls/cwall.dmi'
 	wallclimb = TRUE
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	canSmoothWith = list(/turf/closed/mineral/random/rogue, /turf/closed/mineral/rogue)
 	turf_type = /turf/open/floor/rogue/naturalstone
 	above_floor = /turf/open/floor/rogue/naturalstone
@@ -269,7 +266,6 @@
 	smooth = SMOOTH_TRUE | SMOOTH_MORE
 	smooth_icon = 'icons/turf/walls/cwall.dmi'
 	wallclimb = TRUE
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	canSmoothWith = list(/turf/closed/mineral/random/rogue, /turf/closed/mineral/rogue)
 	turf_type = /turf/open/floor/rogue/naturalstone
 	baseturfs = /turf/open/floor/rogue/naturalstone
