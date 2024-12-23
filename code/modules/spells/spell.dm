@@ -453,6 +453,12 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 				var/datum/effect_system/smoke_spread/sleeping/smoke = new
 				smoke.set_up(smoke_amt, location)
 				smoke.start()
+	if(miracle)
+		var/mob/living/carbon/human/C = usr
+		if(ishuman(C))
+			var/boon = C?.mind?.get_learning_boon(/datum/skill/magic/holy)
+			C.mind?.adjust_experience(/datum/skill/magic/holy, (devotion_cost*boon/2))
+	return
 
 
 /obj/effect/proc_holder/spell/proc/cast(list/targets,mob/user = usr)
@@ -460,10 +466,6 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 		var/mob/living/carbon/human/C = user
 		var/datum/devotion/cleric_holder/D = C.cleric
 		D.update_devotion(-devotion_cost)
-		if(ishuman(user))
-			var/mob/living/carbon/human/H = user
-			var/boon = H?.mind?.get_learning_boon(/datum/skill/magic/holy)
-			H.mind?.adjust_experience(/datum/skill/magic/holy, (H.STAINT*boon))
 	return
 
 /obj/effect/proc_holder/spell/proc/view_or_range(distance = world.view, center=usr, type="view")
