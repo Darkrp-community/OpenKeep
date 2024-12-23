@@ -48,4 +48,4 @@
 	H.change_stat("endurance", 3)
 	H.change_stat("speed", 2)
 
-		H.merctype = 9
+		H.merctype = 8
