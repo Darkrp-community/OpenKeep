@@ -58,11 +58,6 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "aO" = (
 /obj/structure/closet/crate/coffin,
-/obj/item/roguekey/custom{
-	lockid = "tomb";
-	name = "Tomb key";
-	desc = "You're not sure how or why the key was on the insides, best to not think about it too much."
-	},
 /turf/open/floor/rogue/church,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "aP" = (
@@ -415,7 +410,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "eh" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/hell,
+/mob/living/carbon/human/species/goblin/npc/cave,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "ek" = (
@@ -850,7 +845,6 @@
 /turf/open/transparent/openspace,
 /area/rogue/under/mountains/anvil/dungeon)
 "kJ" = (
-/obj/structure/fluff/dryingrack,
 /obj/item/storage/backpack/rogue/backpack,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/mountains/anvil/dungeon)
@@ -1091,7 +1085,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "oD" = (
-/mob/living/carbon/human/species/goblin/npc/ambush/hell,
+/mob/living/carbon/human/species/goblin/npc/cave,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/mountains/anvil/dungeon)
 "oI" = (
@@ -1206,16 +1200,6 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "ql" = (
 /turf/open/water/swamp,
-/area/rogue/under/mountains/anvil/dungeon/lower)
-"qm" = (
-/obj/item/roguekey/custom{
-	lockid = "armory";
-	name = "Armory Key"
-	},
-/obj/effect/decal/cleanable/blood/tracks{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "qr" = (
 /obj/structure/stairs/stone/church{
@@ -1561,13 +1545,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/under/mountains/anvil/dungeon)
-"vc" = (
-/obj/item/roguekey/custom{
-	lockid = "pitentrance";
-	name = "Arena gate"
-	},
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/mountains/anvil/dungeon/lower)
 "vs" = (
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/under/mountains/anvil/dungeon/lower)
@@ -2869,9 +2846,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "NY" = (
 /obj/structure/mineral_door/wood/donjon/stone,
-/turf/closed/wall/mineral/rogue/decostone/long{
-	dir = 1
-	},
+/turf/open/floor/rogue/cobble,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Od" = (
 /obj/structure/bars,
@@ -2979,9 +2954,7 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "PG" = (
 /obj/structure/mineral_door/wood/violet,
-/turf/closed/wall/mineral/rogue/decostone/long{
-	dir = 1
-	},
+/turf/open/floor/rogue/church,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "PI" = (
 /obj/effect/spawner/roguemap/loot/common,
@@ -3211,10 +3184,6 @@
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Th" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/roguekey/custom{
-	lockid = "dormroom";
-	name = "Dorm room key"
-	},
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/under/mountains/anvil/dungeon)
 "To" = (
@@ -5074,7 +5043,7 @@ UD
 UD
 KW
 rq
-vc
+rq
 rq
 KW
 UD
@@ -6939,7 +6908,7 @@ fK
 fK
 fK
 pX
-qm
+fC
 fC
 Tb
 Tb
