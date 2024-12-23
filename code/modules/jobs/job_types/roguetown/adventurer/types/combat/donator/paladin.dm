@@ -9,7 +9,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/paladin
 	maximum_possible_slots = 1
 	min_pq = 2
-	pickprob = 15
+	pickprob = 100
 	category_tags = list(CTAG_ADVENTURER)
 
 /datum/outfit/job/roguetown/adventurer/paladin/pre_equip(mob/living/carbon/human/H)
@@ -17,6 +17,9 @@
 	H.virginity = TRUE
 
 	switch(H.patron?.name)
+		if("Psydon")
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
+			wrists = /obj/item/clothing/neck/roguetown/psycross/g
 		if("Astrata")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
@@ -27,40 +30,46 @@
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/dendorhelm
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 		if("Abyssor")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Proper one uses Steel Malum Icon currently
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssor
 		if("Necra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/necked/necra
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/necra
 		if("Ravox")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 		if("Xylix")
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold // Placeholder
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver // Placeholder
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket // Placeholder
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/xylix
 		if("Pestra")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/pestrahelm
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
 		if("Malum")
 			head = /obj/item/clothing/head/roguetown/helmet/heavy/malumhelm
-			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum
 		if("Eora")
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/eoran
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/eora
 			H.virginity = FALSE
+		if("Baotha", "Graggar", "Zizo", "Matthios", "Graggazo", "Godless")
+			head = /obj/item/clothing/head/roguetown/jester
+			if(H.mind)
+				H.change_stat("fortune", -20)
 		else // Failsafe
-			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/gold
+			head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
+	armor = /obj/item/clothing/suit/roguetown/armor/plate
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
-	pants = /obj/item/clothing/under/roguetown/chainlegs
-	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
+	pants = /obj/item/clothing/under/roguetown/platelegs
+	shoes = /obj/item/clothing/shoes/roguetown/boots/armor
 	belt = /obj/item/storage/belt/rogue/leather/steel
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	id = /obj/item/clothing/ring/silver
+	id = /obj/item/clothing/ring/silver/toper
 	cloak = /obj/item/clothing/cloak/tabard/crusader
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	gloves = /obj/item/clothing/gloves/roguetown/chain
+	gloves = /obj/item/clothing/gloves/roguetown/plate
+	backl = /obj/item/rogueweapon/sword/long/judgement
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -72,7 +81,6 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		backl = /obj/item/rogueweapon/sword/long/judgement
 		H.change_stat("strength", 2)
 		H.change_stat("perception", 2)
 		H.change_stat("intelligence", 2)
