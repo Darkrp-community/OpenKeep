@@ -6,8 +6,8 @@
 		"Tiefling"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
-	maximum_possible_slots = 5
 	category_tags = list(CTAG_MERCENARY)
+	maximum_possible_slots = 5
 
 /datum/outfit/job/roguetown/adventurer/swashbuckler
 	head = /obj/item/clothing/head/roguetown/helmet/leather/headscarf
@@ -48,4 +48,4 @@
 	H.change_stat("endurance", 3)
 	H.change_stat("speed", 2)
 
-		H.merctype = 8
+		H.merctype = 9
