@@ -922,17 +922,6 @@
 /obj/item/rogueweapon/mace,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
-"cp" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 9;
-	height = 5;
-	id = "emergency_home";
-	name = "BoxStation emergency evac bay";
-	width = 15
-	},
-/turf/open/floor/rogue/concrete,
-/area/rogue/outdoors)
 "cq" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/beach)
@@ -1127,10 +1116,6 @@
 /area/rogue/outdoors/woods)
 "ss" = (
 /turf/open/transparent/openspace,
-/area/rogue/outdoors)
-"sK" = (
-/obj/effect/landmark/shuttle_import,
-/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)
 "vV" = (
 /obj/structure/ladder,
@@ -1895,7 +1880,7 @@ ai
 al
 aJ
 aJ
-cN
+al
 al
 al
 aJ
@@ -2068,7 +2053,7 @@ aJ
 cI
 aJ
 aJ
-sK
+aJ
 aJ
 aJ
 cm
@@ -2366,7 +2351,7 @@ aM
 aM
 aM
 aM
-cp
+aM
 aM
 aM
 aM
