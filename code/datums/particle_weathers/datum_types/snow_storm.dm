@@ -54,3 +54,16 @@
 //Makes you a lot little chilly
 /datum/particle_weather/snow_storm/weather_act(mob/living/L)
 	L.adjust_bodytemperature(-rand(5,15))
+
+/particles/fog
+	icon = 'icons/effects/particles/smoke.dmi'
+	icon_state = list("chill_1" = 2, "chill_2" = 2, "chill_3" = 1)
+
+/particles/fog/breath
+	count = 1
+	spawning = 1
+	lifespan = 1 SECONDS
+	fade = 0.5 SECONDS
+	grow = 0.05
+	spin = 2
+	color = "#fcffff77"

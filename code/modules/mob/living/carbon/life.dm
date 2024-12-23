@@ -232,7 +232,61 @@
 
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing(times_fired)
+	var/breath_effect_prob = 0
+	var/turf/turf = get_turf(src)
+	var/turf_temp = turf.temperature
+
+	if(turf_temp <= T0C - 50)
+		breath_effect_prob = 100
+	else if(turf_temp <= T0C - 25)
+		breath_effect_prob = 50
+	else if(turf_temp <= T0C - 10)
+		breath_effect_prob = 25
+	else if(turf_temp <= T0C)
+		breath_effect_prob = 15
+
+	if(prob(breath_effect_prob))
+		// Breathing into your mask, no particle. We can add fogged up glasses later
+		if(is_mouth_covered())
+			return
+		emit_breath_particle(/particles/fog/breath)
+
 	return
+
+/mob/living/proc/emit_breath_particle(particle_type)
+	ASSERT(ispath(particle_type, /particles))
+
+	var/obj/effect/abstract/particle_holder/holder = new(src, particle_type)
+	var/particles/breath_particle = holder.particles
+	var/breath_dir = dir
+
+	var/list/particle_grav = list(0, 0.1, 0)
+	var/list/particle_pos = list(0, 2, 0)
+	if(breath_dir & NORTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Layer it behind the mob since we're facing away from the camera
+		holder.pixel_w -= 4
+		holder.pixel_y += 4
+	if(breath_dir & WEST)
+		particle_grav[1] = -0.2
+		particle_pos[1] = -5
+		breath_particle.rotation = -45
+	if(breath_dir & EAST)
+		particle_grav[1] = 0.2
+		particle_pos[1] = 5
+		breath_particle.rotation = 45
+	if(breath_dir & SOUTH)
+		particle_grav[2] = 0.2
+		breath_particle.rotation = pick(-45, 45)
+		// Shouldn't be necessary but just for parity
+		holder.pixel_w += 4
+		holder.pixel_y -= 4
+
+	breath_particle.gravity = particle_grav
+	breath_particle.position = particle_pos
+
+	QDEL_IN(holder, breath_particle.lifespan)
 
 /mob/living/carbon/proc/has_smoke_protection()
 	if(HAS_TRAIT(src, TRAIT_NOBREATH))

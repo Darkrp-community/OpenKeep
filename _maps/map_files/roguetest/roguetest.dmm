@@ -1124,7 +1124,6 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors)
 "sK" = (
-/obj/effect/landmark/shuttle_import,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors)
 "vV" = (
