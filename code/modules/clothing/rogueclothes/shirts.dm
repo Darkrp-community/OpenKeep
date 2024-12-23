@@ -446,6 +446,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/random/Initialize()
 	color = RANDOM_PEASANT_DYES
+	..()
 
 /obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/ronin
 	color = CLOTHING_RONIN
@@ -550,6 +551,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard/guardian/random/Initialize()
 	color = RANDOM_NOBLE_DYES
+	..()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard/guardian/thunder
 	name = "thunder onmyoji's warfare garb"
@@ -591,40 +593,3 @@
 	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/suit/roguetown/shirt/looseshirt/zamurai/Initialize()
-	..()
-	var/picked
-	if(!picked)
-		var/list/colors = list(
-		"PURPLE"="#865c9c",
-		"RED"="#933030",
-		"BROWN"="#685542",
-		"GREEN"="#79763f",
-		"BLUE"="#395480",
-		"YELLOW"="#b5b004",
-		"TEAL"="#249589",
-		"WHITE"="#ffffff",
-		"ORANGE"="#b86f0c",
-		"MAJENTA"="#962e5c")
-
-		var/mob/living/carbon/human/L = loc
-		var/choice = input(L, "Choose a color.", "ZAMURAI COLORPLEX") as anything in colors
-		var/playerchoice = colors[choice]
-		picked = TRUE
-		detail_color = playerchoice
-		update_icon()
-		for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
-			testing("clothes to color are [V]")
-			if(V.colorgrenz)
-				V.detail_color = playerchoice
-				V.update_icon()
-		L.regenerate_icons()
-
-/obj/item/clothing/suit/roguetown/shirt/looseshirt/zamurai/update_icon()
-	cut_overlays()
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)

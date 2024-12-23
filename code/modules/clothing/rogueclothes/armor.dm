@@ -1172,14 +1172,60 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	var/picked = FALSE
 
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/proc/get_player_input()
+	if(!ishuman(loc))
+		return
+
+	var/list/colors = list(
+	"PURPLE"="#865c9c",
+	"RED"="#933030",
+	"BROWN"="#685542",
+	"GREEN"="#79763f",
+	"BLUE"="#395480",
+	"YELLOW"="#b5b004",
+	"TEAL"="#249589",
+	"WHITE"="#ffffff",
+	"ORANGE"="#b86f0c",
+	"MAJENTA"="#962e5c")
+	var/mob/living/carbon/human/L = loc
+	var/choice = input(L, "Choose a color.", "ZAMURAI COLORPLEX") as anything in colors
+	var/playerchoice = colors[choice]
+	picked = TRUE
+	detail_color = playerchoice
+	update_icon()
+	for(var/obj/item/clothing/V in L.get_equipped_items(FALSE))
+		testing("clothes to color are [V]")
+		if(V.colorgrenz)
+			V.detail_color = playerchoice
+			V.update_icon()
+	L.regenerate_icons()
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/Initialize()
+	. = ..()
+	if(!picked)
+		INVOKE_ASYNC(src, PROC_REF(get_player_input))
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+// Randomized color Hitatare
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
+// Ronin Hitatare
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/ronin
 	color = CLOTHING_SOOT_BLACK
 
+// Eidolon Hitatare
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
 	color = CLOTHING_EIDOLON
 

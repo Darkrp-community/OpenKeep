@@ -55,7 +55,7 @@
 		features["ears"] = pref_species.default_features["ears"]
 	for(var/X in GLOB.horns_list.Copy())
 		var/datum/sprite_accessory/S = GLOB.horns_list[X]
-		if(!(pref_species in S.specuse))
+		if(!(pref_species in S?.specuse))
 			continue
 		if(S.gender == NEUTER)
 			features["horns"] = X
