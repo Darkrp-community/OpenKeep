@@ -400,3 +400,21 @@
 	"Song 3" = 'modular/Barding/sound/instruments/drum (3).ogg',
 	"Snare drum" = 'modular/Barding/sound/instruments/drum (4).ogg',
 	"Desert Heat" = 'modular/Barding/sound/instruments/drum (5).ogg')
+
+/obj/item/rogue/instrument/shamisen //I know shamisen should be used while sitting/on knees. butt you think bards really need to be SITTING during battle?
+	name = "shamisen"
+	desc = "shamisen, or just 'three-stings' is a abyssariad puckled stringed musical instrument, usually played using a Bachi."
+	icon = 'icons/roguetown/kaizoku/misc/music.dmi'
+	icon_state = "shamisen"
+	lefthand_file = 'icons/roguetown/kaizoku/misc/lefthand_music.dmi'
+	righthand_file = 'icons/roguetown/kaizoku/misc/righthand_music.dmi'
+	song_list = list(
+	"Cursed Apple" = 'sound/music/kaizoku/instrument/shamisen1.ogg', //Credit; "Bad Apple by しゃみお - Shamisen player Shamio"
+	"Fire Dance" = 'sound/music/kaizoku/instrument/shamisen2.ogg', //Credit; "Fire Dance by しゃみお - Shamisen player Shamio"
+	"Lute" = 'sound/music/kaizoku/instrument/shamisen3.ogg', //Credit; "Lute (shamisen) by Museum of Fine Arts, Boston"
+	"Tsugaru Ripple" = 'sound/music/kaizoku/instrument/shamisen4.ogg', //Credit; "Tsugaru Shamisen (using Ripple) by Shamisen Komatsuya"
+	"Tsugaru" = 'sound/music/kaizoku/instrument/shamisen5.ogg', //Credit; "Tsugaru Shamisen by Roger Walch"
+	"Season" = 'sound/music/kaizoku/instrument/shamisen6.ogg', //Credit; "相棒 Season 遊郭編しゃみお - Shamisen player Shamio"
+	"Parade" = 'sound/music/kaizoku/instrument/shamisen7.ogg', //Credit; "「雨天PARADE」三味線オリジナル曲 - しゃみお - Shamisen player Shamio"
+	"Koshiro" = 'sound/music/kaizoku/instrument/shamisen8.ogg' //Credit; “KOSHIRO” -幸四郎- by SENZO"
+	)

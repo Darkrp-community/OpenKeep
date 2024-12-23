@@ -13,7 +13,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
-		"Dark Elf"
+		"Dark Elf",
+		"Changeling",
+		"Kenku",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = ""
 
