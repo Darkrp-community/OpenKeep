@@ -21,6 +21,7 @@
 	beltl = /obj/item/rogueweapon/sword/sabre/cutlass
 	beltr = /obj/item/rogueweapon/knife/dagger
 	shoes = /obj/item/clothing/shoes/roguetown/boots
+	shirt = pick(/obj/item/clothing/suit/roguetown/shirt/undershirt/sailor, /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red)
 
 /datum/outfit/job/roguetown/adventurer/swashbuckler/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -40,7 +41,6 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
 
-	shirt = pick(/obj/item/clothing/suit/roguetown/shirt/undershirt/sailor, /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	H.change_stat("endurance", 1)
 	H.change_stat("speed", 2)
