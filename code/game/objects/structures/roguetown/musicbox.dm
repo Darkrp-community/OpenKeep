@@ -4,7 +4,7 @@
 	"Landmarks of Lullabies" = 'sound/music/jukeboxes/chill/ac-lol.ogg',\
 	"Waters of Sacrifice" = 'sound/music/jukeboxes/chill/acn-wos.ogg',\
 	"Solar Wind" = 'sound/music/jukeboxes/chill/av_solar.ogg',\
-	"Balthasar" = 'sound/music/jukeboxes/chill/balthasar.ogg',\
+	"Balthasar" = 'sound/music/jukeboxes/chill/ac-balthasar.ogg',\
 	"Dead Windmills" = 'sound/music/jukeboxes/chill/dead_windmills.ogg',\
 	"In Heaven Everythin" = 'sound/music/jukeboxes/chill/in_heaven_eif.ogg',\
 	"Jazznocn" = 'sound/music/jukeboxes/chill/jazznocn.ogg',\
@@ -135,13 +135,7 @@
 		playmusic("TOGGLE")
 	
 	if(button_selection=="Change Song")
-		var/songlists_selection = input(user, "Which song list?", "\The [src]") in list(\
-			"CHILL"	=	MUSIC_TAVCAT_CHILL,\
-			"FUCK"	=	MUSIC_TAVCAT_FUCK,\
-			"PARTY"	=	MUSIC_TAVCAT_PARTY,\
-			"SCUM"	=	MUSIC_TAVCAT_SCUM,\
-			"MISC"	=	MUSIC_TAVCAT_MISC,\
-		)
+		var/songlists_selection = input(user, "Which song list?", "\The [src]") in list("CHILL"=MUSIC_TAVCAT_CHILL, "FUCK"=MUSIC_TAVCAT_FUCK, "PARTY"=MUSIC_TAVCAT_PARTY, "SCUM"=MUSIC_TAVCAT_SCUM, "MISC"=MUSIC_TAVCAT_MISC)
 		playsound(loc, pick('sound/misc/keyboard_select (1).ogg','sound/misc/keyboard_select (2).ogg','sound/misc/keyboard_select (3).ogg','sound/misc/keyboard_select (4).ogg'), 100, FALSE, -1)
 		user.visible_message(span_noticesmall("[user] presses a button on \the [src]."),span_noticesmall("I press a button on \the [src]."))
 		var/chosen_songlists_selection = null
