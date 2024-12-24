@@ -8,14 +8,14 @@
 	"Dead Windmills" = 'sound/music/jukeboxes/chill/dead_windmills.ogg',\
 	"In Heaven Everythin" = 'sound/music/jukeboxes/chill/in_heaven_eif.ogg',\
 	"Jazznocn" = 'sound/music/jukeboxes/chill/jazznocn.ogg',\
-	"Vivalaluna-Damla" = 'sound/music/jukeboxes/chill/vivalaluna-damla.ogg',\
+	"Vivalaluna-Damla" = 'sound/music/jukeboxes/chill/vivalaluna-damla.ogg'\
 )
 #define MUSIC_TAVCAT_FUCK list(\
 	"Cure4Sorrow" = 'sound/music/jukeboxes/fuck/cure4sorrow.ogg',\
 	"Dangerous Radiation" = 'sound/music/jukeboxes/fuck/dangeradiation.ogg',\
 	"Pandora's Box" = 'sound/music/jukeboxes/fuck/fb-pandora.ogg',\
 	"Anthem" = 'sound/music/jukeboxes/fuck/partyrock.ogg',\
-	"Raspberry jam" = 'sound/music/jukeboxes/fuck/raspberry_jam.ogg.',\
+	"Raspberry jam" = 'sound/music/jukeboxes/fuck/raspberryjam.ogg.'\
 )
 #define MUSIC_TAVCAT_PARTY list(\
 	"A Winter Kiss" = 'sound/music/jukeboxes/party/a_winter_kiss.ogg',\
@@ -24,18 +24,18 @@
 	"Invisible" = 'sound/music/jukeboxes/party/av_invis.ogg',\
 	"Kick the Beat" = 'sound/music/jukeboxes/party/av_ktb.ogg',\
 	"dAnCe nAtion" = 'sound/music/jukeboxes/party/dance_nation_remix.ogg',\
-	"Imagine" = 'sound/music/jukeboxes/party/imagine.ogg',\
+	"Imagine" = 'sound/music/jukeboxes/party/imagine.ogg'\
 )
 #define MUSIC_TAVCAT_SCUM list(\
 	"Shades of Futility" = 'sound/music/jukeboxes/scum/fb-sofutile.ogg',\
 	"Headspin" = 'sound/music/jukeboxes/scum/headspin.ogg',\
 	"Mr Doubt" = 'sound/music/jukeboxes/scum/mr_doubt.ogg',\
-	"Stagebox" = 'sound/music/jukeboxes/scum/stagebox.remix.ogg',\
+	"Stagebox" = 'sound/music/jukeboxes/scum/stagebox.remix.ogg'\
 )
 #define MUSIC_TAVCAT_MISC list(\
 	"Generic" = 'sound/music/jukeboxes/_misc/_generic.ogg',\
 	"AndreiKabak" = 'sound/music/jukeboxes/_misc/Andrei_Kabak-Pathologic.ogg',\
-	"Twyrine" = 'sound/music/jukeboxes/_misc/Twyrine-Pathologic2.ogg',\
+	"Twyrine" = 'sound/music/jukeboxes/_misc/Twyrine-Pathologic2.ogg'\
 )
 
 /datum/looping_sound/musloop
