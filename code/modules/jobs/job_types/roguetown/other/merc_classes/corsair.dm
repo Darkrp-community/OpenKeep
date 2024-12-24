@@ -1,16 +1,16 @@
-/datum/advclass/mercenary/swashbuckler
+/datum/advclass/mercenary/corsair
 	name = "Corsair"
 	tutorial = "Banished from polite society, you once found kin with privateers, working adjacent to Heartfelt's Royal Navy. After the Red Flag battered itself in the wind one last time, your purse was still not satisfied... And yet he complained that his belly was not full."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Tiefling"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/swashbuckler
+	outfit = /datum/outfit/job/roguetown/adventurer/corsair
 	category_tags = list(CTAG_MERCENARY)
 	cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 	maximum_possible_slots = 5
 
-/datum/outfit/job/roguetown/adventurer/swashbuckler
+/datum/outfit/job/roguetown/adventurer/corsair
 	head = /obj/item/clothing/head/roguetown/helmet/leather/headscarf
 	pants = /obj/item/clothing/under/roguetown/tights/sailor
 	belt = /obj/item/storage/belt/rogue/leather
@@ -22,7 +22,7 @@
 	beltr = /obj/item/rogueweapon/knife/dagger
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 
-/datum/outfit/job/roguetown/adventurer/swashbuckler/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/adventurer/corsair/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 
