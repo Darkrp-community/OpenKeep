@@ -64,17 +64,23 @@
 	anchored = TRUE
 	max_integrity = 0
 	var/datum/looping_sound/musloop/soundloop
-	var/curfile = 'sound/music/jukeboxes/_misc/_generic.ogg'
-	var/playing = FALSE
-	var/curvol = 70
-	var/playuponspawn = TRUE
+	var/list/init_curfile = list('sound/music/jukeboxes/_misc/_generic.ogg') // A list of songs that curfile is set to on init. MUST BE IN ONE OF THE MUSIC_TAVCAT_'s. MAPPERS MAY TOUCH THIS.
+	var/curfile // The current track that is playing right now
+	var/playing = FALSE // If music is playing or not. playmusic() deals with this don't mess with it.
+	var/curvol = 50 // The current volume at which audio is played. MAPPERS MAY TOUCH THIS.
+	var/playuponspawn = FALSE // Does the music box start playing music when it first spawns in? MAPPERS MAY TOUCH THIS.
 
 /obj/structure/roguemachine/musicbox/Initialize()
 	. = ..()
+	curfile = pick(init_curfile)
 	soundloop = new(src, FALSE)
 	if(playuponspawn)
 		playmusic("START")
 		update_icon()
+
+/obj/structure/roguemachine/musicbox/Destroy()
+	. = ..()
+	del(soundloop)
 
 /obj/structure/roguemachine/musicbox/update_icon()
 	icon_state = "music[playing]"
@@ -183,7 +189,17 @@
 
 
 /obj/structure/roguemachine/musicbox/tavern
-
+	init_curfile = list(\
+		'sound/music/jukeboxes/_misc/_generic.ogg',\
+		'sound/music/jukeboxes/_misc/Andrei_Kabak-Pathologic.ogg',\
+		'sound/music/jukeboxes/_misc/Twyrine-Pathologic2.ogg',\
+		'sound/music/jukeboxes/chill/ac-lol.ogg',
+		'sound/music/jukeboxes/chill/ac-balthasar.ogg',\
+		'sound/music/jukeboxes/chill/vivalaluna-damla.ogg',\
+	)
+	curvol = 65
+	playuponspawn = TRUE
+	
 /obj/structure/roguemachine/musicbox/Initialize()
 	. = ..()
 	soundloop.extra_range = 12
