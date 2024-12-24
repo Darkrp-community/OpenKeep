@@ -121,7 +121,7 @@
 /datum/status_effect/buff/moondust
 	id = "moondust"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
-	effectedstats = list("speed" = 3, "endurance" = 3)
+	effectedstats = list("speed" = 3, "endurance" = 3, "perception" = -3)
 	duration = 2 MINUTES
 
 /datum/status_effect/buff/moondust/nextmove_modifier()
@@ -132,6 +132,8 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/moondust)
+		if(C.has_status_effect(/datum/status_effect/buff/moondust_purest))
+			C.remove_status_effect(/datum/status_effect/buff/moondust_purest)
 
 /datum/status_effect/buff/moondust/on_remove()
 	. = ..()
@@ -142,7 +144,7 @@
 /datum/status_effect/buff/moondust_purest
 	id = "purest moondust"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
-	effectedstats = list("speed" = 6, "endurance" = 6)
+	effectedstats = list("speed" = 4, "endurance" = 4, "perception" = -2)
 	duration = 3 MINUTES
 
 /datum/status_effect/buff/moondust_purest/nextmove_modifier()
@@ -153,6 +155,8 @@
 	if(iscarbon(owner))
 		var/mob/living/carbon/C = owner
 		C.add_stress(/datum/stressevent/moondust_purest)
+		if(C.has_status_effect(/datum/status_effect/buff/moondust))
+			C.remove_status_effect(/datum/status_effect/buff/moondust)
 
 /datum/status_effect/buff/moondust_purest/on_remove()
 	. = ..()

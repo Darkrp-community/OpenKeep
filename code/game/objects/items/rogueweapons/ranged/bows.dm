@@ -62,7 +62,7 @@
 		if(user.client.chargedprog >= 100)
 			spread = max(0, 15*(3 - user.mind?.get_skill_level(/datum/skill/combat/bows)))
 		else
-			spread = 150 - (150 * (user.client.chargedprog / 100))
+			spread = 180 - (180 * (user.client.chargedprog / 100))
 	else
 		spread = 0
 	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
