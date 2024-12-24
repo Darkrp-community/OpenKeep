@@ -129,7 +129,7 @@
 				preprice = held_items[O]["PRICE"]
 			var/newprice = input(usr, "SET A NEW PRICE FOR THIS PRODUCT", src, preprice) as null|num
 			if(newprice)
-				if(findtext(num2text(newprice), "."))
+				if(findtext(num2text(newprice), ".") || (num2text(newprice) < 0))
 					return attack_hand(usr)
 				held_items[O]["PRICE"] = newprice
 	return attack_hand(usr)
