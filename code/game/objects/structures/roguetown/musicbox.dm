@@ -57,7 +57,7 @@
 
 /obj/structure/roguemachine/musicbox
 	name = "wax music device"
-	desc = "A marvelous device invented to record sermons. It now brings us strange music from another realm."
+	desc = "A marvelous device invented to record sermons. Aleksandar Gemrald Sparks invented this machine to discover prophecies of Psydon's return but failed. It now brings us strange music from another realm."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "music0"
 	density = TRUE
@@ -117,27 +117,22 @@
 
 	user.changeNext_move(CLICK_CD_MELEE)
 
-	var/button_selection = input(user, "What button do I press?", "\The [src]") in list(\
-			"Stop/Start",\
-			"Change Song",\
-			"Change Volume",\
-			"(CANCEL)",\
-		)
+	var/button_selection = input(user, "What button do I press?", "\The [src]") as null | anything in list("Stop/Start","Change Song","Change Volume")
 	if(!Adjacent(user))
-		to_chat(user, span_noticesmall("I change my mind..."))
 		return
 	if(!button_selection)
+		to_chat(user, span_info("I change my mind..."))
 		return
-	user.visible_message(span_noticesmall("[user] presses a button on \the [src]."),span_noticesmall("I press a button on \the [src]."))
+	user.visible_message(span_info("[user] presses a button on \the [src]."),span_info("I press a button on \the [src]."))
 	playsound(loc, pick('sound/misc/keyboard_select (1).ogg','sound/misc/keyboard_select (2).ogg','sound/misc/keyboard_select (3).ogg','sound/misc/keyboard_select (4).ogg'), 100, FALSE, -1)
 
 	if(button_selection=="Stop/Start")
 		playmusic("TOGGLE")
 	
 	if(button_selection=="Change Song")
-		var/songlists_selection = input(user, "Which song list?", "\The [src]") in list("CHILL"=MUSIC_TAVCAT_CHILL, "FUCK"=MUSIC_TAVCAT_FUCK, "PARTY"=MUSIC_TAVCAT_PARTY, "SCUM"=MUSIC_TAVCAT_SCUM, "MISC"=MUSIC_TAVCAT_MISC)
+		var/songlists_selection = input(user, "Which song list?", "\The [src]") as null | anything in list("CHILL"=MUSIC_TAVCAT_CHILL, "FUCK"=MUSIC_TAVCAT_FUCK, "PARTY"=MUSIC_TAVCAT_PARTY, "SCUM"=MUSIC_TAVCAT_SCUM, "MISC"=MUSIC_TAVCAT_MISC)
 		playsound(loc, pick('sound/misc/keyboard_select (1).ogg','sound/misc/keyboard_select (2).ogg','sound/misc/keyboard_select (3).ogg','sound/misc/keyboard_select (4).ogg'), 100, FALSE, -1)
-		user.visible_message(span_noticesmall("[user] presses a button on \the [src]."),span_noticesmall("I press a button on \the [src]."))
+		user.visible_message(span_info("[user] presses a button on \the [src]."),span_info("I press a button on \the [src]."))
 		var/chosen_songlists_selection = null
 		if(songlists_selection=="CHILL")
 			chosen_songlists_selection = MUSIC_TAVCAT_CHILL
@@ -149,41 +144,38 @@
 			chosen_songlists_selection = MUSIC_TAVCAT_SCUM
 		if(songlists_selection=="MISC")
 			chosen_songlists_selection = MUSIC_TAVCAT_MISC
-		var/song_selection = input(user, "Which song do I play?", "\The [src]") in chosen_songlists_selection
+		var/song_selection = input(user, "Which song do I play?", "\The [src]") as null | anything in chosen_songlists_selection
 		if(!Adjacent(user))
-			to_chat(user, span_noticesmall("I change my mind..."))
 			return
 		if(!song_selection)
+			to_chat(user, span_info("I change my mind..."))
 			return
 		playsound(loc, pick('sound/misc/keyboard_select (1).ogg','sound/misc/keyboard_select (2).ogg','sound/misc/keyboard_select (3).ogg','sound/misc/keyboard_select (4).ogg'), 100, FALSE, -1)
-		user.visible_message(span_noticesmall("[user] presses a button on \the [src]."),span_noticesmall("I press a button on \the [src]."))
+		user.visible_message(span_info("[user] presses a button on \the [src]."),span_info("I press a button on \the [src]."))
 		curfile = chosen_songlists_selection[song_selection]
 		playmusic("STOP")
 		playmusic("START")
 
 	if(button_selection=="Change Volume")
-		var/volume_selection = input(user, "How loud do you wish me to be?", "\The [src] (Volume Currently : [curvol]/[100])") as num
+		var/volume_selection = input(user, "How loud do you wish me to be?", "\The [src] (Volume Currently : [curvol]/[100])") as num|null
 		if(!Adjacent(user))
-			to_chat(user, span_noticesmall("I change my mind..."))
 			return
 		if(!volume_selection)
+			to_chat(user, span_info("I change my mind..."))
 			return
 		playsound(loc, pick('sound/misc/keyboard_select (1).ogg','sound/misc/keyboard_select (2).ogg','sound/misc/keyboard_select (3).ogg','sound/misc/keyboard_select (4).ogg'), 100, FALSE, -1)
-		user.visible_message(span_noticesmall("[user] presses a button on \the [src]."),span_noticesmall("I press a button on \the [src]."))
+		user.visible_message(span_info("[user] presses a button on \the [src]."),span_info("I press a button on \the [src]."))
 		volume_selection = clamp(volume_selection, 0, 100)
 		curvol = volume_selection
 		playsound(loc, 'sound/misc/Bug.ogg', 100, FALSE, -1)
-		
+		playmusic("STOP")
+		playmusic("START")
 		if(curvol<volume_selection)
-			to_chat(user, span_noticesmall("I make \the [src] gets louder."))
+			to_chat(user, span_info("I make \the [src] gets louder."))
 		else
-			to_chat(user, span_noticesmall("I make \the [src] gets quieter."))
-
-	if(button_selection=="(CANCEL)")
-		return
+			to_chat(user, span_info("I make \the [src] gets quieter."))
 
 	update_icon()
-
 
 /obj/structure/roguemachine/musicbox/tavern
 	init_curfile = list(\
