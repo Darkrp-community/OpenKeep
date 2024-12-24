@@ -15,7 +15,7 @@
 	"Dangerous Radiation" = 'sound/music/jukeboxes/fuck/dangeradiation.ogg',\
 	"Pandora's Box" = 'sound/music/jukeboxes/fuck/fb-pandora.ogg',\
 	"Anthem" = 'sound/music/jukeboxes/fuck/partyrock.ogg',\
-	"Raspberry jam" = 'sound/music/jukeboxes/fuck/raspberryjam.ogg.'\
+	"Raspberry jam" = 'sound/music/jukeboxes/fuck/raspberryjam.ogg'\
 )
 #define MUSIC_TAVCAT_PARTY list(\
 	"A Winter Kiss" = 'sound/music/jukeboxes/party/a_winter_kiss.ogg',\
@@ -178,6 +178,9 @@
 			to_chat(user, span_noticesmall("I make \the [src] gets louder."))
 		else
 			to_chat(user, span_noticesmall("I make \the [src] gets quieter."))
+
+	if(button_selection=="(CANCEL)")
+		return
 
 	update_icon()
 
