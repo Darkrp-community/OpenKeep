@@ -19,6 +19,8 @@ SUBSYSTEM_DEF(ticker)
 
 	var/hide_mode = 0
 	var/datum/game_mode/mode = null
+	var/datum/round_aspect/round_aspect = null
+	var/forcing_aspect = FALSE
 
 	var/login_music							//music played in pregame lobby
 	var/round_end_sound						//music/jingle played when the world reboots
@@ -327,6 +329,16 @@ SUBSYSTEM_DEF(ticker)
 	var/isroguefight = FALSE
 	var/isrogueworld = FALSE
 
+/datum/controller/subsystem/ticker/proc/pickaspect()
+	if(!forcing_aspect)
+		var/list/possibilities = list()
+		for(var/thing in subtypesof(/datum/round_aspect))//Populate possible aspects list.
+			var/datum/round_aspect/A = thing
+			possibilities += A
+		var/chosen = pick(possibilities)
+		round_aspect = new chosen
+		round_aspect.apply()
+
 /datum/controller/subsystem/ticker/proc/setup()
 	message_admins("<span class='boldannounce'>Starting game...</span>")
 	var/init_start = world.timeofday
@@ -471,8 +483,19 @@ SUBSYSTEM_DEF(ticker)
 //	SSshuttle.emergency.setTimer(ROUNDTIMERBOAT)
 
 	SSdbcore.SetRoundStart()
+#ifndef TESTING
+	pickaspect()
+#endif
 
 	message_admins("<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
+
+	spawn(10)
+		if(round_aspect.sekrit)
+			to_chat(world, "<span class='notice'>This round's aspect is: Nothing!</span>")
+			to_chat(world, "<span class='info'>Normality above all.</span>")
+		else
+			to_chat(world, "<span class='notice'>This round's aspect is: [round_aspect.name]</span>")
+			to_chat(world, "<span class='info'>[round_aspect.description]</span>")
 
 	for(var/client/C in GLOB.clients)
 		if(C.mob == SSticker.rulermob)

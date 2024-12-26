@@ -70,6 +70,13 @@
 	H.change_stat("intelligence", -3)
 	H.change_stat("constitution", -2)
 	H.change_stat("endurance", -2)
+	if(aspect_chosen(/datum/round_aspect/strongbums))
+		H.change_stat("strength", 5)
+		H.change_stat("intelligence", -2)
+	if(aspect_chosen(/datum/round_aspect/crippledbeggars))
+		var/datum/brain_trauma/severe/paralysis/paraplegic/T = new()
+		H.change_stat("strength", 6)
+		H.gain_trauma(T, TRAUMA_RESILIENCE_ABSOLUTE)
 
 /datum/outfit/job/roguetown/vagrant
 	name = "Beggar"

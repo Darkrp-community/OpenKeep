@@ -60,6 +60,8 @@
 #ifdef MATURESERVER
 	sexcon = new /datum/sex_controller(src)
 #endif
+	if(aspect_chosen(/datum/round_aspect/sexless))
+		virginity = TRUE
 	verbs += /mob/living/proc/mob_sleep
 	verbs += /mob/living/proc/lay_down
 

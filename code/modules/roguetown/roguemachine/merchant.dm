@@ -65,7 +65,10 @@
 	if(!anchored)
 		return TRUE
 	if(world.time > next_airlift)
-		next_airlift = world.time + rand(2 MINUTES, 3 MINUTES)
+		if(aspect_chosen(/datum/round_aspect/favorsintherightplaces))
+			next_airlift = world.time + 1 MINUTES
+		else
+			next_airlift = world.time + rand(2 MINUTES, 3 MINUTES)
 #ifdef TESTSERVER
 		next_airlift = world.time + 5 SECONDS
 #endif
