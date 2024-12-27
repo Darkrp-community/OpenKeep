@@ -121,27 +121,21 @@
 			head = /obj/item/clothing/head/roguetown/helmet/nasal
 
 	if(prob(20))
-		backr = /obj/item/rogueweapon/shield/wood
+		backl = /obj/item/rogueweapon/shield/wood
 	var/weapon = rand(1,6)
 	switch(weapon)
 		if (1)
-			var/obj/item/rogueweapon/sword/short/P = new()
-			H.put_in_hands(P, forced = TRUE)
+			backr = /obj/item/rogueweapon/sword/short
 		if (2)
-			var/obj/item/rogueweapon/axe/copper/P = new()
-			H.put_in_hands(P, forced = TRUE)
+			backr = /obj/item/rogueweapon/axe/copper
 		if (3)
-			var/obj/item/rogueweapon/mace/P = new()
-			H.put_in_hands(P, forced = TRUE)
+			backr = /obj/item/rogueweapon/mace
 		if (4)
-			var/obj/item/rogueweapon/polearm/spear/P = new()
-			H.put_in_hands(P, forced = TRUE)
+			backr = /obj/item/rogueweapon/polearm/spear
 		if (5)
-			var/obj/item/rogueweapon/sword/long/rider/copper/P = new()
-			H.put_in_hands(P, forced = TRUE)
+			backr = /obj/item/rogueweapon/sword/long/rider/copper
 		if (6)
-			var/obj/item/rogueweapon/flail/militia/P = new()
-			H.put_in_hands(P, forced = TRUE)
+			backr = /obj/item/rogueweapon/flail/militia
 
 	H.STASTR = rand(8,10)
 	H.STASPD = rand(7,10)
@@ -149,6 +143,10 @@
 	H.STACON = 3
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
