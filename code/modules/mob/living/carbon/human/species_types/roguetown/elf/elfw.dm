@@ -34,6 +34,7 @@
 /mob/living/carbon/human/species/elf/snow/wood/proc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)

@@ -24,6 +24,7 @@
 /mob/living/carbon/human/species/skeleton/skilled/proc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -76,6 +77,7 @@
 /mob/living/carbon/human/species/skeleton/skilled/fighter/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
@@ -165,6 +167,7 @@
 /mob/living/carbon/human/species/orc/skilled/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -270,6 +273,7 @@
 /mob/living/carbon/human/species/orc/skilled/savage_chieftain/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
@@ -350,6 +354,7 @@
 /mob/living/carbon/human/species/human/northern/bum/skilled/proc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -476,6 +481,7 @@
 /mob/living/carbon/human/species/goblin/skilled/proc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
+		mind.current = src
 
 	mind.adjust_skillrank(/datum/skill/combat/polearms, 2, TRUE)
 	mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)

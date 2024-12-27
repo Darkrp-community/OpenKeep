@@ -76,7 +76,7 @@
 /datum/mapGeneratorModule/sunlights
 	spawnableAtoms = list(/obj/effect/sunlight = 100)
 	spawnableTurfs = list()
-	clusterMax = 10
-	clusterMin = 10
+	clusterMax = 5
+	clusterMin = 5
 	checkdensity = FALSE
 	allowed_areas = list(/area/rogue/outdoors)
