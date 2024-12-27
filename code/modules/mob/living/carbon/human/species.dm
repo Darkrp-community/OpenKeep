@@ -2258,8 +2258,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			return
 
 		if(INTENT_GRAB)
-			if(!M.has_hand_for_held_index(M.active_hand_index, TRUE)) //we obviously have a hadn, but we need to check for fingers/prosthetics
-				to_chat(M, "<span class='warning'>I can't move the fingers.</span>")
+			if(!M.has_hand_for_held_index(M.active_hand_index, TRUE)) //we obviously have a hand, but we need to check for fingers/prosthetics
+				to_chat(M, "<span class='warning'>I can't move the fingers of my [M.active_hand_index == 1 ? "left" : "right"] hand.</span>")
 				return
 			grab(M, H, attacker_style)
 			return
