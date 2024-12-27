@@ -18,8 +18,6 @@
 	var/obj/item/fishing/hook/hook
 	var/obj/item/fishing/line/line //this last one isnt needed to fish
 
-	var/can_add_line = TRUE
-
 	///THIS IS FOR THE NON-AUTOFISHING GAME
 
 	//checks to see if currently fishing
@@ -118,7 +116,7 @@
 		var/obj/item/fishing/T = I
 		switch(T.attachtype)
 			if("line")
-				if(can_add_line && !line)
+				if(!line)
 					I.forceMove(src)
 					line = I
 					to_chat(user, "<span class='notice'>I add [I] to [src]...</span>")

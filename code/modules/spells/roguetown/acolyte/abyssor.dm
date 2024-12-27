@@ -121,12 +121,12 @@
 	armor_penetration = 5
 	can_parry = TRUE
 	has_inspect_verb = TRUE
-	can_add_line = FALSE
 
 /obj/item/fishingrod/abyssor_trident/Initialize()
 	. = ..()
 	reel = new /obj/item/fishing/reel/abytrident(src)
 	hook = new /obj/item/fishing/hook/abytrident(src)
+	line = new /obj/item/fishing/line/no_line(src)
 	baited = new /obj/item/fishing/bait/no_bait(src)
 
 /obj/item/fishingrod/abyssor_trident/getonmobprop(tag)
@@ -164,6 +164,9 @@
 	name = "trident prong"
 	deepfishingweight = -2
 	sizemod = list("tiny" = -3, "small" = -2, "normal" = -1, "large" = 1, "prize" = 1)
+
+/obj/item/fishing/line/no_line
+	name = "lack of attachment"
 
 /obj/item/fishing/bait/no_bait
 	name = "lack of bait"
