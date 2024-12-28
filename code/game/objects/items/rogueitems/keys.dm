@@ -388,7 +388,7 @@
 
 /obj/item/key/apothecary
 	name = "apothecary's key"
-	desc = "The master key of Eora's House."
+	desc = "The master key of the bath house."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
