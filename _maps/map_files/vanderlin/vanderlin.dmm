@@ -10308,6 +10308,7 @@
 /obj/machinery/light/rogue/wallfire/candle,
 /obj/structure/bed/rogue/mediocre,
 /obj/item/bedsheet/rogue/fabric,
+/obj/effect/landmark/start/matron,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/town)
 "iFK" = (
