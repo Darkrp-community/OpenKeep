@@ -21,7 +21,7 @@
 
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/apothecary
-	display_order = JDO_NITEMAN
+	display_order = JDO_APOTHECARY
 	give_bank_account = 100
 	min_pq = 1
 	bypass_lastclass = TRUE

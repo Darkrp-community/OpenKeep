@@ -225,7 +225,7 @@
 
 #define JDO_GRAVEMAN 29
 
-#define JDO_NITEMAN 29.1
+#define JDO_APOTHECARY 29.1
 //#define JDO_NITEMAIDEN 29.2
 
 #define JDO_JESTER 30
