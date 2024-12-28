@@ -131,7 +131,8 @@
 #define MASON		(1<<3)
 #define TAILOR		(1<<4)
 #define ARTIFICER	(1<<5)
-#define SCRIBE		(1<<6)
+#define MATRON 		(1<<6)
+#define SCRIBE		(1<<7)
 
 #define PEASANTS		(1<<4)
 
@@ -222,7 +223,7 @@
 
 #define JDO_BUTCHER 28.1
 #define JDO_SOILSON 28.2
-
+#define JDO_MATRON 28.3
 #define JDO_GRAVEMAN 29
 
 #define JDO_NITEMAN 29.1
