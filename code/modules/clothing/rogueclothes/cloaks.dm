@@ -949,7 +949,7 @@
 	desc = "A cloak that only the meanest wear."
 	icon_state = "matron_cloak"
 	icon = 'icons/roguetown/clothing/cloaks.dmi'
-	mob_overlay_icon =' icons/roguetown/clothing/onmob/cloaks.dmi'
+	mob_overlay_icon ='icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_CLOAK
 
 //............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
