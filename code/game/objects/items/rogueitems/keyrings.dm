@@ -256,7 +256,10 @@
 	keys = list(/obj/item/key/inquisition, /obj/item/key/church)
 
 /obj/item/storage/keyring/apothecary
-	keys = list(/obj/item/key/apothecary, /obj/item/key/nitemaiden)
+	keys = list(/obj/item/key/niteman, /obj/item/key/nitemaiden)
+
+/obj/item/storage/keyring/gravetender
+	keys = list(/obj/item/key/church, /obj/item/key/graveyard)
 
 /obj/item/storage/keyring/hand
 	keys = list(/obj/item/key/hand, /obj/item/key/steward, /obj/item/key/tavern, /obj/item/key/church, /obj/item/key/merchant, /obj/item/key/dungeon, /obj/item/key/walls, /obj/item/key/garrison, /obj/item/key/forrestgarrison, /obj/item/key/manor, /obj/item/key/guest)
