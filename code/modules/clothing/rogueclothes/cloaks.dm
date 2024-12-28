@@ -947,8 +947,8 @@
 /obj/item/clothing/cloak/matron
 	name = "matron cloak"
 	desc = "A cloak that only the meanest wear."
-	icon_state =
-	icon =
+	icon_state = "matron_cloak"
+	icon = 'icons/roguetown/clothing/cloaks.dmi'
 	mob_overlay_icon =' icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_CLOAK
 
