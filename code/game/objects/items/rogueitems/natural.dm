@@ -30,10 +30,10 @@
 			if(!user.temporarilyRemoveItemFromInventory(src))
 				return TRUE
 			var/obj/item/natural/bundle/N = new bundletype(loc)
-			user.put_in_active_hand(N)
 			to_chat(user, span_notice("You collect the [N.stackname] into a bundle."))
 			qdel(B)
 			qdel(src)
+			user.put_in_active_hand(N)
 			return TRUE
 	return ..()
 

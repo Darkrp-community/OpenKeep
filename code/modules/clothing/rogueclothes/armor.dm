@@ -108,6 +108,15 @@
 
 	armor = ARMOR_PADDED_GOOD
 
+
+/obj/item/clothing/suit/roguetown/armor/gambeson/apothecary
+	name = "apothecary overcoat"
+	desc = "An armoured overcoat that can take a few hits. Men have lost their lives for less."
+	icon_state = "apothover"
+	item_state = "apothover"
+
+	armor = ARMOR_PADDED_GOOD
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
 	color = CLOTHING_DARK_INK
 
@@ -339,7 +348,7 @@
 	..()
 
 //................ Silk Jacket ............... //
-/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/apothecary
 	name = "silk jacket"
 	icon_state = "nightman"
 	desc = "Displaying wealth while keeping your guts safe from blades with thick leather pads underneath."

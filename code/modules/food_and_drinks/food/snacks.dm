@@ -258,7 +258,7 @@ All foods are distributed among various categories. Use common sense.
 	return
 
 /obj/item/reagent_containers/food/snacks/attack(mob/living/M, mob/living/user, def_zone)
-	if(user.used_intent.type == INTENT_HARM)
+	if(user.used_intent.type != /datum/intent/food)
 		return ..()
 	if(!eatverb)
 		eatverb = pick("bite","chew","nibble","gnaw","gobble","chomp")
