@@ -52,4 +52,5 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		backr = /obj/item/storage/backpack/rogue/satchel
+		cloak = /obj/item/clothing/cloak/matron
 		backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1)

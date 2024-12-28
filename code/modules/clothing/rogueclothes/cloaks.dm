@@ -944,6 +944,14 @@
 	color = pick(CLOTHING_WINESTAIN_RED, CLOTHING_MUSTARD_YELLOW, CLOTHING_SOOT_BLACK, CLOTHING_BARK_BROWN, CLOTHING_FOREST_GREEN, CLOTHING_BERRY_BLUE)
 	..()
 
+/obj/item/clothing/cloak/matron
+	name = "matron cloak"
+	desc = "A cloak that only the meanest wear."
+	icon_state =
+	icon =
+	mob_overlay_icon =' icons/roguetown/clothing/onmob/cloaks.dmi'
+	slot_flags = ITEM_SLOT_CLOAK
+
 //............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)
 /obj/item/clothing/cloak/battlenun
 	name = "nun vestments"
