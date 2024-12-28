@@ -3509,7 +3509,6 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/mountains/anvil/dungeon/lower)
 "Xw" = (
-/turf/open/transparent/openspace/airless,
 /area/rogue/under/mountains/anvil/dungeon)
 "Xx" = (
 /obj/structure/rack/rogue/shelf/biggest,
