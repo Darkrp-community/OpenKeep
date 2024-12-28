@@ -1,5 +1,5 @@
 /datum/job/roguetown/veteran
-	title = "MATRON"
+	title = "Matron"
 	flag = JESTER
 	department_flag = PEASANTS
 	faction = "Station"
