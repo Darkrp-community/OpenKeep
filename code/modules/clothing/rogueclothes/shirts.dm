@@ -229,7 +229,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "dress"
 	item_state = "dress"
-	allowed_sex = list(FEMALE)
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 

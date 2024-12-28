@@ -117,7 +117,6 @@
 	name = "padded dress"
 	desc = "Favored by the female nobility, to maintain both vitality and good taste while out hunting."
 	icon_state = "armordress"
-	allowed_sex = list(FEMALE)
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
@@ -328,7 +327,6 @@
 	desc = "An expertly padded coat made from the finest silks. Long may live the nobility that dons it."
 	icon_state = "bliaut"
 	sleevetype = "shirt"
-	allowed_sex = list(FEMALE)
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
@@ -537,7 +535,6 @@
 	desc = "Metal plates partly hidden by cloth, fitted for a man."
 	icon_state = "surcoat"
 	item_state = "surcoat"
-	allowed_sex = list(MALE)	// trouble getting the sprites to work with females, sick of it, remains male only like it used to be
 	detail_tag = "_metal"		// metal bits are the details so keep them uncolorer = white
 	detail_color = COLOR_WHITE
 
