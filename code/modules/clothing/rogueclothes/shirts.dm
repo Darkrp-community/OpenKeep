@@ -155,6 +155,8 @@
 	desc = "When trudging through late-autumn forests, one needs to keep warm."
 	icon_state = "apothshirt"
 	item_state = "apothshirt"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|VITALS
 
 
