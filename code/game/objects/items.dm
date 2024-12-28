@@ -254,6 +254,12 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(!experimental_inhand)
 		inhand_x_dimension = 32
 		inhand_y_dimension = 32
+
+	if(grid_width <= 0)
+		grid_width = (w_class * world.icon_size)
+	if(grid_height <= 0)
+		grid_height = (w_class * world.icon_size)
+
 	update_transform()
 
 

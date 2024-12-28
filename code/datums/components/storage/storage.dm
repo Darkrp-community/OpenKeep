@@ -432,7 +432,7 @@
 				cy++
 				if(cy - screen_start_y >= rows)
 					break
-	closer.screen_loc = "[screen_start_x + cols]:[screen_pixel_x],[screen_start_y]:[screen_pixel_y]"
+	closer.screen_loc = "[screen_start_x]:[screen_pixel_x],[screen_start_y+rows]:[screen_pixel_y]"
 
 /datum/component/storage/proc/show_to(mob/M)
 	if(!M.client)
