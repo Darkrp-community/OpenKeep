@@ -150,6 +150,14 @@
 	body_parts_covered = CHEST|VITALS
 	allowed_race = list("elf", "dark elf")
 
+/obj/item/clothing/suit/roguetown/shirt/apothshirt
+	name = "apothecary shirt"
+	desc = "When trudging through late-autumn forests, one needs to keep warm."
+	icon_state = "apothshirt"
+	item_state = "apothshirt"
+	body_parts_covered = CHEST|VITALS
+
+
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "rags"
