@@ -34,7 +34,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/apothshirt
 	pants = /obj/item/clothing/under/roguetown/trou/apothecary
 	gloves = /obj/item/clothing/gloves/roguetown/leather/apothecary
-	belt = /obj/item/storage/belt/rogue/leather/rope
+	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/storage/keyring/niteman
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
