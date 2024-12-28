@@ -348,7 +348,7 @@
 	..()
 
 //................ Silk Jacket ............... //
-/obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/apothecary
 	name = "silk jacket"
 	icon_state = "nightman"
 	desc = "Displaying wealth while keeping your guts safe from blades with thick leather pads underneath."

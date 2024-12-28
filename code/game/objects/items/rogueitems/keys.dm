@@ -386,7 +386,7 @@
 	icon_state = "brownkey"
 	lockid = "artificer"
 
-/obj/item/key/niteman
+/obj/item/key/apothecary
 	name = "apothecary's key"
 	desc = "The master key of Eora's House."
 	icon_state = "greenkey"

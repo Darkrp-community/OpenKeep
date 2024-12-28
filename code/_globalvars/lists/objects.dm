@@ -39,7 +39,7 @@ GLOBAL_LIST_INIT(rod_jobs, list(
 	"Jester",
 	"Prisoner",
 	"Feldsher",
-	"Niteman",
+	"Apothecary",
 	"Champion of Rockhill",
 	"Warden of the Terrorbog",
 	"Huntmaster of the Murderwoods",
