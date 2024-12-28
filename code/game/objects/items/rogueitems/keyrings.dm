@@ -258,6 +258,9 @@
 /obj/item/storage/keyring/niteman
 	keys = list(/obj/item/key/niteman, /obj/item/key/nitemaiden)
 
+/obj/item/storage/keyring/gravetender
+	keys = list(/obj/item/key/church, /obj/item/key/graveyard)
+
 /obj/item/storage/keyring/hand
 	keys = list(/obj/item/key/hand, /obj/item/key/steward, /obj/item/key/tavern, /obj/item/key/church, /obj/item/key/merchant, /obj/item/key/dungeon, /obj/item/key/walls, /obj/item/key/garrison, /obj/item/key/forrestgarrison, /obj/item/key/manor, /obj/item/key/guest)
 
@@ -287,3 +290,4 @@
 
 /obj/item/storage/keyring/veteran
 	keys = list(/obj/item/key/veteran, /obj/item/key/dungeon, /obj/item/key/garrison, /obj/item/key/walls, /obj/item/key/elder, /obj/item/key/butcher, /obj/item/key/soilson)
+
