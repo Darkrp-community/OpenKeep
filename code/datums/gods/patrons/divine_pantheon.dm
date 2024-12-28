@@ -50,12 +50,13 @@
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Forgetfulness"
-	boons = "Leeches will not latch onto you in murk."
+	boons = "Leeches will not latch onto you in dirty water."
 	added_traits = list(TRAIT_LEECHIMMUNE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
 	t1 = /obj/effect/proc_holder/spell/invoked/projectile/swordfish
-	t2 = null
-	t3 = null
+	t2 = /obj/effect/proc_holder/spell/self/summon_trident
+	t3 = /obj/effect/proc_holder/spell/invoked/ocean_embrace
+
 /datum/patron/divine/necra
 	name = "Necra"
 	domain = "Mother Goddess of Death and Decay"
