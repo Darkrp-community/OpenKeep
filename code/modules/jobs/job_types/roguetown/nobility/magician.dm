@@ -37,7 +37,7 @@
 	beltr = /obj/item/storage/keyring/mage
 	backl = /obj/item/rogueweapon/polearm/woodstaff
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
-	backpack_contents = list(/obj/item/scrying = 1)
+	backpack_contents = list(/obj/item/scrying = 1, /obj/item/reagent_containers/glass/bottle/rogue/killersice = 1)
 	if(H.mind)
 		if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))
 			H.set_patron(/datum/patron/divine/noc)
