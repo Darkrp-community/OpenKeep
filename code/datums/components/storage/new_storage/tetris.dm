@@ -23,6 +23,14 @@
 	/// Height we occupy on the hud - Keep null to generate based on w_class
 	var/grid_height
 
+/obj/item/proc/inventory_flip(mob/user, force = FALSE)
+	if(!force && (user && ((!user.Adjacent(src) && !user.DirectAccess(src)) || !isliving(user))))
+		return
+	var/old_width = grid_width
+	var/old_height = grid_height
+	grid_height = old_width
+	grid_width = old_height
+
 /obj/item/storage
 	var/grid = TRUE
 	var/storage_flags = NONE
@@ -619,8 +627,9 @@
 			var/final_y = 0
 			var/final_coordinates = ""
 			var/grid_location_found = FALSE
-			for(var/current_x in 0 to ((screen_max_rows*grid_box_ratio)-1))
-				for(var/current_y in 0 to ((screen_max_columns*grid_box_ratio)-1))
+			var/x_value = ((screen_max_columns*grid_box_ratio)-1)
+			for(var/current_y in 0 to ((screen_max_rows*grid_box_ratio)-1))
+				for(var/current_x in 0 to x_value)
 					final_y = current_y
 					final_x = current_x
 					final_coordinates = "[final_x],[final_y]"
@@ -691,8 +700,9 @@
 			var/final_y = 0
 			var/final_coordinates = ""
 			var/grid_location_found = FALSE
-			for(var/current_x in 0 to ((screen_max_rows*grid_box_ratio)-1))
-				for(var/current_y in 0 to ((screen_max_columns*grid_box_ratio)-1))
+			var/x_value = ((screen_max_columns*grid_box_ratio)-1)
+			for(var/current_y in 0 to ((screen_max_rows*grid_box_ratio)-1))
+				for(var/current_x in 0 to x_value)
 					final_y = current_y
 					final_x = current_x
 					final_coordinates = "[final_x],[final_y]"

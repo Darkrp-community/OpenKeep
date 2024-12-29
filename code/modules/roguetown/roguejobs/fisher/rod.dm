@@ -10,6 +10,9 @@
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_BULKY
 
+	grid_height = 96
+	grid_width = 32
+
 	///the bait we have on the hook
 	var/obj/item/baited = null
 
