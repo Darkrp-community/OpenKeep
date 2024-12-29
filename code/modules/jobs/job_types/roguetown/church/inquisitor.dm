@@ -98,7 +98,7 @@
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 	to_chat(H,"<span class='info'>\
 		-I can speak Old Psydonic with ,m before my speech.\n\
-		-The Holy Bishop of the Inquisition has sent you here on a task to root out evil within this town. Make him proud!\n\
+		-The Holy Bishop of the Inquisition has sent you here on a task to root out evil within this town. Make The Holy Bishop proud!\n\
 		-You've also been gaven 10 favors to use at the mail machines, you can get more favor by sending signed confessions to The Holy Bishop. Spend your favors wisely.</span>"
 		)
 
@@ -116,7 +116,6 @@
 				return
 			if(H.has_confessed==TRUE) // This is to check if the victim has already confessed, if so just inform the torturer and return. This is so that the Inquisitor cannot get infinite confession points and get all of the things upon getting thier first heretic.
 				to_chat(src, "<span class='warning'>[src.name] has already signed a confession! The holy bishop wouldn't want me to send him another...</span>")
-				to_chat(H, "<span class='warning'>[src.name] tries to get me to confess- but i've already signed one.</span>")
 				return
 			var/painpercent = H.get_complex_pain() / (H.STAEND * 10)
 			painpercent = painpercent * 100
