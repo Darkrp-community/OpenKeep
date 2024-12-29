@@ -11860,6 +11860,11 @@
 	pixel_x = -4;
 	pixel_y = 1
 	},
+/obj/item/natural/bundle/fibers/full,
+/obj/item/natural/bundle/fibers/full,
+/obj/item/natural/bundle/curred_hide,
+/obj/item/natural/bundle/cloth,
+/obj/item/natural/bundle/silk,
 /turf/open/floor/rogue/carpet/green,
 /area/rogue/indoors/town)
 "jOI" = (
@@ -25424,7 +25429,11 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "vzr" = (
-/obj/structure/mineral_door/wood/green,
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
+	lockid = "shop1";
+	name = "Tailor Shop"
+	},
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
 "vzD" = (
@@ -27129,7 +27138,11 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
 "wTX" = (
-/obj/structure/mineral_door/wood/green,
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
+	lockid = "shop1";
+	name = "Tailor Shop"
+	},
 /turf/open/floor/rogue/carpet/green,
 /area/rogue/indoors/town)
 "wUa" = (
