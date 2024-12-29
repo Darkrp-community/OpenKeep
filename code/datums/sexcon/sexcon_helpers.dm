@@ -34,7 +34,7 @@
 	volume = 20
 	extra_range = -4
 
-/mob/living
+/mob
 	var/can_do_sex = TRUE
 
 /mob/living/carbon/human/MiddleMouseDrop_T(mob/living/target, mob/living/user)
@@ -49,7 +49,17 @@
 		return
 	user.sexcon.start(src)
 
-/mob/living/proc/can_do_sex()
+/mob/proc/can_do_sex()
+	if(get_playerquality(client.ckey) <= -10)
+		can_do_sex = FALSE
+		return FALSE
+	if(!client.whitelisted())
+		can_do_sex = FALSE
+		return FALSE
+	if(client.blacklisted())
+		can_do_sex = FALSE
+		return FALSE
+	can_do_sex = TRUE
 	return TRUE
 
 /mob/living/carbon/human/proc/make_sucking_noise()
