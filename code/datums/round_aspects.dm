@@ -8,7 +8,7 @@
 /datum/round_aspect/proc/apply() // Instant thing that happens when it's chosen. Used for aspects that change one single var
 	return
 
-/proc/aspect_chosen(var/datum/round_aspect/aspect) // use to check if an aspects chosen
+/proc/aspect_chosen(/datum/round_aspect/aspect) // use to check if an aspects chosen
 	if(istype(SSticker.round_aspect, aspect))
 		return TRUE
 
