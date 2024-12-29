@@ -293,3 +293,6 @@
 
 /obj/item/storage/keyring/tailor
 	keys = list(/obj/item/key/shops/shop1, /obj/item/key/shops/shopwarehouse1)
+
+/obj/item/storage/keyring/stevedore
+	keys = list(/obj/item/key/warehouse, /obj/item/key/shop)
