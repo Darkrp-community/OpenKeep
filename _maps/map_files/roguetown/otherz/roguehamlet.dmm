@@ -13174,7 +13174,6 @@
 /obj/item/clothing/head/roguetown/nun,
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy,
 /obj/item/clothing/suit/roguetown/shirt/robe/nun,
-/obj/item/natural/cloth/bandit,
 /obj/item/clothing/glasses/blindfold/white{
 	name = "blindfold";
 	color = "#ff0000"
