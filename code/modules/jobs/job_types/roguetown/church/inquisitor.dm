@@ -62,7 +62,6 @@
 	H.name = "[honorary] [prev_name]"
 	H.confession_points = 10 // Starting with 10 points
 	H.purchase_history = list() // Initialize as an empty list to track purchases
-
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
@@ -85,7 +84,6 @@
 		H.change_stat("endurance", 1)
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
-			
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
@@ -113,9 +111,6 @@
 			H = I.grabbed
 			if(H == src)
 				to_chat(src, "<span class='warning'>I won't torture myself!</span>")
-				return
-			if(H.has_confessed==TRUE) // This is to check if the victim has already confessed, if so just inform the torturer and return. This is so that the Inquisitor cannot get infinite confession points and get all of the things upon getting thier first heretic.
-				to_chat(src, "<span class='warning'>[src.name] has already signed a confession! The holy bishop wouldn't want me to send him another...</span>")
 				return
 			var/painpercent = H.get_complex_pain() / (H.STAEND * 10)
 			painpercent = painpercent * 100
@@ -184,8 +179,13 @@
 		if(length(confessions))
 			if(torture == TRUE) // Only scream your confession if it's due to torture.
 				say(pick(confessions), spans = list("torture"))
+			
+			
 			if(user.is_holding_item_of_type(/obj/item/paper/confession)) // This code is to process gettin a signed confession through torture.
 				testing("User is holding a confession.")
+				if(has_confessed==TRUE) // This is to check if the victim has already confessed, if so just inform the torturer and return. This is so that the Inquisitor cannot get infinite confession points and get all of the things upon getting thier first heretic.
+					to_chat(user, "<span class='warning'>[src.name] has already signed a confession! The holy bishop wouldn't want me to send him another...</span>")
+					return
 				var/obj/item/paper/confession/held_confession = user.is_holding_item_of_type(/obj/item/paper/confession)
 				if(!held_confession.signed) // Check to see if the confession is already signed.
 					held_confession.signed = real_name
@@ -230,7 +230,7 @@
 							held_confession.antag = "worshiper of nothing"
 					has_confessed = TRUE
 					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS <font color='red'>[held_confession.bad_type]</font>. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'><i>[held_confession.signed]</i></font>"
-					held_confession.name = "[held_confession.signed]'s Confession"
+					held_confession.name = "[real_name]'s Confession"
 					held_confession.update_icon_state()
 					return
 	say(pick(innocent_lines), spans = list("torture"))
