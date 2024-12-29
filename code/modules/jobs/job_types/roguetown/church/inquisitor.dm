@@ -230,7 +230,6 @@
 							held_confession.antag = "worshiper of nothing"
 					has_confessed = TRUE
 					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS <font color='red'>[held_confession.bad_type]</font>. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'><i>[held_confession.signed]</i></font>"
-					held_confession.name = "[real_name]'s Confession"
 					held_confession.update_icon_state()
 					return
 	say(pick(innocent_lines), spans = list("torture"))
