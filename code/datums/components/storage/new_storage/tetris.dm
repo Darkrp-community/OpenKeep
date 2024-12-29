@@ -121,21 +121,31 @@
 			for(var/index in numerical_display_contents)
 				var/datum/numbered_display/numbered_display = numerical_display_contents[index]
 				var/obj/item/stored_item = numbered_display.sample_object
+				var/enchanted = FALSE
+				if(stored_item.has_enchantment(/datum/enchantment/dimensional_shrink) || (stored_item & SHRINK_ENCHANT))
+					enchanted = TRUE
+				var/used_gridwidth = stored_item.grid_width
+				if(enchanted)
+					used_gridwidth = max(32, used_gridwidth - 32)
+				var/used_gridheight = stored_item.grid_height
+				if(enchanted)
+					used_gridheight = max(32, used_gridheight - 32)
+
 				stored_item.mouse_opacity = MOUSE_OPACITY_OPAQUE
-				bound_underlay = get_bound_underlay(stored_item.grid_width, stored_item.grid_height)
+				bound_underlay = get_bound_underlay(used_gridwidth, used_gridheight, enchanted)
 				if(!bound_underlay)
-					bound_underlay = generate_bound_underlay(stored_item.grid_width, stored_item.grid_height)
-					underlay_appearances_by_size["[stored_item.grid_width]x[stored_item.grid_height]"] = bound_underlay
+					bound_underlay = generate_bound_underlay(used_gridwidth, used_gridheight, enchanted)
+					underlay_appearances_by_size["[used_gridwidth]x[used_gridheight]_[enchanted]"] = bound_underlay
 				stored_item.underlays += bound_underlay
 				screen_loc = LAZYACCESSASSOC(master.item_to_grid_coordinates, stored_item, 1)
 				screen_loc = master.grid_coordinates_to_screen_loc(screen_loc)
 				screen_x = copytext(screen_loc, 1, findtext(screen_loc, ","))
 				screen_pixel_x = text2num(copytext(screen_x, findtext(screen_x, ":") + 1))
-				screen_pixel_x += (world.icon_size/2)*((stored_item.grid_width/world.icon_size)-1)
+				screen_pixel_x += (world.icon_size/2)*((used_gridwidth/world.icon_size)-1)
 				screen_x = text2num(copytext(screen_x, 1, findtext(screen_x, ":")))
 				screen_y = copytext(screen_loc, findtext(screen_loc, ",") + 1)
 				screen_pixel_y = text2num(copytext(screen_y, findtext(screen_y, ":") + 1))
-				screen_pixel_y += (world.icon_size/2)*((stored_item.grid_height/world.icon_size)-1)
+				screen_pixel_y += (world.icon_size/2)*((used_gridheight/world.icon_size)-1)
 				screen_y = text2num(copytext(screen_y, 1, findtext(screen_y, ":")))
 				stored_item.screen_loc = "[screen_x]:[screen_pixel_x],[screen_y]:[screen_pixel_y]"
 				stored_item.plane = ABOVE_HUD_PLANE
@@ -146,20 +156,29 @@
 				if(QDELETED(stored_item))
 					continue
 				stored_item.mouse_opacity = MOUSE_OPACITY_OPAQUE
-				bound_underlay = get_bound_underlay(stored_item.grid_width, stored_item.grid_height)
+				var/enchanted = FALSE
+				if(stored_item.has_enchantment(/datum/enchantment/dimensional_shrink))
+					enchanted = TRUE
+				var/used_gridwidth = stored_item.grid_width
+				if(enchanted)
+					used_gridwidth = max(32, used_gridwidth - 32)
+				var/used_gridheight = stored_item.grid_height
+				if(enchanted)
+					used_gridheight = max(32, used_gridheight - 32)
+				bound_underlay = get_bound_underlay(used_gridwidth, used_gridheight, enchanted)
 				if(!bound_underlay)
-					bound_underlay = generate_bound_underlay(stored_item.grid_width, stored_item.grid_height)
-					underlay_appearances_by_size["[stored_item.grid_width]x[stored_item.grid_height]"] = bound_underlay
+					bound_underlay = generate_bound_underlay(used_gridwidth, used_gridheight, enchanted)
+					underlay_appearances_by_size["[used_gridwidth]x[used_gridheight]_[enchanted]"] = bound_underlay
 				stored_item.underlays += bound_underlay
 				screen_loc = LAZYACCESSASSOC(master.item_to_grid_coordinates, stored_item, 1)
 				screen_loc = master.grid_coordinates_to_screen_loc(screen_loc)
 				screen_x = copytext(screen_loc, 1, findtext(screen_loc, ","))
 				screen_pixel_x = text2num(copytext(screen_x, findtext(screen_x, ":") + 1))
-				screen_pixel_x += (world.icon_size/2)*((stored_item.grid_width/world.icon_size)-1)
+				screen_pixel_x += (world.icon_size/2)*((used_gridwidth/world.icon_size)-1)
 				screen_x = text2num(copytext(screen_x, 1, findtext(screen_x, ":")))
 				screen_y = copytext(screen_loc, findtext(screen_loc, ",") + 1)
 				screen_pixel_y = text2num(copytext(screen_y, findtext(screen_y, ":") + 1))
-				screen_pixel_y += (world.icon_size/2)*((stored_item.grid_height/world.icon_size)-1)
+				screen_pixel_y += (world.icon_size/2)*((used_gridheight/world.icon_size)-1)
 				screen_y = text2num(copytext(screen_y, 1, findtext(screen_y, ":")))
 				stored_item.screen_loc = "[screen_x]:[screen_pixel_x],[screen_y]:[screen_pixel_y]"
 				stored_item.plane = ABOVE_HUD_PLANE
@@ -519,8 +538,8 @@
 				testing("validate_grid_coordinates FAILED, coordinates already occupied, final_coordinates: ([final_coordinates])")
 				return FALSE
 	return TRUE
-/datum/component/storage/proc/get_bound_underlay(grid_width = world.icon_size, grid_height = world.icon_size)
-	return LAZYACCESS(underlay_appearances_by_size, "[grid_width]x[grid_height]")
+/datum/component/storage/proc/get_bound_underlay(grid_width = world.icon_size, grid_height = world.icon_size, enchanted)
+	return LAZYACCESS(underlay_appearances_by_size, "[grid_width]x[grid_height]_[enchanted]")
 
 /**
  * Generates and caches an underlay for the given width and height.
@@ -530,7 +549,7 @@
  *
  * I. FUCKING. HATE. ICONS.
  */
-/datum/component/storage/proc/generate_bound_underlay(grid_width = world.icon_size, grid_height = world.icon_size)
+/datum/component/storage/proc/generate_bound_underlay(grid_width = world.icon_size, grid_height = world.icon_size, enchanted = FALSE)
 	var/mutable_appearance/final_appearance = mutable_appearance()
 	final_appearance.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
 	var/icon/final_icon = icon('icons/hud/storage.dmi', "blank")
@@ -550,13 +569,19 @@
 	var/multiplier = 0
 	for(var/scaled_x in scale_x_states)
 		multiplier = !multiplier
-		scaled_icon = icon('icons/hud/storage.dmi', scaled_x)
+		if(enchanted)
+			scaled_icon = icon('icons/hud/storage.dmi', "[scaled_x]_fancy")
+		else
+			scaled_icon = icon('icons/hud/storage.dmi', scaled_x)
 		scaled_icon.Scale(grid_width, world.icon_size)
 		final_icon.Blend(scaled_icon, ICON_OVERLAY, 1, 1 + (height_offset * multiplier))
 	multiplier = 0
 	for(var/scaled_y in scale_y_states)
 		multiplier = !multiplier
-		scaled_icon = icon('icons/hud/storage.dmi', scaled_y)
+		if(enchanted)
+			scaled_icon = icon('icons/hud/storage.dmi', "[scaled_y]_fancy")
+		else
+			scaled_icon = icon('icons/hud/storage.dmi', scaled_y)
 		scaled_icon.Scale(world.icon_size, grid_height)
 		final_icon.Blend(scaled_icon, ICON_OVERLAY, 1 + (width_offset * multiplier), 1)
 	var/corner_pos_x = 1 + (grid_width - world.icon_size)
@@ -575,13 +600,24 @@
 	return final_appearance
 
 /datum/component/storage/proc/grid_add_item(obj/item/storing, coordinates)
+
+	var/enchanted = FALSE
+	if(storing.has_enchantment(/datum/enchantment/dimensional_shrink))
+		enchanted = TRUE
+	var/used_gridwidth = storing.grid_width
+	if(enchanted)
+		used_gridwidth = max(32, used_gridwidth - 32)
+	var/used_gridheight = storing.grid_height
+	if(enchanted)
+		used_gridheight = max(32, used_gridheight - 32)
+
 	var/coordinate_x = text2num(copytext(coordinates, 1, findtext(coordinates, ",")))
 	var/coordinate_y = text2num(copytext(coordinates, findtext(coordinates, ",") + 1))
 	var/calculated_coordinates = ""
 	var/final_x
 	var/final_y
-	var/validate_x = (storing.grid_width/grid_box_size)-1
-	var/validate_y = (storing.grid_height/grid_box_size)-1
+	var/validate_x = (used_gridwidth/grid_box_size)-1
+	var/validate_y = (used_gridheight/grid_box_size)-1
 	//this loops through all cells we overlap given these coordinates
 	first_coordinates_item |= storing
 	first_coordinates_item[storing] = list(coordinate_x, coordinate_y)
@@ -595,6 +631,7 @@
 			LAZYINITLIST(item_to_grid_coordinates)
 			LAZYINITLIST(item_to_grid_coordinates[storing])
 			LAZYADD(item_to_grid_coordinates[storing], calculated_coordinates)
+	storing.item_flags |= SHRINK_ENCHANT
 	return TRUE
 
 /datum/component/storage/proc/grid_remove_item(obj/item/removed)
@@ -604,6 +641,7 @@
 			LAZYREMOVE(grid_coordinates_to_item, location)
 		LAZYREMOVE(item_to_grid_coordinates, removed)
 		removed.underlays = null
+		removed.item_flags &= ~SHRINK_ENCHANT
 		return TRUE
 	return FALSE
 
@@ -621,6 +659,16 @@
 		var/coordinates = LAZYACCESS(modifiers, "screen-loc")
 		var/grid_box_ratio = (world.icon_size/grid_box_size)
 
+		var/enchanted = FALSE
+		if(storing.has_enchantment(/datum/enchantment/dimensional_shrink))
+			enchanted = TRUE
+		var/used_gridwidth = storing.grid_width
+		if(enchanted)
+			used_gridwidth = max(32, used_gridwidth - 32)
+		var/used_gridheight = storing.grid_height
+		if(enchanted)
+			used_gridheight = max(32, used_gridheight - 32)
+
 		//if it's not a storage click, find the first cell that happens to be valid
 		if(!storage_click)
 			var/final_x = 0
@@ -633,7 +681,7 @@
 					final_y = current_y
 					final_x = current_x
 					final_coordinates = "[final_x],[final_y]"
-					if(validate_grid_coordinates(final_coordinates, storing.grid_width, storing.grid_height, storing))
+					if(validate_grid_coordinates(final_coordinates, used_gridwidth, used_gridheight, storing))
 						coordinates = final_coordinates
 						grid_location_found = TRUE
 						break
@@ -644,7 +692,8 @@
 		else
 			coordinates = screen_loc_to_grid_coordinates(coordinates)
 
-		if(!validate_grid_coordinates(coordinates, storing.grid_width, storing.grid_height, storing))
+
+		if(!validate_grid_coordinates(coordinates, used_gridwidth, used_gridheight, storing))
 			return FALSE
 	return TRUE
 
@@ -706,7 +755,17 @@
 					final_y = current_y
 					final_x = current_x
 					final_coordinates = "[final_x],[final_y]"
-					if(validate_grid_coordinates(final_coordinates, storing.grid_width, storing.grid_height, storing))
+					var/enchanted = FALSE
+					if(storing.has_enchantment(/datum/enchantment/dimensional_shrink))
+						enchanted = TRUE
+					var/used_gridwidth = storing.grid_width
+					if(enchanted)
+						used_gridwidth = max(32, used_gridwidth - 32)
+					var/used_gridheight = storing.grid_height
+					if(enchanted)
+						used_gridheight = max(32, used_gridheight - 32)
+
+					if(validate_grid_coordinates(final_coordinates, used_gridwidth, used_gridheight, storing))
 						coordinates = final_coordinates
 						grid_location_found = TRUE
 						break
@@ -874,11 +933,20 @@
 	else
 		hovering.color = COLOR_RED_LIGHT
 	hovering.transform = matrix()
-	var/scale_x = held_item.grid_width/world.icon_size
-	var/scale_y = held_item.grid_height/world.icon_size
+	var/enchanted = FALSE
+	if(held_item.has_enchantment(/datum/enchantment/dimensional_shrink))
+		enchanted = TRUE
+	var/used_gridwidth = held_item.grid_width
+	if(enchanted)
+		used_gridwidth = max(32, used_gridwidth - 32)
+	var/used_gridheight = held_item.grid_height
+	if(enchanted)
+		used_gridheight = max(32, used_gridheight - 32)
+	var/scale_x = used_gridwidth/world.icon_size
+	var/scale_y =used_gridheight/world.icon_size
 	hovering.transform = hovering.transform.Scale(scale_x, scale_y)
-	var/translate_x = (world.icon_size/2)*((held_item.grid_width/world.icon_size)-1)
-	var/translate_y = (world.icon_size/2)*((held_item.grid_height/world.icon_size)-1)
+	var/translate_x = (world.icon_size/2)*((used_gridwidth/world.icon_size)-1)
+	var/translate_y = (world.icon_size/2)*((used_gridheight/world.icon_size)-1)
 	hovering.transform = hovering.transform.Translate(translate_x, translate_y)
 	hovering.screen_loc = storage_master.grid_coordinates_to_screen_loc(coordinates)
 
@@ -907,11 +975,21 @@
 	else
 		hovering.color = COLOR_RED_LIGHT
 	hovering.transform = matrix()
-	var/scale_x = held_item.grid_width/world.icon_size
-	var/scale_y = held_item.grid_height/world.icon_size
+	var/enchanted = FALSE
+	if(held_item.has_enchantment(/datum/enchantment/dimensional_shrink))
+		enchanted = TRUE
+	var/used_gridwidth = held_item.grid_width
+	if(enchanted)
+		used_gridwidth = max(32, used_gridwidth - 32)
+	var/used_gridheight = held_item.grid_height
+	if(enchanted)
+		used_gridheight = max(32, used_gridheight - 32)
+
+	var/scale_x = used_gridwidth/world.icon_size
+	var/scale_y = used_gridheight/world.icon_size
 	hovering.transform = hovering.transform.Scale(scale_x, scale_y)
-	var/translate_x = (world.icon_size/2)*((held_item.grid_width/world.icon_size)-1)
-	var/translate_y = (world.icon_size/2)*((held_item.grid_height/world.icon_size)-1)
+	var/translate_x = (world.icon_size/2)*((used_gridwidth/world.icon_size)-1)
+	var/translate_y = (world.icon_size/2)*((used_gridheight/world.icon_size)-1)
 	hovering.transform = hovering.transform.Translate(translate_x, translate_y)
 	hovering.screen_loc = storage_master.grid_coordinates_to_screen_loc(coordinates)
 
