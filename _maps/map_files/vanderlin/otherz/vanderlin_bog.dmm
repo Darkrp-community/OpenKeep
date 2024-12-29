@@ -737,8 +737,9 @@
 /area/rogue/outdoors/bog)
 "jk" = (
 /obj/structure/winch{
-	redstone_id = "BogSouth";
-	name = "Southern Gate"
+	redstone_id = "bogsouth";
+	name = "Southern Gate";
+	gid = "bogsouth"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
@@ -1288,8 +1289,9 @@
 /area/rogue/indoors/shelter/bog)
 "qT" = (
 /obj/structure/winch{
-	redstone_id = "BogNorth";
-	name = "Northern Gate"
+	redstone_id = "bognorth";
+	name = "Northern Gate";
+	gid = "bognorth"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/shelter/bog)
