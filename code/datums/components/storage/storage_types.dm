@@ -56,3 +56,43 @@
 
 /datum/component/storage/concrete/roguetown/belt/assassin
 	max_w_class = WEIGHT_CLASS_NORMAL
+
+/datum/component/storage/concrete/roguetown/cloak
+	max_w_class = WEIGHT_CLASS_NORMAL
+	screen_max_rows = 2
+	screen_max_columns = 2
+
+/datum/component/storage/concrete/roguetown/cloak/lord
+	max_w_class = WEIGHT_CLASS_BULKY
+
+/datum/component/storage/concrete/roguetown/mailmaster
+	max_w_class = WEIGHT_CLASS_HUGE
+	screen_max_rows = 10
+	screen_max_columns = 10
+
+/datum/component/storage/concrete/roguetown/bin
+	max_w_class = WEIGHT_CLASS_HUGE
+	screen_max_rows = 8
+	screen_max_columns = 4
+
+/datum/component/storage/concrete/roguetown/sack
+	max_w_class = WEIGHT_CLASS_NORMAL
+	screen_max_rows = 5
+	screen_max_columns = 4
+	click_gather = TRUE
+	collection_mode = COLLECT_EVERYTHING
+	dump_time = 0
+	allow_quick_gather = TRUE
+	allow_quick_empty = TRUE
+	insert_preposition = "in"
+
+/datum/component/storage/concrete/roguetown/sack/meat/New(datum/P, ...)
+	. = ..()
+	set_holdable(list(
+		/obj/item/reagent_containers/food/snacks/rogue/meat,
+		/obj/item/reagent_containers/food/snacks/fat,
+		/obj/item/natural/fur,
+		/obj/item/natural/hide,
+		/obj/item/alch/sinew,
+		/obj/item/alch/viscera
+		))

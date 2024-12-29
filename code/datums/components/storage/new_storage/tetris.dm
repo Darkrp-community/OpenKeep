@@ -122,7 +122,7 @@
 				var/datum/numbered_display/numbered_display = numerical_display_contents[index]
 				var/obj/item/stored_item = numbered_display.sample_object
 				var/enchanted = FALSE
-				if(stored_item.has_enchantment(/datum/enchantment/dimensional_shrink) || (stored_item & SHRINK_ENCHANT))
+				if(stored_item.has_enchantment(/datum/enchantment/dimensional_shrink) || (stored_item.item_flags & SHRINK_ENCHANT))
 					enchanted = TRUE
 				var/used_gridwidth = stored_item.grid_width
 				if(enchanted)
