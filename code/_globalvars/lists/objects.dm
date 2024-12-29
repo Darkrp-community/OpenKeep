@@ -13,7 +13,6 @@ GLOBAL_LIST_EMPTY(pinpointer_list)			//list of all pinpointers. Used to change s
 GLOBAL_LIST_EMPTY(zombie_infection_list) 		// A list of all zombie_infection organs, for any mass "animation"
 GLOBAL_LIST_EMPTY(ladders)
 GLOBAL_LIST_EMPTY(trophy_cases)
-GLOBAL_LIST_EMPTY(bard_buffs)               // List of buffs by bard songs
 
 
 GLOBAL_LIST_EMPTY(mob_spawners) 		    // All mob_spawn objects
