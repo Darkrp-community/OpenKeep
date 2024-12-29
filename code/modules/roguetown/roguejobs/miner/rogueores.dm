@@ -67,6 +67,9 @@
 	smeltresult = /obj/item/rogueore/coal
 	sellprice = 1
 
+	grid_width = 64
+	grid_height = 32
+
 /obj/item/rogueore/coal/Initialize()
 	icon_state = "orecoal[rand(1,3)]"
 	..()
