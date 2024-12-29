@@ -1,3 +1,166 @@
+// ======================================================================
+
+/*	..................   Pigflowers   ................... */
+/obj/structure/flora/rogueflower // ausbushes recolored
+	name = "flowers"
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "reedbush_1"
+
+/obj/structure/flora/rogueflower/reedbush
+	icon_state = "reedbush_1"
+
+/obj/structure/flora/rogueflower/reedbush/Initialize()
+	icon_state = "reedbush_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/lavendergrass
+	icon_state = "lavendergrass_1"
+
+/obj/structure/flora/rogueflower/lavendergrass/Initialize()
+	icon_state = "lavendergrass_[rand(1, 4)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ywflowers
+	icon_state = "ywflowers_1"
+
+/obj/structure/flora/rogueflower/ywflowers/Initialize()
+	icon_state = "ywflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/brflowers
+	icon_state = "brflowers_1"
+
+/obj/structure/flora/rogueflower/brflowers/Initialize()
+	icon_state = "brflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/rogueflower/ppflowers
+	icon_state = "ppflowers_1"
+
+/obj/structure/flora/rogueflower/ppflowers/Initialize()
+	icon_state = "ppflowers_[rand(1, 3)]"
+	. = ..()
+
+/obj/structure/flora/roguegrass/stalky
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/pigflora.dmi'
+	icon_state = "stalkygrass"
+	opacity = FALSE
+
+/obj/structure/flora/roguegrass/stalky/update_icon()
+	dir = pick(GLOB.cardinals)
+
+
+// ===================================================================================
+/*	..................   Dwarf Outpost   ................... */
+/obj/effect/landmark/map_load_mark/dwarf_outpost
+	name = "Dwarf Outpost"
+	templates = list( "Dwarf_Outpost_1","Dwarf_Outpost_2" )
+
+/datum/map_template/dwarf_outpost_i
+	name = "Dwarf Outpost Orc"
+	id = "Dwarf_Outpost_1"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_1.dmm"
+
+/datum/map_template/dwarf_outpost_ii
+	name = "Dwarf Outpost Beastmen"
+	id = "Dwarf_Outpost_2"
+	mappath = "_maps/map_files/templates/dwarf_outpost/Dwarf_Outpost_2.dmm"
+
+
+/*	..................   Roadblock   ................... */
+/obj/effect/landmark/map_load_mark/hamlet_roadblock
+	name = "Roadblock"
+	templates = list( "roadblock_1","roadblock_2" )
+
+/datum/map_template/roadblock_i
+	name = "Roadblock"
+	id = "roadblock_1"
+	mappath = "_maps/map_files/templates/stonehamlet/roadblock_1.dmm"
+
+/datum/map_template/roadblock_ii
+	name = "No roadblock"
+	id = "roadblock_2"
+	mappath = "_maps/map_files/templates/stonehamlet/roadblock_2.dmm"
+
+/*	..................   Outlaw camp   ................... */
+/obj/effect/landmark/map_load_mark/hamlet_outlaws
+	name = "Outlaw camp"
+	templates = list( "outlawcamp_1","outlawcamp_2" )
+
+/datum/map_template/outlawcamp_i
+	name = "Outlaw camp"
+	id = "outlawcamp_1"
+	mappath = "_maps/map_files/templates/stonehamlet/outlawcamp_1.dmm"
+
+/datum/map_template/outlawcamp_ii
+	name = "Empty outlaw camp"
+	id = "outlawcamp_2"
+	mappath = "_maps/map_files/templates/stonehamlet/outlawcamp_2.dmm"
+
+// ===================================================================================
+/*
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
+	if(prob(15))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/rags
+
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+	if(prob(10))
+		pants = /obj/item/clothing/under/roguetown/tights/sailor
+
+	switch(loadout)
+		if(1)
+			r_hand = /obj/item/natural/stone
+		if(2)
+			r_hand = /obj/item/rogueweapon/knife/stone
+		if(3)
+			r_hand = /obj/item/rogueweapon/mace/woodclub
+*/
+
+// ===================================================================================
+/obj/structure/mineral_door/wood/red/i
+	name = "Room I"
+	lockid = "roomi"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/ii	// the cheap shitty room that starts unlocked and might have a nasty surprise
+	name = "Room II"
+	desc = "The lock is a bit loose on this door."
+	lockid = "roomii"
+/obj/structure/mineral_door/wood/red/iii
+	name = "Room III"
+	lockid = "roomiii"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/iv
+	name = "Room IV"
+	lockid = "roomiv"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/v
+	name = "Room V"
+	lockid = "roomv"
+	locked = TRUE
+/obj/structure/mineral_door/wood/red/vi
+	name = "Room VI"
+	lockid = "roomvi"
+	locked = TRUE
+/obj/structure/mineral_door/wood/green/merc
+	name = "Mercenary Lodgings"
+	lockid = "mercenary"
+	locked = TRUE
+/obj/structure/mineral_door/wood/violet/roomhunt
+	name = "Room HUNT"
+	lockid = "roomhunt"
+	locked = TRUE
+/obj/structure/mineral_door/wood/violet/roomroyal
+	name = "Room ROYAL"
+	lockid = "roomroyal"
+	locked = TRUE
 /*	..................   Loot spawners   ................... */
 /obj/effect/spawner/roguemap/loot
 	icon_state = "loot"
@@ -8,17 +171,13 @@
 
 /obj/effect/spawner/roguemap/loot/common
 	spawned = list(
-		/obj/item/roguecoin/copper/pile = 15,		
-		/obj/item/rogueweapon/huntingknife = 10, 
-		/obj/item/rogueweapon/huntingknife/idagger = 8,
-		/obj/item/rogueweapon/huntingknife/idagger/steel = 4,
-		/obj/item/rogueweapon/huntingknife/idagger/silver = 2,
+		/obj/item/roguecoin/copper/pile = 15,
+		/obj/item/rogueweapon/knife/dagger = 10,
+		/obj/item/rogueweapon/knife/dagger/steel = 8,
 		/obj/item/rogueweapon/sword/iron = 3,
-		/obj/item/rogueweapon/woodcut = 10,
 		/obj/item/rogueweapon/mace = 5,
 		/obj/item/quiver/arrows = 5,
-		/obj/item/rogueweapon/sword/iron/short = 5,
-		/obj/item/clothing/suit/roguetown/armor/leather = 10, 
+		/obj/item/clothing/suit/roguetown/armor/leather = 10,
 		/obj/item/clothing/suit/roguetown/armor/gambeson = 15,
 		/obj/item/clothing/gloves/roguetown/chain/iron = 3,
 		/obj/item/clothing/neck/roguetown/coif = 3,
@@ -34,8 +193,8 @@
 	probby = 50
 	color = "#ff0000"
 	spawned = list(
-		/obj/item/reagent_containers/food/snacks/smallrat = 30,		
-		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10, 
+		/obj/item/reagent_containers/food/snacks/smallrat = 30,
+		/obj/item/reagent_containers/food/snacks/smallrat/dead = 10,
 		/obj/item/organ/guts = 5,
 		/obj/item/roguecoin/copper = 5,
 		/obj/effect/gibspawner/generic = 5,
@@ -64,14 +223,9 @@
 /obj/structure/fluff/statue/xylix/frown
 	icon_state = "xylix_frown"
 
-/turf/open/floor/rogue/sandstone
-	icon_state = "sandstone"
-	footstep = FOOTSTEP_STONE
-	barefootstep = FOOTSTEP_HARD_BAREFOOT
-	clawfootstep = FOOTSTEP_HARD_CLAW
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	landsound = 'sound/foley/jumpland/grassland.wav'
 
+
+// ==============================================================
 /obj/effect/spawner/roguemap/xylixlabyrinth
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = "raiseskele"
@@ -79,10 +233,10 @@
 	probby = 50
 	color = "#e44aff"
 	spawned = list(
-		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,		
-		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10, 
+		/mob/living/simple_animal/hostile/retaliate/gaseousform/xylix = 30,
+		/mob/living/simple_animal/hostile/rogue/demon/xylix = 10,
 		/mob/living/simple_animal/hostile/rogue/haunt/xylix = 5,
-		/obj/structure/glowshroom/single/xylix = 5,
+		/obj/structure/kneestingers/xylix = 5,
 		/obj/item/roguecoin/silver/pile/xylix = 5,
 		)
 
@@ -90,71 +244,77 @@
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/demon/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
 			maxHealth = 30
 			health = 30
 			melee_damage_lower = 3
-			melee_damage_upper = 12		
+			melee_damage_upper = 12
 		if (2)
 			maxHealth = 45
 			health = 45
 			melee_damage_lower = 6
-			melee_damage_upper = 18	
+			melee_damage_upper = 18
 		if (3)
 			maxHealth = 18
 			health = 18
 			melee_damage_lower = 9
 			melee_damage_upper = 25
+	return ..()
 
 /mob/living/simple_animal/hostile/rogue/haunt/xylix
 	name = "spectral daemon"
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/rogue/haunt/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
 			maxHealth = 40
 			health = 40
 			melee_damage_lower = 3
-			melee_damage_upper = 9		
+			melee_damage_upper = 9
 		if (2)
 			maxHealth = 35
 			health = 35
 			melee_damage_lower = 5
-			melee_damage_upper = 14	
+			melee_damage_upper = 14
 		if (3)
 			maxHealth = 28
 			health = 28
 			melee_damage_lower = 8
 			melee_damage_upper = 19
+	return ..()
 
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix
 	name = "spectral daemon"
 	faction = list("undead")
 	color = "#c189cb"
 	alpha = 200
+
 /mob/living/simple_animal/hostile/retaliate/gaseousform/xylix/Initialize()
 	switch(pick(1,2,3))
 		if (1)
 			maxHealth = 70
 			health = 70
 			melee_damage_lower = 2
-			melee_damage_upper = 10		
+			melee_damage_upper = 10
 		if (2)
 			maxHealth = 60
 			health = 60
 			melee_damage_lower = 3
-			melee_damage_upper = 13	
+			melee_damage_upper = 13
 		if (3)
 			maxHealth = 50
 			health = 50
 			melee_damage_lower = 4
 			melee_damage_upper = 16
+	return ..()
 
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = ""
 	desc = ""
 	icon = 'icons/roguetown/items/valuable.dmi'
@@ -222,6 +382,7 @@
 			redstone_id = "xhutterA"
 		if (2)
 			redstone_id = "xhutterB"
+	return ..()
 
 /obj/effect/spawner/roguemap/xylixlabyrinth_frowny
 	icon = 'icons/mob/actions/roguespells.dmi'
@@ -238,16 +399,14 @@
 	spawned = list(	/obj/structure/trap/xylix_healing = 10, /obj/structure/trap/xylix = 10)
 
 /obj/structure/fluff/walldeco/xylfrown
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "wall_sad"
 	pixel_y = 32
 
 /obj/structure/fluff/walldeco/xylsmile
-	icon = 'modular/Mapping/icons/decoration.dmi'
 	icon_state = "wall_funny"
 	pixel_y = 32
 
-/obj/structure/glowshroom/single/xylix
+/obj/structure/kneestingers/xylix
 	name = "fancy chest"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "chestfancy_neu"
@@ -258,8 +417,6 @@
 			new /obj/item/clothing/ring/gold/protection(src)
 		if (2)
 			new /obj/item/clothing/head/roguetown/jester(src)
-
-
 
 
 /*	..................   Spider stuff   ................... */
@@ -274,7 +431,7 @@
 	alpha = rand(80,109)
 	switch(pick(1,2))
 		if (1)
-			static_debris = FALSE		
+			static_debris = FALSE
 		if (2)
 			static_debris = list(/obj/item/natural/silk = 1)
 	. = ..()
@@ -301,23 +458,80 @@
 
 
 /*	..................   Various mapping aides   ................... */
-
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
-/obj/machinery/light/rogue/wallfire/big_fireplace
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
 
-/obj/machinery/light/rogue/hearth/big_fireplace
-	name = "fireplace"
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-	fueluse = -1
-	pixel_x = -16
-	climb_offset = 4
+// ======================================================================
+/*	..................   Colony Spider Web   ................... */
+/obj/structure/innocent_web
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/misc/tallstructure.dmi'
+	icon_state = "innocentweb1"
+	layer = ABOVE_ALL_MOB_LAYER
+	density = FALSE
+	max_integrity = 35
+	climbable = FALSE
+	dir = SOUTH
+	debris = list(/obj/item/natural/silk = 1)
+	var/lucky_escape
+
+/obj/structure/innocent_web/Initialize()
+	. = ..()
+	icon_state = "innocentweb[rand(1,2)]"
+	return ..()
+
+/obj/structure/innocent_web/attack_hand()
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_web/attackby(obj/item, /mob/user, params)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_web/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+	qdel(src)
+
+/obj/structure/innocent_web/Crossed(atom/movable/AM)
+	..()
+	if(isliving(AM))
+		var/mob/living/carbon/human/L = AM
+		lucky_escape = ( L.STALUC * 4 )
+		L.Immobilize(5)
+		if(L.m_intent == MOVE_INTENT_WALK)
+			L.Immobilize(10)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		if(L.m_intent == MOVE_INTENT_RUN)
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(20)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
+		else
+			to_chat(L, "<span class='warning'>I'm stuck in the web!</span>")
+			L.Immobilize(5)
+			if(prob(lucky_escape))
+				to_chat(L, "<span class='warning'>The flimsy web breaks.</span>")
+				qdel(src)
+			else
+				playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 120)
+				new /mob/living/simple_animal/hostile/retaliate/rogue/spider/colony (get_turf(src))
+				qdel(src)
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -373,7 +587,7 @@
 			alpha = 180
 			qdel(I)
 	else
-		return ..()	
+		return ..()
 
 
 /*	..................   NOC Device (Fixed scrying ball)   ................... */
@@ -460,129 +674,85 @@
 	.  = ..()
 	icon_state = "bathtile_pool_mid"
 
-/*	..................   Wall decorations   ................... */
-/obj/structure/fluff/walldeco/bath // suggestive stonework
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "bath1"
-	pixel_x = -32
-	alpha = 210
-
-/obj/structure/fluff/walldeco/bath/two
-	icon_state = "bath2"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/three
-	icon_state = "bath3"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/four
-	icon_state = "bath4"
-	pixel_y = 32
-	pixel_x = 0
-
-/obj/structure/fluff/walldeco/bath/five
-	icon_state = "bath5"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/six
-	icon_state = "bath6"
-	pixel_x = -29
-
-/obj/structure/fluff/walldeco/bath/seven
-	icon_state = "bath7"
-	pixel_x = 32
-
-/obj/structure/fluff/walldeco/bath/gents
-	icon_state = "gents"
-	pixel_x = 0
-	pixel_y = 32
-
-/obj/structure/fluff/walldeco/bath/ladies
-	icon_state = "ladies"
-	pixel_x = 0
-	pixel_y = 32
-
-/obj/structure/fluff/walldeco/bath/wallrope
-	icon_state = "wallrope"
-	layer = WALL_OBJ_LAYER+0.1
-	pixel_x = 0
-	pixel_y = 0
-	color = "#d66262"
 
 /obj/effect/decal/shadow_floor
 	name = ""
 	desc = ""
-	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon = 'icons/roguetown/misc/decoration.dmi'
 	icon_state = "shadow_floor"
 	mouse_opacity = 0
 
 /obj/effect/decal/shadow_floor/corner
 	icon_state = "shad_floorcorn"
 
-/obj/structure/fluff/walldeco/bath/wallpipes
-	icon_state = "wallpipe"
-	pixel_x = 0
-	pixel_y = 32
+/obj/effect/decal/miasma
+	name = ""
+	desc = ""
+	icon = 'icons/roguetown/mob/rotten.dmi'
+	icon_state = "deadite"
+	mouse_opacity = 0
+
+/obj/effect/decal/remains/human/old
+	name = "remains"
+	color = "#d6b3a5"
+
+/obj/effect/decal/remains/human/old/small
+	icon_state = "remainslarva"
 
 
-/obj/structure/fluff/walldeco/bath/random
-	icon_state = "bath"
-	pixel_y = 32
-/obj/structure/fluff/walldeco/bath/random/Initialize()
-	. = ..()
-	if(icon_state == "bath")
-		icon_state = "bath[rand(1,8)]"
-
-/obj/structure/fluff/walldeco/vinez // overlay vines for more flexibile mapping
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "vinez"
-
-/obj/structure/fluff/walldeco/vinez/l
-	pixel_x = -32
-/obj/structure/fluff/walldeco/vinez/r
-	pixel_x = 32
-
-/obj/structure/fluff/walldeco/vinez/offset
-	icon_state = "vinez"
-	pixel_y = 32
+/obj/structure/fluff/shipssprote
+	name = ""
+	desc = ""
+	icon = 'icons/obj/atmospherics/pipes/disposal.dmi'
+	icon_state = "pipe"
+	mouse_opacity = 0
+	color = "#5a4621"
+	pixel_y = -16
 
 
-/*	..................   Red brick Walls   ................... */
-/turf/closed/wall/mineral/rogue/stonebrick/reddish
-	color = "#e0b7af"
+// ======================================================================
+/*	..................   Innocent Bush   ................... */
+/obj/structure/innocent_bush
+	name = "bush"
+	desc = "These large bushes are known to be well-liked by silkworms who make their nests in their dark depths."
+	icon = 'icons/roguetown/mob/monster/Trolls.dmi'
+	icon_state = "Trolls"
+	pixel_x = -16
+	layer = ABOVE_ALL_MOB_LAYER
+	max_integrity = 500
+	density = TRUE
 
-/turf/closed/wall/mineral/rogue/decostone/fluffstone/reddish
-	color = "#fbc5bc"
+/obj/structure/innocent_bush/attack_hand(mob/living/carbon/human/user)
+//	playsound(src.loc, "plantcross", 80, FALSE, -1)
+//	user.visible_message(span_noticesmall("[user] searches through [src]."))
+//	shake_camera(user, 2, 2)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/turf/closed/wall/mineral/rogue/decostone/cand/reddish
-	color = "#fbd2cb"
+/obj/structure/innocent_bush/attackby(obj/item, /mob/living/user, params)
+//	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+//	shake_camera(user, 2, 2)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/obj/structure/stairs/stone/reddish
-	color = "#ffddd7"
+/obj/structure/innocent_bush/Bumped(atom/movable/AM)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
+/obj/structure/innocent_bush/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	playsound(src.loc, "plantcross", 80, FALSE, -1)
+	sleep(4)
+	playsound(src, pick('sound/misc/jumpscare (1).ogg','sound/misc/jumpscare (2).ogg','sound/misc/jumpscare (3).ogg','sound/misc/jumpscare (4).ogg'), 100)
+	new /mob/living/simple_animal/hostile/retaliate/rogue/trollbog (get_turf(src))
+	qdel(src)
 
-/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
-	name = "candle lamp"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "candle"
-	base_state = "candle"
-	layer = WALL_OBJ_LAYER+0.1
-	light_power = 0.9
-	light_range = 6
 
 
 /*	..................   Misc   ................... */
-/obj/structure/bars/alt
-	icon_state = "bars_alt"
-	plane = -3
-	layer = WALL_OBJ_LAYER+0.05
-
-/obj/item/roguebin/alt
-	icon_state = "washbin2"
-
-/obj/structure/mirror/alt
-	icon_state = "mirror_alt"
-
 /obj/item/roguestatue/silver/gnome
 	name = "petrified gnome"
 	desc = "A literal gnome, turned to stone mid-step and put on a matching stone platform. Rather unsettling."
@@ -590,310 +760,186 @@
 	color = "#617163"
 
 
-
-/*	..................   The Drunken Saiga   ................... */
-/obj/structure/fluff/walldeco/innsign/saiga
-	name = "The Drunken Saiga"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "bar_saiga"
-	plane = -1
-	pixel_x = 3
-	pixel_y = 16
-
-/obj/structure/fluff/walldeco/innsign/trophy
-	name = "saiga trophy"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "saiga_trophy"
-	pixel_y = 32
-
-/obj/item/clothing/suit/roguetown/armor/leather/vest/innkeep
-	name = "padded vest"
-	desc = "Dyed green, belongs to the innkeeper."
-	icon_state = "workervest"
-	color = "#638b45"
-
-/turf/open/floor/rogue/tile/checker_green
-	icon_state = "tile"
-	color = "#94df5b"
+// ====================		NEW WEAPONS		==========================
+/obj/item/rogueweapon/sword/scimitar/falx
+	name = "falx"
+	desc = "Ancient curved blade for chopping and little else."
+	icon = 'icons/roguetown/weapons/custom.dmi'
+	icon_state = "falx"
+	max_blade_int = 200
+	max_integrity = INTEGRITY_STANDARD
 
 
-
-/*	..................   Areas to play with the music a bit   ................... */
-/area/rogue/indoors/town/bath/redhouse // lets try something different
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
-
-/area/rogue/outdoors/exposed/bath/redhouse
-	droning_sound = 'modular/Mapping/sound/Fulminate.ogg'
-
-/area/rogue/indoors/town/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
-
-/area/rogue/outdoors/exposed/tavern/saiga
-	droning_sound = 'modular/Mapping/sound/Folia1490.ogg'
-	droning_sound_night = 'modular/Mapping/sound/LeTourdion.ogg'
-
-
-/*	..................   Traveltiles   ................... */ // these are the ones on centcomm, where the actual lair is
-/obj/structure/fluff/traveltile/bandit_lair
-	aportalid = "banditin"
-	aportalgoesto = "banditexit"
-
-/obj/structure/fluff/traveltile/vampire_lair
-	aportalid = "vampin"
-	aportalgoesto = "vampexit"
-
-/obj/structure/fluff/traveltile/inhumen_lair
-	aportalid = "inhumenin"
-	aportalgoesto = "inhumenexit"
-
-
-/obj/structure/fluff/traveltile/to_inhumen_tribe
-	name = "to the Deep Bog"
-	aportalid = "inhumenexit"
-	aportalgoesto = "inhumenin"
-
-/* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
-/*	..................   More chairs   ................... */
-/obj/structure/chair/wood/rogue/chair_noble
-	name = "fine chair"
-	icon_state = "chair_green"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	item_chair = /obj/item/chair/rogue/chair_nobles
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-/obj/item/chair/rogue/chair_nobles
-	icon_state = "chair_green"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble
-
-/obj/structure/chair/wood/rogue/chair_noble/purple
-	icon_state = "chair_purple"
-	item_chair = /obj/item/chair/rogue/chair_nobles/purple
-/obj/item/chair/rogue/chair_nobles/purple
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
-
-/obj/structure/chair/wood/rogue/chair_noble/red
-	icon_state = "chair_red"
-	item_chair = /obj/item/chair/rogue/chair_nobles/red
-/obj/item/chair/rogue/chair_nobles/red
-	icon_state = "chair_purple"
-	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
-
-/obj/structure/chair/bench/couch/redleft
-	icon_state = "redcouch_alt"
-/obj/structure/chair/bench/couch/redright
-	icon_state = "redcouch2_alt"
-
-
-/*	..................   Lights   ................... */
-/obj/item/candle/yellow/lit/infinite
-	light_power = 1
-	light_range = 4
-	start_lit = TRUE
-	infinite = TRUE
-	icon_state = "candle1_lit"
-	anchored = TRUE
-
-/obj/item/candle/yellow/lit/infinite/strong
-	light_power = 2
-	light_range = 4
-	pixel_x = 4
-
-/obj/machinery/light/rogue/campfire/longlived
-	fueluse = 180 MINUTES
-
-/obj/machinery/light/rogue/wallfire/candle/weak
-	light_power = 0.9
-	light_range = 6
-/obj/machinery/light/rogue/wallfire/candle/weak/l
-	pixel_x = -32
-	pixel_y = 0
-/obj/machinery/light/rogue/wallfire/candle/weak/r
-	pixel_x = 32
-	pixel_y = 0
-
-/*	..................   More tables   ................... */
-/obj/structure/table/wood/reinf_long
-    icon_state = "tablewood_reinf"
-
-/obj/structure/table/wood/plain_alt
-    icon_state = "tablewood_plain"
-
-/obj/structure/table/wood/large_new
-    icon_state = "alt_largetable_mid"
-/obj/structure/table/wood/large/corner_new
-    icon_state = "alt_largetable"
-
-/obj/structure/table/wood/reinforced_alter
-    icon_state = "tablewood_alt"
-
-/obj/structure/table/wood/nice/decorated
-	icon_state = "tablefine_alt"
-
-/obj/structure/table/wood/nice/decorated_alt
-	icon_state = "tablefine_alt2"
-
-
-/area/rogue/indoors/bandit_lair
-	name = "lair (Bandits)"
-
-/area/rogue/indoors/vampire_manor
-	name = "lair (Vampire Lord)"
-
-/area/rogue/outdoors/bog/inhumen_camp
-	name = "lair (Inhumen)"
-	droning_sound = 'sound/music/area/decap.ogg'
-	first_time_text = "THE DEEP BOG"
-
-// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
-/obj/structure/bed/rogue/bear
-	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
-	icon = 'icons/turf/floors/bear.dmi'
-	icon_state = "bear"
-	pixel_x = -16
-	pixel_y = -27
-
-/obj/structure/fluff/walldeco/skullspike // for ground really
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "skullspike"
-	plane = -1
-	layer = ABOVE_MOB_LAYER
-	pixel_x = 8
-	pixel_y = 24
-
-/*	..................   Floors   ................... */
-/turf/open/floor/rogue/ruinedwood/darker
-	color = "#d9c9b0"
-/turf/open/floor/rogue/ruinedwood/turned/darker
-	color = "#d9c9b0"
-
-/turf/open/floor/rogue/tile/kitchen
-	icon_state = "tavern"
-
-
-/obj/structure/roguetent/preopen
-	density = FALSE
-
-/obj/structure/fluff/clock/dense
-	density = TRUE
-
-
-/obj/structure/closet/crate/chest/crate
-	name = "crate"
-	base_icon_state = "woodchest"
-	icon_state = "woodchest"
-
-/obj/structure/closet/crate/chest/wicker
-	name = "wicker basket"
-	desc = "Fibers interwoven to make a cheap storage bin."
-	base_icon_state = "wicker"
-	icon_state = "wicker"
-	open_sound = 'sound/items/book_open.ogg'
-	open_sound = 'sound/items/book_close.ogg'
-	close_sound = 'sound/items/book_close.ogg'
-
-/obj/structure/closet/crate/chest/neu
-	name = "sturdy oak chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-
-/obj/structure/closet/crate/chest/neu_iron
-	name = "reinforced chest"
-	icon_state = "chestiron_neu"
-	base_icon_state = "chestiron_neu"
-
-/obj/structure/closet/crate/chest/neu_fancy
-	name = "fancy chest"
-	icon_state = "chestfancy_neu"
-	base_icon_state = "chestfancy_neu"
-
-/obj/structure/closet/crate/chest/old_crate
-	name = "old crate"
-	base_icon_state = "woodchestalt"
-	icon_state = "woodchestalt"
-
-/obj/structure/closet/crate/drawer/random
-	icon_state = "drawer1"
-	base_icon_state = "drawer1"
-	pixel_y = 8
-
-/obj/structure/closet/crate/drawer/random/Initialize()
+/obj/item/rogueweapon/sword/scimitar/messer/neu
+	icon = 'icons/roguetown/weapons/custom.dmi'
+/obj/item/rogueweapon/sword/scimitar/messer/neu/getonmobprop(tag)
 	. = ..()
-	if(icon_state == "drawer1")
-		base_icon_state = "drawer[rand(1,4)]"
-		icon_state = "[base_icon_state]"
-	else
-		base_icon_state = "drawer1"
-		pixel_y = 8
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.5,"sx" = -10,"sy" = -8,"nx" = 11,"ny" = -8,"wx" = -7,"wy" = -6,"ex" = 6,"ey" = -7,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 90,"sturn" = -80,"wturn" = -60,"eturn" = 71,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 3,"sy" = 3,"nx" = -1,"ny" = 4,"wx" = -7,"wy" = 3,"ex" = 7,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 10,"wturn" = 0,"eturn" = 15,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.5,"sx" = -4,"sy" = -6,"nx" = 5,"ny" = -6,"wx" = 0,"wy" = -6,"ex" = -1,"ey" = -6,"nturn" = 100,"sturn" = 156,"wturn" = 90,"eturn" = 180,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/structure/mineral_door/wood/deadbolt/shutter
-	name = "serving hatch"
-	desc = "Can be locked from the inside."
-	icon_state = "serving"
-	base_state = "serving"
-	max_integrity = 250
-	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
-	dir = NORTH
-	locked = TRUE
-
-/obj/structure/closet/crate/chest/wicker
-	name = "wicker basket"
-	desc = "Fibers interwoven to make a cheap storage bin."
-	base_icon_state = "wicker"
-	icon_state = "wicker"
-	open_sound = 'sound/items/book_open.ogg'
-	open_sound = 'sound/items/book_close.ogg'
-	close_sound = 'sound/items/book_close.ogg'
-
-/obj/structure/closet/crate/chest/neu
-	name = "sturdy oak chest"
-	icon_state = "chest_neu"
-	base_icon_state = "chest_neu"
-
-/obj/structure/closet/crate/chest/neu_iron
-	name = "reinforced chest"
-	icon_state = "chestiron_neu"
-	base_icon_state = "chestiron_neu"
-
-/obj/structure/closet/crate/chest/neu_fancy
-	name = "fancy chest"
-	icon_state = "chestfancy_neu"
-	base_icon_state = "chestfancy_neu"
-
-/obj/structure/closet/crate/chest/old_crate
-	name = "old crate"
-	base_icon_state = "woodchestalt"
-	icon_state = "woodchestalt"
-
-/obj/structure/closet/crate/drawer/random
-	icon_state = "drawer1"
-	base_icon_state = "drawer1"
-	pixel_y = 8
-
-/obj/structure/closet/crate/drawer/random/Initialize()
+/obj/item/rogueweapon/pick/paxe/neu
+	icon = 'icons/roguetown/weapons/custom.dmi'
+/obj/item/rogueweapon/pick/paxe/neu/getonmobprop(tag)
 	. = ..()
-	if(icon_state == "drawer1")
-		base_icon_state = "drawer[rand(1,4)]"
-		icon_state = "[base_icon_state]"
-	else
-		base_icon_state = "drawer1"
-		pixel_y = 8
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.7,"sx" = -9,"sy" = 0,"nx" = 12,"ny" = 1,"wx" = -6,"wy" = 0,"ex" = 5,"ey" = -1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.4,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
-/obj/structure/mineral_door/wood/deadbolt/shutter
-	name = "serving hatch"
-	desc = "Can be locked from the inside."
-	icon_state = "serving"
-	base_state = "serving"
-	max_integrity = 250
-	over_state = "servingopen"
-	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
-	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
-	dir = NORTH
-	locked = TRUE
-*/
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/polearm/halberd/bardiche/woodcutter/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 0,"nx" = 7,"ny" = 2,"wx" = -2,"wy" = 0,"ex" = 1,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -4,"ny" = -2,"wx" = -3,"wy" = -2,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/woodstaff/aries/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+/obj/item/rogueweapon/polearm/woodstaff/aries/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = -1,"nx" = 8,"ny" = 0,"wx" = -4,"wy" = 0,"ex" = 2,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 32,"eturn" = -23,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 4,"sy" = -3,"nx" = -3,"ny" = -2,"wx" = -3,"wy" = -1,"ex" = 3,"ey" = -3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/obj/item/rogueweapon/mace/goden/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/mace/goden/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -6,"sy" = 1,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -28,"sturn" = 27,"wturn" = 30,"eturn" = -20,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+
+/obj/item/rogueweapon/polearm/halberd/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+/obj/item/rogueweapon/polearm/halberd/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 2,"nx" = 7,"ny" = 3,"wx" = -2,"wy" = 1,"ex" = 1,"ey" = 1,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+/obj/item/rogueweapon/polearm/spear/billhook/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+/obj/item/rogueweapon/polearm/spear/billhook/neu/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -7,"sy" = 4,"nx" = 7,"ny" = 5,"wx" = -2,"wy" = 3,"ex" = 1,"ey" = 3,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -38,"sturn" = 37,"wturn" = 30,"eturn" = -30,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("wielded")
+				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
+
+/obj/item/rogueweapon/polearm/woodstaff/neu
+	icon = 'icons/roguetown/weapons/custom_64.dmi'
+	slot_flags = FALSE
+	dropshrink = 0.9
+
+
+
+
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/colony // colony spider
+	name = "hairy spider"
+	desc = "The forest canopies hides more than leaves...These creachers make honey from flowers and spin silk from their abdomen, when not consuming prey."
+	icon_state = "spider"
+	icon_living = "spider"
+	icon_dead = "spider-dead"
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 1,
+							/obj/item/natural/silk = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 1,
+							/obj/item/natural/silk = 2)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/spider = 2,
+							/obj/item/reagent_containers/food/snacks/rogue/honey = 2,
+							/obj/item/natural/silk = 3)
+
+
+// ==============================================================
+/*	..................   Various mapping aides   ................... */
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken
+	desc = "A long shirt of maille, this one is made for a short man it seems."
+/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/broken/Initialize()
+	. = ..()
+	obj_break()
+
+/obj/item/clothing/suit/roguetown/armor/chainmail/battered
+	desc = "A good quality haubergon, but weakened by many blows."
+	max_integrity = INTEGRITY_STANDARD
+
+/obj/structure/roguethrone/statues
+	icon = 'modular/Mapping/icons/96x96.dmi'
+
+/*	..................   For premapped blood skipping timers, diseases etc   ................... */
+/obj/effect/decal/cleanable/blood_neu
+	name = "blood"
+	desc = ""
+	icon = 'icons/effects/blood.dmi'
+	icon_state = "floor1"
+	alpha = 200
+	nomouseover = TRUE
+	nomouseover = TRUE
+	var/wash_precent = 0
+	COOLDOWN_DECLARE(wash_cooldown)
+
+/obj/effect/decal/cleanable/blood_neu/weather_act_on(weather_trait, severity)
+	if(weather_trait != PARTICLEWEATHER_RAIN || !COOLDOWN_FINISHED(src, wash_cooldown))
+		return
+	wash_precent += min(10, severity / 4)
+	alpha = 255 *((100 - wash_precent) * 0.01)
+	if(wash_precent >= 100)
+		qdel(src)
+	COOLDOWN_START(src, wash_cooldown, 15 SECONDS)
+
+/obj/effect/decal/cleanable/blood_neu/Initialize(mapload)
+	. = ..()
+	pixel_x = rand(-5,5)
+	pixel_y = rand(5,5)
+	GLOB.weather_act_upon_list += src
+
+/obj/effect/decal/cleanable/blood_neu/Destroy()
+	GLOB.weather_act_upon_list -= src
+	return ..()
+
+/obj/effect/decal/cleanable/blood_neu/random/Initialize(mapload)
+	. = ..()
+	icon_state = pick("floor1", "floor2", "floor3", "floor4", "floor5", "floor6", "splatter1", "splatter2", "splatter3", "splatter4", "splatter5", "splatter6", "gibl1", "gibl2", "gibl3", "gibl4", "gibl5")
+
+/obj/effect/decal/cleanable/blood_neu/tracks
+	icon_state = "tracks"
+

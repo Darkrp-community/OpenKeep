@@ -14,7 +14,7 @@
 	var/needed_item_text // Name of the object we need to slap on the anvil to proceed to the next step.
 	var/progress = 0 // 0 to 100%, percentage of completion on this step of crafting (or overall if no extra items required)
 	var/i_type // Category of crafted item. Will determine how it shows on the crafting menu window.
-	var/recipe_name // This is what will be shown when you 
+	var/recipe_name // This is what will be shown when you
 	var/bar_health = 100 // Current material bar health, reduced by failures. At 0 HP it is deleted.
 	var/numberofhits = 0 // Increased every time you hit the bar, the more you have to hit the bar the less quality of the product.
 	var/numberofbreakthroughs = 0 // How many good hits we got on the metal, advances recipes 50% faster, reduces number of hits total, and restores bar_health
@@ -62,7 +62,7 @@
 		qdel(I)
 		additional_items -= needed_item
 		progress = 0
-	
+
 	if(!moveup)
 		if(!prob(proab)) // Roll again, this time negatively, for consequences.
 			user.visible_message("<span class='warning'>[user] ruins the bar!</span>")
@@ -111,7 +111,7 @@
 			user.visible_message("<span class='deadsay'>[user] deftly strikes the bar!</span>")
 			if(bar_health < 100)
 				bar_health += 20 // Correcting the mistakes, ironing the kinks. Low chance, so rewarding.
-		else		
+		else
 			user.visible_message("<span class='info'>[user] strikes the bar!</span>")
 		return TRUE
 
@@ -153,7 +153,7 @@
 		if(BLACKSMITH_LEVEL_LEGENDARY to BLACKSMITH_LEVEL_MAX)
 			I.name = "masterwork [I.name]"
 			modifier = 1.3
-	
+
 	if(!modifier) // Sanity.
 		return
 	// Finally, modify the smithed item's stats based on modifier multiplier
@@ -174,7 +174,7 @@
 		W.armor_penetration *= modifier
 		W.wdefense *= modifier
 		// Make (ONLY) axes (and the Pick-axe) better at woodcutting too
-		if(istype(I, /obj/item/rogueweapon/woodcut) || istype(I, /obj/item/rogueweapon/pick/paxe))
+		if(istype(I, /obj/item/rogueweapon/axe/iron) || istype(I, /obj/item/rogueweapon/pick/paxe))
 			var/obj/item/rogueweapon/A = I
 			A.axe_cut += (A.force * modifier) * 0.5 // Multiply the axe's damage by the modifier, and add half of this as axe_cut
 		// If it's a pick, make it better at its job

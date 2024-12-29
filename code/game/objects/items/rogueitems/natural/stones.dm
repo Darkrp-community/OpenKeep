@@ -2,7 +2,7 @@
 
 /obj/item/natural/stone
 	name = "stone"
-	desc = "A piece of rough ground stone."
+	desc = "A piece of rough ground stone. It could be chiseled into a shape more conducive to construction. "
 	icon_state = "stone1"
 	gripped_intents = null
 	dropshrink = 0.75
@@ -17,6 +17,11 @@
 	icon_state = "stone[rand(1,4)]"
 	..()
 
+/obj/item/natural/stone/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if(HAS_TRAIT(user, TRAIT_ROTMAN))
+		to_chat(user, span_info("The [src] slips through dead fingers..."))
+		user.dropItemToGround(src, TRUE)
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -126,3 +131,5 @@
 /obj/item/natural/rock/copper
 	mineralType = /obj/item/rogueore/copper
 
+/obj/item/natural/rock/gemerald
+	mineralType = /obj/item/natural/rock/gemerald

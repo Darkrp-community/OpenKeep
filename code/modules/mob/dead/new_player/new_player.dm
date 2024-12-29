@@ -467,7 +467,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 
 	SSticker.mode.make_antag_chance(humanc)
 	rank = humanc.mind.assigned_role
-	
+
 	testing("basedtest 2")
 	//creates the human and transfers vars and mind
 	testing("basedtest 3")
@@ -529,7 +529,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 		SSquirks.AssignQuirks(humanc, humanc.client, TRUE)*/
 	if(humanc)
 		var/fakekey = character.ckey
-		if(ckey in GLOB.anonymize)
+		if(character.ckey in GLOB.anonymize)
 			fakekey = get_fake_key(character.ckey)
 		GLOB.character_list[character.mobid] = "[fakekey] was [character.real_name] ([rank])<BR>"
 		GLOB.character_ckey_list[character.real_name] = character.ckey
@@ -565,11 +565,12 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 
 	var/list/omegalist = list()
 	omegalist += list(GLOB.noble_positions)
-	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.church_positions)
+	omegalist += list(GLOB.towner_positions)
+	omegalist += list(GLOB.garrison_positions)
 	omegalist += list(GLOB.peasant_positions)
 	omegalist += list(GLOB.apprentices_positions)
-	omegalist += list(GLOB.serf_positions)
+	omegalist += list(GLOB.allmig_positions)
 
 	if(istype(SSticker.mode, /datum/game_mode/chaosmode))
 		var/datum/game_mode/chaosmode/C = SSticker.mode
@@ -600,17 +601,19 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.txt"))
 			var/cat_name = ""
 			switch (SSjob.name_occupations[category[1]].department_flag)
 				if (NOBLEMEN)
-					cat_name = "Nobles"
+					cat_name = "Court"
 				if (GARRISON)
 					cat_name = "Garrison"
-				if (SERFS)
-					cat_name = "Subjects"
-				if (CHURCHMEN)
-					cat_name = "Churchmen"
+				if (TOWNERS)
+					cat_name = "Towners"
+				if (TEMPLE)
+					cat_name = "Temple"
 				if (PEASANTS)
 					cat_name = "Peasants"
 				if (APPRENTICES)
 					cat_name = "Apprentices"
+				if (OUTSIDERS)
+					cat_name = "Outsiders"
 
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"

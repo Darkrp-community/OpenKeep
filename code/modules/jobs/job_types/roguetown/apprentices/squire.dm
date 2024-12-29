@@ -27,20 +27,14 @@
 /datum/outfit/job/roguetown/squire/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/storage/belt/rogue/pouch
-	beltl = /obj/item/keyring/guard
+	beltl = /obj/item/keyring/mguard
 	backr = /obj/item/storage/backpack/rogue/satchel
 	pants = /obj/item/clothing/under/roguetown/tights
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	switch(pick(1,2,3))
-		if (1)
-			beltr = /obj/item/rogueweapon/mace/wsword
-		if (2)
-			beltr = /obj/item/rogueweapon/mace/copperbludgeon
-		if (3)
-			beltr = /obj/item/rogueweapon/copperdagger
+	beltr = /obj/item/rogueweapon/sword/iron
 
 /datum/outfit/job/roguetown/squire/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

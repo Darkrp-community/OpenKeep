@@ -169,11 +169,6 @@
 	stressadd = 5
 	desc = "<span class='red'>I was violated.</span>"
 
-/datum/stressevent/cumcorpse
-	timer = 1 MINUTES
-	stressadd = 20
-	desc = "<span class='red'>What have I done?</span>"
-
 /datum/stressevent/blueb
 	timer = 1 MINUTES
 	stressadd = 2
@@ -293,3 +288,8 @@
 	timer = 3 MINUTES
 	stressadd = 6
 	desc = "<span class='red'>I slept on the floor! What am I?! An animal?!</span>"
+
+/datum/stressevent/sadfate
+	timer = 60 MINUTES
+	stressadd = 1
+	desc = "<span class='red'>I feel useless...</span>"

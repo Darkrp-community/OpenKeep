@@ -79,8 +79,6 @@
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	prevent_crits = list(BCLASS_LASHING, BCLASS_BITE, BCLASS_TWIST, BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_STAB)
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
 	block2add = FOV_BEHIND
@@ -88,7 +86,23 @@
 	experimental_onhip = TRUE
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
+	clothing_flags = CANT_SLEEP_IN
+	
+	armor = ARMOR_PLATE_BAD
+	prevent_crits = CUT_AND_MINOR_CRITS //No stab, blunt or chop crit flags. If a chopping weapon can get through 70 armor, it's probably carrying enough force to mess up your face behind a flimsy mask.
+	max_integrity = INTEGRITY_STANDARD //Flimsier than a proper visor/helmet.
 
+/obj/item/clothing/mask/rogue/shepherd/clothmask
+	name = "cloth mask"
+	icon_state = "clothm"
+	desc = "A simple cloth mask that suppresses bad odors, or offers minor protection when doing dirty work such as mining or gravedigging."
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	body_parts_covered = NECK|MOUTH
+	slot_flags = ITEM_SLOT_MASK|ITEM_SLOT_HIP
+	adjustable = CAN_CADJUST
+	resistance_flags = FLAMMABLE
+	toggle_icon_state = TRUE
+	experimental_onhip = TRUE
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/Initialize()
 	. = ..()
@@ -105,9 +119,11 @@
 /obj/item/clothing/mask/rogue/facemask/steel
 	name = "steel mask"
 	icon_state = "smask"
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
-	max_integrity = 300
+	
+	armor = ARMOR_PLATE_BAD //Still thin.
+	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
+	max_integrity = INTEGRITY_STRONG //250 Integrity, added chop protection. Still worse than a proper visored helmet.
 
 /obj/item/clothing/mask/rogue/facemask/shadowfacemask
 	name = "anthraxi war mask"
@@ -179,11 +195,9 @@
 	name = "copper mask"
 	icon_state = "cmask"
 	desc = "A heavy copper mask that conceals and protects the face, though not very effectively."
-	max_integrity = 100
 	blocksound = PLATEHIT
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	flags_inv = HIDEFACE
 	body_parts_covered = FACE
 	block2add = FOV_BEHIND
@@ -192,3 +206,22 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
+	
+	max_integrity = INTEGRITY_WORST //Really flimsy, still good for a few blows.
+
+//................ Druids Mask ............... //
+/obj/item/clothing/mask/rogue/druid
+	name = "druids mask"
+	desc = "Roots from a old oak-tree, shaped according to the wishes of Tree-father."
+	icon = 'icons/roguetown/clothing/head.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	icon_state = "dendormask"
+	resistance_flags = FIRE_PROOF
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	block2add = FOV_BEHIND
+	slot_flags = ITEM_SLOT_MASK
+	experimental_onhip = TRUE
+
+	armor = ARMOR_WEAK
+	prevent_crits = CUT_AND_MINOR_CRITS

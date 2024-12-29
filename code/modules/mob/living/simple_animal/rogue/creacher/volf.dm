@@ -19,17 +19,16 @@
 						/obj/item/natural/fur/volf = 1,
 						/obj/item/alch/bone = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 2,
 						/obj/item/alch/sinew = 2,
 						/obj/item/alch/bone = 1)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 2,
-						/obj/item/reagent_containers/food/snacks/fat = 1,
 						/obj/item/natural/hide = 1,
 						/obj/item/natural/fur/volf = 3,
 						/obj/item/alch/sinew = 2,
-						/obj/item/alch/bone = 1)
+						/obj/item/alch/bone = 1,
+						/obj/item/natural/head/volf = 1)
 
 	health = VOLF_HEALTH
 	maxHealth = VOLF_HEALTH
@@ -37,7 +36,7 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/bite)
+	base_intents = list(/datum/intent/simple/critterbite)
 	attack_sound = list('sound/vo/mobs/vw/attack (1).ogg','sound/vo/mobs/vw/attack (2).ogg','sound/vo/mobs/vw/attack (3).ogg','sound/vo/mobs/vw/attack (4).ogg')
 	melee_damage_lower = 15
 	melee_damage_upper = 20
@@ -46,6 +45,7 @@
 	STASTR = 6
 	STASPD = 12
 
+	simple_detect_bonus = 20
 	retreat_distance = 0
 	minimum_distance = 0
 	deaggroprob = 0
@@ -54,11 +54,16 @@
 	del_on_deaggro = 999 SECONDS
 	retreat_health = 0.4
 	food = 0
-	dodgetime = 17
+	dodgetime = 2 SECONDS
 	aggressive = 1
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/wolf
 	body_eater = TRUE
+
+	///this mob was updated to new ai
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+	ai_controller = /datum/ai_controller/volf
 
 /obj/effect/decal/remains/wolf
 	name = "remains"
@@ -68,6 +73,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/Initialize()
 	. = ..()
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
+
 	gender = MALE
 	if(prob(33))
 		gender = FEMALE
@@ -113,6 +120,12 @@
 		Retaliate()
 		GiveTarget(pulledby)
 
+
+/mob/living/simple_animal/hostile/retaliate/rogue/wolf/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
+
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf/simple_limb_hit(zone)
 	if(!zone)
 		return ""
@@ -154,4 +167,3 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
-

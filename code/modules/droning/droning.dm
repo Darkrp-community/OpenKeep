@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(droning)
 	new_droning |= area_entered.droning_sound_current
 
 	if(HAS_TRAIT(entering.mob, TRAIT_DRUQK))
-		new_droning = list('sound/music/spice.ogg', 100)
+		new_droning = list('sound/music/spice.ogg', 'sound/music/spice2.ogg', 100)
 
 	//Same ambience, don't bother
 	if(last_droning ~= new_droning)

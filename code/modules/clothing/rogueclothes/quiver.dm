@@ -77,14 +77,14 @@
 		icon_state = "quiver0"
 
 /obj/item/quiver/arrows/Initialize()
-	..()
+	. = ..()
 	for(var/i in 1 to max_storage)
 		var/obj/item/ammo_casing/caseless/rogue/arrow/A = new()
 		ammo_list += A
 	update_icon()
 
 /obj/item/quiver/bolts/Initialize()
-	..()
+	. = ..()
 	for(var/i in 1 to max_storage)
 		var/obj/item/ammo_casing/caseless/rogue/bolt/A = new()
 		ammo_list += A

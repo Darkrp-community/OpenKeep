@@ -102,7 +102,6 @@
 			if(user)
 				user.visible_message("<span class='warning'>[user] saws [src] open and pulls out a brain!</span>", "<span class='notice'>I saw [src] open and pull out a brain.</span>")
 			if(brainmob)
-				brainmob.container = null
 				brainmob.forceMove(brain)
 				brain.brainmob = brainmob
 				brainmob = null
@@ -187,7 +186,7 @@
 		I.pixel_y = px_y
 	add_overlay(standing)
 
-/obj/item/bodypart/head/get_limb_icon(dropped)
+/obj/item/bodypart/head/get_limb_icon(dropped, hideaux = FALSE)
 	cut_overlays()
 	. = ..()
 	if(dropped) //certain overlays only appear when the limb is being detached from its owner.
@@ -205,13 +204,7 @@
 			//Applies the debrained overlay if there is no brain
 			if(!brain)
 				var/image/debrain_overlay = image(layer = -HAIR_LAYER, dir = SOUTH)
-				if(animal_origin == ALIEN_BODYPART)
-					debrain_overlay.icon = 'icons/mob/animal_parts.dmi'
-					debrain_overlay.icon_state = "debrained_alien"
-				else if(animal_origin == LARVA_BODYPART)
-					debrain_overlay.icon = 'icons/mob/animal_parts.dmi'
-					debrain_overlay.icon_state = "debrained_larva"
-				else if(!(NOBLOOD in species_flags_list))
+				if(!(NOBLOOD in species_flags_list))
 					debrain_overlay.icon = 'icons/mob/human_face.dmi'
 					debrain_overlay.icon_state = "debrained"
 				. += debrain_overlay
@@ -244,25 +237,7 @@
 	icon_state = "default_monkey_head"
 	animal_origin = MONKEY_BODYPART
 
-/obj/item/bodypart/head/alien
-	icon = 'icons/mob/animal_parts.dmi'
-	icon_state = "alien_head"
-	px_x = 0
-	px_y = 0
-	dismemberable = 0
-	max_damage = 500
-	animal_origin = ALIEN_BODYPART
-
 /obj/item/bodypart/head/devil
 	dismemberable = 0
 	max_damage = 5000
 	animal_origin = DEVIL_BODYPART
-
-/obj/item/bodypart/head/larva
-	icon = 'icons/mob/animal_parts.dmi'
-	icon_state = "larva_head"
-	px_x = 0
-	px_y = 0
-	dismemberable = 0
-	max_damage = 50
-	animal_origin = LARVA_BODYPART

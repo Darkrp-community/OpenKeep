@@ -78,7 +78,7 @@
 	seed_identity = "apple seeds"
 	plant_def_type = /datum/plant_def/apple
 
-/obj/item/neuFarm/seed/pipeweed
+/obj/item/neuFarm/seed/westleach
 	seed_identity = "westleach leaf seeds"
 	plant_def_type = /datum/plant_def/pipeweed
 
@@ -120,6 +120,10 @@
 /obj/item/neuFarm/seed/fyritius
 	seed_identity = "fyritius seeds"
 	plant_def_type = /datum/plant_def/fyritiusflower
+
+/obj/item/neuFarm/seed/poppy
+	seed_identity = "poppy seeds"
+	plant_def_type = /datum/plant_def/poppy
 
 /*
 /obj/item/neuFarm/seed/nut

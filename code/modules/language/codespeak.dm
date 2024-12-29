@@ -72,11 +72,8 @@
 	charges--
 	if(!charges)
 		var/turf/T = get_turf(src)
-		T.visible_message("<span class='warning'>The cover and contents of [src] start shifting and changing!</span>")
-
+		T.visible_message("<span class='warning'>The cover and contents of [src] puff into smoke!</span>")
 		qdel(src)
-		var/obj/item/book/manual/random/book = new(T)
-		user.put_in_active_hand(book)
 
 /obj/item/codespeak_manual/unlimited
 	name = "deluxe codespeak manual"

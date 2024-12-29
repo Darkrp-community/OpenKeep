@@ -13,13 +13,13 @@
 	if(.)
 		if(updating_canmove)
 			owner.update_mobility()
-			if(needs_update_stat || issilicon(owner))
+			if(needs_update_stat)
 				owner.update_stat()
 
 /datum/status_effect/incapacitating/on_remove()
 	if(owner)
 		owner.update_mobility()
-		if(needs_update_stat || issilicon(owner)) //silicons need stat updates in addition to normal canmove updates
+		if(needs_update_stat) //silicons need stat updates in addition to normal canmove updates
 			owner.update_stat()
 
 //STUN
@@ -145,42 +145,42 @@
 
 //STASIS
 /datum/status_effect/incapacitating/stasis
-        id = "stasis"
-        duration = -1
-        tick_interval = 10
-        alert_type = /atom/movable/screen/alert/status_effect/stasis
-        var/last_dead_time
+		id = "stasis"
+		duration = -1
+		tick_interval = 10
+		alert_type = /atom/movable/screen/alert/status_effect/stasis
+		var/last_dead_time
 
 /datum/status_effect/incapacitating/stasis/proc/update_time_of_death()
-        if(last_dead_time)
-                var/delta = world.time - last_dead_time
-                var/new_timeofdeath = owner.timeofdeath + delta
-                owner.timeofdeath = new_timeofdeath
-                owner.tod = station_time_timestamp(wtime=new_timeofdeath)
-                last_dead_time = null
-        if(owner.stat == DEAD)
-                last_dead_time = world.time
+		if(last_dead_time)
+				var/delta = world.time - last_dead_time
+				var/new_timeofdeath = owner.timeofdeath + delta
+				owner.timeofdeath = new_timeofdeath
+				owner.tod = station_time_timestamp(wtime=new_timeofdeath)
+				last_dead_time = null
+		if(owner.stat == DEAD)
+				last_dead_time = world.time
 
 /datum/status_effect/incapacitating/stasis/on_creation(mob/living/new_owner, set_duration, updating_canmove)
-        . = ..()
-        update_time_of_death()
-        owner.reagents?.end_metabolization(owner, FALSE)
+		. = ..()
+		update_time_of_death()
+		owner.reagents?.end_metabolization(owner, FALSE)
 
 /datum/status_effect/incapacitating/stasis/tick()
-        update_time_of_death()
+		update_time_of_death()
 
 /datum/status_effect/incapacitating/stasis/on_remove()
-        update_time_of_death()
-        return ..()
+		update_time_of_death()
+		return ..()
 
 /datum/status_effect/incapacitating/stasis/be_replaced()
-        update_time_of_death()
-        return ..()
+		update_time_of_death()
+		return ..()
 
 /atom/movable/screen/alert/status_effect/stasis
-        name = "Stasis"
-        desc = ""
-        icon_state = "stasis"
+		name = "Stasis"
+		desc = ""
+		icon_state = "stasis"
 
 //GOLEM GANG
 
@@ -265,19 +265,6 @@
 	owner.adjustBruteLoss(0.1)
 	owner.adjustFireLoss(0.1)
 	owner.adjustToxLoss(0.2, TRUE, TRUE)
-
-/datum/status_effect/cultghost //is a cult ghost and can't use manifest runes
-	id = "cult_ghost"
-	duration = -1
-	alert_type = null
-
-/datum/status_effect/cultghost/on_apply()
-	owner.see_invisible = SEE_INVISIBLE_OBSERVER
-	owner.see_in_dark = 2
-
-/datum/status_effect/cultghost/tick()
-	if(owner.reagents)
-		owner.reagents.del_reagent(/datum/reagent/water/holywater) //can't be deconverted
 
 /datum/status_effect/crusher_mark
 	id = "crusher_mark"

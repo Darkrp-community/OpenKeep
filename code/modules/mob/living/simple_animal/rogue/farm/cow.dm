@@ -50,7 +50,7 @@
 	childtype = list(/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet = 95, 
 					/mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet/bullet = 5)
 	remains_type = /obj/effect/decal/remains/cow
-	var/obj/item/udder/udder = null
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/Initialize()
 	..()
@@ -64,19 +64,12 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/attackby(obj/item/O, mob/user, params)
 	if(!stat && istype(O, /obj/item/reagent_containers/glass))
+//		changeNext_move(20) // milking sound length
 		if(udder)
 			udder.milkAnimal(O, user)
 			return 1
 	else
 		return ..()
-
-/mob/living/simple_animal/hostile/retaliate/rogue/cow/Life()
-	. = ..()
-	if(.)
-		if(udder)
-			if(production > 0)
-				production--
-				udder.generateMilk()
 
 /obj/effect/decal/remains/cow
 	name = "remains"
@@ -141,7 +134,7 @@
 	if(!stat && M.used_intent.type == INTENT_DISARM && icon_state != icon_dead && !has_buckled_mobs())
 		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
 			"<span class='notice'>I tip over [src].</span>")
-		to_chat(src, "<span class='danger'>I am tipped over by [M]!</span>")
+		to_chat(src, span_danger("I am tipped over by [M]!"))
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = "[initial(icon_state)]_tip"
 		spawn(60)
@@ -149,6 +142,16 @@
 				icon_state = icon_living
 	else
 		..()
+
+/mob/living/simple_animal/hostile/retaliate/rogue/cow/Life()
+	. = ..()
+	if(.)
+		if(food > 0)
+			if(udder)
+				if(production > 0)
+					production--
+					udder.generateMilk()
+
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
@@ -213,7 +216,7 @@
 	GiveTarget(user)
 	return
 
-/mob/living/simple_animal/hostile/retaliate/bull/simple_limb_hit(zone)
+/mob/living/simple_animal/hostile/retaliate/rogue/bull/simple_limb_hit(zone)
 	if(!zone)
 		return ""
 	switch(zone)
@@ -252,11 +255,6 @@
 		if(BODY_ZONE_L_ARM)
 			return "foreleg"
 	return ..()
-
-/mob/living/simple_animal/hostile/retaliate/bull/taunted(mob/user)
-	Retaliate()
-	GiveTarget(user)
-	return
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet
 	name = "calf"

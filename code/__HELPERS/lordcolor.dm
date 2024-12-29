@@ -22,16 +22,16 @@ GLOBAL_VAR(lordsecondary)
 		return
 	var/list/lordcolors = list(
 "PURPLE"="#865c9c",
-"RED"="#933030",
+"RED"="#8f3636",
 "BLACK"="#2f352f",
 "BROWN"="#685542",
-"GREEN"="#79763f",
+"GREEN"="#58793f",
 "BLUE"="#395480",
 "YELLOW"="#b5b004",
 "TEAL"="#249589",
-"WHITE"="#ffffff",
-"ORANGE"="#b86f0c",
-"MAJENTA"="#962e5c")
+"WHITE"="#c7c0b5",
+"ORANGE"="#b47011",
+"MAJENTA"="#822b52")
 	var/prim
 	var/sec
 	var/choice = input(src, "Choose a Primary Color", "ROGUETOWN") as anything in lordcolors

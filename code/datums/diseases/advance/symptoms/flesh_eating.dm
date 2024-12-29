@@ -31,7 +31,7 @@ Bonus
 	var/bleed = FALSE
 	var/pain = FALSE
 	threshold_desc = "<b>Resistance 7:</b> Host will bleed profusely during necrosis.<br>\
-					  <b>Transmission 8:</b> Causes extreme pain to the host, weakening it."
+					<b>Transmission 8:</b> Causes extreme pain to the host, weakening it."
 
 /datum/symptom/flesh_eating/Start(datum/disease/advance/A)
 	if(!..())
@@ -97,7 +97,7 @@ Bonus
 	var/chems = FALSE
 	var/zombie = FALSE
 	threshold_desc = "<b>Stage Speed 7:</b> Synthesizes Heparin and Lipolicide inside the host, causing increased bleeding and hunger.<br>\
-					  <b>Stealth 5:</b> The symptom remains hidden until active."
+					<b>Stealth 5:</b> The symptom remains hidden until active."
 
 /datum/symptom/flesh_death/Start(datum/disease/advance/A)
 	if(!..())

@@ -529,7 +529,7 @@
 
 /obj/item/reagent_containers/glass/waterbottle/relic/Initialize()
 	var/datum/reagent/random_reagent = get_random_reagent_id()
-	list_reagents = list(random_reagent = 50)
+	list_reagents = list((random_reagent) = 50) // without parentheses, it's "random_reagent" the string
 	. = ..()
 	desc +=  "<span class='notice'>The writing reads '[random_reagent.name]'.</span>"
 

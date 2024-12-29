@@ -56,7 +56,7 @@
 		return
 
 	user.visible_message("<span class='notice'>[user] labels [A] as [label].</span>", \
-						 "<span class='notice'>I label [A] as [label].</span>")
+						"<span class='notice'>I label [A] as [label].</span>")
 	A.name = "[A.name] ([label])"
 	labels_left--
 
@@ -85,30 +85,6 @@
 		to_chat(user, "<span class='notice'>I insert [I] into [src].</span>")
 		qdel(I)
 		labels_left = initial(labels_left)	//Yes, it's capped at its initial value
-
-/obj/item/hand_labeler/borg
-	name = "cyborg-hand labeler"
-
-/obj/item/hand_labeler/borg/afterattack(atom/A, mob/user, proximity)
-	. = ..()
-	if(!proximity)
-		return
-	if(!iscyborg(user))
-		return
-
-	var/mob/living/silicon/robot/borgy = user
-
-	var/starting_labels = initial(labels_left)
-	var/diff = starting_labels - labels_left
-	if(diff)
-		labels_left = starting_labels
-		// 50 per label. Magical cyborg paper doesn't come cheap.
-		var/cost = diff * 50
-
-		// If the cyborg manages to use a module without a cell, they get the paper
-		// for free.
-		if(borgy.cell)
-			borgy.cell.use(cost)
 
 /obj/item/hand_labeler_refill
 	name = "hand labeler paper roll"

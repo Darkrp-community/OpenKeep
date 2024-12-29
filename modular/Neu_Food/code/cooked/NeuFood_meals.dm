@@ -18,6 +18,7 @@
 	warming = 5 MINUTES
 	rotprocess = SHELFLIFE_DECENT
 	eat_effect = /datum/status_effect/buff/foodbuff
+	plateable = TRUE
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 /obj/item/reagent_containers/food/snacks/rogue/peppersteak/plated
 	icon_state = "peppersteak_plated"
@@ -42,6 +43,7 @@
 	warming = 5 MINUTES
 	rotprocess = SHELFLIFE_DECENT
 	eat_effect = /datum/status_effect/buff/foodbuff
+	plateable = TRUE
 	drop_sound = 'sound/foley/dropsound/gen_drop.ogg'
 /obj/item/reagent_containers/food/snacks/rogue/onionsteak/plated
 	icon_state = "onionsteak_plated"
@@ -70,6 +72,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wienercabbage/plated
 	icon_state = "wienercabbage_plated"
@@ -93,6 +96,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotato/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -143,6 +147,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wieneronions/attackby(obj/item/I, mob/user, params)
 	var/found_table = locate(/obj/structure/table) in (loc)
@@ -192,6 +197,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_DECENT
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/wienerpotatonions/plated
 	icon_state = "wpotonion_plated"
@@ -218,6 +224,7 @@
 	desc = "Fried cackleberries on a bed of half-melted cheese, a dish from distant lands."
 	icon_state = "omelette"
 	eat_effect = /datum/status_effect/buff/foodbuff
+	plateable = TRUE
 	rotprocess = SHELFLIFE_DECENT
 /obj/item/reagent_containers/food/snacks/rogue/friedegg/tiberian/plated
 	icon_state = "omelette_plated"
@@ -295,6 +302,7 @@
 	tastes = list("tasty birdmeat" = 1)
 	cooked_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = MEAL_MEAGRE)
+	plateable = TRUE
 	rotprocess = SHELFLIFE_DECENT
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked/attackby(obj/item/I, mob/user, params)
 	var/obj/item/reagent_containers/peppermill/mill = I
@@ -351,6 +359,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_DECENT
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/frybirdtato/plated
 	icon_state = "frybirdtato_plated"
@@ -379,6 +388,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/royaltruffles/plated
 	icon_state = "royaltruffles_plated"
@@ -401,6 +411,7 @@
 	foodtype = VEGETABLES | MEAT
 	warming = 3 MINUTES
 	rotprocess = SHELFLIFE_LONG
+	plateable = TRUE
 	eat_effect = /datum/status_effect/buff/foodbuff
 /obj/item/reagent_containers/food/snacks/rogue/royaltruffles_poisoned/plated
 	icon_state = "royaltruffles_plated"

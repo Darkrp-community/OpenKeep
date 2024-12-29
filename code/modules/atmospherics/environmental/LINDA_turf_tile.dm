@@ -86,8 +86,8 @@
 
 /turf/temperature_expose()
 	return
-	if(temperature > heat_capacity)
-		to_be_destroyed = TRUE
+/* 	if(temperature > heat_capacity)
+		to_be_destroyed = TRUE */
 
 /turf/proc/archive()
 	temperature_archived = temperature

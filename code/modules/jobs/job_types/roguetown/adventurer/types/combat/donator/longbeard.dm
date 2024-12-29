@@ -12,6 +12,7 @@
 	pickprob = 15
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 2
+	cmode_music = 'sound/music/combat_dwarf.ogg'
 
 /datum/outfit/job/roguetown/adventurer/longbeard/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -43,5 +44,6 @@
 	backl = /obj/item/storage/backpack/rogue/satchel
 	head = /obj/item/clothing/head/roguetown/rare/dwarfplate
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC) // Nothing fazes a longbeard

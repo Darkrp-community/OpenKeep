@@ -24,16 +24,17 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.change_stat("strength", 2) // Same stat spread as lancer/swordmaster, but gets a small bonus to speed instead of a malus, at the cost of getting no constitution bonus
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", 1)
 	if(H.gender == FEMALE)
 		H.underwear = "Femleotard"
-		H.underwear_color = CLOTHING_BLACK
+		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 	if(H.dna.species.name == "Dark Elf")
 		pants = /obj/item/clothing/under/roguetown/tights/black
-		backr = /obj/item/rogueweapon/greatsword/elfgsword
+		backr = /obj/item/rogueweapon/sword/long/kriegsmesser
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		shoes = /obj/item/clothing/shoes/roguetown/boots/rare/elfplate
 		gloves = /obj/item/clothing/gloves/roguetown/rare/elfplate
@@ -45,7 +46,7 @@
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
 	if(H.dna.species.name == "Elf")
 		pants = /obj/item/clothing/under/roguetown/tights/black
-		backr = /obj/item/rogueweapon/greatsword/elfgsword
+		backr = /obj/item/rogueweapon/sword/long/kriegsmesser
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		shoes = /obj/item/clothing/shoes/roguetown/boots/rare/elfplate/welfplate
 		gloves = /obj/item/clothing/gloves/roguetown/rare/elfplate/welfplate

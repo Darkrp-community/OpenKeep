@@ -537,17 +537,6 @@
 	tastes = list("taco" = 4, "meat" = 2, "cheese" = 2)
 	foodtype = MEAT | DAIRY | GRAIN
 
-/obj/item/reagent_containers/food/snacks/branrequests
-	name = "Bran Requests Cereal"
-	desc = ""
-	icon_state = "bran_requests"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/consumable/sodiumchloride = 5)
-	bonus_reagents = list(/datum/reagent/consumable/sodiumchloride = 10)
-	tastes = list("bran" = 4, "raisins" = 3, "salt" = 1)
-	foodtype = GRAIN | FRUIT | BREAKFAST
-
-
-
 
 
 /obj/item/reagent_containers/food/snacks/butter/on_a_stick //there's something so special about putting it on a stick.
@@ -555,16 +544,6 @@
 	desc = ""
 	icon_state = "butteronastick"
 	trash = /obj/item/stack/rods
-
-/obj/item/reagent_containers/food/snacks/onionrings
-	name = "onion rings"
-	desc = ""
-	icon_state = "onionrings"
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3)
-	filling_color = "#C0C9A0"
-	gender = PLURAL
-	tastes = list("batter" = 3, "onion" = 1)
-	foodtype = VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/pineappleslice
 	name = "pineapple slice"

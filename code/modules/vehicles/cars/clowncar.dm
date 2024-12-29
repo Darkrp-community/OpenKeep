@@ -95,8 +95,8 @@
 	AddComponent(/datum/component/waddling)
 
 /obj/vehicle/sealed/car/clowncar/Destroy()
-  playsound(src, 'sound/blank.ogg', 100)
-  return ..()
+	playsound(src, 'sound/blank.ogg', 100)
+	return ..()
 
 /obj/vehicle/sealed/car/clowncar/after_move(direction)
 	. = ..()

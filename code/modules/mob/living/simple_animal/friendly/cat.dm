@@ -78,12 +78,47 @@
 	else
 		return
 
+/mob/living/simple_animal/pet/cat/rogue
+	name = "parent roguecat"
+	desc = "If you're seeing this, someone forgot to set a mob desc or it spawned the parent mob. Report to the Creators."
+	STASPD = 5
+	var/isracist = TRUE // Hisses at dark elves if they try to pet it
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 1,
+							/obj/item/alch/bone = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 2,
+							/obj/item/alch/bone = 1)
 
-/mob/living/simple_animal/pet/cat/inn
+
+/mob/living/simple_animal/pet/cat/rogue/inn
 	name = "inn cat"
 	desc = "This old, fat cat keeps the inn free of rats... allegedly. It seems like he mostly lazes about in the sun and asks for treats."
 
-/mob/living/simple_animal/pet/cat/black
+/mob/living/simple_animal/pet/cat/rogue/cabbit
+	name = "cabbit"
+	desc = "A cabbit, a particular favorite of Enigma's fauna, as pets and meals." // Do NOT eat the cabbit!!!!!!
+	icon = 'icons/roguetown/mob/cabbit.dmi'
+	icon_state = "cabbit"
+	icon_living = "cabbit"
+	icon_dead = "cabbit_dead"
+	remains_type = /obj/effect/decal/remains/cabbit
+	speak = list("Meow!", "Chk!", "Purr!", "Chrr!")
+	speak_emote = list("chirrups", "meows")
+	emote_hear = list("meows.", "clucks.")
+	emote_see = list("brings their ears alert.", "scratches their ear with a hindleg.")
+	childtype = list() // TODO: puppy cabbits =:3
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1)
+	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 1,
+							/obj/item/alch/bone = 1)
+	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1, 
+							/obj/item/alch/sinew = 2,
+							/obj/item/alch/bone = 1,
+							/obj/item/natural/fur/cabbit = 1)
+
+/mob/living/simple_animal/pet/cat/rogue/black
 	name = "black cat"
 	desc = "Possessed of lamplike eyes and a meow that sounds like the rattle of bones. Black cats are sacred to Necra, said to bring wandering spirits to the Carriageman."
 	gender = FEMALE
@@ -91,6 +126,7 @@
 	icon_state = "cat"
 	icon_living = "cat"
 	icon_dead = "cat_dead"
+	isracist = FALSE // Most gravekeepers are dark elves so this cat is chill with them.
 
 
 /mob/living/simple_animal/pet/cat/original
@@ -258,15 +294,18 @@
 				stop_automated_movement = 1
 				walk_to(src,movement_target,0,3)
 
+// Life proc inherent to roguecats only
+/mob/living/simple_animal/pet/cat/rogue/Life()
+	..()
 	// Gato Basado - catches RT rats too when not too lazy
 	if((src.loc) && isturf(src.loc))
-		if(!stat && !resting && !buckled)
+		if(!resting && !buckled && stat != DEAD)
 			for(var/obj/item/reagent_containers/food/snacks/smallrat/M in view(1,src))
 				if(Adjacent(M))
 					if(!M.dead)
 						walk_towards(src, M, 1)
 						sleep(3)
-						visible_message("<span class='notice'>The cat kills the rat!</span>")
+						visible_message("<span class='notice'>\The [src] kills the rat!</span>")
 						M.obj_destruction()
 						movement_target = null
 						stop_automated_movement = 0
@@ -276,9 +315,9 @@
 
 
 
-/mob/living/simple_animal/pet/cat/attack_hand(mob/living/carbon/human/M)
+/mob/living/simple_animal/pet/cat/rogue/attack_hand(mob/living/carbon/human/M)
 	. = ..()
-	if( (isdarkelf(M)) ) // l´cursed bonbonbon
+	if(isracist && (isdarkelf(M))) // l´cursed bonbonbon
 		wuv(-1, M)
 	else
 		switch(M.used_intent.type)
@@ -351,26 +390,25 @@
 
 
 
-/mob/living/simple_animal/pet/cat/inn/attack_hand(mob/living/carbon/human/M) // Gato Basado - not all pets are welcome
+/mob/living/simple_animal/pet/cat/rogue/attack_hand(mob/living/carbon/human/M) // Gato Basado - not all pets are welcome
 	. = ..()
-	if((isdarkelf(M)))  // l´cursed bonbonbon
-		visible_message("<span class='notice'>The cat hisses at [M] and recoils in disgust.</span>")
-		icon_state = "[icon_living]"
-		set_resting(FALSE)
-		update_mobility()
-		playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
-		dir = pick(GLOB.alldirs)
-		step(src, dir)
-		personal_space()
-
-	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/vampirelord))
-		visible_message("<span class='notice'>The cat hisses at [M] and recoils in disgust.</span>")
-		icon_state = "[icon_living]"
-		set_resting(FALSE)
-		update_mobility()
-		playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
-		dir = pick(GLOB.alldirs)
-		step(src, dir)
-		personal_space()
-
-
+	if(stat != DEAD) // Don't do this if they're dead!!! Jeez!!
+		if(M.mind && M.mind.has_antag_datum(/datum/antagonist/vampirelord)) // Cats always hiss at vampires
+			visible_message("<span class='notice'>\The [src] hisses at [M] and recoils in disgust.</span>")
+			icon_state = "[icon_living]"
+			set_resting(FALSE)
+			update_mobility()
+			playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
+			dir = pick(GLOB.alldirs)
+			step(src, dir)
+			personal_space()
+		if(isracist) // But only judgemental ones hiss at dark elves.
+			if((isdarkelf(M)))  // l´cursed bonbonbon
+				visible_message("<span class='notice'>\The [src] hisses at [M] and recoils in disgust.</span>")
+				icon_state = "[icon_living]"
+				set_resting(FALSE)
+				update_mobility()
+				playsound(get_turf(src), 'modular/Creechers/sound/cathiss.ogg', 80, TRUE, -1)
+				dir = pick(GLOB.alldirs)
+				step(src, dir)
+				personal_space()

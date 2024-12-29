@@ -1,6 +1,6 @@
 
 /obj/item/roguekey
-	name = "key"
+	name = "old key"
 	desc = "A simple key of simple uses."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
@@ -57,6 +57,18 @@
 		if(D.masterkey)
 			lockhash = D.lockhash
 
+/obj/item/roguekey/lord/pre_attack_right(target, user, params)
+	. = ..()
+	if(istype(target, /obj/structure/closet))
+		var/obj/structure/closet/C = target
+		if(C.masterkey)
+			lockhash = C.lockhash
+	if(istype(target, /obj/structure/mineral_door))
+		var/obj/structure/mineral_door/D = target
+		if(D.masterkey)
+			lockhash = D.lockhash
+
+
 /obj/item/roguekey/lord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	lockhash = GLOB.lockids[lockid]
@@ -67,6 +79,12 @@
 	icon_state = "mazekey"
 	lockid = "manor"
 
+/obj/item/roguekey/guest
+	name = "guest key"
+	desc = "The key to the manor's guest room. Given to visiting nobles."
+	icon_state = "greenkey"
+	lockid = "guest"
+
 /obj/item/roguekey/butler // intended for chests, crates, cellar doors, NOT kitchen access
 	name = "servants key"
 	desc = "The key to the pantrys and cellars of the manor."
@@ -74,13 +92,12 @@
 	lockid = "butler"
 
 /obj/item/roguekey/bandit // use the old key name for various old keys for dungeons etc, less dumb than bandit keys having a label on it saying bandit key
-	name = "old key"
 	icon_state = "mazekey"
 	lockid = "banditcamp"
 
-/obj/item/roguekey/queen
-	name = "lady key"
-	desc = "The Lady's key."
+/obj/item/roguekey/consort
+	name = "consort key"
+	desc = "The royal consort's key."
 	icon_state = "mazekey"
 	lockid = "lord"
 
@@ -97,13 +114,13 @@
 	lockid = "dungeon"
 
 /obj/item/roguekey/soilson
-	name = "Soilson Key"
+	name = "farmhouse Key"
 	desc = "This key is used by the soilsons."
 	icon_state = "rustkey"
 	lockid = "soilson"
 
 /obj/item/roguekey/warehouse
-	name = "Warehouse Key"
+	name = "warehouse Key"
 	desc = "This key opens the Steward's warehouse."
 	icon_state = "rustkey"
 	lockid = "warehouse"
@@ -126,6 +143,13 @@
 	icon_state = "cheesekey"
 	lockid = "merchant"
 
+/obj/item/roguekey/mercator
+	name = "mercator key"
+	desc = "A key to some special treasure."
+	icon_state = "cheesekey"
+	lockid = "mercator"
+	color = CLOTHING_FYRITIUS_DYE
+
 /obj/item/roguekey/shop
 	name = "shop key"
 	desc = "This key opens and closes a shop door."
@@ -143,56 +167,78 @@
 	desc = "The key to the first room."
 	icon_state = "brownkey"
 	lockid = "roomi"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomii
 	name = "room II key"
 	desc = "The key to the second room."
 	icon_state = "brownkey"
 	lockid = "roomii"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomiii
 	name = "room III key"
 	desc = "The key to the third room."
 	icon_state = "brownkey"
 	lockid = "roomiii"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomiv
 	name = "room IV key"
 	desc = "The key to the fourth room."
 	icon_state = "brownkey"
 	lockid = "roomiv"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomv
 	name = "room V key"
 	desc = "The key to the fifth room."
 	icon_state = "brownkey"
 	lockid = "roomv"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomvi
 	name = "room VI key"
 	desc = "The key to the sixth room."
 	icon_state = "brownkey"
 	lockid = "roomvi"
+	color = CLOTHING_CHALK_WHITE
 
 /obj/item/roguekey/roomhunt
 	name = "room HUNT key"
-	desc = "The key to the most luxurious Inn room."
+	desc = "The key to one of the most luxurious Inn room."
 	icon_state = "brownkey"
 	lockid = "roomhunt"
 
+/obj/item/roguekey/roomroyal
+	name = "room ROYAL key"
+	desc = "The key to one of the most luxurious Inn room."
+	icon_state = "brownkey"
+	lockid = "roomroyal"
+
 //vampire mansion//
 /obj/item/roguekey/vampire
-	name = "mansion key"
 	desc = "This key is awfully pink and weirdly shaped."
 	icon_state = "vampkey"
 	lockid = "mansionvampire"
-//
+
+
+/obj/item/roguekey/makers_guild
+	name = "makers guild key"
+	icon_state = "greenkey"
+	lockid = "makers"
 
 /obj/item/roguekey/blacksmith
 	name = "blacksmith key"
-	desc = "This key opens a blacksmith's workshop."
+	desc = "This key opens a blacksmiths workshop."
 	icon_state = "brownkey"
 	lockid = "blacksmith"
+
+/obj/item/roguekey/blacksmith_home
+	name = "blacksmith home key"
+	desc = "This key opens a blacksmiths home."
+	icon_state = "rustkey"
+	lockid = "armorsmith" // used to maintain compatibility with older maps and make it easier to switch the classses on/off
 
 /obj/item/roguekey/butcher
 	name = "butcher key"
@@ -201,8 +247,7 @@
 	lockid = "butcher"
 
 /obj/item/roguekey/walls
-	name = "walls key"
-	desc = "This is a rusty key."
+	desc = "This is a rusty key for the walls."
 	icon_state = "rustkey"
 	lockid = "walls"
 
@@ -231,7 +276,6 @@
 	lockid = "mage"
 
 /obj/item/roguekey/graveyard
-	name = "crypt key"
 	desc = "This rusty key belongs to the Gravekeepers."
 	icon_state = "rustkey"
 	lockid = "graveyard"
@@ -244,7 +288,7 @@
 
 /obj/item/roguekey/niteman
 	name = "nitemaster's key"
-	desc = "The master key of Eora's House."
+	desc = "The master key of the bathhouse."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
@@ -296,6 +340,11 @@
 	icon_state = "birdkey"
 	lockid = "doctor"
 
+/obj/item/roguekey/tailor
+	name = "tailors key"
+	icon_state = "brownkey"
+	lockid = "tailor"
+
 //grenchensnacker
 /obj/item/roguekey/porta
 	name = "strange key"
@@ -315,47 +364,47 @@
 	lockid = ""
 
 /obj/item/roguekey/houses/house1
-	name = "house i key"
+	name = "house I key"
 	icon_state = "brownkey"
 	lockid = "house1"
 
 /obj/item/roguekey/houses/house2
-	name = "house ii key"
+	name = "house II key"
 	icon_state = "brownkey"
 	lockid = "house2"
 
 /obj/item/roguekey/houses/house3
-	name = "house iii key"
+	name = "house III key"
 	icon_state = "brownkey"
 	lockid = "house3"
 
 /obj/item/roguekey/houses/house4
-	name = "house iv key"
+	name = "house IV key"
 	icon_state = "brownkey"
 	lockid = "house4"
 
 /obj/item/roguekey/houses/house5
-	name = "house v key"
+	name = "house V key"
 	icon_state = "brownkey"
 	lockid = "house5"
 
 /obj/item/roguekey/houses/house6
-	name = "house vi key"
+	name = "house VI key"
 	icon_state = "brownkey"
 	lockid = "house6"
 
 /obj/item/roguekey/houses/house7
-	name = "house vii key"
+	name = "house VII key"
 	icon_state = "brownkey"
 	lockid = "house7"
 
-/obj/item/roguekey/houses/house8
-	name = "house viii key"
+/obj/item/roguekey/houses/house8 //Not currently in use on Dun_Manor
+	name = "house VIII key"
 	icon_state = "brownkey"
 	lockid = "house8"
 
 /obj/item/roguekey/houses/house9
-	name = "house ix key"
+	name = "house IX key"
 	icon_state = "brownkey"
 	lockid = "house9"
 
@@ -440,47 +489,47 @@
 	lockid = ""
 
 /obj/item/roguekey/shops/shop1
-	name = "shop i key"
+	name = "shop I key"
 	icon_state = "rustkey"
 	lockid = "shop1"
 
 /obj/item/roguekey/shops/shop2
-	name = "shop ii key"
+	name = "shop II key"
 	icon_state = "rustkey"
 	lockid = "shop2"
 
 /obj/item/roguekey/shops/shop3
-	name = "shop iii key"
+	name = "shop III key"
 	icon_state = "rustkey"
 	lockid = "shop3"
 
 /obj/item/roguekey/shops/shop4
-	name = "shop iv key"
+	name = "shop IV key"
 	icon_state = "rustkey"
 	lockid = "shop4"
 
 /obj/item/roguekey/shops/shop5
-	name = "shop v key"
+	name = "shop V key"
 	icon_state = "rustkey"
 	lockid = "shop5"
 
 /obj/item/roguekey/shops/shop6
-	name = "shop vi key"
+	name = "shop VI key"
 	icon_state = "rustkey"
 	lockid = "shop6"
 
 /obj/item/roguekey/shops/shop7
-	name = "shop vii key"
+	name = "shop VII key"
 	icon_state = "rustkey"
 	lockid = "shop7"
 
 /obj/item/roguekey/shops/shop8
-	name = "shop viii key"
+	name = "shop VIII key"
 	icon_state = "rustkey"
 	lockid = "shop8"
 
 /obj/item/roguekey/shops/shop9
-	name = "shop ix key"
+	name = "shop IX key"
 	icon_state = "rustkey"
 	lockid = "shop9"
 
@@ -494,22 +543,27 @@
 	icon_state = "rustkey"
 	lockid = "butcher"
 
-obj/item/roguekey/elder
+/obj/item/roguekey/elder
 	name = "mayor's key"
 	icon_state = "rustkey"
 	lockid = "elder"
 
-obj/item/roguekey/apothecary
+/obj/item/roguekey/veteran
+	name = "veteran's key"
+	icon_state = "rustkey"
+	lockid = "veteran"
+
+/obj/item/roguekey/apothecary
 	name = "apothecary's key"
 	icon_state = "rustkey"
 	lockid = "apothecary"
 
-obj/item/roguekey/weaponsmith
+/obj/item/roguekey/weaponsmith
 	name = "weaponsmith's key"
 	icon_state = "rustkey"
 	lockid = "weaponsmith"
 
-obj/item/roguekey/armorsmith
+/obj/item/roguekey/armorsmith
 	name = "armorsmith's key"
 	icon_state = "rustkey"
 	lockid = "armorsmith"
@@ -648,3 +702,7 @@ obj/item/roguekey/tailor
 				KE.name = src.holdname
 			to_chat(user, "<span class='notice'>You add [src] to [K].</span>")
 			qdel(src)
+
+/obj/item/roguekey/spooky_village
+	icon_state = "rustkey"
+	lockid = "spooky_village"

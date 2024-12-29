@@ -170,7 +170,7 @@
 	return TRUE
 
 /datum/weather/proc/update_areas(input, specific_area, specific_turf)
-/*
+
 	for(var/area/N in impacted_areas)
 		N.blend_mode = 0
 		N.layer = overlay_layer
@@ -190,7 +190,7 @@
 				N.icon = 'icons/turf/areas.dmi'
 				N.layer = initial(N.layer)
 				N.plane = initial(N.plane)
-				N.set_opacity(FALSE)*/
+				N.set_opacity(FALSE)
 	if(specific_area)
 		for(var/i in specific_area)
 			var/area/N = i
@@ -206,12 +206,11 @@
 				START_PROCESSING(SSweather,T)
 
 /datum/weather/proc/get_used_state()
-/*	switch(stage)
+	switch(stage)
 		if(STARTUP_STAGE)
 			return telegraph_overlay
 		if(MAIN_STAGE)
 			return weather_overlay
 		if(WIND_DOWN_STAGE)
 			return end_overlay
-	return ""*/ //thsi bugs out when rain falls then u set off a bomb
-	return weather_overlay
+	return "" //thsi bugs out when rain falls then u set off a bomb

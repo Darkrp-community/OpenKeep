@@ -81,6 +81,8 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/armor_penetration = 0
 	///Damage type of a simple mob's melee attack, should it do damage.
 	var/melee_damage_type = BRUTE
+	///Type of melee attack
+	var/damage_type = "slash"
 	/// 1 for full damage , 0 for none , -1 for 1:1 heal from that source.
 	var/list/damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	///Attacking verb in present continuous tense.
@@ -109,8 +111,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/breedchildren = 3
 
 	///Simple_animal access.
-	///Innate access uses an internal ID card.
-	var/obj/item/card/id/access_card = null
+	var/list/lock_hashes
 	///In the event that you want to have a buffing effect on the mob, but don't want it to stack with other effects, any outside force that applies a buff to a simple mob should at least set this to 1, so we have something to check against.
 	var/buffed = 0
 	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
@@ -175,6 +176,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/botched_butcher_results
 	var/perfect_butcher_results
 
+	var/obj/item/udder/udder = null
+	var/obj/item/gudder/gudder = null
+
 /mob/living/simple_animal/Initialize()
 	. = ..()
 	GLOB.simple_animals[AIStatus] += src
@@ -230,7 +234,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 
 ///Extra effects to add when the mob is tamed, such as adding a riding component
 /mob/living/simple_animal/proc/tamed(mob/user)
-	emote("lower_head", forced = TRUE)
+	INVOKE_ASYNC(src, PROC_REF(emote), "lower_head", null, null, null, TRUE)
 	tame = TRUE
 	stop_automated_movement_when_pulled = TRUE
 	if(user)
@@ -287,8 +291,10 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(stat != DEAD)
 		if(health <= 0)
 			death()
+			SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, DEAD)
 			return
 	med_hud_set_status()
+	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, stat)
 	if(footstep_type)
 		AddComponent(/datum/component/footstep, footstep_type)
 
@@ -445,8 +451,18 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 					butcher = botched_butcher_results // chance to get shit result
 				else
 					butcher = butcher_results
-			else 
-				if(user.mind.get_skill_level(/datum/skill/labor/butchering) >= 5) // binary, butcher gets this bonus, no one else pretty much. Others just get the speed increase and avoid botches on lvl 1 and above.
+			if(user.mind.get_skill_level(/datum/skill/labor/butchering) == 3)
+				if(prob(10))
+					butcher = perfect_butcher_results // small chance to get great result
+				else
+					butcher = butcher_results
+			if(user.mind.get_skill_level(/datum/skill/labor/butchering) == 4)
+				if(prob(50))
+					butcher = perfect_butcher_results // decent chance to get great result
+				else
+					butcher = butcher_results
+			else
+				if(user.mind.get_skill_level(/datum/skill/labor/butchering) == 5)
 					butcher = perfect_butcher_results
 				else
 					butcher = butcher_results
@@ -494,9 +510,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/Stat()
 	..()
 	return //RTCHANGE
-	if(statpanel("Status"))
+/* 	if(statpanel("Status"))
 		stat(null, "Health: [round((health / maxHealth) * 100)]%")
-		return 1
+		return 1 */
 
 /mob/living/simple_animal/proc/drop_loot()
 	if(loot.len)
@@ -539,13 +555,9 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		var/mob/living/L = the_target
 		if(L.stat == DEAD)
 			return FALSE
-	if (ismecha(the_target))
-		var/obj/mecha/M = the_target
-		if (M.occupant)
-			return FALSE
 	return TRUE
 
-mob/living/simple_animal/handle_fire()
+/mob/living/simple_animal/handle_fire()
 	. = ..()
 	if(fire_stacks > 0)
 		apply_damage(5, BURN)
@@ -607,8 +619,8 @@ mob/living/simple_animal/handle_fire()
 		if(target)
 			return new childspawn(target)
 //			visible_message("<span class='warning'>[src] finally gives birth.</span>")
-			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
-			breedchildren--
+//			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)
+//			breedchildren--
 
 /mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
 	if(incapacitated())
@@ -686,9 +698,6 @@ mob/living/simple_animal/handle_fire()
 			return
 	sync_lighting_plane_alpha()
 
-/mob/living/simple_animal/get_idcard(hand_first)
-	return access_card
-
 /mob/living/simple_animal/can_hold_items()
 	return dextrous
 
@@ -716,13 +725,6 @@ mob/living/simple_animal/handle_fire()
 		return ..()
 	if(!hand_index)
 		hand_index = (active_hand_index % held_items.len)+1
-	var/obj/item/held_item = get_active_held_item()
-	if(held_item)
-		if(istype(held_item, /obj/item/twohanded))
-			var/obj/item/twohanded/T = held_item
-			if(T.wielded == 1)
-				to_chat(usr, "<span class='warning'>My other hand is too busy holding [T].</span>")
-				return FALSE
 	var/oindex = active_hand_index
 	active_hand_index = hand_index
 	if(hud_used)
@@ -859,7 +861,7 @@ mob/living/simple_animal/handle_fire()
 							L.Paralyze(50)
 							L.Stun(50)
 							playsound(L.loc, 'sound/foley/zfall.ogg', 100, FALSE)
-							L.visible_message("<span class='danger'>[L] falls off [src]!</span>")
+							L.visible_message(span_danger("[L] falls off [src]!"))
 
 /mob/living/simple_animal/buckle_mob(mob/living/buckled_mob, force = 0, check_loc = 1)
 	. = ..()
@@ -927,6 +929,14 @@ mob/living/simple_animal/handle_fire()
 			pooprog++
 			production++
 			production = min(production, 100)
+			if(udder)
+				if(production > 0)
+					production--
+					udder.generateMilk()
+			if(gudder)						// for goat milk
+				if(production > 0)
+					production--
+					gudder.generateMilk()
 			if(pooprog >= 100)
 				pooprog = 0
 				poop()
@@ -934,5 +944,34 @@ mob/living/simple_animal/handle_fire()
 /mob/living/simple_animal/proc/poop()
 	if(pooptype)
 		if(isturf(loc))
-			playsound(src, "fart", 100, TRUE)
+			playsound(src, "fart", 50, TRUE)
 			new pooptype(loc)
+
+//................. UDDER (MOO-BEAST) .......................//
+/obj/item/udder
+	name = "udder"
+
+/obj/item/udder/Initialize()
+	create_reagents(100)
+	reagents.add_reagent(/datum/reagent/consumable/milk, rand(0,20))
+	. = ..()
+
+/obj/item/udder/proc/generateMilk()
+	reagents.add_reagent(/datum/reagent/consumable/milk, 1)
+
+/obj/item/udder/proc/milkAnimal(obj/O, mob/living/user = usr)
+	var/obj/item/reagent_containers/glass/G = O
+	if(G.reagents.total_volume >= G.volume)
+		to_chat(user, span_warning("[O] is full."))
+		return
+	if(!reagents.has_reagent(/datum/reagent/consumable/milk, 5))
+		to_chat(user, span_warning("The udder is dry. Wait a bit longer..."))
+		user.changeNext_move(10)
+		return
+	if(do_after(user, 1 SECONDS, target = src))
+		reagents.trans_to(O, rand(5,10))
+		user.visible_message(span_notice("[user] milks [src] using \the [O]"))
+		playsound(O, pick('sound/vo/mobs/cow/milking (1).ogg', 'sound/vo/mobs/cow/milking (2).ogg'), 100, TRUE, -1)
+		user.Immobilize(1 SECONDS)
+		user.changeNext_move(10)
+

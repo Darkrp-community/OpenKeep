@@ -1,5 +1,5 @@
 /datum/antagonist/zombie
-	name = "Zombie"
+	name = "Zombie"	// Deadite plague of Zizo
 	antag_hud_type = ANTAG_HUD_TRAITOR
 	antag_hud_name = "zombie"
 	show_in_roundend = FALSE
@@ -35,7 +35,6 @@
 		TRAIT_TOXIMMUNE,
 		TRAIT_CHUNKYFINGERS,
 		TRAIT_NOSLEEP,
-		TRAIT_BASHDOORS,
 		TRAIT_SHOCKIMMUNE,
 		TRAIT_SPELLCOCKBLOCK,
 		TRAIT_BLOODLOSS_IMMUNE,
@@ -88,10 +87,18 @@
 //	STASPD = zombie.STASPD-5
 //	STAINT = zombie.STAINT-5
 //	zombie.STACON = 5
-	zombie.STASPD = 5
-	zombie.STAINT = 2
+	zombie.STASPD = 2
+	zombie.STAINT = 1
 	cmode_music = zombie.cmode_music
-	zombie.vitae_pool = 0 // Deadites have no vitae to drain from.
+	zombie.silent = TRUE		// makes them unable to audible emote or speak, no more sexy moan zombies
+//	cmode_music ='sound/music/combat_weird.ogg'
+	zombie.vitae_pool = 0 // Deadites have no vitae to drain from
+	zombie.remove_all_languages()
+//	zombie.remove_language(/datum/language/common)
+//	zombie.remove_language(/datum/language/dwarvish)
+//	zombie.remove_language(/datum/language/elvish)
+	zombie.grant_language(/datum/language/hellspeak)
+
 	return ..()
 
 /datum/antagonist/zombie/on_removal()
@@ -190,8 +197,7 @@
 	zombie.update_body()
 	zombie.cmode_music = 'sound/music/combat_weird.ogg'
 
-	zombie.STASPD = rand(3, 5)
-
+	zombie.STASPD = 2
 	zombie.STAINT = 1
 
 	zombie.vitae_pool = 0 // Again, just in case.
@@ -208,7 +214,7 @@
 	var/mob/living/carbon/human/zombie = user
 	if(world.time > next_idle_sound)
 		zombie.emote("zmoan")
-		next_idle_sound = world.time + rand(12 SECONDS, 32 SECONDS)
+		next_idle_sound = world.time + rand(20 SECONDS, 40 SECONDS)
 
 //Infected wake param is just a transition from living to zombie, via zombie_infect()
 //Previously you just died without warning in 3 minutes, now you just become an antag

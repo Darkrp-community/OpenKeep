@@ -30,8 +30,8 @@
 	whisper(message)
 
 ///whisper a message
-/mob/proc/whisper(message, datum/language/language=null)
-	say(message, language) //only living mobs actually whisper, everything else just talks
+/mob/proc/whisper(message, datum/language/language=null, sanitize = TRUE)
+	say(message, language, sanitize = sanitize) //only living mobs actually whisper, everything else just talks
 
 ///The me emote verb
 /mob/verb/me_verb()
@@ -61,10 +61,10 @@
 
 ///Speak as a dead person (ghost etc)
 /mob/proc/say_dead(message)
+	return
+/* 
 	var/name = real_name
 	var/alt_name = ""
-
-	return
 
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
@@ -106,6 +106,7 @@
 	if(SEND_SIGNAL(src, COMSIG_MOB_DEADSAY, message) & MOB_DEADSAY_SIGNAL_INTERCEPT)
 		return
 	deadchat_broadcast(rendered, source, follow_target = src, speaker_key = key)
+*/
 
 ///Check if this message is an emote
 /mob/proc/check_emote(message, forced)
@@ -132,13 +133,13 @@
 	return LINGHIVE_NONE
 
 /**
-  * Get the mode of a message
-  *
-  * Result can be
-  * * MODE_WHISPER (Quiet speech)
-  * * MODE_HEADSET (Common radio channel)
-  * * A department radio (lots of values here)
-  */
+ * Get the mode of a message
+ *
+ * Result can be
+ * * MODE_WHISPER (Quiet speech)
+ * * MODE_HEADSET (Common radio channel)
+ * * A department radio (lots of values here)
+ */
 /mob/proc/get_message_mode(message)
 	var/key = copytext(message, 1, 2)
 	if(key == "#")

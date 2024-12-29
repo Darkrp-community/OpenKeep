@@ -47,7 +47,7 @@
 	if(prob(50))
 		cloak = /obj/item/clothing/cloak/raincloak/red
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backpack_contents = list(/obj/item/flint)
 	if(H.dna?.species)
@@ -55,6 +55,7 @@
 			backr = /obj/item/rogue/instrument/lute
 		if(H.dna.species.id == "dwarf")
 			backr = /obj/item/rogue/instrument/accord
+			H.cmode_music = 'sound/music/combat_dwarf.ogg'
 		if(H.dna.species.id == "elf")
 			backr = /obj/item/rogue/instrument/harp
 		if(H.dna.species.id == "tiefling")

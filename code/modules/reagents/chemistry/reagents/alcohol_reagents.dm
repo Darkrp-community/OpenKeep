@@ -74,7 +74,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/beer
 	name = "Beer"
 	description = ""
-	color = "#8e6c06" // rgb: 102, 67, 0
+	color = "#a17c10" // rgb: 102, 67, 0
 	nutriment_factor = 0.1
 	boozepwr = 25
 	taste_description = "ale"
@@ -87,7 +87,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	boozepwr = 40
 	taste_description = "cider"
 	glass_name = "glass of cider"
-	color = "#d3c905"
+	color = "#6aa945"
 
 /datum/reagent/consumable/ethanol/beer/wine
 	name = "Wine"
@@ -443,15 +443,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_name = "Cuba Libre"
 	glass_desc = ""
 
-/datum/reagent/consumable/ethanol/cuba_libre/on_mob_life(mob/living/carbon/M)
-	if(M.mind && M.mind.has_antag_datum(/datum/antagonist/rev)) //Cuba Libre, the traditional drink of revolutions! Heals revolutionaries.
-		M.adjustBruteLoss(-1, 0)
-		M.adjustFireLoss(-1, 0)
-		M.adjustToxLoss(-1, 0)
-		M.adjustOxyLoss(-5, 0)
-		. = 1
-	return ..() || .
-
 /datum/reagent/consumable/ethanol/whiskey_cola
 	name = "Whiskey Cola"
 	description = "Whiskey, mixed with cola. Surprisingly refreshing."
@@ -509,7 +500,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_desc = ""
 
 /datum/reagent/consumable/ethanol/screwdrivercocktail/on_mob_life(mob/living/carbon/M)
-	if(M.mind && M.mind.assigned_role in list("Station Engineer", "Atmospheric Technician", "Chief Engineer")) //Engineers lose radiation poisoning at a massive rate.
+	if(M.mind && (M.mind.assigned_role in list("Station Engineer", "Atmospheric Technician", "Chief Engineer"))) //Engineers lose radiation poisoning at a massive rate.
 		M.radiation = max(M.radiation - 25, 0)
 	return ..()
 
@@ -577,7 +568,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_metabolize(mob/living/M)
 	to_chat(M, "<span class='notice'>I feel gentle warmth spread through my body!</span>")
 	light_holder = new(M)
-	light_holder.set_light(3, 0.7, "#FFCC00") //Tequila Sunrise makes you radiate dim light, like a sunrise!
+	light_holder.set_light(3,3,0.7, l_color = "#FFCC00") //Tequila Sunrise makes you radiate dim light, like a sunrise!
 
 /datum/reagent/consumable/ethanol/tequila_sunrise/on_mob_life(mob/living/carbon/M)
 	if(QDELETED(light_holder))
@@ -1025,25 +1016,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "amasecglass"
 	glass_name = "Amasec"
 	glass_desc = ""
-
-/datum/reagent/consumable/ethanol/changelingsting
-	name = "Changeling Sting"
-	description = "You take a tiny sip and feel a burning sensation..."
-	color = "#2E6671" // rgb: 46, 102, 113
-	boozepwr = 50
-	quality = DRINK_GOOD
-	taste_description = "your brain coming out my nose"
-	glass_icon_state = "changelingsting"
-	glass_name = "Changeling Sting"
-	glass_desc = ""
-
-/datum/reagent/consumable/ethanol/changelingsting/on_mob_life(mob/living/carbon/M)
-	if(M.mind) //Changeling Sting assists in the recharging of changeling chemicals.
-		var/datum/antagonist/changeling/changeling = M.mind.has_antag_datum(/datum/antagonist/changeling)
-		if(changeling)
-			changeling.chem_charges += metabolization_rate
-			changeling.chem_charges = CLAMP(changeling.chem_charges, 0, changeling.chem_storage)
-	return ..()
 
 /datum/reagent/consumable/ethanol/irishcarbomb
 	name = "Irish Car Bomb"
@@ -1612,38 +1584,6 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	M.adjust_bodytemperature(5 * TEMPERATURE_DAMAGE_COEFFICIENT, 0, BODYTEMP_NORMAL)
 	..()
 
-/datum/reagent/consumable/ethanol/alexander
-	name = "Alexander"
-	description = "Named after a Greek hero, this mix is said to embolden a user's shield as if they were in a phalanx."
-	color = "#F5E9D3"
-	boozepwr = 50
-	quality = DRINK_GOOD
-	taste_description = "bitter, creamy cacao"
-	glass_icon_state = "alexander"
-	glass_name = "Alexander"
-	glass_desc = ""
-	var/obj/item/shield/mighty_shield
-
-/datum/reagent/consumable/ethanol/alexander/on_mob_metabolize(mob/living/L)
-	if(ishuman(L))
-		var/mob/living/carbon/human/thehuman = L
-		for(var/obj/item/shield/theshield in thehuman.contents)
-			mighty_shield = theshield
-			mighty_shield.block_chance += 10
-			to_chat(thehuman, "<span class='notice'>[theshield] appears polished, although you don't recall polishing it.</span>")
-			return TRUE
-
-/datum/reagent/consumable/ethanol/alexander/on_mob_life(mob/living/L)
-	..()
-	if(mighty_shield && !(mighty_shield in L.contents)) //If you had a shield and lose it, you lose the reagent as well. Otherwise this is just a normal drink.
-		L.reagents.del_reagent(/datum/reagent/consumable/ethanol/alexander)
-
-/datum/reagent/consumable/ethanol/alexander/on_mob_end_metabolize(mob/living/L)
-	if(mighty_shield)
-		mighty_shield.block_chance -= 10
-		to_chat(L,"<span class='notice'>I notice [mighty_shield] looks worn again. Weird.</span>")
-	..()
-
 /datum/reagent/consumable/ethanol/sidecar
 	name = "Sidecar"
 	description = "The one ride you'll gladly give up the wheel for."
@@ -2144,16 +2084,16 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	color = "#BBB525"
 
 /datum/reagent/consumable/ethanol/beer/blackgoat
-	name = "Black Goat Kriek"
+	name = "Black Gote Kriek"
 	boozepwr = 25
 	taste_description = "overwhelming sourness"
 	color = "#401806"
 
 /datum/reagent/consumable/ethanol/beer/onion
-	name = "Ratkept Onin Cognac"
+	name = "Royal Onion Cognac"
 	boozepwr = 10
 	taste_description = "spicy sweet malty overtones"
-	color = "#f1b5ff"
+	color = "#683e00"
 
 // Elf Production - LEAF-LOVERS MOTHERFUCKER
 
@@ -2187,7 +2127,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	name = "Voddena"
 	boozepwr = 55  // holy shit
 	taste_description = "burning starchy wet dirt"
-	color = "#4b443c"
+	color = "#a1a1a1"
 
 // WINE - Fancy.. And yes: all drinks are beer, technically. Cope. Seethe. I didnt code it like this.
 
@@ -2197,7 +2137,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	name = "Sour Wine"
 	boozepwr = 20
 	taste_description = "sour wine"
-	color = "#583650"
+	color = "#552b4b"
 
 /datum/reagent/consumable/ethanol/beer/whitewine
 	name = "White Wine"
@@ -2209,13 +2149,13 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	name = "Red Wine"
 	boozepwr = 30
 	taste_description = "tannin-stricken wine"
-	color = "#4A1111"
+	color = "#571111"
 
-/datum/reagent/consumable/ethanol/beer/jackberrywine
-	name = "Jackberry Wine"
+/datum/reagent/consumable/ethanol/beer/jacksberrywine
+	name = "Jacksberry Wine"
 	boozepwr = 15
 	taste_description = "sickly sweet young wine"
-	color = "#3F2D45"
+	color = "#3b2342"
 
 
 // Elf Production - Berries & Herbal

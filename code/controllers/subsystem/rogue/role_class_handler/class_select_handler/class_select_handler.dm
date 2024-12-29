@@ -117,7 +117,7 @@
 					rolled_classes[local_insert_sortlist[i]] = 0
 
 				// We are plusboosting too
-				if(class_cat_plusboost_attempts && SORT_CAT_KEY in class_cat_plusboost_attempts)
+				if(class_cat_plusboost_attempts && (SORT_CAT_KEY in class_cat_plusboost_attempts))
 					if(class_cat_plusboost_attempts[SORT_CAT_KEY])
 						for(var/i in 1 to class_cat_plusboost_attempts[SORT_CAT_KEY])
 							var/datum/advclass/boostclass = pick(local_insert_sortlist)
@@ -172,7 +172,7 @@
 		rolled_classes[pick(possible_list)] = 0
 
 	if(cur_picked_class == filled_class)
-		if(special_session_queue && cur_picked_class in special_session_queue)
+		if(special_session_queue && (cur_picked_class in special_session_queue))
 			special_selected = FALSE
 		cur_picked_class = null
 

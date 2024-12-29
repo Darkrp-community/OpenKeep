@@ -80,9 +80,12 @@
 /obj/structure/chair/bench/couchablack/r
 	icon_state = "couchablackaright"
 
+/obj/structure/chair/bench/throne
+	name = "small throne"
+	icon_state = "thronechair"
 
 /obj/structure/chair/bench/couch/Initialize()
-	..()
+	. = ..()
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	else
@@ -118,13 +121,6 @@
 	icon_state = "chair3"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	item_chair = /obj/item/chair/rogue
-	blade_dulling = DULLING_BASHCHOP
-	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
-	attacked_sound = "woodimpact"
-
-/obj/structure/chair/wood/rogue/throne
-	icon_state = "thronechair"
-	icon = 'icons/roguetown/misc/structure.dmi'
 	blade_dulling = DULLING_BASHCHOP
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = "woodimpact"
@@ -294,19 +290,88 @@
 			if("wielded")
 				return list("shrink" = 0.8,"sx" = -20,"sy" = -6,"nx" = 0,"ny" = -7,"wx" = -18,"wy" = -5,"ex" = -4,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -42,"sturn" = 33,"wturn" = 33,"eturn" = -21,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 
+/*-----\
+| Beds |
+\-----*/
+
 /obj/structure/bed/rogue
 	icon_state = "bed"
 	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
+	anchored = 1
+	can_buckle = 1
+	buckle_lying = 1
 	buckle_lying = 90
 	pixel_y = 5
+	sleepy = 2
+	debris = list(/obj/item/natural/plank = 1)
+
+
+// ------------ GOOD BEDS ----------------------
+/obj/structure/bed/rogue/inn
+	icon_state = "inn_bed"
 	sleepy = 3
+// Borbop's double bed code, thank you Borbop. --Cadet
+/obj/structure/bed/rogue/inn/double
+	icon_state = "double"
+	max_buckled_mobs = 2
+	pixel_y = 0
+	sleepy = 3
+	debris = list(/obj/item/natural/plank)
+	/// The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before they unbuckle.
+	var/mob/living/goldilocks
+
+/obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/target)
+	. = ..()
+	if(length(buckled_mobs) > 1 && !goldilocks) //  Push the second buckled mob a bit higher from the normal lying position
+		target.set_mob_offsets("bed_buckle", _x = 0, _y = 13)
+		goldilocks = target
+
+/obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/target)
+	. = ..()
+	if(target == goldilocks)
+		goldilocks = null
+
+
+
+// ------------ DECENT BEDS ----------------------
+/obj/structure/bed/rogue/wool
+	icon_state = "woolbed"
+	sleepy = 2
+
+/obj/structure/bed/rogue/wooldouble
+	icon_state = "double_wool"
+	pixel_y = 0
+	sleepy = 2
+	debris = list(/obj/item/natural/plank = 2)
+
+
+// ------------ ACCEPTABLE BEDS ----------------------
+/obj/structure/bed/rogue/hay
+	icon_state = "haybed"
+	sleepy = 1
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
-/obj/structure/bed/rogue/shit
-	icon_state = "shitbed"
+/obj/structure/bed/rogue/mediocre
+	icon_state = "shitbed2"
 	sleepy = 1
+	debris = list(/obj/item/grown/log/tree/small = 1)
+
+// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
+/obj/structure/bed/rogue/bear
+	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
+	icon = 'icons/turf/floors/bear.dmi'
+	icon_state = "bear"
+	pixel_x = -16
+	pixel_y = -27
+	sleepy = 1
+
+
+// ------------ UNCOMFORTABLE BEDS ----------------------
+/obj/structure/bed/rogue/shit
+	name = "uncomfortable bed"
+	icon_state = "shitbed"
+	sleepy = 0.5
+	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/sleepingbag
 	name = "sleepcloth"
@@ -354,92 +419,3 @@
 /obj/structure/bed/rogue/post_unbuckle_mob(mob/living/M)
 	..()
 	M.reset_offsets("bed_buckle")
-
-/obj/structure/bed/rogue/inn
-	icon_state = "inn_bed"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
-	buckle_lying = 90
-	pixel_y = 5
-	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
-
-/obj/structure/bed/rogue/inn/wooldouble
-	icon_state = "double_wool"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
-	buckle_lying = 90
-	pixel_y = 0
-	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 2)
-
-/obj/structure/bed/rogue/inn/double
-	icon_state = "double"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
-	buckle_lying = 90
-	pixel_y = 0
-	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 2)
-/*            ///////WIP  This will essentially allow for multiple mobs to buckle, just needs to change mousedrop function
-/obj/structure/bed/rogue/inn/double
-	var/list/buckled_mobs = list()
-
-/obj/structure/bed/rogue/inn/double/post_buckle_mob(mob/living/M)
-	. = ..()
-	if(!buckled_mobs)
-		buckled_mobs = list()
-	buckled_mobs += M
-	M.set_mob_offsets("bed_buckle", _x = buckled_mobs.len * 10, _y = 5)
-
-/obj/structure/bed/rogue/inn/double/post_unbuckle_mob(mob/living/M)
-	. = ..()
-	if(M in buckled_mobs)
-		buckled_mobs -= M
-	M.reset_offsets("bed_buckle")
-
-	var/x_offset = 0
-	for(var/mob/living/buckled_mob in buckled_mobs)
-		buckled_mob.set_mob_offsets("bed_buckle", _x = x_offset, _y = 5)
-		x_offset += 10
-*/
-/obj/structure/bed/rogue/inn/hay
-	icon_state = "haybed"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
-	buckle_lying = 90
-	pixel_y = 5
-	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
-
-/obj/structure/bed/rogue/inn/wool
-	icon_state = "woolbed"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
-	buckle_lying = 90
-	pixel_y = 5
-	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 1)
-
-/obj/structure/bed/rogue/inn/pileofshit
-	icon_state = "shitbed2"
-	icon = 'icons/roguetown/misc/structure.dmi'
-	anchored = TRUE
-	can_buckle = TRUE
-	buckle_lying = 90
-	pixel_y = 5
-	sleepy = 3
-
-// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
-/obj/structure/bed/rogue/bear
-	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
-	icon = 'icons/turf/floors/bear.dmi'
-	icon_state = "bear"
-	pixel_x = -16
-	pixel_y = -27
-	sleepy = 1

@@ -39,7 +39,7 @@
 	trail = TRUE
 	trail_lifespan = 5
 	light_color = "#f407f8"
-	light_range = 2
+	light_outer_range =  2
 
 
 /obj/projectile/magic/spell/magic_missile/on_hit(target)
@@ -296,6 +296,7 @@
 	var/repulse_force = MOVE_FORCE_EXTREMELY_STRONG
 
 /obj/effect/proc_holder/spell/aoe_turf/repulse/cast(list/targets,mob/user = usr, stun_amt = 5)
+	. = ..()
 	var/list/thrownatoms = list()
 	var/atom/throwtarget
 	var/distfromcaster
@@ -368,6 +369,7 @@
 	sound = 'sound/blank.ogg'
 
 /obj/effect/proc_holder/spell/targeted/sacred_flame/cast(list/targets, mob/user = usr)
+	. = ..()
 	for(var/mob/living/L in targets)
 		if(L.anti_magic_check(TRUE, TRUE))
 			continue
@@ -386,7 +388,7 @@
 	action_icon_state = "thrownlightning"
 
 /obj/effect/proc_holder/spell/targeted/conjure_item/spellpacket/cast(list/targets, mob/user = usr)
-	..()
+	. = ..()
 	for(var/mob/living/carbon/C in targets)
 		C.throw_mode_on()
 

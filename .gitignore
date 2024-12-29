@@ -238,4 +238,6 @@ config/dbconfig.txt
 config/comms.txt
 
 /prof.dll
-/rust_g.dll
+
+# OpenDream-compiled DME
+/stonekeep.json

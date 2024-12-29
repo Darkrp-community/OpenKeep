@@ -17,7 +17,8 @@
 		/datum/language/zybantine,
 		/datum/language/celestial,
 		/datum/language/hellspeak,
-		/datum/language/beast
+		/datum/language/beast,
+		/datum/language/orcish
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)

@@ -1,86 +1,88 @@
-/*
-Overview:
-   Used to create objects that need a per step proc call.  Default definition of 'Initialize()'
-   stores a reference to src machine in global 'machines list'.  Default definition
-   of 'Destroy' removes reference to src machine in global 'machines list'.
-
-Class Variables:
-   use_power (num)
-      current state of auto power use.
-      Possible Values:
-         NO_POWER_USE -- no auto power use
-         IDLE_POWER_USE -- machine is using power at its idle power level
-         ACTIVE_POWER_USE -- machine is using power at its active power level
-
-   active_power_usage (num)
-      Value for the amount of power to use when in active power mode
-
-   idle_power_usage (num)
-      Value for the amount of power to use when in idle power mode
-
-   power_channel (num)
-      What channel to draw from when drawing power for power mode
-      Possible Values:
-         EQUIP:0 -- Equipment Channel
-         LIGHT:2 -- Lighting Channel
-         ENVIRON:3 -- Environment Channel
-
-   component_parts (list)
-      A list of component parts of machine used by frame based machines.
-
-   stat (bitflag)
-      Machine status bit flags.
-      Possible bit flags:
-         BROKEN -- Machine is broken
-         NOPOWER -- No power is being supplied to machine.
-         MAINT -- machine is currently under going maintenance.
-         EMPED -- temporary broken by EMP pulse
-
-Class Procs:
-   Initialize()                     'game/machinery/machine.dm'
-
-   Destroy()                   'game/machinery/machine.dm'
-
-   auto_use_power()            'game/machinery/machine.dm'
-      This proc determines how power mode power is deducted by the machine.
-      'auto_use_power()' is called by the 'master_controller' game_controller every
-      tick.
-
-      Return Value:
-         return:1 -- if object is powered
-         return:0 -- if object is not powered.
-
-      Default definition uses 'use_power', 'power_channel', 'active_power_usage',
-      'idle_power_usage', 'powered()', and 'use_power()' implement behavior.
-
-   powered(chan = EQUIP)         'modules/power/power.dm'
-      Checks to see if area that contains the object has power available for power
-      channel given in 'chan'.
-
-   use_power(amount, chan=EQUIP)   'modules/power/power.dm'
-      Deducts 'amount' from the power channel 'chan' of the area that contains the object.
-
-   power_change()               'modules/power/power.dm'
-      Called by the area that contains the object when ever that area under goes a
-      power state change (area runs out of power, or area channel is turned off).
-
-   RefreshParts()               'game/machinery/machine.dm'
-      Called to refresh the variables in the machine that are contributed to by parts
-      contained in the component_parts list. (example: glass and material amounts for
-      the autolathe)
-
-      Default definition does nothing.
-
-   process()                  'game/machinery/machine.dm'
-      Called by the 'machinery subsystem' once per machinery tick for each machine that is listed in its 'machines' list.
-
-   process_atmos()
-      Called by the 'air subsystem' once per atmos tick for each machine that is listed in its 'atmos_machines' list.
-
-   is_operational()
-		Returns 0 if the machine is unpowered, broken or undergoing maintenance, something else if not
-
-	Compiled by Aygar
+/**
+ * Machines in the world, such as computers, pipes, and airlocks.
+ *
+ *Overview:
+ *  Used to create objects that need a per step proc call.  Default definition of 'Initialize()'
+ *  stores a reference to src machine in global 'machines list'.  Default definition
+ *  of 'Destroy' removes reference to src machine in global 'machines list'.
+ *
+ *Class Variables:
+ *  use_power (num)
+ *     current state of auto power use.
+ *     Possible Values:
+ *        NO_POWER_USE -- no auto power use
+ *        IDLE_POWER_USE -- machine is using power at its idle power level
+ *        ACTIVE_POWER_USE -- machine is using power at its active power level
+ *
+ *  active_power_usage (num)
+ *     Value for the amount of power to use when in active power mode
+ *
+ *  idle_power_usage (num)
+ *     Value for the amount of power to use when in idle power mode
+ *
+ *   power_channel (num)
+ *      What channel to draw from when drawing power for power mode
+ *      Possible Values:
+ *         EQUIP:0 -- Equipment Channel
+ *         LIGHT:2 -- Lighting Channel
+ *         ENVIRON:3 -- Environment Channel
+ *
+ *   component_parts (list)
+ *      A list of component parts of machine used by frame based machines.
+ *
+ *   stat (bitflag)
+ *      Machine status bit flags.
+ *      Possible bit flags:
+ *         BROKEN -- Machine is broken
+ *         NOPOWER -- No power is being supplied to machine.
+ *         MAINT -- machine is currently under going maintenance.
+ *         EMPED -- temporary broken by EMP pulse
+ *
+ *Class Procs:
+ *   Initialize()                     'game/machinery/machine.dm'
+ *
+ *   Destroy()                   'game/machinery/machine.dm'
+ *
+ *   auto_use_power()            'game/machinery/machine.dm'
+ *      This proc determines how power mode power is deducted by the machine.
+ *      'auto_use_power()' is called by the 'master_controller' game_controller every
+ *      tick.
+ *
+ *      Return Value:
+ *         return:1 -- if object is powered
+ *         return:0 -- if object is not powered.
+ *
+ *      Default definition uses 'use_power', 'power_channel', 'active_power_usage',
+ *      'idle_power_usage', 'powered()', and 'use_power()' implement behavior.
+ *
+ *   powered(chan = EQUIP)         'modules/power/power.dm'
+ *      Checks to see if area that contains the object has power available for power
+ *      channel given in 'chan'.
+ *
+ *   use_power(amount, chan=EQUIP)   'modules/power/power.dm'
+ *      Deducts 'amount' from the power channel 'chan' of the area that contains the object.
+ *
+ *   power_change()               'modules/power/power.dm'
+ *      Called by the area that contains the object when ever that area under goes a
+ *      power state change (area runs out of power, or area channel is turned off).
+ *
+ *   RefreshParts()               'game/machinery/machine.dm'
+ *      Called to refresh the variables in the machine that are contributed to by parts
+ *      contained in the component_parts list. (example: glass and material amounts for
+ *      the autolathe)
+ *
+ *      Default definition does nothing.
+ *
+ *   process()                  'game/machinery/machine.dm'
+ *      Called by the 'machinery subsystem' once per machinery tick for each machine that is listed in its 'machines' list.
+ *
+ *   process_atmos()
+ *      Called by the 'air subsystem' once per atmos tick for each machine that is listed in its 'atmos_machines' list.
+ *
+ *   is_operational()
+ *        Returns 0 if the machine is unpowered, broken or undergoing maintenance, something else if not
+ *
+ *    Compiled by Aygar
 */
 
 /obj/machinery
@@ -114,7 +116,6 @@ Class Procs:
 	var/list/occupant_typecache //if set, turned into typecache in Initialize, other wise, defaults to mob/living typecache
 	var/atom/movable/occupant = null
 	var/speed_process = FALSE // Process as fast as possible?
-	var/obj/item/circuitboard/circuit // Circuit to be created and inserted when the machinery is created
 
 	var/interaction_flags_machine = INTERACT_MACHINE_WIRES_IF_OPEN | INTERACT_MACHINE_ALLOW_SILICON | INTERACT_MACHINE_OPEN_SILICON | INTERACT_MACHINE_SET_MACHINE
 	var/fair_market_price = 69
@@ -140,10 +141,6 @@ Class Procs:
 	. = ..()
 	GLOB.machines += src
 
-	if(ispath(circuit, /obj/item/circuitboard))
-		circuit = new circuit
-		circuit.apply_default_parts(src)
-
 	if(!speed_process)
 		START_PROCESSING(SSmachines, src)
 	else
@@ -153,11 +150,6 @@ Class Procs:
 		occupant_typecache = typecacheof(occupant_typecache)
 
 	return INITIALIZE_HINT_LATELOAD
-
-/obj/machinery/LateInitialize()
-	. = ..()
-	power_change()
-	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
 
 /obj/machinery/Destroy()
 	GLOB.machines.Remove(src)
@@ -184,7 +176,6 @@ Class Procs:
 /obj/machinery/emp_act(severity)
 	. = ..()
 	if(use_power && !stat && !(. & EMP_PROTECT_SELF))
-		use_power(7500/severity)
 		new /obj/effect/temp_visual/emp(loc)
 
 /obj/machinery/proc/open_machine(drop = TRUE)
@@ -233,19 +224,13 @@ Class Procs:
 	update_icon()
 
 /obj/machinery/proc/auto_use_power()
-	if(!powered(power_channel))
-		return 0
-	if(use_power == 1)
-		use_power(idle_power_usage,power_channel)
-	else if(use_power >= 2)
-		use_power(active_power_usage,power_channel)
 	return 1
 
 /obj/machinery/proc/is_operational()
 	return !(stat & (NOPOWER|BROKEN|MAINT))
 
 /obj/machinery/can_interact(mob/user)
-	var/silicon = issiliconoradminghost(user)
+	var/silicon = IsAdminGhost(user)
 	if((stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE))
 		return FALSE
 	if(panel_open && !(interaction_flags_machine & INTERACT_MACHINE_OPEN))
@@ -326,21 +311,8 @@ Class Procs:
 		user.visible_message("<span class='danger'>[user.name] smashes against \the [src.name] with its paws.</span>", null, null, COMBAT_MESSAGE_RANGE)
 		take_damage(4, BRUTE, "melee", 1)
 
-/obj/machinery/attack_robot(mob/user)
-	if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON) && !IsAdminGhost(user))
-		return FALSE
-	return _try_interact(user)
-
-/obj/machinery/attack_ai(mob/user)
-	if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON) && !IsAdminGhost(user))
-		return FALSE
-	if(iscyborg(user))// For some reason attack_robot doesn't work
-		return attack_robot(user)
-	else
-		return _try_interact(user)
-
 /obj/machinery/_try_interact(mob/user)
-	if((interaction_flags_machine & INTERACT_MACHINE_WIRES_IF_OPEN) && panel_open && (attempt_wire_interaction(user) == WIRE_INTERACTION_BLOCK))
+	if((interaction_flags_machine & INTERACT_MACHINE_WIRES_IF_OPEN) && panel_open)
 		return TRUE
 	return ..()
 
@@ -368,21 +340,10 @@ Class Procs:
 	if(!(flags_1 & NODECONSTRUCT_1))
 		on_deconstruction()
 		if(component_parts && component_parts.len)
-			spawn_frame(disassembled)
 			for(var/obj/item/I in component_parts)
 				I.forceMove(loc)
 			component_parts.Cut()
 	qdel(src)
-
-/obj/machinery/proc/spawn_frame(disassembled)
-	var/obj/structure/frame/machine/M = new /obj/structure/frame/machine(loc)
-	. = M
-	M.setAnchored(anchored)
-	if(!disassembled)
-		M.obj_integrity = M.max_integrity * 0.5 //the frame is already half broken
-	transfer_fingerprints_to(M)
-	M.state = 2
-	M.icon_state = "box_1"
 
 /obj/machinery/obj_break(damage_flag)
 	SHOULD_CALL_PARENT(TRUE)
@@ -456,51 +417,6 @@ Class Procs:
 	if(can_be_unfasten_wrench(user, TRUE) != SUCCESSFUL_UNFASTEN) //if we aren't explicitly successful, cancel the fuck out
 		return FALSE
 	return TRUE
-
-/obj/machinery/proc/exchange_parts(mob/user, obj/item/storage/part_replacer/W)
-	if(!istype(W))
-		return FALSE
-	if((flags_1 & NODECONSTRUCT_1) && !W.works_from_distance)
-		return FALSE
-	var/shouldplaysound = 0
-	if(component_parts)
-		if(panel_open || W.works_from_distance)
-			var/obj/item/circuitboard/machine/CB = locate(/obj/item/circuitboard/machine) in component_parts
-			var/P
-			if(W.works_from_distance)
-				to_chat(user, display_parts(user))
-			for(var/obj/item/A in component_parts)
-				for(var/D in CB.req_components)
-					if(ispath(A.type, D))
-						P = D
-						break
-				for(var/obj/item/B in W.contents)
-					if(istype(B, P) && istype(A, P))
-						if(B.get_part_rating() > A.get_part_rating())
-							if(istype(B,/obj/item/stack)) //conveniently this will mean A is also a stack and I will kill the first person to prove me wrong
-								var/obj/item/stack/SA = A
-								var/obj/item/stack/SB = B
-								var/used_amt = SA.get_amount()
-								if(!SB.use(used_amt))
-									continue //if we don't have the exact amount to replace we don't
-								var/obj/item/stack/SN = new SB.merge_type(null,used_amt)
-								component_parts += SN
-							else
-								if(SEND_SIGNAL(W, COMSIG_TRY_STORAGE_TAKE, B, src))
-									component_parts += B
-									B.moveToNullspace()
-							SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
-							component_parts -= A
-							to_chat(user, "<span class='notice'>[capitalize(A.name)] replaced with [B.name].</span>")
-							shouldplaysound = 1 //Only play the sound when parts are actually replaced!
-							break
-			RefreshParts()
-		else
-			to_chat(user, display_parts(user))
-		if(shouldplaysound)
-			W.play_rped_sound()
-		return TRUE
-	return FALSE
 
 /obj/machinery/proc/display_parts(mob/user)
 	. = list()
@@ -586,8 +502,6 @@ Class Procs:
 			return
 	if(!istype(O, /obj/item) || user.get_active_held_item() != O)
 		return
-	if(iscyborg(user))
-		return
 	if(!user.dropItemToGround(O))
 		return
 	if (O.loc != src.loc)
@@ -604,8 +518,6 @@ Class Procs:
 	var/adjusted_climb_time = climb_time
 	if(user.restrained()) //climbing takes twice as long when restrained.
 		adjusted_climb_time *= 2
-	if(isalien(user))
-		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
 		adjusted_climb_time *= 0.8
 	adjusted_climb_time -= user.STASPD * 2

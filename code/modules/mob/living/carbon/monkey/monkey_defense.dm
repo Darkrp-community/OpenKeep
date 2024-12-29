@@ -17,16 +17,6 @@
 			var/dmg = rand(1, 5)
 			apply_damage(dmg, BRUTE, affecting)
 
-/mob/living/carbon/monkey/attack_larva(mob/living/carbon/alien/larva/L)
-	if(..()) //successful larva bite.
-		var/damage = rand(1, 3)
-		if(stat != DEAD)
-			L.amount_grown = min(L.amount_grown + damage, L.max_grown)
-			var/obj/item/bodypart/affecting = get_bodypart(ran_zone(L.zone_selected))
-			if(!affecting)
-				affecting = get_bodypart(BODY_ZONE_CHEST)
-			apply_damage(damage, BRUTE, affecting)
-
 /mob/living/carbon/monkey/attack_hand(mob/living/carbon/human/M)
 	if(..())	//To allow surgery to return properly.
 		return
@@ -78,57 +68,6 @@
 					visible_message("<span class='danger'>[M] disarms [src]!</span>", \
 									"<span class='danger'>[M] disarms you!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, M)
 					to_chat(M, "<span class='danger'>I disarm [src]!</span>")
-
-/mob/living/carbon/monkey/attack_alien(mob/living/carbon/alien/humanoid/M)
-	if(..()) //if harm or disarm intent.
-		if (M.used_intent.type == INTENT_HARM)
-			if ((prob(95) && health > 0))
-				playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
-				var/damage = rand(15, 30)
-				if (damage >= 25)
-					damage = rand(20, 40)
-					if(AmountUnconscious() < 300)
-						Unconscious(rand(200, 300))
-					visible_message("<span class='danger'>[M] wounds [name]!</span>", \
-									"<span class='danger'>[M] wounds you!</span>", "<span class='hear'>I hear a sickening sound of flesh hitting flesh!</span>", COMBAT_MESSAGE_RANGE, M)
-					to_chat(M, "<span class='danger'>I wound [name]!</span>")
-				else
-					visible_message("<span class='danger'>[M] slashes [name]!</span>", \
-									"<span class='danger'>[M] slashes you!</span>", "<span class='hear'>I hear a sickening sound of a slice!</span>", COMBAT_MESSAGE_RANGE, M)
-					to_chat(M, "<span class='danger'>I slash [name]!</span>")
-
-				var/obj/item/bodypart/affecting = get_bodypart(ran_zone(M.zone_selected))
-				log_combat(M, src, "attacked")
-				if(!affecting)
-					affecting = get_bodypart(BODY_ZONE_CHEST)
-				if(!dismembering_strike(M, affecting.body_zone)) //Dismemberment successful
-					return 1
-				apply_damage(damage, BRUTE, affecting)
-
-			else
-				playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
-				visible_message("<span class='danger'>[M]'s lunge misses [name]!</span>", \
-								"<span class='danger'>I avoid [M]'s lunge!</span>", "<span class='hear'>I hear a swoosh!</span>", COMBAT_MESSAGE_RANGE, M)
-				to_chat(M, "<span class='warning'>My lunge misses [name]!</span>")
-
-		if (M.used_intent.type == INTENT_DISARM)
-			var/obj/item/I = null
-			playsound(loc, 'sound/blank.ogg', 25, TRUE, -1)
-			if(prob(95))
-				Paralyze(20)
-				visible_message("<span class='danger'>[M] tackles [name] down!</span>", \
-								"<span class='danger'>[M] tackles you down!</span>", "<span class='hear'>I hear aggressive shuffling followed by a loud thud!</span>", COMBAT_MESSAGE_RANGE, M)
-				to_chat(M, "<span class='danger'>I tackle [name] down!</span>")
-			else
-				I = get_active_held_item()
-				if(dropItemToGround(I))
-					visible_message("<span class='danger'>[M] disarms [name]!</span>", \
-									"<span class='danger'>[M] disarms you!</span>", "<span class='hear'>I hear aggressive shuffling!</span>", COMBAT_MESSAGE_RANGE, M)
-					to_chat(M, "<span class='danger'>I disarm [name]!</span>")
-				else
-					I = null
-			log_combat(M, src, "disarmed", "[I ? " removing \the [I]" : ""]")
-			updatehealth()
 
 
 /mob/living/carbon/monkey/attack_animal(mob/living/simple_animal/M)

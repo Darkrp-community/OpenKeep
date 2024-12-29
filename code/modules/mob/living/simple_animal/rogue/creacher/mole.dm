@@ -36,7 +36,7 @@
 					/obj/item/bodypart,
 					/obj/item/organ)
 
-	base_intents = list(/datum/intent/simple/claw)
+	base_intents = list(/datum/intent/simple/claw_strong)
 	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
 	melee_damage_lower = 20
 	melee_damage_upper = 40
@@ -55,23 +55,16 @@
 	retreat_health = 0.4
 	food = 0
 
-	dodgetime = 20
+	dodgetime = 2.5 SECONDS
 	aggressive = TRUE
 //	stat_attack = UNCONSCIOUS
 	remains_type = /obj/effect/decal/remains/mole
 	body_eater = TRUE
-/*
-/mob/living/simple_animal/hostile/retaliate/rogue/mole/greater
-	name = "Greater Brown Mole"
-	desc = "Holy Moley"
-	health = 400
-	maxHealth = 400
-	butcher_results = list(/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 4,
-						/obj/item/natural/hide = 3,
-						/obj/item/natural/fur/mole = 2)
-	melee_damage_lower = 50
-	melee_damage_upper = 60
-*/
+
+	ai_controller = /datum/ai_controller/mole
+	AIStatus = AI_OFF
+	can_have_ai = FALSE
+
 /obj/effect/decal/remains/mole
 	name = "remains"
 	gender = PLURAL
@@ -84,6 +77,7 @@
 	if(prob(33))
 		gender = FEMALE
 	update_icon()
+	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/death(gibbed)
 	..()
@@ -113,6 +107,11 @@
 	if(pulledby)
 		Retaliate()
 		GiveTarget(pulledby)
+
+/mob/living/simple_animal/hostile/retaliate/rogue/mole/find_food()
+	. = ..()
+	if(!.)
+		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/rogue/mole/simple_limb_hit(zone)
 	if(!zone)

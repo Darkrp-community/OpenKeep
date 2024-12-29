@@ -212,7 +212,7 @@
 		. = ckey(admin_key)
 	if(!.)
 		return FALSE
-	if(!admin_ckey && (. in GLOB.admin_datums+GLOB.deadmins))
+	if(!admin_ckey && ((. in GLOB.admin_datums) || (. in GLOB.deadmins)))
 		to_chat(usr, "<span class='danger'>[admin_key] is already an admin.</span>")
 		return FALSE
 	if(use_db)

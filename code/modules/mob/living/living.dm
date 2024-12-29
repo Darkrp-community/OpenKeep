@@ -51,6 +51,9 @@
 	med_hud_set_status()
 
 /mob/living/onZImpact(turf/T, levels)
+	if(HAS_TRAIT(src, TRAIT_NOFALLDAMAGE1))
+		if(levels <= 2)
+			return
 	var/dex_save = src.mind?.get_skill_level(/datum/skill/misc/climbing)
 	var/sneak_fall = FALSE // If we're sneaking, don't announce it to our surroundings
 	if(dex_save >= 5) // Master climbers can fall down 2 levels without hurting themselves
@@ -199,7 +202,7 @@
 		if(isliving(M))
 			var/sprint_distance = sprinted_tiles
 			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
-			
+
 			var/mob/living/L = M
 
 			var/self_points = FLOOR((STACON + STASTR + mind.get_skill_level(/datum/skill/misc/athletics))/2, 1)
@@ -277,23 +280,6 @@
 		if(!istype(M, /obj/item/clothing))
 			if(prob(I.block_chance*2))
 				return
-
-/mob/living/get_photo_description(obj/item/camera/camera)
-	var/list/mob_details = list()
-	var/list/holding = list()
-	var/len = length(held_items)
-	if(len)
-		for(var/obj/item/I in held_items)
-			if(!holding.len)
-				holding += "They are holding \a [I]"
-			else if(held_items.Find(I) == len)
-				holding += ", and \a [I]."
-			else
-				holding += ", \a [I]"
-	holding += "."
-	mob_details += "You can also see [src] on the photo[health < (maxHealth * 0.75) ? ", looking a bit hurt":""][holding ? ". [holding.Join("")]":"."]."
-	return mob_details.Join("")
-
 //Called when we bump onto an obj
 /mob/living/proc/ObjBump(obj/O)
 	return
@@ -512,7 +498,7 @@
 
 /mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
 	return //rtd fix not updating because no dirchange
-	if(M == src)
+/* 	if(M == src)
 		return
 	if(M.wallpressed)
 		return
@@ -545,7 +531,7 @@
 				M.lying = 270
 				M.update_transform()
 				M.lying_prev = M.lying
-			M.set_mob_offsets("pulledby", _x = offset, _y = 0)
+			M.set_mob_offsets("pulledby", _x = offset, _y = 0) */
 
 /mob/living
 	var/list/mob_offsets = list()
@@ -590,7 +576,7 @@
 			if(istype(get_active_held_item(), /obj/item/grabbing))
 				var/obj/item/grabbing/I = get_active_held_item()
 				if(I.grabbed == pulling)
-					grabs |= I					
+					grabs |= I
 			if(istype(get_inactive_held_item(), /obj/item/grabbing))
 				var/obj/item/grabbing/I = get_inactive_held_item()
 				if(I.grabbed == pulling)
@@ -635,7 +621,7 @@
 		return
 	if(!reaper)
 		return
-	if (InCritical() || health <= 0 || blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE)
+	if (InCritical() || health <= 0 || (blood_volume < BLOOD_VOLUME_SURVIVE))
 		log_message("Has [whispered ? "whispered his final words" : "succumbed to death"] while in [InFullCritical() ? "hard":"soft"] critical with [round(health, 0.1)] points of health!", LOG_ATTACK)
 		adjustOxyLoss(201)
 		updatehealth()
@@ -753,6 +739,7 @@
 		else
 			to_chat(src, "<span class='warning'>I fail to get up!</span>")
 	update_cone_show()
+	SEND_SIGNAL(src, COMSIG_LIVING_SET_RESTING, rest)
 
 /mob/living/proc/update_resting()
 	update_rest_hud_icon()
@@ -792,6 +779,7 @@
 	update_stat()
 	med_hud_set_health()
 	med_hud_set_status()
+	SEND_SIGNAL(src, COMSIG_LIVING_HEALTH_UPDATE)
 
 //Proc used to resuscitate a mob, for full_heal see fully_heal()
 /mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE)
@@ -838,7 +826,7 @@
 			L.visible_message("<span class='warning'>[L] trips over [src]!</span>","<span class='warning'>I trip over [src]!</span>")
 			L.Knockdown(10)
 			L.Immobilize(20)
-			
+
 
 
 //proc used to completely heal a mob.
@@ -1169,7 +1157,7 @@
 		var/wrestling_cooldown_reduction = 0
 		if(pulledby?.mind?.get_skill_level("wrestling"))
 			wrestling_cooldown_reduction = 0.2 SECONDS * pulledby.mind.get_skill_level("wrestling")
-		TIMER_COOLDOWN_START(src, "broke_free", max(0, 0.8 SECONDS - wrestling_cooldown_reduction))
+		TIMER_COOLDOWN_START(src, "broke_free", max(0, 1.5 SECONDS - wrestling_cooldown_reduction))
 
 		return FALSE
 	else
@@ -1323,13 +1311,6 @@
 		else
 			src << browse(null,"window=mob[REF(who)]")
 
-/mob/living/singularity_pull(S, current_size)
-	..()
-	if(current_size >= STAGE_SIX) //your puny magboots/wings/whatever will not save you against supermatter singularity
-		throw_at(S, 14, 3, src, TRUE)
-	else if(!src.mob_negates_gravity())
-		step_towards(src,S)
-
 /mob/living/proc/do_jitter_animation(jitteriness)
 	var/amplitude = min(4, (jitteriness/100) + 1)
 	var/pixel_x_diff = rand(-amplitude, amplitude)
@@ -1386,9 +1367,6 @@
 	if(user != null && src == user)
 		return FALSE
 	if(invisibility || alpha == 0)//cloaked
-		return FALSE
-	// Now, are they viewable by a camera? (This is last because it's the most intensive check)
-	if(!near_camera(src))
 		return FALSE
 	return TRUE
 
@@ -1627,6 +1605,7 @@
 	else
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
+	update_cone_show()
 
 /*
 	if(should_be_lying || restrained || incapacitated())
@@ -1704,14 +1683,6 @@
 		statpanel("[A.panel]",A.get_panel_text(),A)
 
 /mob/living/lingcheck()
-	if(mind)
-		var/datum/antagonist/changeling/changeling = mind.has_antag_datum(/datum/antagonist/changeling)
-		if(changeling)
-			if(changeling.changeling_speak)
-				return LINGHIVE_LING
-			return LINGHIVE_OUTSIDER
-	if(mind && mind.linglink)
-		return LINGHIVE_LINK
 	return LINGHIVE_NONE
 
 /mob/living/forceMove(atom/destination)
@@ -1930,10 +1901,10 @@
 	I.mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	flick_overlay(I, list(C), 30)
 
-/mob/proc/look_up(var/step)
+/mob/proc/look_up(step)
 	return
 
-/mob/living/look_up(var/step)
+/mob/living/look_up(step)
 	if(!can_look_up())
 		return
 	changeNext_move(CLICK_CD_MELEE)
@@ -1943,7 +1914,7 @@
 	var/turf/ceiling = T
 	for(var/i=0,i<step, ++i)
 		ceiling = get_step_multiz(ceiling, UP)
-		
+
 		if(!ceiling) //We are at the highest z-level.
 			if(T.can_see_sky())
 				switch(GLOB.forecast)

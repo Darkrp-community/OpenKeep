@@ -25,7 +25,7 @@
 						/obj/item/natural/feather = 1)
 
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/berries/rogue,
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/jacksberry,
 					/obj/item/natural/worms, // well this works for domesticating but to actually eat it has to be a reagen_container/food object. Leaving it for now.
 					/obj/item/reagent_containers/food/snacks/produce/wheat,
 					/obj/item/reagent_containers/food/snacks/produce/oat)

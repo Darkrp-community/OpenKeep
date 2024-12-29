@@ -11,7 +11,7 @@
 	symptom_delay_max = 1
 	var/passive_message = "" //random message to infected but not actively healing people
 	threshold_desc = "<b>Stage Speed 6:</b> Doubles healing speed.<br>\
-					  <b>Stealth 4:</b> Healing will no longer be visible to onlookers."
+					<b>Stealth 4:</b> Healing will no longer be visible to onlookers."
 
 /datum/symptom/heal/Start(datum/disease/advance/A)
 	if(!..())
@@ -55,7 +55,7 @@
 	passive_message = "<span class='notice'>I miss the feeling of starlight on my skin.</span>"
 	var/nearspace_penalty = 0.3
 	threshold_desc = "<b>Stage Speed 6:</b> Increases healing speed.<br>\
-					  <b>Transmission 6:</b> Removes penalty for only being close to space."
+					<b>Transmission 6:</b> Removes penalty for only being close to space."
 
 /datum/symptom/heal/starlight/Start(datum/disease/advance/A)
 	if(!..())
@@ -106,7 +106,7 @@
 	var/food_conversion = FALSE
 	desc = ""
 	threshold_desc = "<b>Resistance 7:</b> Increases chem removal speed.<br>\
-					  <b>Stage Speed 6:</b> Consumed chemicals nourish the host."
+					<b>Stage Speed 6:</b> Consumed chemicals nourish the host."
 
 /datum/symptom/heal/chem/Start(datum/disease/advance/A)
 	if(!..())
@@ -137,9 +137,9 @@
 	var/triple_metabolism = FALSE
 	var/reduced_hunger = FALSE
 	desc = "The virus causes the host's metabolism to accelerate rapidly, making them process chemicals twice as fast,\
-	 but also causing increased hunger."
+	but also causing increased hunger."
 	threshold_desc = "<b>Stealth 3:</b> Reduces hunger rate.<br>\
-					  <b>Stage Speed 10:</b> Chemical metabolization is tripled instead of doubled."
+					<b>Stage Speed 10:</b> Chemical metabolization is tripled instead of doubled."
 
 /datum/symptom/heal/metabolism/Start(datum/disease/advance/A)
 	if(!..())
@@ -222,8 +222,8 @@
 	var/stabilize = FALSE
 	var/active_coma = FALSE //to prevent multiple coma procs
 	threshold_desc = "<b>Stealth 2:</b> Host appears to die when falling into a coma.<br>\
-					  <b>Resistance 4:</b> The virus also stabilizes the host while they are in critical condition.<br>\
-					  <b>Stage Speed 7:</b> Increases healing speed."
+					<b>Resistance 4:</b> The virus also stabilizes the host while they are in critical condition.<br>\
+					<b>Stage Speed 7:</b> Increases healing speed."
 
 /datum/symptom/heal/coma/Start(datum/disease/advance/A)
 	if(!..())
@@ -311,7 +311,7 @@
 	passive_message = "<span class='notice'>My skin feels oddly dry...</span>"
 	var/absorption_coeff = 1
 	threshold_desc = "<b>Resistance 5:</b> Water is consumed at a much slower rate.<br>\
-					  <b>Stage Speed 7:</b> Increases healing speed."
+					<b>Stage Speed 7:</b> Increases healing speed."
 
 /datum/symptom/heal/water/Start(datum/disease/advance/A)
 	if(!..())
@@ -367,7 +367,7 @@
 	passive_message = "<span class='notice'>I feel an odd attraction to plasma.</span>"
 	var/temp_rate = 1
 	threshold_desc = "<b>Transmission 6:</b> Increases temperature adjustment rate.<br>\
-					  <b>Stage Speed 7:</b> Increases healing speed."
+					<b>Stage Speed 7:</b> Increases healing speed."
 
 /datum/symptom/heal/plasma/Start(datum/disease/advance/A)
 	if(!..())
@@ -434,7 +434,7 @@
 	passive_message = "<span class='notice'>My skin glows faintly for a moment.</span>"
 	var/cellular_damage = FALSE
 	threshold_desc = "<b>Transmission 6:</b> Additionally heals cellular damage.<br>\
-					  <b>Resistance 7:</b> Increases healing speed."
+					<b>Resistance 7:</b> Increases healing speed."
 
 /datum/symptom/heal/radiation/Start(datum/disease/advance/A)
 	if(!..())

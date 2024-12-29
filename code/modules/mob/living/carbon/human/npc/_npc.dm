@@ -20,8 +20,10 @@
 	var/ai_when_client = FALSE
 	var/next_idle = 0
 	var/next_seek = 0
+	var/next_passive_detect = 0
 	var/flee_in_pain = FALSE
 	var/stand_attempts = 0
+	var/attack_speed = 0
 
 	var/returning_home = FALSE
 
@@ -93,8 +95,7 @@
 
 /mob/living/carbon/human/proc/deaggrodel()
 	if(aggressive)
-		var/list/around = hearers(7, src)  // scan for enemies
-		for(var/mob/living/L in around)
+		for(var/mob/living/L in view(7)) // scan for enemies
 			if( should_target(L) && (L != src))
 				if(L.stat != DEAD)
 					retaliate(L)
@@ -102,7 +103,7 @@
 	if(!target)
 //		var/escape_path
 //		for(var/obj/structure/flora/RT in view(6, src))
-//			if(istype(RT,/obj/structure/flora/roguetree/stump))
+//			if(istype(RT,/obj/structure/table/wood/treestump))
 //				continue
 //			if(istype(RT,/obj/structure/flora/roguetree))
 //				escape_path = RT
@@ -141,7 +142,7 @@
 				for(var/i = 0; i < maxStepsTick; ++i)
 					if(!IsDeadOrIncap())
 						if(myPath.len >= 1)
-							walk_to(src,myPath[1],0,update_movespeed())
+							walk_to(src,turf_of_target,0,update_movespeed())
 							myPath -= myPath[1]
 				return 1
 	else
@@ -187,19 +188,6 @@
 		if(put_in_hands(I))
 			return TRUE
 
-//	// CLOTHING
-//	else if(istype(I, /obj/item/clothing))
-//		var/obj/item/clothing/C = I
-//		monkeyDrop(C)
-//		addtimer(CALLBACK(src, PROC_REF(pickup_and_wear), C), 5)
-//		return TRUE
-
-	// EVERYTHING ELSE
-//	else
-//		if(!get_item_for_held_index(1) || !get_item_for_held_index(2))
-//			put_in_hands(I)
-//			return TRUE
-
 	blacklistItems[I] ++
 	return FALSE
 
@@ -228,6 +216,9 @@
 		return FALSE
 
 	if(L == src)
+		return FALSE
+
+	if (L.alpha == 0 && L.rogue_sneaking)
 		return FALSE
 
 	if(!is_in_zweb(src.z,L.z))
@@ -259,12 +250,19 @@
 				for(var/mob/living/L in around)
 					if(should_target(L))
 						retaliate(L)
+					if (world.time >= next_passive_detect && L.alpha == 0 && L.rogue_sneaking && prob(STAPER / 2))
+						if (!npc_detect_sneak(L, -20)) // attempt a passive detect with 20% increased difficulty
+							next_passive_detect = world.time + STAPER SECONDS
 
 		if(AI_HUNT)		// hunting for attacker
 			if(target != null)
 				if(!should_target(target))
-					back_to_idle()
-					return TRUE
+					if (target.alpha == 0 && target.rogue_sneaking) // attempt one detect since we were just fighting them and have lost them
+						if (npc_detect_sneak(target))
+							retaliate(target)
+					else
+						back_to_idle()
+						return TRUE
 				m_intent = MOVE_INTENT_WALK
 				INVOKE_ASYNC(src, PROC_REF(walk2derpless), target)
 
@@ -273,17 +271,10 @@
 				for(var/obj/item/I in view(1,src))
 					if(!isturf(I.loc))
 						continue
-					if(I in blacklistItems)
+					if(blacklistItems[I])
 						continue
-					if(I && I.force > 7)
+					if(I.force > 7)
 						equip_item(I)
-
-//			// switch targets
-//			if(prob(15))
-//				for(var/mob/living/L in around)
-//					if((L != target) && should_target(L) && (L.stat == CONSCIOUS))
-//						retaliate(L)
-//						return TRUE
 
 			// if can't reach target for long enough, go idle
 			if(frustration >= 15)
@@ -306,24 +297,6 @@
 		if(AI_FLEE)
 			back_to_idle()
 			return TRUE
-/*		if(AI_FLEE)
-			var/list/around = view(src, 7)
-			// flee from anyone who attacked us and we didn't beat down
-			for(var/mob/living/L in around)
-				if( enemies[L] && (L.stat != DEAD) )
-					target = L
-					break
-
-			if(target != null)
-				frustration++
-				if(Adjacent(target))
-					retalitate(target)
-					return TRUE
-				walk_away(src, target, 5, update_movespeed())
-			else
-				back_to_idle()
-
-			return TRUE*/
 
 	return IsStandingStill()
 
@@ -373,7 +346,7 @@
 		used_intent = a_intent
 		UnarmedAttack(L,1)
 
-	var/adf = used_intent.clickcd
+	var/adf = ((used_intent.clickcd + 8) - round((src.STASPD - 10) / 2) - attack_speed)
 	if(istype(rmb_intent, /datum/rmb_intent/aimed))
 		adf = round(adf * 1.4)
 	if(istype(rmb_intent, /datum/rmb_intent/swift))
@@ -384,18 +357,6 @@
 	if(aggressive)
 		return
 
-//	// if we arn't enemies, we were likely recruited to attack this target, jobs done if we calm down so go back to idle
-//	if(!enemies[L])
-//		if( target == L )
-//			back_to_idle()
-//		return // already de-aggroed
-//
-	// if we are not angry at our target, go back to idle
-//	if(L in enemies)
-//		enemies.Remove(L)
-//		if( target == L )
-//			back_to_idle()
-
 // get angry at a mob
 /mob/living/carbon/human/proc/retaliate(mob/living/L)
 	if(!wander)
@@ -403,6 +364,13 @@
 	if(L == src)
 		return
 	if(mode != AI_OFF)
+		if(L.alpha == 0 && L.rogue_sneaking)
+			// we just got hit by something hidden so try and find them
+			if (prob(5))
+				visible_message(span_notice("[src] begins searching around frantically..."))
+			var/extra_chance = (health <= maxHealth * 50) ? 30 : 0 // if we're below half health, we're way more alert
+			if (!npc_detect_sneak(L, extra_chance))
+				return
 		mode = AI_HUNT
 		last_aggro_loss = null
 		face_atom(L)
@@ -417,5 +385,37 @@
 	if((W.force) && (!target) && (W.damtype != STAMINA) )
 		retaliate(user)
 
+
+/mob/living/proc/npc_detect_sneak(mob/living/target, extra_prob = 0)
+	if (target.alpha > 0 || !target.rogue_sneaking)
+		return TRUE
+	var/probby = 4 * STAPER //this is 10 by default - npcs get an easier time to detect to slightly thwart cheese
+	probby += extra_prob
+	var/sneak_bonus = 0
+	if(target.mind)
+		if (world.time < target.mob_timers[MT_INVISIBILITY])
+			// we're invisible as per the spell effect, so use the highest of our arcane magic (or holy) skill instead of our sneaking
+			sneak_bonus = (max(target.mind?.get_skill_level(/datum/skill/magic/arcane), target.mind?.get_skill_level(/datum/skill/magic/holy)) * 10)
+			probby -= 20 // also just a fat lump of extra difficulty for the npc since spells are hard, you know?
+		else
+			sneak_bonus = (target.mind?.get_skill_level(/datum/skill/misc/sneaking) * 5)
+		probby -= sneak_bonus
+	if(!target.check_armor_skill())
+		probby += 85 //armor is loud as fuck
+		if (sneak_bonus)
+			probby += sneak_bonus // you don't get sneak bonus in heavy armor at all, on top of that
+	if (target.badluck(5))
+		probby += (10 - target.STALUC) * 5 // drop 5% chance for every bit of fortune we're missing
+	if (target.goodluck(5))
+		probby -= (10 - target.STALUC) * 5 // make it 5% harder for every bit of fortune over 10 that we do have
+
+	if (prob(probby))
+		// whoops it saw us
+		target.mob_timers[MT_FOUNDSNEAK] = world.time
+		to_chat(target, span_danger("[src] sees me! I'm found!"))
+		target.update_sneak_invis(TRUE)
+		return TRUE
+	else
+		return FALSE
 
 #undef MAX_RANGE_FIND

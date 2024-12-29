@@ -11,7 +11,7 @@
 	show_in_roundend = FALSE
 	isgoodguy = TRUE // Previous townies, still should get buffs, make chaos.
 	confess_lines = list(
-		"VIVA!", 
+		"VIVA!",
 		"DEATH TO THE NOBLES!",
 		"STICK IT TO THE MAN!",
 		"NO GODS, NO MASTERS!",
@@ -134,7 +134,7 @@
 		for(var/mob/living/carbon/human/L in get_hearers_in_view(6, get_turf(user)))
 			addtimer(CALLBACK(L,TYPE_PROC_REF(/mob/living/carbon/human, rev_ask), user,PR,inputty),1)
 
-/mob/living/carbon/human/proc/rev_ask(var/mob/living/carbon/human/guy,datum/antagonist/prebel/mind_datum,offer)
+/mob/living/carbon/human/proc/rev_ask(mob/living/carbon/human/guy,datum/antagonist/prebel/mind_datum,offer)
 	if(!guy || !mind_datum || !offer)
 		return
 	if(!mind)

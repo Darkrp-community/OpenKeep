@@ -25,6 +25,7 @@
 	if(istype(door))
 		door.locked = 0
 		door.force_open()
+		door.locked = FALSE
 
 /* Assuming force_open is a correct method for both wooden and other doors.
 Check your door implementation to ensure this method exists and is appropriate.*/

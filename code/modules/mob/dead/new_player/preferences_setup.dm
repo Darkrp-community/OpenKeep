@@ -31,7 +31,7 @@
 		facial_hairstyle = pref_species.random_facial_hairstyle(gender)
 	if(randomise[RANDOM_HAIR_COLOR])
 		var/list/hairs
-		if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+		if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 			hairs = pref_species.get_oldhc_list()
 		else
 			hairs = pref_species.get_hairc_list()
@@ -39,7 +39,7 @@
 		facial_hair_color = hair_color
 	if(randomise[RANDOM_FACIAL_HAIR_COLOR])
 		var/list/hairs
-		if(age == AGE_OLD && OLDGREY in pref_species.species_traits)
+		if(age == AGE_OLD && (OLDGREY in pref_species.species_traits))
 			hairs = pref_species.get_oldhc_list()
 		else
 			hairs = pref_species.get_hairc_list()
@@ -95,15 +95,6 @@
 		if(job_preferences[job] > highest_pref)
 			previewJob = SSjob.GetJob(job)
 			highest_pref = job_preferences[job]
-
-	if(previewJob)
-		// Silicons only need a very basic preview since there is no customization for them.
-		if(istype(previewJob,/datum/job/ai))
-			parent.show_character_previews(image('icons/mob/ai.dmi', icon_state = resolve_ai_icon(preferred_ai_core_display), dir = SOUTH))
-			return
-		if(istype(previewJob,/datum/job/cyborg))
-			parent.show_character_previews(image('icons/mob/robots.dmi', icon_state = "robot", dir = SOUTH))
-			return
 
 	// Set up the dummy for its photoshoot
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)

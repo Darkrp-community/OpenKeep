@@ -66,7 +66,7 @@
 	lose_text = ""
 	var/paralysis_type
 	var/list/paralysis_traits = list()
-	 //for descriptions
+	//for descriptions
 
 /datum/brain_trauma/severe/paralysis/New(specific_type)
 	if(specific_type)
@@ -224,6 +224,8 @@
 				else
 					to_chat(owner, "<span class='danger'>I feel my heart lurching in my chest...</span>")
 					owner.adjustOxyLoss(8)
+		if(6)
+			return
 
 /datum/brain_trauma/severe/discoordination
 	name = "Discoordination"

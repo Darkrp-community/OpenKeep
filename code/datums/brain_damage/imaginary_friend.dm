@@ -93,7 +93,7 @@
 	owner = trauma.owner
 	copy_known_languages_from(owner, TRUE)
 
-	setup_friend()
+	INVOKE_ASYNC(src, PROC_REF(setup_friend))
 
 	join = new
 	join.Grant(src)

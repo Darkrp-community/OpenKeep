@@ -71,6 +71,7 @@
 	return
 
 /obj/effect/proc_holder/spell/invoked/projectile/cast(list/targets, mob/living/user)
+	. = ..()
 	var/target = targets[1]
 	var/turf/T = user.loc
 	var/turf/U = get_step(user, user.dir) // Get the tile infront of the move, based on their direction

@@ -230,16 +230,6 @@
 	new /obj/item/reagent_containers/food/snacks/meat/steak/goliath(loc)
 	qdel(src)
 
-/obj/item/reagent_containers/food/snacks/meat/slab/meatwheat
-	name = "meatwheat clump"
-	desc = ""
-	list_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/nutriment/vitamin = 2, /datum/reagent/blood = 5, /datum/reagent/consumable/cooking_oil = 1)
-	filling_color = rgb(150, 0, 0)
-	icon_state = "meatwheat_clump"
-	bitesize = 4
-	tastes = list("meat" = 1, "wheat" = 1)
-	foodtype = GRAIN
-
 /obj/item/reagent_containers/food/snacks/meat/slab/gorilla
 	name = "gorilla meat"
 	desc = ""
@@ -321,7 +311,7 @@
 	tastes = list("meat" = 1)
 
 /obj/item/reagent_containers/food/snacks/meat/steak/plain
-    foodtype = MEAT
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/steak/plain/human
 	tastes = list("tender meat" = 1)
@@ -378,7 +368,7 @@
 	foodtype = MEAT | RAW
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain
-    foodtype = MEAT
+	foodtype = MEAT
 
 /obj/item/reagent_containers/food/snacks/meat/rawcutlet/plain/human
 	cooked_type = /obj/item/reagent_containers/food/snacks/meat/cutlet/plain/human

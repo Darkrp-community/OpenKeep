@@ -53,7 +53,7 @@
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen
 
 /datum/supply_pack/rogue/food/blackgoat
-	name = "Jackberry Mix"
+	name = "Jacksberry Mix"
 	cost = 20
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 

@@ -1,84 +1,1325 @@
-"a" = (/obj/structure/table/wood,/obj/effect/decal/cleanable/dirt/cobweb{dir = 4},/obj/item/roguecoin/gold,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"d" = (/obj/structure/table/wood,/obj/item/flashlight/flare/torch/metal,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"e" = (/obj/structure/spider/cocoon,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"f" = (/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"g" = (/obj/machinery/light/rogue/firebowl/standing/blue,/obj/structure/fluff/walldeco/psybanner{pixel_y = 32},/obj/effect/decal/cleanable/dirt/cobweb{dir = 1},/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"h" = (/obj/item/rogueweapon/pick,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"i" = (/obj/effect/decal/cleanable/blood/tracks{dir = 8},/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"j" = (/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"k" = (/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"m" = (/turf/open/floor/rogue/dirt/road,/area/rogue)
-"n" = (/obj/structure/closet/crate/coffin,/obj/item/clothing/head/roguetown/crown/circlet/sleepless,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"o" = (/obj/item/clothing/head/roguetown/helmet/skullcap,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"p" = (/obj/structure/spider/stickyweb,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"q" = (/turf/closed/mineral/rogue/bedrock,/area/rogue/outdoors/caves)
-"r" = (/obj/structure/spider/stickyweb,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"s" = (/obj/structure/table/wood,/obj/item/clothing/ring/silver,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"t" = (/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"u" = (/obj/machinery/light/rogue/firebowl/standing/blue,/obj/structure/fluff/walldeco/psybanner{pixel_y = 32},/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"v" = (/obj/effect/decal/cleanable/blood/tracks{dir = 1},/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"w" = (/obj/effect/decal/cleanable/dirt/cobweb{icon_state = "cobweb2"},/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"x" = (/obj/structure/mineral_door/bars{locked = 1},/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"y" = (/obj/effect/decal/cleanable/dirt/cobweb,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"A" = (/obj/structure/spider/stickyweb,/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"B" = (/obj/structure/bars/cemetery,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"C" = (/obj/structure/spider/cocoon,/obj/effect/decal/cleanable/blood/tracks{dir = 8},/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"D" = (/turf/open/floor/rogue/dirt,/area/rogue)
-"G" = (/obj/structure/spider/stickyweb,/obj/effect/decal/cleanable/blood/tracks,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"H" = (/obj/structure/bed/rogue/shit,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"I" = (/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"J" = (/turf/open/floor/rogue/naturalstone,/area/rogue)
-"K" = (/obj/item/natural/rock,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"L" = (/obj/item/restraints/legcuffs/beartrap/armed/camouflage,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"M" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"N" = (/obj/effect/decal/cleanable/dirt/cobweb{dir = 4},/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"O" = (/turf/closed/wall/mineral/rogue/craftstone,/area/rogue/outdoors/caves)
-"P" = (/obj/structure/mineral_door/wood/violet{locked = 1},/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"Q" = (/obj/structure/fluff/railing/fence,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"R" = (/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"S" = (/obj/structure/fluff/railing/fence,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"T" = (/obj/item/flashlight/flare/torch/lantern,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"U" = (/turf/open/water/swamp,/area/rogue)
-"V" = (/turf/closed/mineral/random/rogue/high,/area/rogue/outdoors/caves)
-"W" = (/obj/structure/spider/stickyweb/solo,/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
-"X" = (/obj/structure/table/wood,/obj/item/clothing/neck/roguetown/psycross/silver,/turf/open/floor/rogue/herringbone,/area/rogue/outdoors/caves)
-"Y" = (/obj/effect/decal/cleanable/blood/tracks{dir = 8},/obj/item/flint,/turf/open/floor/rogue/blocks,/area/rogue/outdoors/caves)
-"Z" = (/obj/structure/fluff/railing/fence{dir = 1},/turf/open/floor/rogue/naturalstone,/area/rogue/outdoors/caves)
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/dirt/cobweb{
+	dir = 4
+	},
+/obj/item/roguecoin/gold,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"d" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/flare/torch/metal,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"e" = (
+/obj/structure/spider/cocoon,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"f" = (
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"g" = (
+/obj/machinery/light/rogue/firebowl/standing/blue,
+/obj/structure/fluff/walldeco/psybanner{
+	pixel_y = 32
+	},
+/obj/effect/decal/cleanable/dirt/cobweb{
+	dir = 1
+	},
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"h" = (
+/obj/item/rogueweapon/pick,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"i" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"j" = (
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"k" = (
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"m" = (
+/turf/open/floor/rogue/dirt/road,
+/area/rogue)
+"n" = (
+/obj/structure/closet/crate/coffin,
+/obj/item/clothing/head/roguetown/crown/circlet/sleepless,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"o" = (
+/obj/item/clothing/head/roguetown/helmet/skullcap,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"p" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"q" = (
+/turf/closed/mineral/rogue/bedrock,
+/area/rogue/outdoors/caves)
+"r" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"s" = (
+/obj/structure/table/wood,
+/obj/item/clothing/ring/silver,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"t" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"u" = (
+/obj/machinery/light/rogue/firebowl/standing/blue,
+/obj/structure/fluff/walldeco/psybanner{
+	pixel_y = 32
+	},
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"v" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"w" = (
+/obj/effect/decal/cleanable/dirt/cobweb{
+	icon_state = "cobweb2"
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"x" = (
+/obj/structure/mineral_door/bars{
+	locked = 1
+	},
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"y" = (
+/obj/effect/decal/cleanable/dirt/cobweb,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"A" = (
+/obj/structure/spider/stickyweb,
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"B" = (
+/obj/structure/bars/cemetery,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"C" = (
+/obj/structure/spider/cocoon,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"D" = (
+/turf/open/floor/rogue/dirt,
+/area/rogue)
+"G" = (
+/obj/structure/spider/stickyweb,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"H" = (
+/obj/structure/bed/rogue/shit,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"I" = (
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"J" = (
+/turf/open/floor/rogue/naturalstone,
+/area/rogue)
+"K" = (
+/obj/item/natural/rock,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"L" = (
+/obj/item/restraints/legcuffs/beartrap/armed/camouflage,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"M" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"N" = (
+/obj/effect/decal/cleanable/dirt/cobweb{
+	dir = 4
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"O" = (
+/turf/closed/wall/mineral/rogue/craftstone,
+/area/rogue/outdoors/caves)
+"P" = (
+/obj/structure/mineral_door/wood/violet{
+	locked = 1
+	},
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"Q" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"R" = (
+/mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"S" = (
+/obj/structure/fluff/railing/fence,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"T" = (
+/obj/item/flashlight/flare/torch/lantern,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"U" = (
+/turf/open/water/swamp,
+/area/rogue)
+"V" = (
+/turf/closed/mineral/random/rogue/high,
+/area/rogue/outdoors/caves)
+"W" = (
+/obj/structure/spider/stickyweb/solo,
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
+"X" = (
+/obj/structure/table/wood,
+/obj/item/clothing/neck/roguetown/psycross/silver,
+/turf/open/floor/rogue/herringbone,
+/area/rogue/outdoors/caves)
+"Y" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/item/flint,
+/turf/open/floor/rogue/blocks,
+/area/rogue/outdoors/caves)
+"Z" = (
+/obj/structure/fluff/railing/fence{
+	dir = 1
+	},
+/turf/open/floor/rogue/naturalstone,
+/area/rogue/outdoors/caves)
 
 (1,1,1) = {"
-DDDDDDDDDDDDmDDDDDDDDDDDDDDDDD
-DDDqDUDDDDmmJmDmDDDUDDDDDDDDDD
-UUqqqUUDmqqJJmqmmUUUUDDDDDDDDD
-qqqqqqqUqqykkqqqqqUUUUUUUDqDDD
-qqqpqqqqqkkkqqqqqqqqqUUqqqqqDD
-qqpkkkqqqKkkqqqqpkkqqqqqqqqqqD
-qpkMkpqqqkLkqqqkkkkkqqqqqjHqqD
-qkkkkkpqqpkkqqpkkkkqqrTrjjjqqD
-qkkkkkkqqqkkkqpkkkqqroRjjrjqqD
-qkkqqNkkqqpkkqkkqkqqrCiYjpqqqD
-qkkkqqkkqqqkLkkkqkkqqqqtSSqqqD
-qqkkqqqkkkqqkkkqqkkkqqqGjkqqDD
-qqkkWqqqqkqqkqqqqqkkkqqtkkqqqD
-qkkkqqkkkkkkkkqqkkkkqqqtkKwqqq
-qkkqqqqkkqkkqkkkkqKqqkktkkkqqq
-qkqqqqqpkqqqqqkkkqqqqkktkkkqqq
-qkqqpqqqpkkqqqqkkkkqqpktkkqqqq
-qkppeqqqqkkkMqqqppkqqqktkkqqqq
-qkkkkppqqqqkkkqqqqkqqqqtqpqqqq
-qkkkkkpqqqqqkkqqqqqqqkqtqqqqqq
-qqZqqkkkqMkkkqqqkkkkkkqvkkkqqD
-qqQqqqkkkkkqqqqqkkpqkkkvkMqqqD
-qqKkqkkkqkqqpppkkAqqpkkkkkqqqD
-qqkkqkpqqqqqpkkkkpqqqpMkkkqqDD
-qkkkpkqqqpkkkkkqkkKqqqqpkpqqDD
-qkkpqqqkkpppqkqqkkkhVqqqppqqqD
-qqkpqqkkpqqqqqqqqqqqVVqqppqqqq
-qWkkqMkkqqqOOqqOqqqqqVVqqkpqqq
-qkkqqkkkqqqjjjjjPkkpqqqqpkMqqD
-qpLqqkqqqqOOBxBOOkkkkqqqppppqq
-qpkpqkqqqqOuIIIgOqpkkMkppppqqq
-qpkkqkkqqqOIIfIIOqqMkkkMkpqqqq
-qqkkkkKqqqOIIIIIOqqkkpMkMkqqDq
-qqqpkkqqqqOaXndsOqqqqqppeqqqDD
-qqqqqqqqqqOOOOOOOqqqqqqqqqqqqq
+D
+D
+U
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+"}
+(2,1,1) = {"
+D
+D
+U
+q
+q
+q
+p
+k
+k
+k
+k
+q
+q
+k
+k
+k
+k
+k
+k
+k
+q
+q
+q
+q
+k
+k
+q
+W
+k
+p
+p
+p
+q
+q
+q
+"}
+(3,1,1) = {"
+D
+D
+q
+q
+q
+p
+k
+k
+k
+k
+k
+k
+k
+k
+k
+q
+q
+p
+k
+k
+Z
+Q
+K
+k
+k
+k
+k
+k
+k
+L
+k
+k
+k
+q
+q
+"}
+(4,1,1) = {"
+D
+q
+q
+q
+p
+k
+M
+k
+k
+q
+k
+k
+k
+k
+q
+q
+q
+p
+k
+k
+q
+q
+k
+k
+k
+p
+p
+k
+q
+q
+p
+k
+k
+p
+q
+"}
+(5,1,1) = {"
+D
+D
+q
+q
+q
+k
+k
+k
+k
+q
+q
+q
+W
+q
+q
+q
+p
+e
+k
+k
+q
+q
+q
+q
+p
+q
+q
+q
+q
+q
+q
+q
+k
+k
+q
+"}
+(6,1,1) = {"
+D
+U
+U
+q
+q
+k
+p
+k
+k
+N
+q
+q
+q
+q
+q
+q
+q
+q
+p
+k
+k
+q
+k
+k
+k
+q
+q
+M
+k
+k
+k
+k
+k
+k
+q
+"}
+(7,1,1) = {"
+D
+D
+U
+q
+q
+q
+q
+p
+k
+k
+k
+q
+q
+k
+q
+q
+q
+q
+p
+p
+k
+k
+k
+p
+q
+q
+k
+k
+k
+q
+q
+k
+K
+q
+q
+"}
+(8,1,1) = {"
+D
+D
+D
+U
+q
+q
+q
+q
+q
+k
+k
+k
+q
+k
+k
+p
+q
+q
+q
+q
+k
+k
+k
+q
+q
+k
+k
+k
+k
+q
+q
+q
+q
+q
+q
+"}
+(9,1,1) = {"
+D
+D
+m
+q
+q
+q
+q
+q
+q
+q
+q
+k
+q
+k
+k
+k
+p
+q
+q
+q
+q
+k
+q
+q
+q
+k
+p
+q
+q
+q
+q
+q
+q
+q
+q
+"}
+(10,1,1) = {"
+D
+D
+q
+q
+k
+K
+k
+p
+q
+q
+q
+k
+k
+k
+q
+q
+k
+k
+q
+q
+M
+k
+k
+q
+p
+p
+q
+q
+q
+q
+q
+q
+q
+q
+q
+"}
+(11,1,1) = {"
+D
+m
+q
+y
+k
+k
+L
+k
+k
+p
+q
+q
+q
+k
+k
+q
+k
+k
+q
+q
+k
+k
+q
+q
+k
+p
+q
+q
+q
+O
+O
+O
+O
+O
+O
+"}
+(12,1,1) = {"
+D
+m
+J
+k
+k
+k
+k
+k
+k
+k
+k
+q
+q
+k
+k
+q
+q
+k
+k
+q
+k
+q
+q
+q
+k
+p
+q
+O
+j
+O
+u
+I
+I
+a
+O
+"}
+(13,1,1) = {"
+m
+J
+J
+k
+q
+q
+q
+q
+k
+k
+L
+k
+k
+k
+q
+q
+q
+M
+k
+k
+k
+q
+p
+p
+k
+q
+q
+O
+j
+B
+I
+I
+I
+X
+O
+"}
+(14,1,1) = {"
+D
+m
+m
+q
+q
+q
+q
+q
+q
+q
+k
+k
+q
+k
+k
+q
+q
+q
+k
+k
+q
+q
+p
+k
+k
+k
+q
+q
+j
+x
+I
+f
+I
+n
+O
+"}
+(15,1,1) = {"
+D
+D
+q
+q
+q
+q
+q
+p
+p
+k
+k
+k
+q
+q
+k
+k
+q
+q
+q
+q
+q
+q
+p
+k
+k
+q
+q
+q
+j
+B
+I
+I
+I
+d
+O
+"}
+(16,1,1) = {"
+D
+m
+m
+q
+q
+q
+k
+k
+k
+k
+k
+q
+q
+q
+k
+k
+k
+q
+q
+q
+q
+q
+k
+k
+q
+q
+q
+O
+j
+O
+g
+I
+I
+s
+O
+"}
+(17,1,1) = {"
+D
+D
+m
+q
+q
+p
+k
+k
+k
+q
+q
+q
+q
+k
+k
+k
+k
+p
+q
+q
+k
+k
+k
+k
+k
+k
+q
+q
+P
+O
+O
+O
+O
+O
+O
+"}
+(18,1,1) = {"
+D
+D
+U
+q
+q
+k
+k
+k
+k
+k
+k
+k
+q
+k
+q
+q
+k
+p
+q
+q
+k
+k
+A
+p
+k
+k
+q
+q
+k
+k
+q
+q
+q
+q
+q
+"}
+(19,1,1) = {"
+D
+D
+U
+U
+q
+k
+k
+k
+q
+q
+k
+k
+k
+k
+K
+q
+k
+k
+k
+q
+k
+p
+q
+q
+K
+k
+q
+q
+k
+k
+p
+q
+q
+q
+q
+"}
+(20,1,1) = {"
+D
+U
+U
+U
+q
+q
+k
+q
+q
+q
+q
+k
+k
+k
+q
+q
+q
+q
+q
+q
+k
+q
+q
+q
+q
+h
+q
+q
+p
+k
+k
+M
+k
+q
+q
+"}
+(21,1,1) = {"
+D
+D
+U
+U
+q
+q
+q
+q
+r
+r
+q
+q
+k
+q
+q
+q
+q
+q
+q
+q
+k
+k
+p
+q
+q
+V
+V
+q
+q
+k
+k
+k
+k
+q
+q
+"}
+(22,1,1) = {"
+D
+D
+D
+U
+U
+q
+q
+r
+o
+C
+q
+q
+q
+q
+k
+k
+p
+q
+q
+k
+k
+k
+k
+p
+q
+q
+V
+V
+q
+q
+M
+k
+p
+q
+q
+"}
+(23,1,1) = {"
+D
+D
+D
+U
+U
+q
+q
+T
+R
+i
+q
+q
+q
+q
+k
+k
+k
+k
+q
+q
+q
+k
+k
+M
+q
+q
+q
+V
+q
+q
+k
+k
+M
+p
+q
+"}
+(24,1,1) = {"
+D
+D
+D
+U
+q
+q
+q
+r
+j
+Y
+t
+G
+t
+t
+t
+t
+t
+t
+t
+t
+v
+v
+k
+k
+p
+q
+q
+q
+q
+q
+p
+M
+k
+p
+q
+"}
+(25,1,1) = {"
+D
+D
+D
+U
+q
+q
+q
+j
+j
+j
+S
+j
+k
+k
+k
+k
+k
+k
+q
+q
+k
+k
+k
+k
+k
+p
+p
+q
+p
+p
+p
+k
+M
+e
+q
+"}
+(26,1,1) = {"
+D
+D
+D
+D
+q
+q
+j
+j
+r
+p
+S
+k
+k
+K
+k
+k
+k
+k
+p
+q
+k
+M
+k
+k
+p
+p
+p
+k
+k
+p
+p
+p
+k
+q
+q
+"}
+(27,1,1) = {"
+D
+D
+D
+q
+q
+q
+H
+j
+j
+q
+q
+q
+q
+w
+k
+k
+q
+q
+q
+q
+k
+q
+q
+q
+q
+q
+q
+p
+M
+p
+p
+q
+q
+q
+q
+"}
+(28,1,1) = {"
+D
+D
+D
+D
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+p
+q
+q
+q
+q
+q
+"}
+(29,1,1) = {"
+D
+D
+D
+D
+D
+q
+q
+q
+q
+q
+q
+D
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+q
+D
+D
+q
+q
+q
+q
+q
+q
+q
+D
+D
+q
+"}
+(30,1,1) = {"
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+q
+q
+q
+q
+q
+q
+q
+D
+D
+D
+D
+D
+D
+q
+q
+D
+q
+q
+q
+q
+D
+q
 "}

@@ -195,7 +195,7 @@
 
 
 /obj/structure/fluff/railing/Initialize()
-	..()
+	. = ..()
 	var/lay = getwlayer(dir)
 	if(lay)
 		layer = lay
@@ -226,7 +226,7 @@
 		if(!(M.mobility_flags & MOBILITY_STAND))
 			if(passcrawl)
 				return TRUE
-	if(icon_state == "woodrailing" && dir in CORNERDIRS)
+	if(icon_state == "woodrailing" && (dir in CORNERDIRS))
 		var/list/baddirs = list()
 		switch(dir)
 			if(SOUTHEAST)
@@ -257,7 +257,7 @@
 		if(!(M.mobility_flags & MOBILITY_STAND))
 			if(passcrawl)
 				return TRUE
-	if(icon_state == "woodrailing" && dir in CORNERDIRS)
+	if(icon_state == "woodrailing" && (dir in CORNERDIRS))
 		var/list/baddirs = list()
 		switch(dir)
 			if(SOUTHEAST)
@@ -287,12 +287,10 @@
 /obj/structure/fluff/railing/wood
 	icon_state = "woodrailing"
 	blade_dulling = DULLING_BASHCHOP
-	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/railing/stonehedge
 	icon_state = "stonehedge"
 	blade_dulling = DULLING_BASHCHOP
-	layer = ABOVE_MOB_LAYER
 
 /obj/structure/fluff/railing/border
 	name = "border"
@@ -315,7 +313,7 @@
 	climb_offset = 6
 
 /obj/structure/fluff/railing/fence/Initialize()
-	..()
+	. = ..()
 	smooth_fences()
 
 /obj/structure/fluff/railing/fence/Destroy()
@@ -368,7 +366,7 @@
 	density = TRUE
 	anchored = TRUE
 	blade_dulling = DULLING_BASHCHOP
-	max_integrity = 700
+	max_integrity = INTEGRITY_STRONG
 	damage_deflection = 12
 	integrity_failure = 0.15
 	dir = SOUTH
@@ -384,14 +382,23 @@
 		return 1
 	if(mover.throwing && !ismob(mover))
 		return prob(66)
-	return !density
-	..()
+	return ..()
 
 /obj/structure/bars/bent
 	icon_state = "barsbent"
 
 /obj/structure/bars/chainlink
 	icon_state = "chainlink"
+
+/obj/structure/bars/alt
+	icon_state = "bars_alt"
+	plane = -3
+	layer = WALL_OBJ_LAYER+0.05
+
+/obj/structure/bars/weakened
+	desc = "Iron bars made to keep things in or out. These one looks pretty rusty."
+	max_integrity = INTEGRITY_POOR
+	color = "#edc9c9"
 
 /*
 /obj/structure/bars/CheckExit(atom/movable/O, turf/target)
@@ -532,7 +539,7 @@
 	drag_slowdown = 3
 
 /obj/structure/fluff/clock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -620,7 +627,7 @@
 //				. += "<span class='warning'>The last boat will leave in [round(SSshuttle.emergency.timeLeft()/600)] minutes.</span>"
 
 /obj/structure/fluff/wallclock/Initialize()
-	soundloop = new(list(src), FALSE)
+	soundloop = new(src, FALSE)
 	soundloop.start()
 	. = ..()
 
@@ -849,6 +856,7 @@
 	icon_state = "elfs"
 
 /obj/structure/fluff/statue/pillar
+	name = "wooden support"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "pillar"
 
@@ -982,6 +990,11 @@
 			return
 	..()
 
+//..................................................................................................................................
+/*-------------------\
+|  Shrines & Crosses |
+\-------------------*/
+
 /obj/structure/fluff/statue/spider
 	name = "arachnid idol"
 	desc = "A stone idol of a spider with the head of a smirking elven woman. Her eyes seem to follow you."
@@ -1031,14 +1044,14 @@
 							I = new /obj/item/reagent_containers/glass/bottle/rogue/healthpot(user.loc)
 						if(2)
 							if(HAS_TRAIT(user, TRAIT_MEDIUMARMOR))
-								I = new /obj/item/clothing/suit/roguetown/armor/plate/scale(user.loc)
+								I = new /obj/item/clothing/suit/roguetown/armor/medium/scale(user.loc)
 							else
 								I = new /obj/item/clothing/suit/roguetown/armor/chainmail/iron(user.loc)
 						if(4)
 							I = new /obj/item/clothing/head/roguetown/helmet/horned(user.loc)
 						if(6)
 							if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 2)
-								I = new /obj/item/rogueweapon/spear/billhook(user.loc)
+								I = new /obj/item/rogueweapon/polearm/spear/billhook(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/bows) > 2)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
 							else if(user.mind.get_skill_level(/datum/skill/combat/swords) > 2)
@@ -1079,6 +1092,7 @@
 	dir = NORTH
 	buckle_requires_restraints = 1
 	buckle_prevents_pull = 1
+	var/shrine = FALSE	// used for some checks
 
 /obj/structure/fluff/psycross/post_buckle_mob(mob/living/M)
 	..()
@@ -1090,16 +1104,22 @@
 	M.reset_offsets("bed_buckle")
 
 /obj/structure/fluff/psycross/CanPass(atom/movable/mover, turf/target)
-	if(get_dir(loc, mover) == dir)
+	if(shrine)
+		return
+	else if(get_dir(loc, mover) == dir)
 		return 0
-	return !density
+	else
+		return !density
 
 /obj/structure/fluff/psycross/CheckExit(atom/movable/O, turf/target)
-	if(get_dir(O.loc, target) == dir)
+	if(shrine)
+		return
+	else if(get_dir(O.loc, target) == dir)
 		return 0
-	return !density
+	else
+		return !density
 
-/obj/structure/fluff/psycross/copper
+/obj/structure/fluff/psycross/copper	// the big nice on in the Temple, destroying it triggers Omens. Not so for the craftable ones.
 	name = "pantheon cross"
 	icon_state = "psycrosschurch"
 	break_sound = null
@@ -1111,7 +1131,170 @@
 	icon_state = "psycrosscrafted"
 	chance2hear = 10
 
-/obj/structure/fluff/psycross/attackby(obj/item/W, mob/user, params)
+/obj/structure/fluff/psycross/crafted/shrine
+	density = TRUE
+	plane = -1	// to keep the 3d effect when mob behind it
+	layer = 4.1
+	can_buckle = FALSE
+	dir = SOUTH
+	shrine = TRUE
+
+/*	..................   Dendor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/dendor_volf
+	name = "shrine to Dendor"
+	desc = "The life force of a Volf has consecrated this holy place.<br/> Present several blood bait here to craft a worthy sacrifice."
+	icon_state = "shrine_dendor_volf"
+
+/obj/structure/fluff/psycross/crafted/shrine/dendor_saiga
+	name = "shrine to Dendor"
+	desc = "The life force of a Saiga has consecrated this holy place.<br/> Present jacksberries, westleach leaves, and silk grubs for crafting a worthy sacrifice."
+	icon_state = "shrine_dendor_saiga"
+
+/*	..................   Malum Shrine (Dromkis revenge)   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/malum
+	name = "statue of Malum"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "malum"
+	bound_width = 64
+
+/*	..................   Astrata Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/astrata
+	name = "The Sun Queen"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "astrata"
+	pixel_x = -18
+
+/*	..................   Necra Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/necra
+	name = "The Undermaiden"
+	desc = ""
+	icon = 'icons/roguetown/misc/tallandwide.dmi'
+	icon_state = "necra"
+	pixel_x = -16
+
+/*	..................   Dendor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/dendor
+	name = "The Tree Father"
+	desc = ""
+	icon = 'icons/roguetown/misc/foliagetall.dmi'
+	icon_state = "mystical"
+	pixel_x = -10
+
+/*	..................   Abyssor Shrine   ................... */
+/obj/structure/fluff/psycross/crafted/shrine/abyssor
+	name = "The World Whale"
+	desc = ""
+	icon = 'icons/roguetown/misc/96x96.dmi'
+	icon_state = "abyssor"
+	bound_width = 64
+	pixel_x = -25
+
+/obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
+	if(user.mind)
+		if((user.mind.assigned_role == "Priest")	||	(user.mind.assigned_role == "Acolyte") && (user.patron.type == /datum/patron/divine/eora))
+
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
+				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
+					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
+					return FALSE
+				var/marriage
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
+
+				//The MARRIAGE TEST BEGINS
+				if(A.bitten_names.len)
+					if(A.bitten_names.len == 2)
+						//Groom provides the surname that the bride will take
+						var/mob/living/carbon/human/thegroom
+						var/mob/living/carbon/human/thebride
+						//Did anyone get cold feet on the wedding?
+						for(var/mob/M in viewers(src, 7))
+							testing("check [M]")
+							if(thegroom && thebride)
+								break
+							if(!ishuman(M))
+								continue
+							var/mob/living/carbon/human/C = M
+							/*
+							* This is for making the first biters name
+							* always be applied to the groom.
+							* second. This seems to be the best way
+							* to use the least amount of variables.
+							*/
+							var/name_placement = 1
+							for(var/X in A.bitten_names)
+								//I think that guy is dead.
+								if(C.stat == DEAD)
+									continue
+								//That person is not a player or afk.
+								if(!C.client)
+									continue
+								//Gotta get a divorce first
+								if(C.IsWedded())
+									continue
+								if(C.real_name == X)
+									//I know this is very sloppy but its alot less code.
+									switch(name_placement)
+										if(1)
+											if(thegroom)
+												continue
+											thegroom = C
+										if(2)
+											if(thebride)
+												continue
+											thebride = C
+									testing("foundbiter [C.real_name]")
+								name_placement++
+
+						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
+						if(!thegroom || !thebride)
+							testing("fail22")
+							return
+						//Alright now for the boring surname formatting.
+						var/surname2use
+						var/index = findtext(thegroom.real_name, " ")
+						var/bridefirst
+						thegroom.original_name = thegroom.real_name
+						thebride.original_name = thebride.real_name
+						if(!index)
+							surname2use = thegroom.dna.species.random_surname()
+						else
+							/*
+							* This code prevents inheriting the last name of
+							* " of wolves" or " the wolf"
+							* remove this if you want "Skibbins of wolves" to
+							* have his bride become "Sarah of wolves".
+							*/
+							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
+								surname2use = thegroom.dna.species.random_surname()
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+							else
+								surname2use = copytext(thegroom.real_name, index)
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+						index = findtext(thebride.real_name, " ")
+						if(index)
+							thebride.change_name(copytext(thebride.real_name, 1,index))
+						bridefirst = thebride.real_name
+						thegroom.change_name(thegroom.real_name + surname2use)
+						thebride.change_name(thebride.real_name + surname2use)
+						thegroom.MarryTo(thebride)
+						thegroom.adjust_triumphs(1)
+						thebride.adjust_triumphs(1)
+						//Bite the apple first if you want to be the groom.
+						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+						marriage = TRUE
+						qdel(A)
+
+				if(!marriage)
+					playsound(src.loc, 'sound/misc/frying.ogg', 60, FALSE)
+					A.burn()
+					return
+	return ..()
+
+
+/*
+/obj/structure/fluff/psycross/attackby(obj/item/W, mob/living/carbon/human/user, params)
 	if(user.mind)
 		if(user.mind.assigned_role == "Priest")
 			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
@@ -1208,7 +1391,108 @@
 				if(!marriage)
 					A.burn()
 					return
+*/
+/*
+		if(user.mind.assigned_role == "Acolyte"  && user.patron.type == /datum/patron/divine/eora)
+			if(istype(W, /obj/item/reagent_containers/food/snacks/produce/apple))
+				if(!istype(get_area(user), /area/rogue/indoors/town/church/chapel))
+					to_chat(user, "<span class='warning'>I need to do this in the chapel.</span>")
+					return FALSE
+				var/marriage
+				var/obj/item/reagent_containers/food/snacks/produce/apple/A = W
+
+				//The MARRIAGE TEST BEGINS
+				if(A.bitten_names.len)
+					if(A.bitten_names.len == 2)
+						//Groom provides the surname that the bride will take
+						var/mob/living/carbon/human/thegroom
+						var/mob/living/carbon/human/thebride
+						//Did anyone get cold feet on the wedding?
+						for(var/mob/M in viewers(src, 7))
+							testing("check [M]")
+							if(thegroom && thebride)
+								break
+							if(!ishuman(M))
+								continue
+							var/mob/living/carbon/human/C = M
+							/*
+							* This is for making the first biters name
+							* always be applied to the groom.
+							* second. This seems to be the best way
+							* to use the least amount of variables.
+							*/
+							var/name_placement = 1
+							for(var/X in A.bitten_names)
+								//I think that guy is dead.
+								if(C.stat == DEAD)
+									continue
+								//That person is not a player or afk.
+								if(!C.client)
+									continue
+								//Gotta get a divorce first
+								if(C.IsWedded())
+									continue
+								if(C.real_name == X)
+									//I know this is very sloppy but its alot less code.
+									switch(name_placement)
+										if(1)
+											if(thegroom)
+												continue
+											thegroom = C
+										if(2)
+											if(thebride)
+												continue
+											thebride = C
+									testing("foundbiter [C.real_name]")
+								name_placement++
+
+						//WE FOUND THEM LETS GET THIS SHOW ON THE ROAD!
+						if(!thegroom || !thebride)
+							testing("fail22")
+							return
+						//Alright now for the boring surname formatting.
+						var/surname2use
+						var/index = findtext(thegroom.real_name, " ")
+						var/bridefirst
+						thegroom.original_name = thegroom.real_name
+						thebride.original_name = thebride.real_name
+						if(!index)
+							surname2use = thegroom.dna.species.random_surname()
+						else
+							/*
+							* This code prevents inheriting the last name of
+							* " of wolves" or " the wolf"
+							* remove this if you want "Skibbins of wolves" to
+							* have his bride become "Sarah of wolves".
+							*/
+							if(findtext(thegroom.real_name, " of ") || findtext(thegroom.real_name, " the "))
+								surname2use = thegroom.dna.species.random_surname()
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+							else
+								surname2use = copytext(thegroom.real_name, index)
+								thegroom.change_name(copytext(thegroom.real_name, 1,index))
+						index = findtext(thebride.real_name, " ")
+						if(index)
+							thebride.change_name(copytext(thebride.real_name, 1,index))
+						bridefirst = thebride.real_name
+						thegroom.change_name(thegroom.real_name + surname2use)
+						thebride.change_name(thebride.real_name + surname2use)
+						thegroom.MarryTo(thebride)
+						thegroom.adjust_triumphs(1)
+						thebride.adjust_triumphs(1)
+						//Bite the apple first if you want to be the groom.
+						priority_announce("[thegroom.real_name] has married [bridefirst]!", title = "Holy Union!", sound = 'sound/misc/bell.ogg')
+						marriage = TRUE
+						qdel(A)
+
+				if(!marriage)
+					A.burn()
+					return
+
 	return ..()
+
+*/
+
 
 /obj/structure/fluff/psycross/copper/Destroy()
 	addomen("psycross")
@@ -1241,6 +1525,10 @@
 		var/diff = power - M.confused
 		M.confused += min(power, diff)
 
+// ===================================================================================
+
+
+//================================
 /obj/structure/fluff/beach_towel
 	name = "beach towel"
 	desc = ""

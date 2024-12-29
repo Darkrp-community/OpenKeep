@@ -3,7 +3,7 @@
 
 /datum/status_effect/stress/stressinsane
 	id = "insane"
-	effectedstats = list("constitution" = -1, "endurance" = -2, "speed" = -2)
+	effectedstats = list("constitution" = -2, "endurance" = -2, "speed" = -2, "fortune" = -2)
 	alert_type = /atom/movable/screen/alert/status_effect/stress/stressinsane
 
 /atom/movable/screen/alert/status_effect/stress/stressinsane
@@ -13,7 +13,7 @@
 
 /datum/status_effect/stress/stressvbad
 	id = "stressvbad"
-	effectedstats = list("constitution" = -1,"endurance" = -1, "speed" = -1)
+	effectedstats = list("constitution" = -1,"endurance" = -2, "speed" = -2, "fortune" = -1)
 	alert_type = /atom/movable/screen/alert/status_effect/stress/stressvbad
 
 /atom/movable/screen/alert/status_effect/stress/stressvbad

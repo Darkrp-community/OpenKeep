@@ -1,7 +1,5 @@
 /mob/living/proc/update_rogfat() //update hud and regen after last_fatigued delay on taking
-	maxrogfat = round(100 * (rogstam/maxrogstam))
-	if(maxrogfat < 5)
-		maxrogfat = 5
+	maxrogfat = maxrogstam / 10
 
 	if(world.time > last_fatigued + 20) //regen fatigue
 		var/added = rogstam / maxrogstam
@@ -102,13 +100,16 @@
 	if(HAS_TRAIT(src, TRAIT_NOROGSTAM))
 		return
 	if(!heart_attacking)
-		heart_attacking = TRUE
+		var/mob/living/carbon/C = src
+		set_heartattack(TRUE) // Using set_heartattack rather than heart_attack(true) since heart_attack doesn't kill you for some reason????
+		C.reagents.add_reagent(/datum/reagent/medicine/C2/penthrite, 2) // TG had a really good idea with using this on heart_failure, gives the player enough time to do something dramatic before dropping.
+		C.visible_message(C, "<span class='danger'>[C] clutches at [C.p_their()] chest!</span>") // Other people know something is wrong.
+		emote("breathgasp", forced = TRUE)
 		shake_camera(src, 1, 3)
-		blur_eyes(10)
+		blur_eyes(40)
 		var/stuffy = list("ZIZO GRABS MY WEARY HEART!","ARGH! MY HEART BEATS NO MORE!","NO... MY HEART HAS BEAT IT'S LAST!","MY HEART HAS GIVEN UP!","MY HEART BETRAYS ME!","THE METRONOME OF MY LIFE STILLS!")
 		to_chat(src, "<span class='userdanger'>[pick(stuffy)]</span>")
-		emote("breathgasp", forced = TRUE)
-		addtimer(CALLBACK(src, PROC_REF(adjustOxyLoss), 110), 30)
+		// addtimer(CALLBACK(src, PROC_REF(adjustOxyLoss), 110), 30) This was commented out because the heart attack already kills, why put people into oxy crit instantly?
 
 /mob/living/proc/freak_out()
 	return
@@ -137,7 +138,7 @@
 		var/matrix/skew = matrix()
 		skew.Scale(2)
 		//skew.Translate(-224,0)
-		var/matrix/newmatrix = skew 
+		var/matrix/newmatrix = skew
 		for(var/C in hud_used.plane_masters)
 			var/atom/movable/screen/plane_master/whole_screen = hud_used.plane_masters[C]
 			if(whole_screen.plane == HUD_PLANE)

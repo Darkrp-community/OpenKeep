@@ -9,7 +9,6 @@
 	piping_layer = PIPING_LAYER_DEFAULT
 	device_type = 0
 	volume = 260
-	construction_type = /obj/item/pipe/binary
 	pipe_state = "manifoldlayer"
 
 	var/list/front_nodes
@@ -70,9 +69,9 @@
 
 /obj/machinery/atmospherics/pipe/layer_manifold/SetInitDirections()
 	switch(dir)
-		if(NORTH || SOUTH)
+		if(NORTH, SOUTH)
 			initialize_directions = NORTH|SOUTH
-		if(EAST || WEST)
+		if(EAST, WEST)
 			initialize_directions = EAST|WEST
 
 /obj/machinery/atmospherics/pipe/layer_manifold/isConnectable(obj/machinery/atmospherics/target, given_layer)

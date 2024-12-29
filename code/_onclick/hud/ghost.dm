@@ -56,8 +56,8 @@
 							// Store the current time for the player
 							GLOB.job_respawn_delays[G.ckey] = world.time + target_job.same_job_respawn_delay
 
-					for(var/obj/effect/landmark/underworld/A in world)
-						var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
+					for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
+						var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 						O.livingname = G.name
 						O.ckey = G.ckey
 						SSdroning.area_entered(get_area(O), O.client)
@@ -70,8 +70,8 @@
 			if(C.skeletons)
 				G.returntolobby()
 		if(alert("Travel with the boatman?", "", "Yes", "No") == "Yes")
-			for(var/obj/effect/landmark/underworld/A in world)
-				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(A.loc)
+			for(var/turf/spawn_loc in GLOB.underworldcoinspawns)
+				var/mob/living/carbon/spirit/O = new /mob/living/carbon/spirit(spawn_loc)
 				O.livingname = G.name
 				O.ckey = G.ckey
 				SSdroning.area_entered(get_area(O), O.client)
@@ -101,23 +101,11 @@
 	var/mob/dead/observer/G = usr
 	G.dead_tele()
 
-/atom/movable/screen/ghost/pai
-	name = "pAI Candidate"
-	icon_state = "pai"
-
-/atom/movable/screen/ghost/pai/Click()
-	var/mob/dead/observer/G = usr
-	G.register_pai()
-
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/ghost()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 
@@ -155,10 +143,6 @@
 	using.hud = src
 	static_inventory += using
 
-	using = new /atom/movable/screen/grain
-	using.hud = src
-	static_inventory += using
-
 	scannies = new /atom/movable/screen/scannies
 	scannies.hud = src
 	static_inventory += scannies
@@ -186,10 +170,6 @@
 	var/atom/movable/screen/using
 
 	using =  new /atom/movable/screen/backhudl/obs()
-	using.hud = src
-	static_inventory += using
-
-	using = new /atom/movable/screen/grain
 	using.hud = src
 	static_inventory += using
 

@@ -79,7 +79,13 @@
 		to_chat(src, "<span class='warning'>[pulledby] is restraining my arm!</span>")
 		return
 
-	A.attack_right(src, params)
+	//TODO VANDERLIN: Refactor this into melee_attack_chain_right so that items can more dynamically work with RMB
+	var/obj/item/held_item = get_active_held_item()
+	if(held_item)
+		if(!held_item.pre_attack_right(A, src, params))
+			A.attack_right(src, params)
+	else
+		A.attack_right(src, params)
 
 /mob/living/attack_right(mob/user, params)
 	. = ..()
@@ -204,10 +210,8 @@
 			if(user.mind && mind)
 				if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
 					if(!src.mind.has_antag_datum(/datum/antagonist/werewolf))
-						if(prob(35))
-							spawn(3 MINUTES)
-								H.werewolf_infect()
-							//addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
+						if(prob(10))
+							addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon/human, werewolf_infect)), 3 MINUTES)
 				if(user.mind.has_antag_datum(/datum/antagonist/zombie) && !src.mind.has_antag_datum(/datum/antagonist/zombie))
 					INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon/human, zombie_infect_attempt))
 
@@ -406,7 +410,7 @@
 										stealpos.Add(V.get_item_by_slot(SLOT_BELT_R))
 									if (V.get_item_by_slot(SLOT_BELT_L))
 										stealpos.Add(V.get_item_by_slot(SLOT_BELT_L))
-								if("r_hand" || "l_hand")
+								if("r_hand", "l_hand")
 									if (V.get_item_by_slot(SLOT_RING))
 										stealpos.Add(V.get_item_by_slot(SLOT_RING))
 							if (length(stealpos) > 0)
@@ -445,12 +449,12 @@
 								if(foundstab)
 									if(L.mind.get_skill_level(/datum/skill/misc/lockpicking) >= initial(door.kickthresh) / 5)
 										door.kickthresh--
-									if((prob(L.mind.get_skill_level(/datum/skill/misc/lockpicking) * 5) || door.kickthresh == 0) && (L.mind.get_skill_level(/datum/skill/misc/lockpicking) >= initial(door.kickthresh) / 5))								
+									if((prob(L.mind.get_skill_level(/datum/skill/misc/lockpicking) * 5) || door.kickthresh == 0) && (L.mind.get_skill_level(/datum/skill/misc/lockpicking) >= initial(door.kickthresh) / 5))
 										src.visible_message("<span class='warning'>[src] lockpicks [door.name] successfully!</span>", \
 											"<span class='notice'>I lockpick [door.name]!</span>")
 										door.locked = 0
 										door.force_open()
-									else								
+									else
 										src.visible_message("<span class='warning'>[src] messes around [door.name] suspiciously!</span>", \
 											"<span class='notice'>I fail to lockpick [door.name]!</span>")
 										src.mind.adjust_experience(/datum/skill/misc/lockpicking, src.STAINT*src.mind.get_learning_boon(/datum/skill/misc/lockpicking), FALSE)
@@ -462,7 +466,7 @@
 							else
 								to_chat(src, "<span class='warning'>I can't do that with naked hands. I need sharp tool in the other hand!</span>")
 						//try to kick open, destroy lock
-					else						
+					else
 						src.visible_message("<span class='warning'>[src] opens [door.name]!</span>", \
 							"<span class='notice'>I open [door.name]! It wasn't closed.</span>")
 						door.force_open()
@@ -585,7 +589,7 @@
 	A.attack_animal(src)
 
 /atom/proc/attack_animal(mob/user)
-	return
+	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_ANIMAL, user)
 
 /mob/living/RestrainedClickOn(atom/A)
 	return
@@ -637,26 +641,6 @@
 			ML.visible_message("<span class='danger'>[src]'s bite misses [ML]!</span>", \
 							"<span class='danger'>I avoid [src]'s bite!</span>", "<span class='hear'>I hear jaws snapping shut!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>My bite misses [ML]!</span>")
-
-/*
-	Aliens
-	Defaults to same as monkey in most places
-*/
-/mob/living/carbon/alien/UnarmedAttack(atom/A)
-	A.attack_alien(src)
-
-/atom/proc/attack_alien(mob/living/carbon/alien/user)
-	attack_paw(user)
-	return
-
-/mob/living/carbon/alien/RestrainedClickOn(atom/A)
-	return
-
-// Babby aliens
-/mob/living/carbon/alien/larva/UnarmedAttack(atom/A)
-	A.attack_larva(src)
-/atom/proc/attack_larva(mob/user)
-	return
 
 
 /*

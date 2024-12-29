@@ -12,8 +12,6 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
@@ -69,13 +67,13 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/footman/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron cuirass over chain, a gorget, and a simple nasal helmet
+	//Gets a steel cuirass over chain, a gorget, and a nasal helmet
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	head = /obj/item/clothing/head/roguetown/helmet
+	head = /obj/item/clothing/head/roguetown/helmet/nasal
 	backr = /obj/item/rogueweapon/shield/wood
-	beltr = /obj/item/rogueweapon/sword/iron/messer
+	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	beltl = /obj/item/rogueweapon/mace
 	backpack_contents = list(/obj/item/keyring/guard)
 
@@ -111,12 +109,12 @@ Design philosphy:
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/helmet/kettle
-	beltr = /obj/item/rogueweapon/sword/iron/messer
+	beltr = /obj/item/rogueweapon/sword/scimitar/messer
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
-	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) // Only gets one skilled weapon class, cost of that +2 in strength
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -132,12 +130,12 @@ Design philosphy:
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for various weapons, high roller gets a billhook
+	var/weapontype = pickweight(list("Spear" = 6, "Bardiche" = 4)) // Rolls for either a spear or a bardiche
 	switch(weapontype)
 		if("Spear")
-			backr = /obj/item/rogueweapon/spear
+			backr = /obj/item/rogueweapon/polearm/spear
 		if("Bardiche")
-			backr = /obj/item/rogueweapon/halberd/bardiche
+			backr = /obj/item/rogueweapon/polearm/halberd/bardiche
 
 /datum/advclass/garrison/archer
 	name = "Garrison Archer"
@@ -148,15 +146,15 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/archer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets a gambeson, leather bracers, and an iron chain coif
-	armor = /obj/item/clothing/suit/roguetown/armor/gambeson
+	//Gets a padded gambeson, leather bracers, and a chain coif
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	head = /obj/item/clothing/head/roguetown/roguehood/red
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	beltr = /obj/item/quiver/arrows
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	//Stats for class
@@ -176,7 +174,7 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 	H.change_stat("perception", 2)
 	H.change_stat("endurance", 1)
-	H.change_stat("speed", 1)
+	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
@@ -190,13 +188,13 @@ Design philosphy:
 
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
-	//Gets an iron chain shirt, a gorget, and bracers
-	armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
 	beltr = /obj/item/rogueweapon/sword/rapier
+	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 	head = /obj/item/clothing/head/roguetown/roguehood/red
-	neck = /obj/item/clothing/neck/roguetown/gorget
-	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	neck = /obj/item/clothing/neck/roguetown/chaincoif
 	backpack_contents = list(/obj/item/keyring/guard)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
@@ -207,8 +205,8 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("endurance", 1)
-	H.change_stat("speed", 2) // Quickest of the bunch
+	H.change_stat("endurance", 2)
+	H.change_stat("speed", 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell

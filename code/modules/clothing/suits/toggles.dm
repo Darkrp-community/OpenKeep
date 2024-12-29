@@ -43,8 +43,11 @@
 	flags_inv = initial(flags_inv)
 	flags_cover = initial(flags_cover)
 	block2add = initial(block2add)
-	if(!slot_flags == ITEM_SLOT_HEAD|ITEM_SLOT_HIP) // Prevents people right clicking visored helmets on their hip and exploiting coverage
-		body_parts_covered = initial(body_parts_covered)
+	body_parts_covered = initial(body_parts_covered)
+	prevent_crits = initial(prevent_crits)
+
+//	if(!slot_flags == ITEM_SLOT_HEAD|ITEM_SLOT_HIP) // Prevents people right clicking visored helmets on their hip and exploiting coverage
+//		body_parts_covered = initial(body_parts_covered)
 
 /*
 /obj/item/clothing/ui_action_click()
@@ -187,80 +190,3 @@
 /obj/item/clothing/suit/toggle/examine(mob/user)
 	. = ..()
 	. += "Alt-click on [src] to toggle the [togglename]."
-
-//Hardsuit toggle code
-/obj/item/clothing/suit/space/hardsuit/Initialize()
-	MakeHelmet()
-	. = ..()
-
-/obj/item/clothing/suit/space/hardsuit/Destroy()
-	if(helmet)
-		helmet.suit = null
-		qdel(helmet)
-	qdel(jetpack)
-	return ..()
-
-/obj/item/clothing/head/helmet/space/hardsuit/Destroy()
-	if(suit)
-		suit.helmet = null
-	return ..()
-
-/obj/item/clothing/suit/space/hardsuit/proc/MakeHelmet()
-	if(!helmettype)
-		return
-	if(!helmet)
-		var/obj/item/clothing/head/helmet/space/hardsuit/W = new helmettype(src)
-		W.suit = src
-		helmet = W
-
-/obj/item/clothing/suit/space/hardsuit/ui_action_click()
-	..()
-	ToggleHelmet()
-
-/obj/item/clothing/suit/space/hardsuit/equipped(mob/user, slot)
-	if(!helmettype)
-		return
-	if(slot != SLOT_ARMOR)
-		RemoveHelmet()
-	..()
-
-/obj/item/clothing/suit/space/hardsuit/proc/RemoveHelmet()
-	if(!helmet)
-		return
-	hoodtoggled = FALSE
-	if(ishuman(helmet.loc))
-		var/mob/living/carbon/H = helmet.loc
-		if(helmet.on)
-			helmet.attack_self(H)
-		H.transferItemToLoc(helmet, src, TRUE)
-		H.update_inv_wear_suit()
-		to_chat(H, "<span class='notice'>The helmet on the hardsuit disengages.</span>")
-		playsound(src.loc, 'sound/blank.ogg', 50, TRUE)
-	else
-		helmet.forceMove(src)
-
-/obj/item/clothing/suit/space/hardsuit/dropped()
-	..()
-	RemoveHelmet()
-
-/obj/item/clothing/suit/space/hardsuit/proc/ToggleHelmet()
-	var/mob/living/carbon/human/H = src.loc
-	if(!helmettype)
-		return
-	if(!helmet)
-		return
-	if(!hoodtoggled)
-		if(ishuman(src.loc))
-			if(H.wear_armor != src)
-				to_chat(H, "<span class='warning'>I must be wearing [src] to engage the helmet!</span>")
-				return
-			if(H.head)
-				to_chat(H, "<span class='warning'>You're already wearing something on your head!</span>")
-				return
-			else if(H.equip_to_slot_if_possible(helmet,SLOT_HEAD,0,0,1))
-				to_chat(H, "<span class='notice'>I engage the helmet on the hardsuit.</span>")
-				hoodtoggled = TRUE
-				H.update_inv_wear_suit()
-				playsound(src.loc, 'sound/blank.ogg', 50, TRUE)
-	else
-		RemoveHelmet()

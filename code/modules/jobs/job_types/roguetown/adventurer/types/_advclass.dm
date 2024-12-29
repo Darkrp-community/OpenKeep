@@ -44,7 +44,7 @@
 		H.equipOutfit(outfit)
 		H.adjust_triumphs(-triumphs_cost)
 
-	H.advjob = name
+	H.advjob = "Adventurer"
 
 	var/turf/TU = get_turf(H)
 	if(TU)

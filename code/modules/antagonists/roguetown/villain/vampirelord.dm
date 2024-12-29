@@ -29,6 +29,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	var/cache_hair
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/bat/batform //attached to the datum itself to avoid cloning memes, and other duplicates
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/gaseousform/gas
+	var/secondsundersun = 0 // How many seconds have we spent under the sun? Once it reaches 100 * vampire lord level, we get dusted.
+	var/time2getdusted = 150 // How many deciseconds (15 seg) we have before being dusted at base level of 0
+	var/timesincelastmessage = 0 // Counter that increases by 1 every second, at 15 displays the message
 
 /datum/antagonist/vampirelord/examine_friendorfoe(datum/antagonist/examined_datum,mob/examiner,mob/examined)
 	if(istype(examined_datum, /datum/antagonist/vampirelord/lesser))
@@ -45,7 +48,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
-	ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") //half assed but necessary otherwise these guys be invincible
+	//ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") unnecessary as they die to decapitation
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOROGSTAM, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOHUNGER, "[type]")
@@ -113,7 +116,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			H.set_species(/datum/species/elf/snow) //setspecies randomizes body
 		H.after_creation()
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.patron = GLOB.patronlist[/datum/patron/forgotten] //Servant forever of he who is forgotten.
+	H.set_patron(/datum/patron/forgotten) //Servant forever of he who is forgotten.
 
 	return TRUE
 
@@ -256,6 +259,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	if(!user)
 		return
 	var/mob/living/carbon/human/H = user
+	var/datum/antagonist/vampirelord/lord = user.mind?.has_antag_datum(/datum/antagonist/vampirelord)
+	if(lord.vamplevel > 0)
+		time2getdusted = 300 * lord.vamplevel // This is necessary because otherwise anything by zero is an instant dust.
 	if(H.stat == DEAD)
 		return
 	if(H.advsetup)
@@ -268,7 +274,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		if(GLOB.tod != "night")
 			if(isturf(H.loc))
 				var/turf/T = H.loc
-				if(T.can_see_sky())
+				if(T.can_see_sky()) // Are we on an outdoors turf, or able to see the sky?
 					if(T.get_lumcount() > 0.15)
 						if(!isspawn)
 							to_chat(H, "<span class='warning'>Astrata spurns me! I must get out of her rays NOW!</span>") // VLord is more punished for daylight excursions.
@@ -299,9 +305,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		H.blood_volume = BLOOD_VOLUME_MAXIMUM
 		if(vitae < 200)
 			if(disguised)
-				to_chat(H, "<span class='warning'>My disguise fails!</span>")
+				to_chat(H, span_warning("My disguise fails!"))
 				H.vampire_undisguise(src)
-	handle_vitae(-1)
+	handle_vitae(-0.5) // Since vitae is now finite, less vitae lost per life tick.
 
 /datum/antagonist/vampirelord/proc/handle_vitae(change, tribute)
 	var/tempcurrent = vitae
@@ -510,10 +516,12 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/portal/Initialize()
 	. = ..()
-	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 	playsound(loc, 'sound/misc/portalopen.ogg', 100, FALSE, pressure_affected = FALSE)
-	sleep(600)
-	visible_message("<span class='boldnotice'>[src] shudders before rapidly closing.</span>")
+	addtimer(CALLBACK(src, PROC_REF(close_portal)), 1 MINUTES)
+
+/obj/structure/vampire/portal/proc/close_portal()
+	visible_message(span_boldnotice("[src] shudders before rapidly closing."))
 	qdel(src)
 
 /obj/structure/vampire/portal/sending/Destroy()
@@ -523,7 +531,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /obj/structure/vampire/bloodpool/Initialize()
 	. = ..()
-	set_light(3, 20, LIGHT_COLOR_BLOOD_MAGIC)
+	set_light(3, 3, 20, l_color = LIGHT_COLOR_BLOOD_MAGIC)
 
 /obj/structure/vampire/bloodpool/examine(mob/user)
 	. = ..()
@@ -570,8 +578,8 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 					if(do_after(user, 100))
 						lord.handle_vitae(-1500)
 						new /obj/item/clothing/under/roguetown/platelegs/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/chainmail/iron/vampire (src.loc)
-						new /obj/item/clothing/suit/roguetown/armor/plate/vampire (src.loc)
+						new /obj/item/clothing/suit/roguetown/armor/haubergon_vampire (src.loc)
+						new /obj/item/clothing/suit/roguetown/armor/cuirass/vampire (src.loc)
 						new /obj/item/clothing/shoes/roguetown/boots/armor/vampire (src.loc)
 						new /obj/item/clothing/head/roguetown/helmet/heavy/savoyard (src.loc)
 						one_time_armor = FALSE
@@ -833,7 +841,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 
 /datum/objective/vampirelord/infiltrate/one/check_completion()
 	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Churchling", "Crusader")
+	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Crusader")
 	for(var/datum/mind/V in C.vampires)
 		if(V.current.job in churchjobs)
 			return TRUE
@@ -999,7 +1007,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirelord/Initialize()
-	..()
+	. = ..()
 	GLOB.vlord_starts += loc
 
 /obj/effect/landmark/start/vampirespawn
@@ -1014,7 +1022,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/vampirespawn/Initialize()
-	..()
+	. = ..()
 	GLOB.vspawn_starts += loc
 
 /obj/effect/landmark/vteleport

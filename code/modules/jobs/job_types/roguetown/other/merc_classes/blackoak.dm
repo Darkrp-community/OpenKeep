@@ -4,7 +4,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Half-Elf",
-        "Elf",
+		"Elf",
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/blackoak
 	category_tags = list(CTAG_MERCENARY)
@@ -17,10 +17,10 @@
 	head = /obj/item/clothing/head/roguetown/helmet/sallet/elven
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	belt = /obj/item/storage/belt/rogue/leather/mercenary/black
-	armor = /obj/item/clothing/suit/roguetown/armor/plate/elven
-	backr = /obj/item/rogueweapon/spear
+	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/elven
+	backr = /obj/item/rogueweapon/polearm/spear
 	backl = /obj/item/storage/backpack/rogue/satchel
-	beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	neck = /obj/item/clothing/neck/roguetown/chaincoif
@@ -37,7 +37,6 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 
-		H.merctype = 4
 
 		H.change_stat("endurance", 2)
 		H.change_stat("strength", 1)

@@ -32,8 +32,8 @@
 
 /datum/map_template/bog_dungeon_3
 	name = "Bog Dungeon 3"
-	id = "labyrinth_of_xylix"
-	mappath = "_maps/map_files/templates/sk_dungeon/labyrinth_of_xylix.dmm"
+//	id = "labyrinth_of_xylix"
+//	mappath = "_maps/map_files/templates/sk_dungeon/labyrinth_of_xylix.dmm"
 
 /obj/effect/landmark/map_load_mark/stonekeep_dungeon/roguetown_bog
 

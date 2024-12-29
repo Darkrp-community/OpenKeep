@@ -147,6 +147,14 @@
 					added_wound = /datum/wound/slash
 				if(1 to 10)
 					added_wound = /datum/wound/slash/small
+		if(BCLASS_LASHING)
+			switch(dam)
+				if(20 to INFINITY)
+					added_wound = /datum/wound/lashing/large
+				if(10 to 20)
+					added_wound = /datum/wound/lashing
+				if(1 to 10)
+					added_wound = /datum/wound/lashing/small
 		if(BCLASS_STAB, BCLASS_PICK, BCLASS_SHOT)
 			switch(dam)
 				if(20 to INFINITY)
@@ -210,6 +218,10 @@
 				used += 10
 		if(prob(used))
 			attempted_wounds += /datum/wound/artery
+	if(bclass == BCLASS_LASHING)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
+		if(prob(used))
+			attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
@@ -259,6 +271,10 @@
 			if((zone_precise == BODY_ZONE_PRECISE_STOMACH) && !resistance)
 				attempted_wounds += /datum/wound/slash/disembowel
 			attempted_wounds += /datum/wound/artery/chest
+	if(bclass == BCLASS_LASHING)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
+		if(prob(used))
+			attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)
@@ -375,6 +391,10 @@
 						attempted_wounds += /datum/wound/facial/disfigurement/nose
 				else if(zone_precise in knockout_zones)
 					attempted_wounds += /datum/wound/fracture/head/brain
+	if(bclass == BCLASS_LASHING)
+		used = round(damage_dividend * 20 + (dam / 6), 1)
+		if(prob(used))
+			attempted_wounds += /datum/wound/scarring
 
 	for(var/wound_type in shuffle(attempted_wounds))
 		var/datum/wound/applied = add_wound(wound_type, silent, crit_message)

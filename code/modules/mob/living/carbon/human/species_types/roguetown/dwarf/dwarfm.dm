@@ -1,11 +1,10 @@
-/* * * * * * * * * * * **
- *						*
- *		  Dwarf			*
- *						*
- * 	(Poison resistance)	*
- *						*
- * * * * * * * * * * * **/
+	/*==============*
+	*				*
+	*	  Dwarf		*
+	*				*
+	*===============*/
 
+//	( + Poison Resistance )
 
 /mob/living/carbon/human/species/dwarf/mountain
 	race = /datum/species/dwarf/mountain
@@ -40,7 +39,7 @@
 	skinned_type = /obj/item/stack/sheet/animalhide/human
 	disliked_food = NONE
 	liked_food = NONE
-	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | ERT_SPAWN | RACE_SWAP | SLIME_EXTRACT
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/md.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fd.dmi'
 	dam_icon = 'icons/roguetown/mob/bodies/dam/dam_male.dmi'
@@ -59,8 +58,8 @@
 	OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-5), OFFSET_BACK_F = list(0,-5), \
 	OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = -2, "fortune" = 0)
-	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
+	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 3, "endurance" = 2, "speed" = -1, "fortune" = 0)
+	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = -1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 

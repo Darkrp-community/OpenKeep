@@ -18,6 +18,11 @@
 	associated_skill = /datum/skill/combat/knives
 	anvilrepair = /datum/skill/craft/blacksmithing
 	smeltresult = /obj/item/ingot/iron
+	embedding = list(
+		"embed_chance" = 20,
+		"embedded_pain_multiplier" = 1,
+		"embedded_fall_chance" = 0,
+	)
 
 /obj/item/rogueweapon/surgery/Initialize()
 	. = ..()

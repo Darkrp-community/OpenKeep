@@ -7,6 +7,7 @@
 /datum/intent
 	var/name = "intent"
 	var/desc = ""
+//	icon = 'icons/mob/roguehud.dmi'		so you can find the icons
 	var/icon_state = "instrike"
 	var/list/attack_verb = list("hits", "strikes")
 	var/obj/item/masteritem
@@ -146,7 +147,7 @@
 	if(mastermob)
 		if(chargedloop)
 			if(!istype(chargedloop))
-				chargedloop = new chargedloop(list(mastermob))
+				chargedloop = new chargedloop(mastermob)
 
 /datum/intent/proc/on_charge_start() //what the fuck is going on here lol
 	if(mastermob.curplaying)
@@ -154,10 +155,10 @@
 		mastermob.curplaying = null
 	if(chargedloop)
 		if(!istype(chargedloop, /datum/looping_sound))
-			chargedloop = new chargedloop(list(mastermob))
+			chargedloop = new chargedloop(mastermob)
 		else
 			chargedloop.stop()
-		chargedloop.start(chargedloop.output_atoms)
+		chargedloop.start(chargedloop.parent)
 		mastermob.curplaying = src
 
 /datum/intent/proc/on_mouse_up()
@@ -243,6 +244,17 @@
 	volume = 100
 	extra_range = 3
 
+/datum/looping_sound/invokefire
+	mid_sounds = list('sound/magic/charging_fire.ogg')
+	mid_length = 130
+	volume = 100
+	extra_range = 3
+
+/datum/looping_sound/invokelightning
+	mid_sounds = list('sound/magic/charging_lightning.ogg')
+	mid_length = 130
+	volume = 100
+	extra_range = 3
 
 /datum/looping_sound/invokeholy
 	mid_sounds = list('sound/magic/holycharging.ogg')
@@ -272,16 +284,6 @@
 	blade_class = BCLASS_STAB
 	chargetime = 0
 	swingdelay = 0
-
-/datum/intent/pick
-	name = "pick"
-	icon_state = "inpick"
-	attack_verb = list("picks","impales")
-	hitsound = list('sound/combat/hits/pick/genpick (1).ogg', 'sound/combat/hits/pick/genpick (2).ogg')
-	animname = "strike"
-	blade_class = BCLASS_PICK
-	chargetime = 0
-	swingdelay = 3
 
 /datum/intent/shoot //shooting crossbows or other guns, no parrydrain
 	name = "shoot"
@@ -352,23 +354,6 @@
 		else
 			M.taunted(user)
 	return
-
-/datum/intent/unarmed/claw
-	name = "claw"
-	icon_state = "inpunch"
-	attack_verb = list("claws", "scratches", "rends", "rips at")
-	chargetime = 0
-	animname = "blank22"
-	hitsound = "smallslash"
-	misscost = 5
-	releasedrain = 5
-	swingdelay = 0
-	rmb_ranged = TRUE
-	candodge = TRUE
-	canparry = TRUE
-	blade_class = BCLASS_CUT
-	miss_text = "claws at thin air!"
-	miss_sound = "punchwoosh"
 
 /datum/intent/unarmed/shove
 	name = "shove"
@@ -451,7 +436,7 @@
 
 /datum/intent/simple/claw
 	name = "claw"
-	icon_state = "instrike"
+	icon_state = "inclaw"
 	attack_verb = list("slashes", "claws")
 	animname = "blank22"
 	blade_class = BCLASS_CUT
@@ -504,10 +489,10 @@
 	candodge = TRUE
 	canparry = TRUE
 
-/datum/intent/unarmed/claw
+/datum/intent/unarmed/claw	// defined as attack with some AP
 	name = "claw"
-	icon_state = "instrike"
-	attack_verb = list("claws", "tears", "rips")
+	icon_state = "inclaw"
+	attack_verb = list("claws", "scratches", "rends", "tears")
 	animname = "cut"
 	blade_class = BCLASS_CUT
 	hitsound = "smallslash"
@@ -515,11 +500,16 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "claws the air!"
-	miss_sound = "bluntwooshmed"
+	miss_sound = "blunthwoosh"
+	chargetime = 0
+	misscost = 5
+	releasedrain = 5
+	swingdelay = 0
+	rmb_ranged = TRUE
 
 /datum/intent/unarmed/wwolf
 	name = "claw"
-	icon_state = "inchop"
+	icon_state = "inclaw"
 	attack_verb = list("claws", "mauls", "eviscerates")
 	animname = "cut"
 	blade_class = BCLASS_CHOP
@@ -532,7 +522,7 @@
 
 /datum/intent/unarmed/ascendedclaw
 	name = "claw"
-	icon_state = "inchop"
+	icon_state = "inclaw"
 	attack_verb = list("claws", "mauls", "eviscerates")
 	animname = "cut"
 	blade_class = BCLASS_CHOP
@@ -584,3 +574,31 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "stabs the air!"
+
+/datum/intent/simple/axe
+	name = "hack"
+	icon_state = "instrike"
+	attack_verb = list("hacks at", "chops at", "bashes")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = list("genchop", "genslash")
+	chargetime = 0
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+//	item_damage_type = "slash"
+
+/datum/intent/simple/spear
+	name = "spear"
+	icon_state = "instrike"
+	attack_verb = list("stabs", "skewers", "bashes")
+	animname = "blank22"
+	blade_class = BCLASS_CUT
+	hitsound = list("genthrust", "genstab")
+	chargetime = 0
+	penfactor = 0
+	swingdelay = 3
+	candodge = TRUE
+	canparry = TRUE
+//	item_damage_type = "stab"

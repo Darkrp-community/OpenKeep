@@ -44,6 +44,7 @@
 	if(!user.cmode)
 		if(!insertion_allowed(P))
 			return
+		user.dropItemToGround(P)
 		put_in(P)
 		playsound(loc, 'sound/foley/cartadd.ogg', 100, FALSE, -1)
 		return
@@ -89,9 +90,9 @@
 	update_icon()
 
 /obj/structure/handcart/Moved(atom/oldLoc, direction)
-    . = ..()
-    if(pulledby)
-        setDir(pulledby.dir)  // Set the handcart's direction to the direction of the entity pulling it.
+	. = ..()
+	if(pulledby)
+		setDir(pulledby.dir)  // Set the handcart's direction to the direction of the entity pulling it.
 
 /obj/structure/handcart/proc/take_contents()
 	var/turf/T = get_turf(src)
@@ -145,3 +146,7 @@
 
 	return TRUE
 
+/obj/structure/handcart/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	if (. && pulledby && dir != pulledby.dir)
+		setDir(pulledby.dir)

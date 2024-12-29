@@ -9,7 +9,7 @@
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	anvilrepair = /datum/skill/craft/armorsmithing
 	max_integrity = 60
-	armor_class = ARMOR_CLASS_LIGHT // Otherwise they get knocked down TOO easily!!!
+	armor_class = AC_LIGHT // Otherwise they get knocked down TOO easily!!!
 	sellprice = 0
 
 /obj/item/clothing/suit/roguetown/armor/leather/goblin
@@ -19,7 +19,7 @@
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
 	armor = list("melee" = 60, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
-	armor_class = ARMOR_CLASS_LIGHT
+	armor_class = AC_LIGHT
 	max_integrity = 60
 	allowed_race = list("goblin")
 	sellprice = 0

@@ -107,24 +107,6 @@
 	else
 		add_dent(WALL_DENT_HIT)
 
-/turf/closed/wall/mech_melee_attack(obj/mecha/M)
-	M.do_attack_animation(src)
-	switch(M.damtype)
-		if(BRUTE)
-			playsound(src, 'sound/blank.ogg', 50, TRUE)
-			M.visible_message("<span class='danger'>[M.name] hits [src]!</span>", \
-							"<span class='danger'>I hit [src]!</span>", null, COMBAT_MESSAGE_RANGE)
-			if(prob(hardness + M.force) && M.force > 20)
-				dismantle_wall(1)
-				playsound(src, 'sound/blank.ogg', 100, TRUE)
-			else
-				add_dent(WALL_DENT_HIT)
-		if(BURN)
-			playsound(src, 'sound/blank.ogg', 100, TRUE)
-		if(TOX)
-			playsound(src, 'sound/blank.ogg', 100, TRUE)
-			return FALSE
-
 /turf/closed/wall/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
 	return attack_hand(user)
@@ -183,7 +165,7 @@
 	if(istype(W, /obj/item/rogue/instrument))
 		if(T.attacked_by(src, user))
 			user.do_attack_animation(src)
-		visible_message("<span class='warning'>[user] slams \the [W] against \the [src]!</span>", 
+		visible_message("<span class='warning'>[user] slams \the [W] against \the [src]!</span>",
 						"<span class='warning'>I slam \the [W] against \the [src]!</span>",null ,COMBAT_MESSAGE_RANGE)
 		W.take_damage(10, BRUTE, "melee")
 		return
@@ -236,19 +218,6 @@
 
 	return FALSE
 
-/turf/closed/wall/singularity_pull(S, current_size)
-	..()
-	wall_singularity_pull(current_size)
-
-/turf/closed/wall/proc/wall_singularity_pull(current_size)
-	if(current_size >= STAGE_FIVE)
-		if(prob(50))
-			dismantle_wall()
-		return
-	if(current_size == STAGE_FOUR)
-		if(prob(30))
-			dismantle_wall()
-
 /turf/closed/wall/narsie_act(force, ignore_mobs, probability = 20)
 	. = ..()
 	if(.)
@@ -264,20 +233,6 @@
 
 /turf/closed/wall/acid_melt()
 	dismantle_wall(1)
-
-/turf/closed/wall/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)
-	switch(the_rcd.mode)
-		if(RCD_DECONSTRUCT)
-			return list("mode" = RCD_DECONSTRUCT, "delay" = 40, "cost" = 26)
-	return FALSE
-
-/turf/closed/wall/rcd_act(mob/user, obj/item/construction/rcd/the_rcd, passed_mode)
-	switch(passed_mode)
-		if(RCD_DECONSTRUCT)
-			to_chat(user, "<span class='notice'>I deconstruct the wall.</span>")
-			ScrapeAway()
-			return TRUE
-	return FALSE
 
 /turf/closed/wall/proc/add_dent(denttype, x=rand(-8, 8), y=rand(-8, 8))
 	if(LAZYLEN(dent_decals) >= MAX_DENT_DECALS)

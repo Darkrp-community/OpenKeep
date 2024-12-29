@@ -18,7 +18,7 @@
 	if((bodytemperature <= TCRYO) || HAS_TRAIT(src, TRAIT_HUSK)) //cryosleep or husked people do not pump the blood.
 		return
 	//Blood regeneration if there is some space
-	if(blood_volume < BLOOD_VOLUME_NORMAL)
+	if(blood_volume < BLOOD_VOLUME_NORMAL && !bleed_rate)
 		blood_volume += 0.1 // regenerate blood VERY slowly
 		if((blood_volume < BLOOD_VOLUME_OKAY) && !HAS_TRAIT(src, TRAIT_BLOODLOSS_IMMUNE))
 			adjustOxyLoss(round((BLOOD_VOLUME_NORMAL - blood_volume) * 0.02, 1))
@@ -67,18 +67,19 @@
 		remove_status_effect(/datum/status_effect/debuff/bleeding)
 		remove_status_effect(/datum/status_effect/debuff/bleedingworse)
 		remove_status_effect(/datum/status_effect/debuff/bleedingworst)
-		
+
 	if(bleed_rate)
 		bleed(bleed_rate)
 
-	if(blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE)
-		adjustOxyLoss(1.6)
+	//if(blood_volume in -INFINITY to BLOOD_VOLUME_SURVIVE)
+		//adjustOxyLoss(1.6)
 
 // Takes care blood loss and regeneration
 /mob/living/carbon/handle_blood()
 	if((bodytemperature <= TCRYO) || HAS_TRAIT(src, TRAIT_HUSK)) //cryosleep or husked people do not pump the blood.
 		return
 	blood_volume = min(blood_volume, BLOOD_VOLUME_MAXIMUM)
+	var/bleed_rate = get_bleed_rate()
 	if(dna?.species)
 		if(NOBLOOD in dna.species.species_traits)
 			blood_volume = BLOOD_VOLUME_NORMAL
@@ -89,7 +90,7 @@
 			return
 
 	//Blood regeneration if there is some space
-	if(blood_volume < BLOOD_VOLUME_NORMAL && blood_volume)
+	if(blood_volume < BLOOD_VOLUME_NORMAL && blood_volume && !bleed_rate)
 		var/nutrition_ratio = 1
 //			switch(nutrition)
 //				if(0 to NUTRITION_LEVEL_STARVING)
@@ -143,7 +144,6 @@
 		remove_status_effect(/datum/status_effect/debuff/bleedingworst)
 
 	//Bleeding out
-	var/bleed_rate = get_bleed_rate()
 	if(bleed_rate)
 		for(var/obj/item/bodypart/bodypart as anything in bodyparts)
 			bodypart.try_bandage_expire()
@@ -354,6 +354,7 @@
 		W.update_icon()
 		return
 	new /obj/effect/decal/cleanable/blood/splatter(T, get_static_viruses())
+	T?.pollute_turf(/datum/pollutant/metallic_scent, 30)
 
 /mob/living/proc/add_drip_floor(turf/T, amt)
 	if(!iscarbon(src))

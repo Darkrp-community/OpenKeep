@@ -18,7 +18,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/druqks = 15)
-	sellprice = 10
+	sellprice = 6
 
 /datum/reagent/druqks
 	name = "Drukqs"
@@ -152,7 +152,7 @@
 	list_reagents = list(/datum/reagent/floure = 1)
 	volume = 1
 	sellprice = 0
-	
+
 /datum/reagent/floure
 	name = "flower"
 	description = ""
@@ -230,7 +230,7 @@
 	possible_transfer_amounts = list()
 	volume = 15
 	list_reagents = list(/datum/reagent/moondust = 15)
-	sellprice = 5
+	sellprice = 10
 	possible_potion = "intpot"
 
 /datum/reagent/moondust/overdose_process(mob/living/M)
@@ -271,7 +271,7 @@
 	possible_transfer_amounts = list()
 	volume = 18
 	list_reagents = list(/datum/reagent/moondust_purest = 18)
-	sellprice = 30
+	sellprice = 14
 	possible_potion = "spdpot"
 
 /datum/reagent/moondust_purest

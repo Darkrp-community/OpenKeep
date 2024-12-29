@@ -23,14 +23,14 @@
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_stockings.dmi'
 
 /datum/crafting_recipe/roguetown/sewing/stockings
-    name = "stockings"
-    result = list(/obj/item/clothing/under/roguetown/stockings)
-    reqs = list(/obj/item/natural/cloth = 2,
-                /obj/item/natural/fibers = 1)
-    craftdiff = 0
+	name = "stockings"
+	result = list(/obj/item/clothing/under/roguetown/stockings)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
+	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/sewing/net_stockings
-    name = "net stockings"
-    result = list(/obj/item/clothing/under/roguetown/net_stockings)
-    reqs = list(/obj/item/natural/fibers = 2)
-    craftdiff = 0
+	name = "net stockings"
+	result = list(/obj/item/clothing/under/roguetown/net_stockings)
+	reqs = list(/obj/item/natural/fibers = 2)
+	craftdiff = 0

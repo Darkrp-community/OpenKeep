@@ -87,6 +87,7 @@
 #define LIGHTING_PLANE_ALPHA_VISIBLE 255
 #define LIGHTING_PLANE_ALPHA_LESSER_NV_TRAIT 236
 #define LIGHTING_PLANE_ALPHA_NV_TRAIT 222
+#define LIGHTING_PLANE_ALPHA_DARKVISION 220
 #define LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE 192
 /// For lighting alpha, small amounts lead to big changes. even at 128 its hard to figure out what is dark and what is light, at 64 you almost can't even tell.
 #define LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE 128
@@ -137,3 +138,13 @@ GLOBAL_LIST_INIT(em_mask_matrix, EM_MASK_MATRIX)
 
 /// Returns the blue part of a #RRGGBB hex sequence as number
 #define GETBLUEPART(hexa) hex2num(copytext(hexa, 6, 8))
+
+/// The default falloff curve for all atoms. It's a magic number you should adjust until it looks good.
+#define LIGHTING_DEFAULT_FALLOFF_CURVE 3
+
+///Light made with the lighting datums, applying a matrix.
+#define STATIC_LIGHT 1
+///Light made by masking the lighting darkness plane.
+#define MOVABLE_LIGHT 2
+
+#define LIGHT_ATTACHED (1<<0)
