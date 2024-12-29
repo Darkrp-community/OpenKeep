@@ -211,7 +211,7 @@
 /obj/item/alch/ozium
 	name = "alchemical ozium"
 	desc = "Alchemical processing has left it unfit for consumption."
-	icon_state = "whitepowder"
+	icon_state = "darkredpowder"
 
 	major_pot = /datum/alch_cauldron_recipe/big_stamina_potion
 	med_pot = /datum/alch_cauldron_recipe/lck_potion
@@ -220,7 +220,7 @@
 /obj/item/alch/transisdust
 	name = "Transis dust"
 	desc = "A long mix of herb that product a special powder."
-	icon_state = "whitepowder"
+	icon_state = "transisdust"
 
 	major_pot = /datum/alch_cauldron_recipe/gender_potion
 	med_pot = /datum/alch_cauldron_recipe/gender_potion
