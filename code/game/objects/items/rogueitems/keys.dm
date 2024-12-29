@@ -827,3 +827,8 @@
 	name = "armorsmith's key"
 	icon_state = "rustkey"
 	lockid = "armorsmith"
+
+/obj/item/key/matron
+	name = "matron key"
+	icon_state = "rustkey"
+	lockid = "orphanage"

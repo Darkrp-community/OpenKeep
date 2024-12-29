@@ -53,4 +53,4 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		backr = /obj/item/storage/backpack/rogue/satchel
 		cloak = /obj/item/clothing/cloak/matron
-		backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1)
+		backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1, /obj/item/key/matron = 1)
