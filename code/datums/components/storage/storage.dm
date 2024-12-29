@@ -29,8 +29,8 @@
 	var/locked = FALSE								//when locked nothing can see inside or use it.
 
 	var/max_w_class = WEIGHT_CLASS_SMALL			//max size of objects that will fit.
-	var/max_combined_w_class = 14					//max combined sizes of objects that will fit.
-	var/max_items = 7								//max number of objects that will fit.
+	var/max_combined_w_class = 1000					//max combined sizes of objects that will fit.
+	var/max_items = 1000								//max number of objects that will fit.
 
 	var/emp_shielded = FALSE
 
