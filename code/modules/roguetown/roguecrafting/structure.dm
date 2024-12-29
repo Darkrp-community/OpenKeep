@@ -22,31 +22,6 @@
 /obj/item/chair/stool/bar/rogue/crafted
 	sellprice = 6
 
-/datum/crafting_recipe/roguetown/structure/dye_bin
-	name = "dye bin"
-	result = /obj/machinery/simple_dye_bin
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-	/obj/item/reagent_containers/food/snacks/produce/jacksberry = 1,
-	/obj/item/natural/dirtclod = 1)
-	verbage = "construct"
-	verbage_tp = "carpents"
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
-
-/datum/crafting_recipe/roguetown/structure/dye_bin_luxury
-	name = "luxury dye bin"
-	result = /obj/machinery/dye_bin
-	reqs = list(/obj/item/natural/plank = 2,,
-	/obj/item/reagent_containers/food/snacks/produce/fyritius = 3,
-	/obj/item/reagent_containers/food/snacks/produce/pear = 3,
-	/obj/item/reagent_containers/food/snacks/produce/sunflower = 3,)
-	verbage = "construct"
-	verbage_tp = "carpents"
-	craftsound = 'sound/foley/Building-01.ogg'
-	skillcraft = /datum/skill/craft/carpentry
-	subtype_reqs = TRUE // so you can use any subtype of the berries and swampweed
-
 /* === SKILL LEVEL 1 === */
 
 /datum/crafting_recipe/roguetown/structure/chair
@@ -66,7 +41,7 @@
 	name = "composter"
 	result = /obj/structure/composter
 	reqs = list(/obj/item/grown/log/tree/small = 1)
-	time = 2 SECONDS
+	time = 3 SECONDS
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/roguebin // Bins are easier to craft than barrels for pure convenience.
@@ -357,6 +332,24 @@
 	skillcraft = /datum/skill/craft/masonry
 	craftdiff = 2
 
+/datum/crafting_recipe/roguetown/structure/stonetable
+	name = "stone table (long mid)"
+	result = /obj/structure/table/stone
+	reqs = list(/obj/item/natural/stoneblock = 2)
+	verbage = "build"
+	verbage_tp = "builds"
+	craftsound = 'sound/foley/Building-01.ogg'
+	time = 4 SECONDS
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 3
+/datum/crafting_recipe/roguetown/structure/stonetable/end
+	name = "stone table (long end)"
+	result = /obj/structure/table/stone_end
+
+/datum/crafting_recipe/roguetown/structure/stonetable/small
+	name = "stone table (single)"
+	result = /obj/structure/table/stone_small
+
 /*========= MISCELLANY/CRAFTING SKILL ==========*/
 
 /* === NO SKILL NEEDED === */
@@ -477,7 +470,17 @@
 /datum/crafting_recipe/roguetown/structure/smelter
 	name = "ore furnace"
 	result = /obj/machinery/light/rogue/smelter
-	reqs = list(/obj/item/natural/stone = 4,
+	reqs = list(/obj/item/natural/stone = 6,
+			/obj/item/rogueore/coal = 1)
+	verbage = "build"
+	verbage_tp = "builds"
+	craftsound = null
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/smelter_block
+	name = "ore furnace"
+	result = /obj/machinery/light/rogue/smelter
+	reqs = list(/obj/item/natural/stoneblock = 4,
 			/obj/item/rogueore/coal = 1)
 	verbage = "build"
 	verbage_tp = "builds"

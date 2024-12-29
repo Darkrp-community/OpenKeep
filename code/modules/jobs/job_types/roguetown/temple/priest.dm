@@ -24,7 +24,7 @@
 	display_order = JDO_PRIEST
 	give_bank_account = 115
 	min_pq = 4
-	selection_color = "#b29c69"
+	selection_color = "#b7a375"
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()

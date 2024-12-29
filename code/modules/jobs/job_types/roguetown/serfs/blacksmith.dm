@@ -150,7 +150,13 @@
 	total_positions = 2
 	spawn_positions = 2
 
-	allowed_races = ALL_PLAYER_RACES_BY_NAME
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Half-Elf",
+		"Dwarf",
+		"Aasimar"
+	)
 
 	tutorial = "You can smith armor and weapons alike with ease, but do not forget your apprentices. If nothing else, they can be used for errands or thrown out if bumbling fools. The masons next door are also part of the Makers Guild."
 

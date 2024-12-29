@@ -6,7 +6,7 @@
 	force = 0
 	throwforce = 0
 	obj_flags = null
-	color = "#454032"
+	color = "#766945"
 	firefuel = 5 MINUTES
 	resistance_flags = FLAMMABLE
 	slot_flags = ITEM_SLOT_MOUTH
@@ -124,8 +124,6 @@
 	if(wet)
 		. += span_notice("It's wet!")
 
-/obj/item/natural/cloth/bandit
-	color = "#ff0000"
 
 // CLEANING
 
@@ -312,6 +310,9 @@
 	icon1step = 5
 	icon2 = "clothroll2"
 	icon2step = 10
+
+/obj/item/natural/bundle/cloth/partial
+	amount = 6
 
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"

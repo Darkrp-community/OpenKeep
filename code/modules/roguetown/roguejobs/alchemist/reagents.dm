@@ -103,6 +103,18 @@
 	..()
 	. = 1
 
+/datum/reagent/buff/coldfire
+	name = "Coldfire"
+	color = "#616990"
+	taste_description = "burning"
+	metabolization_rate = REAGENTS_METABOLISM
+
+/datum/reagent/buff/coldfire/on_mob_metabolize(mob/living/L)
+	ADD_TRAIT(L, TRAIT_MOB_FIRE_IMMUNE, type)
+
+/datum/reagent/buff/coldfire/on_mob_end_metabolize(mob/living/L)
+	REMOVE_TRAIT(L, TRAIT_MOB_FIRE_IMMUNE, type)
+
 //Buff potions
 /datum/reagent/buff
 	description = ""
@@ -204,7 +216,7 @@
 	return ..()
 
 
-//Poisons			
+//Poisons
 /* Tested this quite a bit. Heres the deal. Metabolism REAGENTS_SLOW_METABOLISM is 0.1 and needs to be that so poison isnt too fast working but
 still is dangerous. Toxloss of 3 at metabolism 0.1 puts you in dying early stage then stops for reference of these values.
 A dose of ingested potion is defined as 5u, projectile deliver at most 2u, you already do damage with projectile, a bolt can only feasible hold a tiny amount of poison, so much easier to deliver than ingested and so on.

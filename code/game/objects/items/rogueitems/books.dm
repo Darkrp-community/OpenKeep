@@ -659,6 +659,14 @@ ____________End of Example*/
 	base_icon_state = "book8"
 	bookfile = "Neu_cooking.json"
 
+/obj/item/book/rogue/advice_weaving
+	name = "A hundred kinds of stitches"
+	desc = "Howe to weave, tailor, and sundry tailoring. By Agnea Corazzani."
+	icon_state ="book8_0"
+	base_icon_state = "book8"
+	bookfile = "AdviceWeaving.json"
+
+
 /obj/item/book/rogue/psybibble
 	name = "The Book"
 	icon_state = "psybibble_0"

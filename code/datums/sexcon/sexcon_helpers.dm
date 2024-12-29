@@ -34,10 +34,8 @@
 	volume = 20
 	extra_range = -4
 
-/mob/
+/mob
 	var/can_do_sex = TRUE
-	//var/virginity = FALSE
-	var/deviant = FALSE
 
 /mob/living/carbon/human/MiddleMouseDrop_T(mob/living/target, mob/living/user)
 	if(user.mmb_intent)
@@ -47,7 +45,7 @@
 	if(target != user)
 		return
 	if(!user.can_do_sex())
-		to_chat(user, "<span class='warning'>I can't do this.</span>")
+		user.visible_message(span_warning("I can't do this."))
 		return
 	user.sexcon.start(src)
 
@@ -69,23 +67,6 @@
 		playsound(src, pick('sound/misc/mat/girlmouth (1).ogg','sound/misc/mat/girlmouth (2).ogg'), 25, TRUE, ignore_walls = FALSE)
 	else
 		playsound(src, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 35, TRUE, ignore_walls = FALSE)
-
-/mob/living/carbon/human/proc/try_impregnate(mob/living/carbon/human/wife)
-	if(!gender == MALE)
-		return
-	if(!(wife.gender == FEMALE))
-		return
-	if(prob(25))
-		wife.become_pregnant(src)
-
-/mob/living/carbon/human/proc/become_pregnant(husband)
-	if(QDELETED(src))
-		return
-	if(gender != FEMALE)
-		return
-	if(stat == DEAD)
-		return
-	add_nausea(101)
 
 /mob/living/carbon/human/proc/get_highest_grab_state_on(mob/living/carbon/human/victim)
 	var/grabstate = null

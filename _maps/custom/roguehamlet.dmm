@@ -8864,7 +8864,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "jrk" = (
-/obj/item/roguestatue/silver/gnome,
+/obj/item/roguestatue/gnome,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/magician)
 "jrP" = (

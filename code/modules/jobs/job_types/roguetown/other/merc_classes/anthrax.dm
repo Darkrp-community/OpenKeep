@@ -11,11 +11,13 @@
 
 /datum/outfit/job/roguetown/mercenary/anthrax/pre_equip(mob/living/carbon/human/H)
 	..()
-	shoes = /obj/item/clothing/shoes/roguetown/boots
+
 	belt = /obj/item/storage/belt/rogue/leather/black
 	pants = /obj/item/clothing/under/roguetown/trou/shadowpants
+	shoes = /obj/item/clothing/shoes/roguetown/boots
 	backl = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/roguekey/mercenary, /obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/knife/dagger/steel/dirk)
+	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/rogueweapon/knife/dagger/steel/dirk)
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
@@ -31,11 +33,11 @@
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim //Secret police training owing to their origins.
 
 		if(H.gender == FEMALE) //Melee defense-oriented brute, heavy lean towards non-lethal takedowns and capture.
-			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
-			gloves = /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
-			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 			mask = /obj/item/clothing/mask/rogue/facemask/shadowfacemask
 			neck = /obj/item/clothing/neck/roguetown/gorget
+			gloves = /obj/item/clothing/gloves/roguetown/chain/iron/shadowgauntlets
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+			armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron/shadowplate
 			backr = /obj/item/rogueweapon/shield/tower/spidershield
 			beltr = /obj/item/rogueweapon/whip/spiderwhip
 
@@ -52,15 +54,15 @@
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 		if(H.gender == MALE) //Squishy hit-and-runner assassin.
-			shirt = /obj/item/clothing/suit/roguetown/shirt/shadowshirt
-			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
-			cloak = /obj/item/clothing/cloak/half/shadowcloak
-			gloves = /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
 			mask = /obj/item/clothing/mask/rogue/shepherd/shadowmask
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
-			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve //Coupled with the racial PER malus, abysmal damage, but good for poison arrows.
+			cloak = /obj/item/clothing/cloak/half/shadowcloak
+			gloves = /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/shadowrobe
+			shirt = /obj/item/clothing/suit/roguetown/shirt/shadowshirt
 			beltr = /obj/item/quiver/arrows
 			beltl = /obj/item/rogueweapon/sword/sabre/stalker
+			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve //Coupled with the racial PER malus, abysmal damage, but good for poison arrows.
 
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)

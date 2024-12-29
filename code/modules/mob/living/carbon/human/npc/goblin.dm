@@ -18,75 +18,29 @@
 	stand_attempts = 6
 	vitae_pool = 250 // Small, frail creechers with not so much vitality to gain from.
 
-/mob/living/carbon/human/species/goblin/npc
-	aggressive=1
-	mode = AI_IDLE
-	dodgetime = 5 SECONDS
-	flee_in_pain = TRUE
-
-	wander = FALSE
-
-/mob/living/carbon/human/species/goblin/npc/ambush
-	simpmob_attack = 35
-	simpmob_defend = 25
-	wander = TRUE
-	attack_speed = 2
-
-/mob/living/carbon/human/species/goblin/hell
-	name = "hell goblin"
-	race = /datum/species/goblin/hell
-
-/mob/living/carbon/human/species/goblin/npc/hell
-	race = /datum/species/goblin/hell
-
-/mob/living/carbon/human/species/goblin/npc/ambush/hell
-	race = /datum/species/goblin/hell
-
 /datum/species/goblin/hell
 	name = "hell goblin"
 	id = "goblin_hell"
 	raceicon = "goblin_hell"
 
-/mob/living/carbon/human/species/goblin/cave
-	name = "cave goblin"
-	race = /datum/species/goblin/cave
-
-/mob/living/carbon/human/species/goblin/npc/cave
-	race = /datum/species/goblin/cave
-
-/mob/living/carbon/human/species/goblin/npc/ambush/cave
-	race = /datum/species/goblin/cave
-
 /datum/species/goblin/cave
+	name = "cave goblin"
 	id = "goblin_cave"
 	raceicon = "goblin_cave"
 
-/mob/living/carbon/human/species/goblin/sea
-	name = "sea goblin"
-	race = /datum/species/goblin/sea
-/mob/living/carbon/human/species/goblin/npc/sea
-	race = /datum/species/goblin/sea
-/mob/living/carbon/human/species/goblin/npc/ambush/sea
-	race = /datum/species/goblin/sea
 /datum/species/goblin/sea
+	name = "sea goblin"
 	raceicon = "goblin_sea"
 	id = "goblin_sea"
 
-/mob/living/carbon/human/species/goblin/moon
-	name = "moon goblin"
-	race = /datum/species/goblin/moon
-/mob/living/carbon/human/species/goblin/npc/moon
-	race = /datum/species/goblin/moon
-/mob/living/carbon/human/species/goblin/npc/ambush/moon
-	race = /datum/species/goblin/moon
 /datum/species/goblin/moon
+	name = "moon goblin"
 	id = "goblin_moon"
 	raceicon = "goblin_moon"
 
 /datum/species/goblin/moon/spec_death(gibbed, mob/living/carbon/human/H)
 	new /obj/item/reagent_containers/powder/moondust_purest(get_turf(H))
 	H.visible_message("<span class='blue'>Moondust falls from [H]!</span>")
-//	qdel(H)
 
 /obj/item/bodypart/chest/goblin
 	dismemberable = 0
@@ -408,7 +362,7 @@
 		to_chat(user, "<span class='danger'>Too many Gobs.</span>")
 		return
 	gobs++
-	var/mob/living/carbon/human/species/goblin/npc/N = new (get_turf(src))
+	var/mob/living/carbon/human/species/goblin/skilled/ambush/N = new (get_turf(src))
 	N.key = user.key
 	qdel(user)
 
@@ -426,9 +380,9 @@
 			else
 				moon_goblins = 2
 	if(moon_goblins == 1)
-		new /mob/living/carbon/human/species/goblin/npc/moon(get_turf(src))
+		new /mob/living/carbon/human/species/goblin/skilled/ambush/moon(get_turf(src))
 	else
-		new /mob/living/carbon/human/species/goblin/npc(get_turf(src))
+		new /mob/living/carbon/human/species/goblin/skilled(get_turf(src))
 	gobs++
 	update_icon()
 	if(living_player_count() < 10)

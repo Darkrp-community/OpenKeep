@@ -49,12 +49,12 @@
 
 /datum/supply_pack/rogue/food/spottedhen
 	name = "Rockhill Brewed"
-	cost = 10
+	cost = 11
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/spottedhen
 
 /datum/supply_pack/rogue/food/blackgoat
 	name = "Jacksberry Mix"
-	cost = 20
+	cost = 16
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 
 /datum/supply_pack/rogue/food/onin
@@ -64,47 +64,47 @@
 
 /datum/supply_pack/rogue/food/grenzelbeer
 	name = "Grenzelhoftian Bitter Beer"
-	cost = 20
+	cost = 19
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/hagwoodbitter
 
 /datum/supply_pack/rogue/food/elfbeer
 	name = "Elvish Beer"
-	cost = 35
+	cost = 28
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/aurorian
 
 /datum/supply_pack/rogue/food/elfcab
 	name = "Elvish Fireleaf"
-	cost = 40
+	cost = 34
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/fireleaf
 
 /datum/supply_pack/rogue/food/butterhair
 	name = "Dwarvish Butterhairs"
-	cost = 50
+	cost = 20
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/butterhairs
 
 /datum/supply_pack/rogue/food/stonebeard
 	name = "Stonebeards Reserve"
-	cost = 45
+	cost = 25
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/stonebeardreserve
 
 /datum/supply_pack/rogue/food/voddena
 	name = "Dwarven Voddena"
-	cost = 40
+	cost = 35
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/beer/voddena
 
 /datum/supply_pack/rogue/food/winezybantu
 	name = "Zybantu Wine"
-	cost = 15
+	cost = 12
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/wine
 
 /datum/supply_pack/rogue/food/winegrenzel
 	name = "Grenzelhoftian Sour Wine"
-	cost = 25
+	cost = 18
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/wine/sourwine
 
 /datum/supply_pack/rogue/food/winevalorred
 	name = "Valorian Red Wine"
-	cost = 50
+	cost = 30
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/redwine
 
 /datum/supply_pack/rogue/food/winevalorwhite
@@ -114,12 +114,12 @@
 
 /datum/supply_pack/rogue/food/elfred
 	name = "Elvish Red Wine"
-	cost = 165
+	cost = 70
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/elfred
 
 /datum/supply_pack/rogue/food/elfblue
 	name = "Valmora Blue Wine"
-	cost = 320
+	cost = 120
 	contains = /obj/item/reagent_containers/glass/bottle/rogue/elfblue
 
 /datum/supply_pack/rogue/food/meat
