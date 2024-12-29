@@ -20,6 +20,7 @@
 
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	head = /obj/item/clothing/head/roguetown/courtierhat
+	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/storage/keyring/tailor
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/needle = 1, /obj/item/natural/bundle/cloth = 2, /obj/item/natural/bundle/fibers = 1)
