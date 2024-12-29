@@ -25,7 +25,7 @@
 
 /obj/item/rogueweapon/handsaw/crude
 	name = "crude sawing tool"
-	desc = "A serrated piece of flint with a bone handle."
+	desc = "A stick with sharp pieces of flint added."
 	icon_state = "stonesaw"
 	wlength = WLENGTH_LONG
 	w_class = WEIGHT_CLASS_BULKY
@@ -80,6 +80,29 @@
 	muteinmouth = TRUE
 	w_class = WEIGHT_CLASS_BULKY
 	bundletype = /obj/item/natural/bundle/plank
+
+/obj/item/natural/plank/attackby(obj/item/I, mob/living/user, params)		// remake to use /datum/intent/axe/cut or TO DO never do maybe
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(I, /obj/item/rogueweapon/axe))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 8 SECONDS))
+			user.visible_message("<span class='notice'>[user] crudely shortens the [src].</span>")
+			new /obj/item/natural/plankshort(get_turf(src.loc))
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/polearm/halberd/bardiche))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 8 SECONDS))
+			user.visible_message("<span class='notice'>[user] crudely shortens the [src].</span>")
+			new /obj/item/natural/plankshort(get_turf(src.loc))
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/handsaw))
+		playsound(get_turf(src.loc), 'sound/items/sawing.ogg', 100)
+		if(do_after(user, 3 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes two shorter planks from [src].</span>")
+			new /obj/item/natural/plankshort(get_turf(src.loc))
+			new /obj/item/natural/plankshort(get_turf(src.loc))
+			qdel(src)
+	..()
 
 /obj/item/natural/plank/attack_right(mob/user)
 	to_chat(user, "<span class='warning'>I start to collect [src]...</span>")
@@ -141,7 +164,6 @@
 	icon = 'icons/roguetown/items/crafting.dmi'
 	icon_state = "stoneblock"
 	gripped_intents = null
-	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
 	force = 12
 	throwforce = 20 //brick is valid weapon

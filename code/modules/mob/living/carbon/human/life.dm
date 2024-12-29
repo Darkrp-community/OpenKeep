@@ -114,6 +114,9 @@
 	if(sexcon)
 		sexcon.process_sexcon(1 SECONDS)
 
+	if(sexcon)
+		sexcon.process_sexcon(1 SECONDS)
+
 	if(stat != DEAD)
 		return 1
 

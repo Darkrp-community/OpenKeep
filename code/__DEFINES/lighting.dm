@@ -140,7 +140,7 @@ GLOBAL_LIST_INIT(em_mask_matrix, EM_MASK_MATRIX)
 #define GETBLUEPART(hexa) hex2num(copytext(hexa, 6, 8))
 
 /// The default falloff curve for all atoms. It's a magic number you should adjust until it looks good.
-#define LIGHTING_DEFAULT_FALLOFF_CURVE 3
+#define LIGHTING_DEFAULT_FALLOFF_CURVE 2.5
 
 ///Light made with the lighting datums, applying a matrix.
 #define STATIC_LIGHT 1

@@ -19,3 +19,6 @@
 
 /obj/item/reagent_containers/glass/bottle/waterskin/milk // Filled subtype used by the cheesemaker
 	list_reagents = list(/datum/reagent/consumable/milk = 64)
+
+/obj/item/reagent_containers/glass/bottle/waterskin/half
+	list_reagents = list(/datum/reagent/water = 32)

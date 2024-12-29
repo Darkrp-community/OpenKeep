@@ -110,7 +110,7 @@
 	body_parts_covered = CHEST|ARM_RIGHT|VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/Initialize()
-	color = pick(CLOTHING_MUD_BROWN, CLOTHING_PEAR_YELLOW, CLOTHING_BOG_GREEN, CLOTHING_BARK_BROWN	)
+	color = pick(CLOTHING_MUD_BROWN, CLOTHING_OLD_LEATHER,  CLOTHING_SPRING_GREEN, CLOTHING_BARK_BROWN	)
 	..()
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt

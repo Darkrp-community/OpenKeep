@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 	flags = SS_BACKGROUND
 	wait = 10
 	runlevels = RUNLEVEL_GAME
-	var/list/elligble_weather = list()
+	var/list/eligible_weather = list()
 	var/datum/particle_weather/runningWeather
 	// var/list/next_hit = list() //Used by barometers to know when the next storm is coming
 
@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 				runningWeather.weather_obj_act(act_on)
 	else
 		// start random weather
-		var/datum/particle_weather/our_event = pickweight(elligble_weather) //possible_weather
+		var/datum/particle_weather/our_event = pickweight(eligible_weather) //possible_weather
 		if(our_event)
 			run_weather(our_event)
 
@@ -36,8 +36,8 @@ SUBSYSTEM_DEF(ParticleWeather)
 
 		// any weather with a probability set may occur at random
 		if (probability && (target_trait in GLOB.vanderlin_weather)) //TODO VANDERLIN: Map trait this.
-			LAZYINITLIST(elligble_weather)
-			elligble_weather[W] = probability
+			LAZYINITLIST(eligible_weather)
+			eligible_weather[W] = probability
 	return ..()
 
 /datum/controller/subsystem/ParticleWeather/proc/run_weather(datum/particle_weather/weather_datum_type, force = 0)
@@ -65,7 +65,7 @@ SUBSYSTEM_DEF(ParticleWeather)
 
 
 /datum/controller/subsystem/ParticleWeather/proc/make_eligible(possible_weather)
-	elligble_weather = possible_weather
+	eligible_weather = possible_weather
 // 	next_hit = null
 
 /datum/controller/subsystem/ParticleWeather/proc/getweatherEffect()

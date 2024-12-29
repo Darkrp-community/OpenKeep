@@ -1,7 +1,8 @@
 /datum/sex_action
-	var/name = "Sniff them"
+	abstract_type = /datum/sex_action
+	var/name = "Zodomize"
 	/// Time to do the act, modified by up to 2.5x speed by the speed toggle
-	var/do_time = 3 SECONDS
+	var/do_time = 3.3 SECONDS
 	/// Whether the act is continous and will be done on repeat
 	var/continous = TRUE
 	/// Stamina cost per action, modified by up to 2.5x cost by the force toggle

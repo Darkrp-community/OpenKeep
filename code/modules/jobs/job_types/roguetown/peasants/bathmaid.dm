@@ -23,9 +23,9 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 	armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
-	neck = /obj/item/storage/belt/rogue/pouch/nitemaiden
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/roguekey/nitemaiden
+	beltl = /obj/item/storage/belt/rogue/pouch/nitemaiden
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 
 	if(H.mind)

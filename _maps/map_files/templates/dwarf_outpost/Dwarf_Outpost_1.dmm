@@ -165,7 +165,7 @@
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "lr" = (
 /obj/machinery/light/rogue/hearth,
-/turf/open/floor/rogue/cobblerock/alt,
+/turf/open/floor/rogue/cobblerock_alt,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "lI" = (
 /obj/effect/decal/shadow_floor{

@@ -42,11 +42,17 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/smelting, 4, TRUE)
 
 	head = /obj/item/clothing/head/roguetown/brimmed
+	if(prob(50))
+		head = /obj/item/clothing/head/roguetown/headband/red
 	neck = /obj/item/clothing/neck/roguetown/coif
 	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
 	cloak = /obj/item/clothing/cloak/apron/waist/brown
+	if(prob(50))
+		cloak = /obj/item/clothing/cloak/apron/brown
 	pants = /obj/item/clothing/under/roguetown/trou
-	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/green//gave them the guild tunic they have on the map, blacksmiths get them too
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/red
+	if(prob(50))
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots//shortboots for worker roles
 	belt = /obj/item/storage/belt/rogue/leather/mason
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
@@ -54,7 +60,7 @@
 	backl = /obj/item/storage/backpack/rogue/backpack
 	r_hand = /obj/item/rogueweapon/chisel
 	id = /obj/item/clothing/ring/silver/makers_guild
-	backpack_contents = list(/obj/item/roguekey/mason = 1, /obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/rogueweapon/knife/villager = 1, /obj/item/keyring = 1, /obj/item/rogueweapon/handsaw=1)
+	backpack_contents = list(/obj/item/flint = 1, /obj/item/flashlight/flare/torch/lantern = 1, /obj/item/rogueweapon/knife/villager = 1, /obj/item/rogueweapon/handsaw=1)
 
 	H.change_stat("strength", 1)
 	H.change_stat("intelligence", 1)

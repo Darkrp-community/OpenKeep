@@ -4,6 +4,8 @@
 	*				*
 	*===============*/
 
+// Fire resistance
+
 /mob/living/carbon/human/species/tieberian
 	race = /datum/species/tieberian
 
@@ -26,7 +28,7 @@
 	skin_tone_wording = "Progenitor"
 
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS,STUBBLE,OLDGREY)
-	inherent_traits = list(TRAIT_NOMOBSWAP)
+	inherent_traits = list(TRAIT_NOMOBSWAP,TRAIT_MOB_FIRE_IMMUNE)
 	default_features = list("mcolor" = "FFF", "ears" = "ElfW", "tail_human" = "TiebTail", "horns" = "TiebHorns")
 	use_skintones = 1
 	skinned_type = /obj/item/stack/sheet/animalhide/human
@@ -166,5 +168,5 @@
 /datum/species/tieberian/random_surname()
 	return " [pick(world.file2list("strings/rt/names/other/tieflast.txt"))]"
 
-/datum/species/tieberian/get_accent_list()
-	return strings("spanish_replacement.json", "spanish")
+/datum/species/tieberian/get_accent(mob/living/carbon/human/H)
+	return strings("tiefling_replacement.json", "tiefling")

@@ -101,12 +101,6 @@
 	result = list(/obj/item/clothing/head/roguetown/fisherhat)
 	reqs = list(/obj/item/natural/fibers = 3)
 
-/datum/crafting_recipe/roguetown/sewing/zigbox
-	name = "paper zigbox"
-	result = list(/obj/item/storage/fancy/cigarettes/zig/empty)
-	reqs = list(/obj/item/paper = 1,
-				/obj/item/natural/fibers = 1)
-
 /datum/crafting_recipe/roguetown/sewing/sack
 	name = "sack hood"
 	result = list(/obj/item/clothing/head/roguetown/menacing)
@@ -286,16 +280,19 @@
 /datum/crafting_recipe/roguetown/sewing/fancyhat
 	name = "fancy hat"
 	result = list(/obj/item/clothing/head/roguetown/fancyhat)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/sewing/fashionablehat
 	name = "fashionable hat"
 	result = /obj/item/clothing/head/roguetown/fashionablehat
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 
 /datum/crafting_recipe/roguetown/sewing/plumedhat
 	name = "plumed hat"
 	result = list(/obj/item/clothing/head/roguetown/bardhat)
+	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
 
 /*========= ROLE LOCKED RECIPES ==========*/

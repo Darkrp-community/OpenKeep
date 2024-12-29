@@ -77,6 +77,9 @@
 /obj/item/clothing/head/roguetown/headband/red
 	color = CLOTHING_BLOOD_RED
 
+/obj/item/clothing/head/roguetown/headband/blue
+	color = CLOTHING_MAGE_BLUE
+
 /obj/item/clothing/head/roguetown/softcap
 	name = "soft cap"
 	desc = "A white cap worn by most manual laborers to protect from sunburn."
@@ -475,9 +478,9 @@
 	name = "chef's hat"
 
 /obj/item/clothing/head/roguetown/tophat
-	name = "teller's hat"
+	name = "unusual hat"
 	icon_state = "tophat"
-	color = CLOTHING_SOOT_BLACK
+	color = "#d0a3a3"
 
 
 
@@ -1242,6 +1245,7 @@
 	flags_inv = HIDEEARS|HIDEHAIR
 	icon_state = "antlerhood"
 	item_state = "antlerhood"
+	dynamic_hair_suffix = "+generic"
 	icon = 'icons/roguetown/clothing/head.dmi'
 	body_parts_covered = HEAD|HAIR|EARS|NECK
 	slot_flags = ITEM_SLOT_HEAD
@@ -1251,19 +1255,6 @@
 	anvilrepair = null
 	sewrepair = TRUE
 	blocksound = SOFTHIT
-
-//............... Saiga skull ............... //
-/obj/item/clothing/head/roguetown/helmet/leather/saiga
-	name = "saiga skull"
-	desc = "Skull from big game. Looks like it could withstand some damage."
-	icon_state = "saigahead"
-	item_state = "saigahead"
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
-	worn_x_dimension = 64
-	worn_y_dimension = 64
-	flags_inv = HIDEEARS|HIDEFACE
-	flags_cover = HEADCOVERSEYES
-	body_parts_covered = HEAD|EARS|HAIR|NOSE|EYES
 
 
 

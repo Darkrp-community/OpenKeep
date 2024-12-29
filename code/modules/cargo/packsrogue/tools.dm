@@ -24,7 +24,7 @@
 
 /datum/supply_pack/rogue/tools/lockpicks
 	name = "Lockpicks"
-	cost = 20
+	cost = 25
 	contains = /obj/item/lockpickring/mundane
 
 /datum/supply_pack/rogue/tools/needle
@@ -58,10 +58,9 @@
 	contains = /obj/item/flint
 
 /datum/supply_pack/rogue/tools/dyebin
-	name = "Fine dyes"
-	cost = 200
-	contains = /obj/machinery/dye_bin
-
+	name = "Luxury dyes"
+	cost = 100
+	contains = /obj/item/luxury_dyes
 
 /datum/supply_pack/rogue/tools/candles
 	name = "Candles"
