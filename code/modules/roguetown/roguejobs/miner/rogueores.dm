@@ -67,9 +67,6 @@
 	smeltresult = /obj/item/rogueore/coal
 	sellprice = 1
 
-	grid_width = 64
-	grid_height = 32
-
 /obj/item/rogueore/coal/Initialize()
 	icon_state = "orecoal[rand(1,3)]"
 	..()
@@ -81,6 +78,9 @@
 	icon_state = "ingot"
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = null
+
+	grid_width = 64
+	grid_height = 32
 	var/datum/anvil_recipe/currecipe
 	var/quality = SMELTERY_LEVEL_NORMAL
 
