@@ -155,7 +155,7 @@
 	minor_pot = /datum/alch_cauldron_recipe/end_potion
 
 /obj/item/alch/tobaccodust
-	name = "tobacco dust"
+	name = "westleach dust"
 	icon_state = "tobaccodust"
 	major_pot = /datum/alch_cauldron_recipe/per_potion
 	med_pot = /datum/alch_cauldron_recipe/stamina_potion
@@ -211,11 +211,20 @@
 /obj/item/alch/ozium
 	name = "alchemical ozium"
 	desc = "Alchemical processing has left it unfit for consumption."
-	icon_state = "whitepowder"
+	icon_state = "darkredpowder"
 
 	major_pot = /datum/alch_cauldron_recipe/big_stamina_potion
 	med_pot = /datum/alch_cauldron_recipe/lck_potion
 	minor_pot = /datum/alch_cauldron_recipe/int_potion
+
+/obj/item/alch/transisdust
+	name = "Transis dust"
+	desc = "A long mix of herb that product a special powder."
+	icon_state = "transisdust"
+
+	major_pot = /datum/alch_cauldron_recipe/gender_potion
+	med_pot = /datum/alch_cauldron_recipe/gender_potion
+	minor_pot = /datum/alch_cauldron_recipe/gender_potion
 
 //BEGIN THE HERBS
 

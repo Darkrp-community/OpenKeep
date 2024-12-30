@@ -135,7 +135,7 @@
 	light_color = "#ffb773"
 	on_damage = 2
 	flags_1 = null
-	possible_item_intents = list(/datum/intent/hit, /datum/intent/use)
+	possible_item_intents = list(/datum/intent/use, /datum/intent/hit)
 	slot_flags = ITEM_SLOT_HIP
 	var/datum/looping_sound/torchloop/soundloop
 	var/should_self_destruct = TRUE //added for torch burnout
@@ -195,7 +195,7 @@
 		turn_off()
 
 /obj/item/flashlight/flare/torch/turn_off()
-	playsound(src.loc, 'sound/items/firesnuff.ogg', 100)
+	playsound(src.loc, 'sound/items/firesnuff.ogg', 50)
 	soundloop.stop()
 	STOP_PROCESSING(SSobj, src)
 	..()
