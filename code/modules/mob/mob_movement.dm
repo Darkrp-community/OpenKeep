@@ -395,7 +395,7 @@
 /**
  * Hidden verb to set the target zone of a mob to the head
  *
- * (bound to 8) - repeated presses toggles through head - eyes - mouth
+ * (bound to 8) - repeated presses toggles through head - eyes - nose - mouth
  */
 /client/verb/body_toggle_head()
 	set name = "body-toggle-head"
@@ -409,6 +409,8 @@
 		if(BODY_ZONE_HEAD)
 			next_in_line = BODY_ZONE_PRECISE_R_EYE
 		if(BODY_ZONE_PRECISE_R_EYE)
+			next_in_line = BODY_ZONE_PRECISE_NOSE
+		if(BODY_ZONE_PRECISE_NOSE)
 			next_in_line = BODY_ZONE_PRECISE_MOUTH
 		else
 			next_in_line = BODY_ZONE_HEAD
@@ -416,8 +418,27 @@
 	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
 	selector.set_selected_zone(next_in_line, mob)
 
-/client/verb/body_toggle_eye_nose()
-	set name = "body-toggle-eye-nose"
+///Hidden verb to target the neck, bound to 7
+/client/verb/body_neck()
+	set name = "body-neck"
+	set hidden = 1
+
+	if(!check_has_body_select())
+		return
+
+	var/next_in_line
+	switch(mob.zone_selected)
+		if(BODY_ZONE_PRECISE_NECK)
+			next_in_line = BODY_ZONE_PRECISE_MOUTH
+		else
+			next_in_line = BODY_ZONE_PRECISE_NECK
+
+	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
+	selector.set_selected_zone(next_in_line, mob)
+
+///Hidden verb to target the eyes, bound to 9
+/client/verb/body_eyes()
+	set name = "body_eyes"
 	set hidden = 1
 
 	if(!check_has_body_select())
@@ -426,26 +447,9 @@
 	var/next_in_line
 	switch(mob.zone_selected)
 		if(BODY_ZONE_PRECISE_R_EYE)
-			next_in_line = BODY_ZONE_PRECISE_NOSE
+			next_in_line = BODY_ZONE_PRECISE_L_EYE
 		else
 			next_in_line = BODY_ZONE_PRECISE_R_EYE
-
-	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
-	selector.set_selected_zone(next_in_line, mob)
-
-/client/verb/body_toggle_mouth_ears()
-	set name = "body-toggle-mouth-ears"
-	set hidden = 1
-
-	if(!check_has_body_select())
-		return
-
-	var/next_in_line
-	switch(mob.zone_selected)
-		if(BODY_ZONE_PRECISE_MOUTH)
-			next_in_line = BODY_ZONE_PRECISE_EARS
-		else
-			next_in_line = BODY_ZONE_PRECISE_MOUTH
 
 	var/atom/movable/screen/zone_sel/selector = mob.hud_used.zone_select
 	selector.set_selected_zone(next_in_line, mob)

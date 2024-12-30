@@ -232,6 +232,7 @@ GLOBAL_LIST_EMPTY(anonymize)
 /mob/dead/new_player/verb/anonymize()
 	set category = "Options"
 	set name = "Anonymize"
+	set hidden = 1
 	if(!client)
 		return
 	if(get_playerquality(client.ckey) <= -5)
