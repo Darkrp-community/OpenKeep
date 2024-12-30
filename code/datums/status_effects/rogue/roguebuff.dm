@@ -45,7 +45,7 @@
 /datum/status_effect/buff/clean_plus
 	id = "cleanplus"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/clean_plus
-	effectedstats = list("fortune" = 1)
+	effectedstats = list("fortune" = 2, "strength" = 1, "intelligence" = 1, "speed" = 1, "constitution" = 1, "endurance" = 1)
 	duration = 20 MINUTES
 
 /datum/status_effect/buff/clean_plus/on_apply()
