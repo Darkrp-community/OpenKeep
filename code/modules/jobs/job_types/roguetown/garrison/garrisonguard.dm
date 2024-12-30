@@ -50,6 +50,11 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
 
+/datum/outfit/job/roguetown/guardsman/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(aspect_chosen(/datum/round_aspect/drunkgarrison))
+		H.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer, 72) // 3 goblets worth
+
 /* ! ! ! Class Selection Section Below ! ! !
 Design philosphy:
 - Footman, specializes in using axes/maces and shields. - Medium armor

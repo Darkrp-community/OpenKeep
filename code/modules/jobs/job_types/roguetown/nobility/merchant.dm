@@ -26,6 +26,11 @@
 	min_pq = 0
 	selection_color = "#61679d"
 
+/datum/job/roguetown/merchant/after_spawn(mob/living/H, mob/M, latejoin)
+	if(aspect_chosen(/datum/round_aspect/merchanthoarder))
+		give_bank_account = 250
+	. = ..()
+
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
 
