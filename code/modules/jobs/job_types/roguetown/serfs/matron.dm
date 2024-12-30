@@ -18,7 +18,7 @@
 		"Half-Orc"
 	)
 	tutorial = "You are the Matron of the orphanage, an old strict lady whom oversee the 'wellbeing' of the orphans, you show them your tricks and you'll make them just as good as you one day."
-	allowed_ages = list(AGE_OLD, AGE_IMMORTAL)
+	allowed_ages = list(AGE_MIDDLEAGED,AGE_OLD, AGE_IMMORTAL)
 	display_order = JDO_MATRON
 	outfit = /datum/outfit/job/roguetown/matron
 	give_bank_account = 35
@@ -41,10 +41,20 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+		if(H.age == AGE_OLD) // So that the role isn't roadkill
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+			H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 1, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 1, TRUE)
 		H.change_stat("strength", -1)
 		H.change_stat("intelligence", 2)
 		H.change_stat("perception", 1)
 		H.change_stat("speed", 2)
+		H.grant_language(/datum/language/thievescant)
+		to_chat(H, "<span class='info'>I can gesture in thieves' cant with ,t before my speech.</span>")
+		ADD_TRAIT(H, TRAIT_THIEVESGUILD, TRAIT_GENERIC)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/gen/black
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 		pants = /obj/item/clothing/under/roguetown/tights/black
