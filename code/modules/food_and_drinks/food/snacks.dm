@@ -148,10 +148,11 @@ All foods are distributed among various categories. Use common sense.
 			return FALSE
 		else
 			var/obj/item/reagent_containers/NU = new become_rot_type(loc)
+			var/atom/movable/location = loc
 			NU.reagents.clear_reagents()
 			reagents.trans_to(NU.reagents, reagents.maximum_volume)
 			qdel(src)
-			if(!SEND_SIGNAL(loc, COMSIG_TRY_STORAGE_INSERT, NU, null, TRUE, TRUE))
+			if(!SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, NU, null, TRUE, TRUE))
 				NU.forceMove(get_turf(NU.loc))
 			return TRUE
 	else

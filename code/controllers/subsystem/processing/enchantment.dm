@@ -1,8 +1,8 @@
 PROCESSING_SUBSYSTEM_DEF(enchantment)
 	name = "Enchantments"
-	priority = FIRE_PRIORITY_OBJ
+	priority = FIRE_PRIORITY_ENCHANTMENT
 	flags = SS_BACKGROUND
-	wait = 20
+	wait = 2 SECONDS
 
 	var/list/enchantments_to_list = list()
 	var/list/weighted_enchantments = list()
