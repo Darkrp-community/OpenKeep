@@ -834,7 +834,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -1026,7 +1026,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -1175,7 +1175,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -1810,7 +1810,7 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -2007,7 +2007,7 @@
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -2054,7 +2054,7 @@
 "clF" = (
 /turf/closed/wall/shroud,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -2625,7 +2625,7 @@
 /area/rogue/outdoors/exposed/under/basement)
 "cYF" = (
 /obj/structure/closet/dirthole/grave,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
@@ -3688,7 +3688,7 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -4107,7 +4107,7 @@
 	ambush_mobs = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 50, /mob/living/carbon/human/species/human/northern/bum/ambush = 30)
 	})
 "ewn" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "ewq" = (
@@ -4210,7 +4210,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -4334,7 +4334,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -4763,7 +4763,7 @@
 /obj/structure/closet/dirthole/closed/loot,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -4883,7 +4883,7 @@
 /obj/structure/roguewindow/solid,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -5172,7 +5172,7 @@
 "ftC" = (
 /turf/closed/wall/mineral/rogue/decowood,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -5317,7 +5317,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -5405,7 +5405,7 @@
 "fHF" = (
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -5521,7 +5521,7 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -6150,7 +6150,7 @@
 /obj/structure/closet/dirthole/grave,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -6168,7 +6168,7 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -6177,7 +6177,7 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -6292,7 +6292,7 @@
 /obj/effect/decal/cleanable/blood/footprints,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -6403,7 +6403,7 @@
 "gIT" = (
 /turf/open/floor/rogue/rooftop/green,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -6951,7 +6951,7 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -7069,7 +7069,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -7186,7 +7186,7 @@
 /area/rogue/indoors)
 "hIX" = (
 /obj/effect/decal/cleanable/blood/puddle,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "hJB" = (
@@ -7349,7 +7349,7 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -8200,7 +8200,7 @@
 /obj/structure/bed/rogue/shit,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -8428,7 +8428,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -9614,7 +9614,7 @@
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -9834,7 +9834,7 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -10434,7 +10434,7 @@
 /obj/item/restraints/legcuffs/beartrap/armed,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -10454,7 +10454,7 @@
 /obj/structure/closet/dirthole/grave,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -10638,7 +10638,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -10820,7 +10820,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -10840,7 +10840,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -10911,7 +10911,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -11141,7 +11141,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -11277,7 +11277,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -11463,7 +11463,7 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -11783,7 +11783,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -11954,7 +11954,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12037,7 +12037,7 @@
 /obj/structure/fluff/psycross/crafted,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12111,7 +12111,7 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12563,7 +12563,7 @@
 "njU" = (
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12719,7 +12719,7 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12750,7 +12750,7 @@
 "ntq" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12813,7 +12813,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -12961,7 +12961,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -13626,7 +13626,7 @@
 "onX" = (
 /turf/closed/mineral/rogue/bedrock,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -13643,7 +13643,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -13657,7 +13657,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -13856,7 +13856,7 @@
 	},
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -13984,7 +13984,7 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -14699,7 +14699,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -14846,7 +14846,7 @@
 /obj/structure/closet/dirthole/closed/loot,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -14920,7 +14920,7 @@
 /area/rogue/under/town/sewer)
 "pru" = (
 /obj/effect/decal/cleanable/blood/splatter,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "prv" = (
@@ -14982,7 +14982,7 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -15254,7 +15254,7 @@
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -15432,7 +15432,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -16483,7 +16483,7 @@
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -16913,7 +16913,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -16957,7 +16957,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -17183,7 +17183,7 @@
 "rMM" = (
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -17271,7 +17271,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -17281,7 +17281,7 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -17746,7 +17746,7 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/shelter/rtfield)
 "ssy" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt,
 /area/rogue/indoors)
 "ssC" = (
@@ -17826,7 +17826,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -18257,7 +18257,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -18283,7 +18283,7 @@
 /obj/effect/decal/remains/human,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -18406,10 +18406,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/under/basement)
 "tem" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -18446,7 +18446,7 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -18641,7 +18641,7 @@
 /obj/effect/spawner/roguemap/treeorbush,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -20039,7 +20039,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -20386,7 +20386,7 @@
 "uVp" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -20605,7 +20605,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -21149,7 +21149,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/exposed/town)
 "vJu" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /obj/structure/flora/rock/pile,
 /obj/item/candle/yellow,
 /turf/open/floor/rogue/concrete,
@@ -21177,7 +21177,7 @@
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -22204,7 +22204,7 @@
 "wOd" = (
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -22315,7 +22315,7 @@
 /obj/structure/flora/rock/pile,
 /turf/open/water/swamp,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -22427,7 +22427,7 @@
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -22694,7 +22694,7 @@
 "xmP" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -22905,7 +22905,7 @@
 /area/rogue/outdoors/town)
 "xxV" = (
 /obj/effect/decal/cleanable/blood,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "xya" = (
@@ -22945,7 +22945,7 @@
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -23432,7 +23432,7 @@
 /obj/structure/flora/roguegrass,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -23642,10 +23642,10 @@
 /area/rogue/outdoors/town)
 "yhf" = (
 /obj/structure/bed/rogue/mediocre,
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield{
-	ambush_mobs = list(/mob/living/simple_animal/hostile/zombie = 50);
+	ambush_mobs = list(/mob/living/carbon/human/species/orc/skilled/savage = 50);
 	first_time_text = "PLAGUE DISTRICT";
 	icon_state = "yellow";
 	name = "plague district"
@@ -23659,7 +23659,7 @@
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "yhr" = (
-/mob/living/simple_animal/hostile/zombie,
+/mob/living/carbon/human/species/orc/skilled/savage,
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)
 "yhx" = (

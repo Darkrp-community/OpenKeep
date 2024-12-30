@@ -55,8 +55,8 @@ GLOBAL_LIST_EMPTY(__http_requests)
 	id = rustg_http_request_async(method, url, body, headers, null)
 
 	if (isnull(text2num(id)))
-		CRASH("Proc error: [id]")
 		_raw_response = "Proc error: [id]"
+		CRASH("Proc error: [id]")
 	else
 		in_progress = TRUE
 
@@ -101,7 +101,7 @@ GLOBAL_LIST_EMPTY(__http_requests)
 	var/errored = FALSE
 	var/error
 
-proc/__send_http_request(datum/http_request/R, wait = TRUE)
+/proc/__send_http_request(datum/http_request/R, wait = TRUE)
 	R.begin_async()
 
 	if(!wait)

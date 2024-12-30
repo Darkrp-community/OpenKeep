@@ -179,11 +179,11 @@
 	mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
 
 
-/mob/living/carbon/human/species/orc/skilled/after_creation(mob/living/carbon/C)
+/mob/living/carbon/human/species/orc/skilled/after_creation()
 	..()
-	C.remove_all_languages()
-	C.grant_language(/datum/language/orcish)
-	to_chat(C, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
+	remove_all_languages()
+	grant_language(/datum/language/orcish)
+	to_chat(src, "<span class='info'>I can speak Orcish with ,g before my speech.</span>")
 
 
 // -------------------		SAVAGE ORC		--------------------------
@@ -335,7 +335,7 @@
 	H.STAEND = rand(8,10)
 	H.STAINT = 7
 
-/mob/living/carbon/human/species/human/northern/bum/skilled/after_creation(mob/living/carbon/C)
+/mob/living/carbon/human/species/human/northern/bum/skilled/after_creation()
 	..()
 	ADD_TRAIT(src, TRAIT_CRITICAL_WEAKNESS, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_ZOMBIE_IMMUNE, TRAIT_GENERIC)
@@ -350,7 +350,7 @@
 	wander = FALSE
 	ambushable = FALSE
 	faction = list("bums", "station")
-	C.grant_language(/datum/language/common)
+	grant_language(/datum/language/common)
 
 /mob/living/carbon/human/species/human/northern/bum/skilled/proc/configure_mind()
 	if(!mind)
@@ -513,9 +513,9 @@
 	name = "hell goblin"
 	race = /datum/species/goblin/hell
 
-/mob/living/carbon/human/species/goblin/skilled/hell/after_creation(mob/living/carbon/C)
+/mob/living/carbon/human/species/goblin/skilled/hell/after_creation()
 	..()
-	C.grant_language(/datum/language/hellspeak)
+	grant_language(/datum/language/hellspeak)
 
 /mob/living/carbon/human/species/goblin/skilled/ambush/cave
 	name = "cave goblin"

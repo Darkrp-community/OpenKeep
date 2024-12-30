@@ -138,8 +138,8 @@
 			if (newletter == ".")
 				newletter = " *ИК*."
 
-
-		switch (rand(1, 20))
+		var/randm = rand(1, 20)
+		switch (randm)
 			if (1)
 				newletter += "'"
 			if (10)
