@@ -120,8 +120,6 @@
 		Master.queue_priority_count += SS_priority
 
 	queue_next = queue_node
-	if(!Master.queue_tail && !Master.queue_head) //the fuck?
-		log_qdel("Something really bad happened with the queue!")
 
 	if (!queue_node)//we stopped at the end, add to tail
 		queue_prev = Master.queue_tail
