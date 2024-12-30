@@ -52,6 +52,7 @@
 	spawnableAtoms = list(/obj/structure/flora/roguetree = 0,
 							/obj/structure/flora/roguegrass/bush_meagre = 6,
 							/obj/structure/flora/roguegrass = 120,
+							/obj/structure/flora/roguegrass/herb/random = 40,
 							/obj/structure/flora/roguegrass/maneater = 0.1,
 							/obj/structure/flora/roguegrass/maneater/real = 0.1,
 							/obj/item/restraints/legcuffs/beartrap/armed/camouflage = 0.1,
