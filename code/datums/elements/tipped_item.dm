@@ -42,4 +42,5 @@
 
 /datum/element/tipped_item/proc/on_examine(atom/movable/source, mob/user, list/examine_list)
 	if(source.reagents.total_volume)
-		examine_list += span_red("Has been dipped in something!")
+		var/reagent_color = mix_color_from_reagents(source.reagents.reagent_list)
+		examine_list += span_red("Has been dipped in <font color=[reagent_color]>something</font>!")
