@@ -152,7 +152,7 @@ All foods are distributed among various categories. Use common sense.
 			NU.reagents.clear_reagents()
 			reagents.trans_to(NU.reagents, reagents.maximum_volume)
 			qdel(src)
-			if(!SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, NU, null, TRUE, TRUE))
+			if(!location || !SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, NU, null, TRUE, TRUE))
 				NU.forceMove(get_turf(NU.loc))
 			return TRUE
 	else
