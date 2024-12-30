@@ -559,6 +559,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 		if(!do_mob(user,src,30*grav_power))
 			return
 
+	if(SEND_SIGNAL(loc, COMSIG_STORAGE_BLOCK_USER_TAKE, src, user, TRUE))
+		return
+
 	if(!ontable() && isturf(loc))
 		if(!move_after(user,3,target = src))
 			return

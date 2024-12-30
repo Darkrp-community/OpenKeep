@@ -78,10 +78,10 @@
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
 	if(!grid_box_size)
 		grid_box_size = get_grid_box_size()
+	RegisterSignal(parent, COMSIG_STORAGE_BLOCK_USER_TAKE, PROC_REF(should_block_user_take))
 	. = ..()
 	if(!.)
 		return
-	RegisterSignal(parent, COMSIG_STORAGE_BLOCK_USER_TAKE, PROC_REF(should_block_user_take))
 	if(grid)
 		var/atom/atom_parent = parent
 		atom_parent.reset_grid_inventory()
@@ -443,7 +443,7 @@
 				if(!no_message)
 					to_chat(user, span_warning("[recursive_loc] is in the way!"))
 				return TRUE
-			else if(biggerfish.maximum_depth < depth)
+			else if(biggerfish.maximum_depth <= depth)
 				if(!no_message)
 					to_chat(user, span_warning("[recursive_loc] is in the way!"))
 				return TRUE
