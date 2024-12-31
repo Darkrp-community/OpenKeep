@@ -25,6 +25,8 @@
 	smeltresult = /obj/item/ingot/iron
 	associated_skill = /datum/skill/combat/polearms
 	max_blade_int = 50
+	grid_width = 32
+	grid_height = 96
 
 /obj/item/rogueweapon/shovel/Destroy()
 	if(heldclod)
@@ -213,6 +215,7 @@
 	slot_flags = ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
 	max_blade_int = 0
+	grid_height = 64
 
 /* old one
 /obj/item/rogueweapon/shovel/small/getonmobprop(tag)

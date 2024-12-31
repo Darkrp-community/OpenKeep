@@ -15,30 +15,17 @@
 	experimental_inhand = FALSE
 	dropshrink = 0.7
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	component_type = /datum/component/storage/concrete/roguetown/keyring
 
 /obj/item/storage/keyring/Initialize()
 	. = ..()
 	for(var/X in keys)
-		new X(src)
+		var/obj/item/key/new_key = new X(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, new_key, null, TRUE, TRUE))
+			qdel(new_key)
+
 	update_icon()
 	update_desc()
-
-/obj/item/storage/keyring/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 20
-	STR.max_w_class = WEIGHT_CLASS_SMALL
-	STR.max_items = 10
-	STR.attack_hand_interact = FALSE
-	STR.click_gather = TRUE
-	STR.allow_dump_out = TRUE
-	STR.rustle_sound = FALSE
-	STR.collection_mode = COLLECT_ONE
-	STR.set_holdable(list(
-		/obj/item/key,
-	))
-	STR.insert_verb = "slide"
-	STR.insert_preposition = "on"
 
 /obj/item/storage/keyring/attack_right(mob/user)
 	var/datum/component/storage/CP = GetComponent(/datum/component/storage)

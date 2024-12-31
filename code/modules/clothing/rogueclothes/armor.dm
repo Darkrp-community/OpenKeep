@@ -41,6 +41,8 @@
 	sellprice = VALUE_COMMON_GOODS
 	armor = ARMOR_MINIMAL
 	body_parts_covered = CHEST
+	grid_width = 64
+	grid_height = 96
 
 /obj/item/clothing/suit/roguetown/armor/medium	// Template, not for use
 	name = "Medium armor template"
@@ -304,12 +306,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 2
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 1
+	AddComponent(/datum/component/storage/concrete/roguetown/cloak)
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/dropped(mob/living/carbon/human/user)
 	..()
