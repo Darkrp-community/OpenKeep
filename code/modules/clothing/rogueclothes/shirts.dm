@@ -444,17 +444,17 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/random/Initialize()
+/obj/item/clothing/suit/roguetown/shirt/tunic/kimono/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/ronin
+/obj/item/clothing/suit/roguetown/shirt/tunic/kimono/ronin
 	color = CLOTHING_RONIN
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/dark
+/obj/item/clothing/suit/roguetown/shirt/tunic/kimono/dark
 	color = CLOTHING_SOOT_BLACK
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/kabukimono
+/obj/item/clothing/suit/roguetown/shirt/tunic/kimono/kabukimono
 	color = CLOTHING_KABUKIMONO
 
 /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb
@@ -470,7 +470,7 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|ARMS|VITALS
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random/Initialize()
+/obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
@@ -487,14 +487,14 @@
 	l_sleeve_status = SLEEVE_NORMAL
 	body_parts_covered = CHEST|VITALS
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/random/Initialize()
+/obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
+/obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo/ronin
 	color = CLOTHING_SOOT_BLACK
 
-/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/eidolon
+/obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo/eidolon
 	color = CLOTHING_EIDOLON
 
 /obj/item/clothing/suit/roguetown/shirt/looseshirt

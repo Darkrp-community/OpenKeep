@@ -7,7 +7,7 @@
 	"Dwarf",
 	"Tiefling",
 	"Changeling",
-	"Kenku",
+	"Denmorian",
 	"Ogrun",
 	"Undine"
 	)

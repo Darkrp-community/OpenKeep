@@ -29,7 +29,7 @@ Future plan:
 	hermeticly humble and quick tempered, and know for either loving duel for honor's sake \
 	- or being the most radical martial pacifists on the planet. Their society almost crumbled \
 	during The Bloody Apotheosis, but their bronze-age traditions lives on together with a deep \
-	hatred for all things Graggar. Their biology allows high degree of fleshbending and bone restructuring. \
+	hatred for all things Graggar. Their biology allows high degree of fleshbending, their faces exactly alike masks. \
 	They are noble souls that, when not belonging to military or clerical jobs, usually partakes \
 	in the society's intelligentsia division, usually as astronomers, alchemists and surgeons."
 

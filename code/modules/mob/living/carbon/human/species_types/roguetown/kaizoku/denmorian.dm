@@ -1,20 +1,20 @@
 	/*==============*
 	*				*
-	*	  Kenku  	*
+	*  	Denmorian  	*
 	*				*
 	*===============*/
 
 //	( Not done yet. But hopefully temporary flying. )
 //	( Not done yet, but hopefully easily breakable bones. )
 
-/mob/living/carbon/human/species/abyssariad/kenku
-	race = /datum/species/abyssariad/kenku
+/mob/living/carbon/human/species/abyssariad/denmorian
+	race = /datum/species/abyssariad/denmorian
 
-/datum/species/abyssariad/kenku
-	name = "Kenku"
+/datum/species/abyssariad/denmorian
+	name = "Denmorian"
 	id = "abyssariad"
 	desc = "<b>Sky branched Champions</b><br>\
-	Molded from Abyssor's relentless skies, the Kenkus are a inquisitive race with lithe bodies \
+	Molded from Abyssor's relentless skies, the avian denmorians are a inquisitive race with lithe bodies \
 	glaceful as the flows of the tides to navigate and glide across the rocky shores and crashing \
 	waves of their currently destroyed domain to provide information, supplies and messages in any \
 	battlefield. Just like the skies they branched from, they are vast and enduring - if not \
@@ -71,24 +71,24 @@
 		/datum/body_marking/tonage,
 	)
 
-/datum/species/abyssariad/kenku/get_span_language(datum/language/message_language)
+/datum/species/abyssariad/denmorian/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return
 //	if(message_language.type == /datum/language/abyssal)
 //		return list(SPAN_ABYSSAL)
 	return message_language.spans
 
-/datum/species/abyssariad/kenku/check_roundstart_eligible()
+/datum/species/abyssariad/denmorian/check_roundstart_eligible()
 	return TRUE
 
-/datum/species/abyssariad/kenku/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+/datum/species/abyssariad/denmorian/on_species_gain(mob/living/carbon/C, datum/species/old_species)
 	..()
 	RegisterSignal(C, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	C.grant_language(/datum/language/common)
 	C.grant_language(/datum/language/abyssal)
 	ADD_TRAIT(C, TRAIT_KAIZOKU, TRAIT_GENERIC)  //Cultural Trait. Must not be considered a 'buff' or 'debuff'.
 
-/datum/species/abyssariad/kenku/get_skin_list()
+/datum/species/abyssariad/denmorian/get_skin_list()
 	return sortList(list(
 		"Oathbound Muqian" = SKIN_COLOR_OATHBOUND_MUQIAN,
 		"Oathbound Kaizoku" = SKIN_COLOR_OATHBOUND_KAIZOKU,
@@ -104,7 +104,7 @@
 	))
 
 
-/datum/species/abyssariad/kenku/get_hairc_list()
+/datum/species/abyssariad/denmorian/get_hairc_list()
 	return sortList(list(
 	"blond - pale" = "9d8d6e",
 	"blond - dirty" = "88754f",
@@ -132,7 +132,7 @@
 
 	))
 
-/datum/species/abyssariad/kenku/random_name(gender,unique,lastname)
+/datum/species/abyssariad/denmorian/random_name(gender,unique,lastname)
 	var/randname
 	if(unique)
 		if(gender == MALE)
@@ -153,5 +153,5 @@
 	randname += " The Clanless"
 	return randname
 
-/datum/species/abyssariad/kenku/random_surname()
+/datum/species/abyssariad/denmorian/random_surname()
 	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorm.txt.txt"))]"

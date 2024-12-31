@@ -1206,18 +1206,19 @@
 	specuse = ALL_RACES_LIST
 	roundstart = FALSE
 
-/datum/sprite_accessory/underwear/female_fundoshi
-	name = "Femdoshi"
-	icon_state = "female_fundoshi"
-	gender = FEMALE
-	specuse = list("abyssariad")
-	roundstart = TRUE
-	use_static = TRUE
-
 /datum/sprite_accessory/underwear/male_fundoshi
 	name = "Mendoshi"
 	icon_state = "male_fundoshi"
 	gender = MALE
+	specuse = list("abyssariad")
+	roundstart = TRUE
+	use_static = TRUE
+	icon = 'icons/roguetown/kaizoku/clothing/underwear.dmi'
+
+/datum/sprite_accessory/underwear/male_fundoshi/female
+	name = "Femdoshi"
+	icon_state = "female_fundoshi"
+	gender = FEMALE
 	specuse = list("abyssariad")
 	roundstart = TRUE
 	use_static = TRUE

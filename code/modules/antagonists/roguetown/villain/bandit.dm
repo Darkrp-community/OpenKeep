@@ -100,7 +100,7 @@
 
 			pants = /obj/item/clothing/under/roguetown/chainlegs/iron/haidate_tatami
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/ronin
-			cloak = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/ronin
+			cloak = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono/ronin
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
 			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half

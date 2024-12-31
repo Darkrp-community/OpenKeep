@@ -14,7 +14,7 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -76,7 +76,7 @@
 			head = /obj/item/clothing/head/roguetown/padded/shrinekeeper
 			neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
-			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
 			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
 		else // Failsafe

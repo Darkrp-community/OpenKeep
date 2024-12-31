@@ -241,13 +241,13 @@
 
 /datum/crafting_recipe/roguetown/leather/furtobi
 	name = "leather pants {fl}"
-	result = list(/obj/item/clothing/under/roguetown/tobi/fur)
+	result = list(/obj/item/clothing/under/roguetown/trou/leather/fur)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/jikatabi
 	name = "jikatabi (x2){fl}"
-	result = list(/obj/item/clothing/shoes/roguetown/kaizoku/jikatabi,
-				/obj/item/clothing/shoes/roguetown/kaizoku/jikatabi)
+	result = list(/obj/item/clothing/shoes/roguetown/boots/jikatabi,
+				/obj/item/clothing/shoes/roguetown/boots/jikatabi)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/leather/cloudhead

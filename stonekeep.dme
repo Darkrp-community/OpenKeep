@@ -7,7 +7,8 @@
 #define DEBUG
 // END_PREFERENCES
 // BEGIN_INCLUDE
-#include "_maps\_basemap.dm"
+#include "_maps\roguetest.dm"
+#include "_maps\map_files\roguetest\roguetest.dmm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sk_dungeons.dm"
 #include "code\__byond_version_compat.dm"
@@ -2049,7 +2050,7 @@
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\human\humen.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\kaizoku\_abyssariad.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\kaizoku\changeling.dm"
-#include "code\modules\mob\living\carbon\human\species_types\roguetown\kaizoku\kenku.dm"
+#include "code\modules\mob\living\carbon\human\species_types\roguetown\kaizoku\denmorian.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\kaizoku\ogrun.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\kaizoku\undine.dm"
 #include "code\modules\mob\living\carbon\human\species_types\roguetown\other\aasimar.dm"
@@ -2206,6 +2207,7 @@
 #include "code\modules\mob\living\simple_animal\rogue\farm\goat.dm"
 #include "code\modules\mob\living\simple_animal\rogue\farm\trufflepig.dm"
 #include "code\modules\mob\living\simple_animal\rogue\game\saiga.dm"
+#include "code\modules\mob\living\simple_animal\rogue\game\horse.dm"
 #include "code\modules\mob\living\simple_animal\slime\death.dm"
 #include "code\modules\mob\living\simple_animal\slime\emote.dm"
 #include "code\modules\mob\living\simple_animal\slime\life.dm"

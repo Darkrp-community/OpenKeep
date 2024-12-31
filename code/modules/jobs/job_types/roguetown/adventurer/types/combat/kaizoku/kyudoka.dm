@@ -12,7 +12,7 @@
 	allowed_races = list(
 	//humen - need to settle Heartfeltean culture on this one.
 	"Changeling",
-	"Kenku",
+	"Denmorian",
 	"Ogrun",
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/kyudoka
@@ -35,7 +35,7 @@
 	H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
 	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
-	pants = /obj/item/clothing/under/roguetown/tobi/fur/random
+	pants = /obj/item/clothing/under/roguetown/trou/leather/fur/random
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random //For the drip's sake that portrays their military side.
 	if(prob(23))
 		gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal

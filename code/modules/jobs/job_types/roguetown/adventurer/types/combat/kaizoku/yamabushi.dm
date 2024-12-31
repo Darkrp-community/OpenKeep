@@ -15,7 +15,7 @@
 	further embrace the greater good. They meditate on mountains and endure long lengths each voyage."
 	allowed_races = list(
 	"Changeling",
-	"Kenku",
+	"Denmorian",
 	"Ogrun",
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/yamabushi
@@ -51,9 +51,9 @@
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
 	armor = /obj/item/clothing/suit/roguetown/armor/plate/nanbando
-	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
-	pants = /obj/item/clothing/under/roguetown/tobi/hakama/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
+	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi
+	pants = /obj/item/clothing/under/roguetown/tights/hakama/random
 	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor

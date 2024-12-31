@@ -14,7 +14,7 @@
 		"Dwarf",
 		"Aasimar",
 		"Changeling", //Lore Situationism: The three abyssariad races have been brought over to the Garrison for prestige values and to cement the King's power by holding culturally loyal-bound raiders as part of the army.
-		"Kenku",
+		"Denmorian",
 		"Ogrun"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)

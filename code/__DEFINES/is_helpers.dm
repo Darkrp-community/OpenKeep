@@ -102,7 +102,7 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define isabyssariad(A) (is_species(A, /datum/species/abyssariad))
 #define ischangeling(A) (is_species(A, /datum/species/abyssariad/changeling))
 #define isogrun(A) (is_species(A, /datum/species/abyssariad/ogrun))
-#define iskenku(A) (is_species(A, /datum/species/abyssariad/kenku))
+#define isdenmorian(A) (is_species(A, /datum/species/abyssariad/denmorian))
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))

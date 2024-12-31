@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling", //Abyssariad dungeoneers, on the standards of Rockhill, are burakumins. Their non-impure version is the Kaishakunin.
-		"Kenku",
+		"Denmorian",
 		"Ogrun"
 	)
 	allowed_sexes = list(MALE, FEMALE)

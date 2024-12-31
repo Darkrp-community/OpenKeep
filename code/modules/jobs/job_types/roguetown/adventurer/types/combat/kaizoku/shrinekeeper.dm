@@ -12,7 +12,7 @@
 	They perform rituals to submit demonic spirits just as much they submit mortals with martial arts."
 	allowed_races = list(
 	"Changeling",
-	"Kenku",
+	"Denmorian",
 	"Ogrun",
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/shrinekeepers
@@ -34,7 +34,7 @@
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/woodstaff/bostaff
-	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb/random
+	shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)

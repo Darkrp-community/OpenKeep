@@ -309,7 +309,6 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 		M.IgniteMob()
 	return ..()
 
-
 /*--------------\
 | spell reagent |
 \--------------*/

@@ -5,7 +5,7 @@
 	allowed_races = list(
 		"Humen", //Heartfeltean.
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 

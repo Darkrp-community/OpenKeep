@@ -647,7 +647,7 @@
 
 /datum/anvil_recipe/armor/ctengu
 	name = "Birdpeople champion mask"
-	recipe_name = "a Kenku Mask"
+	recipe_name = "a Denmorian Mask"
 	req_bar = /obj/item/ingot/steel
 	created_item = (/obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable/tengu)
 	craftdiff = 2

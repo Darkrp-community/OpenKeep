@@ -17,7 +17,7 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)

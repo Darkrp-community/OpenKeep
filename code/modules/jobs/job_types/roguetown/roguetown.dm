@@ -67,6 +67,8 @@
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+				if(H.dna.species.name == "Changeling")
+					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //Temporary change until their Skull-bending "wag system" comes about.
 				if(H.dna.species.name == "Undine")
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)

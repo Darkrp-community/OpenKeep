@@ -87,7 +87,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	clothing_flags = CANT_SLEEP_IN
-	
+
 	armor = ARMOR_PLATE_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS //No stab, blunt or chop crit flags. If a chopping weapon can get through 70 armor, it's probably carrying enough force to mess up your face behind a flimsy mask.
 	max_integrity = INTEGRITY_STANDARD //Flimsier than a proper visor/helmet.
@@ -120,7 +120,7 @@
 	name = "steel mask"
 	icon_state = "smask"
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
-	
+
 	armor = ARMOR_PLATE_BAD //Still thin.
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
 	max_integrity = INTEGRITY_STRONG //250 Integrity, added chop protection. Still worse than a proper visored helmet.
@@ -206,7 +206,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
-	
+
 	max_integrity = INTEGRITY_WORST //Really flimsy, still good for a few blows.
 
 //................ Druids Mask ............... //
@@ -304,7 +304,7 @@
 	name = "tengu mask"
 	icon_state = "colourable_tengumask"
 	max_integrity = 200
-	desc = "A mask that glorifies a Kenku warrior. It portrays the exagerated perception over the race - even if they lack such noses and eyebrows."
+	desc = "A mask that glorifies a Denmorian warrior. It portrays the exagerated perception over the race - even if they lack such noses and eyebrows."
 	colorable_var = TRUE
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable/kitsune

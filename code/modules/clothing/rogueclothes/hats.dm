@@ -1901,7 +1901,7 @@
 /obj/item/clothing/head/roguetown/helmet/heavy/bronzepot //hopefully asking someone to draw this helmet.
 	name = "relic of urn"
 	icon_state = "bronzeb"
-	desc = "The eternal relic of the Champions of the Urn, used by Eidolon kenkus, \
+	desc = "The eternal relic of the Champions of the Urn, used by Eidolon denmorians, \
 	the Demonslayers of the Abyssal order. It cannot be removed, forever one with the user \
 	- molten and grafted into skin, but the infused arcane bends light upon itself for clear sight."
 	smeltresult = /obj/item/ingot/steel //Intentional. The helmet is not actually made of bronze. It is just a lingering apotheosis-age term for that internal-mirror design.

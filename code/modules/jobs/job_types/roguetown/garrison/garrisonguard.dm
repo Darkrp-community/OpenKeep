@@ -17,7 +17,7 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -66,9 +66,9 @@
 		shoes = /obj/item/clothing/shoes/roguetown/boots
 		belt = /obj/item/storage/belt/rogue/leather
 	if(H.dna?.species && H.dna.species?.id == "abyssariad")
-		pants = /obj/item/clothing/under/roguetown/tobi/random
+		pants = /obj/item/clothing/under/roguetown/trou/tobi/random
 		cloak = /obj/item/clothing/cloak/jinbaori/guard //I can't put these somewhere else.
-		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/shinobi
+		shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 		H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
 

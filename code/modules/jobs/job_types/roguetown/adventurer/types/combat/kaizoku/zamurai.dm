@@ -10,7 +10,7 @@
 	allowed_races = list(
 	//humen - need to settle Heartfeltean culture on this one.
 	"Changeling",
-	"Kenku",
+	"Denmorian",
 	"Ogrun")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai
 	maximum_possible_slots = 1
@@ -19,7 +19,7 @@
 	keeping their trusty steed. They are expected to uphold their oficial duties and following the strict \
 	martial code of the Abyssal Tide, at least on paper."
 	category_tags = list(CTAG_ADVENTURER)
-	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck/tame/saddled
+	horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/horse/tame/saddled
 
 /datum/advclass/combat/abyssariad/zamurai/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)
@@ -27,7 +27,7 @@
 	return ..()
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai/pre_equip(mob/living/carbon/human/H)
-	pants = /obj/item/clothing/under/roguetown/tobi/random //Fully intended to give them Haidate Tatami, but the armor is strong enough already.
+	pants = /obj/item/clothing/under/roguetown/trou/tobi/random //Fully intended to give them Haidate Tatami, but the armor is strong enough already.
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/suneate
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal //kote already protects the hands.
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random

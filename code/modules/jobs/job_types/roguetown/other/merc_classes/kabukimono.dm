@@ -10,7 +10,7 @@
 	allowed_races = list(
 		"Humen", //Heartfeltean.
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -36,13 +36,13 @@
 
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/kabukimono
-	pants = /obj/item/clothing/under/roguetown/tobi/kabukimono
+	pants = /obj/item/clothing/under/roguetown/trou/tobi/kabukimono
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead/kabukimono
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/kabukimono
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/rogueweapon/mace/cudgel/jitte
 	cloak = /obj/item/clothing/cloak/raincloak/horocloak/kabukimono
-	shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/kabukimono
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono/kabukimono
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/nanbando
 	backl = /obj/item/storage/backpack/rogue/satchel

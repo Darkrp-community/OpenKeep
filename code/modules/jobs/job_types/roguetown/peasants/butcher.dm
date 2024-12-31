@@ -15,7 +15,7 @@
 		"Dark Elf",
 		"Aasimar",
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -63,7 +63,7 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
 
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor) //Guayo asked me to give Butcher this.
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor) //Guayo asked me to give this to the Butcher.
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumhelmet)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
@@ -75,7 +75,7 @@
 	if(H.dna.species?.id == "abyssariad")
 		to_chat(H, "<span class='warning'>Despite what some people believe, my role on society is respected, as my abyssal honor is not put in test in a daily basis.")
 		if(H.gender == MALE)
-			pants = /obj/item/clothing/under/roguetown/tobi/random
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/random
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 		else
-			shirt = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono/random
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono/random

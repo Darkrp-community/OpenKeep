@@ -14,7 +14,7 @@
 		"Tiefling",
 		"Dark Elf",
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)

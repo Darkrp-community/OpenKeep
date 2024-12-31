@@ -16,7 +16,7 @@
 	allowed_races = list(
 		//humen - need to settle Heartfeltean culture on this one.
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -35,7 +35,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
 	wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
+	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
 	beltr = /obj/item/rogueweapon/huntingknife/idagger/sai
 
@@ -44,22 +44,22 @@
 	switch(background)
 		if("thunder")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/thunder
-			pants = /obj/item/clothing/under/roguetown/tobi/thunder
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/thunder
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/thunder
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/thunder
 		if("storm")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/storm
-			pants = /obj/item/clothing/under/roguetown/tobi/storm
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/storm
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/storm
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/storm
 		if("ocean")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/ocean
-			pants = /obj/item/clothing/under/roguetown/tobi/ocean
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/ocean
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ocean
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/ocean
 		if("island")
 			neck = /obj/item/clothing/head/roguetown/soheicloth/island
-			pants = /obj/item/clothing/under/roguetown/tobi/island
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/island
 			belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/island
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
 	switch(weapontype)

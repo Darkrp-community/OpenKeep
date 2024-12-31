@@ -17,7 +17,7 @@
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	head = /obj/item/clothing/head/roguetown/heartfelt
 	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
-	pants = /obj/item/clothing/under/roguetown/tobi/dark
+	pants = /obj/item/clothing/under/roguetown/trou/tobi/dark
 	cloak = /obj/item/clothing/cloak/newheartfelt
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich

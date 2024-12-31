@@ -11,7 +11,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 	"Changeling",
-	"Kenku",
+	"Denmorian",
 	"Ogrun",
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/wokou
@@ -34,11 +34,11 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
 
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi
+	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
 	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
-	pants = /obj/item/clothing/under/roguetown/tobi/random
+	pants = /obj/item/clothing/under/roguetown/trou/tobi/random
 
 	H.become_blind("TRAIT_GENERIC")
 	var/wokoutype = list("LinYou(Ambusher)","Dustrider(Scout)","Muqian(Towerdweller)","Shuhen(Militia)","Kaizoku(Navy)")

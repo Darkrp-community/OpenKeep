@@ -11,7 +11,7 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Kenku" //Abyssariad: Non-military racial specialization, so they are allowed to work on this role.
+		"Denmorian" //Abyssariad: Non-military racial specialization, so they are allowed to work on this role.
 	)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_STEWARD

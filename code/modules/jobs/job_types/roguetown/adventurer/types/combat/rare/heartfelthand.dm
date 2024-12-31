@@ -6,7 +6,7 @@
 	allowed_races = list(
 		"Humen",
 		"Changeling", //With the alliance, members of the Zamurai/Court class from Fog Island becomes hands if other members of the family marry with heartfelt nobles or vice-versa.
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -21,7 +21,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
-	pants = /obj/item/clothing/under/roguetown/tobi/dark
+	pants = /obj/item/clothing/under/roguetown/trou/tobi/dark
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	if(H.gender == MALE)
 		armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/hand

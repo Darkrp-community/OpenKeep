@@ -13,7 +13,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 	"Changeling", // Myrmidon
-	"Kenku", // Eidolon
+	"Denmorian", // Eidolon
 	"Ogrun",
 	"Undine") // Dragonslayer
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/champion
@@ -23,7 +23,7 @@
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/champion/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(H.dna.species.name == "Kenku")
+	if(H.dna.species.name == "Denmorian")
 		if(H.mind)
 			H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
@@ -47,12 +47,12 @@
 		beltr = /obj/item/rogueweapon/sword/uchigatana
 		beltl = /obj/item/rogueweapon/sword/uchigatana
 		neck = /obj/item/clothing/neck/roguetown/gorget
-		cloak = /obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo/eidolon
+		cloak = /obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo/eidolon
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
 		wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
 		shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
-		pants = /obj/item/clothing/under/roguetown/tobi/hakama/eidolon
+		pants = /obj/item/clothing/under/roguetown/tights/hakama/eidolon
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable/tengu
 		if(H.wear_mask)
 			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch || /obj/item/clothing/mask/rogue/eyepatch/left ))
@@ -112,9 +112,9 @@
 
 		backr = /obj/item/storage/backpack/rogue/satchel
 		backl = /obj/item/rogueweapon/sword/dragonslayer
-		pants = /obj/item/clothing/under/roguetown/tobi/fur/dragonslayer
+		pants = /obj/item/clothing/under/roguetown/trou/leather/fur/dragonslayer
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-		shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/dragontabi
+		shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/dragontabi
 		gloves = /obj/item/clothing/gloves/roguetown/chain/kikko
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
 		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt/dragonslayer
@@ -144,7 +144,7 @@
 	if(H.dna.species.name == "Changeling")
 		H.real_name = "[spec1] [prev_real_name]"
 		H.name = "[spec1] [prev_name]"
-	else if(H.dna.species.name == "Kenku")
+	else if(H.dna.species.name == "Denmorian")
 		H.real_name = "[spec2] [prev_real_name]"
 		H.name = "[spec2] [prev_name]"
 	else

@@ -397,33 +397,33 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 
-/obj/item/clothing/under/roguetown/tobi/random/Initialize()
+/obj/item/clothing/under/roguetown/trou/tobi/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/under/roguetown/tobi/thunder
+/obj/item/clothing/under/roguetown/trou/tobi/thunder
 	name = "thunder tobi pants"
 	color = CLOTHING_THUNDER
 
-/obj/item/clothing/under/roguetown/tobi/storm
+/obj/item/clothing/under/roguetown/trou/tobi/storm
 	name = "storm tobi pants"
 	color = CLOTHING_STORM
 
-/obj/item/clothing/under/roguetown/tobi/ocean
+/obj/item/clothing/under/roguetown/trou/tobi/ocean
 	name = "ocean tobi pants"
 	color = CLOTHING_OCEAN
 
-/obj/item/clothing/under/roguetown/tobi/island
+/obj/item/clothing/under/roguetown/trou/tobi/island
 	name = "island tobi pants"
 	color = CLOTHING_ISLAND
 
-/obj/item/clothing/under/roguetown/tobi/dark
+/obj/item/clothing/under/roguetown/trou/tobi/dark
 	color = CLOTHING_SOOT_BLACK
 
-/obj/item/clothing/under/roguetown/tobi/kabukimono
+/obj/item/clothing/under/roguetown/trou/tobi/kabukimono
 	color = CLOTHING_KABUKIMONO
 
-/obj/item/clothing/under/roguetown/tobi/dragonslayer
+/obj/item/clothing/under/roguetown/trou/tobi/dragonslayer
 	desc = "Baggy pants of abyssariad design. This one is coated in asbestos, and may be just as dangerous."
 	color = "#3d4681"
 	armor = list("melee" = 20, "bullet" = 0, "laser" = 75,"energy" = 75, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -433,11 +433,11 @@
 	icon_state = "furpants"
 	desc = "A tobi made out of Dendor's beloved guardians - so Abyssor's beloved guardians can use it."
 
-/obj/item/clothing/under/roguetown/tobi/fur/random/Initialize()
+/obj/item/clothing/under/roguetown/trou/leather/fur/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/under/roguetown/tobi/fur/dragonslayer
+/obj/item/clothing/under/roguetown/trou/leather/fur/dragonslayer
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	color = CLOTHING_RED_OCHRE
@@ -448,11 +448,11 @@
 	alternate_worn_layer = SHOESLEEVE_LAYER
 	desc = "Suitable for the Abyssariad-cultured, in which large battle-skirts does not hurt their masculinity, differently of the frail Imperial counterpart."
 
-/obj/item/clothing/under/roguetown/tobi/hakama/random/Initialize()
+/obj/item/clothing/under/roguetown/tights/hakama/random/Initialize()
 	color = RANDOM_PEASANT_DYES
 	..()
 
-/obj/item/clothing/under/roguetown/tobi/hakama/eidolon
+/obj/item/clothing/under/roguetown/tights/hakama/eidolon
 	color = CLOTHING_EIDOLON
 
 /obj/item/clothing/under/roguetown/trou/leather/shinobizubon

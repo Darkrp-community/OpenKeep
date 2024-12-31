@@ -58,6 +58,7 @@
 					conditional_buff = TRUE
 			if(/datum/patron/divine/abyssor)
 				target.visible_message(span_info("A mist of salt-scented vapour settles on [target]!"), span_notice("I'm invigorated by healing vapours!"))
+				target.reagents.add_reagent(/datum/reagent/medicine/abyssalpurificator, 15) //Addictional chemical to remove demonic corruption. That's a system coming to second part of Kaizoku.
 				// if our target is standing in water, heal a flat amount extra
 				if (istype(get_turf(target), /turf/open/water))
 					conditional_buff = TRUE

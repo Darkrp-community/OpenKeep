@@ -364,28 +364,28 @@
 
 /datum/crafting_recipe/roguetown/sewing/monkgarb
 	name = "monk garbs {fl}"
-	result = list(/obj/item/clothing/suit/roguetown/shirt/kaizoku/monkgarb)
+	result = list(/obj/item/clothing/suit/roguetown/shirt/rags/monkgarb)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/kimono
 	name = "kimono {fl}"
-	result = list(/obj/item/clothing/suit/roguetown/shirt/kaizoku/kimono)
+	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/kimono)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/kamishimo
 	name = "kamishimo upperside {fl}"
-	result = list(/obj/item/clothing/suit/roguetown/shirt/kaizoku/kamishimo)
+	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/hakama
 	name = "hakama {fl}"
-	result = list(/obj/item/clothing/under/roguetown/tobi/hakama)
+	result = list(/obj/item/clothing/under/roguetown/tights/hakama)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	req_kaizoku = TRUE
@@ -480,7 +480,7 @@
 
 /datum/crafting_recipe/roguetown/sewing/tobi
 	name = "tobi trousers {fl}"
-	result = list(/obj/item/clothing/under/roguetown/tobi)
+	result = list(/obj/item/clothing/under/roguetown/trou/tobi)
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1

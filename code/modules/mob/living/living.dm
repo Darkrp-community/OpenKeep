@@ -1906,7 +1906,7 @@
 				var/obj/item/restraints/legcuffs/beartrap/M = O
 				if(isturf(M.loc) && M.armed)
 					found_ping(get_turf(M), client, "trap")
-			if(istype(O, /obj/structure/flora/roguegrass/maneater/real))
+			if(istype(O, /obj/structure/flora/roguegrass/maneater/real || /obj/structure/abyssaltomb))
 				found_ping(get_turf(O), client, "trap")
 
 /proc/found_ping(atom/A, client/C, state)

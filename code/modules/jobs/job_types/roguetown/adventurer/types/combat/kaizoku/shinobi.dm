@@ -14,7 +14,7 @@
 	allowed_races = list(
 		//humen - need to settle Heartfeltean culture on this one.
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
@@ -48,7 +48,7 @@
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 	pants = /obj/item/clothing/under/roguetown/trou/leather/shinobizubon
-	shoes = /obj/item/clothing/shoes/roguetown/kaizoku/jikatabi/shinobi
+	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja
 
 	if(H.dna.species?.id == "undine")

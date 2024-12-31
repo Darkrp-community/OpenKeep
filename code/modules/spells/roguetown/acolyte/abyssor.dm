@@ -5,28 +5,28 @@
 	action_icon_state = "spell0"
 	action_icon = 'icons/roguetown/kaizoku/misc/spells.dmi'
 
-/obj/effect/proc_holder/spell/invoked/icebind //This magic is not working as it should. It must be resisted only with a INT test. But since I am unable to, people will need to break it from the inside.
-	name = "Glacial Bind" //People faithful to Abyssor SHOULD be able to instantly be released from this magic.
+/obj/effect/proc_holder/spell/invoked/icebind
+	name = "Barotrauma Bind" //People faithful to Abyssor will instantly be released from this spell.
 	overlay_state = "waternet"
 	overlay_icon = 'icons/roguetown/kaizoku/misc/spells.dmi'
+	chargedrain = 5
 	releasedrain = 30
-	chargedrain = 0
-	chargetime = 2
+	charge_max = 50 SECONDS
 	range = 8
 	warnie = "aimwarn"
 	movement_interrupt = FALSE
 	sound = 'sound/music/kaizoku/spells/martialart_abyssanctum.ogg'
 	action_icon_state = "spell0"
 	action_icon = 'icons/roguetown/kaizoku/misc/spells.dmi'
-	invocation_type = "emote"
-	invocation = "punches and spins, unleashing a surge of freezing energy."
+	invocation_type = "none"
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
-	charge_max = 10 SECONDS
+	charge_max = 60 SECONDS
+	req_items = list(/obj/item/clothing/neck/roguetown/psicross/abyssanctum)
+	devotion_cost = 45
 
 /turf/open/proc/apply_ice_turf()
-	// Save the original attributes of the turf
-	var/prev_icon_state = icon_state
+	var/prev_icon_state = icon_state //that code saves the original attributes of the turf to avoid a black void.
 	icon_state = "ice"
 	density = FALSE
 	MakeSlippery(TURF_WET_PERMAFROST, min_wet_time = 100, wet_time_to_add = 5)
@@ -39,16 +39,15 @@
 	if(!targets.len || !targets[1])
 		to_chat(user, span_warning("<span class='userdanger'>Your spell fails to take hold, victimless.</span>"))
 		return FALSE
-
 	var/target = targets[1]
 
 	if(isliving(target))
 		var/mob/living/target_mob = target
-		if(!target_mob.has_status_effect(/datum/status_effect/frozentomb))
-			target_mob.apply_status_effect(/datum/status_effect/frozentomb)
+		if(!target_mob.has_status_effect(/datum/status_effect/abyssaltomb))
+			target_mob.apply_status_effect(/datum/status_effect/abyssaltomb)
 			target_mob.visible_message("<span class='warning'>[target_mob] is sealed within a crystalline abyssal tomb!</span>")
 		else
-			to_chat(user, span_warning("<span class='userdanger'>Your target is already immobilized within a frigid tomb of ice!</span>"))
+			to_chat(user, span_warning("<span class='userdanger'>Your target is already immobilized within a frigid tomb from the ocean!</span>"))
 		return TRUE
 
 	if(isturf(target))
@@ -64,64 +63,118 @@
 	to_chat(user, span_warning("<span class='userdanger'>Your spell fails to take hold, victimless.</span>"))
 	return FALSE
 
-///proc/apply_abyssaltomb(mob/living/target)
-//	if(!target)
-//		return
-//	target.visible_message("<span class='info'>[target] is encased in a block of ice!</span>")
-//	target.apply_status_effect(/datum/status_effect/frozentomb)
-
-/datum/status_effect/frozentomb/on_apply()
-	// Create the ice tomb and move the owner inside
-	tomb = new /obj/structure/abyssaltomb(get_turf(owner))
-	owner.forceMove(tomb)
-	owner.status_flags |= GODMODE
-	tomb.max_integrity = 150
+/datum/status_effect/abyssaltomb/on_apply()
+	tomb = new /obj/structure/abyssaltomb(get_turf(owner)) // Create the ice tomb, THEN move the victim inside
+	tomb.encased_mob = owner
+	if(istype(owner, /mob/living/carbon/human))
+		tomb.buckle_mob(owner, TRUE, check_loc = FALSE)
+		if(owner.patron && owner.patron.type == /datum/patron/divine/abyssor)
+			to_chat(src, "<span class='debug'>Abyssor follower = no processing..</span>")
+			tomb.processing = FALSE
+		else
+			to_chat(src, "<span class='debug'>Unbased person that don't follow abyssor, start to purify their ass.</span>")
+			START_PROCESSING(SSobj, tomb) // Processing for non-Abyssor followers
+	owner.forceMove(tomb) // Move the owner inside the tomb
+	tomb.max_integrity = 300
 	tomb.density = TRUE
 	owner.visible_message("<span class='warning'>[owner] is encased in a crystalline tomb of ice.</span>")
-	// Register the resist signal
-	//RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(on_remove)) //Not working. People will need to break it by beating it with a stick.
 	return ..()
-/*
-/datum/status_effect/frozentomb/on_remove(mob/living/user) //This is not working. I require fixes. Budging system is not working since it only makes the player fall down.
-	if(user.patron == /datum/patron/divine/abyssor)
-		user.visible_message("<span class='info'>[user]'s purified body shatters the icy tomb with ease!</span>")
-		if(tomb)
-			qdel(tomb)
-		user.status_flags &= ~GODMODE
-		UnregisterSignal(owner, COMSIG_LIVING_RESIST)
-		user.remove_status_effect(src)
-		return
-	if(isliving(user))
-		var/mob/living/L = user
-		var/time2mount = CLAMP((L.STAINT), 1, 99)
-		user.changeNext_move(CLICK_CD_RAPID)
-		if(prob(time2mount))
-			user.visible_message("<span class='success'>[user] breaks free of the icy tomb!</span>")
-			if(tomb)
-				qdel(tomb)
-			user.status_flags &= ~GODMODE
-			UnregisterSignal(user, COMSIG_LIVING_RESIST)
-			user.remove_status_effect(src)
-		else
-			user.visible_message("<span class='warning'>[user] struggles against the icy tomb but fails to break free.</span>")
-*/
+
+/datum/status_effect/abyssaltomb/on_remove()
+	if(tomb)
+		tomb.unbuckle_all_mobs() //Avoid Qdelling the mob
+		qdel(tomb)
+	tomb = null
+	return ..()
 
 /obj/structure/abyssaltomb
 	name = "abyssal tomb"
-	desc = "A solid block of ice encasing a victim inside a pocket dimension. One requires to break the coffin to be released from such depths."
+	desc = "A solid block of ice encasing a victim inside a pocket dimension deep on the ocean. One requires to break the coffin to be released from such depths."
 	icon = 'icons/roguetown/kaizoku/misc/freezesprite.dmi'
 	icon_state = "icespyre"
 	density = TRUE
 	max_integrity = 150
+	buckle_lying = 0
+	buckle_prevents_pull = 1
+	layer = FLY_LAYER
+	var/processing = TRUE
+	var/last_attack
+	var/mob/living/carbon/human/encased_mob
 
 /obj/structure/abyssaltomb/Destroy()
 	for(var/atom/movable/M in contents)
 		M.forceMove(loc)
+	if(encased_mob) // Use the linked mob reference
+		encased_mob.remove_status_effect(/datum/status_effect/abyssaltomb)
 	playsound(src, 'sound/combat/hits/onglass/glassbreak (2).ogg', 50, TRUE)
 	return ..()
 
-/datum/status_effect/frozentomb/proc/breakTomb()
-	owner.remove_status_effect(src)
+/obj/structure/abyssaltomb/process()
+	to_chat(src, "<span class='debug'>Abyssal Tomb is processing properly.</span>")
+	if(!has_buckled_mobs()) // If there are no mobs buckled, delete the tomb
+		to_chat(src, "<span class='debug'>No buckled mobs found, deleting tomb.</span>")
+		qdel(src)
+		return
+	for(var/mob/living/L in buckled_mobs)
+		if(!iscarbon(L) || L.buckled != src)
+			to_chat(src, "<span class='debug'>Invalid buckled mob detected, skipping.</span>")
+			continue
+		if(!last_attack) // Time tracking for damaging the buckled person
+			last_attack = world.time
+		var/barotrauma = 50 // 5 seconds for each
+		if(world.time >= last_attack + barotrauma) // Pressure damage after enough time has passed
+			last_attack = world.time
+			src.visible_message("<span class='danger'>[src]'s crushing pressure squeezes [L] mercilessly!</span>")
+			L.flash_fullscreen("whiteflash3")
+			L.adjustBruteLoss(rand(10, 30))
+		if(L.stat == DEAD)
+			src.visible_message("<span class='danger'>[L]'s squeezed body is now released after death.</span>")
+			qdel(src)
+
+/obj/structure/abyssaltomb/user_unbuckle_mob(mob/living/carbon/human/M, mob/living/carbon/human/user)
+	if(obj_broken)
+		..()
+		return
+
+	if(isliving(user))
+		var/mob/living/L = user
+		var/willpower = CLAMP((L.STAINT * 2 - 10), 1, 99)
+		var/barotrauma_roll = rand(1, 100)
+		to_chat(user, "<span class='debug'>DEBUG: willpower=[willpower], barotrauma_roll=[barotrauma_roll]; To be released, have more Willpower than Barotrauma</span>")
+
+		if(processing == FALSE)
+			to_chat(M, "<span class='info'>[M]'s purified body quickly breaks away from the abyssal tomb.</span>")
+			M.remove_status_effect(/datum/status_effect/abyssaltomb)
+			qdel(src)
+			return
+
+		user.changeNext_move(CLICK_CD_RAPID)
+		if(user != M)
+			if(barotrauma_roll <= willpower) //Freeing someone else.
+				to_chat(user, "<span class='info'>Your body warmth releases [M]'s from the pocket dimension.</span>")
+				to_chat(M, "<span class='info'>You feel [user]'s warmth as light comes over to your eyes.</span>")
+				M.remove_status_effect(/datum/status_effect/abyssaltomb)
+				if(processing == TRUE)
+					STOP_PROCESSING(SSobj, src)
+				qdel(src)
+			else
+				to_chat(user, "<span class='danger'>You try to free [M], but you hand ricochets.</span>")
+				to_chat(M, "<span class='info'>[user] attempts to free you, but your world spins instead.</span>")
+				M.Stun(40)
+				shake_camera(M, 15, 1)
+			return
+
+		if(barotrauma_roll <= willpower) // Freeing themselves
+			to_chat(M, "<span class='info'>You push the pressure towards itself, finally released from its grasp.</span>")
+			src.visible_message("<span class='info'>[M] manages to break down the abyssal tomb!</span>")
+			M.remove_status_effect(/datum/status_effect/abyssaltomb)
+			if(processing == TRUE)
+				STOP_PROCESSING(SSobj, src)
+			qdel(src)
+		else
+			to_chat(user, "<span class='warning'>You struggle to break free of the tomb, but remain trapped.</span>")
+			user.Stun(40)
+			shake_camera(user, 15, 1)
 
 ///Purification///
 
@@ -138,10 +191,10 @@
 	movement_interrupt = FALSE
 	projectile_type = /obj/projectile/magic/purify
 	chargedloop = null
-	//req_items = list(/obj/item/clothing/neck/roguetown/psycross)
+	req_items = list(/obj/item/clothing/neck/roguetown/psicross/abyssanctum)
 	sound = 'sound/music/kaizoku/spells/martialart_abyssanctum.ogg'
-	invocation_type = "emote"
-	invocation = "delivers sharp jabs and a sudden clap, unleashing a freezing shockwave that forms and launches a jagged ice spike."
+	invocation_type = "none"
+	//invocation = "delivers sharp jabs and a sudden clap, unleashing a freezing shockwave that forms and launches a jagged ice spike."
 
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
@@ -169,41 +222,33 @@
 /obj/projectile/magic/purify/on_hit(atom/target, mob/living/user, blocked = FALSE)
 	..()
 	var/mob/living/carbon/C = target
-	//if(!user.cmode)
 	if(iscarbon(target))
 		if(C.mob_biotypes & MOB_SPIRIT) // Abyssor's purifying filter absolutely destroys demonic essence.
 			C.visible_message("<span class='info'>An otherworldly divine freeze encircles [target], filtering out their very existence!</span>", "<span class='notice'>My breath shallows- my ears rings, my senses overwhelmed with the crushing grip! I'M GOING TO IMPLODE FROM INSIDE OUT! PLEASE MERCY!</span>")
-			C.adjustBruteLoss(rand(50, 100)) //Random damage between 50 and 100. Very brutal, and proper for killing demons. Cold damage will come together with it after.
-			C.Paralyze(60) //Purification successful. You will be paralyzed.
+			C.adjustFireLoss(rand(50, 100)) //Random damage between 50 and 100. Very brutal, and proper for killing demons. Cold damage will come together with it after.
+			C.Knockdown(40) //Purification successful. You will be paralyzed.
+			C.Paralyze(1)
 			C.apply_status_effect(/datum/status_effect/debuff/freezing/severe)
 			C.flash_fullscreen("whiteflash3")
 			return
-		if(C.dna.species?.id == "tiefling"||C.dna.species?.id == "goblin"||C.dna.species?.id == "orc") // Creatures with demon essence from Apotheosis war gets the second end of the stick.
+		if((C.mob_biotypes & MOB_APOTHEOSIS) || (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Had to give them these ones because there's a bunch of different goblin IDs. So Trait will have to stay until I care about giving each a respective var.
 			C.visible_message("<span class='danger'>[target]'s body is distorted by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
-			C.adjustBruteLoss(rand(30, 50)) // 30 to 50 damage, less than full demons. More damage comes from freezing.
-			C.Paralyze(30) //Purification successful. You will be paralyzed.
+			C.adjustFireLoss(rand(30, 50)) // 30 to 50 damage, less than full demons. More damage comes from freezing.
+			C.Knockdown(20) //Purification successful. You will be paralyzed.
+			C.Paralyze(1) // Creatures with demon essence from Apotheosis war gets the second end of the stick.
 			C.apply_status_effect(/datum/status_effect/debuff/freezing/severe)
 			C.flash_fullscreen("whiteflash3")
 			return
-		if(C.dna.species?.id == "abyssariad"||C.dna.species?.id == "aasimar") //Barely does anything to "Pure" creatures.
+		if(C.dna.species?.id == "abyssariad"||C.dna.species?.id == "aasimar") //Barely does anything to "Pure" creatures. This proves their 'divinity' and purity ingame.
 			C.visible_message("<span class='danger'>[target]'s body shivers slightly, yet remains sturdy.</span>", "<span class='userdanger'>A cold travel down my spine, yet I feel little to no pain.</span>")
 			C.adjustBruteLoss(rand(5, 15)) // 10 to 15 damage. Don't even bother attacking these. They will not be frozen either.
 			return
 		else //Does not paralyze.
 			C.visible_message("<span class='danger'>[target]'s body is distorted by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
-			C.adjustBruteLoss(rand(20, 35)) //Normal creatures will still suffer the effects of Barotrauma, yet less in terms of damage. Will still freeze.
+			C.adjustFireLoss(rand(20, 35)) //Normal creatures will still suffer the effects of Barotrauma, yet less in terms of damage. Will still freeze.
 			C.apply_status_effect(/datum/status_effect/debuff/freezing)
 			C.flash_fullscreen("whiteflash3")
 			return
-//	else //If not on combat mode, heal your target - no matter who.
-//		target.adjustToxLoss(-100) //Purification. Removes toxins from your body.
-//		target.adjustOxyLoss(-50)
-//		target.adjustBruteLoss(-50)
-//		target.adjustFireLoss(-50)
-//		target.blood_volume += BLOOD_VOLUME_SURVIVE
-//		target.reagents.add_reagent(/datum/reagent/medicine/abyssalpurificator, 15) //PURIFYYYYYYYYYYYYYYYY - TAKE ALL AWAAAAY! Important to avoid becoming a DAEMON with too much corruption chem.
-//		return
-
 
 ////////NOT FINISHED YET//////////
 
@@ -305,3 +350,19 @@
 					return
 
 */
+//experimental
+
+/obj/effect/proc_holder/spell/invoked/tester
+	name = "tester"
+	overlay_state = "lesserheal"
+	releasedrain = 30
+	chargedrain = 0
+	chargetime = 0
+	range = 7
+	warnie = "sydwarning"
+	movement_interrupt = FALSE
+	sound = 'sound/magic/heal.ogg'
+	invocation_type = "none"
+	associated_skill = /datum/skill/magic/holy
+	antimagic_allowed = TRUE
+	charge_max = 10 SECONDS

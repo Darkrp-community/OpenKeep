@@ -407,12 +407,11 @@
 	icon_state = "chilled"
 
 
-
 //////////////////////Kaizoku stuff//////////////////
 
 //frozentomb
 
-/datum/status_effect/frozentomb //Abyssor-followers should instantly break away from this coffin.
+/datum/status_effect/abyssaltomb //Abyssor-followers should instantly break away from this coffin.
 	id = "abyssor_frozen"
 	status_type = STATUS_EFFECT_UNIQUE
 	duration = -1
@@ -427,39 +426,18 @@
 	icon_state = "intomb"
 	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
 
-//code for frozentomb
-
-/datum/status_effect/frozentomb/proc/resist_tomb() //this is NOT working as it should. Please help me. Buckling is also not working for that bit.
-	if(!isliving(owner)) //I'm making this frozentomb deal brute damage slowly, as if the mob is inside the pressuring depths of the abyss. Not doing it now, because of bugs.
-		return
-	var/mob/living/L = owner
-	// Abyssor's divine immunity
-	if(L.patron == /datum/patron/divine/abyssor)
-		L.visible_message("<span class='info'>[L]'s purified body is unworthy of this punishment, their body already bound to the abyss.</span>") //Abyssor followers can easily be released from this.
-		L.status_flags &= ~GODMODE
-		UnregisterSignal(owner, COMSIG_LIVING_RESIST)
-		L.remove_status_effect(src)
-		return
-	attempts += 1
-	var/probability = CLAMP((L.STAINT - (attempts * 5)), 1, 99) // Add a penalty for each attempt
-	if(prob(probability))
-		L.visible_message("<span class='success'>[L] breaks free of the abyssal tomb!</span>")
-		L.status_flags &= ~GODMODE
-		UnregisterSignal(owner, COMSIG_LIVING_RESIST)
-		L.remove_status_effect(src)
-	else
-		L.visible_message("<span class='warning'>[L] struggles against the icy tomb but fails to break free.</span>")
-
-/datum/status_effect/frozentomb/tick(seconds_between_ticks)
-	if(!tomb || owner.loc != tomb)
-		owner.remove_status_effect(src)
-
-//freezing
+//Normal Freeze
 
 /atom/movable/screen/alert/status_effect/debuff/freezing //the abyss is cold.
 	name = "Abyssal Frostnip"
 	desc = "<span class='boldwarning'>Frost-bitten and touched by the ancient god, seeping through time and existence. The god feels, spreads and carves your skin.</span>\n" //that's abyssor.
 	icon_state = "freezing"
+	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
+
+/atom/movable/screen/alert/status_effect/debuff/freezing/severe //the abyss is VERY cold.
+	name = "Abyssal Frostbite"
+	desc = "<span class='boldwarning'>It carries his touch, the cold for those who trespassed his domain. Ice crystals carves patterns upon where he gazes, the stare is on you.</span>\n" //that's abyssor.
+	icon_state = "freezing_severe"
 	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
 
 /datum/status_effect/debuff/freezing
@@ -469,44 +447,60 @@
 	effectedstats = list("speed" = -3, "endurance" = -2)
 
 /datum/status_effect/debuff/freezing/tick()
-	owner.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
-	if(prob(50))
-		owner.adjustFireLoss(1)
-		owner.Jitter(3)
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
+		if(prob(50))
+			C.adjustFireLoss(2)
+			C.Jitter(3)
 
 /datum/status_effect/debuff/freezing/on_apply()
-	owner.color = "#4ad0d4"
-	return ..()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		to_chat(C, "<span class='info'>The frigid spike manifests supernatural cold within me.</span>")
 
 /datum/status_effect/debuff/freezing/on_remove()
-	owner.color = "#ffffff"
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.remove_status_effect(/datum/status_effect/debuff/freezing)
+		to_chat(C, "<span class='info'>I feel the suffocating cold vanishing, as body warmth returns to me.</span>")
+
+/datum/status_effect/debuff/freezing/tick()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.adjustOxyLoss(-6, 0) // Allows breathing underwater
+		if(prob(50))
+			C.adjustFireLoss(2)
+			C.Jitter(3)
 
 // severe freezing
 
-/atom/movable/screen/alert/status_effect/debuff/freezing/severe //this is even worst.
-	name = "Abyssal Frostbite"
-	desc = "<span class='boldwarning'>Ravaged by a frozen grasp, skin violently carved as divine icy tendrils invade the muscles, spreading a chill so holy that tears through the soul.</span>\n" //that's abyssor.
-	icon_state = "freezing_severe"
-	icon = 'icons/roguetown/kaizoku/misc/screen_alert.dmi'
-
-/datum/status_effect/debuff/freezing/severe
-	id = "freezingsevere"
+/datum/status_effect/debuff/freezing
+	id = "freezing"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/freezing/severe
-	duration = 60 SECONDS
-	effectedstats = list("speed" = -5, "endurance" = -3, "strength" = -1)
+	duration = 30 SECONDS
+	effectedstats = list("speed" = -5, "endurance" = -4, "strength" = -2)
 
-/datum/status_effect/debuff/freezing/tick()
-	owner.adjustOxyLoss(-6, 0) //it will actually allow you to breath underwater.
-	if(prob(50))
-		owner.adjustFireLoss(3)
-		owner.Jitter(3)
+/datum/status_effect/debuff/freezing/severe/on_apply()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		if(C.has_status_effect(/datum/status_effect/debuff/freezing))
+			C.remove_status_effect(/datum/status_effect/debuff/freezing)
+			to_chat(C, "<span class='info'>The biting cold intensified. Cold, abyssal tendrils roams and invades the surface of my skin.</span>")
+		else
+			to_chat(C, "<span class='info'>Torturous, carving frost upon my core! It reaches down into my spine in soul-rending agony!</span>")
+		return ..()
 
-/datum/status_effect/debuff/freezing/on_apply()
-	owner.color = "#2f42b3"
-	owner.remove_status_effect(/datum/status_effect/debuff/freezing)
-	owner.add_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN, multiplicative_slowdown = 2)
-	return ..()
+/datum/status_effect/debuff/freezing/severe/on_remove()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.apply_status_effect(/datum/status_effect/debuff/freezing)// Allows transition from severe freezing to normal freezing. Your body is warming up.
+		to_chat(C, "<span class='info'>The excruciating icy tendrils retreats, leaving behind a bone-chilling cold weighting upon my muscles.</span>")
 
-/datum/status_effect/debuff/freezing/on_remove()
-	owner.apply_status_effect(/datum/status_effect/debuff/freezing)
-	owner.remove_movespeed_modifier(MOVESPEED_ID_NET_SLOWDOWN)
+/datum/status_effect/debuff/freezing/severe/tick()
+	if(iscarbon(owner))
+		var/mob/living/carbon/C = owner
+		C.adjustOxyLoss(-6, 0) // Same underwater breathing
+		if(prob(50))
+			C.adjustFireLoss(4)
+			C.Jitter(3)

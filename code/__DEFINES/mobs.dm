@@ -60,6 +60,7 @@
 #define MOB_EPIC		1 << 7 //megafauna
 #define MOB_REPTILE		1 << 8
 #define MOB_SPIRIT		1 << 9
+#define MOB_APOTHEOSIS	1 << 10 //Because someone made a load of Goblin IDs, so I required this.
 
 //Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
@@ -479,7 +480,7 @@
 #define SKIN_COLOR_WARPCASTER_LINYOU "745441"
 #define SKIN_COLOR_WARPCASTER_DUSTWALKER "302017"
 
-//KENKU UNIQUE SKIN TONE
+//DENMORIAN UNIQUE SKIN TONE
 #define SKIN_COLOR_PEPPERSBLOW "771111"
 
 //OGRE SKIN TONES

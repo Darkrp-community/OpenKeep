@@ -15,7 +15,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Changeling",
-		"Kenku",
+		"Denmorian",
 		"Ogrun",
 		"Undine"
 	)
