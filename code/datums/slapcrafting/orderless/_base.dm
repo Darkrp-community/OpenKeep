@@ -140,7 +140,7 @@
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 
 		<style>
-		 	@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
 			body {
 				font-family: "Charm", cursive;
 				font-size: 1.2em;

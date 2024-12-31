@@ -35,7 +35,7 @@
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 
 		<style>
-		 	@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 			body {
 				font-family: "UnifrakturMaguntia", cursive;
 				font-size: 1.5em;
