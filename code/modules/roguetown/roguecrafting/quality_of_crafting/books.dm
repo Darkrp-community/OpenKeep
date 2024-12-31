@@ -7,6 +7,7 @@
 	var/mob/current_reader
 	var/open
 	var/base_icon_state
+	var/can_spawn = TRUE
 
 
 /obj/item/recipe_book/dropped(mob/user, silent)
@@ -86,9 +87,16 @@
 /obj/item/recipe_book/Topic(href, href_list)
 	. = ..()
 	if(href_list["pick_recipe"])
-		var/datum/repeatable_crafting_recipe/path = text2path(href_list["pick_recipe"])
-		var/datum/repeatable_crafting_recipe/real_path = new path
-		real_path.show_menu(current_reader)
+		var/datum/path = text2path(href_list["pick_recipe"])
+		if(ispath(path, /datum/repeatable_crafting_recipe))
+			var/datum/repeatable_crafting_recipe/real_path = new path
+			real_path.show_menu(current_reader)
+		else if(ispath(path, /datum/orderless_slapcraft))
+			var/datum/orderless_slapcraft/real_path = new path
+			real_path.show_menu(current_reader)
+		else if(ispath(path, /datum/slapcraft_recipe))
+			var/datum/slapcraft_recipe/real_path = new path
+			real_path.show_menu(current_reader)
 
 /obj/item/recipe_book/getonmobprop(tag)
 	. = ..()
@@ -176,6 +184,7 @@
 		/datum/repeatable_crafting_recipe/salo,
 		/datum/repeatable_crafting_recipe/saltfish,
 		/datum/repeatable_crafting_recipe/raisins,
+		/datum/orderless_slapcraft/pie,
 	)
 
 /obj/item/recipe_book/survival
@@ -202,7 +211,38 @@
 	desc = "Penned by Thorne Ashveil, Thieves Guild's Alchemist, Second Generation"
 	icon_state ="book4_0"
 	base_icon_state = "book4"
+	can_spawn = FALSE
 
 	types = list(
 		/datum/repeatable_crafting_recipe/narcotics,
+	)
+
+/obj/item/recipe_book/carpentry
+	name = "The Woodwright's Codex: Crafting with Timber and Grain"
+	desc = "Penned by Eadric Hollowell, Master Carpenter, Fourth Generation"
+	icon_state ="book3_0"
+	base_icon_state = "book3"
+
+	types = list(
+		/datum/slapcraft_recipe/carpentry,
+	)
+
+/obj/item/recipe_book/engineering
+	name = "The Engineer’s Primer: Machines, Mechanisms, and Marvels"
+	desc = "Penned by Liora Brasslock, Chief Engineer, Second Generation"
+	icon_state ="book2_0"
+	base_icon_state = "book2"
+
+	types = list(
+		/datum/slapcraft_recipe/engineering,
+	)
+
+/obj/item/recipe_book/masonry
+	name = "The Stonebinder’s Manual: Foundations of Craft and Fortitude"
+	desc = "Penned by Garrin Ironvein, Master Mason, Third Generation"
+	icon_state ="book_0"
+	base_icon_state = "book"
+
+	types = list(
+		/datum/slapcraft_recipe/masonry,
 	)
