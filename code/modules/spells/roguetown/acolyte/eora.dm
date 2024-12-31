@@ -76,18 +76,20 @@
 	. = ..()
 	if(slot == SLOT_HEAD)
 		ADD_TRAIT(user, TRAIT_CRACKHEAD, "corruptflower_[REF(src)]")
+		user.add_curse(/datum/curse/baotha)
 		to_chat(user, "<span class='userdanger'>FUCK YES. Party on!</b></span>")
 
 /obj/item/clothing/head/corruptflower/dropped(mob/living/carbon/human/user)
 	..()
-	if user.patron != /datum/patron/inhumen/baotha
+	user.remove_curse(/datum/curse/baotha)
+	if(user.patron != /datum/patron/inhumen/baotha)
 		REMOVE_TRAIT(user, TRAIT_CRACKHEAD, "corruptflower_[REF(src)]")
 
 /obj/item/clothing/head/corruptflower/attack_hand(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.head)
-			to_chat(user, "<span class='warning'>I feel great! There's no turning back!</b></span>")
+			to_chat(user, "<span class='warning'>Curse? What curse!? I feel great! Why would I ever want sobriety?</b></span>")
 			return
 	return ..()
 
