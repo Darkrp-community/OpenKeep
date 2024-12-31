@@ -286,7 +286,7 @@
 	keys = list(/obj/item/key/veteran, /obj/item/key/walls, /obj/item/key/elder, /obj/item/key/butcher, /obj/item/key/soilson, /obj/item/key/manor, /obj/item/key/apartments/penthouse2)
 
 /obj/item/storage/keyring/doctor
-	keys = list(/obj/item/key/doctor, /obj/item/key/manor)
+	keys = list(/obj/item/key/doctor, /obj/item/key/manor, /obj/item/key/clinic)
 
 /obj/item/storage/keyring/veteran
 	keys = list(/obj/item/key/veteran, /obj/item/key/dungeon, /obj/item/key/garrison, /obj/item/key/walls, /obj/item/key/elder, /obj/item/key/butcher, /obj/item/key/soilson)
