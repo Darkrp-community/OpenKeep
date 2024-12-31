@@ -450,7 +450,7 @@
 	output = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	requirements = list(/obj/item/natural/fibers = 2,
 				/obj/item/natural/silk = 4,
-				/obj/item/natural/hide = 1)
+				/obj/item/natural/hide/cured = 1)
 	craftdiff = 4
 	sellprice = 80
 
