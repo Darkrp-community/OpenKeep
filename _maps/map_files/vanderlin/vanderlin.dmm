@@ -13389,6 +13389,10 @@
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
+"kJh" = (
+/obj/item/clothing/head/corruptflower,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/town/basement)
 "kJo" = (
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/sewer)
@@ -54247,7 +54251,7 @@ oLM
 oGi
 bUM
 iYq
-xtX
+kJh
 lhg
 quC
 bUM
@@ -55263,7 +55267,7 @@ bUM
 jJL
 bET
 lhg
-xtX
+kJh
 jJL
 dEJ
 hBS
