@@ -2,24 +2,6 @@
 	always_availible = TRUE
 	skillcraft = /datum/skill/craft/crafting
 
-
-/datum/crafting_recipe/roguetown/tneedle
-	name = "sewing needle"
-	result = /obj/item/needle/thorn
-	reqs = list(/obj/item/natural/thorn = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 0
-
-/datum/crafting_recipe/roguetown/cloth
-	name = "cloth"
-	result = /obj/item/natural/cloth
-	reqs = list(/obj/item/natural/fibers = 2)
-	tools = list(/obj/item/needle)
-	skillcraft = /datum/skill/misc/sewing
-	craftdiff = 0
-	verbage = "sew"
-	verbage_tp = "sews"
-
 /datum/crafting_recipe/roguetown/dart
 	name = "dart"
 	result = /obj/item/ammo_casing/caseless/rogue/dart

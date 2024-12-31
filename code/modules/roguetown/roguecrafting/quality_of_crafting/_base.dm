@@ -24,7 +24,7 @@
 	///our crafting difficulty
 	var/craftdiff = 1
 	///our skilltype
-	var/datum/skill/skillcraft
+	var/datum/skill/skillcraft = /datum/skill/craft/crafting
 
 	///the amount of time the atom in question spends doing this recipe
 	var/craft_time = 1 SECONDS
