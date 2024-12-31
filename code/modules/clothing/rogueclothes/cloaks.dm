@@ -950,8 +950,8 @@
 	desc = "Chaste, righteous, merciless to the wicked."
 	color = null
 	icon_state = "battlenun"
-	item_state = "battlenun"
 	allowed_sex = list(FEMALE)
+	item_state = "battlenun"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_CLOAK
