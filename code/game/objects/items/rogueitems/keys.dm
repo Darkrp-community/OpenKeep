@@ -827,3 +827,8 @@
 	name = "armorsmith's key"
 	icon_state = "rustkey"
 	lockid = "armorsmith"
+
+/obj/item/key/clinic
+	name = "clinic key"
+	icon_state = "mazekey"
+	lockid = "clinic"
