@@ -13389,10 +13389,6 @@
 	},
 /turf/open/floor/rogue/churchmarble,
 /area/rogue/indoors/town/church)
-"kJh" = (
-/obj/item/clothing/head/corruptflower,
-/turf/open/floor/rogue/dirt,
-/area/rogue/under/town/basement)
 "kJo" = (
 /turf/open/floor/rogue/woodturned,
 /area/rogue/under/town/sewer)
@@ -16430,6 +16426,10 @@
 /obj/structure/roguerock,
 /turf/open/water/river,
 /area/rogue/outdoors/river)
+"ntX" = (
+/obj/item/clothing/head/corruptflower,
+/turf/open/floor/rogue/dirt,
+/area/rogue/under/town/basement)
 "nuh" = (
 /obj/structure/fluff/statue/evil,
 /turf/open/floor/rogue/ruinedwood/spiral,
@@ -18513,7 +18513,7 @@
 /area/rogue/under/town/sewer)
 "pkQ" = (
 /obj/structure/lever/hidden{
-	redstone_id = handhall
+	redstone_id = "handhall"
 	},
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/indoors/town/manor)
@@ -19641,7 +19641,7 @@
 	floor_turf = /turf/open/floor/rogue/blocks;
 	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
 	vips = list("King","Queen","Prince","Hand","Butler","Servant");
-	redstone_id = handhall
+	redstone_id = "handhall"
 	},
 /turf/closed/wall/mineral/rogue/decostone/long{
 	dir = 1;
@@ -23141,7 +23141,7 @@
 	floor_turf = /turf/open/floor/rogue/blocks;
 	vip_message = "King, Queen, Prince, Hand, Butler, Servant";
 	vips = list("King","Queen","Prince","Hand","Butler","Servant");
-	redstone_id = handhall
+	redstone_id = "handhall"
 	},
 /turf/closed/wall/mineral/rogue/decostone,
 /area/rogue/indoors/town/manor)
@@ -54251,7 +54251,7 @@ oLM
 oGi
 bUM
 iYq
-kJh
+ntX
 lhg
 quC
 bUM
@@ -55267,7 +55267,7 @@ bUM
 jJL
 bET
 lhg
-kJh
+ntX
 jJL
 dEJ
 hBS
