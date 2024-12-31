@@ -1735,13 +1735,6 @@
 /obj/machinery/light/rogue/torchholder/l,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/town)
-"btc" = (
-/obj/effect/landmark/tram/queued_path{
-	platform_code = "point_2";
-	next_path_id = "point_3"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/river)
 "btf" = (
 /obj/structure/table/wood{
 	icon_state = "longtable_mid"
@@ -8825,13 +8818,6 @@
 	},
 /turf/open/floor/rogue/tile,
 /area/rogue/under/town/basement)
-"hkY" = (
-/obj/effect/landmark/tram/queued_path{
-	platform_code = "cargo_exit_point_3";
-	next_path_id = "cargo_map_exit"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/river)
 "hlM" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/rogueweapon/axe/iron,
@@ -21574,9 +21560,8 @@
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/garrison)
 "shy" = (
-/obj/effect/landmark/tram/queued_path{
-	platform_code = "cargo_exit_point_1";
-	next_path_id = "cargo_exit_point_3"
+/obj/effect/landmark/tram/queued_path/cargo_exit{
+	next_path_id = "cargo_map_exit"
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
@@ -21686,13 +21671,6 @@
 /obj/item/natural/cloth,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
-"smM" = (
-/obj/effect/landmark/tram/queued_path{
-	platform_code = "point_3";
-	next_path_id = "point_4"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/river)
 "snb" = (
 /obj/structure/roguewindow/openclose{
 	icon_state = "woodwindowdir";
@@ -24490,12 +24468,6 @@
 	icon_state = "weird1"
 	},
 /area/rogue/indoors/town/tavern)
-"uvu" = (
-/obj/effect/landmark/tram/queued_path/cargo_exit{
-	next_path_id = "cargo_exit_point_1"
-	},
-/turf/open/transparent/openspace,
-/area/rogue/outdoors/river)
 "uvC" = (
 /obj/machinery/light/rogue/torchholder{
 	dir = 1
@@ -70209,7 +70181,7 @@ xYa
 xYa
 xYa
 xYa
-izc
+xYa
 xYa
 xYa
 xYa
@@ -70411,7 +70383,7 @@ xYa
 xYa
 xYa
 xYa
-xYa
+izc
 xYa
 xYa
 xYa
@@ -70608,7 +70580,7 @@ xYa
 xYa
 xYa
 xYa
-hkY
+xYa
 xYa
 xYa
 xYa
@@ -71007,7 +70979,7 @@ xYa
 xYa
 xYa
 xYa
-shy
+xYa
 xYa
 xYa
 xYa
@@ -71204,7 +71176,6 @@ xYa
 xYa
 xYa
 xYa
-uvu
 xYa
 xYa
 xYa
@@ -71216,6 +71187,7 @@ xYa
 xYa
 xYa
 xYa
+shy
 xYa
 xYa
 xYa
@@ -71350,10 +71322,10 @@ xYa
 xYa
 xYa
 xYa
-btc
 xYa
 xYa
-smM
+xYa
+xYa
 xYa
 xYa
 xYa
