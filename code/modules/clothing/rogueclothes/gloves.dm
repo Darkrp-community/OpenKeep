@@ -74,6 +74,11 @@
 	desc = "Improved grip for wielding disembowled organs."
 	icon_state = "surggloves"
 
+/obj/item/clothing/gloves/roguetown/leather/apothecary
+	name = "apothecary gloves"
+	desc = "Thick leather gloves for pulling thorny plants... or cracking skulls."
+	icon_state = "apothgloves"
+
 
 /obj/item/clothing/gloves/roguetown/fingerless
 	name = "fingerless gloves"

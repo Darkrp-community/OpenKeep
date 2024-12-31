@@ -382,7 +382,7 @@
 	lockid = "mage"
 
 /obj/item/key/graveyard
-	desc = "This rusty key belongs to the Gravekeepers."
+	desc = "This rusty key belongs to the Gravetenders."
 	icon_state = "rustkey"
 	lockid = "graveyard"
 
@@ -394,7 +394,7 @@
 
 /obj/item/key/niteman
 	name = "apothecary's key"
-	desc = "The master key of Eora's House."
+	desc = "The master key of the bath house."
 	icon_state = "greenkey"
 	lockid = "nightman"
 
@@ -822,7 +822,7 @@
 /obj/item/key/apothecary
 	name = "apothecary's key"
 	icon_state = "rustkey"
-	lockid = "apothecary"
+	lockid = "nightman"
 
 /obj/item/key/weaponsmith
 	name = "weaponsmith's key"

@@ -749,6 +749,8 @@
 		if(L.eyesclosed)
 			L.eyesclosed = 0
 			L.cure_blind("eyelids")
+			update_icon()
+			return
 
 	if(modifiers["left"])
 		if(_y>=29 || _y<=4)

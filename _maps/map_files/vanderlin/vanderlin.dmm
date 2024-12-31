@@ -198,6 +198,13 @@
 /obj/item/book/rogue/yeoldecookingmanual,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
+"aiP" = (
+/obj/structure/flora/roguegrass/bush/wall/tall,
+/obj/structure/fluff/railing/wood{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/town)
 "ajJ" = (
 /obj/structure/bars/cemetery,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2403,7 +2410,6 @@
 /area/rogue/outdoors/mountains)
 "bUe" = (
 /obj/structure/flora/roguegrass,
-/obj/structure/flora/ausbushes/ppflowers,
 /obj/effect/landmark/start/vagrant,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
@@ -4392,7 +4398,7 @@
 /obj/structure/fluff/railing/wood{
 	dir = 1
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "dEF" = (
 /obj/structure/closet/crate/roguecloset,
@@ -5172,6 +5178,11 @@
 /obj/item/bedsheet/rogue/fabric,
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue/under/town/basement)
+"ejt" = (
+/obj/structure/flora/roguegrass/bush_meagre,
+/obj/structure/fluff/railing/wood,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/town)
 "ejP" = (
 /obj/structure/stairs,
 /turf/open/floor/rogue/wood,
@@ -6714,6 +6725,15 @@
 "fwz" = (
 /turf/open/floor/carpet/inn,
 /area/rogue/indoors/town/tavern)
+"fwB" = (
+/obj/structure/fluff/railing/wood{
+	dir = 8;
+	icon_state = "woodrailing";
+	pixel_y = -1
+	},
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/town)
 "fwT" = (
 /obj/structure/fluff/statue/knight/interior,
 /turf/open/floor/rogue/tile/masonic,
@@ -7512,6 +7532,7 @@
 "gmH" = (
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/machinery/light/rogue/wallfire/candle/blue,
+/obj/item/storage/backpack/rogue/backpack,
 /turf/open/floor/rogue/blocks/stonered/tiny,
 /area/rogue/indoors/town/bath)
 "gmP" = (
@@ -8883,9 +8904,9 @@
 	},
 /area/rogue/indoors/town/garrison)
 "hwZ" = (
-/obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/fluff/railing/wood,
-/turf/open/floor/rogue/grass,
+/obj/structure/flora/roguegrass,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "hxl" = (
 /obj/structure/closet/crate/roguecloset{
@@ -11839,6 +11860,11 @@
 	pixel_x = -4;
 	pixel_y = 1
 	},
+/obj/item/natural/bundle/fibers/full,
+/obj/item/natural/bundle/fibers/full,
+/obj/item/natural/bundle/curred_hide,
+/obj/item/natural/bundle/cloth,
+/obj/item/natural/bundle/silk,
 /turf/open/floor/rogue/carpet/green,
 /area/rogue/indoors/town)
 "jOI" = (
@@ -12435,9 +12461,10 @@
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/inquisition)
 "kiB" = (
-/obj/structure/fluff/railing/wood,
-/turf/open/floor/rogue/grass,
-/area/rogue/outdoors/town)
+/obj/structure/rack/rogue/shelf/biggest,
+/obj/item/candle/yellow,
+/turf/open/floor/rogue/concrete,
+/area/rogue/indoors/town/shop)
 "kiQ" = (
 /obj/structure/mineral_door/wood{
 	locked = 1;
@@ -15569,6 +15596,7 @@
 /area/rogue/under/town/caverogue)
 "nar" = (
 /obj/item/clothing/head/peaceflower,
+/obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "nau" = (
@@ -17056,6 +17084,7 @@
 	dir = 1;
 	icon_state = "longtable_mid"
 	},
+/obj/item/candle/yellow,
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town/steward)
 "osf" = (
@@ -17802,7 +17831,7 @@
 	icon_state = "woodrailing";
 	pixel_y = -1
 	},
-/turf/open/floor/rogue/grass,
+/turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/town)
 "paN" = (
 /obj/structure/table/wood,
@@ -21536,6 +21565,7 @@
 	dir = 1;
 	icon_state = "longtable"
 	},
+/obj/item/candle/yellow,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/steward)
 "swU" = (
@@ -24011,6 +24041,10 @@
 	pixel_x = -2;
 	pixel_y = 1
 	},
+/obj/item/candle/skull{
+	pixel_x = 4;
+	pixel_y = -4
+	},
 /turf/open/floor/rogue/twig,
 /area/rogue/indoors/town)
 "urK" = (
@@ -25395,7 +25429,11 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "vzr" = (
-/obj/structure/mineral_door/wood/green,
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
+	lockid = "shop1";
+	name = "Tailor Shop"
+	},
 /turf/open/floor/rogue/ruinedwood/turned/darker,
 /area/rogue/indoors/town)
 "vzD" = (
@@ -27100,7 +27138,11 @@
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/cave)
 "wTX" = (
-/obj/structure/mineral_door/wood/green,
+/obj/structure/mineral_door/wood/green{
+	locked = 1;
+	lockid = "shop1";
+	name = "Tailor Shop"
+	},
 /turf/open/floor/rogue/carpet/green,
 /area/rogue/indoors/town)
 "wUa" = (
@@ -83051,7 +83093,7 @@ kRP
 kRP
 ehF
 paC
-mBz
+fwB
 lDP
 elp
 elp
@@ -83254,7 +83296,7 @@ kRP
 lsl
 gId
 bUe
-sfm
+ejt
 lsl
 elp
 elp
@@ -83456,7 +83498,7 @@ kRP
 lKX
 dEt
 nar
-kiB
+hwZ
 lKX
 ehF
 elp
@@ -83858,7 +83900,7 @@ elp
 elp
 lsl
 ehF
-hsv
+aiP
 gZV
 hwZ
 vnF
@@ -94185,7 +94227,7 @@ ehF
 ehF
 ehF
 hiF
-qrH
+kiB
 uvg
 rcU
 lHp
@@ -94194,8 +94236,8 @@ jcc
 nnM
 brP
 sSD
-qrH
-qrH
+kiB
+kiB
 hsJ
 nWe
 nWe
@@ -94589,7 +94631,7 @@ ehF
 ehF
 ehF
 hiF
-qrH
+kiB
 hsJ
 mQm
 dzB
@@ -209729,7 +209771,7 @@ uVx
 lnG
 lnG
 qpv
-uXD
+lUN
 uXD
 uXD
 uXD
@@ -209931,7 +209973,7 @@ uVx
 lnG
 ebS
 sMY
-uXD
+lUN
 uXD
 uXD
 uXD
@@ -210133,7 +210175,7 @@ uVx
 lnG
 lnG
 cFY
-uXD
+lUN
 uXD
 uXD
 vHn
@@ -214652,13 +214694,13 @@ uVx
 uVx
 uVx
 uVx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -214854,13 +214896,13 @@ uVx
 uVx
 uVx
 uVx
-tip
-rJx
-rJx
-rJx
-rJx
-rJx
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -215056,13 +215098,13 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-tip
-rJx
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -215258,13 +215300,13 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-tip
-aqG
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -215460,13 +215502,13 @@ uVx
 uVx
 uVx
 uVx
-tip
-aqG
-aqG
-aqG
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -215662,13 +215704,13 @@ uVx
 uVx
 uVx
 uVx
-aqG
-aqG
-aqG
-tip
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -215866,11 +215908,11 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -216068,11 +216110,11 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -216270,22 +216312,22 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-lnm
-lnm
-lnm
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -216472,22 +216514,22 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-lnm
-lnm
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -216674,22 +216716,22 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-lnm
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-rJx
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -216876,22 +216918,22 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-tip
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-lnm
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -217078,25 +217120,25 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-lnm
-lnm
-lnm
-lnm
-rJx
-rJx
-rJx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -217280,25 +217322,25 @@ uVx
 uVx
 uVx
 uVx
-tip
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-tip
-lnm
-lnm
-lnm
-rJx
-rJx
-rJx
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -217482,25 +217524,25 @@ uVx
 uVx
 uVx
 uVx
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-aqG
-tip
-tip
-lnm
-lnm
-rJx
-rJx
-rJx
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -217694,15 +217736,15 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-tip
-rJx
-rJx
-rJx
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -217896,15 +217938,15 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-tip
-aqG
-aqG
-aqG
-lnm
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 uVx
@@ -218098,15 +218140,15 @@ uVx
 uVx
 uVx
 uVx
-tip
-tip
-aqG
-aqG
-aqG
-aqG
-aqG
-lnm
-lnm
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
+uVx
 uVx
 uVx
 vtv
