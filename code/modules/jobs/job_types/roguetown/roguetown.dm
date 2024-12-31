@@ -67,6 +67,21 @@
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+				if(H.dna.species.name == "Changeling")
+					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //Temporary change until their Skull-bending "wag system" comes about.
+				if(H.dna.species.name == "Undine")
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumhelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+//				if(H.dna.species.id == "Abyssariad"||H.dna.species.name == "Undine") // Not finished yet because I can't test it now.
+//					if(H.patron == /datum/patron/divine/abyssor)
+//						H.set_patron(/datum/patron/goodabyssanctum/abyssor) //so they spawn with their unique powers.
+
 	H.underwear_color = null
 	H.update_body()
 

@@ -143,6 +143,11 @@
 							new /obj/item/clothing/neck/roguetown/mercmedal/boltslinger(src.loc)
 						if(7)
 							new /obj/item/clothing/neck/roguetown/mercmedal/anthrax(src.loc)
+						if(8)
+							new /obj/item/clothing/neck/roguetown/mercmedal/toweryakko(src.loc)
+						if(9)
+							new /obj/item/clothing/neck/roguetown/mercmedal/kabukimaru(src.loc)
+
 				if(C.signed == 0)
 					to_chat(H, "<span class='warning'>I cannot send an unsigned token.</span>")
 					return

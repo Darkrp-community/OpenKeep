@@ -6,6 +6,7 @@
 	icon_living = "Troll2"
 	icon_dead = "Troll2d"
 	pixel_x = -16
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_APOTHEOSIS
 
 	faction = list("orcs")
 	footstep_type = FOOTSTEP_MOB_HEAVY

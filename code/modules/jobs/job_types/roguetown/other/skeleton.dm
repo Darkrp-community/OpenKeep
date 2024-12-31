@@ -14,7 +14,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Denmorian",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = ""
 
