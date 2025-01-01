@@ -834,7 +834,13 @@
 	icon_state = "rustkey"
 	lockid = "armorsmith"
 
+/obj/item/key/matron
+	name = "matron key"
+	icon_state = "rustkey"
+	lockid = "orphanage"
+
 /obj/item/key/clinic
 	name = "clinic key"
 	icon_state = "mazekey"
 	lockid = "clinic"
+
