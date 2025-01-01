@@ -208,7 +208,7 @@ Sunlight System
 		if(outdoor_effect.weatherproof)
 			SSParticleWeather.weathered_turfs -= src
 		else
-			if(turf_flags & TURF_EFFECT_AFFECTABLE)
+			if(((turf_flags & TURF_EFFECT_AFFECTABLE) && (z in SSoutdoor_effects.turf_weather_affectable_z_levels)))
 				SSParticleWeather.weathered_turfs |= src
 
 

@@ -2,14 +2,14 @@
 /particles/weather/snow
 	icon_state             = list("cross"=2, "snow_1"=5, "snow_2"=2, "snow_3"=2,)
 	color                  = "#ffffff"
-	position               = generator("box", list(-500,-256,5), list(500,500,0))
+	position               = generator("box", list(-500,-500,5), list(500,500,0))
 	spin                   = generator("num",-10,10)
 	gravity                = list(0, -2, 0.1)
 	drift                  = generator("circle", 0, 3) // Some random movement for variation
 	friction               = 0.3  // shed 30% of velocity and drift every 0.1s
 	//Weather effects, max values
-	maxSpawning           = 50
-	minSpawning           = 10
+	maxSpawning           = 100
+	minSpawning           = 20
 	wind                  = 2
 
 /datum/particle_weather/snow_gentle
@@ -107,7 +107,14 @@
 	SIGNAL_HANDLER
 
 	if(locate(/obj/structure/mineral_door) in src)
-		return
+		var/obj/structure/mineral_door/door = locate(/obj/structure/mineral_door) in src
+		if(door.density)
+			return
+	if(locate(/obj/structure/roguewindow) in src)
+		var/obj/structure/roguewindow/door = locate(/obj/structure/roguewindow) in src
+		if(!door.climbable)
+			return
+
 	if(!(turf_flags & TURF_EFFECT_AFFECTABLE) || density || !effect)
 		return
 
@@ -168,7 +175,7 @@
 		SEND_SIGNAL(src, COMSIG_MOB_OVERLAY_FORCE_REMOVE, contained_mob)
 
 	for(var/obj/structure/contained_structure in contents)
-		if(istype(contained_structure, /obj/structure/snow))
+		if(istype(contained_structure, /obj/structure/snow) || istype(contained_structure, /obj/structure/flora/roguegrass/bush/wall))
 			continue
 		contained_mobs += contained_structure
 		SEND_SIGNAL(src, COMSIG_MOB_OVERLAY_FORCE_REMOVE, contained_structure)
@@ -189,7 +196,7 @@
 			SEND_SIGNAL(src, COMSIG_MOB_OVERLAY_FORCE_REMOVE, contained_mob)
 
 		for(var/obj/structure/contained_structure in turf.contents)
-			if(istype(contained_structure, /obj/structure/snow))
+			if(istype(contained_structure, /obj/structure/snow) || istype(contained_structure, /obj/structure/flora/roguegrass/bush/wall))
 				continue
 			contained_mobs += contained_structure
 			SEND_SIGNAL(src, COMSIG_MOB_OVERLAY_FORCE_REMOVE, contained_structure)
@@ -292,7 +299,7 @@
 					break
 
 				else if(turf.snow && turf.snow.bleed_layer != 3)
-					turf.snow.progression += progression
+					turf.snow.weathered(effect)
 					break
 		else
 			changing_layer(min(bleed_layer + 1, MAX_LAYER_SNOW_LEVELS))
