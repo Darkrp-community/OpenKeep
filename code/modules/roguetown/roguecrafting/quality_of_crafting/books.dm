@@ -35,10 +35,10 @@
 		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 
 		<style>
-			@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap');
 			body {
-				font-family: "UnifrakturMaguntia", cursive;
-				font-size: 1.5em;
+				font-family: "Charm", cursive;
+				font-size: 1.2em;
 				text-align: center;
 				margin: 20px;
 				background-color: #f4efe6;
@@ -96,6 +96,12 @@
 			real_path.show_menu(current_reader)
 		else if(ispath(path, /datum/slapcraft_recipe))
 			var/datum/slapcraft_recipe/real_path = new path
+			real_path.show_menu(current_reader)
+		else if(ispath(path, /datum/crafting_recipe))
+			var/datum/crafting_recipe/real_path = new path
+			real_path.show_menu(current_reader)
+		else if(ispath(path, /datum/pot_recipe))
+			var/datum/pot_recipe/real_path = new path
 			real_path.show_menu(current_reader)
 
 /obj/item/recipe_book/getonmobprop(tag)
@@ -178,6 +184,7 @@
 	base_icon_state = "book6"
 
 	types = list(
+		/datum/pot_recipe/cooking,
 		/datum/repeatable_crafting_recipe/cooking,
 		/datum/repeatable_crafting_recipe/salami,
 		/datum/repeatable_crafting_recipe/coppiette,
@@ -194,6 +201,7 @@
 	base_icon_state = "book5"
 
 	types = list(
+		/datum/repeatable_crafting_recipe/survival,
 		/datum/repeatable_crafting_recipe/soap,
 		/datum/repeatable_crafting_recipe/fishing,
 		/datum/repeatable_crafting_recipe/sigsweet,
@@ -217,6 +225,7 @@
 
 	types = list(
 		/datum/repeatable_crafting_recipe/narcotics,
+		/datum/pot_recipe/drugs,
 	)
 
 /obj/item/recipe_book/carpentry

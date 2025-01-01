@@ -40,38 +40,11 @@
 	verbage = "untie"
 	verbage_tp  = "unties"
 
-/datum/crafting_recipe/roguetown/torch
-	name = "torch"
-	result = /obj/item/flashlight/flare/torch
-	reqs = list(/obj/item/grown/log/tree/stick = 1,
-				/obj/item/natural/fibers = 1)
-	craftdiff = 0
-
 /datum/crafting_recipe/roguetown/candle
 	name = "candle (x2)"
 	result = list(/obj/item/candle/yellow,
 				/obj/item/candle/yellow)
 	reqs = list(/obj/item/reagent_containers/food/snacks/fat = 1)
-
-/datum/crafting_recipe/roguetown/stoneaxe
-	name = "stone axe"
-	result = /obj/item/rogueweapon/axe/stone
-	reqs = list(/obj/item/grown/log/tree/small = 1,
-				/obj/item/natural/stone = 1)
-
-
-/datum/crafting_recipe/roguetown/stoneknife
-	name = "stone knife"
-	result = /obj/item/rogueweapon/knife/stone
-	reqs = list(/obj/item/grown/log/tree/stick = 1,
-				/obj/item/natural/stone = 1)
-	craftdiff = 0
-
-/datum/crafting_recipe/roguetown/stonespear
-	name = "stone spear"
-	result = /obj/item/rogueweapon/polearm/spear/stone
-	reqs = list(/obj/item/rogueweapon/polearm/woodstaff = 1,
-				/obj/item/natural/stone = 1)
 
 /datum/crafting_recipe/roguetown/woodclub
 	name = "wood club"
@@ -128,45 +101,8 @@
 				/obj/item/storage/bag/tray)
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 
-/datum/crafting_recipe/roguetown/pot
-	name = "stone pot"
-	result = /obj/item/reagent_containers/glass/bucket/pot
-	reqs = list(/obj/item/natural/stone = 2)
-
 /obj/item/reagent_containers/glass/cup/wooden/crafted
 	sellprice = 3
-
-/datum/crafting_recipe/roguetown/mortar
-	name = "stone mortar"
-	result = /obj/item/reagent_containers/glass/mortar
-	reqs = list(/obj/item/natural/stone = 1)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	craftdiff = 3
-	subtype_reqs = TRUE
-
-/datum/crafting_recipe/roguetown/alchmortar
-	name = "alchemical mortar"
-	result = /obj/item/mortar
-	reqs = list(/obj/item/natural/stone = 3)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	verbage = "crafts"
-	skillcraft = /datum/skill/craft/masonry
-
-/datum/crafting_recipe/roguetown/pestle
-	name = "pestle"
-	result = /obj/item/pestle
-	reqs = list(/obj/item/natural/stone = 2)
-	tools = list(/obj/item/rogueweapon/knife/hunting)
-	verbage = "crafts"
-	skillcraft = /datum/skill/craft/masonry
-
-/datum/crafting_recipe/roguetown/bag
-	name = "bag"
-	result = /obj/item/storage/roguebag/crafted
-	reqs = list(/obj/item/natural/fibers = 1,
-				/obj/item/natural/cloth = 1)
-	tools = list(/obj/item/needle)
-	skillcraft = /datum/skill/misc/sewing
 
 /obj/item/storage/roguebag/crafted
 	sellprice = 4
