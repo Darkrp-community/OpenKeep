@@ -18,6 +18,9 @@
 	anvilrepair = null
 	smeltresult = /obj/item/ash
 
+	grid_width = 64
+	grid_height = 64
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"
 	desc = ""
@@ -239,7 +242,6 @@
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "dress"
 	item_state = "dress"
-	allowed_sex = list(FEMALE)
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 

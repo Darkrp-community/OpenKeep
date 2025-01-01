@@ -46,7 +46,7 @@
 	name = "Gender Potion"
 	description = "Change the user's gender."
 	reagent_state = LIQUID
-	color = "FF33FF"
+	color = "#FF33FF"
 	taste_description = "organic scent"
 	overdose_threshold = 0
 	metabolization_rate = REAGENTS_METABOLISM * 5
@@ -88,6 +88,7 @@
 	name = "Strong Mana Potion"
 	description = "Gradually regenerates stamina."
 	color = "#0000ff"
+	taste_description = "raw power"
 	metabolization_rate = REAGENTS_METABOLISM * 3
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
@@ -114,6 +115,7 @@
 	name = "Strong Stamina Potion"
 	description = "Rapidly regenerates stamina."
 	color = "#13df00"
+	taste_description = "sparkly static"
 	metabolization_rate = REAGENTS_METABOLISM * 3
 
 /datum/reagent/medicine/strongstam/on_mob_life(mob/living/carbon/M)

@@ -316,20 +316,20 @@
 /* craftdif of 1 = NOVICE */
 
 /datum/repeatable_crafting_recipe/sewing/shepardmask
-	name = "half-mask (cloth, silk; LOOM, NOVICE)"
+	name = "half-mask"
 	output = /obj/item/clothing/mask/rogue/shepherd
 	requirements = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 1)
 	craftdiff = 1
 
 /datum/repeatable_crafting_recipe/sewing/rags
-	name = "shirt (webbed) - (silk; LOOM, NOVICE)"
+	name = "shirt (webbed)"
 	output = /obj/item/clothing/suit/roguetown/shirt/undershirt/webs
 	requirements = list(/obj/item/natural/silk = 1)
 	craftdiff = 1
 
 /datum/repeatable_crafting_recipe/sewing/webbing
-	name = "trousers (webbed) - (2 silks; LOOM, NOVICE)"
+	name = "trousers (webbed)"
 	output = /obj/item/clothing/under/roguetown/webs
 	requirements = list(/obj/item/natural/silk = 2)
 	craftdiff = 1
@@ -339,35 +339,35 @@
 /* craftdif of 3 = JOURNEYMAN */
 
 /datum/repeatable_crafting_recipe/sewing/cloak
-	name = "cloak (half, silk) - (cloth, silk; LOOM, JOURNEYMAN)"
+	name = "cloak (half, silk)"
 	output = /obj/item/clothing/cloak/half
 	requirements = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
 
 /datum/repeatable_crafting_recipe/sewing/nochood
-	name = "hood (moon/Noc) - (2 cloths, silk; LOOM, JOURNEYMAN)"
+	name = "hood (moon/Noc)"
 	output = /obj/item/clothing/head/roguetown/roguehood/nochood
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
 
 /datum/repeatable_crafting_recipe/sewing/necrahood
-	name = "hood (Necra) - (2 cloths, silk; LOOM, JOURNEYMAN)"
+	name = "hood (Necra)"
 	output = /obj/item/clothing/head/roguetown/padded/deathshroud
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
 
 /datum/repeatable_crafting_recipe/sewing/astratahood
-	name = "hood (solar/Astrata) - (2 cloths, silk; LOOM, JOURNEYMAN)"
+	name = "hood (solar/Astrata)"
 	output = /obj/item/clothing/head/roguetown/roguehood/astrata
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 1)
 	craftdiff = 3
 
 /datum/repeatable_crafting_recipe/sewing/shirt
-	name = "shirt (formal silks) - (5 silks; LOOM, JOURNEYMAN)"
+	name = "shirt (formal silks)"
 	output = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	requirements = list(/obj/item/natural/silk = 5)
 	craftdiff = 3
@@ -375,28 +375,28 @@
 /* craftdif of 4 = EXPERT */
 
 /datum/repeatable_crafting_recipe/sewing/astratarobe
-	name = "robes (Astrata) - (3 cloths, silk; LOOM, EXPERT)"
+	name = "robes (Astrata)"
 	output = /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
 /datum/repeatable_crafting_recipe/sewing/dendorrobe
-	name = "robes (Dendor) - (3 cloths, silk; LOOM, EXPERT)"
+	name = "robes (Dendor)"
 	output = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
 /datum/repeatable_crafting_recipe/sewing/necrarobe
-	name = "robes (Necra) - (3 cloths, silk; LOOM, EXPERT)"
+	name = "robes (Necra)"
 	output = /obj/item/clothing/suit/roguetown/shirt/robe/necra
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
 	craftdiff = 4
 
 /datum/repeatable_crafting_recipe/sewing/nocrobe
-	name = "robes (Noc) - (3 cloths, silk; LOOM, EXPERT)"
+	name = "robes (Noc)"
 	output = /obj/item/clothing/suit/roguetown/shirt/robe/noc
 	requirements = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/silk = 1)
@@ -405,7 +405,7 @@
 /* craftdif of 5 = MASTER */
 
 /datum/repeatable_crafting_recipe/sewing/silkcoat
-	name = "coat (silk) - (cloth, 2 furs, 3 silks; LOOM, MASTER)"
+	name = "coat (silk)"
 	output = /obj/item/clothing/suit/roguetown/armor/leather/jacket/silk_coat
 	requirements = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/silk = 3,
@@ -414,14 +414,14 @@
 	sellprice = 60
 
 /datum/repeatable_crafting_recipe/sewing/barkeep
-	name = "dress (bar, silk) - (2 cloths, 2 silks; LOOM, MASTER)"
+	name = "dress (bar, silk)"
 	output = /obj/item/clothing/suit/roguetown/shirt/dress
 	requirements = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/silk = 2)
 	craftdiff = 5
 
 /datum/repeatable_crafting_recipe/sewing/silkdress
-	name = "dress (chemise, silk) - (2 fibers, 3 silks; LOOM, MASTER)"
+	name = "dress (chemise, silk)"
 	output = /obj/item/clothing/suit/roguetown/shirt/dress/silkdress/random
 	requirements = list(/obj/item/natural/fibers = 2,
 				/obj/item/natural/silk = 3)

@@ -469,7 +469,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/tavern
 	name = "tavern"
 	icon_state = "tavern"
-	first_time_text = "Skullcrack Inn"
+	first_time_text = "The Drunken Saiga"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
 	droning_sound = "sound/blank.ogg"
@@ -524,7 +524,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	return FALSE
 
 /area/rogue/indoors/town/entrance
-	first_time_text = "Roguetown"
+	first_time_text = "Vanderlin"
 	icon_state = "entrance"
 
 /area/rogue/indoors/town/clocktower
