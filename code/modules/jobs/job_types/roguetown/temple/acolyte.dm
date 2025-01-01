@@ -68,6 +68,19 @@
 			pants = /obj/item/clothing/under/roguetown/tights/red
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
+		if("Necra")
+			head = /obj/item/clothing/head/roguetown/padded/deathshroud
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/necra
+			pants = /obj/item/clothing/under/roguetown/trou/leather/mourning
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/necra
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+			shoes = /obj/item/clothing/shoes/roguetown/sandals
+		if("Dendor")
+			head = /obj/item/clothing/head/roguetown/antlerhood
+			neck = /obj/item/clothing/neck/roguetown/coif
+			cloak = /obj/item/clothing/cloak/raincloak/furcloak
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
+			beltr = /obj/item/rogueweapon/knife/stone
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver

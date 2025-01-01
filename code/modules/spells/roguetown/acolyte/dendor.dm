@@ -13,7 +13,7 @@
 	overlay_state = "blesscrop"
 	releasedrain = 30
 	charge_max = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -49,7 +49,7 @@
 	desc = "Grants the Dendorite a keen sense of smell and excellent vision, to better hunt with."
 	overlay_state = "bestialsense"
 	charge_max = 12 MINUTES
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	invocation = "Beast-Lord, lend me the eyes of the zad, the nose of the volf."
 	invocation_type = "whisper"
 	cooldown_min = 10 MINUTES
@@ -78,7 +78,7 @@
 	overlay_state = "tamebeast"
 	releasedrain = 30
 	charge_max = 6 MINUTES
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
@@ -113,7 +113,7 @@
 	cast_without_targets = TRUE
 	sound = 'sound/items/dig_shovel.ogg'
 	associated_skill = /datum/skill/magic/holy
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	invocation = "Treefather light the way."
 	invocation_type = "whisper" //can be none, whisper, emote and shout
 	miracle = TRUE
@@ -159,7 +159,7 @@
 	desc = "Borrow power from the Troll, his favored beast."
 	overlay_state = "trollshape"
 	charge_max = 30 MINUTES // cast once every 30 minutes, lasts for 3 minutes
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/dendor)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	invocation = "DENDOR LEND ME YOUR POWER!!"
 	invocation_type = "shout"
 	cooldown_min = 25 MINUTES

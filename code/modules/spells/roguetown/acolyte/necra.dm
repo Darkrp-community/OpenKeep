@@ -40,7 +40,7 @@
 	overlay_state = "speakwithdead"
 	releasedrain = 30
 	charge_max = 30 SECONDS
-	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/necra)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver)
 	max_targets = 0
 	cast_without_targets = TRUE
 	sound = 'sound/magic/churn.ogg'
