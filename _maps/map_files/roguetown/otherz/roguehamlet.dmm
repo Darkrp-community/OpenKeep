@@ -16388,6 +16388,10 @@
 	},
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/town)
+"lZS" = (
+/obj/effect/landmark/start/pilgrim,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors/woods)
 "maO" = (
 /obj/structure/winch{
 	gid = "donjon"
@@ -20453,11 +20457,9 @@
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/town/basement)
 "oVZ" = (
-/mob/living/carbon/human/species/goblin/skilled/ambush/sea,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/under/cavewet{
-	first_time_text = "The Swamp Cave"
-	})
+/obj/effect/landmark/start/pilgrim,
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/outdoors/bog)
 "oWe" = (
 /obj/structure/fluff/railing/wood,
 /turf/open/transparent/openspace,
@@ -32995,9 +32997,9 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/outdoors/exposed/manorgarri)
 "xVv" = (
-/mob/living/carbon/human/species/goblin/skilled/ambush/cave,
-/turf/open/floor/rogue/naturalstone,
-/area/rogue/under/cave)
+/obj/effect/landmark/start/pilgrim,
+/turf/open/floor/rogue/grass,
+/area/rogue/outdoors/woods)
 "xWa" = (
 /obj/structure/fluff/railing/border{
 	icon_state = "border";
@@ -36746,7 +36748,7 @@ hsL
 hsL
 lUb
 uqi
-xVv
+exb
 qZo
 hsL
 unL
@@ -37914,9 +37916,9 @@ hsL
 hsL
 vrc
 uqi
-xVv
+exb
 hsL
-xVv
+exb
 uqi
 hsL
 rzm
@@ -38114,14 +38116,14 @@ uqi
 iMN
 hsL
 gzE
-xVv
+exb
 hnf
 rzm
 nHh
 hsL
 hsL
 uqi
-xVv
+exb
 uqi
 rzm
 hsL
@@ -50409,7 +50411,7 @@ suo
 suo
 suo
 mUT
-oVZ
+lDn
 mUT
 xjH
 riq
@@ -51968,7 +51970,7 @@ riq
 riq
 riq
 riq
-oVZ
+lDn
 riq
 riq
 mUT
@@ -58465,8 +58467,8 @@ lnu
 hTQ
 hTQ
 sph
-erG
-jcR
+lZS
+xVv
 hTQ
 hTQ
 lnu
@@ -82832,8 +82834,8 @@ jGA
 jGA
 sLW
 sfJ
-aTX
-aTX
+oVZ
+oVZ
 sfJ
 sfJ
 sfJ
