@@ -2,13 +2,6 @@
 	always_availible = TRUE
 	skillcraft = /datum/skill/craft/crafting
 
-/datum/crafting_recipe/roguetown/dart
-	name = "dart"
-	result = /obj/item/ammo_casing/caseless/rogue/dart
-	reqs = list(/obj/item/natural/thorn = 1,
-				/obj/item/grown/log/tree/stick = 1)
-	craftdiff = 0
-
 /datum/crafting_recipe/roguetown/blowgun
 	name = "blowgun"
 	result = /obj/item/gun/ballistic/revolver/grenadelauncher/blowgun
@@ -46,24 +39,6 @@
 	craftdiff = 0
 	verbage = "untie"
 	verbage_tp  = "unties"
-
-/datum/crafting_recipe/roguetown/rope
-	name = "rope"
-	result = /obj/item/rope
-	reqs = list(/obj/item/natural/fibers = 3)
-	verbage = "braid"
-	verbage_tp = "braids"
-
-/*
-/datum/crafting_recipe/roguetown/net
-	name = "net"
-	result = /obj/item/net
-	craftdiff = 2
-	reqs = list(/obj/item/rope = 2,
-				/obj/item/natural/stone = 3)
-	verbage = "braid"
-	verbage_tp = "braids"
-*/
 
 /datum/crafting_recipe/roguetown/torch
 	name = "torch"
