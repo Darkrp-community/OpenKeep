@@ -24,7 +24,7 @@
 	///our crafting difficulty
 	var/craftdiff = 1
 	///our skilltype
-	var/datum/skill/skillcraft
+	var/datum/skill/skillcraft = /datum/skill/craft/crafting
 
 	///the amount of time the atom in question spends doing this recipe
 	var/craft_time = 1 SECONDS
@@ -72,9 +72,6 @@
 	var/list/copied_reagent_requirements = reagent_requirements.Copy()
 	var/list/copied_tool_usage = tool_usage.Copy()
 	var/list/usable_contents = list()
-	if(uses_attacking_atom)
-		usable_contents |= attacked_item.type
-		usable_contents[attacked_item.type]++
 
 	for(var/obj/item/I in user.held_items)
 		if(istype(I, /obj/item/natural/bundle))
