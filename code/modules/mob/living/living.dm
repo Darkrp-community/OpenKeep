@@ -641,7 +641,7 @@
 	update_rest_hud_icon()
 	update_mobility()
 
-//Recursive function to find everything a mob is holding. Really shitty proc tbh.
+//Recursive function to find everything a mob is holding. Really shitty proc tbh, you should use get_all_gear for carbons.
 /mob/living/get_contents()
 	var/list/ret = list()
 	ret |= contents						//add our contents
