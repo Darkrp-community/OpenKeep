@@ -172,8 +172,42 @@
 	ComponentInitialize()
 	InitializeAIController()
 
+	if(shine)
+		make_shiny(shine)
+
 	return INITIALIZE_HINT_NORMAL
 
+
+/atom/proc/make_shiny(_shine = SHINE_REFLECTIVE, _relfection_plane = REFLECTIVE_PLANE)
+	if(reflection || reflection_displacement)
+		if(shine != _shine)
+			cut_overlay(reflection)
+			cut_overlay(reflection_displacement)
+		else
+			return
+	var/r_overlay
+	switch(_shine)
+		if(SHINE_MATTE)
+			return
+		if(SHINE_REFLECTIVE)
+			r_overlay = "partialOverlay"
+		if(SHINE_SHINY)
+			r_overlay = "whiteOverlay"
+	reflection = mutable_appearance('icons/turf/overlays.dmi', r_overlay, plane = _relfection_plane)
+	reflection_displacement = mutable_appearance('icons/turf/overlays.dmi', "flip", plane = REFLECTIVE_DISPLACEMENT_PLANE)
+	reflection_displacement.appearance_flags = 0 //Have to do this to make map work. Why? IDK, displacements are special like that
+	var/masking_plane = _relfection_plane == REFLECTIVE_PLANE ? REFLECTIVE_ALL_PLANE : REFLECTIVE_ALL_ABOVE_PLANE
+	total_reflection_mask = mutable_appearance('icons/turf/overlays.dmi', "whiteFull", plane = masking_plane)
+	add_overlay(reflection)
+	add_overlay(reflection_displacement)
+	add_overlay(total_reflection_mask)
+	shine = _shine
+
+/atom/proc/make_unshiny()
+	cut_overlay(reflection)
+	cut_overlay(reflection_displacement)
+	cut_overlay(total_reflection_mask)
+	shine = SHINE_MATTE
 /**
  * Late Intialization, for code that should run after all atoms have run Intialization
  *
@@ -1066,14 +1100,20 @@
 		update_filters()
 	return .
 
+/proc/cmp_filter_data_priority(list/A, list/B)
+	return A["priority"] - B["priority"]
+
 /atom/movable/proc/update_filters()
 	filters = null
-	sortTim(filter_data,associative = TRUE)
-	for(var/f in filter_data)
-		var/list/data = filter_data[f]
+	var/atom/atom_cast = src // filters only work with images or atoms.
+	atom_cast.filters = null
+	filter_data = sortTim(filter_data, GLOBAL_PROC_REF(cmp_filter_data_priority), TRUE)
+	for(var/filter_raw in filter_data)
+		var/list/data = filter_data[filter_raw]
 		var/list/arguments = data.Copy()
 		arguments -= "priority"
-		filters += filter(arglist(arguments))
+		atom_cast.filters += filter(arglist(arguments))
+	UNSETEMPTY(filter_data)
 
 /atom/movable/proc/get_filter(name)
 	if(filter_data && filter_data[name])
