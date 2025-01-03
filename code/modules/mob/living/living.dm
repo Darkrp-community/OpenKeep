@@ -42,6 +42,9 @@
 	add_overlay(reflective_icon)
 	update_vision_cone()
 
+/mob/living/carbon/human/dummy/update_reflection()
+	return
+
 /mob/living/proc/update_reflection()
 	if(!reflective_icon)
 		create_reflection()

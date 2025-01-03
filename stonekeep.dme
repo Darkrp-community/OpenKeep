@@ -680,6 +680,7 @@
 #include "code\game\atoms.dm"
 #include "code\game\atoms_movable.dm"
 #include "code\game\communications.dm"
+#include "code\game\reflections.dm"
 #include "code\game\say.dm"
 #include "code\game\sound.dm"
 #include "code\game\world.dm"
