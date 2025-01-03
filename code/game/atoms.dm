@@ -263,6 +263,8 @@
 	QDEL_NULL(light)
 	QDEL_NULL(ai_controller)
 
+	if(basic_reflection)
+		QDEL_NULL(basic_reflection)
 	return ..()
 
 /atom/proc/handle_ricochet(obj/projectile/P)
