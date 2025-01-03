@@ -67,11 +67,11 @@
 #endif
 
 //Update this whenever you need to take advantage of more recent byond features
-#define MIN_COMPILER_MINOR_VERSION 1647
+#define MIN_COMPILER_MINOR_VERSION 1643
 #if DM_BUILD < MIN_COMPILER_MINOR_VERSION
 //Don't forget to update this part
 #error Your version of BYOND is too out-of-date to compile this project. Go to https://secure.byond.com/download and update.
-#error You need version 515.1647 or higher
+#error You need version 515.1643 or higher
 #endif
 
 //Additional code for the above flags.
