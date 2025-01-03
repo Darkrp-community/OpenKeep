@@ -1,3 +1,14 @@
+/obj/reflection
+	vis_flags = VIS_INHERIT_ICON|VIS_INHERIT_ICON_STATE|VIS_INHERIT_DIR|VIS_INHERIT_LAYER|VIS_UNDERLAY
+	appearance_flags = PIXEL_SCALE
+	plane = REFLECTION_PLANE
+	mouse_opacity = 0
+	pixel_y = -44
+
+/obj/reflection/New(loc,mob/owner)
+	owner.vis_contents += src
+
+
 /**
  * The base type for nearly all physical objects in SS13
 
@@ -88,6 +99,12 @@
 
 	///AI controller that controls this atom. type on init, then turned into an instance during runtime
 	var/datum/ai_controller/ai_controller
+	///our reflection child
+	var/tmp/obj/reflection/basic_reflection
+	var/has_reflection = FALSE
+
+/obj/item
+	has_reflection = TRUE
 
 /**
  * Called when an atom is created in byond (built in engine proc)
@@ -113,6 +130,9 @@
 		if(SSatoms.InitAtom(src, args))
 			//we were deleted
 			return
+
+	if(has_reflection)
+		basic_reflection = new/obj/reflection(null,src)
 
 /**
  * The primary method that objects are setup in SS13 with
@@ -178,7 +198,7 @@
 	return INITIALIZE_HINT_NORMAL
 
 
-/atom/proc/make_shiny(_shine = SHINE_REFLECTIVE, _relfection_plane = REFLECTIVE_PLANE)
+/atom/proc/make_shiny(_shine = SHINE_REFLECTIVE, _reflection_plane = REFLECTIVE_PLANE)
 	if(reflection || reflection_displacement)
 		if(shine != _shine)
 			cut_overlay(reflection)
@@ -193,11 +213,14 @@
 			r_overlay = "partialOverlay"
 		if(SHINE_SHINY)
 			r_overlay = "whiteOverlay"
-	reflection = mutable_appearance('icons/turf/overlays.dmi', r_overlay, plane = _relfection_plane)
+	reflection = mutable_appearance('icons/turf/overlays.dmi', r_overlay, plane = _reflection_plane)
 	reflection_displacement = mutable_appearance('icons/turf/overlays.dmi', "flip", plane = REFLECTIVE_DISPLACEMENT_PLANE)
 	reflection_displacement.appearance_flags = 0 //Have to do this to make map work. Why? IDK, displacements are special like that
-	var/masking_plane = _relfection_plane == REFLECTIVE_PLANE ? REFLECTIVE_ALL_PLANE : REFLECTIVE_ALL_ABOVE_PLANE
+	var/masking_plane = _reflection_plane == REFLECTIVE_PLANE ? REFLECTIVE_ALL_PLANE : REFLECTIVE_ALL_ABOVE_PLANE
 	total_reflection_mask = mutable_appearance('icons/turf/overlays.dmi', "whiteFull", plane = masking_plane)
+	reflection.pixel_y -= 32
+	total_reflection_mask.pixel_y -= 32
+	reflection_displacement.pixel_y -= 32
 	add_overlay(reflection)
 	add_overlay(reflection_displacement)
 	add_overlay(total_reflection_mask)

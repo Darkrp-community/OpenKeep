@@ -50,6 +50,7 @@
 	if(render_target)
 		reflective_icon.render_source = render_target
 	reflective_icon.plane = MANUAL_REFLECTIVE_PLANE
+	reflective_icon.pixel_y -= 32
 	//transform stuff
 	var/matrix/n_transform = reflective_icon.transform
 	n_transform.Scale(1, -1)

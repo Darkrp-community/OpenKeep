@@ -66,7 +66,7 @@
 	plane = GAME_PLANE
 	appearance_flags = PLANE_MASTER //should use client color
 	blend_mode = BLEND_OVERLAY
-	render_target = GAME_PLANE_RENDER_TARGET
+	//render_target = GAME_PLANE_RENDER_TARGET
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
 	filters = list()
@@ -262,14 +262,13 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	render_target = SUNLIGHTING_RENDER_TARGET
 
-
 /atom/movable/screen/plane_master/reflection
 	name = "reflection plane master"
 	plane = REFLECTION_PLANE
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-	render_source = GAME_PLANE_RENDER_TARGET
+	//render_source = GAME_PLANE_RENDER_TARGET
 	screen_loc = "CENTER, CENTER-1:-16"
-	color = "#aaaaaa"
+	color = "#c4c4c4"
 	///What plane we're masked by
 	var/masking_plane = REFLECTIVE_PLANE_RENDER_TARGET
 	var/masking_all_plane = REFLECTIVE_ALL_PLANE_RENDER_TARGET
@@ -284,7 +283,7 @@
 /atom/movable/screen/plane_master/reflection/Initialize(mapload)
 	. = ..()
 	var/matrix/n_transform = transform
-	n_transform.Translate(0, -32)
+	//n_transform.Translate(0, -32)
 	transform = n_transform
 	add_filter("reflections masking other", 1, alpha_mask_filter(render_source = DEFILTER_MANUAL_REFLECTIVE_PLANE_MASK_RENDER_TARGET, flags = MASK_INVERSE))
 	add_filter("displacement", 1.1, displacement_map_filter(render_source = REFLECTIVE_DISPLACEMENT_PLANE_RENDER_TARGET, size = 42))
