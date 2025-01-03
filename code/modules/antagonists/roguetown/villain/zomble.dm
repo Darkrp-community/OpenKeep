@@ -147,8 +147,8 @@
 			ADD_TRAIT(zombie, trait, "[type]")
 		to_chat(zombie, "<span class='green'>I no longer crave for flesh... <i>But I still feel ill.</i></span>")
 	else
-		if(!was_i_undead && (zombie.mob_biotypes & MOB_UNDEAD))
-			zombie.mob_biotypes &= ~MOB_UNDEAD //this removes MOB_ORGANIC flag for some reason
+		if(!was_i_undead)
+			zombie.mob_biotypes &= ~MOB_UNDEAD
 		zombie.faction -= "undead"
 		zombie.faction += "station"
 		zombie.faction += "neutral"
