@@ -264,6 +264,7 @@
 	QDEL_NULL(ai_controller)
 
 	if(basic_reflection)
+		vis_contents -= basic_reflection
 		QDEL_NULL(basic_reflection)
 	return ..()
 
