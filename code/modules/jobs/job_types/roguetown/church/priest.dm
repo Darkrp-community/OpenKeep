@@ -24,12 +24,17 @@
 	give_bank_account = 115
 	min_pq = 4
 	selection_color = "#c2a45d"
+	spells = list(
+		/obj/effect/proc_holder/spell/self/convertrole/templar,
+		/obj/effect/proc_holder/spell/self/convertrole/monk
+	)
 
 /datum/outfit/job/roguetown/priest/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.virginity = TRUE
 	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
 	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
+	H.verbs |= /mob/living/carbon/human/proc/churchcurse
 	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
 	head = /obj/item/clothing/head/roguetown/priestmask
@@ -71,11 +76,6 @@
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells_priest(H)
 
-	H.verbs |= /mob/living/carbon/human/proc/coronate_lord
-	H.verbs |= /mob/living/carbon/human/proc/churchexcommunicate
-	H.verbs |= /mob/living/carbon/human/proc/churchcurse
-	H.verbs |= /mob/living/carbon/human/proc/churchannouncement
-
 	H.update_icons()
 
 /datum/job/roguetown/expriest //just used to change the priest title
@@ -87,7 +87,6 @@
 	total_positions = 0
 	spawn_positions = 0
 	display_order = JDO_PRIEST
-	give_bank_account = TRUE
 
 /mob/living/carbon/human/proc/coronate_lord()
 	set name = "Coronate"
@@ -113,8 +112,12 @@
 			//would be better to change their title directly, but that's not possible since the title comes from the job datum
 			if(HL.job == "Monarch")
 				HL.job = "Ex-Monarch"
+				var/datum/job/J = SSjob.GetJobType(/datum/job/roguetown/lord)
+				J?.remove_spells(HL)
 			if(HL.job == "Consort")
 				HL.job = "Ex-Consort"
+				var/datum/job/J = SSjob.GetJobType(/datum/job/roguetown/consort)
+				J?.remove_spells(HL)
 		switch(HU.gender)
 			if("male")
 				HU.mind.assigned_role = "Monarch"
@@ -122,6 +125,8 @@
 			if("female")
 				HU.mind.assigned_role = "Monarch"
 				HU.job = "Monarch"
+		var/datum/job/J = SSjob.GetJobType(/datum/job/roguetown/lord)
+		J?.add_spells(HU)
 		SSticker.rulermob = HU
 		GLOB.badomens -= OMEN_NOLORD
 		say("By the authority of the gods, I pronounce you Ruler of all Vanderlin!")

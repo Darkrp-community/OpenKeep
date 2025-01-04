@@ -808,6 +808,7 @@
 		return
 	if(M.mind.assigned_role == "Priest")
 		return
+	var/datum/job/J = SSjob.GetJobType(/datum/job/roguetown/priest)
 	for(var/mob/living/carbon/human/HL in GLOB.human_list)
 		if(HL.mind)
 			var/found = FALSE
@@ -818,13 +819,15 @@
 				HL.job = "Ex-Priest"
 				found = TRUE
 			if(found)
-				GLOB.excommunicated_players |= HL
+				GLOB.excommunicated_players |= HL.real_name
 				HL.cleric?.excommunicate()
 				HL.verbs -= /mob/living/carbon/human/proc/coronate_lord
 				HL.verbs -= /mob/living/carbon/human/proc/churchexcommunicate
 				HL.verbs -= /mob/living/carbon/human/proc/churchcurse
 				HL.verbs -= /mob/living/carbon/human/proc/churchannouncement
+				J?.remove_spells(HL)
 
+	J?.add_spells(M)
 	M.mind.assigned_role = "Priest"
 	M.job = "Priest"
 	M.set_patron(/datum/patron/divine/astrata)

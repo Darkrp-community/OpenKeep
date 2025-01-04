@@ -186,7 +186,6 @@
 	total_positions = 0
 	spawn_positions = 0
 	display_order = JDO_CONSORT
-	give_bank_account = TRUE
 
 /datum/outfit/job/roguetown/consort/courtesan/spy/pre_equip(mob/living/carbon/human/H)
 	. = ..()
