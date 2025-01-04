@@ -896,10 +896,13 @@
 	icon = 'icons/roguetown/weapons/32.dmi'
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /obj/item/rogueweapon/sword/uchigatana
@@ -945,6 +948,14 @@
 	pixel_y = -16
 	pixel_x = -18
 
+/obj/item/rogueweapon/sword/long/tachi/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse tachi"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+
 /obj/item/rogueweapon/sword/long/greatsword/odachi
 	name = "odachi"
 	desc = "Greatsword traditionally wielded in open battlefields just as it is a ceremonial blade. Though impractical for duels, it breaks spearlines and shields on a whim, requiring momento each slash."
@@ -964,7 +975,7 @@
 	icon_state = "dao"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
-/obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
+/obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao //this sprite disappeared by reasons unknown
 	name = "Yuntoudao"
 	desc = "A expensive Abyssariad saber with wide middle and tapered ends in a 'willow-leaf' shape, it concentrates the force of a strike in an axe-like blow, while retaining the swiftness of a saber."
 	icon_state = "yuntoudao"

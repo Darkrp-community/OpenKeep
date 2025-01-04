@@ -766,7 +766,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small,/obj/item/ingot/steel)
-	created_item = /obj/item/rogueweapon/halberd/bisento
+	created_item = /obj/item/rogueweapon/polearm/halberd/bisento
 	craftdiff = 5
 
 /datum/anvil_recipe/weapons/onobattle

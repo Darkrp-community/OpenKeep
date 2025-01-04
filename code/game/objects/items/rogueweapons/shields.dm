@@ -295,10 +295,13 @@
 
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /obj/item/rogueweapon/shield/rattan //The description about the firearm projectiles protection is actually real for this shield, pretty neat thing to include here. It won't change gamewise tho
@@ -337,6 +340,14 @@
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
 
+/obj/item/rogueweapon/shield/abyssaltower/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse abyssal towershield"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+
 /obj/item/rogueweapon/shield/tower/abyssal
 	name = "spiked steel aegis"
 	desc = "Light steel spikes are visible on this shield to protect the user against the chaotic close-quarter skirmishes where grappling and flanking is common, but can be caught on enemy armor and weapons."
@@ -358,3 +369,11 @@
 	blade_dulling = DULLING_BASH
 	sellprice = 30
 	smeltresult = /obj/item/ingot/steel // Made with steel, let us repurpose it
+
+/obj/item/rogueweapon/shield/tower/abyssal/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse spiked steel aegis"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)

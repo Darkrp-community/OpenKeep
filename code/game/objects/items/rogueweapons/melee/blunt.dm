@@ -396,10 +396,13 @@
 	sellprice = 35
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /obj/item/rogueweapon/mace/goden/otsuchi
@@ -429,7 +432,6 @@
 	gripsprite = TRUE
 
 /obj/item/rogueweapon/mace/goden/kanabo
-
 	name = "kanabo"
 	desc = "A heavy two handed club, reinforced with an iron sleeve. Most commonly seen in the hands of Onis and Yamabushis."
 	icon_state = "kanabo"
@@ -444,6 +446,14 @@
 	gripsprite = TRUE
 	slowdown = 1
 
+/obj/item/rogueweapon/mace/goden/kanabo/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse kanabo"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+
 /obj/item/rogueweapon/mace/goden/steel/tetsubo
 	name = "tetsubo"
 	desc = "A heavier variant of the kanabo, fitted with a steel sleeve bearing menacing spikes and favored by Ogrun Warlords. Requires immense strength to use, but hits like a raging bull."
@@ -454,11 +464,27 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 
+/obj/item/rogueweapon/mace/goden/steel/tetsubo/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse tetsubo"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+
 /obj/item/rogueweapon/mace/ararebo
 	name = "ararebo"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "ararebo"
 	desc = "A large, iron-capped club used by Abyssariads as a armor-breaking tool. Most suitable to breach Grezenholftean cuirass while still holding a shield in the off-hand."
+
+/obj/item/rogueweapon/mace/ararebo/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse ararebo"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 /obj/item/rogueweapon/mace/ararebo/obsidian
 	name = "obsidian club"
@@ -476,6 +502,14 @@
 	name = "steel ararebo"
 	icon_state = "ararebos"
 	desc = "A large, steel-capped club used by Abyssariads as a armor-breaking tool. Most suitable to breach Grezenholftean cuirass while still holding a shield in the off-hand."
+
+/obj/item/rogueweapon/mace/steel/ararebo/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse steel ararebo"
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 /obj/item/rogueweapon/mace/cudgel/rungu
 	force = 15

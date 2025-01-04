@@ -7,8 +7,7 @@
 #define DEBUG
 // END_PREFERENCES
 // BEGIN_INCLUDE
-#include "_maps\roguetest.dm"
-#include "_maps\map_files\roguetest\roguetest.dmm"
+#include "_maps\roguetown.dm"
 #include "_maps\templates\bog_shack_small.dm"
 #include "_maps\templates\sk_dungeons.dm"
 #include "code\__byond_version_compat.dm"
@@ -2016,6 +2015,7 @@
 #include "code\modules\mob\living\carbon\human\npc\bum.dm"
 #include "code\modules\mob\living\carbon\human\npc\goblin.dm"
 #include "code\modules\mob\living\carbon\human\npc\orc.dm"
+#include "code\modules\mob\living\carbon\human\npc\raider.dm"
 #include "code\modules\mob\living\carbon\human\npc\skeleton.dm"
 #include "code\modules\mob\living\carbon\human\npc\stonekeep_carbons.dm"
 #include "code\modules\mob\living\carbon\human\npc\zizombies.dm"
@@ -2206,8 +2206,8 @@
 #include "code\modules\mob\living\simple_animal\rogue\farm\cow.dm"
 #include "code\modules\mob\living\simple_animal\rogue\farm\goat.dm"
 #include "code\modules\mob\living\simple_animal\rogue\farm\trufflepig.dm"
-#include "code\modules\mob\living\simple_animal\rogue\game\saiga.dm"
 #include "code\modules\mob\living\simple_animal\rogue\game\horse.dm"
+#include "code\modules\mob\living\simple_animal\rogue\game\saiga.dm"
 #include "code\modules\mob\living\simple_animal\slime\death.dm"
 #include "code\modules\mob\living\simple_animal\slime\emote.dm"
 #include "code\modules\mob\living\simple_animal\slime\life.dm"

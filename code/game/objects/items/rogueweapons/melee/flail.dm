@@ -172,10 +172,13 @@
 	icon = 'icons/roguetown/weapons/32.dmi'
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /datum/intent/flail/strike/ranged/smash
@@ -271,14 +274,13 @@
 	icon_state = "nunchaku"
 
 /obj/item/rogueweapon/flail/kusarigama
-	force = 25
+	force = DAMAGE_NORMAL_FLAIL
 	possible_item_intents = list(/datum/intent/flail/strike/ranged, /datum/intent/flail/strike/ranged/smash, /datum/intent/flail/cut, /datum/intent/flail/cut/chop)
 	name = "kusarigama"
 	desc = "A handle with a sickle-like blade, featuring a chain that ends in a spiked ball. Versatile weapon adapted to defeat sword-wielding foes."
 	icon_state = "kusarigama"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	sharpness = IS_SHARP
-	//dropshrink = 0.75
 	wlength = WLENGTH_NORMAL
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_HIP
@@ -287,11 +289,6 @@
 	smeltresult = /obj/item/ingot/iron
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = BLUNTWOOSH_MED
-	max_blade_int = 150
-	max_integrity = 240
-	throwforce = 5
-	wdefense = 2
-	minstr = 4
 
 /obj/item/rogueweapon/flail/kusarigama/peasant
 	force = 20

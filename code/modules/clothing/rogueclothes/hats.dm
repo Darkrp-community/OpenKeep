@@ -1605,10 +1605,13 @@
 */
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/head/roguetown/takuhatsugasa
@@ -1617,6 +1620,12 @@
 	desc = "A type of hat worn by monks during their begging rounds - or when punching demons into submission."
 	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
+	flags_inv = HIDEEARS
+
+	armor = ARMOR_PADDED
+	body_parts_covered = HEAD|HAIR|EARS
+	prevent_crits =  MINOR_CRITICALS
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/head/roguetown/tengai
 	name = "tengai"
@@ -1629,6 +1638,12 @@
 	worn_y_dimension = 64
 	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
+	flags_inv = HIDEEARS
+
+	armor = ARMOR_PADDED
+	body_parts_covered = HEAD|HAIR|EARS
+	prevent_crits =  MINOR_CRITICALS
+	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/head/roguetown/tengai/yamabushi
 	name = "yamabushi tengai"
@@ -1803,6 +1818,17 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/cursed/Initialize()
+	. = ..()
+	name = "soulbinded tosei kabuto"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/cursed/obj_break(damage_flag)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+
 /obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto
 	name = "masked tosei kabuto"
 	desc = "Made from multiple steel plates riveted together, arranged in a radial pattern. \
@@ -1814,6 +1840,17 @@
 	bloody_icon_state = "helmetblood_big"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
+
+/obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto/cursed/Initialize()
+	. = ..()
+	name = "soulbinded masked tosei kabuto"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto/cursed/obj_break(damage_flag)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 /obj/item/clothing/head/roguetown/helmet/visored/zunari //knight helmet.
 	name = "zunari kabuto"
@@ -1830,6 +1867,17 @@
 
 	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD_EXCEPT_MOUTH
+
+/obj/item/clothing/head/roguetown/helmet/visored/zunari/cursed/Initialize()
+	. = ..()
+	name = "soulbinded zunari kabuto"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/head/roguetown/helmet/visored/zunari/cursed/obj_break(damage_flag)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 
 /obj/item/clothing/head/roguetown/heartfelt

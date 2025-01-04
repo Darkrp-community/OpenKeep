@@ -880,10 +880,13 @@
 	smeltresult = /obj/item/ingot/steel
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/muneate //exists only for the drip.
@@ -927,6 +930,17 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "nanbandofull"
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/nanbando/cursed/Initialize()
+	. = ..()
+	name = "soulbinded nanban-do-gusoku"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/suit/roguetown/armor/plate/full/nanbando/cursed/obj_break(damage_flag)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
 	name = "lamellae-tatami do"
@@ -987,6 +1001,17 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "halfoyoroi"
 
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/cursed/Initialize()
+	. = ..()
+	name = "soulbinded o-yoroi gusoku"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/cursed/obj_break(damage_flag)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
+
 /obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/royal/Initialize()
 	. = ..()
 	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/coatplates (1).ogg',\
@@ -1028,6 +1053,17 @@
 	desc = "Heavy-duty, complete set of lamellar armor esteemed by high-ranking zamurais on horseback or on land."
 	icon_state = "oyoroi"
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/oyoroigusoku/cursed/Initialize()
+	. = ..()
+	name = "soulbinded o-yoroi gusoku"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/oyoroigusoku/cursed/obj_break(damage_flag)
+	. = ..()
+	if(QDELETED(src))
+		return
+	qdel(src)
 
 /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
 	name = "san mai-do"
@@ -1174,7 +1210,7 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	var/picked = FALSE
 
-/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/proc/get_player_input()
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/zamurai/proc/get_player_input()
 	if(!ishuman(loc))
 		return
 
@@ -1202,12 +1238,12 @@
 			V.update_icon()
 	L.regenerate_icons()
 
-/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/Initialize()
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/zamurai/Initialize()
 	. = ..()
 	if(!picked)
 		INVOKE_ASYNC(src, PROC_REF(get_player_input))
 
-/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/update_icon()
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/zamurai/update_icon()
 	cut_overlays()
 	if(get_detail_tag())
 		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))

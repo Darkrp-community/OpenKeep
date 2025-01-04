@@ -60,7 +60,7 @@
 		switch(TMNT) //I'm fucking autistic
 			if("Donatello")
 				mask = /obj/item/clothing/mask/rogue/kaizoku/eyeband/donatello
-				backr = /obj/item/rogueweapon/woodstaff/bostaff
+				backr = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/bostaff
 				H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE) //worst weapon, good skill.
 			if("Michelangelo")
 				mask = /obj/item/clothing/mask/rogue/kaizoku/eyeband/michelangelo

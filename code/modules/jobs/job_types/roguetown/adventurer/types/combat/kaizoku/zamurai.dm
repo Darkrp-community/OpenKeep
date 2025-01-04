@@ -14,7 +14,7 @@
 	"Ogrun")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai
 	maximum_possible_slots = 1
-	pickprob = 100
+	pickprob = 50
 	tutorial = "A lower-ranking zamurai serving the warrior caste that became adrift during a expedition, \
 	keeping their trusty steed. They are expected to uphold their oficial duties and following the strict \
 	martial code of the Abyssal Tide, at least on paper."
@@ -23,7 +23,7 @@
 
 /datum/advclass/combat/abyssariad/zamurai/equipme(mob/living/carbon/human/H)
 	if(H.gender == FEMALE)
-		horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/tame/saddled
+		horse = /mob/living/simple_animal/hostile/retaliate/rogue/saiga/horse/tame/saddled
 	return ..()
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai/pre_equip(mob/living/carbon/human/H)
@@ -31,7 +31,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/suneate
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal //kote already protects the hands.
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
-	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare //weaker gambeson. Has way more DRIP. (Doesn't matter for balance, shutup)
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/zamurai //weaker gambeson. Has way more DRIP. (Doesn't matter for balance, shutup)
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/abyssariad //Paying off for 4 swordskill instead of 5.
 	head = /obj/item/clothing/head/roguetown/helmet/visored/zunari //fucking-shit-up knight helmet tier. Sacrificed some to keep that one.
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/kote //Cooler Bracer that protects the hands.

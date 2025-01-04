@@ -38,7 +38,7 @@
 	cloak = /obj/item/clothing/cloak/odoshisohei
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/random
 	gloves = /obj/item/clothing/gloves/roguetown/chain/kikko
-	backl = /obj/item/rogueweapon/halberd/bisento
+	backl = /obj/item/rogueweapon/polearm/halberd/bisento
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)

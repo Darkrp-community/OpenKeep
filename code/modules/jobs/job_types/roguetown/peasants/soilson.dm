@@ -74,12 +74,27 @@
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
 		beltl = /obj/item/rogueweapon/knife/villager
-	if(H.dna?.species)
-		if(H.dna.species?.id == "abyssariad")
-			var/roll = rand(1, 100)
-			if(roll <= 33)
+
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
+		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+		gloves = /obj/item/clothing/gloves/roguetown/fingerless/yugake
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random
+		beltl = /obj/item/rogueweapon/sickle/kama //proper weapontool. Unique crafting for a handmade flail.kama
+		shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
+		if(H.gender == FEMALE)
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono
+		else
+			shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
+			pants = /obj/item/clothing/under/roguetown/trou/tobi
+		var/helmettype = pickweight(list("Gasa" = 1, "Roningasa" = 1, "Sandogasa" = 1, "Takuhatsugasa" = 1, "Torioigasa" = 1))
+		switch(helmettype)
+			if("Gasa")
 				head = /obj/item/clothing/head/roguetown/tengai/gasa
-			else if(roll <= 66)
-				head = /obj/item/clothing/head/roguetown/tengai/torioigasa
-			else
+			if("Roningasa")
+				head = /obj/item/clothing/head/roguetown/tengai/roningasa
+			if("Sandogasa")
 				head = /obj/item/clothing/head/roguetown/tengai/sandogasa
+			if("Takuhatsugasa")
+				head = /obj/item/clothing/head/roguetown/takuhatsugasa
+			if("Torioigasa")
+				head =/obj/item/clothing/head/roguetown/tengai/torioigasa

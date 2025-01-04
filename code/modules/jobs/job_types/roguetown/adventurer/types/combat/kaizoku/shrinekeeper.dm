@@ -33,7 +33,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
-	backr = /obj/item/rogueweapon/woodstaff/bostaff
+	backr = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/bostaff
 	shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
 
 	if(H.mind)

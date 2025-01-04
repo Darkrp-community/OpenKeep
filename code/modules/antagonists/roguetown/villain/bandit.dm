@@ -81,7 +81,7 @@
 	..()
 	H.become_blind("TRAIT_GENERIC")
 	if(H.dna?.species)
-		if(H.dna.species?.id == "abyssariad") //Average sword, barely any armor - all this to justify a chance in getting 4 exp in Swords for Akira Kurosawa experience for duels. Still weaker than Guardians, since they are not champions.
+		if(HAS_TRAIT(H, TRAIT_KAIZOKU)) //Average sword, barely any armor - all this to justify a chance in getting 4 exp in Swords for Akira Kurosawa experience for duels. Still weaker than Guardians, since they are not champions.
 			H.set_blindness(0)
 			to_chat(H, span_warning("You are a person of the waves, the one who drifters as the ocean. Now with your link to Abyssor broken, you've bonded to Matthios to avoid the dai-corruption."))
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE) //for the sake of duelism trope, there is a chance to get 4xp sword.

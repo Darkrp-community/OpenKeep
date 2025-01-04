@@ -360,19 +360,22 @@
 /datum/crafting_recipe/roguetown/sewing/takuhatsugasa
 	name = "takuhatsugasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/takuhatsugasa)
-	reqs = list(/obj/item/natural/fibers = 3)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/torioigasa
 	name = "torioigasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai/torioigasa)
-	reqs = list(/obj/item/natural/fibers = 4)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 2)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/gasa
 	name = "gasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai/gasa)
-	reqs = list(/obj/item/natural/fibers = 3)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 1)
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/lillys
@@ -411,14 +414,16 @@
 /datum/crafting_recipe/roguetown/sewing/tengai
 	name = "tengai hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai)
-	reqs = list(/obj/item/natural/fibers = 5)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 3)
 	craftdiff = 1
 	req_kaizoku = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/roningasa
 	name = "roningasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai/roningasa)
-	reqs = list(/obj/item/natural/fibers = 5)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 	req_kaizoku = TRUE
 
@@ -433,7 +438,8 @@
 /datum/crafting_recipe/roguetown/sewing/sandogasa
 	name = "sandogasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai/sandogasa)
-	reqs = list(/obj/item/natural/fibers = 5)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/natural/fibers = 3)
 	craftdiff = 1
 	req_kaizoku = TRUE
 

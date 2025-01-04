@@ -63,12 +63,16 @@
 		if(H.dna)
 			H.dna.species.random_underwear(H.gender)
 			if(H.dna.species)
+				if(H.dna.species.id == "human")
+					if(H.skin_tone == SKIN_COLOR_HEARTFELT)
+						ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+						H.grant_language(/datum/language/abyssal)
 				if(H.dna.species.id == "elf")
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
 				if(H.dna.species.name == "Changeling")
-					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) //Temporary change until their Skull-bending "wag system" comes about.
+					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) // When their Skull-bending "wag system" comes about, it will be their debuff to counter this.
 				if(H.dna.species.name == "Undine")
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)

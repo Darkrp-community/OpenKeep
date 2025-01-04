@@ -1083,10 +1083,13 @@
 	..()
 
 ///////////////////////////////////////////////////////////////////
-// Part of Kaizoku project. Usage ONLY for Stonekeep/Warmonger,  //
-// If the usage is desired, ask monochrome9090 for permission.   //
-// Respect the artists's will, COMMISSION them instead.          //
-// This is solely for SPRITES. The code is free for the taking.	 //
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
 ///////////////////////////////////////////////////////////////////
 
 /obj/item/clothing/cloak/raincloak/mino
@@ -1338,6 +1341,13 @@
 	detail_tag = "_spl"
 	detail_color = CLOTHING_PLUM_PURPLE
 
+/obj/item/clothing/cloak/jinbaori/raider
+	name = "raider jinbaori"
+	desc = "A jinbaori used by the traditional abyssanctum ashigaru retainers. Relentless as the ocean who brew them."
+	color = CLOTHING_DARK_INK
+	detail_tag = "_spl"
+	detail_color = CLOTHING_ROYAL_PURPLE
+
 /obj/item/clothing/cloak/jinbaori/guard/attack_right(mob/user)
 	if(picked)
 		return
@@ -1436,6 +1446,13 @@
 
 /obj/item/clothing/cloak/haramaki/odoshi/toweryakko/attack_right(mob/user)
 	return
+
+/obj/item/clothing/cloak/haramaki/odoshi/raider
+	name = "raider odoshi"
+	desc = "A odoshi used by the traditional abyssanctum zamurai retainers. Relentless as the ocean who brew them."
+	color = CLOTHING_DARK_INK
+	detail_tag = "_spl"
+	detail_color = CLOTHING_ROYAL_PURPLE
 
 /obj/item/clothing/cloak/raincloak/guardiancloak/dragonslayer
 	name = "dragonslayer guardian cloak"

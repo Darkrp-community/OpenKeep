@@ -185,3 +185,4 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"

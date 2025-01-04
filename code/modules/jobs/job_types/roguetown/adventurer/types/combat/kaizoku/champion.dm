@@ -74,7 +74,7 @@
 			H.change_stat("intelligence", 1)
 			H.change_stat("speed", -2)
 
-		backr = /obj/item/rogueweapon/halberd/bisento
+		backr = /obj/item/rogueweapon/polearm/halberd/bisento
 		pants = /obj/item/clothing/under/roguetown/trou/leather/fur
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal

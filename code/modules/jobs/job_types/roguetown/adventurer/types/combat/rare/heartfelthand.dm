@@ -52,4 +52,6 @@
 		H.change_stat("intelligence", 3)
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+	if(!HAS_TRAIT(H, TRAIT_KAIZOKU))
+		ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+		to_chat(H, "<span class='info'I am an Islander, and I respectively have the culture of one.</span>")

@@ -33,7 +33,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 	backr = /obj/item/storage/backpack/rogue/satchel
-	if(H.dna?.species && H.dna.species?.id == "abyssariad")
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
 		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 		beltr = /obj/item/rogueweapon/sword/sabre/piandao
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach

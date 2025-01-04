@@ -29,7 +29,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	backr = /obj/item/storage/backpack/rogue/satchel
 	beltl = /obj/item/reagent_containers/glass/bottle/rogue/manapot
-	backl = /obj/item/rogueweapon/woodstaff/bostaff
+	backl = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/bostaff
 	armor = /obj/item/clothing/suit/roguetown/shirt/kaizoku/robe
 	head = /obj/item/clothing/head/roguetown/wizhat/onmyoji/eboshi
 	pants = /obj/item/clothing/under/roguetown/trou/tobi/dark

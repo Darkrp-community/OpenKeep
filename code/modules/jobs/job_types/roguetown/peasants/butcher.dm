@@ -72,7 +72,7 @@
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
 
-	if(H.dna.species?.id == "abyssariad")
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
 		to_chat(H, "<span class='warning'>Despite what some people believe, my role on society is respected, as my abyssal honor is not put in test in a daily basis.")
 		if(H.gender == MALE)
 			pants = /obj/item/clothing/under/roguetown/trou/tobi/random
