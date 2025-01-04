@@ -107,7 +107,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	total_positions = 0
 	spawn_positions = 0
 	display_order = JDO_LORD
-	give_bank_account = TRUE
 
 /proc/give_lord_surname(mob/living/carbon/human/family_guy, preserve_original = FALSE)
 	if(!GLOB.lordsurname)
