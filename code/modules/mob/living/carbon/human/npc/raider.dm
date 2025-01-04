@@ -27,7 +27,8 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 		wander = TRUE
 		if(target != newtarg)
 			say(pick(GLOB.ashigaru_aggro))
-			linepoint(target)
+			if(prob(20))
+				emote("rage")
 
 /mob/living/carbon/human/species/abyssariad/raider/ambush/should_target(mob/living/L)
 	. = ..() // They kill fallen enemies. Very honorable.
@@ -159,7 +160,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 	if(prob(3))
 		say(pick(GLOB.ashigaru_quotes))
 	if(prob(3))
-		emote(pick("laugh", "yawn", "mumble", "blink_r"))
+		emote(pick("laugh", "throatsing"))
 
 /datum/outfit/job/roguetown/antag/raider/zamurai/pre_equip(mob/living/carbon/human/H)
 	..()

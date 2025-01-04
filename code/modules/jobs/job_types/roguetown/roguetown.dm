@@ -71,8 +71,12 @@
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+				if(H.dna.species.id == "abyssariad")
+					H.verbs |= /mob/proc/throatsing
 				if(H.dna.species.name == "Changeling")
 					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) // When their Skull-bending "wag system" comes about, it will be their debuff to counter this.
+				if(H.dna.species.name == "Denmorian")
+					H.verbs |= /mob/proc/birdcall
 				if(H.dna.species.name == "Undine")
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
@@ -82,6 +86,7 @@
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+					H.verbs |= /mob/proc/croak
 //				if(H.dna.species.id == "Abyssariad"||H.dna.species.name == "Undine") // Not finished yet because I can't test it now.
 //					if(H.patron == /datum/patron/divine/abyssor)
 //						H.set_patron(/datum/patron/goodabyssanctum/abyssor) //so they spawn with their unique powers.

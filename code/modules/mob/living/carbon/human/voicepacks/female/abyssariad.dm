@@ -58,7 +58,8 @@
 				used = list('sound/vo/female/abyssariad/moanheavy1.ogg','sound/vo/female/abyssariad/moanheavy2.ogg','sound/vo/female/abyssariad/moanheavy3.ogg','sound/vo/female/abyssariad/moanheavy4.ogg','sound/vo/female/abyssariad/moanheavy5.ogg','sound/vo/female/abyssariad/moanheavy6.ogg','sound/vo/female/abyssariad/moanheavy7.ogg','sound/vo/female/abyssariad/moanheavy8.ogg','sound/vo/female/abyssariad/moanheavy9.ogg','sound/vo/female/abyssariad/moanheavy10.ogg','sound/vo/female/abyssariad/moanheavy11.ogg','sound/vo/female/abyssariad/moanheavy12.ogg','sound/vo/female/abyssariad/moanheavy13.ogg','sound/vo/female/abyssariad/moanheavy14.ogg','sound/vo/female/abyssariad/moanheavy15.ogg','sound/vo/female/abyssariad/moanheavy16.ogg','sound/vo/female/abyssariad/moanheavy17.ogg','sound/vo/female/abyssariad/moanheavy18.ogg','sound/vo/female/abyssariad/moanheavy19.ogg','sound/vo/female/abyssariad/moanheavy20.ogg')
 			if("moan")
 				used = list('sound/vo/female/abyssariad/moan1.ogg','sound/vo/female/abyssariad/moan2.ogg','sound/vo/female/abyssariad/moan4.ogg','sound/vo/female/abyssariad/moan5.ogg')
-
+			if("birdcall")
+				used = list('sound/vo/female/abyssariad/moan1.ogg','sound/vo/female/abyssariad/moan2.ogg','sound/vo/female/abyssariad/moan4.ogg','sound/vo/female/abyssariad/moan5.ogg')
 	if(!used) //we haven't found a racial specific sound so use generic
 		used = ..(soundin)
 	return used

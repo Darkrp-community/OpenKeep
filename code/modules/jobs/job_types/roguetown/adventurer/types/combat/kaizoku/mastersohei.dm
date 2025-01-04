@@ -62,7 +62,7 @@
 	//Paladins, while devout warriors spent WAY too much time studying the blade. No more acolyte+
 	C.update_devotion(50, 50)
 	C.holder_mob = H
-	C.grant_spells_templar(H)
+	C.grant_spells_sohei(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

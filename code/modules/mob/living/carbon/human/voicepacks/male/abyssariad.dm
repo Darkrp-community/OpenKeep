@@ -50,6 +50,9 @@
 					used = 'sound/vo/male/abyssariad/throatsing_rare.ogg' //I am not afraid. I know gundam will hate me for this one. But trust me, it's worth it
 				else
 					used = list('sound/vo/male/abyssariad/throatsing1.ogg','sound/vo/male/abyssariad/mthroatsing1.ogg','sound/vo/male/abyssariad/mthroatsing2.ogg','sound/vo/male/abyssariad/mthroatsing3.ogg','sound/vo/male/abyssariad/mthroatsing4.ogg','sound/vo/male/abyssariad/mthroatsing5.ogg')
+			if("birdcall")
+				used = list('sound/vo/general/tengucall1.ogg','sound/vo/general/tengucall2.ogg','sound/vo/general/tengucall3.ogg','sound/vo/general/tengucall4.ogg','sound/vo/general/tengucall5.ogg','sound/vo/general/tengucall5.ogg','sound/vo/general/tengucall6.ogg','sound/vo/general/tengucall7.ogg','sound/vo/general/tengucall8.ogg','sound/vo/general/tengucall9.ogg','sound/vo/general/tengucall10.ogg','sound/vo/general/tengucall12.ogg','sound/vo/general/tengucall13.ogg','sound/vo/general/tengucall14.ogg','sound/vo/general/brazilianmeme.ogg')
+
 	if(!used)
 		used = ..(soundin)
 	return used

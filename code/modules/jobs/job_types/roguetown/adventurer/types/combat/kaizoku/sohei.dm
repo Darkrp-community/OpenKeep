@@ -93,12 +93,11 @@
 		H.change_stat("perception", -2) //imagine training meditation so hard you end up edging your own eyes, but start noticing spirits. (schizophrenia)
 		H.change_stat("speed", -1)
 
-	//Soheis have some powers related to the Tideweaver branch - which means, not many. Their focus is elsewhere.
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Sohei are strong for a common role, but cannot pray to gain more abilities beyond t1
 	C.update_devotion(50, 50)
 	C.holder_mob = H
-	C.grant_spells_templar(H)
+	C.grant_spells_sohei(H)
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)

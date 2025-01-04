@@ -7,7 +7,7 @@
 /datum/advclass/combat/abyssariad/kyudoka //Ashigaru/Civilian role.
 	name = "Kyudoka"
 	tutorial = "The praticioners of Kyujutsu trained in Dustwalker dojos, making use of the large Yumi as a weapon of war, \
-	trying to keep the culture alive even after the creation of handcannons and firelances overly used by the Fog Island's military."
+	trying to keep the culture alive even after the creation of handcannons and firelances overly used by the Fog Island's manpower."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 	//humen - need to settle Heartfeltean culture on this one.

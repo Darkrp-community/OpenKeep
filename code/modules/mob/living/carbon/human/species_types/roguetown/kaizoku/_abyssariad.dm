@@ -13,13 +13,12 @@
 	C.grant_language(/datum/language/common)
 	C.grant_language(/datum/language/abyssal)
 	C.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
-	C.verbs |= /mob/proc/throatsing
 	ADD_TRAIT(C, TRAIT_KAIZOKU, TRAIT_GENERIC)  //Cultural Trait. Must not be considered a 'buff' or 'debuff'.
 
 /datum/species/abyssariad/get_accent(mob/living/carbon/human/H)
 	return strings("abyssal_replacement.json", "abyssal")
 
-///mob/proc/banzai()
+///mob/proc/banzai() //Don't have female 'Banzai' yells for that.
 //	set name = "Banzai"
 //	set category = "Noises"
 //	emote("banzai")
@@ -29,15 +28,15 @@
 	set category = "Noises"
 	emote("yoo")
 
-///mob/proc/seppuku()
-//	set name = "Sepukku"
-//	set category = "Noises"
-//	emote("seppuku")
-
 /mob/proc/throatsing()
 	set name = "Throatsing"
 	set category = "Noises"
 	emote("throatsing")
+
+/mob/proc/birdcall()
+	set name = "Birdcall"
+	set category = "Noises"
+	emote("birdcall")
 
 /datum/species/abyssariad/check_roundstart_eligible()
 	return FALSE
