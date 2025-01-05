@@ -280,6 +280,15 @@
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "churchtable_mid"
 
+/obj/structure/table/stone_small
+	name = "stone table"
+	desc = ""
+	icon = 'icons/roguetown/misc/tables.dmi'
+	icon_state = "stonetable_small"
+	max_integrity = 300
+	smooth = 0
+	climb_offset = 10
+
 /obj/structure/table/vtable
 	name = "ancient wooden table"
 	desc = ""

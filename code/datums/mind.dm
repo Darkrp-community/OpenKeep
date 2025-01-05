@@ -867,8 +867,11 @@
 	youngling.mind.apprentice = TRUE
 
 	var/datum/job/J = SSjob.GetJob(current:job)
-	var/title = "[J.title] Apprentice"
-	if(apprentice_name)
+	var/title = "[J.title]"
+	if(youngling.gender == FEMALE && J.f_title)
+		title = "[J.f_title]"
+	title += " Apprentice"
+	if(apprentice_name) //Needed for advclassses
 		title = apprentice_name
-	youngling.mind.our_apprentice_name = "[current.name]'s [title]"
-	to_chat(current, span_notice("[youngling.name] has become your apprentice."))
+	youngling.mind.our_apprentice_name = "[current.real_name]'s [title]"
+	to_chat(current, span_notice("[youngling.real_name] has become your apprentice."))
