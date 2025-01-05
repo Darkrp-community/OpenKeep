@@ -97,7 +97,7 @@
 					dir = pick(GLOB.cardinals)
 					step(src, dir)
 					to_chat(user, "<span class='warning'>I managed to grab it, but it slides away!</span>")
-					playsound(src, pick('sound/vo/mobs/rat/rat_life.ogg','sound/vo/mobs/rat/rat_life2.ogg','sound/vo/mobs/rat/rat_life3.ogg'), 100, TRUE, -1)
+					playsound(src, pick('sound/vo/general/undinecall.ogg','sound/vo/general/undinecall1.ogg','sound/vo/general/undinecall2.ogg'), 100, TRUE, -1)
 					return
 	..()
 
@@ -108,29 +108,16 @@
 	if(!isturf(loc)) //no floating out of bags
 		return
 	if(prob(5))
-		playsound(src, pick('sound/vo/mobs/rat/rat_life.ogg','sound/vo/mobs/rat/rat_life2.ogg','sound/vo/mobs/rat/rat_life3.ogg'), 100, TRUE, -1)
+		playsound(src, pick('sound/vo/general/undinecall3.ogg','sound/vo/general/undinecall4.ogg','sound/vo/general/undinecall5.ogg'), 100, TRUE, -1)
 	if(prob(75) && !dead)
 		dir = pick(GLOB.cardinals)
 		step(src, dir)
-		for(var/obj/item/reagent_containers/food/snacks/S in loc)
-			if(is_type_in_typecache(S, GLOB.RATS_DONT_EAT))
-				return
-			if(S != src)
-				qdel(S)
-				playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
-				if(prob(23))
-					var/turf/T = src.loc
-					if(T)
-						new /mob/living/simple_animal/hostile/retaliate/rogue/bigrat(T)
-						dead = TRUE
-						qdel(src)
-						break
 
 /obj/item/reagent_containers/food/snacks/fogdart/obj_destruction(damage_flag)
 	//..()
 	if(!dead)
 		new /obj/item/reagent_containers/food/snacks/fogdart/dead(src)
-		playsound(src, 'sound/vo/mobs/rat/rat_death.ogg', 100, FALSE, -1)
+		playsound(src, 'sound/vo/general/undinecall6.ogg', 100, FALSE, -1)
 		qdel(src)
 		return 1
 	. = ..()
@@ -146,7 +133,7 @@
 					dir = pick(GLOB.cardinals)
 					step(src, dir)
 					to_chat(user, "<span class='warning'>The vermin dodges my attack.</span>")
-					playsound(src, pick('sound/vo/mobs/rat/rat_life.ogg','sound/vo/mobs/rat/rat_life2.ogg','sound/vo/mobs/rat/rat_life3.ogg'), 100, TRUE, -1)
+					playsound(src, pick('sound/vo/general/undinecall.ogg','sound/vo/general/undinecall1.ogg','sound/vo/general/undinecall2.ogg'), 100, TRUE, -1)
 					return
 	..()
 

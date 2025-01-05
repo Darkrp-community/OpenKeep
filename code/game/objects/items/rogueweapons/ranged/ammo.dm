@@ -518,7 +518,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/bolt/poison/fog
 	name = "fog bolt"
-	desc = "A bolt dipped with a potent sedactive."
+	desc = "A bolt dipped with a potent sedative."
 	projectile_type = /obj/projectile/bullet/reusable/bolt/poison/fog
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
@@ -526,7 +526,7 @@
 
 /obj/projectile/bullet/reusable/bolt/poison/fog
 	name = "fog bolt"
-	desc = "A bolt dipped with a potent sedactive."
+	desc = "A bolt dipped with a potent sedative."
 	damage = 35
 	damage_type = BRUTE
 	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'

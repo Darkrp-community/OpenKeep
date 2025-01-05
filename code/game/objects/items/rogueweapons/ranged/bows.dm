@@ -240,7 +240,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 	name = "hankyu bow"
-	desc = "a smaller version of the asymmetrical bow named Yumi. It must be shot overhead - and it is perfect for horseback use."
+	desc = "A smaller version of the asymmetrical bow named Yumi. It must be shot overhead, and it is perfect for horseback use."  
 	icon = 'icons/roguetown/kaizoku/weapons/bows.dmi'
 	icon_state = "hankyubow"
 	item_state = "hankyubow"

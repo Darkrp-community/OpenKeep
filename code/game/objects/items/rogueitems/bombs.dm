@@ -186,7 +186,7 @@
 		icon_state = initial_icon_state
 		ignited_by = null
 		playsound(src.loc, 'sound/items/firesnuff.ogg', 100)
-		to_chat(src.loc, "<span class='notice'>The [name] has been snuffed out.</span>")
+		to_chat(src.loc, "<span class='notice'>\The [name] has been snuffed out.</span>")
 		if(ismob(src.loc))
 			var/mob/M = src.loc
 			M.update_inv_hands()

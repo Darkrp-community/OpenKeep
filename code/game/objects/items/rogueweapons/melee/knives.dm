@@ -418,7 +418,7 @@
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/rogueweapon/huntingknife/idagger/sai //I request a coder to help me out on this. Make the sai recognize there is another sai on the other hand, and give full 8 wdefense, otherwise its 3 or 4.
+/obj/item/rogueweapon/huntingknife/idagger/sai //I love gundam for helping me on my request on this sai. I love HIM!!!!!!!!!!!!! -Monochrome
 	name = "sai"
 	desc = "Recognizable by its uniqueness and typically carried in pairs, the sai features a sharply-tapered central rod with two prongs at the cross-guards. It lacks blade for cutting, but it excels in jabbing and defending against other weapons."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
@@ -426,4 +426,4 @@
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/thrust/pick)
 	w_class = WEIGHT_CLASS_NORMAL
 	force = 10
-	wdefense = 8 //Need code help; Increase (to 8) of Sai's wdefense only if there is a another Sai on the other hand.
+	wdefense = 5

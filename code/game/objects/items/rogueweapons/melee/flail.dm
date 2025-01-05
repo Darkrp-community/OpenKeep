@@ -218,7 +218,7 @@
 	attack_verb = list("cuts", "slashes")
 	hitsound = list('sound/combat/hits/blunt/flailhit.ogg')
 	swingdelay = 5
-	penfactor = 20
+	penfactor = AP_SPEAR_POKE
 	icon_state = "incut"
 	misscost = 5
 	reach = 2
@@ -232,7 +232,7 @@
 	name = "chop"
 	chargetime = 5
 	no_early_release = TRUE
-	penfactor = 80
+	penfactor = AP_FLAIL_SMASH
 	recovery = 10
 	damfactor = 1.2
 	chargedloop = /datum/looping_sound/flailswing
@@ -286,12 +286,13 @@
 	slot_flags = ITEM_SLOT_HIP
 	blade_dulling = DULLING_BASHCHOP
 	associated_skill = /datum/skill/combat/whipsflails
-	smeltresult = /obj/item/ingot/iron
+	smeltresult = /obj/item/ingot/steel
 	parrysound = list('sound/combat/parry/parrygen.ogg')
 	swingsound = BLUNTWOOSH_MED
 
 /obj/item/rogueweapon/flail/kusarigama/peasant
-	force = 20
+	force = DAMAGE_WEAK_FLAIL
 	name = "handmade kusarigama"
-	desc = "A handle with a sickle-like blade and a chain with spiked ball, quickly assembled from an actual Plowmen's sickle - it is clearly homemade."
+	desc = "A handle with a sickle-like blade and a chain with spiked ball, quickly assembled from an actual plowmen's sickle - it is clearly homemade."
 	icon_state = "kusarigama_homemade"
+	smeltresult = /obj/item/ingot/iron

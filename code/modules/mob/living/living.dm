@@ -1505,6 +1505,11 @@
 //Mobs on Fire
 /mob/living/proc/IgniteMob()
 	if(fire_stacks > 0 && !on_fire)
+		var/obj/item/mainhand = get_active_held_item()
+		if(istype(mainhand, /obj/item/rogueweapon/sword/dragonslayer)) //Since fire immunity by armor didn't work, this will. Feel free to improve my code.
+			src.visible_message("<span class='warning'>[src]'s sword reflects the fire off!</span>", \
+							"<span class='danger'>The abyssal blessings protected me from the fire!</span>")
+			return FALSE
 		testing("ignis")
 		on_fire = 1
 		src.visible_message("<span class='warning'>[src] catches fire!</span>", \

@@ -805,7 +805,7 @@
 /datum/anvil_recipe/weapons/kusarigama
 	name = "Kusarigama (+c) (+s)"
 	recipe_name = "a Kusarigama"
-	req_bar = /obj/item/ingot/iron
+	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/rope/chain, /obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/flail/kusarigama
 

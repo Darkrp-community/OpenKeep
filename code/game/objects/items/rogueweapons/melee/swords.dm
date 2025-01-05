@@ -958,14 +958,14 @@
 
 /obj/item/rogueweapon/sword/long/greatsword/odachi
 	name = "odachi"
-	desc = "Greatsword traditionally wielded in open battlefields just as it is a ceremonial blade. Though impractical for duels, it breaks spearlines and shields on a whim, requiring momento each slash."
+	desc = "Greatsword traditionally wielded in open battlefields just as it is a ceremonial blade. Though impractical for duels, it breaks spearlines and shields on a whim, requiring momentum with each slash."
 	icon_state = "odachi"
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	parrysound = "bladedlarge"
 
 /obj/item/rogueweapon/sword/iron/jian
 	name = "iron jian"
-	desc = "a simple, iron double-edged straight sword of abyssariad design used in martial arts."
+	desc = "A simple, double-edged iron straight sword of abyssariad design used in martial arts."
 	icon_state = "jian"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
@@ -1018,18 +1018,18 @@
 /obj/item/rogueweapon/sword/dragonslayer //It's a sword, yes. It will be used as a sword? My dudes we moving that one like warhammers at this point. So it's blunt at this point.
 	name = "dragonslayer eclipse sword"
 	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, they use a heap of raw iron. These are not crafted for fnesse, but for raw carnage in steel to obliterate Dragon's almost impenetrable skin."
-	gripped_intents = list(/datum/intent/dragonslayer/smash, /datum/intent/mace/thrust) //This is practically a mace.
+	gripped_intents = list(/datum/intent/dragonslayer/smash, /datum/intent/polearm/chop) //This is practically a mace... that can chop off heads since it's sharp.
 	icon_state = "eclipse_sword"
 	resistance_flags = FIRE_PROOF
 	smeltresult = /obj/item/ingot/steel
 	max_integrity = 500
 	force = 5 //You won't get ANYTHING by using in one hand. Trust me. EVEN IF YOU COULD.
-	force_wielded = 38 // HAI YOOOOOOOOOO. This is totally getting nerfed by Gundam, and I'm afraid.
+	force_wielded = 40 // I thought Gundam would nerf it. He buffed it instead. What a World!
 	slowdown = 1
 	wbalance = -1
 	sellprice = 300
 	w_class = WEIGHT_CLASS_HUGE
-	wbalance = -2 //haha... yeah.
+	wbalance = -1 //haha... yeah.
 	wdefense = 3
 	minstr = 14
 	associated_skill = /datum/skill/combat/axesmaces //if you tell me that fighting with this sword is LIKE a sword, I will kill you (ingame)-Mono

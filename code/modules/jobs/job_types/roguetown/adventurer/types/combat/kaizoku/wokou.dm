@@ -120,7 +120,7 @@
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron/kusari_zukin
 			shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light/kusaritabi
-			beltl = /obj/item/rogueweapon/flail/kusarigama
+			beltl = /obj/item/rogueweapon/flail/kusarigama/peasant
 			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 			to_chat(H, span_warning("<span class='info'>I am a Muqian, I hail from the towers of civilization, those upheld in sturdy chains alike my body. May the dices of destiny enlight my ways.</span>"))
 

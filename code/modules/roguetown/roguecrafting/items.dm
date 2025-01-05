@@ -512,7 +512,6 @@
 				/obj/item/reagent_containers/food/snacks/fogdart = 1)
 	craftdiff = 1
 
-
 /datum/crafting_recipe/roguetown/shinobibolt
 	name = "sedative bolt(5)"
 	result = list(/obj/item/ammo_casing/caseless/rogue/bolt/poison/fog,
@@ -524,4 +523,9 @@
 				/obj/item/reagent_containers/food/snacks/fogdart = 1)
 	craftdiff = 1
 
-/obj/item/ammo_casing/caseless/rogue/bolt/poison/fog
+/datum/crafting_recipe/roguetown/kusaripeasant
+	name = "handmade kusarigama"
+	result = /obj/item/rogueweapon/flail/kusarigama/peasant
+	reqs = list(/obj/item/rogueweapon/sickle/kama = 1,
+				/obj/item/rope/chain = 1)
+	craftdiff = 1

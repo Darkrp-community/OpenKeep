@@ -158,9 +158,12 @@
 			if(offhand)
 				if(offhand.can_parry)
 					offhand_defense += (H.mind ? (H.mind.get_skill_level(offhand.associated_skill) * PARRY_SKILL_WEIGHT) : 20)
-					offhand_defense += (offhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 					if(istype(offhand, /obj/item/rogueweapon/shield))
 						force_shield = TRUE
+					if(istype(offhand, /obj/item/rogueweapon/huntingknife/idagger/sai) && istype(mainhand, /obj/item/rogueweapon/huntingknife/idagger/sai))
+						offhand_defense += (8 * WEAPON_DEFENSE_WEIGHT) // Sai's wdefense x 2
+					else
+						offhand_defense += (offhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 			if(!force_shield)
 				if(mainhand_defense >= offhand_defense)
 					highest_defense += mainhand_defense

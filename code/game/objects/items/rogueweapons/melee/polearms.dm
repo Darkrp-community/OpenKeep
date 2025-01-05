@@ -531,7 +531,7 @@
 	dropshrink = 0.8
 	wdefense = 4
 
-/obj/item/rogueweapon/polearm/halberd/bisento
+/obj/item/rogueweapon/polearm/halberd/bisento //Giving the Bisento storeable 'back' because, otherwise, people will SUFFER spawning with it. Too bugged for my taste.
 	name = "bisento"
 	desc = "The Bisento is the direct evolution of the old, outdated Champion Guandao. Akin to a large cleaver or a broad axe."
 	icon_state = "bisento"
@@ -749,14 +749,16 @@
 	if(lit)
 		icon_state = "firelance_lit"
 	else
-		if(!cocked && !fuel_source)
-			icon_state = "firelance"
-		else if(!cocked && fuel_source)
-			icon_state = "firelance_oil"
-		else if(cocked && !fuel_source)
-			icon_state = "firelance_cocked"
-		else if(cocked && fuel_source)
-			icon_state = "firelance_cocked_oil"
+		if(!cocked)
+			if(fuel_source)
+				icon_state = "firelance_oil"
+			else
+				icon_state = "firelance"
+		else
+			if(fuel_source)
+				icon_state = "firelance_cocked_oil"
+			else
+				icon_state = "firelance_cocked"
 
 /obj/item/sanctiflux
 	name = "sanctiflux gourd"

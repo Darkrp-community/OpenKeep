@@ -435,6 +435,9 @@
 	name = "thick tobi"
 	icon_state = "furpants"
 	desc = "A tobi made out of Dendor's beloved guardians - so Abyssor's beloved guardians can use it."
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 
 /obj/item/clothing/under/roguetown/trou/leather/fur/random/Initialize()
 	color = RANDOM_PEASANT_DYES
@@ -450,6 +453,9 @@
 	icon_state = "hakama"
 	alternate_worn_layer = SHOESLEEVE_LAYER
 	desc = "Suitable for the Abyssariad-cultured, in which large battle-skirts does not hurt their masculinity, differently of the frail Imperial counterpart."
+	icon = 'icons/roguetown/kaizoku/clothingicon/pants.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 
 /obj/item/clothing/under/roguetown/tights/hakama/random/Initialize()
 	color = RANDOM_PEASANT_DYES

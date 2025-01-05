@@ -500,7 +500,8 @@
 
 /obj/item/rogueweapon/mace/steel/ararebo
 	name = "steel ararebo"
-	icon_state = "ararebos"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "sararebo"
 	desc = "A large, steel-capped club used by Abyssariads as a armor-breaking tool. Most suitable to breach Grezenholftean cuirass while still holding a shield in the off-hand."
 
 /obj/item/rogueweapon/mace/steel/ararebo/dustcurse/dropped()
