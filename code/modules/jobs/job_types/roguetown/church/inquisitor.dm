@@ -196,7 +196,7 @@
 	)
 	var/resist_chance
 	if(resist)
-		to_chat(span_boldwarning("I attempt to resist the torture!"))
+		to_chat(src, span_boldwarning("I attempt to resist the torture!"))
 		resist_chance = (STAINT + STAEND) + 10
 		if(confession_type == "antag")
 			resist_chance += 25
