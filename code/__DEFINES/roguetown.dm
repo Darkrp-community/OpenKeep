@@ -143,6 +143,8 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_HAND			"CAT_HAND"			// Hand class - Handles Hand class selector
 #define CTAG_CONSORT 		"CAT_CONSORT" 		// Consort classes
 #define CTAG_VETERAN		"CAT_VETERAN"		// Veteran class - Handles Veteran class selector
+#define CTAG_MENATARMS		"CAT_MENATARMS"
+
 /*
 	Defines for the triumph buy datum categories
 */
