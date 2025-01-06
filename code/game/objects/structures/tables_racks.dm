@@ -250,7 +250,7 @@
 
 /obj/structure/table/wood/crafted/Initialize()
 	. = ..()
-	icon_state = pick("tablewood2", "tablewood1")
+	icon_state = "tablewood1"
 
 /obj/structure/table/wood/narsie_act(total_override = TRUE)
 	if(!total_override)
@@ -275,6 +275,7 @@
 	max_integrity = 300
 	smooth = 0
 	climb_offset = 10
+	debris = list(/obj/item/natural/stone = 1)
 
 /obj/structure/table/church/m
 	icon = 'icons/roguetown/misc/tables.dmi'
@@ -288,6 +289,7 @@
 	max_integrity = 300
 	smooth = 0
 	climb_offset = 10
+	debris = list(/obj/item/natural/stone = 1)
 
 /obj/structure/table/vtable
 	name = "ancient wooden table"
