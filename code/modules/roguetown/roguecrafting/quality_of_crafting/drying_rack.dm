@@ -125,4 +125,4 @@
 
 	craft_time = 1.5 SECONDS
 	crafting_message = "starts making some parchment"
-	craftdiff = 1
+	craftdiff = 0
