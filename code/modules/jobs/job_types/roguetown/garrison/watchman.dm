@@ -63,14 +63,14 @@
 		H.change_stat("endurance", -3)
 		H.change_stat("speed", -1)
 		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
-		var/weapontype = pickweight(list("Bow" = 6, "Crossbow" = 4)) // Rolls for either a bow or a Crossbow
-	switch(weapontype)
-		if("Bow")
-			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-			backr = /obj/item/quiver/arrows
-		if("Crossbow")
-			backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-			backr = /obj/item/quiver/bolts
+		var/weapontypec = pickweight(list("Bow" = 6, "Crossbow" = 4)) // Rolls for either a bow or a Crossbow
+		switch(weapontypec)
+			if("Bow")
+				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+				backr = /obj/item/quiver/arrows
+			if("Crossbow")
+				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+				backr = /obj/item/quiver/bolts
 
 /datum/advclass/watchman_pikeman
 	name = "Pikeman Men-At-Arms"
