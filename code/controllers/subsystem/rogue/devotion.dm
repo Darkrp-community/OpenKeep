@@ -25,12 +25,17 @@
 	var/prayer_effectiveness = 2
 
 /datum/devotion/cleric_holder/New(mob/living/carbon/human/holder, god)
+	. = ..()
 	holder_mob = holder
 	holder.cleric = src
 	patron = god
+	if(patron.type == /datum/patron/inhumen/zizo || patron.type == /datum/patron/divine/necra)
+		ADD_TRAIT(holder_mob, TRAIT_DEATHSIGHT, "devotion")
 
 /datum/devotion/cleric_holder/Destroy(force)
 	. = ..()
+	if(patron.type == /datum/patron/inhumen/zizo || patron.type == /datum/patron/divine/necra)
+		REMOVE_TRAIT(holder_mob, TRAIT_DEATHSIGHT, "devotion")
 	holder_mob?.cleric = null
 	holder_mob = null
 	patron = null

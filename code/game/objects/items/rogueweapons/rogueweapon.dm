@@ -121,6 +121,9 @@
 		H.Paralyze(20)
 		return
 
+/obj/item/rogueweapon/get_examine_string(mob/user, thats = FALSE)
+	return "[thats? "That's ":""]<b>[get_examine_name(user)]</b>"
+
 /obj/item/rogueweapon/get_dismemberment_chance(obj/item/bodypart/affecting, mob/user)
 	if(!get_sharpness() || !affecting.can_dismember(src))
 		return 0
