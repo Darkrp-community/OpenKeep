@@ -46,7 +46,6 @@ GLOBAL_LIST_EMPTY(lord_titles)
 /datum/outfit/job/roguetown/lord/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/crown/serpcrown
-	cloak = /obj/item/clothing/cloak/lordcloak
 	backr = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquegold
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1)
@@ -78,13 +77,16 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
 		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/arming
 		shoes = /obj/item/clothing/shoes/roguetown/boots
+		cloak = /obj/item/clothing/cloak/lordcloak
 		if(H.dna?.species)
 			if(H.dna.species.id == "human")
 				H.dna.species.soundpack_m = new /datum/voicepack/male/evil()
 	else
 		pants = /obj/item/clothing/under/roguetown/tights/random
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress/alt
+		armor = /obj/item/clothing/suit/roguetown/shirt/dress/royal
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
+		cloak = /obj/item/clothing/cloak/lordcloak/ladycloak
+		wrists = /obj/item/clothing/wrists/roguetown/royalsleeves
 
 		if(H.wear_mask)
 			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch))
