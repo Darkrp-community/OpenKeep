@@ -12,7 +12,7 @@
 
 /datum/devotion/cleric_holder
 	var/mob/living/carbon/human/holder_mob = null
-	var/patron = null
+	var/datum/patron/patron = null
 	var/devotion = 0
 	var/max_devotion = 1000
 	var/progression = 0
