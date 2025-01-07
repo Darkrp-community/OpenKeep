@@ -6,7 +6,7 @@
 	faction = "Station"
 	total_positions = 4
 	spawn_positions = 4
-	tutorial = "The Monarch has hired you to guard his Keep, man the gates, patrol the keep insure any intruders are not within the boundaries of your liege's domain."
+	tutorial = "The Monarch has hired you to guard their Keep, man the gates, patrol the keep insure any intruders are not within the boundaries of your liege's domain."
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -34,7 +34,7 @@
 
 /datum/advclass/watchman_ranger
 	name = "Archer Men-At-Arms"
-	tutorial = "The Monarch has hired you to guard his keep, you'll do it at a safe distance."
+	tutorial = "The Monarch has hired you to guard their keep, you'll do it at a safe distance."
 	outfit = /datum/outfit/job/roguetown/watchman/ranger
 
 	category_tags = list(CTAG_MENATARMS)
@@ -74,7 +74,7 @@
 
 /datum/advclass/watchman_pikeman
 	name = "Pikeman Men-At-Arms"
-	tutorial = "The Monarch has hired you to guard his keep, unlike your peers you'll be on the frontline."
+	tutorial = "The Monarch has hired you to guard their keep, unlike your peers you'll be on the frontline."
 	outfit = /datum/outfit/job/roguetown/watchman/pikeman
 
 	category_tags = list(CTAG_MENATARMS)
@@ -91,7 +91,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
