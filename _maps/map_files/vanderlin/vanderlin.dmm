@@ -8529,7 +8529,7 @@
 /obj/structure/chair/wood/rogue/chair_noble/red{
 	dir = 1
 	},
-/obj/effect/landmark/start/watchman{
+/obj/effect/landmark/start/men_at_arms{
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood/spiralfade,
@@ -10634,10 +10634,10 @@
 /obj/structure/chair/wood/rogue/chair_noble/red{
 	dir = 1
 	},
-/obj/effect/landmark/start/watchman{
+/obj/machinery/light/rogue/wallfire/candle/l,
+/obj/effect/landmark/start/men_at_arms{
 	dir = 1
 	},
-/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manorgate)
 "iAB" = (
@@ -14185,8 +14185,8 @@
 /area/rogue/under/town/basement)
 "lnk" = (
 /obj/structure/chair/wood/rogue/chair_noble/red,
-/obj/effect/landmark/start/watchman,
 /obj/machinery/light/rogue/wallfire/candle/l,
+/obj/effect/landmark/start/men_at_arms,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manorgate)
 "lnm" = (
@@ -22831,7 +22831,7 @@
 /area/rogue/outdoors/town)
 "sIp" = (
 /obj/structure/chair/wood/rogue/chair_noble/red,
-/obj/effect/landmark/start/watchman,
+/obj/effect/landmark/start/men_at_arms,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manorgate)
 "sIO" = (
