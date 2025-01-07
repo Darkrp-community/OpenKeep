@@ -61,7 +61,7 @@
 		var/image/I = image(icon = 'icons/turf/roguefloor.dmi', icon_state = "travel", layer = ABOVE_OPEN_TURF_LAYER, loc = src)
 		add_alt_appearance(/datum/atom_hud/alternate_appearance/basic, required_trait, I)
 
-/obj/structure/fluff/traveltile/proc/get_other_end_turf(var/return_travel = FALSE)
+/obj/structure/fluff/traveltile/proc/get_other_end_turf(return_travel = FALSE)
 	if(!aportalgoesto)
 		return null
 	for(var/obj/structure/fluff/traveltile/travel in shuffle(GLOB.traveltiles))
