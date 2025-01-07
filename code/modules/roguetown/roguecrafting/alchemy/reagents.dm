@@ -101,7 +101,7 @@
 
 /datum/reagent/medicine/strongmana
 	name = "Strong Mana Potion"
-	description = "Gradually regenerates energy."
+	description = "Rapidly regenerates energy."
 	color = "#0000ff"
 	taste_description = "raw power"
 	metabolization_rate = REAGENTS_METABOLISM * 3
