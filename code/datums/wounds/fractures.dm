@@ -192,6 +192,7 @@
 	//fuck this is stupid
 	if(!istype(affected, /mob/living/carbon/human/species/skeleton/death_arena))
 		ADD_TRAIT(affected, TRAIT_PARALYSIS, "[type]")
+		ADD_TRAIT(affected, TRAIT_NOPAIN, "[type]")
 	if(iscarbon(affected))
 		var/mob/living/carbon/carbon_affected = affected
 		carbon_affected.update_disabled_bodyparts()
@@ -201,6 +202,7 @@
 /datum/wound/fracture/neck/on_mob_loss(mob/living/affected)
 	. = ..()
 	REMOVE_TRAIT(affected, TRAIT_PARALYSIS, "[type]")
+	REMOVE_TRAIT(affected, TRAIT_NOPAIN, "[type]")
 	if(iscarbon(affected))
 		var/mob/living/carbon/carbon_affected = affected
 		carbon_affected.update_disabled_bodyparts()
