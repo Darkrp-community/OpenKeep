@@ -162,6 +162,7 @@
 	l_sleeve_status = SLEEVE_TORN
 	body_parts_covered = CHEST|VITALS
 	allowed_race = list("elf", "dark elf")
+	salvage_result = /obj/item/natural/silk
 
 /obj/item/clothing/suit/roguetown/shirt/apothshirt
 	name = "apothecary shirt"
@@ -255,7 +256,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/dress
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "dress"
+	name = "bar dress"
 	desc = ""
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "dress"

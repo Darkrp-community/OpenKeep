@@ -295,7 +295,7 @@
 							if(item:amount == 0)
 								usable_contents -= item
 								qdel(item)
-							user.visible_message("[user] starts picking up [sub_item]", "You start picking up [sub_item]")
+							user.visible_message("[user] starts picking up [sub_item].", "You start picking up [sub_item].")
 							if(do_after(user, ground_use_time, target = item))
 								if(put_items_in_hand)
 									user.put_in_active_hand(sub_item)
@@ -309,7 +309,7 @@
 						if(early_break)
 							break
 
-					user.visible_message("[user] starts picking up [item]", "You start picking up [item]")
+					user.visible_message("[user] starts picking up [item].", "You start picking up [item].")
 					if(do_after(user, ground_use_time, target = item))
 						user.put_in_active_hand(item)
 						active_item = item

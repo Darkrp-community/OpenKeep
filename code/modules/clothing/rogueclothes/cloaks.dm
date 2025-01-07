@@ -609,10 +609,11 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
-	salvage_result = /obj/item/natural/hide/cured
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/clothing/cloak/apron/brown
 	color = CLOTHING_BARK_BROWN
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/cloak/apron/waist
 	name = "apron"

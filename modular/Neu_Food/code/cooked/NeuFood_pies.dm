@@ -10,7 +10,7 @@
 /*	........   Pie making   ................ */
 /obj/item/reagent_containers/food/snacks/rogue/foodbase/piebottom
 	name = "pie bottom"
-	desc = "The foundation of the fantastical.."
+	desc = "The foundation of the fantastical."
 	icon_state = "piebottom"
 	w_class = WEIGHT_CLASS_NORMAL
 	eat_effect = /datum/status_effect/debuff/uncookedfood
@@ -96,7 +96,7 @@
 	foodtype = GRAIN | DAIRY | MEAT
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/meat
-	icon_state = "meatpie"
+	icon_state = "meat pie"
 	tastes = list("succulent meat and crispy butterdough" = 1)
 	filling_color = "#b43628"
 

@@ -58,7 +58,7 @@
 				playsound(get_turf(user), 'sound/foley/dropsound/food_drop.ogg', 30, TRUE, -1)
 				requirements[item]--
 				if(requirements[item] <= 0)
-					requirements -= item
+					requirements -= list(item) // See Remove() behavior documentation
 				return_value = TRUE
 				step_process(user, attacking_item)
 				qdel(attacking_item)
