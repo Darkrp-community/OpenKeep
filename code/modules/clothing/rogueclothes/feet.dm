@@ -356,6 +356,11 @@
 	icon_state = "suneate"
 	item_state = "suneate"
 
+/obj/item/clothing/shoes/roguetown/boots/armor/suneate/cursed/Initialize()
+	. = ..()
+	name = "soulbinded suneate"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
 /obj/item/clothing/shoes/roguetown/boots/jikatabi
 	name = "jikatabi"
 	desc = "A standard tabi that keeps the toes flexible and healthy, avoiding calluses of long expeditions. However, it looks rather goofy for the non-islanders."

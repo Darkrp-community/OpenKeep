@@ -150,7 +150,7 @@
 			randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorm.txt") )
 		if(gender == FEMALE)
 			randname = pick( world.file2list("strings/rt/names/abyssariad/abyssnorf.txt") )
-	randname += " The Clanless"
+	randname += " Clanless"
 	return randname
 
 /datum/species/abyssariad/denmorian/random_surname()

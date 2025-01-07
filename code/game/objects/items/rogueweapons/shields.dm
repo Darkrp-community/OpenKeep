@@ -343,6 +343,7 @@
 /obj/item/rogueweapon/shield/abyssaltower/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse abyssal towershield"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
 	if(QDELETED(src))
 		return
@@ -373,6 +374,7 @@
 /obj/item/rogueweapon/shield/tower/abyssal/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse spiked steel aegis"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
 	if(QDELETED(src))
 		return

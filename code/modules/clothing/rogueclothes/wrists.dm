@@ -102,6 +102,11 @@
 	icon_state = "kote"
 	item_state = "kote"
 
+/obj/item/clothing/wrists/roguetown/bracers/kote/cursed/Initialize()
+	. = ..()
+	name = "soulbinded kote"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
 /obj/item/clothing/wrists/roguetown/bracers/mountainstar
 	name = "weeping god-patterned bracers"
 	desc = "Y-shaped steel plates marks this bracer everywhere it is looked upon, most proper for the Weeping God."

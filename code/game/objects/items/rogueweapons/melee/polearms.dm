@@ -516,6 +516,7 @@
 /obj/item/rogueweapon/polearm/halberd/naginata/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse naginata"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
 	if(QDELETED(src))
 		return
@@ -541,6 +542,7 @@
 /obj/item/rogueweapon/polearm/halberd/bisento/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse bisento"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
 	if(QDELETED(src))
 		return

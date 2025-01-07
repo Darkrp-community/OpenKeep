@@ -271,7 +271,7 @@
 	slot_flags = ITEM_SLOT_BACK
 	smeltresult = /obj/item/ash
 	resistance_flags = FLAMMABLE // Weapon made mostly of wood
-	minstr = 10
+	minstr = 0
 	parrysound = "parrywood"
 	max_integrity = 300
 	wbalance = EASY_TO_DODGE
@@ -450,6 +450,7 @@
 	. = ..()
 	name = "Dustcurse kanabo"
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	if(QDELETED(src))
 		return
 	qdel(src)
@@ -467,6 +468,7 @@
 /obj/item/rogueweapon/mace/goden/steel/tetsubo/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse tetsubo"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
 	if(QDELETED(src))
 		return

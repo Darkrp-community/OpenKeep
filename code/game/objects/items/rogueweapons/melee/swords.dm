@@ -951,6 +951,7 @@
 /obj/item/rogueweapon/sword/long/tachi/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse tachi"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
 	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
 	if(QDELETED(src))
 		return

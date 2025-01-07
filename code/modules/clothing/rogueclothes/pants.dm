@@ -371,6 +371,11 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	alternate_worn_layer = SHOESLEEVE_LAYER
 
+/obj/item/clothing/under/roguetown/chainlegs/sendan/cursed/Initialize()
+	. = ..()
+	name = "soulbinded kote"
+	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
+
 /obj/item/clothing/under/roguetown/platelegs/yoroihakama
 	name = "yoroihakama"
 	desc = "Hakama with extreme plate reinforcement, with protuding plates protecting the hips, and many interlocking steel plates under the cloth."
