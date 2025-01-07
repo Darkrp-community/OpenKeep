@@ -17,6 +17,7 @@
 		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
+	always_show_on_latechoices = TRUE
 
 	outfit = /datum/outfit/job/roguetown/watchman
 	advclass_cat_rolls = list(CTAG_MENATARMS = 20)
