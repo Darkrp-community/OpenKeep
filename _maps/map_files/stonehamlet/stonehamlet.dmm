@@ -3252,7 +3252,7 @@
 /obj/structure/mineral_door/wood/fancywood{
 	name = "mercenary guild";
 	locked = 1;
-	lockid = mercenary
+	lockid = "mercenary"
 	},
 /turf/open/floor/rogue/woodturned/saiga,
 /area/rogue/indoors/town)
@@ -5864,8 +5864,12 @@
 /turf/open/floor/rogue/sandstone/temple,
 /area/rogue/indoors/town/church)
 "fDs" = (
-/turf/closed/wall/mineral/rogue/decowood,
-/area/rogue/outdoors/rtfield/hamlet)
+/obj/structure/fluff/railing/border,
+/obj/effect/decal/cleanable/dirt/cobweb{
+	dir = 1
+	},
+/turf/open/transparent/openspace,
+/area/rogue/indoors)
 "fDx" = (
 /obj/structure/bars/pipe,
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
@@ -9232,8 +9236,9 @@
 /area/rogue/outdoors/rtfield/hamlet)
 "iWg" = (
 /obj/structure/mineral_door/wood/fancywood{
+	name = "mercenary guild";
 	locked = 1;
-	lockid = mercenary
+	lockid = "mercenary"
 	},
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town)
@@ -14631,6 +14636,7 @@
 	pixel_y = 30;
 	pixel_x = 0
 	},
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors)
 "ojm" = (
@@ -17024,6 +17030,7 @@
 	pixel_y = 32;
 	pixel_x = 0
 	},
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors)
 "qjp" = (
@@ -24173,6 +24180,7 @@
 	dir = 4
 	},
 /obj/structure/fermenting_barrel,
+/obj/effect/decal/cleanable/dirt/cobweb,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors)
 "wUf" = (
@@ -24226,8 +24234,9 @@
 /area/rogue/outdoors)
 "wWH" = (
 /obj/structure/mineral_door/wood/fancywood{
+	name = "mercenary guild";
 	locked = 1;
-	lockid = mercenary
+	lockid = "mercenary"
 	},
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town)
@@ -69592,7 +69601,7 @@ iIw
 iIw
 iIw
 mDZ
-fDs
+gcU
 hDi
 mDZ
 uJn
@@ -91516,7 +91525,7 @@ hDi
 hZX
 hZX
 gcU
-gif
+fDs
 wwf
 ehQ
 gcU
@@ -94425,7 +94434,7 @@ hZX
 hZX
 hZX
 hZX
-hZX
+gAV
 jmK
 hZX
 hZX
