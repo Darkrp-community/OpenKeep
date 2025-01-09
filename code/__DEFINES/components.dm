@@ -184,7 +184,10 @@
 	#define HEARING_MESSAGE_MODE 7 */
 #define COMSIG_MOVABLE_DISPOSING "movable_disposing"			//called when the movable is added to a disposal holder object for disposal movement: (obj/structure/disposalholder/holder, obj/machinery/disposal/source)
 #define COMSIG_MOVABLE_UPDATE_GLIDE_SIZE "movable_glide_size"	//Called when the movable's glide size is updated: (new_glide_size)
-
+/// Called when something is pushed by a living mob bumping it: (mob/living/pusher, push force)
+#define COMSIG_MOVABLE_BUMP_PUSHED "movable_bump_pushed"
+	/// Stop it from moving
+	#define COMPONENT_NO_PUSH (1<<0)
 
 // /mob signals
 #define COMSIG_MOB_DEATH "mob_death"							//from base of mob/death(): (gibbed)

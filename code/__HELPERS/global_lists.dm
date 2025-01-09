@@ -64,6 +64,7 @@
 
 	init_orderless_slapcraft_recipes()
 	init_crafting_repeatable_recipes()
+	setup_particles()
 
 	GLOB.emote_list = init_emote_list()
 

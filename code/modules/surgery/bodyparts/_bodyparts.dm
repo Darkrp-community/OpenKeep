@@ -93,6 +93,8 @@
 
 	resistance_flags = FLAMMABLE
 
+	var/wound_icon_state
+
 /obj/item/bodypart/grabbedintents(mob/living/user, precise)
 	return list(/datum/intent/grab/move, /datum/intent/grab/twist, /datum/intent/grab/smash)
 
@@ -478,7 +480,10 @@
 			if(burnstate)
 				. += image('icons/mob/dam_mob.dmi', "[dmg_overlay_type]_[body_zone]_0[burnstate]_[icon_gender]", -DAMAGE_LAYER, image_dir)
 
-	var/image/limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+	var/mutable_appearance/limb = mutable_appearance(layer = -BODYPARTS_LAYER)
+	if(wound_icon_state)
+		limb.filters += alpha_mask_filter(icon=icon('icons/effects/wounds.dmi', "[wound_icon_state]_flesh"), flags = MASK_INVERSE)
+	limb.dir = image_dir
 	var/image/aux
 
 	. += limb
@@ -506,10 +511,24 @@
 			limb.icon = species_icon
 			if(should_draw_gender)
 				limb.icon_state = "[body_zone][skel]"
+				if(wound_icon_state)
+					var/mutable_appearance/skeleton = mutable_appearance(layer = -(BODY_LAYER))
+					skeleton.icon = species_icon
+					skeleton.icon_state = "[body_zone]_s"
+					skeleton.filters += alpha_mask_filter(icon=icon('icons/effects/wounds.dmi', wound_icon_state))
+					skeleton.dir = image_dir
+					. += skeleton
 			else if(use_digitigrade)
 				limb.icon_state = "digitigrade_[use_digitigrade]_[body_zone]"
 			else
 				limb.icon_state = "[body_zone][skel]"
+				if(wound_icon_state)
+					var/mutable_appearance/skeleton = mutable_appearance(layer = -(BODY_LAYER))
+					skeleton.icon = species_icon
+					skeleton.icon_state = "[body_zone]_s"
+					skeleton.filters += alpha_mask_filter(icon=icon('icons/effects/wounds.dmi', wound_icon_state))
+					skeleton.dir = image_dir
+					. += skeleton
 		else
 			limb.icon = 'icons/mob/human_parts.dmi'
 			if(should_draw_gender)
@@ -518,8 +537,15 @@
 				limb.icon_state = "[species_id]_[body_zone]"
 		if(aux_zone)
 			if(!hideaux)
-				aux = image(limb.icon, "[aux_zone][skel]", -aux_layer, image_dir)
+				aux = image(limb.icon, "[aux_zone][skel]", -(aux_layer), image_dir)
 				. += aux
+				if(wound_icon_state)
+					var/mutable_appearance/skeleton = mutable_appearance(layer = -(aux_layer))
+					skeleton.icon = species_icon
+					skeleton.icon_state = "[aux_zone]_s"
+					skeleton.filters += alpha_mask_filter(icon=icon('icons/effects/wounds.dmi', wound_icon_state))
+					skeleton.dir = image_dir
+					. += skeleton
 
 	else
 		limb.icon = species_icon
