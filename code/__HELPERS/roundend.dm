@@ -341,6 +341,7 @@
 	shit += "<br><font color='#f200ff'><span class='bold'>Drugs Snorted:</span></font> [snort]"
 	shit += "<br><font color='#0f555c'><span class='bold'>Beards Shaved:</span></font> [beardshavers]"
 	shit += "<br><font color='#ffffff'><span class='bold'>Pleasures:</span></font> [cums]"
+	shit += "<br><font color='#ffee00'><span class='bold'>Round Aspect:</span></font> [round_aspect.name]"
 //	if(cuckers.len)
 //		shit += "<br><font color='#4e488a'><span class='bold'>Adulterers:</span></font> "
 //		for(var/x in cuckers.len)

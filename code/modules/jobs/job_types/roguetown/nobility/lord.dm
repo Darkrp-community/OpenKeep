@@ -66,6 +66,9 @@
 		H.change_stat("speed", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("fortune", 5)
+		if(aspect_chosen(/datum/round_aspect/kingforareason))
+			H.change_stat("strength", 5)
+			H.change_stat("intelligence", -5)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/black
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
