@@ -153,7 +153,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	name = "Dungeoneer"
 	icon_state = "arrow"
 
-/obj/effect/landmark/start/men_at_arms
+/obj/effect/landmark/start/watchman
 	name = "Men-at-arms"
 	icon_state = "arrow"
 
