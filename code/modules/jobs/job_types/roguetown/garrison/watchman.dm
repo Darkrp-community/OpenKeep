@@ -1,5 +1,5 @@
 /datum/job/roguetown/men_at_arms
-	title = "Men-at-arms"
+	title = "Men at arms"
 	flag = WATCHMAN
 	department_flag = GARRISON
 	display_order = JDO_WATCHMAN
