@@ -17,10 +17,10 @@
 		"Aasimar"
 	)
 	allowed_sexes = list(MALE, FEMALE)
-	always_show_on_latechoices = TRUE
 
 	outfit = /datum/outfit/job/roguetown/watchman
 	advclass_cat_rolls = list(CTAG_MENATARMS = 20)
+	bypass_lastclass = TRUE
 	cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 	give_bank_account = 15
 	min_pq = 2
@@ -33,7 +33,7 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	beltl = /obj/item/storage/keyring/manorguard
 
-/datum/advclass/watchman_ranger
+/datum/advclass/menatarms/watchman_ranger
 	name = "Archer Men-At-Arms"
 	tutorial = "The Monarch has hired you to guard their keep, you'll do it at a safe distance."
 	outfit = /datum/outfit/job/roguetown/watchman/ranger
@@ -73,7 +73,7 @@
 				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 				backr = /obj/item/quiver/bolts
 
-/datum/advclass/watchman_pikeman
+/datum/advclass/menatarms/watchman_pikeman
 	name = "Pikeman Men-At-Arms"
 	tutorial = "The Monarch has hired you to guard their keep, unlike your peers you'll be on the frontline."
 	outfit = /datum/outfit/job/roguetown/watchman/pikeman
