@@ -34,12 +34,12 @@
 	beltl = /obj/item/storage/keyring/manorguard
 
 /datum/job/roguetown/men_at_arms/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
-    ..()
-    if(L)
-        var/mob/living/carbon/human/H = L
-        H.advsetup = 1
-        H.invisibility = INVISIBILITY_MAXIMUM
-        H.become_blind("advsetup")
+	..()
+	if(L)
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
 
 /datum/advclass/menatarms/watchman_ranger
 	name = "Archer Men-At-Arms"
