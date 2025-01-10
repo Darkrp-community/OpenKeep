@@ -1,5 +1,5 @@
-/datum/advclass/pilgrim/physicker
-	name = "Physicker"
+/datum/job/roguetown/physicker
+	title = "Physicker"
 	tutorial =  "Those who fail their studies, or are exiled from the towns they take \
 				residence as feldshers in, often end up becoming wandering physickers. \
 				Capable doctors nonetheless, they journey from place to place offering \
@@ -15,11 +15,11 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/physicker
-	category_tags = list(CTAG_PILGRIM)
-	maximum_possible_slots = 2
+	total_positions = 2
+	spawn_positions = 2
+	outfit = /datum/outfit/job/roguetown/physicker
 
-/datum/outfit/job/roguetown/adventurer/physicker/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/physicker/pre_equip(mob/living/carbon/human/H)
 	..()
 	mask = /obj/item/clothing/mask/rogue/phys
 	head = /obj/item/clothing/head/roguetown/roguehood/phys

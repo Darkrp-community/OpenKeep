@@ -1,6 +1,5 @@
-
-/datum/advclass/pilgrim/bard
-	name = "Bard"
+/datum/roguetown/job/bard
+	title = "Bard"
 	tutorial = "Bards make up one of the largest populations of \
 	registered adventurers in Enigma, mostly because they are \
 	the last ones in a party to die. Their wish is to experience \
@@ -16,11 +15,12 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/bard
-	category_tags = list(CTAG_PILGRIM)
+	outfit = /datum/outfit/job/roguetown/bard
 	apprentice_name = "Bard"
+	total_positions = 4
+	spawn_positions = 4
 
-/datum/outfit/job/roguetown/adventurer/bard/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/bard/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)

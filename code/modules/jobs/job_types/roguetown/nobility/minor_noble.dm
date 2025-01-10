@@ -1,5 +1,5 @@
-/datum/advclass/pilgrim/noble
-	name = "Noble"
+/datum/job/roguetown/minor_noble
+	title = "Noble"
 	tutorial = "The blood of a noble family runs through your veins. Perhaps you are visiting from some place far away, \
 	looking to enjoy the hospitality of the ruler of Vanderlin. You have many mammons to your name, but with wealth comes \
 	danger, so keep your wits and tread lightly..."
@@ -13,13 +13,14 @@
 		"Dark Elf",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/noble
-	category_tags = list(CTAG_PILGRIM)
-	maximum_possible_slots = 2
+	outfit = /datum/outfit/job/roguetown/noble
 	apprentice_name = "Servant"
+	total_positions = 2
+	spawn_positions = 2
+	min_pq = 1
+	give_bank_account = 60
 
-
-/datum/outfit/job/roguetown/adventurer/noble/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/noble/pre_equip(mob/living/carbon/human/H)
 	..()
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name

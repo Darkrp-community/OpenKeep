@@ -1,5 +1,5 @@
-/datum/advclass/carpenter
-	name = "Carpenter"
+/datum/job/roguetown/carpenter
+	title = "Carpenter"
 	tutorial = "Woodsmen and women that dedicate their lives to chopping wood \
 	for profit, and expertly building things out of it."
 	allowed_sexes = list(MALE, FEMALE)
@@ -13,12 +13,12 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/carpenter
-
-	category_tags = list(CTAG_PILGRIM)
+	total_positions = 3
+	spawn_positions = 3
+	outfit = /datum/outfit/job/roguetown/carpenter
 	apprentice_name = "Carpenter"
 
-/datum/outfit/job/roguetown/adventurer/carpenter/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/carpenter/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
