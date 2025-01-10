@@ -136,6 +136,7 @@
 #define INIT_ORDER_MINOR_MAPPING	-40
 #define INIT_ORDER_PATH				-50
 #define INIT_ORDER_DISCORD			-60
+#define INIT_ORDER_PLEXORA 			-61
 #define INIT_ORDER_PERSISTENCE		-95
 #define INIT_ORDER_CHAT				-100 //Should be last to ensure chat remains smooth during init.
 

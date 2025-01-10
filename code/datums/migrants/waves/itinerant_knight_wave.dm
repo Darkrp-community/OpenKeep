@@ -46,6 +46,7 @@
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	H.cmode_music = 'sound/music/cmode/nobility/CombatKnight.ogg'
 
 /datum/migrant_role/itinerant_squire
 	name = "Itinerant Squire"
@@ -88,13 +89,14 @@
 	if(H.gender == MALE && H.dna?.species)
 		H.dna.species.soundpack_m = new /datum/voicepack/male/squire()
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	H.cmode_music = 'sound/music/cmode/garrison/CombatGarrison.ogg'
 
 /datum/migrant_wave/knight
 	name = "The Knightly journey"
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/knight
 	downgrade_wave = /datum/migrant_wave/knight_down
-	weight = 35
+	weight = 10
 	roles = list(
 		/datum/migrant_role/itinerant_knight = 1,
 		/datum/migrant_role/itinerant_squire = 1,
@@ -106,7 +108,6 @@
 	max_spawns = 1
 	shared_wave_type = /datum/migrant_wave/knight
 	can_roll = FALSE
-	weight = 35
 	roles = list(
 		/datum/migrant_role/itinerant_knight = 1,
 	)

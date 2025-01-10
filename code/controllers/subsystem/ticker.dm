@@ -430,6 +430,7 @@ SUBSYSTEM_DEF(ticker)
 
 	log_game("GAME SETUP: Game start took [(world.timeofday - init_start)/10]s")
 	round_start_time = world.time
+	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING, world.time)
 	round_start_irl = REALTIMEOFDAY
 
 	SSdbcore.SetRoundStart()
