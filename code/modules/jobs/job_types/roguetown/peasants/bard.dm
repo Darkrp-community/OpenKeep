@@ -1,4 +1,4 @@
-/datum/roguetown/job/bard
+/datum/job/roguetown/bard
 	title = "Bard"
 	tutorial = "Bards make up one of the largest populations of \
 	registered adventurers in Enigma, mostly because they are \
@@ -17,6 +17,9 @@
 	)
 	outfit = /datum/outfit/job/roguetown/bard
 	apprentice_name = "Bard"
+	flag = BARD
+	department_flag = PEASANTS
+	display_order = JDO_BARD
 	total_positions = 4
 	spawn_positions = 4
 

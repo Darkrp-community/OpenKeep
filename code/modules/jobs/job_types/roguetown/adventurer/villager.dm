@@ -1,3 +1,4 @@
+/*
 /datum/job/roguetown/villager
 	title = "Towner"
 	flag = ADVENTURER
@@ -27,7 +28,6 @@
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
 
-/*
 /datum/job/roguetown/adventurer/villager/New()
 	. = ..()
 	for(var/X in GLOB.peasant_positions)

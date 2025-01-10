@@ -14,8 +14,10 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/miner
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
 	apprentice_name = "Miner"
+	flag = MINER
+	department_flag = PEASANTS
+	display_order = JDO_MINER
 	total_positions = 6
 	spawn_positions = 6
 

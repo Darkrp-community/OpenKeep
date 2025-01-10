@@ -14,6 +14,9 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/noble
+	display_order = JDO_MINOR_NOBLE
+	flag = MINOR_NOBLE
+	department_flag = NOBLEMEN
 	apprentice_name = "Servant"
 	total_positions = 2
 	spawn_positions = 2

@@ -15,6 +15,9 @@
 	)
 	total_positions = 3
 	spawn_positions = 3
+	flag = LUMBERJACK
+	department_flag = PEASANTS
+	display_order = JDO_CARPENTER
 	outfit = /datum/outfit/job/roguetown/carpenter
 	apprentice_name = "Carpenter"
 

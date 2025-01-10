@@ -2,6 +2,8 @@
 	title = "Fisher"
 	tutorial = "Simple folk with an affinity for catching fish out of any body of water, \
 				they are decent cooks and swimmers, living off the gifts of Abyssor."
+	flag = FISHER
+	department_flag = PEASANTS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -18,6 +20,7 @@
 	give_bank_account = 8
 	total_positions = 5
 	spawn_positions = 5
+	display_order = JDO_FISHER
 	apprentice_name = "Fisher"
 
 /datum/outfit/job/roguetown/fisher/pre_equip(mob/living/carbon/human/H)

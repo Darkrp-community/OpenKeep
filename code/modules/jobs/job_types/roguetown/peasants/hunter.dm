@@ -4,6 +4,8 @@
 	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
 				or the boons of Dendor for their meat to sell, or consume."
 	allowed_sexes = list(MALE,FEMALE)
+	flag = HUNTER
+	department_flag = PEASANTS
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -17,6 +19,7 @@
 	outfit = /datum/outfit/job/roguetown/hunter
 	min_pq = -100
 	give_bank_account = 15
+	display_order = JDO_HUNTER
 	total_positions = 3
 	spawn_positions = 3
 	apprentice_name = "Hunter"

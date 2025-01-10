@@ -15,6 +15,7 @@
 		"Aasimar",
 		"Half-Orc"
 	)
+	display_order = JDO_PHYSICKER
 	total_positions = 2
 	spawn_positions = 2
 	outfit = /datum/outfit/job/roguetown/physicker
