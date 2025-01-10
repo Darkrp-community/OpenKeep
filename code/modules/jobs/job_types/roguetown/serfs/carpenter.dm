@@ -13,8 +13,8 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 6
+	spawn_positions = 4
 	flag = LUMBERJACK
 	department_flag = PEASANTS
 	display_order = JDO_CARPENTER

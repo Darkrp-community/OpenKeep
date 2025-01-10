@@ -20,8 +20,8 @@
 	min_pq = -100
 	give_bank_account = 15
 	display_order = JDO_HUNTER
-	total_positions = 3
-	spawn_positions = 3
+	total_positions = 4
+	spawn_positions = 4
 	apprentice_name = "Hunter"
 
 /datum/outfit/job/roguetown/hunter/pre_equip(mob/living/carbon/human/H)
