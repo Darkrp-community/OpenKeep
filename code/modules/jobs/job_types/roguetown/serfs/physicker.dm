@@ -15,6 +15,8 @@
 		"Aasimar",
 		"Half-Orc"
 	)
+	flag = PHYSICKER
+	department_flag = SERFS
 	display_order = JDO_PHYSICKER
 	total_positions = 2
 	spawn_positions = 2

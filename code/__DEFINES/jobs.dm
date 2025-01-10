@@ -134,7 +134,8 @@
 #define TAILOR		(1<<4)
 #define ARTIFICER	(1<<5)
 #define MATRON 		(1<<6)
-#define SCRIBE		(1<<7)
+#define PHYSICKER	(1<<7)
+#define SCRIBE		(1<<8)
 
 #define PEASANTS		(1<<4)
 
