@@ -18,7 +18,7 @@
 	outfit = /datum/outfit/job/roguetown/fisher
 	min_pq = -100
 	give_bank_account = 8
-	total_positions = 5
+	total_positions = 8
 	spawn_positions = 5
 	display_order = JDO_FISHER
 	apprentice_name = "Fisher"

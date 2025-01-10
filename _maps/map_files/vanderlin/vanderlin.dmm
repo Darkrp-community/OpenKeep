@@ -580,6 +580,13 @@
 /obj/effect/landmark/start/fisher,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
+"ayp" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/landmark/start/physicker{
+	dir = 1
+	},
+/turf/open/floor/rogue/ruinedwood,
+/area/rogue/indoors/town)
 "ays" = (
 /obj/structure/flora/roguegrass,
 /obj/structure/flora/roguegrass/bush_meagre,
@@ -3552,6 +3559,12 @@
 "cIy" = (
 /turf/closed,
 /area/rogue/under/cavewet)
+"cIO" = (
+/obj/effect/landmark/start/miner{
+	dir = 1
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town)
 "cJv" = (
 /obj/effect/landmark/start/miner,
 /turf/open/floor/rogue/wood,
@@ -4757,9 +4770,6 @@
 "dMk" = (
 /obj/machinery/light/rogue/wallfire{
 	pixel_y = 32
-	},
-/obj/effect/landmark/start/minor_noble{
-	dir = 8
 	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
@@ -8856,7 +8866,7 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/rtfield/safe)
 "har" = (
-/obj/effect/landmark/start/villager{
+/obj/effect/landmark/start/bard{
 	dir = 1
 	},
 /turf/open/floor/rogue/wood,
@@ -11600,6 +11610,10 @@
 "jkj" = (
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/manor)
+"jkA" = (
+/obj/effect/landmark/start/cook,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town)
 "jkM" = (
 /obj/structure/table/wood{
 	dir = 1;
@@ -14866,6 +14880,12 @@
 	icon_state = "greenstone"
 	},
 /area/rogue/under/town/sewer)
+"lPO" = (
+/obj/effect/landmark/start/physicker{
+	dir = 8
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town)
 "lPQ" = (
 /obj/structure/table/wood/plain_alt,
 /obj/item/clothing/cloak/apron/cook,
@@ -15819,6 +15839,13 @@
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/rtfield)
+"mLY" = (
+/obj/machinery/light/rogue/wallfire/candle,
+/obj/effect/landmark/start/grabber{
+	dir = 2
+	},
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town)
 "mMk" = (
 /obj/effect/landmark/start/barkeep,
 /turf/open/floor/rogue/ruinedwood,
@@ -18002,6 +18029,10 @@
 	},
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town/manor)
+"oAY" = (
+/obj/effect/landmark/start/fisher,
+/turf/open/floor/rogue/wood,
+/area/rogue/indoors/town)
 "oAZ" = (
 /obj/structure/fluff/walldeco/psybanner,
 /turf/closed/wall/mineral/rogue/decostone/long,
@@ -23835,7 +23866,7 @@
 /turf/closed/wall/mineral/rogue/wooddark/horizontal,
 /area/rogue/indoors/butchershop)
 "twi" = (
-/obj/effect/landmark/start/villager,
+/obj/effect/landmark/start/fisher,
 /turf/open/floor/carpet/red,
 /area/rogue/indoors/town)
 "twL" = (
@@ -28759,7 +28790,7 @@
 /area/rogue/outdoors/town/roofs)
 "xsi" = (
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/effect/landmark/start/villager,
+/obj/effect/landmark/start/grabber,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "xsq" = (
@@ -28959,6 +28990,12 @@
 /obj/machinery/light/rogue/firebowl/standing/blue,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/shop)
+"xAd" = (
+/obj/effect/landmark/start/physicker{
+	dir = 1
+	},
+/turf/open/floor/carpet/red,
+/area/rogue/indoors/town)
 "xAu" = (
 /obj/structure/chair/wood/rogue/chair_noble/red{
 	dir = 4
@@ -29182,6 +29219,12 @@
 	},
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/town/manor)
+"xHD" = (
+/obj/effect/landmark/start/minor_noble{
+	dir = 8
+	},
+/turf/open/floor/rogue/ruinedwood/turned/darker,
+/area/rogue/indoors/town)
 "xHY" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/outdoors/town)
@@ -29338,7 +29381,7 @@
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/river)
 "xOJ" = (
-/obj/effect/landmark/start/villager{
+/obj/effect/landmark/start/bard{
 	dir = 1
 	},
 /turf/open/floor/rogue/ruinedwood,
@@ -73740,7 +73783,7 @@ iGx
 iGx
 iGx
 iGx
-har
+iGx
 qEb
 xYa
 xYa
@@ -75356,7 +75399,7 @@ rDr
 nez
 eLN
 qEb
-qQh
+jkA
 niL
 niL
 sVE
@@ -76181,7 +76224,7 @@ mLm
 qEb
 twi
 niL
-niL
+xAd
 qEb
 vgJ
 vgJ
@@ -90361,7 +90404,7 @@ elp
 nlk
 vik
 ppZ
-xOJ
+fjg
 fjg
 blt
 nlk
@@ -90562,9 +90605,9 @@ elp
 elp
 nlk
 fsJ
-xOJ
+fjg
 vik
-vik
+ayp
 xOJ
 nlk
 ehF
@@ -114136,7 +114179,7 @@ wXO
 vMj
 dEF
 dtq
-qQh
+oAY
 iGx
 tnN
 iGx
@@ -114163,7 +114206,7 @@ fdp
 dtq
 wXO
 vMj
-qQh
+iGx
 sOR
 dtq
 hXM
@@ -114363,7 +114406,7 @@ acx
 acx
 fdp
 dtq
-xsi
+mLY
 iGx
 iGx
 iGx
@@ -114567,7 +114610,7 @@ fdp
 dtq
 wXO
 vMj
-iGx
+lPO
 caC
 dtq
 hVd
@@ -118602,9 +118645,9 @@ acx
 acx
 fdp
 dtq
-qQh
+cJv
 iGx
-har
+cIO
 iGx
 dtq
 vgJ
@@ -118804,9 +118847,9 @@ acx
 acx
 fdp
 dtq
-qQh
+cJv
 iGx
-har
+cIO
 iGx
 dtq
 vgJ
@@ -136429,7 +136472,7 @@ dtq
 nHv
 iul
 esI
-ocA
+xHD
 dtq
 dtq
 dtq
