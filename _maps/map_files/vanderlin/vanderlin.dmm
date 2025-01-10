@@ -22074,6 +22074,12 @@
 "rDr" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/under/town/basement)
+"rDF" = (
+/obj/machinery/light/rogue/lanternpost/fixed{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/town/sewer)
 "rDX" = (
 /obj/structure/lever{
 	redstone_id = "smelter"
@@ -57709,7 +57715,7 @@ bUM
 kDp
 kDp
 jQz
-kDp
+xHa
 qWT
 fyC
 fyC
@@ -59127,7 +59133,7 @@ fyC
 fyC
 kDp
 aQo
-jQz
+rDF
 bUM
 bUM
 bUM
