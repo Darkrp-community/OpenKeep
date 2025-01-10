@@ -24,6 +24,7 @@
 	give_bank_account = 35
 	min_pq = 10
 	can_have_apprentices = TRUE
+	cmode_music = 'sound/music/cmode/nobility/CombatSpymaster.ogg'
 
 /datum/outfit/job/roguetown/matron/pre_equip(mob/living/carbon/human/H)
 	..()
