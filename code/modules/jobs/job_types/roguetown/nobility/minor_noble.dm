@@ -14,6 +14,7 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/noble
+	faction = "Station"
 	display_order = JDO_MINOR_NOBLE
 	flag = MINOR_NOBLE
 	department_flag = NOBLEMEN

@@ -4,6 +4,9 @@
 				residence as feldshers in, often end up becoming wandering physickers. \
 				Capable doctors nonetheless, they journey from place to place offering \
 				their services."
+	faction = "Station"
+	flag = PHYSICKER
+	department_flag = SERFS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
@@ -15,8 +18,6 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	flag = PHYSICKER
-	department_flag = SERFS
 	display_order = JDO_PHYSICKER
 	total_positions = 2
 	spawn_positions = 2

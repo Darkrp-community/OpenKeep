@@ -3,6 +3,7 @@
 	f_title = "Huntress"
 	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
 				or the boons of Dendor for their meat to sell, or consume."
+	faction = "Station"
 	allowed_sexes = list(MALE,FEMALE)
 	flag = HUNTER
 	department_flag = PEASANTS

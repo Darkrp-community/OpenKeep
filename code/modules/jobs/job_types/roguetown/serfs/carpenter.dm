@@ -2,6 +2,7 @@
 	title = "Carpenter"
 	tutorial = "Woodsmen and women that dedicate their lives to chopping wood \
 	for profit, and expertly building things out of it."
+	faction = "Station"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
