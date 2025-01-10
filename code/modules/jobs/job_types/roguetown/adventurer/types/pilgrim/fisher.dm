@@ -2,7 +2,6 @@
 	name = "Fisher"
 	tutorial = "Simple folk with an affinity for catching fish out of any body of water, \
 				they are decent cooks and swimmers, living off the gifts of Abyssor."
-	faction = "Station"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
