@@ -6254,6 +6254,7 @@
 /obj/item/clothing/shoes/roguetown/boots,
 /obj/item/clothing/shoes/roguetown/shortboots,
 /obj/item/clothing/mask/rogue/spectacles/golden,
+/obj/item/clothing/head/roguetown/wizhat/witch,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/magician)
 "eLN" = (
@@ -10485,6 +10486,12 @@
 	},
 /turf/open/floor/rogue/woodturned,
 /area/rogue/indoors/town/smithy)
+"ihi" = (
+/obj/machinery/light/rogue/lanternpost/fixed{
+	dir = 1
+	},
+/turf/open/floor/rogue/cobblerock,
+/area/rogue/under/town/sewer)
 "ihz" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/wood,
@@ -22074,12 +22081,6 @@
 "rDr" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/under/town/basement)
-"rDF" = (
-/obj/machinery/light/rogue/lanternpost/fixed{
-	dir = 1
-	},
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/under/town/sewer)
 "rDX" = (
 /obj/structure/lever{
 	redstone_id = "smelter"
@@ -59133,7 +59134,7 @@ fyC
 fyC
 kDp
 aQo
-rDF
+ihi
 bUM
 bUM
 bUM

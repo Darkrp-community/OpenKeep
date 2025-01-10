@@ -41,7 +41,7 @@
 	head = /obj/item/clothing/head/roguetown/bardhat
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	pants = /obj/item/clothing/under/roguetown/tights/random
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/noblecoat
 	if(prob(30))
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 	belt = /obj/item/storage/belt/rogue/leather

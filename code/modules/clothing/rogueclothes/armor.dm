@@ -67,6 +67,14 @@
 /*-------------\
 | Padded Armor |	- Cloth based
 \-------------*/
+//................ Corset.................... //
+/obj/item/clothing/suit/roguetown/armor/corset
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
+	name = "corset"
+	desc = "A leather binding to constrict one's figure... and lungs."
+	icon_state = "corset"
+	armor = ARMOR_PADDED
+	body_parts_covered = COVERAGE_VEST
 
 //................ Gambesson ............... //
 /obj/item/clothing/suit/roguetown/armor/gambeson
