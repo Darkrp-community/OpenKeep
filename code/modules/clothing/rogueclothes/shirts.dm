@@ -103,6 +103,11 @@
 	desc = "Typical fashion of the best Heartfelt engineers."
 	icon_state = "artishirt"
 
+/obj/item/clothing/suit/roguetown/shirt/undershirt/lowcut
+	name = "low cut tunic"
+	desc = "A tunic exposing much of the shoulders and neck. Shoulders?! How scandalous..."
+	icon_state = "lowcut"
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
 	icon_state = "sailorblues"
 

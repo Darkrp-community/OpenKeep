@@ -29,7 +29,7 @@
 	sellprice = 20
 
 /datum/repeatable_crafting_recipe/leather/gloves
-	name = "leather pouch"
+	name = "leather gloves"
 	output_amount = 2
 	output = /obj/item/clothing/gloves/roguetown/leather
 
@@ -50,6 +50,10 @@
 /datum/repeatable_crafting_recipe/leather/boots
 	name = "leather boots"
 	output = /obj/item/clothing/shoes/roguetown/boots/leather
+
+/datum/repeatable_crafting_recipe/leather/corset
+	name = "corset"
+	output = /obj/item/clothing/suit/roguetown/armor/corset
 
 /datum/repeatable_crafting_recipe/leather/sandals
 	name = "sandals"

@@ -75,6 +75,13 @@
 	)
 	output = /obj/item/clothing/suit/roguetown/shirt/undershirt/uncolored
 
+/datum/repeatable_crafting_recipe/sewing/lowcut_shirt
+	name = "low cut shirt"
+	requirements = list(
+		/obj/item/natural/cloth = 2,
+		/obj/item/natural/fibers = 1,
+	)
+	output = /obj/item/clothing/suit/roguetown/shirt/undershirt/lowcut
 
 /datum/repeatable_crafting_recipe/sewing/stripedtunic
 	name = "striped tunic"
@@ -250,7 +257,19 @@
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
 
+/datum/repeatable_crafting_recipe/sewing/Bluskirt
+	name = "blue skirt"
+	output = /obj/item/clothing/under/roguetown/skirt/blue
+	requirements = list(/obj/item/natural/cloth = 2,
+			/obj/item/natural/fibers = 1)
+	craftdiff = 2
 
+/datum/repeatable_crafting_recipe/sewing/Greskirt
+	name = "green skirt"
+	output = /obj/item/clothing/under/roguetown/skirt/green
+	requirements = list(/obj/item/natural/cloth = 2,
+			/obj/item/natural/fibers = 1)
+	craftdiff = 2
 /*.............. recipes requiring skill 3 ..............*/
 
 /datum/repeatable_crafting_recipe/sewing/robe
@@ -387,6 +406,13 @@
 	name = "shirt (formal silks)"
 	output = /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
 	requirements = list(/obj/item/natural/silk = 5)
+	craftdiff = 3
+
+/datum/repeatable_crafting_recipe/sewing/weaving/noblecoat
+	name = "fancy coat"
+	output = /obj/item/clothing/suit/roguetown/shirt/tunic/noblecoat
+	requirements = list(/obj/item/natural/cloth = 3,
+			/obj/item/natural/silk = 1)
 	craftdiff = 3
 
 /datum/repeatable_crafting_recipe/sewing/weaving/nunhood
