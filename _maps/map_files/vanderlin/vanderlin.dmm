@@ -10829,10 +10829,10 @@
 /obj/structure/chair/wood/rogue/chair_noble/red{
 	dir = 1
 	},
+/obj/machinery/light/rogue/wallfire/candle/l,
 /obj/effect/landmark/start/watchman{
 	dir = 1
 	},
-/obj/machinery/light/rogue/wallfire/candle/l,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manorgate)
 "iAB" = (
@@ -14457,8 +14457,8 @@
 /area/rogue/under/town/basement)
 "lnk" = (
 /obj/structure/chair/wood/rogue/chair_noble/red,
-/obj/effect/landmark/start/watchman,
 /obj/machinery/light/rogue/wallfire/candle/l,
+/obj/effect/landmark/start/watchman,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/manorgate)
 "lnm" = (
