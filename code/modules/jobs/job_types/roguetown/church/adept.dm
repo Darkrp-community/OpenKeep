@@ -29,6 +29,7 @@
 /datum/outfit/job/roguetown/adept
 	name = "Adept"
 	jobtype = /datum/job/roguetown/adept
+	allowed_patrons = list(/datum/patron/psydon)
 
 /datum/outfit/job/roguetown/adept // Base outfit for Adepts, before loadouts
 	belt = /obj/item/storage/belt/rogue/leather

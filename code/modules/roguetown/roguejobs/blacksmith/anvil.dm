@@ -3,13 +3,14 @@
 	icon = 'icons/roguetown/misc/forge.dmi'
 	name = "anvil"
 	icon_state = "anvil"
-	var/hott = null
+	var/hott = 0
 	var/obj/item/ingot/hingot
 	max_integrity = 2000
 	density = TRUE
 	damage_deflection = 25
 	climbable = TRUE
 	var/previous_material_quality = 0
+	var/cool_time = 10 SECONDS
 
 /obj/machinery/anvil/crafted
 	icon_state = "caveanvil"
@@ -30,8 +31,8 @@
 				hingot.forceMove(T)
 				T.hingot = hingot
 				hingot = null
-				T.hott = null
-				hott = null
+				T.hott = 0
+				hott = 0
 				T.update_icon()
 				update_icon()
 				return
@@ -51,7 +52,7 @@
 		if(!hingot)
 			W.forceMove(src)
 			hingot = W
-			hott = null
+			hott = 0
 			update_icon()
 			return
 
@@ -178,8 +179,8 @@
 
 /obj/machinery/anvil/process()
 	if(hott)
-		if(world.time > hott + 10 SECONDS)
-			hott = null
+		if(world.time > hott + cool_time)
+			hott = 0
 			STOP_PROCESSING(SSmachines, src)
 	else
 		STOP_PROCESSING(SSmachines, src)
