@@ -18,7 +18,7 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/physicker
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
-	maximum_possible_slots = 4
+	maximum_possible_slots = 2
 	apprentice_name = "Physicker Apprentice"
 
 /datum/outfit/job/roguetown/adventurer/physicker/pre_equip(mob/living/carbon/human/H)
