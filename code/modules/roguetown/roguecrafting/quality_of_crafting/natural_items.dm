@@ -158,7 +158,7 @@
 	subtypes_allowed = TRUE
 
 /datum/repeatable_crafting_recipe/survival/bag
-	name = "bag"
+	name = "sack"
 	requirements = list(
 		/obj/item/natural/cloth = 1,
 		/obj/item/natural/fibers = 1,

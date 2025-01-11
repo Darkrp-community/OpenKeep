@@ -507,3 +507,13 @@
 	result = /obj/item/rogueweapon/hammer/wood
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	craftdiff = 0
+
+/datum/crafting_recipe/roguetown/confessional
+	name = "confession"
+	result = /obj/item/paper/confession
+	reqs = list(/obj/item/paper = 1)
+	tools = list(/obj/item/natural/feather)
+	skillcraft = /datum/skill/misc/reading
+	always_availible = FALSE
+	craftsound = null
+	craftdiff = 0

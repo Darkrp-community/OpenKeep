@@ -133,6 +133,9 @@
 	toggle_icon_state = TRUE
 	experimental_onhip = TRUE
 
+/obj/item/clothing/mask/rogue/facemask/prisoner
+	clothing_flags = NONE //they're used to this being stuck on their face
+
 /obj/item/clothing/mask/rogue/facemask/prisoner/Initialize()
 	. = ..()
 	name = "cursed mask"
