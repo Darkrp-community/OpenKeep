@@ -14,7 +14,6 @@
 	"Cure4Sorrow" = 'sound/music/jukeboxes/fuck/cure4sorrow.ogg',\
 	"Dangerous Radiation" = 'sound/music/jukeboxes/fuck/dangeradiation.ogg',\
 	"Pandora's Box" = 'sound/music/jukeboxes/fuck/fb-pandora.ogg',\
-	"Anthem" = 'sound/music/jukeboxes/fuck/partyrock.ogg',\
 	"Raspberry jam" = 'sound/music/jukeboxes/fuck/raspberryjam.ogg'\
 )
 #define MUSIC_TAVCAT_PARTY list(\
