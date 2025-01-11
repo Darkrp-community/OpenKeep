@@ -587,6 +587,7 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+//Royal cloaks.
 /obj/item/clothing/cloak/lordcloak
 	name = "lordly cloak"
 	desc = "Ermine trimmed, handed down."
@@ -600,7 +601,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-//	allowed_sex = list("male")
 	allowed_race = list("human", "tiefling", "elf", "aasimar")
 	detail_tag = "_det"
 	detail_color = CLOTHING_PLUM_PURPLE
@@ -645,6 +645,24 @@
 		for(var/obj/item/I in things)
 			STR.remove_from_storage(I, get_turf(src))
 
+/obj/item/clothing/cloak/lordcloak/ladycloak
+	name = "ladylike shortcloak"
+	desc = "Ermine trimmed, handed down."
+	color = null
+	icon_state = "shortcloak"
+	item_state = "shortcloak"
+	alternate_worn_layer = CLOAK_BEHIND_LAYER
+	slot_flags = ITEM_SLOT_BACK_R|ITEM_SLOT_CLOAK
+	boobed = TRUE
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	nodismemsleeves = TRUE
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "dwarf", "halforc")
+	detail_tag = "_detail"
+	detail_color = CLOTHING_SOOT_BLACK
+
+//End royal cloaks.
+
 /obj/item/clothing/cloak/apron
 	name = "apron"
 	desc = ""
@@ -654,10 +672,11 @@
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
 	boobed = TRUE
-	salvage_result = /obj/item/natural/hide/cured
+	salvage_result = /obj/item/natural/cloth
 
 /obj/item/clothing/cloak/apron/brown
 	color = CLOTHING_BARK_BROWN
+	salvage_result = /obj/item/natural/hide/cured
 
 /obj/item/clothing/cloak/apron/waist
 	name = "apron"
@@ -997,10 +1016,16 @@
 
 /obj/item/clothing/cloak/matron
 	name = "matron cloak"
-	desc = "A cloak that only the meanest wear."
-	icon_state = "matron_cloak"
+	desc = "A cloak that only the meanest of old crones bother to wear."
+	icon_state = "matroncloak"
 	icon = 'icons/roguetown/clothing/cloaks.dmi'
 	mob_overlay_icon ='icons/roguetown/clothing/onmob/cloaks.dmi'
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
+	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
+	sleevetype = "shirt"
+	slot_flags = ITEM_SLOT_CLOAK
+	nodismemsleeves = TRUE
+	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 
 //............... Battle Nun ........................... (unique kit for the role, tabard for aesthetics)

@@ -84,6 +84,7 @@
 	dump_time = 0
 	allow_quick_gather = TRUE
 	allow_quick_empty = TRUE
+	allow_dump_out = TRUE
 	insert_preposition = "in"
 
 /datum/component/storage/concrete/roguetown/sack/meat/New(datum/P, ...)

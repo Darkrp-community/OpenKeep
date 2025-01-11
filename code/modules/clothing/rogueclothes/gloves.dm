@@ -92,7 +92,8 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/gloves/roguetown/fingerless/shadowgloves
-	desc = "Cloth gloves to absorb palm sweat while leaving the fingers free for fine manipulation."
+	name = "silk gloves"
+	desc = "Silk gloves to absorb palm sweat while leaving the fingers free for fine manipulation."
 	mob_overlay_icon = 'icons/roguetown/clothing/newclothes/onmob/onmobgloves.dmi'
 	sleeved = 'icons/roguetown/clothing/newclothes/onmob/onmobgloves.dmi'
 	icon_state = "shadowgloves"

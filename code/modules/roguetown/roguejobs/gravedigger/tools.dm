@@ -2,7 +2,7 @@
 	force = 5
 	force_wielded = 12
 	possible_item_intents = list(/datum/intent/mace/strike/shovel)
-	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop)
+	gripped_intents = list(/datum/intent/shovelscoop, /datum/intent/irrigate, /datum/intent/mace/strike/shovel, /datum/intent/axe/chop)
 	name = "shovel"
 	desc = ""
 	icon_state = "shovel"
@@ -84,6 +84,17 @@
 	no_attack = TRUE
 	item_damage_type = "blunt"
 
+/datum/intent/irrigate
+	name = "irrigate"
+	icon_state = "inhoe"
+	chargetime = 0
+	noaa = TRUE
+	candodge = FALSE
+	misscost = 10
+	no_attack = TRUE
+	item_damage_type = "blunt"
+
+
 /obj/item/rogueweapon/shovel/attack(mob/living/M, mob/living/user)
 	. = ..()
 	if(. && heldclod && get_turf(M))
@@ -93,7 +104,17 @@
 
 /obj/item/rogueweapon/shovel/attack_turf(turf/T, mob/living/user)
 	user.changeNext_move(user.used_intent.clickcd)
-	if(user.used_intent.type == /datum/intent/shovelscoop)
+	if(user.used_intent.type == /datum/intent/irrigate)
+		if(istype(T, /turf/open/floor/rogue/dirt))
+			var/turf/open/floor/rogue/dirt/D = T
+			if(D.planted_crop)
+				return
+			user.visible_message("[user] starts digging an irrigation channel.", "You start digging an irrigation channel.")
+			if(!do_after(user, 5 SECONDS, target = D))
+				return
+			new /obj/structure/irrigation_channel(D)
+
+	else if(user.used_intent.type == /datum/intent/shovelscoop)
 		if(istype(T, /turf/open/floor/rogue/dirt))
 			var/turf/open/floor/rogue/dirt/D = T
 			if(heldclod)

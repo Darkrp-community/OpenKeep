@@ -7,6 +7,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
+		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
@@ -44,3 +45,4 @@
 	H.change_stat("speed", 1)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose/secular)

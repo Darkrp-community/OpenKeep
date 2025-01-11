@@ -13,6 +13,25 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 				redstone_attached |= S
 				S.redstone_attached |= src
 
+/obj/structure/vv_edit_var(var_name, var_value)
+	switch (var_name)
+		if ("redstone_id")
+			update_redstone_id(var_value)
+			datum_flags |= DF_VAR_EDITED
+			return TRUE
+
+	return ..()
+
+/obj/structure/proc/update_redstone_id(new_id)
+	if(new_id)
+		GLOB.redstone_objs |= src
+		redstone_attached = list()
+		for(var/obj/structure/S in GLOB.redstone_objs)
+			if(S.redstone_id == redstone_id)
+				redstone_attached |= S
+				S.redstone_attached |= src
+		redstone_id = new_id
+
 /obj/structure/proc/redstone_triggered()
 	return
 

@@ -43,6 +43,7 @@
 #define TRAIT_LIGHT_STEP				"Light Step" //Can't trigger /obj/structure/trap/'s
 #define TRAIT_THIEVESGUILD				"Thieves Guild Member"
 #define TRAIT_MOB_FIRE_IMMUNE			"Fire Immune" //Just says no to fire_act()
+#define TRAIT_ENGINEERING_GOGGLES		"Engineering Goggles"
 #define TRAIT_SEEPRICES				    "Golden Blood" //See prices
 
 // Divine patron trait bonuses:
@@ -136,7 +137,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_CYCLOPS_LEFT = span_warning("My left eye has been poked out..."),
 	TRAIT_CYCLOPS_RIGHT = span_warning("My right eye has been poked out..."),
 	TRAIT_LEECHIMMUNE = "Leeches are reluctant to bite me.",
-	TRAIT_ASSASSIN = "My soul has been tainted by the god of murder.",
+	TRAIT_ASSASSIN = "My soul has been tainted by Graggar, god of murder.",
 	TRAIT_BARDIC_TRAINING = "Xylixian inspiration grants my songs boons and ailments.",
 	TRAIT_GRAVEROBBER = "Necra favors my grim deeds, I can unearth graves without being cursed by her.",
 	TRAIT_MISSING_NOSE = span_warning("I struggle to breathe."),
@@ -155,6 +156,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LEPROSY = span_necrosis("I'm a disgusting leper..."),
 	TRAIT_LIGHT_STEP = span_info("I will never trip a trap plate."),
 	TRAIT_MOB_FIRE_IMMUNE = span_info("I am immune to most scorching flames."),
+	TRAIT_ENGINEERING_GOGGLES = span_info("I can find out more information from mechanical devices."),
 	TRAIT_SHARPER_BLADES = "My weapons lose their sharpness slower.",
 	TRAIT_BETTER_SLEEP = "I recover more energy when sleeping.",
 	TRAIT_EXTEROCEPTION = "I can see when others are hungry or thirsty.",
@@ -315,6 +317,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_HARDDISMEMBER		"hard_dismember"
 ///trait determines if this mob can breed given by /datum/component/breeding
 #define TRAIT_MOB_BREEDER "mob_breeder"
+#define TRAIT_UNTARGETTABLE "untargettable" //can't be targetted by basic mobs
 
 //bodypart traits
 #define TRAIT_PARALYSIS	"paralysis" //Used for limb-based paralysis and full body paralysis

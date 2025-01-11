@@ -4,6 +4,7 @@
 	allowed_sexes = list(MALE)
 	allowed_races = list(
 		"Humen",
+		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
@@ -62,6 +63,7 @@
 		H.change_stat("endurance", 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+		H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 
 /datum/migrant_role/zybantine/amirah
@@ -70,6 +72,7 @@
 	allowed_sexes = list(FEMALE)
 	allowed_races = list(
 		"Humen",
+		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
@@ -124,6 +127,7 @@
 		H.change_stat("endurance", 2)
 		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+		H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 /datum/migrant_role/zybantine/furusiyya
 	name = "Furusiyya"
@@ -186,6 +190,7 @@
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 /datum/migrant_role/zybantine_guard
 	name = "Zybantine soldier"
@@ -239,6 +244,7 @@
 		H.change_stat("strength", 1)
 		H.change_stat("endurance", 2)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander.ogg'
 
 /datum/migrant_role/qatil
 	name = "Qatil"
@@ -291,6 +297,7 @@
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	H.cmode_music = 'sound/music/cmode/adventurer/CombatOutlander3.ogg'
 
 /datum/migrant_wave/zybantine_wave
 	name = "The Ziggurat expedition"

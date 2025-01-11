@@ -122,6 +122,7 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Expert Herb Finder" = TRAIT_LEGENDARY_ALCHEMIST,
 		"Deceiving Meekness" = TRAIT_DECEIVING_MEEKNESS,
 		"Thieves Guild Member" = TRAIT_THIEVESGUILD,
+		"Engineering Goggles" = TRAIT_ENGINEERING_GOGGLES,
 		"Sharper Blades" = TRAIT_SHARPER_BLADES,
 		"Better Sleep" = TRAIT_BETTER_SLEEP,
 		"Exteroception" = TRAIT_EXTEROCEPTION,

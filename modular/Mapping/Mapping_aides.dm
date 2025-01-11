@@ -461,6 +461,7 @@
 	icon_state = "stickyweb1"
 	resistance_flags = FLAMMABLE
 	alpha = 109
+	max_integrity = 50
 	opacity = TRUE
 
 /obj/structure/spider/stickyweb/CanPass(atom/movable/mover, turf/target)

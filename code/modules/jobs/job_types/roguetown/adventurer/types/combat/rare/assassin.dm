@@ -15,6 +15,7 @@
 	maximum_possible_slots = 2
 	min_pq = 0
 	pickprob = 100
+	displays_adv_job = FALSE //this prevents advjob from being set back to "Assassin" in equipme
 
 /datum/outfit/job/roguetown/adventurer/assassin/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -41,6 +42,7 @@
 		H.mind.add_antag_datum(new_antag)
 
 	H.become_blind("TRAIT_GENERIC")
+	H.advjob = "Assassin"
 	// Assassin now spawns disguised as one of the non-combat drifters. You never know who will stab you in the back.
 	var/disguises = list("Bard", "Beggar", "Fisher", "Hunter", "Miner", "Noble", "Peasant", "Carpenter")
 	var/disguisechoice = input("Choose your cover", "Available disguises") as anything in disguises
