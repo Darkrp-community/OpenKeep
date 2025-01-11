@@ -113,7 +113,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_SHOCKIMMUNE = "I am immune to electrical shocks.",
 	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
-  TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames."),
+	TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames."),
 	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of Zizo's ascension, and know of others of the Cabal.")
 	))
