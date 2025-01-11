@@ -30,6 +30,8 @@
 				hingot.forceMove(T)
 				T.hingot = hingot
 				hingot = null
+				T.hott = null
+				hott = null
 				T.update_icon()
 				update_icon()
 				return
@@ -38,8 +40,6 @@
 				T.hingot.forceMove(src)
 				hingot = T.hingot
 				T.hingot = null
-				T.hott = null
-				hott = null
 				hott = T.hott
 				if(hott)
 					START_PROCESSING(SSmachines, src)
