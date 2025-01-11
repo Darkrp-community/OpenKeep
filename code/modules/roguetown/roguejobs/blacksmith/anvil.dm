@@ -24,12 +24,7 @@
 		var/obj/item/rogueweapon/tongs/T = W
 		if(hingot)
 			if(T.hingot)
-				if(hingot.currecipe && hingot.currecipe.needed_item && istype(T.hingot, hingot.currecipe.needed_item))
-					hingot.currecipe.item_added(user)
-					qdel(T.hingot)
-					T.hingot = null
-					T.update_icon()
-					update_icon()
+				..()
 				return
 			else
 				hingot.forceMove(T)
@@ -43,6 +38,8 @@
 				T.hingot.forceMove(src)
 				hingot = T.hingot
 				T.hingot = null
+				T.hott = null
+				hott = null
 				hott = T.hott
 				if(hott)
 					START_PROCESSING(SSmachines, src)
