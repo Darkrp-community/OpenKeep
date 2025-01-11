@@ -17,6 +17,11 @@
 	experimental_onback = FALSE
 	component_type = /datum/component/storage/concrete/roguetown/sack
 
+/obj/item/storage/roguebag/examine(mob/user)
+	. = ..()
+	if(length(contents))
+		. += span_notice("[length(contents)] thing[length(contents) > 1 ? "s" : ""] in [src].")
+
 /obj/item/storage/roguebag/equipped(mob/living/carbon/human/user, slot)
 	. = ..()
 	if(slot == SLOT_HEAD)

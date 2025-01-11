@@ -104,7 +104,7 @@
 	sellprice = 20
 
 /obj/item/clothing/shoes/roguetown/gladiator
-	name = "leather sandals"
+	name = "caligae"
 	desc = "Open design sandals made from sturdy leather. Can be typically seen worn by gladiators."
 	gender = PLURAL
 	icon_state = "gladiator"

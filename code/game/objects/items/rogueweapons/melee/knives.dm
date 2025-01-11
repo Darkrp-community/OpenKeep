@@ -173,8 +173,8 @@
 			playsound(item, 'sound/items/flint.ogg', 100, TRUE) //In my mind this sound was more fitting for a scissor
 			qdel(item)
 			user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //We're getting experience for salvaging!
-	..()
-
+			return
+	return ..()
 
 /obj/item/rogueweapon/knife/scissors/steel
 	force = 14
@@ -309,7 +309,7 @@
 //................ Profane Dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel/profane
 //	name = "profane dagger"
-	desc = "A profane dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
+	// desc = "A profane dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
 	sellprice = 250
 	icon_state = "pdagger"
 	smeltresult = null
@@ -329,7 +329,7 @@
 				"<span class='danger'>Free us...please...</span>",
 				"<span class='danger'>Necra...deliver...us...</span>")
 //			H.visible_message("profane dagger whispers, \"[message]\"")
-			to_chat(M, ">profane dagger whispers, \"[message]\"")
+			to_chat(M, "profane dagger whispers, \"[message]\"")
 		else
 			var/message = pick(
 				"<span class='danger'>Why...</span>",
@@ -344,7 +344,7 @@
 				"<span class='danger'>I thought you were...my friend...</span>",
 				"<span class='danger'>How long have I been in here...</span>")
 //			H.visible_message("profane dagger whispers, \"[message]\"")
-			to_chat(M, ">profane dagger whispers, \"[message]\"")
+			to_chat(M, "profane dagger whispers, \"[message]\"")
 
 /obj/item/rogueweapon/knife/dagger/steel/profane/pre_attack(mob/living/carbon/human/target, mob/living/user = usr, params)
 	if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // Check to see if the dagger will do 20 damage or 14
@@ -355,6 +355,8 @@
 
 /obj/item/rogueweapon/knife/dagger/steel/profane/afterattack(mob/living/carbon/human/target, mob/living/user = usr, proximity)
 	. = ..()
+	if(!ishuman(target))
+		return
 	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal if the target is either dead or in crit
 		if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // The profane dagger only thirsts for those who are hunted, by flaw or by zizoid curse.
 			if(target.client == null) //See if the target's soul has left their body

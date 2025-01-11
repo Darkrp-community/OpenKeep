@@ -342,6 +342,7 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	dynamic_hair_suffix = ""
+	salvage_result = /obj/item/natural/silk
 
 //................ Opera Hood ............... //	- The "upgraded" headwear for Eoran acolytes
 /obj/item/clothing/head/roguetown/roguehood/eora
@@ -354,8 +355,8 @@
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 	resistance_flags = FIRE_PROOF // Made of metal
-
 	armor = ARMOR_WEAK
+	salvage_result = NUTRITION_LEVEL_HUNGRY
 
 
 //................ Sun Hood ............... //	- Basic Astrata Acolyte
