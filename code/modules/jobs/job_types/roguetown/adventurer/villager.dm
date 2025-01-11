@@ -12,7 +12,6 @@
 	outfit = null
 	outfit_female = null
 	banned_leprosy = FALSE
-	display_order = JDO_VILLAGER
 	give_bank_account = TRUE
 	min_pq = -100
 	same_job_respawn_delay = 0
