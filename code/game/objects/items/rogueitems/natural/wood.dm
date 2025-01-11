@@ -44,7 +44,7 @@
 
 /obj/item/grown/log/tree/small
 	name = "small log"
-	desc = "A smaller log that came from a larger log. Suitable for building."
+	desc = "A smaller log that came from a larger log. With a saw, you could turn it into wooden planks."
 	icon_state = "logsmall"
 	attacked_sound = 'sound/misc/woodhit.ogg'
 	max_integrity = 30
@@ -54,6 +54,37 @@
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_BULKY
 	smeltresult = /obj/item/rogueore/coal
+
+/obj/item/grown/log/tree/small/attackby(obj/item/I, mob/living/user, params)		// remake to use /datum/intent/axe/cut or TO DO never do maybe
+	user.changeNext_move(CLICK_CD_MELEE)
+	if(istype(I, /obj/item/rogueweapon/axe))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 10 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/polearm/halberd/bardiche))
+		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
+		if(do_after(user, 10 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	if(istype(I, /obj/item/rogueweapon/handsaw))
+		playsound(get_turf(src.loc), 'sound/items/sawing.ogg', 100)
+		if(do_after(user, 3 SECONDS))
+			user.visible_message("<span class='notice'>[user] makes a crude plank from [src].</span>")
+			var/obj/item/natural/plank/S = new /obj/item/natural/plank(get_turf(src.loc))
+			if(user.is_holding(src))
+				user.dropItemToGround(src)
+				user.put_in_hands(S)
+			qdel(src)
+	..()
 
 /obj/item/grown/log/tree/stick
 	seed = null

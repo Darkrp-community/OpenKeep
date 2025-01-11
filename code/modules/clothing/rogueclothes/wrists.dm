@@ -18,8 +18,9 @@
 	resistance_flags = FIRE_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
-	
+
 	armor = ARMOR_PLATE
+	body_parts_covered = ARMS
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONGER
 
@@ -36,7 +37,7 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	anvilrepair = null
 	sewrepair = TRUE
-	
+
 	armor = ARMOR_LEATHER
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
@@ -77,6 +78,6 @@
 	resistance_flags = FIRE_PROOF
 	anvilrepair = /datum/skill/craft/armorsmithing
 	sewrepair = FALSE
-	
+
 	armor = ARMOR_PLATE_BAD
 	max_integrity = INTEGRITY_POOR //Copper.

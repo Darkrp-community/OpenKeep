@@ -2664,9 +2664,6 @@
 /area/rogue/under/town/basement)
 "daD" = (
 /obj/structure/table/wood,
-/obj/item/roguekey/lord{
-	pixel_x = 5
-	},
 /obj/item/reagent_containers/glass/cup/golden{
 	pixel_x = -6;
 	pixel_y = 3
@@ -8867,7 +8864,7 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors/town)
 "jrk" = (
-/obj/item/roguestatue/silver/gnome,
+/obj/item/roguestatue/gnome,
 /turf/open/floor/rogue/tile/masonic/inverted,
 /area/rogue/indoors/town/magician)
 "jrP" = (

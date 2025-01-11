@@ -19,6 +19,17 @@
 
 /datum/outfit/job/roguetown/adventurer/qatil/pre_equip(mob/living/carbon/human/H)
 	..()
+
+	head = /obj/item/clothing/neck/roguetown/keffiyeh/red
+	gloves = /obj/item/clothing/gloves/roguetown/angle
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
+	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
+	belt = /obj/item/storage/belt/rogue/leather/shalal
+	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
+	beltl = /obj/item/storage/belt/rogue/pouch/burglar
+	pants = /obj/item/clothing/under/roguetown/trou/leather
+	shoes = /obj/item/clothing/shoes/roguetown/shalal
+
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
@@ -34,20 +45,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 1, TRUE)
-		H.change_stat("strength", 1)
-		H.change_stat("speed", 2)
-		H.change_stat("endurance", 1)
 
-	pants = /obj/item/clothing/under/roguetown/trou/leather
-	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
-	shoes = /obj/item/clothing/shoes/roguetown/shalal
-	gloves = /obj/item/clothing/gloves/roguetown/angle
-	belt = /obj/item/storage/belt/rogue/leather/shalal
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
-	backl = /obj/item/storage/backpack/rogue/satchel
-	head = /obj/item/clothing/neck/roguetown/keffiyeh/red
-	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/poor, /obj/item/lockpick)
+	H.change_stat("strength", 1)
+	H.change_stat("speed", 2)
+	H.change_stat("endurance", 1)
+
 	if(!H.has_language(/datum/language/zybantine))
 		H.grant_language(/datum/language/zybantine)
 		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")

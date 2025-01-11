@@ -726,7 +726,7 @@
 /area/rogue/under/cavelava)
 "su" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/roguestatue/silver/gnome,
+/obj/item/roguestatue/gnome,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/cavelava)

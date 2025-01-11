@@ -120,6 +120,7 @@ Sunlight System
 			for(var/obj/structure/thing in src.contents) // Checks to see if weatherproof objects on the tile
 				if(thing.weatherproof == TRUE)
 					.["WEATHERPROOF"] = TRUE // returns true to block the weather
+					.["SKYVISIBLE"] = FALSE
 					return .
 			.["WEATHERPROOF"] = weatherproof //If we are air or space, we aren't weatherproof
 		else //We are open, so assume open to the elements

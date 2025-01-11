@@ -68,16 +68,15 @@
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-		"Ice Cap" = SKIN_COLOR_ICECAP,
-		"Arctic" = SKIN_COLOR_ARCTIC,
-		"Tundra" = SKIN_COLOR_TUNDRA,
-		"Continental" = SKIN_COLOR_CONTINENTAL,
-		"Temperate" = SKIN_COLOR_TEMPERATE,
-		"Coastal" = SKIN_COLOR_COASTAL,
-		"Subtropical" = SKIN_COLOR_SUBTROPICAL,
-		"Tropical Dry" = SKIN_COLOR_TROPICALDRY,
-		"Tropical Wet" = SKIN_COLOR_TROPICALWET,
-		"Desert" = SKIN_COLOR_DESERT,
+		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
+		"Lowlander" = SKIN_COLOR_LOWLANDER,
+		"Mainlander" = SKIN_COLOR_MAINLANDER,
+		"Steppe" = SKIN_COLOR_STEPPE,
+		"Valorian" = SKIN_COLOR_VALORIAN,
+		"Heartfelt" = SKIN_COLOR_HEARTFELT,
+		"Islander" = SKIN_COLOR_ISLANDER,
+		"Southlander" = SKIN_COLOR_SOUTHLANDER,
+		"Zybantu" = SKIN_COLOR_ZYBANTU,
 		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS,
 	))
 
@@ -129,3 +128,11 @@
 
 /datum/species/human/northern/random_surname()
 	return " [pick(world.file2list("strings/rt/names/human/humnorlast.txt"))]"
+
+/datum/species/human/northern/get_accent(mob/living/carbon/human/H)
+	switch(H.skin_tone)
+		if(SKIN_COLOR_GRENZELHOFT)
+			return strings("grenzelhoft_replacement.json", "grenzelhoft")
+		if(SKIN_COLOR_HEARTFELT)
+			return strings("steppe_replacement.json", "steppe")
+	return null

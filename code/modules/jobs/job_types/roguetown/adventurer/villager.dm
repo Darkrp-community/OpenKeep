@@ -33,11 +33,11 @@
 	for(var/X in GLOB.peasant_positions)
 		peopleiknow += X
 		peopleknowme += X
-	for(var/X in GLOB.serf_positions)
+	for(var/X in GLOB.towner_positions)
 		peopleiknow += X
 	for(var/X in GLOB.church_positions)
 		peopleiknow += X
 	for(var/X in GLOB.garrison_positions)
 		peopleiknow += X
-	for(var/X in GLOB.noble_positions)
+	for(var/X in GLOB.court_positions)
 		peopleiknow += X*/

@@ -1,7 +1,7 @@
 /datum/job/roguetown/mercenary
 	title = "Mercenary"
-	flag = GRAVEDIGGER
-	department_flag = PEASANTS
+	flag = MERCENARY
+	department_flag = OUTSIDERS
 	faction = "Station"
 	total_positions = 4
 	spawn_positions = 4
@@ -27,6 +27,7 @@
 	outfit = null
 	outfit_female = null
 	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
+	selection_color = "#9a9a9f"
 
 /datum/job/roguetown/mercenary/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

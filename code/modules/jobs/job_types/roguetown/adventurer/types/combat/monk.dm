@@ -21,12 +21,12 @@
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/brown
 	neck = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
-	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
-	armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
+	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/polearm/woodstaff
 

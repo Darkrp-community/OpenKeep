@@ -224,6 +224,9 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/list/onprop = list()
 	var/force_reupdate_inhand = TRUE
 
+	var/is_silver = FALSE
+	var/last_used = 0
+
 	// Boolean sanity var for smelteries to avoid runtimes. Is this is a bar smelted through ore for exp gain?
 	var/smelted = FALSE
 	// Can this be used against a training dummy to learn skills? Prevents dumb exploits.
@@ -247,6 +250,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 		inhand_y_dimension = 32
 	update_transform()
 
+GLOBAL_LIST_INIT(IconStates_cache, list())
 
 /obj/item/proc/update_transform()
 	transform = null

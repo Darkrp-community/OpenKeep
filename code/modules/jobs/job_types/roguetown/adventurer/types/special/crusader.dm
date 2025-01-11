@@ -29,7 +29,7 @@
 	pants = /obj/item/clothing/under/roguetown/chainlegs
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light
 	backr = /obj/item/rogueweapon/shield/tower/metal
-	backl = /obj/item/clothing/cloak/cape/crusader
+	backl = /obj/item/storage/backpack/rogue/satchel
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/silver
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1)
@@ -149,7 +149,9 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/crusader.dmi'
 
 /obj/item/clothing/head/roguetown/helmet/heavy/crusader_totod
+	name = "totod helm"
 	desc = "Proud knights of the Totod order displays their faith and their allegiance openly."
+	icon_state = "totodhelm"
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"

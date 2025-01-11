@@ -1,7 +1,7 @@
 /datum/job/roguetown/royalguard
 	title = "Royal Guard"
-	flag = GUARDSMAN
-	department_flag = GARRISON
+	flag = ROYAL_GUARD
+	department_flag = NOBLEMEN
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -15,7 +15,7 @@
 		"Aasimar"
 	)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_IMMORTAL)
-	tutorial = "You're an elite member of the Garrison, awarded with knighthood for your prowess and loyalty. Be a stalwart guardian for the royal family, and serve them until your dying breath."
+	tutorial = "You're the rulers hand-picked guard, awarded with knighthood for your prowess and loyalty. Your only oath is a personal one to your ruler, no one else may command you! Serve them until your dying breath."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE

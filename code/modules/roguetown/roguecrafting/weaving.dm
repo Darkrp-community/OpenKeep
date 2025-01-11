@@ -69,6 +69,27 @@
 	craftdiff = 2
 	sellprice = 19
 
+/datum/crafting_recipe/roguetown/weaving/bathrobe
+	name = "bathrobe"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/bath)
+	reqs = list(/obj/item/natural/silk = 2,
+				/obj/item/natural/fur = 1)
+	craftdiff = 2
+	sellprice = 10
+
+/datum/crafting_recipe/roguetown/weaving/mundies
+	name = "masculine smallclothes"
+	result = list(/obj/item/undies)
+	craftdiff = 2
+	sellprice = 20
+
+/datum/crafting_recipe/roguetown/weaving/fundies
+	name = "feminine smallclothes"
+	result = list(/obj/item/undies/f)
+	craftdiff = 2
+	sellprice = 20
+
+
 /*========= SKILL LEVEL: 3 REQUIRED ==========*/
 
 /datum/crafting_recipe/roguetown/weaving/paddedgambeson
@@ -161,6 +182,21 @@
 	craftdiff = 4
 	sellprice = 25
 
+/datum/crafting_recipe/roguetown/weaving/nocrobe
+	name = "noc robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/noc)
+	reqs = list(/obj/item/natural/cloth = 4)
+	craftdiff = 4
+	sellprice = 25
+
+/datum/crafting_recipe/roguetown/weaving/nochood
+	name = "moon hood"
+	result = list(/obj/item/clothing/head/roguetown/roguehood/nochood)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/ingot/silver = 1,)
+	craftdiff = 4
+	sellprice = 25
+
 /datum/crafting_recipe/roguetown/weaving/dendorrobe
 	name = "dendor robes"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/dendor)
@@ -185,7 +221,7 @@
 /datum/crafting_recipe/roguetown/weaving/eoramask // should not be a weaving recipe, does not follow the rules. TO DO
 	name = "eora hood"
 	result = list(/obj/item/clothing/head/roguetown/roguehood/eora)
-	reqs = list(/obj/item/ingot/silver,
+	reqs = list(/obj/item/ingot/silver = 1,
 				/obj/item/natural/cloth = 2)
 	craftdiff = 4
 	sellprice = 20

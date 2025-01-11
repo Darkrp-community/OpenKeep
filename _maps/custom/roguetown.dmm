@@ -1509,7 +1509,6 @@
 "fD" = (
 /obj/item/reagent_containers/glass/cup/golden,
 /obj/structure/table/wood,
-/obj/item/roguekey/lord,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
 "fE" = (
@@ -6253,7 +6252,7 @@
 /area/rogue/indoors/town/dwarfin)
 "wy" = (
 /obj/effect/landmark/start/nightman{
-	name = "Nightman"
+	name = "Niteman"
 	},
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/bath)

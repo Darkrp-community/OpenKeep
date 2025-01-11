@@ -303,7 +303,7 @@
 	buckle_lying = 90
 	pixel_y = 5
 	sleepy = 2
-	debris = list(/obj/item/grown/log/tree/small = 1)
+	debris = list(/obj/item/natural/plank = 1)
 
 
 // ------------ GOOD BEDS ----------------------
@@ -316,7 +316,7 @@
 	max_buckled_mobs = 2
 	pixel_y = 0
 	sleepy = 3
-	debris = list(/obj/item/grown/log/tree/small = 2)
+	debris = list(/obj/item/natural/plank)
 	/// The mob who buckled to this bed second, to avoid other mobs getting pixel-shifted before they unbuckle.
 	var/mob/living/goldilocks
 
@@ -342,7 +342,7 @@
 	icon_state = "double_wool"
 	pixel_y = 0
 	sleepy = 2
-	debris = list(/obj/item/grown/log/tree/small = 2)
+	debris = list(/obj/item/natural/plank = 2)
 
 
 // ------------ ACCEPTABLE BEDS ----------------------
@@ -354,6 +354,7 @@
 /obj/structure/bed/rogue/mediocre
 	icon_state = "shitbed2"
 	sleepy = 1
+	debris = list(/obj/item/grown/log/tree/small = 1)
 
 // Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
 /obj/structure/bed/rogue/bear
@@ -370,6 +371,7 @@
 	name = "uncomfortable bed"
 	icon_state = "shitbed"
 	sleepy = 0.5
+	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/sleepingbag
 	name = "sleepcloth"
@@ -388,6 +390,7 @@
 
 /obj/item/sleepingbag
 	name = "roll of sleepcloth"
+	desc = "If placed on the ground it can be unrolled from the middle to provide a resting place."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "sleepingcloth_rolled"
 	w_class = WEIGHT_CLASS_NORMAL

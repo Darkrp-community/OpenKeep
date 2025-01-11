@@ -82,7 +82,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	if(.)
 		if(new_owner.current == SSticker.rulermob)
 			return FALSE
-		if(new_owner.assigned_role in GLOB.noble_positions)
+		if(new_owner.assigned_role in GLOB.court_positions)
 			return FALSE
 		if(new_owner.assigned_role in GLOB.garrison_positions)
 			return FALSE

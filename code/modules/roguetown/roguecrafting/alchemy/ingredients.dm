@@ -120,6 +120,7 @@
 	throwforce = 5
 	w_class = WEIGHT_CLASS_NORMAL
 	dust_result = /obj/item/alch/earthdust
+	sellprice = 35
 
 //Modifier ingredients
 /obj/item/alch/golddust
