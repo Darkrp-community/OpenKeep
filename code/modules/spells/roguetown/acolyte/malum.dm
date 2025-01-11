@@ -308,11 +308,7 @@
 		return
 	var/list/filtered_zones = list()
 	for(var/body_zone in body_zones)
-		var/is_precise_zone = check_zone(body_zone)
-		if(is_precise_zone)
-			filtered_zones |= is_precise_zone
-		else
-			filtered_zones |= body_zone
+		filtered_zones |= check_zone(body_zone)
 	if(BODY_ZONE_CHEST in filtered_zones)
 		var/chest_damage = damage_to_apply
 		var/obj/item/armor = target.get_item_by_slot(SLOT_ARMOR)

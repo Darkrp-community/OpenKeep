@@ -54,7 +54,7 @@
 		if (user.cleric?.check_devotion(src))
 			user.cleric?.update_devotion(-10)
 		else
-			to_chat(span_warning("My devotion runs dry - the Intercession fades from my lips!"))
+			to_chat(user, span_warning("My devotion runs dry - the Intercession fades from my lips!"))
 			break
 
 	REMOVE_TRAIT(living_target, TRAIT_NODEATH, "avert_spell")

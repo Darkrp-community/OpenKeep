@@ -319,7 +319,7 @@
 	cost = 2
 
 /obj/projectile/energy/rogue3
-	name = "Arcane Bolt"
+	name = "arcane bolt"
 	icon_state = "arcane_barrage"
 	damage = 30
 	damage_type = BRUTE
