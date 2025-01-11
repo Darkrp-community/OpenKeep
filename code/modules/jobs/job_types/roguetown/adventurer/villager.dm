@@ -39,4 +39,4 @@
 	for(var/X in GLOB.garrison_positions)
 		peopleiknow += X
 	for(var/X in GLOB.noble_positions)
-		peopleiknow += X*/
+		peopleiknow += X
