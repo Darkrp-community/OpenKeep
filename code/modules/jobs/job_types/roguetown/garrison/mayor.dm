@@ -28,7 +28,7 @@
 	can_have_apprentices = FALSE
 
 /datum/outfit/job/roguetown/mayor
-	name = "Mayor"
+	name = "Town Elder"
 	jobtype = /datum/job/roguetown/mayor
 
 /datum/outfit/job/roguetown/mayor/pre_equip(mob/living/carbon/human/H)

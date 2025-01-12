@@ -25,7 +25,7 @@ GLOBAL_LIST_INIT(rod_jobs, list(
 	"Royal Guard",
 	"Veteran",
 	"Squire",
-	"Mayor",
+	"Town Elder",
 	"Servant",
 	"Steward",
 	"Consort",

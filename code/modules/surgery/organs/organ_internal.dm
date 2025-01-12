@@ -30,7 +30,7 @@
 	var/now_fixed
 	var/high_threshold_cleared
 	var/low_threshold_cleared
-	dropshrink = 0.5
+	dropshrink = 0.85
 
 	/// Whether the organ is fully internal and should not be seen by bare eyes.
 	var/visible_organ = FALSE

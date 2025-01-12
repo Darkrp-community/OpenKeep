@@ -810,7 +810,7 @@
 	lockid = "butcher"
 
 /obj/item/key/elder
-	name = "mayor's key"
+	name = "elder's key"
 	icon_state = "rustkey"
 	lockid = "elder"
 
