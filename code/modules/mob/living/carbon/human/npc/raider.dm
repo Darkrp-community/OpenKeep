@@ -209,7 +209,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 	ADD_TRAIT(src, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 
-	equipOutfit(new /datum/outfit/job/roguetown/antag/raider/highzamurai/pre_equip)
+	equipOutfit(new /datum/outfit/job/roguetown/antag/raider/highzamurai)
 
 /datum/outfit/job/roguetown/antag/raider/highzamurai
 	name = "Exiled Highclass Zamurai"
