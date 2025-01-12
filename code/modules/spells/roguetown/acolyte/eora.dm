@@ -17,6 +17,7 @@
 		return FALSE
 	var/mob/living/selected = targets[1]
 	selected.apply_status_effect(/datum/status_effect/buff/divine_beauty)
+	wash_atom(selected, CLEAN_WEAK)
 	return ..()
 
 
