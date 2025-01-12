@@ -3,7 +3,7 @@
 	desc = "Speak as a target in range."
 	overlay_state = "mimicry"
 	invocation_type = "none"
-	charge_max = 30 SECONDS
+	charge_max = 1 MINUTES
 	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/xylix)
 	miracle = TRUE
 	devotion_cost = 20
@@ -18,6 +18,8 @@
 	var/forced_speak = input(user, "What should they say?", "Vicious Mimicry")
 	if(!forced_speak)
 		return FALSE
+	to_chat(user, span_userdanger("Your mouth starts to move on its own!"))
 	victim.say(forced_speak, forced = "spell")
-	log_admin("[user] has forced [victim] to say '[forced_speak]' with Vicious Mimicry!")
+	victim.log_message("[user] has forced [victim] to say '[forced_speak]' with Vicious Mimicry!")
+	user.log_message("[user] has forced [victim] to say '[forced_speak]' with Vicious Mimicry!")
 	return ..()
