@@ -4,7 +4,7 @@
 	name = "Instill Perfection"
 	desc = "Grants target a super-natural beauty for a time, increasing their mood."
 	overlay_state = "perfume"
-	charge_max = 7.5 MINUTES
+	charge_max = 2 MINUTES
 	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/eora)
 	invocation = "Eora, lend some of your devine beauty!"
 	invocation_type = "shout"
