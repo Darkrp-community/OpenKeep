@@ -435,6 +435,9 @@
 	name = "kanabo"
 	desc = "A heavy two handed club, reinforced with an iron sleeve. Most commonly seen in the hands of Onis and Yamabushis."
 	icon_state = "kanabo"
+	possible_item_intents = list(/datum/intent/mace/strike/heavy)
+	gripped_intents = list(/datum/intent/mace/smash/heavy) //Can't spear people, but can make them bleed due to spikes.
+	sharpness = IS_SHARP
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	parrysound = "parrywood"
 	swingsound = BLUNTWOOSH_MED
@@ -459,6 +462,9 @@
 	name = "tetsubo"
 	desc = "A heavier variant of the kanabo, fitted with a steel sleeve bearing menacing spikes and favored by Ogrun Warlords. Requires immense strength to use, but hits like a raging bull."
 	icon_state = "tetsubo"
+	possible_item_intents = list(/datum/intent/mace/strike/heavy)
+	gripped_intents = list(/datum/intent/mace/smash/heavy) //Can't spear people, but can make them bleed due to spikes.
+	sharpness = IS_SHARP
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	pixel_y = -16
 	pixel_x = -16

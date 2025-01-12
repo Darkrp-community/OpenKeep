@@ -1091,6 +1091,7 @@
 #include "code\game\objects\structures\hell.dm"
 #include "code\game\objects\structures\hivebot.dm"
 #include "code\game\objects\structures\janicart.dm"
+#include "code\game\objects\structures\kaizokuwalls.dm"
 #include "code\game\objects\structures\kitchen_spike.dm"
 #include "code\game\objects\structures\ladders.dm"
 #include "code\game\objects\structures\lattice.dm"

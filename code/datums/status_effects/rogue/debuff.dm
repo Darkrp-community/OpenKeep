@@ -464,15 +464,6 @@
 		var/mob/living/carbon/C = owner
 		C.remove_status_effect(/datum/status_effect/debuff/freezing)
 		to_chat(C, "<span class='info'>I feel the suffocating cold vanishing, as body warmth returns to me.</span>")
-
-/datum/status_effect/debuff/freezing/tick()
-	if(iscarbon(owner))
-		var/mob/living/carbon/C = owner
-		C.adjustOxyLoss(-6, 0) // Allows breathing underwater
-		if(prob(50))
-			C.adjustFireLoss(2)
-			C.Jitter(3)
-
 // severe freezing
 
 /datum/status_effect/debuff/freezing

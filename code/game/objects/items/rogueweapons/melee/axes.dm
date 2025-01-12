@@ -409,6 +409,6 @@
 	attack_verb = list("chops", "hacks")
 	animname = "chop"
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')
-	penfactor = 50
+	penfactor = AP_HEAVYAXE_STAB
 	swingdelay = 1
 	misscost = 10

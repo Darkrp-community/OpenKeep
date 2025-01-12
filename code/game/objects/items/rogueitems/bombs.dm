@@ -234,16 +234,23 @@
 		inspect_text += "The fuse is not lit."
 	return inspect_text
 
-/*
-	// I did not find the trigger for cutting tool. So this is commented out for now. Use 'cloth' to recover the fuse.
-/obj/item/zhentianlei/attackby(obj/item/tool/cutting/C, mob/user)
+/obj/item/zhentianlei/attackby(obj/item/C, mob/living/user)
+	if(C.sharpness >= 1)
 		if(fuze > 30)
 			fuze = 30
-			to_chat(user, "<span class='warning'>You shorten the fuse of the [name].</span>")
-			playsound(src.loc, 'sound/items/fusecut.ogg', 100)
+			to_chat(user, "<span class='warning'>You shorten [src]'s fuse.</span>")
+			playsound(src.loc, 'sound/items/sharpen_short2.ogg', 100)
+		if(fuze == 0)
+			to_chat(user, "<span class='danger'>The fuse is too small to be cut.</span>")
+			return
 		else
 			fuze = 0
-			to_chat(user, "<span class='danger'>You shorten the fuse even more, turning it into a booby trap!</span>")
-			playsound(src.loc, 'sound/items/fusecut.ogg', 100)
-		return TRUE
-*/
+			to_chat(user, "<span class='danger'>You shorten [src]'s fuse, turning it into a booby trap!</span>")
+			playsound(src.loc, 'sound/items/sharpen_short2.ogg', 100)
+		return
+	if(istype(C, /obj/item/natural/cloth))
+		if(fuze < 30)
+			fuze = 30
+			to_chat(user, "<span class='danger'>You fully increase the [src]'s fuse with the cloth.</span>")
+		else
+			return

@@ -477,14 +477,14 @@
 
 /obj/projectile/bullet/reusable/arrow/poison/fog
 	name = "fog arrow"
-	desc = "An arrow with it's tip drenched in a powerful sedactive."
+	desc = "An arrow with it's tip drenched in a powerful sedative."
 	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
 	icon_state = "arrowfog_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/arrow
 
 /obj/item/ammo_casing/caseless/rogue/arrow/poison/fog
 	name = "fog arrow"
-	desc = "An arrow with it's tip drenched in a powerful sedactive."
+	desc = "An arrow with it's tip drenched in a powerful sedative."
 	projectile_type = /obj/projectile/bullet/reusable/arrow/poison/fog
 	icon = 'icons/roguetown/kaizoku/weapons/ammo.dmi'
 	icon_state = "arrow_fog"

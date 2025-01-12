@@ -49,7 +49,12 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 	pants = /obj/item/clothing/under/roguetown/trou/leather/shinobizubon
 	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja
+	if(prob(50))
+		beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
+	else
+		beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
 
 	if(H.dna.species?.id == "undine")
 		to_chat(H, "<span class='warning'>Living in the Fog island's waterways, I've been trained and fed by the many Abyssariad monks. From their will, I am a branch of their skills.")
