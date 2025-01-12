@@ -113,6 +113,16 @@
 #define RANDOM_PEASANT_DYES		pick(CLOTHING_BARK_BROWN , CLOTHING_PEASANT_BROWN, CLOTHING_MUD_BROWN , CLOTHING_BOG_GREEN , CLOTHING_SPRING_GREEN , CLOTHING_PEAR_YELLOW )
 #define RANDOM_NOBLE_DYES		pick( CLOTHING_DARK_INK, CLOTHING_PLUM_PURPLE, CLOTHING_SALMON, CLOTHING_RED_OCHRE, CLOTHING_YELLOW_OCHRE, CLOTHING_MAROON, CLOTHING_RUSSET, CLOTHING_MUSTARD_YELLOW, CLOTHING_FOREST_GREEN, CLOTHING_SKY_BLUE)
 
+#define CLOTHING_RONIN	 		"#861e1e"
+#define CLOTHING_EIDOLON		"#613a3f"
+#define CLOTHING_TOWERYAKKO		"#804d97"
+#define CLOTHING_KABUKIMONO		"#9b874f"
+
+#define CLOTHING_THUNDER		"#be8b48"
+#define CLOTHING_STORM			"#1a2677"
+#define CLOTHING_OCEAN			"#56928a"
+#define CLOTHING_ISLAND			"#bd3541"
+
 #define CLOTHING_COLOR_NAMES	list("Ash Grey","Chalk White","Cream","White","Dark Ink","Plum Purple","Salmon","Blood Red", "Maroon","Red Ochre","Russet","Chestnut","Mustard Yellow","Yellow Ochre","Forest Green","Sky Blue","Teal", "Royal Black","Soot Black","Winestain Red","Royal Red","Royal Majenta","Fyritius Orange","Bark Brown","Peasant Brown","Mud Brown","Pear Yellow","Spring Green","Bog Green","Royal Teal","Berry Blue", "Royal Blue", "Royal Purple","Dunked in Water" )
 
 /proc/clothing_color2hex(input)

@@ -38,7 +38,11 @@
 	"Dwarf",
 	"Tiefling",
 	"Dark Elf",
-	"Aasimar"
+	"Aasimar",
+	"Changeling",
+	"Denmorian",
+	"Ogrun",
+	"Undine"
 	)
 	maximum_possible_slots = 0
 

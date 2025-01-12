@@ -74,6 +74,10 @@
 		"necromancer": "nekromant",
 		"demon": "dämon",
 		"vampire": "vampir",
-		"goblin": "kobold"
+		"goblin": "kobold",
+        "changeling": "reynard",
+        "denmorian": "harpy",
+        "ogrun": "ogre",
+        "undine": "nereid"
     }
 }

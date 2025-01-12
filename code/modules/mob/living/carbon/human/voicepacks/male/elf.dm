@@ -39,6 +39,8 @@
 				used = list('sound/vo/male/elf/rage (1).ogg','sound/vo/male/elf/rage (2).ogg')
 			if("scream")
 				used = list('sound/vo/male/elf/scream (1).ogg','sound/vo/male/elf/scream (2).ogg')
+			if("croak") //undine only.
+				used = list('sound/vo/general/undinecall.ogg','sound/vo/general/undinecall2.ogg','sound/vo/general/undinecall3.ogg','sound/vo/general/undinecall4.ogg','sound/vo/general/undinecall5.ogg','sound/vo/general/undinecall6.ogg')
 
 	if(!used)
 		used = ..(soundin)

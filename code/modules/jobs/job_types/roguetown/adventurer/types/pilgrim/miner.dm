@@ -10,7 +10,8 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Ogrun" //Abyssariad: Non-military racial specialization, so they are allowed to work on this role.
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/miner
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
