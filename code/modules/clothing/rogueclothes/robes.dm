@@ -173,4 +173,14 @@
 	icon_state = "surgrobe"
 	item_state = "surgrobe"
 
-
+//................ Yellow Robes ............... //
+/obj/item/clothing/suit/roguetown/shirt/robe/yellowrobe
+	name = "yellow robe"
+	desc = "Short robes worn by members of the Yellow Mage order. Commonly worn alone without leggings or footwear, to better endure the hardships of the world undeterred from the path."
+	icon_state = "yellowrobe"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	flags_inv = HIDEBOOB
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	resistance_flags = FLAMMABLE

@@ -284,6 +284,12 @@
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
 
+/datum/crafting_recipe/roguetown/funnymask
+	name = "funny mask"
+	result = /obj/item/clothing/mask/rogue/funnymask
+	reqs = list(/obj/item/natural/fibers = 2,
+				 /obj/item/natural/cloth = 1,
+				 /obj/item/grown/log/tree/stick = 1)
 
 /datum/crafting_recipe/roguetown/stoneblocprimitive	// replace with intent coded strike at some point TO DO
 	name = "crude stone block"
