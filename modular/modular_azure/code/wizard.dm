@@ -33,7 +33,7 @@
 	damage_type = BURN
 	flag = "magic"
 	range = 15
-	speed = 15 //higher is slower
+	speed = 3 //higher is slower
 	var/aoe_range = 1
 
 /obj/projectile/magic/acidsplash5e/on_hit(atom/target, blocked = FALSE)
@@ -94,7 +94,7 @@
 	charging_slowdown = 2
 	chargedloop = /datum/looping_sound/invokegen
 	associated_skill = /datum/skill/magic/arcane
-	var/delay = 6
+	var/delay = 3
 	var/damage = 50 // less then fireball, more then lighting bolt
 	var/area_of_effect = 2
 
@@ -180,7 +180,7 @@
 	damage_type = BURN
 	flag = "magic"
 	range = 10
-	speed = 12 //higher is slower
+	speed = 1 //higher is slower
 	var/aoe_range = 0
 
 /obj/projectile/magic/frostbolt/on_hit(target)
