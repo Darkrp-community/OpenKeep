@@ -21,7 +21,7 @@
 	. = ..()
 	for(var/X in keys)
 		var/obj/item/key/new_key = new X(loc)
-		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, new_key, null, TRUE, TRUE))
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, new_key, null, TRUE, FALSE))
 			qdel(new_key)
 
 	update_icon()
