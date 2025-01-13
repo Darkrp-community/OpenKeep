@@ -98,7 +98,7 @@
 /datum/status_effect/debuff/silver_curse
 	id = "silver_curse"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/silver_curse
-	effectedstats = list(STATKEY_STR = -3,STATKEY_PER = -3,STATKEY_INT = -3, STATKEY_CON = -3, STATKEY_END = -3, STATKEY_SPD = -3, STATKEY_LCK = -3)
+	effectedstats = list(STATKEY_STR = -2,STATKEY_PER = -2,STATKEY_INT = -2, STATKEY_CON = -2, STATKEY_END = -2, STATKEY_SPD = -2, STATKEY_LCK = -2)
 	duration = 1 MINUTES
 
 /*	Pointless subtype, code doesnt handle it well, dont use
