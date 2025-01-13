@@ -93,7 +93,8 @@ SUBSYSTEM_DEF(familytree)
 
 		if(FAMILY_FULL)
 			if(H.virginity)
-			if(H.age = AGE_CHILD)
+				return
+			if(H.age == AGE_CHILD)
 				return
 			AssignToFamily(H)
 
