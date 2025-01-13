@@ -2706,6 +2706,9 @@
 "NL" = (
 /turf/open/floor/rogue/woodturned/nosmooth,
 /area/rogue/outdoors/bog)
+"NM" = (
+/turf/open/transparent/openspace,
+/area/rogue/indoors/cave)
 "NQ" = (
 /obj/structure/fluff/railing/wood{
 	dir = 8;
@@ -75910,8 +75913,8 @@ Dd
 Dm
 Dm
 HA
-Dd
-Dd
+Dm
+Dm
 Dm
 Nk
 Nk
@@ -76114,8 +76117,8 @@ Ie
 Ie
 Ie
 Ie
-Ie
-Ie
+Dm
+Dm
 Ie
 Ie
 Ie
@@ -83371,7 +83374,7 @@ Dm
 Dm
 Dm
 Dm
-Dm
+bk
 Dm
 Dm
 Dm
@@ -83568,10 +83571,10 @@ Dm
 Dm
 Dm
 Dd
+bk
 Dm
-Dm
-Dm
-Dm
+NM
+NM
 Dm
 Dm
 Dm
@@ -83772,8 +83775,8 @@ Dm
 Dd
 Dm
 wQ
-Dm
-Dm
+Wv
+Wv
 Dm
 Dm
 Dm
@@ -83973,10 +83976,10 @@ Dm
 Dm
 Dm
 Dd
-bk
-Ie
-Ie
-bk
+Dm
+Dm
+Dm
+Dm
 Dd
 Dd
 Dd
