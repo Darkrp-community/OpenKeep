@@ -89,12 +89,17 @@ SUBSYSTEM_DEF(familytree)
 			AssignToHouse(H)
 
 		if(FAMILY_NEWLYWED)
-			AssignNewlyWed(H)
+			if(H.age == AGE_CHILD)
+				AssignToHouse(H)
+				return
+			else
+				AssignNewlyWed(H)
 
 		if(FAMILY_FULL)
 			if(H.virginity)
 				return
 			if(H.age == AGE_CHILD)
+				AssignToHouse(H)
 				return
 			AssignToFamily(H)
 
