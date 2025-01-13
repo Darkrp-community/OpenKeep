@@ -873,9 +873,10 @@
 	new /obj/effect/temp_visual/blade_burst(T)
 	for(var/mob/living/L in T.contents)
 		var/def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-		var/obj/item/bodypart/BP = L.get_bodypart(def_zone)
 		L.apply_damage(damage, BRUTE, def_zone)
-		BP?.add_wound(/datum/wound/fracture)
+		if(prob(33))
+			var/obj/item/bodypart/BP = L.get_bodypart(def_zone)
+			BP.add_wound(/datum/wound/fracture)
 		play_cleave = TRUE
 		L.adjustBruteLoss(damage)
 		playsound(T, "genslash", 80, TRUE)

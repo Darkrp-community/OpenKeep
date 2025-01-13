@@ -77,10 +77,10 @@
 		switch(weapontypec)
 			if("Bow")
 				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-				backr = /obj/item/quiver/arrows
+				backr = /obj/item/ammo_holder/quiver/arrows
 			if("Crossbow")
 				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-				backr = /obj/item/quiver/bolts
+				backr = /obj/item/ammo_holder/quiver/bolts
 
 /datum/advclass/menatarms/watchman_pikeman
 	name = "Pikeman Men-At-Arms"

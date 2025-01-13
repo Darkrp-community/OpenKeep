@@ -4580,7 +4580,7 @@
 /area/rogue/indoors/town/clocktower)
 "dwm" = (
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow,
-/obj/item/quiver/arrows,
+/obj/item/ammo_holder/quiver/arrows,
 /obj/structure/closet/crate/chest/neu_iron,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/outdoors/mountains)
@@ -24496,7 +24496,7 @@
 "teR" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow,
-/obj/item/quiver/bolts,
+/obj/item/ammo_holder/quiver/bolts,
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/manorgate)
 "tfl" = (

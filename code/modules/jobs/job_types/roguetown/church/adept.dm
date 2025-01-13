@@ -99,7 +99,7 @@
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	backl = /obj/item/quiver/bolts
+	backl = /obj/item/ammo_holder/quiver/bolts
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
 	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/storage/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)

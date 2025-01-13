@@ -68,7 +68,6 @@
 			return
 	if(world.time > (the_time + 30 SECONDS))
 		return
-	picked = TRUE
 	if(design != "None")
 		detail_tag = design
 	switch(design)
@@ -87,6 +86,16 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		color = initial(color)
+		detail_tag = initial(detail_tag)
+		detail_color = initial(detail_color)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
+	picked = TRUE
 
 /obj/item/clothing/cloak/tabard/knight
 	color = CLOTHING_PLUM_PURPLE
@@ -136,6 +145,14 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_color = initial(detail_color)
+		color = initial(color)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
 	picked = TRUE
 
 /obj/item/clothing/cloak/tabard/crusader/tief/attack_right(mob/user)
@@ -157,6 +174,14 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_color = initial(detail_color)
+		color = initial(color)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
 	picked = TRUE
 
 /obj/item/clothing/cloak/tabard/knight/guard
@@ -174,7 +199,6 @@
 		return
 	if(!chosen)
 		return
-	picked = TRUE
 	switch(chosen)
 		if("Split")
 			detail_tag = "_spl"
@@ -188,6 +212,14 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_tag = initial(detail_tag)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
+	picked = TRUE
 
 /obj/item/clothing/cloak/tabard/knight/guard/Initialize()
 	. = ..()
@@ -263,7 +295,6 @@
 			return
 	if(world.time > (the_time + 30 SECONDS))
 		return
-	picked = TRUE
 	switch(design)
 		if("Split")
 			detail_tag = "_spl"
@@ -280,6 +311,16 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_color = initial(detail_color)
+		color = initial(color)
+		detail_tag = initial(detail_tag)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
+	picked = TRUE
 
 /obj/item/clothing/cloak/stabard/guard
 	desc = "A tabard with the lord's heraldic colors. This one is worn typically by guards."
@@ -296,7 +337,6 @@
 		return
 	if(!chosen)
 		return
-	picked = TRUE
 	switch(chosen)
 		if("Split")
 			detail_tag = "_spl"
@@ -310,6 +350,14 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_tag = initial(detail_tag)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
+	picked = TRUE
 
 /obj/item/clothing/cloak/stabard/guard/Initialize()
 	. = ..()
@@ -447,7 +495,6 @@
 			return
 	if(world.time > (the_time + 30 SECONDS))
 		return
-	picked = TRUE
 	switch(design)
 		if("Split")
 			detail_tag = "_spl"
@@ -464,6 +511,16 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_color = initial(detail_color)
+		color = initial(color)
+		detail_tag = initial(detail_tag)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
+	picked = TRUE
 
 /obj/item/clothing/cloak/stabard/surcoat/update_icon()
 	cut_overlays()
@@ -489,7 +546,6 @@
 		return
 	if(!chosen)
 		return
-	picked = TRUE
 	switch(chosen)
 		if("Split")
 			detail_tag = "_spl"
@@ -503,7 +559,14 @@
 	if(ismob(loc))
 		var/mob/L = loc
 		L.update_inv_cloak()
-
+	if(alert("Are you pleased with your heraldry?", "Heraldry", "Yes", "No") != "Yes")
+		detail_tag = initial(detail_tag)
+		update_icon()
+		if(ismob(loc))
+			var/mob/L = loc
+			L.update_inv_cloak()
+		return
+	picked = TRUE
 
 /obj/item/clothing/cloak/stabard/surcoat/guard/Initialize()
 	. = ..()

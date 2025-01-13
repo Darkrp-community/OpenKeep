@@ -372,6 +372,8 @@
 /mob/living/carbon/proc/kick_attack_check(mob/living/L)
 	if(L == src)
 		return FALSE
+	if(!(src.mobility_flags & MOBILITY_STAND))
+		return TRUE
 	var/list/acceptable = list(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG, BODY_ZONE_R_ARM, BODY_ZONE_CHEST, BODY_ZONE_L_ARM)
 	if( !(check_zone(L.zone_selected) in acceptable) )
 		to_chat(L, "<span class='warning'>I can't reach that.</span>")
@@ -1192,11 +1194,20 @@
 		to_chat(src, "<span class='warning'>Someone is grabbing my arm!</span>")
 		return
 
+	var/surrender_mod = 1
+	if(isliving(who))
+		var/mob/living/L = who
+		if(L.surrendering)
+			surrender_mod = 0.5
+
+	if(!who.Adjacent(src))
+		return
+
 	who.visible_message("<span class='warning'>[src] tries to remove [who]'s [what.name].</span>", \
 					"<span class='danger'>[src] tries to remove my [what.name].</span>", null, null, src)
 	to_chat(src, "<span class='danger'>I try to remove [who]'s [what.name]...</span>")
 	what.add_fingerprint(src)
-	if(do_mob(src, who, what.strip_delay))
+	if(do_mob(src, who, what.strip_delay * surrender_mod))
 		if(what && Adjacent(who))
 			if(islist(where))
 				var/list/L = where
