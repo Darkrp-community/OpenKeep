@@ -135,7 +135,7 @@
 
 /datum/intent/simple/werewolf
 	name = "claw"
-	icon_state = "inchop"
+	icon_state = "inclaw"
 	blade_class = BCLASS_CHOP
 	attack_verb = list("claws", "mauls", "eviscerates")
 	animname = "claw"
