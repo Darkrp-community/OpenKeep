@@ -461,7 +461,7 @@
 	item_state = "tabard_malum"
 
 /obj/item/clothing/cloak/stabard/templar/eora
-	name = "surcoat of the eoran order" //This SHOULDNT be used, Eorites dont have templars since they are all pansy pacifists
+	name = "surcoat of the eoran order"
 	icon_state = "tabard_eora"
 	item_state = "tabard_eora"
 
@@ -469,6 +469,11 @@
 	name = "surcoat of the pestran order"
 	icon_state = "tabard_pestra"
 	item_state = "tabard_pestra"
+
+/obj/item/clothing/cloak/stabard/templar/ravox
+	name = "surcoat of the ravoxian order"
+	icon_state = "tabard_ravox"
+	item_state = "tabard_ravox"
 
 //////////////////////////
 /// SURCOATS

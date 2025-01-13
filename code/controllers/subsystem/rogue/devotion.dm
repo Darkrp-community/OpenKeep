@@ -152,7 +152,7 @@
 		return
 
 	var/datum/patron/A = H.patron
-	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/churn, A.t0)
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/targeted/abrogation, A.t0)
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
 			continue

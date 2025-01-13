@@ -430,3 +430,23 @@
 	name = "Insight"
 	desc = "With some sleep in a coffin I feel like I could become better."
 	icon_state = "sleepy"
+
+/datum/status_effect/eorapacify
+	id = "eorapacify"
+	status_type = STATUS_EFFECT_REPLACE
+	tick_interval = 1
+	duration = 85
+	alert_type = null
+
+/datum/status_effect/eorapacify/on_creation(mob/living/new_owner, set_duration)
+	if(isnum(set_duration))
+		duration = set_duration
+	. = ..()
+
+/datum/status_effect/eorapacify/on_apply()
+	ADD_TRAIT(owner, TRAIT_PACIFISM, "[type]")
+	return ..()
+
+/datum/status_effect/eorapacify/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "[type]")
+	return ..()
