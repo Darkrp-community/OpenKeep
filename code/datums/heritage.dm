@@ -273,9 +273,9 @@
 /datum/heritage/proc/SpeciesHeirs(datum/species/core_species)
 	. = list(core_species.type)
 	if(istype(core_species, /datum/species/human/northern) || istype(core_species, /datum/species/elf))
-		. += /datum/species/human/halfelf
+		. += /datum/species/halfelf
 	if(istype(core_species, /datum/species/elf/dark) || istype(core_species, /datum/species/human/northern))
-		. += /datum/species/elf
+		. += /datum/species/halfelf
 	if(istype(core_species, /datum/species/human/northern) || istype(core_species, /datum/species/dwarf/mountain))
 		. += /datum/species/dwarf/mountain
 	if(istype(core_species, /datum/species/human/northern) || istype(core_species, /datum/species/halforc))
