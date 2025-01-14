@@ -21,5 +21,5 @@
 
 	else
 		var/datum/repeatable_crafting_recipe/recipe = input(src, "Choose a recipe to craft", "Recipes") as null|anything in passed_recipes
-		recipe.start_recipe(attacked_item, attacked_object, src)
+		recipe?.start_recipe(attacked_item, attacked_object, src)
 	return TRUE
