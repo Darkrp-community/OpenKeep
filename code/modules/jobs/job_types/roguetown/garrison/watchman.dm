@@ -26,7 +26,7 @@
 	min_pq = 2
 
 /datum/outfit/job/roguetown/watchman/pre_equip(mob/living/carbon/human/H)
-	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots
@@ -54,6 +54,7 @@
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
 	beltr = /obj/item/rogueweapon/mace/cudgel
+	neck = /obj/item/clothing/neck/roguetown/coif/cloth
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
@@ -76,10 +77,10 @@
 		switch(weapontypec)
 			if("Bow")
 				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-				backr = /obj/item/quiver/arrows
+				backr = /obj/item/ammo_holder/quiver/arrows
 			if("Crossbow")
 				backl = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-				backr = /obj/item/quiver/bolts
+				backr = /obj/item/ammo_holder/quiver/bolts
 
 /datum/advclass/menatarms/watchman_pikeman
 	name = "Pikeman Men-At-Arms"
@@ -92,7 +93,9 @@
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/ironpot
 	cloak = /obj/item/clothing/cloak/stabard/guard
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
+	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/iron
+	gloves = /obj/item/clothing/gloves/roguetown/chain
 	beltr = /obj/item/rogueweapon/sword/arming
 	backr = /obj/item/rogueweapon/polearm/spear
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special)
