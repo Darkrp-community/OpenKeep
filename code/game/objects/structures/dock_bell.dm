@@ -10,13 +10,13 @@
 	COOLDOWN_DECLARE(ring_bell)
 	COOLDOWN_DECLARE(outsider_ring_bell)
 	var/static/approved_jobs = list(/datum/job/roguetown/merchant, /datum/job/roguetown/grabber, /datum/job/roguetown/steward)
-
+	max_integrity = 999999
 
 /obj/structure/dock_bell/attack_hand(mob/user)
 	. = ..()
 	if(!COOLDOWN_FINISHED(src, ring_bell))
 		return
-	var/datum/job/user_job = SSjob.name_occupations[user.job]
+	var/datum/job/user_job = SSjob.GetJob(user.job)
 	if(user_job && !(initial(user_job.type) in approved_jobs))
 		if(!COOLDOWN_FINISHED(src, outsider_ring_bell))
 			return
