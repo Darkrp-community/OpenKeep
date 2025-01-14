@@ -895,6 +895,29 @@
 	armor = ARMOR_PLATE_GOOD
 	prevent_crits = ALL_CRITICAL_HITS
 
+//............... Skull Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/skullhelm
+	name = "skull helmet"
+	desc = "A helmet baring the face of death, lacking any real decorative elements."
+	icon_state = "skullhelm"
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+	armor = ARMOR_PLATE_GOOD
+	prevent_crits = ALL_CRITICAL_HITS
+
+//............... Pointed Helmet ............... //
+/obj/item/clothing/head/roguetown/helmet/heavy/tallhelm
+	name = "tall helmet"
+	desc = "A rather tall helmet coming to a point."
+	icon_state = "pointhelm"
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/64x64/head.dmi'
+	worn_x_dimension = 64
+	worn_y_dimension = 64
+	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
+
+	armor = ARMOR_PLATE_GOOD
+	prevent_crits = ALL_CRITICAL_HITS
+
 //............... Temple heavy helmets ......................//
 //............... Astrata Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/heavy/necked/astrata
@@ -1256,7 +1279,24 @@
 	sewrepair = TRUE
 	blocksound = SOFTHIT
 
-
+//............... Yellow Hood ............... //
+/obj/item/clothing/head/roguetown/yellowhood
+	name = "yellow hood"
+	desc = "A yellow hood wrapped tightly around the head, worn by Yellow Mages. Theirs is a sometimes loathed order, often blamed for hardships in the towns they pass through. Hiding one's true identity is a must, and is revealed only to other Yellow Mages on the path or those most trusted."
+	color = null
+	flags_inv = HIDEEARS|HIDEHAIR|HIDEFACE|HIDEFACIALHAIR
+	icon_state = "yellowhood"
+	item_state = "yellowhood"
+	dynamic_hair_suffix = "+generic"
+	icon = 'icons/roguetown/clothing/head.dmi'
+	body_parts_covered = HEAD|HAIR|EARS|NECK
+	slot_flags = ITEM_SLOT_HEAD
+	dynamic_hair_suffix = ""
+	max_integrity = 100
+	prevent_crits = list(BCLASS_TWIST)
+	anvilrepair = null
+	sewrepair = TRUE
+	blocksound = SOFTHIT
 
 /*------------------\
 | Feldsher headwear |

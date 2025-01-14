@@ -1719,6 +1719,7 @@
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\rogue.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\sorceress.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\warrior.dm"
+#include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\yellowmage.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\donator\bladesinger.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\donator\hoplite.dm"
 #include "code\modules\jobs\job_types\roguetown\adventurer\types\combat\donator\longbeard.dm"

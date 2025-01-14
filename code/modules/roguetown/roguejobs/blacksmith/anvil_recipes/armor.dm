@@ -73,7 +73,6 @@
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 
-
 /datum/anvil_recipe/armor/iplate
 	name = "Plate armor (3)"
 	recipe_name = "heavy armor made of iron plates"
@@ -239,6 +238,20 @@
 	recipe_name = "a frog helmet"
 	req_bar = /obj/item/ingot/steel
 	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/frog)
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/skullhelmet
+	name = "Skull helmet"
+	recipe_name = "a skull helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/skullhelm)
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/tallhelmet
+	name = "Tall helmet"
+	recipe_name = "a tall helmet"
+	req_bar = /obj/item/ingot/steel
+	created_item = (/obj/item/clothing/head/roguetown/helmet/heavy/tallhelm)
 	craftdiff = 2
 
 /datum/anvil_recipe/armor/helmetknight

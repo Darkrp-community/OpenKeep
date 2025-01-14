@@ -87,7 +87,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	clothing_flags = CANT_SLEEP_IN
-	
+
 	armor = ARMOR_PLATE_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS //No stab, blunt or chop crit flags. If a chopping weapon can get through 70 armor, it's probably carrying enough force to mess up your face behind a flimsy mask.
 	max_integrity = INTEGRITY_STANDARD //Flimsier than a proper visor/helmet.
@@ -120,7 +120,7 @@
 	name = "steel mask"
 	icon_state = "smask"
 	desc = "A knightly steel mask that both conceals and protects the face. Usually paired with a bascinet."
-	
+
 	armor = ARMOR_PLATE_BAD //Still thin.
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
 	max_integrity = INTEGRITY_STRONG //250 Integrity, added chop protection. Still worse than a proper visored helmet.
@@ -206,7 +206,7 @@
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
 	smeltresult = /obj/item/ingot/copper
-	
+
 	max_integrity = INTEGRITY_WORST //Really flimsy, still good for a few blows.
 
 //................ Druids Mask ............... //
@@ -225,3 +225,10 @@
 
 	armor = ARMOR_WEAK
 	prevent_crits = CUT_AND_MINOR_CRITS
+
+/obj/item/clothing/mask/rogue/funnymask
+	name = "grinning mask"
+	icon_state = "funnymask"
+	flags_inv = HIDEFACE
+	body_parts_covered = FACE
+	desc = "A simple mask depicting a grinning face with a comically elongated nose. Worn by pranksters, tricksters and even some Xylixian's."
