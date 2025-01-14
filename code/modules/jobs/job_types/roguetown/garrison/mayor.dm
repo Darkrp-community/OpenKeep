@@ -79,8 +79,8 @@
 	refuse_message = "I refuse."
 
 /datum/job/roguetown/militia //just used to change the title
-	title = "Militiaman"
-	f_title = "Militiawoman"
+	title = "Town Militiaman"
+	f_title = "Town Militiawoman"
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	faction = "Station"
