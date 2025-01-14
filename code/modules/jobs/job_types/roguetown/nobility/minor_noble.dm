@@ -1,7 +1,7 @@
 /datum/job/roguetown/minor_noble
 	title = "Noble"
-	tutorial = "The blood of a noble family runs through your veins. Perhaps you are visiting from some place far away, \
-	looking to enjoy the hospitality of the ruler of Vanderlin. You have many mammons to your name, but with wealth comes \
+	tutorial = "The blood of a noble family runs through your veins. You are the living proof that the minor houses \
+	of Vanderlin still exist in spite of the Monarch. You have many mammons to your name, but with wealth comes \
 	danger, so keep your wits and tread lightly..."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
