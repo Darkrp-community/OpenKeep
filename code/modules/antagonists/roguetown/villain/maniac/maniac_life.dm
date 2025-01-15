@@ -78,7 +78,7 @@
 	var/language = target.get_random_understood_language()
 	var/message = target.compose_message(speaker, language, speech)
 	target.playsound_local(target, pick(speech_sounds), vol = 60, vary = FALSE)
-	if(target.client.prefs?.chat_on_map)
+	if(target.client?.prefs?.chat_on_map)
 		target.create_chat_message(speaker, language, speech, spans = list(target.speech_span))
 	to_chat(target, message)
 
@@ -210,29 +210,29 @@
 	dreamer.client?.images -= fake_floor
 
 /proc/handle_maniac_admin_bwoink_hallucination(mob/living/target)
-    var/fakemin = "Trey Liam"
-    if(length(GLOB.admin_datums))
-        var/datum/admins/badmin = GLOB.admin_datums[pick(GLOB.admin_datums)]
-        if(badmin?.owner?.key)
-            fakemin = badmin.owner.key
-    var/message = ""
-    message = pick_list_replacements("maniac.json", "dreamer_ahelp")
-    to_chat(target, "<font color='red' size='4'><b>-- Administrator private message --</b></font>")
-    to_chat(target, span_adminsay("Admin PM from-<b><span style='color: #0b4990;'>[fakemin]</span></b>: [message]"))
-    to_chat(target, span_adminsay("<i>Click on the administrator's name to die.</i>"))
-    SEND_SOUND(target, sound('sound/adminhelp.ogg'))
+	var/fakemin = "Trey Liam"
+	if(length(GLOB.admin_datums))
+		var/datum/admins/badmin = GLOB.admin_datums[pick(GLOB.admin_datums)]
+		if(badmin?.owner?.key)
+			fakemin = badmin.owner.key
+	var/message = ""
+	message = pick_list_replacements("maniac.json", "dreamer_ahelp")
+	to_chat(target, "<font color='red' size='4'><b>-- Administrator private message --</b></font>")
+	to_chat(target, span_adminsay("Admin PM from-<b><span style='color: #0b4990;'>[fakemin]</span></b>: [message]"))
+	to_chat(target, span_adminsay("<i>Click on the administrator's name to die.</i>"))
+	SEND_SOUND(target, sound('sound/adminhelp.ogg'))
 
 /proc/handle_maniac_admin_ban_hallucination(mob/living/target)
-    var/fakemin = "Trey Liam"
-    if(length(GLOB.admin_datums))
-        var/datum/admins/badmin = GLOB.admin_datums[pick(GLOB.admin_datums)]
-        if(badmin?.owner?.key)
-            fakemin = badmin.owner.key
-    var/message = ""
-    var/ban_appeal = "WAKE UP WAKE UP WAKE UP."
-    message = pick_list_replacements("maniac.json", "dreamer_ban")
-    to_chat(target, span_boldannounce("<BIG>You have been banned by [fakemin] from the server.\nReason: [message]</BIG>"))
-    to_chat(target, span_boldannounce("This is a permanent ban. The round ID is [GLOB.rogue_round_id]."))
-    to_chat(target, span_boldannounce("To appeal this ban go to <span style='color: #0099cc;'>[ban_appeal]</span>"))
-    to_chat(target, "<div class='connectionClosed internal'>You are either AFK, experiencing lag or the connection has closed.</div>")
-    SEND_SOUND(target, sound(null))
+	var/fakemin = "Trey Liam"
+	if(length(GLOB.admin_datums))
+		var/datum/admins/badmin = GLOB.admin_datums[pick(GLOB.admin_datums)]
+		if(badmin?.owner?.key)
+			fakemin = badmin.owner.key
+	var/message = ""
+	var/ban_appeal = "WAKE UP WAKE UP WAKE UP."
+	message = pick_list_replacements("maniac.json", "dreamer_ban")
+	to_chat(target, span_boldannounce("<BIG>You have been banned by [fakemin] from the server.\nReason: [message]</BIG>"))
+	to_chat(target, span_boldannounce("This is a permanent ban. The round ID is [GLOB.rogue_round_id]."))
+	to_chat(target, span_boldannounce("To appeal this ban go to <span style='color: #0099cc;'>[ban_appeal]</span>"))
+	to_chat(target, "<div class='connectionClosed internal'>You are either AFK, experiencing lag or the connection has closed.</div>")
+	SEND_SOUND(target, sound(null))
