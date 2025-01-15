@@ -6,4 +6,4 @@
 	. = ..()
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		H.add_curse(/datum/curse/zizo)
+		H.add_curse(/datum/curse/schizophrenic, silent = TRUE)
