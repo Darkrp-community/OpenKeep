@@ -79,10 +79,6 @@
 	icon_state = "auto"
 	no_attack = TRUE
 
-/obj/item/fishingrod/New()
-	. = ..()
-	icon_state = "rod[rand(1,3)]"
-
 /obj/item/fishingrod/attack_self(mob/user)
 	if(user.doing)
 		user.doing = 0
@@ -747,6 +743,10 @@
 	update_icon()
 
 /obj/item/fishingrod/fisher
+
+/obj/item/fishingrod/fisher/New()
+	. = ..()
+	icon_state = "rod[rand(1,3)]"
 
 /obj/item/fishingrod/fisher/Initialize()
 	. = ..()
