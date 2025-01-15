@@ -101,7 +101,6 @@ SUBSYSTEM_DEF(familytree)
 			if(H.age == AGE_CHILD)
 				AssignToHouse(H)
 				return
-			else
 			AssignToFamily(H)
 
 /*
