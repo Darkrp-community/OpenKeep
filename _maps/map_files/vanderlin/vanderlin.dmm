@@ -4786,8 +4786,8 @@
 /obj/structure/table/wood/plain_alt,
 /obj/item/rogueweapon/tongs,
 /obj/item/rogueweapon/tongs,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/hammer/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/smithy)
 "dFK" = (
@@ -13840,7 +13840,7 @@
 "kAg" = (
 /obj/item/rogueweapon/tongs,
 /obj/structure/closet/crate/roguecloset/dark,
-/obj/item/rogueweapon/hammer,
+/obj/item/rogueweapon/hammer/iron,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/smithy)
 "kAo" = (
@@ -28320,7 +28320,7 @@
 "vYw" = (
 /obj/structure/closet/crate/roguecloset/dark,
 /obj/item/rogueweapon/tongs,
-/obj/item/rogueweapon/hammer,
+/obj/item/rogueweapon/hammer/iron,
 /obj/machinery/light/rogue/wallfire/candle{
 	pixel_x = -32;
 	pixel_y = 0
@@ -28423,7 +28423,7 @@
 /area/rogue/indoors/soilsons)
 "weA" = (
 /obj/structure/table/wood/plain_alt,
-/obj/item/rogueweapon/hammer,
+/obj/item/rogueweapon/hammer/iron,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/smithy)
 "wft" = (
