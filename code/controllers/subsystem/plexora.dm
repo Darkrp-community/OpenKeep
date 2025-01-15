@@ -377,34 +377,6 @@ SUBSYSTEM_DEF(plexora)
 
 		. += LIST_VALUE_WRAP_LISTS(admin_info)
 
-/datum/world_topic/plx_mentorwho
-	keyword = "PLX_mentorwho"
-	require_comms_key = TRUE
-
-/datum/world_topic/plx_mentorwho/Run(list/input)
-	// . = list()
-	// for (var/client/mentor as anything in GLOB.mentors)
-	// 	if(QDELETED(mentor))
-	// 		continue
-	// 	var/list/mentor_info = list(
-	// 		"name" = mentor,
-	// 		"ckey" = mentor.ckey,
-	// 		"rank" = mentor.holder?.rank_names(),
-	// 		"afk" = mentor.is_afk(),
-	// 		"stealth" = !!mentor.holder?.fakekey,
-	// 		"stealthkey" = mentor.holder?.fakekey,
-	// 	)
-
-	// 	if(isobserver(mentor.mob))
-	// 		mentor_info["state"] = "observing"
-	// 	else if(isnewplayer(mentor.mob))
-	// 		mentor_info["state"] = "lobby"
-	// 	else
-	// 		mentor_info["state"] = "playing"
-
-	// 	. += LIST_VALUE_WRAP_LISTS(mentor_info)
-	return list("error" = "notsupported")
-
 /datum/world_topic/plx_getbasicplayerdetails
 	keyword = "PLX_getbasicplayerdetails"
 	require_comms_key = TRUE
