@@ -22,7 +22,7 @@
 	outfit = /datum/outfit/job/roguetown/mayor
 	display_order = JDO_CHIEF
 	give_bank_account = 80
-	min_pq = 1
+	min_pq = 2
 
 	cmode_music = 'sound/music/cmode/towner/CombatMayor.ogg'
 	can_have_apprentices = FALSE

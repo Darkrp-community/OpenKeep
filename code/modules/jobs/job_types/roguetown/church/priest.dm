@@ -22,7 +22,7 @@
 
 	display_order = JDO_PRIEST
 	give_bank_account = 115
-	min_pq = 4
+	min_pq = 10
 	selection_color = "#c2a45d"
 	spells = list(
 		/obj/effect/proc_holder/spell/self/convertrole/templar,
