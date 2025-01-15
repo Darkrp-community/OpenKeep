@@ -218,12 +218,13 @@
 
 /datum/curse/schizophrenic/on_life(mob/living/carbon/human/owner)
 	. = ..()
-	if(prob(1))
+	if(prob(0.5))
 		INVOKE_ASYNC(owner, GLOBAL_PROC_REF(handle_maniac_mob_hallucination), owner)
-	else if(prob(4))
+	else if(prob(2))
 		INVOKE_ASYNC(owner, GLOBAL_PROC_REF(handle_maniac_object_hallucination), owner)
-	handle_maniac_floors(owner)
-	handle_maniac_walls(owner)
+	if(prob(50))
+		handle_maniac_floors(owner)
+		handle_maniac_walls(owner)
 
 // cursed_freak_out() is freak_out() without stress adjustments
 // bandaid deserves a second look
