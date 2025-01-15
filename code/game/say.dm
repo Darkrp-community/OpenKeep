@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		var/turf/speakturf = get_turf(speaker)
 		var/turf/sourceturf = get_turf(src)
 		if(istype(speakturf) && istype(sourceturf) && !(speakturf in get_hear(7, sourceturf)))
-			switch(get_dir(src,speaker))
+			switch(get_dir_multiz(src,speaker))
 				if(NORTH)
 					arrowpart = " ⇑"
 				if(SOUTH)
@@ -90,6 +90,10 @@ GLOBAL_LIST_INIT(freqtospan, list(
 					arrowpart = " ⇙"
 				if(SOUTHEAST)
 					arrowpart = " ⇘"
+				if(UP)
+					arrowpart += " ⇈"
+				if(DOWN)
+					arrowpart += " ⇊"
 			if(istype(speaker, /mob/living))
 				var/mob/living/L = speaker
 				namepart = "Unknown [(L.gender == FEMALE) ? "Woman" : "Man"]"
