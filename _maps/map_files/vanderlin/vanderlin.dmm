@@ -22793,6 +22793,9 @@
 /obj/item/rogue/instrument/harp,
 /obj/item/rogue/instrument/lute,
 /obj/structure/closet/crate/chest/neu,
+/obj/item/rogue/instrument/hurdygurdy,
+/obj/item/rogue/instrument/vocals,
+/obj/item/rogue/instrument/viola,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/town/theatre)
 "rPD" = (
@@ -23153,6 +23156,9 @@
 /obj/item/rogue/instrument/flute,
 /obj/structure/closet/crate/chest,
 /obj/item/rogue/instrument/accord,
+/obj/item/rogue/instrument/viola,
+/obj/item/rogue/instrument/vocals,
+/obj/item/rogue/instrument/hurdygurdy,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor)
 "sfk" = (
@@ -27028,6 +27034,14 @@
 "uWi" = (
 /obj/machinery/light/rogue/wallfire/candle/l,
 /obj/structure/bookcase/random_recipes,
+/obj/item/recipe_book/underworld,
+/obj/item/recipe_book/survival,
+/obj/item/recipe_book/sewing,
+/obj/item/recipe_book/masonry,
+/obj/item/recipe_book/leatherworking,
+/obj/item/recipe_book/engineering,
+/obj/item/recipe_book/cooking,
+/obj/item/recipe_book/carpentry,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
