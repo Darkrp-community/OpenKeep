@@ -12563,8 +12563,8 @@
 /area/rogue/outdoors/exposed/dwarf)
 "UM" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/hammer/claw,
-/obj/item/rogueweapon/hammer/claw,
+/obj/item/rogueweapon/hammer/steel,
+/obj/item/rogueweapon/hammer/steel,
 /turf/open/floor/rogue/blocks/paving,
 /area/rogue/indoors/town/dwarfin)
 "UN" = (

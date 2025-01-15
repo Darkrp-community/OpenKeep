@@ -9312,7 +9312,7 @@
 	pixel_x = -4;
 	pixel_y = -1
 	},
-/obj/item/rogueweapon/hammer/claw{
+/obj/item/rogueweapon/hammer/steel{
 	pixel_x = -7;
 	pixel_y = 6
 	},

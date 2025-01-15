@@ -5490,8 +5490,8 @@
 /area/rogue/indoors/town/bath)
 "frx" = (
 /obj/structure/rack/rogue,
-/obj/item/rogueweapon/hammer/claw,
-/obj/item/rogueweapon/hammer/claw,
+/obj/item/rogueweapon/hammer/steel,
+/obj/item/rogueweapon/hammer/steel,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
 	},

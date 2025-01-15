@@ -95,18 +95,13 @@
 
 
 /obj/item/rogueweapon/hammer/iron
-	icon_state = "hammer_i"
-	item_state = "hammer_i"
+	icon_state = "hammer"
 	mob_overlay_icon = 'icons/roguetown/onmob/onmob.dmi'
 	experimental_onhip = FALSE
 	experimental_onback = FALSE
 
-/obj/item/rogueweapon/hammer/claw
-	icon_state = "clawh"
-
 /obj/item/rogueweapon/hammer/steel
 	icon_state = "hammer_s"
-	item_state = "hammer_s"
 	mob_overlay_icon = 'icons/roguetown/onmob/onmob.dmi'
 	experimental_onhip = FALSE
 	experimental_onback = FALSE
@@ -115,7 +110,6 @@
 	name = "wooden mallet"
 	desc = "A wooden mallet is an artificers second best friend! But it may also come in handy to a smith..."
 	icon_state = "hammer_w"
-	item_state = "hammer_w"
 	dropshrink = 0.9
 	mob_overlay_icon = 'icons/roguetown/onmob/onmob.dmi'
 	experimental_onhip = FALSE
@@ -191,7 +185,7 @@
 	smeltresult = /obj/item/ingot/steel
 
 /*
-/obj/item/rogueweapon/hammer/claw/attack_turf(turf/T, mob/living/user)
+/obj/item/rogueweapon/hammer/steel/attack_turf(turf/T, mob/living/user)
 	if(!user.cmode)
 		if(T.hammer_repair && T.max_integrity && !T.obj_broken)
 			var/repair_percent = 0.05
