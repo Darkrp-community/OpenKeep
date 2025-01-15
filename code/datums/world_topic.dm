@@ -28,20 +28,15 @@
 /datum/world_topic/proc/TryRun(list/input)
 	if(!config)
 		return "Configuration has not initialised yet"
-	key_valid = config && (CONFIG_GET(string/comms_key) == input["key"])
-	input -= "key"
+	var/comms_key = CONFIG_GET(string/comms_key)
+	if(!comms_key) // key was not set
+		return "Commskey disabled"
+	key_valid = comms_key == input["key"]
 	if(require_comms_key && !key_valid)
-		. = "Bad Key"
-		if (input["format"] == "json")
-			. = list("error" = .)
-	else
-		if (input["json"])
-			. = Run(input + json_decode(input["json"]))
-		else
-			. = Run(input)
-	if (input["format"] == "json")
-		. = json_encode(.)
-	else if(islist(.))
+		return "Bad Key"
+	input -= "key"
+	. = Run(input)
+	if(islist(.))
 		. = list2params(.)
 
 /datum/world_topic/proc/Run(list/input)
