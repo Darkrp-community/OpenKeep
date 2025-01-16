@@ -65,7 +65,7 @@
 				change_stat(STATKEY_CON, -2)
 				change_stat(STATKEY_PER, 1)
 				change_stat(STATKEY_END, 1)
-				change_stat(STATKEY_SPD, round(rand(-1,2)))
+				change_stat(STATKEY_SPD, round(rand(1,2)))
 			if(AGE_MIDDLEAGED)
 				change_stat(STATKEY_END, 1)
 				change_stat(STATKEY_SPD, -1)
