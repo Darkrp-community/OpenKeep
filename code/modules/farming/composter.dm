@@ -6,9 +6,11 @@
 	desc = "A wooden fencing with space for discarded produce to turn into compost."
 	icon = 'icons/roguetown/misc/composter.dmi'
 	icon_state = "composter"
-	density = FALSE
+	density = TRUE
 	max_integrity = 200
 	anchored = TRUE
+	climbable = TRUE
+	climb_offset = 4
 	var/unflipped_compost = 0
 	var/flipped_compost = 0
 	var/ready_compost = 0
