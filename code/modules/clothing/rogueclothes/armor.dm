@@ -127,6 +127,16 @@
 
 	armor = ARMOR_PADDED_GOOD
 
+/obj/item/clothing/suit/roguetown/armor/gambeson/steward
+	name = "steward tailcoat"
+	desc = "A thick, pristine leather tailcoat adorned with polished bronze buttons."
+	sleeved = 'icons/roguetown/clothing/special/onmob/steward.dmi'
+	icon_state = "stewardtailcoat"
+	item_state = "stewardtailcoat"
+	armor = ARMOR_PADDED_GOOD
+	icon = 'icons/roguetown/clothing/special/steward.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/steward.dmi'
+
 /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
 	color = CLOTHING_DARK_INK
 
@@ -444,6 +454,28 @@
 
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/handjacket
+	name = "noble jacket"
+	icon_state = "handcoat"
+	icon = 'icons/roguetown/clothing/special/hand.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/hand.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/hand.dmi'
+
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/handjacket/Initialize()
+	. = ..()
+	if(GLOB.lordprimary)
+		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+	else
+		GLOB.lordcolor += src
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/handjacket/lordcolor(primary,secondary)
+	color = secondary
+	update_icon()
+	if(ismob(loc))
+		var/mob/L = loc
+		L.update_inv_cloak()
+/obj/item/clothing/suit/roguetown/armor/leather/jacket/handjacket/Destroy()
+	GLOB.lordcolor -= src
+	return ..()
 
 //................ Amazon chainkini ............... //
 /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
@@ -745,6 +777,14 @@
 		if(get_detail_color())
 			pic.color = get_detail_color()
 		add_overlay(pic)
+
+/obj/item/clothing/suit/roguetown/armor/brigandine/captain
+	name = "captain's brigandine"
+	desc = "A coat with plates specifically tailored and forged for the captain of Vanderlin."
+	icon_state = "capplate"
+	icon = 'icons/roguetown/clothing/special/captain.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/captain.dmi'
 
 /obj/item/clothing/suit/roguetown/armor/brigandine/captain/Initialize()
 	. = ..()

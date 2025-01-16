@@ -38,9 +38,9 @@
 
 /datum/outfit/job/roguetown/captain/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/helmet/visored/knight
+	head = /obj/item/clothing/head/roguetown/helmet/visored/captain
 	gloves = /obj/item/clothing/gloves/roguetown/plate
-	pants = /obj/item/clothing/under/roguetown/platelegs
+	pants = /obj/item/clothing/under/roguetown/platelegs/captain
 	armor = /obj/item/clothing/suit/roguetown/armor/brigandine/captain
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
@@ -50,7 +50,7 @@
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltl = /obj/item/rogueweapon/sword/sabre
 	beltr = /obj/item/rogueweapon/mace/cudgel
-	cloak = /obj/item/clothing/cloak/cape/guard
+	cloak = /obj/item/clothing/cloak/cape/guard/captain
 	backpack_contents = list(/obj/item/storage/keyring/captain = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)

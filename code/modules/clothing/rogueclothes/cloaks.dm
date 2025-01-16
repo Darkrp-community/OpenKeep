@@ -860,6 +860,12 @@
 	GLOB.lordcolor -= src
 	return ..()
 
+/obj/item/clothing/cloak/cape/guard/captain
+	name = "captain's cape"
+	desc = "A cape with a gold embroided heraldry of Vanderlin."
+	icon = 'icons/roguetown/clothing/special/captain.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
+	icon_state = "capcloak"
 
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
