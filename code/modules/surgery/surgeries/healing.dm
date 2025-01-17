@@ -66,13 +66,13 @@
 	var/healing_multiplier = 1
 	switch(user.mind?.get_skill_level(skill_used))
 		if(SKILL_LEVEL_JOURNEYMAN)
-			healing_multiplier = 1.2
+			healing_multiplier = 1.1
 		if(SKILL_LEVEL_EXPERT)
-			healing_multiplier = 1.4
+			healing_multiplier = 1.3
 		if(SKILL_LEVEL_MASTER)
-			healing_multiplier = 1.7
+			healing_multiplier = 1.4
 		if(SKILL_LEVEL_LEGENDARY)
-			healing_multiplier = 2
+			healing_multiplier = 1.5
 	var/urhealedamt_brute = brutehealing * healing_multiplier
 	var/urhealedamt_burn = burnhealing * healing_multiplier
 	if(missinghpbonus)
