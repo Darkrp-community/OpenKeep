@@ -1,6 +1,6 @@
 /datum/migrant_role/dwarven_company/captain
-	name = "Foreman"
-	greet_text = "You are the foreman of a dwarven's expedition, following the steps of Matthios you shall lead your party to Malum's tomb."
+	name = "Captain"
+	greet_text = "You are the captain of a dwarven's expedition, following the steps of Matthios you shall lead your party to Malum's tomb."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/captain
 
 	allowed_races = list("Dwarf")
