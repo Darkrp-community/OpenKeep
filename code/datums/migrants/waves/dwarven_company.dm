@@ -103,7 +103,7 @@
 		H.change_stat("speed", -1)
 
 /datum/migrant_role/dwarven_company/armorsmith
-	name = "Weapon Smith"
+	name = "Armor Smith"
 	greet_text = " You are the armorsmith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/armorsmith
 
