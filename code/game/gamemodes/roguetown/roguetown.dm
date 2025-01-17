@@ -211,6 +211,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Archivist",
 	"Merchant",
 	"Priest",
+	"Templar",
+	"Acolytes",
 	"Royal Knight",
 	"Garrison Guard",
 	"Jailor",
@@ -421,6 +423,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Forest Guard",
 	"Squire",
 	"Veteran",
+	"Templar",
+	"Acolytes",
 	"Apothecary")
 	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)
 	antag_candidates = shuffle(antag_candidates)
@@ -454,7 +458,6 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Men-at-arms",
 	"Priest",
 	"Acolyte",
-	"Cleric",
 	"Prince",
 	"Princess",
 	"Hand",
