@@ -312,7 +312,7 @@
 /datum/crafting_recipe/roguetown/readingscroll
 	name = "novice's guide to literature"
 	result = list(/obj/item/literary)
-	reqs = list(/obj/item/paper/scroll = 5)
+	reqs = list(/obj/item/paper/scroll = 3)
 	tools = list(/obj/item/natural/feather)
 	req_table = TRUE
 	skillcraft = /datum/skill/misc/reading
