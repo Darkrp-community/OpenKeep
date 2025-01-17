@@ -5,6 +5,7 @@
 
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/dwarven_company/captain/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -51,6 +52,7 @@
 
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/dwarven_company/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -109,6 +111,7 @@
 
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/dwarven_company/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
