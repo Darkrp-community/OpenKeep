@@ -72,7 +72,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/fancy
 	backr = /obj/item/storage/backpack/rogue/satchel/black
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel = 1, /obj/item/storage/keyring/hand = 1, /obj/item/paper/scroll/frumentarii/roundstart = 1)
-	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/handjacket
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	beltr = /obj/item/rogueweapon/sword/rapier/dec
 	if(H.mind)

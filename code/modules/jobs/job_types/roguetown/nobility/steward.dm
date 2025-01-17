@@ -26,16 +26,15 @@
 	H.virginity = TRUE
 	if(H.gender == FEMALE)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/dress/stewarddress
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/steward
 	else
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/fancy
 		pants = /obj/item/clothing/under/roguetown/trou/leathertights
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/steward
 
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 	head = /obj/item/clothing/head/roguetown/stewardtophat
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
+	armor = /obj/item/clothing/suit/roguetown/armor/gambeson/steward
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
 	beltr = /obj/item/storage/keyring/steward
 	beltl = /obj/item/rogueweapon/knife/dagger/steel

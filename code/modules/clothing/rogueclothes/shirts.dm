@@ -113,6 +113,7 @@
 	desc = "A button-down shirt woven from fine sliks with a decorated front and cuffs."
 	icon_state = "fancyshirt"
 	icon = 'icons/roguetown/clothing/special/hand.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/hand.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/hand.dmi'
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor
@@ -364,6 +365,8 @@
 	icon = 'icons/roguetown/clothing/special/steward.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/steward.dmi'
 	icon_state = "stewarddress"
+	sleeved = FALSE
+	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 
 //Royal clothing:
 //................ Royal Dress (Ball Gown)............... //

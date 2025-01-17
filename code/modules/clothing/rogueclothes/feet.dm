@@ -46,6 +46,7 @@
 	icon_state = "thighboot"
 	icon = 'icons/roguetown/clothing/special/hand.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/hand.dmi'
+	sleeved = 'icons/roguetown/clothing/special/onmob/hand.dmi'
 
 /obj/item/clothing/shoes/roguetown/shortboots
 	name = "shortboots"
