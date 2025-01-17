@@ -420,7 +420,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Adepts",
 	"Forest Guard",
 	"Squire",
-	"Veteran")
+	"Veteran",
+	"Apothecary")
 	antag_candidates = get_players_for_role(ROLE_ZIZOIDCULTIST)
 	antag_candidates = shuffle(antag_candidates)
 	for(var/datum/mind/villain in antag_candidates)
@@ -474,6 +475,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Squire",
 	"Veteran",
 	"Mercenary",
+	"Apothecary"
 	)
 	antag_candidates = get_players_for_role(ROLE_LICH)
 	var/datum/mind/lichman = pick_n_take(antag_candidates)
@@ -525,7 +527,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Adepts",
 	"Forest Guard",
 	"Squire",
-	"Veteran")
+	"Veteran",
+	"Apothecary")
 
 	antag_candidates = get_players_for_role(ROLE_NBEAST)
 	antag_candidates = shuffle(antag_candidates)
@@ -587,7 +590,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Adepts",
 	"Forest Guard",
 	"Squire",
-	"Veteran")
+	"Veteran",
+	"Apothecary")
 
 	var/num_werewolves = rand(1,2)
 	antag_candidates = get_players_for_role(ROLE_WEREWOLF)
