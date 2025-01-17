@@ -13,13 +13,17 @@
 /datum/antagonist/aspirant/supporter
 	name = "Supporter"
 	show_name_in_check_antagonists = TRUE
+	show_in_roundend = TRUE
 
 /datum/antagonist/aspirant/loyalist
 	name = "Loyalist"
-	show_name_in_check_antagonists = FALSE
+	show_name_in_check_antagonists = TRUE
+	show_in_roundend = TRUE
+
 /datum/antagonist/aspirant/ruler
 	name = "Ruler"
-	show_name_in_check_antagonists = FALSE
+	show_name_in_check_antagonists = TRUE
+	show_in_roundend = FALSE
 
 /datum/antagonist/aspirant/on_gain()
 	. = ..()
