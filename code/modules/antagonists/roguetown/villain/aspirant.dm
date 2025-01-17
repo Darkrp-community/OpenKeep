@@ -3,7 +3,8 @@
 	roundend_category = "aspirant"
 	antagpanel_category = "Aspirant"
 	job_rank = ROLE_ASPIRANT
-	show_in_roundend = FALSE
+	show_name_in_check_antagonists = TRUE
+	show_in_roundend = TRUE
 	confess_lines = list(
 		"THE CHOSEN MUST TAKE THE THRONE!",
 	)
@@ -11,12 +12,14 @@
 
 /datum/antagonist/aspirant/supporter
 	name = "Supporter"
+	show_name_in_check_antagonists = TRUE
 
 /datum/antagonist/aspirant/loyalist
 	name = "Loyalist"
-
+	show_name_in_check_antagonists = FALSE
 /datum/antagonist/aspirant/ruler
 	name = "Ruler"
+	show_name_in_check_antagonists = FALSE
 
 /datum/antagonist/aspirant/on_gain()
 	. = ..()
