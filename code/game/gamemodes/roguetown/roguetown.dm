@@ -563,7 +563,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 	"Men-at-Arms",
 	"Priest",
 	"Acolyte",
-	"Adepts"
+	"Adepts",
 	"Templar",
 	"Mercenary",
 	"Bandit",
