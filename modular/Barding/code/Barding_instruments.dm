@@ -4,6 +4,7 @@
 	desc = ""
 	icon = 'icons/roguetown/items/music.dmi'
 	icon_state = ""
+	mob_overlay_icon = 'icons/roguetown/onmob/onmob.dmi'
 	lefthand_file = 'icons/roguetown/onmob/lefthand.dmi'
 	righthand_file = 'icons/roguetown/onmob/righthand.dmi'
 	experimental_inhand = FALSE
@@ -17,7 +18,7 @@
 	throwforce = 0
 	throw_range = 4
 	blade_dulling = DULLING_BASH
-	max_integrity = 100 // Flimsy instruments of wood.
+	max_integrity = 80 // Flimsy instruments of wood.
 	destroy_message = "falls apart!"
 	dropshrink = 0.8
 	var/datum/looping_sound/dmusloop/soundloop
@@ -388,6 +389,9 @@
 	icon_state = "flute"
 	icon_prefix = "flute" // used for inhands switch
 	dynamic_icon = TRUE // used for inhands switch
+	dropshrink = 0.6
+	slot_flags = ITEM_SLOT_HIP
+	w_class = WEIGHT_CLASS_SMALL
 	song_list = list(
 	"Half-Dragon's Ten Mammon" = 'modular/Barding/sound/instruments/flute (1).ogg',
 	"The Local Favorite" = 'modular/Barding/sound/instruments/flute (2).ogg',
