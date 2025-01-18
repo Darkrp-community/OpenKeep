@@ -153,7 +153,7 @@ SUBSYSTEM_DEF(familytree)
 				chosen_house = I
 				break
 			//Its weird to be placed as a foster child in a family with no people in it.
-			if(prob(20) && (I.family.len > 1))
+			if(prob(20) && (I.family.len > 1 && I.family.len <= 8))
 				chosen_house = I
 				adopted = TRUE
 				break
