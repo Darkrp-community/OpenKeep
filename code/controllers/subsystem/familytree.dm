@@ -327,7 +327,10 @@ SUBSYSTEM_DEF(familytree)
 		if(i == 2)
 			what_we_checkin = low_priority_houses
 		for(var/datum/heritage/I in what_we_checkin)
-			if(I.dominant_species == species && (I.family.len >= 4))
+			if(I.dominant_species == species)
+				chosen_house = I
+				break
+			if(prob(2) && (I.family.len > 1 && I.familly.len <= 8))
 				chosen_house = I
 				break
 		if(chosen_house)
