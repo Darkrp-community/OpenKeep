@@ -315,7 +315,7 @@ SUBSYSTEM_DEF(familytree)
 	var/list/low_priority_houses = list()
 	var/list/high_priority_houses = list()
 	for(var/datum/heritage/I in families)
-		if(I.housename && (I.family.len >= 1 && I.family.len >= 4))
+		if(I.housename && (I.family.len >= 1 && I.family.len > 6))
 			high_priority_houses.Add(I)
 		else
 			low_priority_houses.Add(I)
@@ -330,7 +330,7 @@ SUBSYSTEM_DEF(familytree)
 			if(I.dominant_species == species)
 				chosen_house = I
 				break
-			if(prob(2) && (I.family.len > 1 && I.familly.len <= 8))
+			if(prob(2) && (I.family.len > 1))
 				chosen_house = I
 				break
 		if(chosen_house)
