@@ -272,6 +272,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 					continue
 				if(candidate.assigned_role in GLOB.church_positions) // Many of these guys vanishing would suck
 					continue
+				if(candidate.assigned_role in GLOB.garrison_positions)
+					continue
 
 				allantags -= candidate
 				pre_bandits += candidate
@@ -328,8 +330,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 						pre_aspirants += couper
 						couper.special_role = "Supporter"
 						rolesneeded -= R
-						testing("[key_name(couper)] has been selected as an Aspirant")
-						log_game("[key_name(couper)] has been selected as a Aspirant")
+						testing("[key_name(couper)] has been selected as a Supporter")
+						log_game("[key_name(couper)] has been selected as a Supporter")
 					else continue
 				if("Loyalist")
 					if(couper.assigned_role in possible_jobs_helpers)
@@ -337,8 +339,8 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 						pre_aspirants += couper
 						couper.special_role = "Loyalist"
 						rolesneeded -= R
-						testing("[key_name(couper)] has been selected as an Aspirant")
-						log_game("[key_name(couper)] has been selected as a Aspirant")
+						testing("[key_name(couper)] has been selected as a Loyalist")
+						log_game("[key_name(couper)] has been selected as a Loyalist")
 					else continue
 
 
