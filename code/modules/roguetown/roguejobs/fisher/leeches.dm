@@ -196,7 +196,8 @@
 	return TRUE
 
 /obj/item/natural/worms/leeches/update_icon()
-	..()
+	. = ..()
+	icon_state = initial(icon_state)
 	if(amt > 1)
 		name = "[initial(name)]es"
 

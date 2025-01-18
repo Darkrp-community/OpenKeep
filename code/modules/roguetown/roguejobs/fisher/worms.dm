@@ -32,6 +32,7 @@
 	bundletype = null
 
 /obj/item/natural/worms/update_icon()
+	. = ..()
 	icon_state = "worm[amt]"
 	if(amt > 1)
 		name = "[initial(name)]s"
