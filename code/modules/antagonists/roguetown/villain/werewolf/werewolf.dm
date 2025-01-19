@@ -55,7 +55,7 @@
 /datum/antagonist/werewolf/proc/remove_objective(datum/objective/O)
 	objectives -= O
 
-/datum/antagonist/vampirelord/proc/forge_werewolf_objectives()
+/datum/antagonist/werewolf/proc/forge_werewolf_objectives()
 	var/list/primary = pick(list("1","2"))
 	var/list/secondary = pick(list("1", "2"))
 	switch(primary)
