@@ -50,7 +50,7 @@
 	category_tags = list(CTAG_SQUIRE)
 
 /datum/outfit/job/roguetown/squire/lancer/pre_equip(mob/living/carbon/human/H)
-	r_hand = /obj/item/rogueweapon/spear
+	r_hand = /obj/item/rogueweapon/polearm/spear
 	armor = /obj/item/clothing/suit/roguetown/armor/chainmail
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
