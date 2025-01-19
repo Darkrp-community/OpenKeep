@@ -1,5 +1,5 @@
 // This mode will become the main basis for the typical roguetown round. Based off of chaos mode.
-GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "None", "Aspirants", "Bandits", "Maniac", "Cultists", "Lich", "CANCEL"))
+GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "Vampire","Werewolf","None", "Aspirants", "Bandits", "Maniac", "Cultists", "Lich", "CANCEL"))
 
 /datum/game_mode/chaosmode
 	name = "roguemode"
@@ -24,6 +24,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "N
 // DEBUG
 	var/list/forcedmodes = list()
 	var/mob/living/carbon/human/vlord = null
+	var/mob/living/carbon/human/species/werewolf = null
 // GAMEMODE SPECIFIC
 	var/banditcontrib = 0
 	var/banditgoal = 1
