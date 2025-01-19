@@ -10,7 +10,7 @@
 		handle_waking_up(owner.current)
 	else
 		handle_maniac_hallucinations(owner.current)
-	handle_maniac_floors(owner.current)
+	//handle_maniac_floors(owner.current)
 	handle_maniac_walls(owner.current)
 
 
@@ -145,25 +145,10 @@
 	target.client.images -= mob_image
 
 /proc/handle_maniac_floors(mob/living/target)
-	if(!target.client)
-		return
-	//Floors go crazy go stupid
-	for(var/turf/open/floor in view(target))
-		if(!prob(7))
-			continue
-		INVOKE_ASYNC(target, GLOBAL_PROC_REF(handle_maniac_floor), floor, target)
+	return
 
 /proc/handle_maniac_floor(turf/open/floor, mob/living/target)
-	var/mutable_appearance/fake_floor = image(floor.icon, floor, floor.icon_state, floor.layer + 0.01)
-	target.client.images += fake_floor
-	var/offset = pick(-3,-2, -1, 1, 2, 3)
-	var/disappearfirst = rand(1 SECONDS, 3 SECONDS) * abs(offset)
-	animate(fake_floor, pixel_y = offset, time = disappearfirst, flags = ANIMATION_RELATIVE)
-	sleep(disappearfirst)
-	var/disappearsecond = rand(1 SECONDS, 3 SECONDS) * abs(offset)
-	animate(fake_floor, pixel_y = -offset, time = disappearsecond, flags = ANIMATION_RELATIVE)
-	sleep(disappearsecond)
-	target.client?.images -= fake_floor
+	return
 
 /proc/handle_maniac_walls(mob/living/target)
 	if(!target.client)

@@ -213,7 +213,7 @@
 	. = ..()
 	handle_maniac_visions(owner, hallucinations)
 	handle_maniac_hallucinations(owner)
-	handle_maniac_floors(owner)
+	//handle_maniac_floors(owner)
 	handle_maniac_walls(owner)
 
 /datum/curse/schizophrenic/on_life(mob/living/carbon/human/owner)
