@@ -103,7 +103,6 @@
 			user.visible_message("<span class='warning'>[user] kicks [src]!</span>", \
 				"<span class='warning'>I kick [src]!</span>")
 
-/*	..................   Fireplace   ................... */
 /obj/machinery/light/rogue/wallfire
 	name = "fireplace"
 	icon_state = "wallfire1"
@@ -113,17 +112,6 @@
 	crossfire = FALSE
 	cookonme = TRUE
 
-/obj/machinery/light/rogue/hearth/big_fireplace // so you can shove people into it and cook them I guess?
-	name = "fireplace"
-	icon_state = "fireplace1"
-	base_state = "fireplace"
-	icon = 'icons/roguetown/misc/fireplace64.dmi'
-	fueluse = -1
-	pixel_x = -16
-	climb_offset = 4
-
-
-/*	..................   Wall Candle   ................... */
 /obj/machinery/light/rogue/wallfire/candle
 	name = "candles"
 	icon_state = "wallcandle1"
@@ -190,18 +178,6 @@
 	pixel_x = 32
 	pixel_y = 0
 
-/*	..................   Candle Lamp   ................... */
-/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
-	name = "candle lamp"
-	icon = 'modular/Mapping/icons/decoration.dmi'
-	icon_state = "candle"
-	base_state = "candle"
-	layer = WALL_OBJ_LAYER+0.1
-	light_power = 0.9
-	light_outer_range =  6
-
-
-/*	..................   Torch Holder   ................... */
 /obj/machinery/light/rogue/torchholder
 	name = "sconce"
 	icon_state = "torchwall1"
@@ -324,7 +300,6 @@
 		return
 	. = ..()
 
-/*	..................   Chandelier   ................... */
 /obj/machinery/light/rogue/chand
 	name = "chandelier"
 	icon_state = "chand1"
@@ -347,7 +322,7 @@
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
 	. = ..()
 
-/*	..................   Hearth   ................... */
+
 /obj/machinery/light/rogue/hearth
 	name = "hearth"
 	icon_state = "hearth1"
@@ -511,7 +486,6 @@
 	QDEL_NULL(boilloop)
 	. = ..()
 
-/*	..................   Campfire   ................... */
 /obj/machinery/light/rogue/campfire
 	name = "campfire"
 	icon_state = "badfire1"

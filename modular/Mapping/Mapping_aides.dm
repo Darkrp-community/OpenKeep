@@ -457,7 +457,7 @@
 
 /obj/structure/spider/stickyweb
 	name = "web"
-	icon = 'icons/roguetown/misc/webbing.dmi'
+	icon = 'modular/Mapping/icons/webbing.dmi'
 	icon_state = "stickyweb1"
 	resistance_flags = FLAMMABLE
 	alpha = 109
@@ -546,7 +546,19 @@
 /obj/structure/roguethrone/statues
 	icon = 'modular/Mapping/icons/96x96.dmi'
 
+/obj/machinery/light/rogue/wallfire/big_fireplace
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
 
+/obj/machinery/light/rogue/hearth/big_fireplace
+	name = "fireplace"
+	icon_state = "fireplace1"
+	base_state = "fireplace"
+	icon = 'icons/roguetown/misc/fireplace64.dmi'
+	fueluse = -1
+	pixel_x = -16
+	climb_offset = 4
 
 
 /*	..................   Wizard Shenanigans   ................... */
@@ -664,6 +676,18 @@
 	desc = "Pelt of a young animal, made into a mat."
 	icon_state = "fur_alt"
 
+/turf/open/water/bath/pool
+	desc = "Clear water, pleasant temperature. Soothing."
+	icon_state = "bathtile_pool"
+/turf/open/water/bath/pool/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool"
+
+/turf/open/water/bath/pool/mid
+	icon_state = "bathtile_pool_mid"
+/turf/open/water/bath/pool/mid/Initialize()
+	.  = ..()
+	icon_state = "bathtile_pool_mid"
 
 /*	..................   Wall decorations   ................... */
 /obj/structure/fluff/walldeco/bath // suggestive stonework
@@ -803,6 +827,15 @@
 
 
 
+/obj/machinery/light/rogue/wallfire/candle/lamp // cant get them to start unlit but they work as is
+	name = "candle lamp"
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "candle"
+	base_state = "candle"
+	layer = WALL_OBJ_LAYER+0.1
+	light_power = 0.9
+	light_outer_range =  6
+
 
 /*	..................   Misc   ................... */
 /obj/item/roguebin/alt
@@ -863,3 +896,225 @@
 	aportalid = "inhumenexit"
 	aportalgoesto = "inhumenin"
 
+
+/*	..................   Toll randomizer (poor mans coin generator, cheaper workload is all)  ................... */
+/obj/effect/spawner/roguemap/tollrandom
+	icon = 'icons/roguetown/underworld/enigma_husks.dmi'
+	icon_state = "soultoken_floor"
+	probby = 25
+	color = "#ff0000"
+	spawned = list(
+		/obj/item/underworld/coin = 1,
+		)
+
+
+/* moved to main. leave this be for now, I want to be able to find the additions I make easily for tweaking
+/*	..................   More chairs   ................... */
+/obj/structure/chair/wood/rogue/chair_noble
+	name = "fine chair"
+	icon_state = "chair_green"
+	icon = 'icons/roguetown/misc/structure.dmi'
+	item_chair = /obj/item/chair/rogue/chair_nobles
+	blade_dulling = DULLING_BASHCHOP
+	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
+	attacked_sound = "woodimpact"
+/obj/item/chair/rogue/chair_nobles
+	icon_state = "chair_green"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble
+
+/obj/structure/chair/wood/rogue/chair_noble/purple
+	icon_state = "chair_purple"
+	item_chair = /obj/item/chair/rogue/chair_nobles/purple
+/obj/item/chair/rogue/chair_nobles/purple
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/purple
+
+/obj/structure/chair/wood/rogue/chair_noble/red
+	icon_state = "chair_red"
+	item_chair = /obj/item/chair/rogue/chair_nobles/red
+/obj/item/chair/rogue/chair_nobles/red
+	icon_state = "chair_purple"
+	origin_type = /obj/structure/chair/wood/rogue/chair_noble/red
+
+/obj/structure/chair/bench/couch/redleft
+	icon_state = "redcouch_alt"
+/obj/structure/chair/bench/couch/redright
+	icon_state = "redcouch2_alt"
+
+
+/*	..................   Lights   ................... */
+/obj/item/candle/yellow/lit/infinite
+	light_power = 1
+	light_outer_range =  4
+	start_lit = TRUE
+	infinite = TRUE
+	icon_state = "candle1_lit"
+	anchored = TRUE
+
+/obj/item/candle/yellow/lit/infinite/strong
+	light_power = 2
+	light_outer_range =  4
+	pixel_x = 4
+
+/obj/machinery/light/rogue/campfire/longlived
+	fueluse = 180 MINUTES
+
+/obj/machinery/light/rogue/wallfire/candle/weak
+	light_power = 0.9
+	light_outer_range =  6
+/obj/machinery/light/rogue/wallfire/candle/weak/l
+	pixel_x = -32
+	pixel_y = 0
+/obj/machinery/light/rogue/wallfire/candle/weak/r
+	pixel_x = 32
+	pixel_y = 0
+
+
+// Inhumen boss bed. Sleeping on a bear! Kinda comfy, sort of
+/obj/structure/bed/rogue/bear
+	desc = "A hide of a slain bear. It looks like someone sleeps on it often."
+	icon = 'icons/turf/floors/bear.dmi'
+	icon_state = "bear"
+	pixel_x = -16
+	pixel_y = -27
+
+/obj/structure/fluff/walldeco/skullspike // for ground really
+	icon = 'modular/Mapping/icons/decoration.dmi'
+	icon_state = "skullspike"
+	plane = -1
+	layer = ABOVE_MOB_LAYER
+	pixel_x = 8
+	pixel_y = 24
+
+/*	..................   Floors   ................... */
+/turf/open/floor/rogue/ruinedwood/darker
+	color = "#d9c9b0"
+/turf/open/floor/rogue/ruinedwood/turned/darker
+	color = "#d9c9b0"
+
+/turf/open/floor/rogue/tile/kitchen
+	icon_state = "tavern"
+
+
+/obj/structure/roguetent/preopen
+	density = FALSE
+
+/obj/structure/fluff/clock/dense
+	density = TRUE
+
+
+/obj/structure/closet/crate/chest/crate
+	name = "crate"
+	base_icon_state = "woodchest"
+	icon_state = "woodchest"
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/drawer/random
+	icon_state = "drawer1"
+	base_icon_state = "drawer1"
+	pixel_y = 8
+
+/obj/structure/closet/crate/drawer/random/Initialize()
+	. = ..()
+	if(icon_state == "drawer1")
+		base_icon_state = "drawer[rand(1,4)]"
+		icon_state = "[base_icon_state]"
+	else
+		base_icon_state = "drawer1"
+		pixel_y = 8
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 250
+	over_state = "servingopen"
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	dir = NORTH
+	locked = TRUE
+
+/obj/structure/closet/crate/chest/wicker
+	name = "wicker basket"
+	desc = "Fibers interwoven to make a cheap storage bin."
+	base_icon_state = "wicker"
+	icon_state = "wicker"
+	open_sound = 'sound/items/book_open.ogg'
+	open_sound = 'sound/items/book_close.ogg'
+	close_sound = 'sound/items/book_close.ogg'
+
+/obj/structure/closet/crate/chest/neu
+	name = "sturdy oak chest"
+	icon_state = "chest_neu"
+	base_icon_state = "chest_neu"
+
+/obj/structure/closet/crate/chest/neu_iron
+	name = "reinforced chest"
+	icon_state = "chestiron_neu"
+	base_icon_state = "chestiron_neu"
+
+/obj/structure/closet/crate/chest/neu_fancy
+	name = "fancy chest"
+	icon_state = "chestfancy_neu"
+	base_icon_state = "chestfancy_neu"
+
+/obj/structure/closet/crate/chest/old_crate
+	name = "old crate"
+	base_icon_state = "woodchestalt"
+	icon_state = "woodchestalt"
+
+/obj/structure/closet/crate/drawer/random
+	icon_state = "drawer1"
+	base_icon_state = "drawer1"
+	pixel_y = 8
+
+/obj/structure/closet/crate/drawer/random/Initialize()
+	. = ..()
+	if(icon_state == "drawer1")
+		base_icon_state = "drawer[rand(1,4)]"
+		icon_state = "[base_icon_state]"
+	else
+		base_icon_state = "drawer1"
+		pixel_y = 8
+
+/obj/structure/mineral_door/wood/deadbolt/shutter
+	name = "serving hatch"
+	desc = "Can be locked from the inside."
+	icon_state = "serving"
+	base_state = "serving"
+	max_integrity = 250
+	over_state = "servingopen"
+	openSound = 'modular/Neu_Food/sound/blindsopen.ogg'
+	closeSound = 'modular/Neu_Food/sound/blindsclose.ogg'
+	dir = NORTH
+	locked = TRUE
+*/
