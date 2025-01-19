@@ -464,7 +464,7 @@
 	craftdiff = 0
 /datum/crafting_recipe/roguetown/bonespear
 	name = "bone spear"
-	result = /obj/item/rogueweapon/spear/bonespear
+	result = /obj/item/rogueweapon/polearm/spear/bonespear
 	reqs = list(/obj/item/rogueweapon/polearm/woodstaff = 1,
 				/obj/item/alch/bone = 2,
 				/obj/item/natural/fibers = 1)
