@@ -34,6 +34,9 @@
 /datum/advclass/pilgrim
 	whitelist_req = FALSE
 
+/datum/advclass/pilgrim/rare
+	whitelist_req = TRUE
+
 /datum/advclass/proc/equipme(mob/living/carbon/human/H)
 	// input sleeps....
 	set waitfor = FALSE

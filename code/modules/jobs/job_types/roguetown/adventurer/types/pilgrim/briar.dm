@@ -13,6 +13,7 @@
 //	allowed_patrons = list(/datum/patron/divine/dendor)		this doesn't work so long its a subclass type. Besides its preferable to forceswitch as it does to make selection less clunky.
 	cmode_music = 'sound/music/combat_dendor.ogg'
 	maximum_possible_slots = 4	// to be lowered to 2? once testing is done
+	whitelist_req = TRUE
 
 /datum/outfit/job/roguetown/adventurer/briar/pre_equip(mob/living/carbon/human/H)
 	..()
