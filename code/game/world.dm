@@ -200,6 +200,7 @@ GLOBAL_PROTECT(tracy_init_reason)
 	GLOB.world_job_debug_log = "[GLOB.log_directory]/job_debug.log"
 	GLOB.world_paper_log = "[GLOB.log_directory]/paper.log"
 	GLOB.tgui_log = "[GLOB.log_directory]/tgui.log"
+	set_db_log_directory()
 
 #ifdef UNIT_TESTS
 	GLOB.test_log = file("[GLOB.log_directory]/tests.log")
@@ -230,6 +231,42 @@ GLOBAL_PROTECT(tracy_init_reason)
 	// but those are both private, so let's put the commit info in the runtime
 	// log which is ultimately public.
 	log_runtime(GLOB.revdata.get_log_message())
+
+/proc/set_db_log_directory()
+	set waitfor = FALSE
+	if(!GLOB.round_id || !SSdbcore.IsConnected())
+		return
+	var/datum/DBQuery/set_log_directory = SSdbcore.NewQuery({"
+		UPDATE [format_table_name("round")]
+		SET
+			`log_directory` = :log_directory
+		WHERE
+			`id` = :round_id
+	"}, list("log_directory" = GLOB.log_directory, "round_id" = GLOB.round_id))
+	set_log_directory.Execute()
+	QDEL_NULL(set_log_directory)
+
+/proc/get_log_directory_by_round_id(round_id)
+	if(!isnum(round_id) || round_id <= 0 || !SSdbcore.IsConnected())
+		return
+	var/datum/DBQuery/query_log_directory = SSdbcore.NewQuery({"
+		SELECT `log_directory`
+		FROM
+			[format_table_name("round")]
+		WHERE
+			`id` = :round_id
+	"}, list("round_id" = round_id))
+	if(!query_log_directory.warn_execute())
+		qdel(query_log_directory)
+		return
+	if(!query_log_directory.NextRow())
+		qdel(query_log_directory)
+		CRASH("Failed to get log directory for round [round_id]")
+	var/log_directory = query_log_directory.item[1]
+	QDEL_NULL(query_log_directory)
+	if(!rustg_file_exists(log_directory))
+		CRASH("Log directory '[log_directory]' for round ID [round_id] doesn't exist!")
+	return log_directory
 
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC //redirect to server tools if necessary
