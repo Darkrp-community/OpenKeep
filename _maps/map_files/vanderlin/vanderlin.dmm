@@ -5449,12 +5449,12 @@
 	dir = 4;
 	icon_state = "border"
 	},
-/obj/item/natural/worms/leeches{
+/obj/item/natural/worms/leech{
 	pixel_x = -14;
 	pixel_y = -7
 	},
-/obj/item/natural/worms/leeches,
-/obj/item/natural/worms/leeches{
+/obj/item/natural/worms/leech,
+/obj/item/natural/worms/leech{
 	pixel_x = 7;
 	pixel_y = -8
 	},

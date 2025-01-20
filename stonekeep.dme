@@ -1120,6 +1120,7 @@
 #include "code\modules\cargo\packsrogue\instruments.dm"
 #include "code\modules\cargo\packsrogue\jewelry.dm"
 #include "code\modules\cargo\packsrogue\narcotics.dm"
+#include "code\modules\cargo\packsrogue\rawmat.dm"
 #include "code\modules\cargo\packsrogue\seeds.dm"
 #include "code\modules\cargo\packsrogue\tools.dm"
 #include "code\modules\cargo\packsrogue\weapons.dm"

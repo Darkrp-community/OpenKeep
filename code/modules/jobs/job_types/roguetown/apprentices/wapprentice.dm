@@ -50,3 +50,4 @@
 
 	H.change_stat("intelligence", 1)
 	H.change_stat("speed", -1)
+	ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
