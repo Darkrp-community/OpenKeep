@@ -6,7 +6,7 @@
 	item_chair = null
 	destroy_sound = 'sound/combat/hits/onwood/destroyfurniture.ogg'
 	attacked_sound = "woodimpact"
-	sleepy = 0.5
+	sleepy = 0.55
 //	pixel_y = 10
 	layer = OBJ_LAYER
 	metalizer_result = /obj/item/roguestatue/iron/deformed
@@ -377,7 +377,7 @@
 /obj/structure/bed/rogue/shit
 	name = "uncomfortable bed"
 	icon_state = "shitbed"
-	sleepy = 0.5
+	sleepy = 0.75
 	metalizer_result = null
 
 /obj/structure/bed/rogue/sleepingbag
@@ -386,7 +386,7 @@
 	icon_state = "sleepingcloth"
 	attacked_sound = 'sound/foley/cloth_rip.ogg'
 	break_sound = 'sound/foley/cloth_rip.ogg'
-	sleepy = 0.5
+	sleepy = 0.75
 
 /obj/structure/bed/rogue/sleepingbag/MiddleClick(mob/user, params)
 	..()
