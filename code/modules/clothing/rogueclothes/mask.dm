@@ -266,22 +266,22 @@
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/half
 	name = "iron half menpo"
-	icon_state = "ironhalfmenpo"
+	icon_state = "ironmempo"
 	max_integrity = 100
 	desc = "A cheaper menpo portraying the lower part of a Ogrun's head. It covers only the neck and the mouth."
 	body_parts_covered = NECK|MOUTH
 	flags_cover = HEADCOVERSMOUTH | MASKCOVERSMOUTH
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/steel
-	name = "steel somen"
-	icon_state = "steelmenpo"
+	name = "steel men-yoroi"
+	icon_state = "smenyoroi"
 	max_integrity = 200
 	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/steel/half
-	name = "steel menpo"
-	icon_state = "steelmenpo"
+	name = "steel mempo"
+	icon_state = "steelmempo"
 	desc = "The lower part of a menpo portraying the maws of a Ogrun's head. It covers only the neck and the mouth, often used by warriors that cares about their sight."
 	max_integrity = 200
 	body_parts_covered = NECK|MOUTH
@@ -289,14 +289,14 @@
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask
 	name = "iron Merkkin mask"
-	icon_state = "ironmenpo_tribal"
+	icon_state = "irontribal"
 	desc = "The old, barely used mask of the almost extinct Merkpeople, with fish-like characteristics. Usually used by Undines."
 	max_integrity = 100
 	body_parts_covered = FACE|MOUTH|EYES
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/steel
 	name = "steel tribal mask"
-	icon_state = "steelmenpo_tribal"
+	icon_state = "steeltribal"
 	max_integrity = 200
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable
