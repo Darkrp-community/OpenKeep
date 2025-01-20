@@ -2650,6 +2650,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/CanIgniteMob(mob/living/carbon/human/H)
 	if(HAS_TRAIT(H, TRAIT_NOFIRE))
 		return FALSE
+	if(HAS_TRAIT(H, TRAIT_MOB_FIRE_IMMUNE))
+		return FALSE
 	return TRUE
 
 /datum/species/proc/ExtinguishMob(mob/living/carbon/human/H)
