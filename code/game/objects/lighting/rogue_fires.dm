@@ -362,7 +362,8 @@
 				var/obj/item/reagent_containers/food/snacks/S = W
 				if(istype(W, /obj/item/reagent_containers/food/snacks/egg)) // added
 					playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, 0)
-					sleep(25) // to get egg crack before frying hiss
+					if(!do_after(user, 25))
+						return
 					W.icon_state = "rawegg" // added
 					rawegg = TRUE
 				if(!food)
@@ -415,7 +416,7 @@
 		if(istype(attachment, /obj/item/cooking/pan))
 			if(food)
 				if(rawegg)
-					to_chat(user, "<span class='notice'>Throws away the raw egg.</span>")
+					to_chat(user, "<span class='notice'>You throw away the raw egg.</span>")
 					rawegg = FALSE
 					qdel(food)
 					update_icon()

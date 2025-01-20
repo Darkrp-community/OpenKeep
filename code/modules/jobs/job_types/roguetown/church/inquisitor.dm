@@ -239,7 +239,7 @@
 							held_confession.antag = antag_type
 						if("Matthios")
 							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
-							held_confession.antag = "worshiper of" + antag_type
+							held_confession.antag = "worshiper of " + antag_type
 						if("Maniac")
 							held_confession.bad_type = "A MANIAC DELUDED BY MADNESS"
 							held_confession.antag = antag_type
@@ -254,19 +254,28 @@
 							held_confession.antag = antag_type
 						if("Zizo")
 							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
-							held_confession.antag = "worshiper of" + antag_type
-						if("Werewolf")
+							held_confession.antag = "worshiper of " + antag_type
+						if("Verewolf")
+							held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+							held_confession.antag = antag_type
+						if("Lesser Verewolf")
 							held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
 							held_confession.antag = antag_type
 						if("Vampire")
 							held_confession.bad_type = "A SCION OF KAINE"
 							held_confession.antag = antag_type
+						if("Lesser Vampire")
+							held_confession.bad_type = "A SCION OF KAINE"
+							held_confession.antag = antag_type
 						if("Vampire Lord")
 							held_confession.bad_type = "THE BLOOD-LORD OF ENIGMA"
 							held_confession.antag = antag_type
+						if("Vampire Spawn")
+							held_confession.bad_type = "A SERVANT OF THE BLOOD-LORD"
+							held_confession.antag = antag_type
 						if("Graggar")
 							held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
-							held_confession.antag = "worshiper of" + antag_type
+							held_confession.antag = "worshiper of " + antag_type
 						if("Science")
 							held_confession.bad_type = "A DAMNED ANTI-THEIST"
 							held_confession.antag = "worshiper of nothing"
