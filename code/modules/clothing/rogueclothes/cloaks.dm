@@ -1050,7 +1050,6 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
 
 //................ Silk Cape ............... //
 /obj/item/clothing/cloak/cape/silk
