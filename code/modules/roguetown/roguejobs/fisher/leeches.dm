@@ -195,12 +195,6 @@
 		desc = "[desc] [jointext(descs, " ")]"
 	return TRUE
 
-/obj/item/natural/worms/leeches/update_icon()
-	. = ..()
-	icon_state = initial(icon_state)
-	if(amt > 1)
-		name = "[initial(name)]es"
-
 /obj/item/natural/worms/leech/parasite
 	name = "the parasite"
 	desc = "A foul, wriggling creecher. Known to suck whole villages of their blood, these rare freeks have been domesticated for medical purposes."
