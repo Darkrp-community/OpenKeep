@@ -262,11 +262,20 @@
 					if("Werewolf")
 						held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
 						held_confession.antag = antag_type
+					if("Lesser Verewolf")
+						held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+						held_confession.antag = antag_type
 					if("Vampire")
+						held_confession.bad_type = "A SCION OF KAINE"
+						held_confession.antag = antag_type
+					if("Lesser Vampire")
 						held_confession.bad_type = "A SCION OF KAINE"
 						held_confession.antag = antag_type
 					if("Vampire Lord")
 						held_confession.bad_type = "THE BLOOD-LORD OF ENIGMA"
+						held_confession.antag = antag_type
+					if("Vampire Spawn")
+						held_confession.bad_type = "AN UNDERLING OF THE BLOOD-LORD"
 						held_confession.antag = antag_type
 					if("Graggar")
 						held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
