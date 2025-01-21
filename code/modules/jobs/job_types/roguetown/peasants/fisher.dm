@@ -22,7 +22,6 @@
 	total_positions = 5
 	spawn_positions = 5
 	display_order = JDO_FISHER
-	apprentice_name = "Fisher"
 
 /datum/outfit/job/roguetown/fisher/pre_equip(mob/living/carbon/human/H)
 	..()

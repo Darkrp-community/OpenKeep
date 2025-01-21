@@ -14,7 +14,6 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/miner
-	apprentice_name = "Miner"
 	flag = MINER
 	department_flag = PEASANTS
 	display_order = JDO_MINER

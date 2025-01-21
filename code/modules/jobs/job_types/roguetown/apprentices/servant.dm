@@ -3,8 +3,8 @@
 	flag = SERVANT
 	department_flag = APPRENTICES
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 9
+	spawn_positions = 9
 
 	allowed_races = list(
 		"Humen",
@@ -18,6 +18,15 @@
 		"Half-Orc"
 	)
 	allowed_ages = list(AGE_CHILD, AGE_ADULT, AGE_IMMORTAL)
+	advclass_cat_rolls = list(CTAG_SERVANT = 20)
+
+/datum/job/roguetown/servant/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+	..()
+	if(L)
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
 
 	tutorial = "You are the faceless, nameless labor that keeps the royal court fed, washed, and attended to. You work your fingers to the bone nearly every dae, and have naught to show for it but boney fingers. Perhaps this week you will finally be recognized, or allowed some respite?"
 
@@ -51,7 +60,6 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/uncolored
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		neck = /obj/item/key/manor
 		if(H.gender == MALE)
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 		else
