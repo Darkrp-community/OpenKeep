@@ -68,8 +68,8 @@
 /datum/round_aspect/beggarking
 	name = "Peasantry Revolutionized"
 	description = "Well, the peasants revolted; and they won. Is this what you wanted? He looks like a fucking clown."
-*/
 
 /datum/round_aspect/crippledbeggars
 	name = "Crippled Beggars"
 	description = "Due to a previous Lord's decree all beggars got their legs broken, that was a long time ago, and they were training their arms. Better get a bow."
+*/
