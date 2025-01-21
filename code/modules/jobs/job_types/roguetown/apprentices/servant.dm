@@ -76,7 +76,7 @@
 /datum/outfit/job/roguetown/servant/keep/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-	neck = /obj/item/key/manor
+		neck = /obj/item/key/manor
 
 /datum/advclass/servant/inn
 	name = "Innkeeper's servant"
@@ -89,7 +89,7 @@
 /datum/outfit/job/roguetown/servant/inn/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-	neck = /obj/item/key/tavern
+		neck = /obj/item/key/tavern
 
 /datum/advclass/servant/matron_assistant
 	name = "Matron's servant"
@@ -102,4 +102,4 @@
 /datum/outfit/job/roguetown/servant/matron_assistant/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
-	neck = /obj/item/key/matron
+		neck = /obj/item/key/matron
