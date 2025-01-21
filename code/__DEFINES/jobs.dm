@@ -232,7 +232,9 @@
 #define JDO_FISHER 28.3
 #define JDO_HUNTER 28.4
 #define JDO_CARPENTER 28.6
-#define JDO_MATRON 28.7
+#define JDO_CHEESEMAKER 28.7
+#define JDO_MINER 28.8
+#define JDO_MATRON 28.9
 #define JDO_GRAVEMAN 29
 
 #define JDO_APOTHECARY 29.1
@@ -243,8 +245,7 @@
 
 #define JDO_CHIEF 32
 #define JDO_MINOR_NOBLE 33
-#define JDO_CHEESEMAKER 33.1
-#define JDO_MINER 33.2
+
 
 #define JDO_ADVENTURER 34
 #define JDO_PILGRIM 34.2
