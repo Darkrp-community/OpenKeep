@@ -1362,6 +1362,7 @@
 #include "code\modules\jobs\job_types\roguetown\peasants\beggar.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\butcher.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\butler.dm"
+#include "code\modules\jobs\job_types\roguetown\peasants\cheesemaker.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\cook.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\fisher.dm"
 #include "code\modules\jobs\job_types\roguetown\peasants\grabber.dm"
