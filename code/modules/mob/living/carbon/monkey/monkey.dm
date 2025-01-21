@@ -39,7 +39,7 @@
 		SSmobs.cubemonkeys += src
 
 	create_dna(src)
-	dna.initialize_dna(random_blood_type())
+	dna.initialize_dna()
 	AddComponent(/datum/component/footstep, FOOTSTEP_MOB_BAREFOOT, 1, 2)
 
 /mob/living/carbon/monkey/Destroy()

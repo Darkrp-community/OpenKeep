@@ -44,7 +44,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	var/use_skintones = 0	// does it use skintones or not? (spoiler alert this is only used by humans)
 	var/exotic_blood = ""	// If my race wants to bleed something other than bog standard blood, change this to reagent id.
-	var/exotic_bloodtype = "" //If my race uses a non standard bloodtype (A+, O-, AB-, etc)
+	var/datum/blood_type/exotic_bloodtype //If my race uses a non standard bloodtype (A+, O-, AB-, etc)
 	var/meat = /obj/item/reagent_containers/food/snacks/meat/slab/human //What the species drops on gibbing
 	var/liked_food = NONE
 	var/disliked_food = GROSS
@@ -604,8 +604,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	regenerate_organs(C,old_species)
 
-	if(exotic_bloodtype && C.dna.blood_type != exotic_bloodtype)
-		C.dna.blood_type = exotic_bloodtype
+	if(exotic_bloodtype && C.dna.human_blood_type != exotic_bloodtype)
+		C.dna.human_blood_type = exotic_bloodtype
 
 	if(old_species.mutanthands)
 		for(var/obj/item/I in C.held_items)
@@ -659,7 +659,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	if(C.dna.species.exotic_bloodtype)
-		C.dna.blood_type = random_blood_type()
+		C.dna.human_blood_type = random_human_blood_type()
 	if(DIGITIGRADE in species_traits)
 		C.Digitigrade_Leg_Swap(TRUE)
 	for(var/X in inherent_traits)

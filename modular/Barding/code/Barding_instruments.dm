@@ -23,11 +23,27 @@
 	dropshrink = 0.8
 	grid_height = 64
 	grid_width = 32
-	var/datum/looping_sound/dmusloop/soundloop
+	var/datum/looping_sound/instrument/soundloop
 	var/list/song_list = list()
 	var/playing = FALSE
 	var/dynamic_icon
 	var/icon_prefix
+
+/datum/looping_sound/instrument
+	mid_sounds = list()
+	mid_length = 60
+	volume = 100
+	falloff = 2
+	extra_range = 5
+	var/stress2give = /datum/stressevent/music
+	persistent_loop = TRUE
+
+/datum/looping_sound/instrument/on_hear_sound(mob/M)
+	. = ..()
+	if(stress2give)
+		if(isliving(M))
+			var/mob/living/carbon/L = M
+			L.add_stress(stress2give)
 
 /obj/item/rogue/instrument/equipped(mob/living/user, slot)
 	. = ..()
@@ -315,6 +331,7 @@
 	name = "lute"
 	desc = "The favored instrument of Eora, made of wood and simple string."
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
+	force = 5
 	icon_state = "lute"
 	song_list = list(
 	"A Knight's Return" = 'modular/Barding/sound/instruments/lute (1).ogg',

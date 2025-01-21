@@ -1,5 +1,16 @@
 // This mode will become the main basis for the typical roguetown round. Based off of chaos mode.
-GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "Vampire","Werewolf","None", "Aspirants", "Bandits", "Maniac", "Cultists", "Lich", "CANCEL"))
+GLOBAL_LIST_INIT(roguegamemodes, list(
+	"Rebellion",
+	"Vampires and Werewolves",
+	"Vampires",
+	"Werewolves",
+	"None",
+	"Aspirants",
+	"Bandits",
+	"Maniac",
+	"Cultists",
+	"Lich",
+	"CANCEL"))
 
 /datum/game_mode/chaosmode
 	name = "roguemode"
@@ -148,11 +159,9 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "V
 					log_game("Major Antagonist: Vampires and Werewolves")
 				if("Vampires")
 					pick_vampires()
-					message_admins("Vampires have been force selected to spawn.")
 					log_game("Major Antagonist: Vampires")
 				if("Werewolves")
 					pick_werewolves()
-					message_admins("Werewolves have been force selected to spawn.")
 					log_game("Major Antagonist: Werewolves")
 				if("Bandits")
 					pick_bandits()
@@ -179,7 +188,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "V
 					log_game("Major Antagonist: None")
 		return TRUE
 
-	var/major_roll = pick(1,2,3,4,5,6)
+	var/major_roll = pick(1,2,3,4,5,6,7)
 	switch(major_roll)
 		if(1)
 			pick_rebels()
@@ -194,17 +203,17 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "V
 			message_admins("Werewolves against Vampire has been selected as the major antagonists.")
 			pick_vampires()
 			pick_werewolves()
-			log_game("Major Antagonist: Vampires and Werewolves.")
+			log_game("Major Antagonist: Vampires and Werewolves")
 		if(4)
 			pick_vampires()
-			message_admins("The Vampires have been selected as a major antagonists.")
 			log_game("Major Antagonist: Vampires")
 		if(5)
 			pick_werewolves()
-			message_admins("The Werewolves have been selected as a major antagonist.")
 			log_game("Major Antagonist: Werewolves")
 		if(6)
-			message_admins("No major antagonist will be selected this round.")
+			pick_lich()
+			log_game("Major Antagonist: Lich")
+		if(7)
 			log_game("Major Antagonist: None")
 
 	if(prob(80))
@@ -216,11 +225,6 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampires and Werewolves", "V
 		pick_aspirants()
 		message_admins("Aspirants have been selected as a minor antagonist.")
 		log_game("Minor Antagonist: Aspirant")
-
-	if(prob(30))
-		pick_lich()
-		message_admins("The Lich has been selected as a minor antagonist.")
-		log_game("Minor Antagonist: Lich")
 
 	if(prob(10))
 		pick_maniac()
