@@ -3,8 +3,8 @@
 	flag = SERVANT
 	department_flag = APPRENTICES
 	faction = "Station"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 9
+	spawn_positions = 9
 
 	allowed_races = list(
 		"Humen",
@@ -95,7 +95,7 @@
 	name = "Matron's servant"
 	tutorial = "I once was an orphan, the matron took me in and now I am forever in her debt. That orphanage, those who were like me need guidance, I shall assist the matron in her tasks."
 	outfit = /datum/outfit/job/roguetown/servant/matron_assistant
-	maximum_possible_slots = 1
+	maximum_possible_slots = 2
 
 	category_tags = list(CTAG_SERVANT)
 
