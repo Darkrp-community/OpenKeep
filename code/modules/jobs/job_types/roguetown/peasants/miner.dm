@@ -19,7 +19,7 @@
 	department_flag = PEASANTS
 	display_order = JDO_MINER
 	total_positions = 12
-	spawn_positions = 6
+	spawn_positions = 12
 
 /datum/outfit/job/roguetown/miner/pre_equip(mob/living/carbon/human/H)
 	..()

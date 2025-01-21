@@ -21,7 +21,7 @@
 	flag = BARD
 	department_flag = PEASANTS
 	display_order = JDO_BARD
-	total_positions = 5
+	total_positions = 4
 	spawn_positions = 4
 
 /datum/outfit/job/roguetown/bard/pre_equip(mob/living/carbon/human/H)

@@ -3,8 +3,8 @@
 	flag = FARMER
 	department_flag = PEASANTS
 	faction = "Station"
-	total_positions = 8
-	spawn_positions = 5
+	total_positions = 11
+	spawn_positions = 11
 	display_order = JDO_SOILSON
 	bypass_lastclass = TRUE
 	allowed_sexes = list(MALE, FEMALE)
