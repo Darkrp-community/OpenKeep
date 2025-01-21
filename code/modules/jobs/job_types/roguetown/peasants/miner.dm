@@ -2,6 +2,7 @@
 	title = "Miner"
 	tutorial = "Hardy people who ceaselessly toil at the mines for ores and salt, \
 				who will ever know what they'll find beneath?"
+	faction = "Station"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",

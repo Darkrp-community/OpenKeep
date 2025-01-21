@@ -14,6 +14,7 @@
 		"Aasimar",
 		"Half-Orc"
 	)
+	faction = "Station"
 	outfit = /datum/outfit/job/roguetown/cheesemaker
 	department_flag = PEASANTS
 	flag = CHEESEMAKER

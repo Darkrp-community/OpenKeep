@@ -231,9 +231,7 @@
 #define JDO_SOILSON 28.2
 #define JDO_FISHER 28.3
 #define JDO_HUNTER 28.4
-#define JDO_MINER 28.5
 #define JDO_CARPENTER 28.6
-#define JDO_CHEESEMAKER 28.7
 #define JDO_MATRON 28.7
 #define JDO_GRAVEMAN 29
 
@@ -245,13 +243,15 @@
 
 #define JDO_CHIEF 32
 #define JDO_MINOR_NOBLE 33
+#define JDO_CHEESEMAKER 33.1
+#define JDO_MINER 33.2
 
-#define JDO_ADVENTURER 33.1
-#define JDO_PILGRIM 33.2
-#define JDO_MIGRANT  33.3
-#define JDO_BANDIT 33.3
+#define JDO_ADVENTURER 34
+#define JDO_PILGRIM 34.2
+#define JDO_MIGRANT  34.3
+#define JDO_BANDIT 34.3
 
-#define JDO_MERCENARY 34
+#define JDO_MERCENARY 35
 
-#define JDO_VAGRANT 35
-#define JDO_ORPHAN 36
+#define JDO_VAGRANT 36
+#define JDO_ORPHAN 37

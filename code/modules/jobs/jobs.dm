@@ -49,12 +49,12 @@ GLOBAL_LIST_INIT(serf_positions, list(
 
 GLOBAL_LIST_INIT(peasant_positions, list(
 	"Soilson",
+	"Miner",
 	"Stevedore",
 	"Butcher",
 	"Cook",
 	"Carpenter",
 	"Jester",
-	"Miner",
 	"Hunter",
 	"Fisher",
 	"Cheesemaker",
