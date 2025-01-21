@@ -20,7 +20,7 @@
 	advclass_cat_rolls = list(CTAG_VETERAN = 20)
 	display_order = JDO_VET
 	give_bank_account = 35
-	min_pq = 5 //Should...probably actually be a veteran of at least a few weeks before trying to teach others
+	min_pq = 10 //Should...probably actually be a veteran of at least a few weeks before trying to teach others
 	can_have_apprentices = FALSE
 
 
@@ -227,7 +227,7 @@
 			beltl = /obj/item/ammo_holder/quiver/bolts
 
 		if ("Spear + Shield")
-			r_hand = /obj/item/rogueweapon/spear
+			r_hand = /obj/item/rogueweapon/polearm/spear
 			backl = /obj/item/rogueweapon/shield/tower/metal
 
 /datum/advclass/veteran/merc

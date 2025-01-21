@@ -185,7 +185,7 @@
 			for(var/i in GLOB.human_list)
 				var/mob/living/carbon/human/H = i
 				if(H.ckey)
-					dat += "<tr><td>[H]</td><td>[H.dna.unique_enzymes]</td><td>[H.dna.blood_type]</td></tr>"
+					dat += "<tr><td>[H]</td><td>[H.dna.unique_enzymes]</td><td>[H.dna.human_blood_type]</td></tr>"
 			dat += "</table>"
 			usr << browse(dat, "window=DNA;size=440x410")
 		if("fingerprints")
@@ -272,9 +272,6 @@
 			message_admins("[key_name_admin(usr)] fixed all lights")
 			for(var/obj/machinery/light/L in GLOB.machines)
 				L.fix()
-
-		if("floorlava")
-			SSweather.run_weather(/datum/weather/floor_is_lava)
 
 		if("stupidify")
 			if(!check_rights(R_FUN))

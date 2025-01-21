@@ -16,7 +16,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	confess_lines = list(
 		"I AM ANCIENT",
 		"I AM THE LAND",
-		"CHILD OF KAIN!",
+		"FIRSTBORNE CHILD OF KAIN!",
 	)
 	var/isspawn = FALSE
 	var/disguised = FALSE
@@ -57,6 +57,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	C.vampires |= owner
 	. = ..()
 	owner.special_role = name
+	move_to_spawnpoint()
 	ADD_TRAIT(owner.current, TRAIT_CRITICAL_WEAKNESS, "[type]") //half assed but necessary otherwise these guys be invincible
 	ADD_TRAIT(owner.current, TRAIT_STRONGBITE, "[type]")
 	ADD_TRAIT(owner.current, TRAIT_NOSTAMINA, "[type]")
@@ -187,6 +188,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		owner.current.RemoveSpell(batform)
 		QDEL_NULL(batform)
 	return ..()
+
 /datum/antagonist/vampirelord/proc/add_objective(datum/objective/O)
 	var/datum/objective/V = new O
 	objectives += V
@@ -195,7 +197,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	objectives -= O
 
 /datum/antagonist/vampirelord/proc/forge_vampirelord_objectives()
-	var/list/primary = pick(list("1", "2"))
+	var/list/primary = pick(list("1", "2","3"))
 	var/list/secondary = pick(list("1", "2", "3"))
 	switch(primary)
 		if("1")
@@ -203,6 +205,9 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 			objectives += T
 		if("2")
 			var/datum/objective/vampirelord/ascend/T = new
+			objectives += T
+		if("3")
+			var/datum/objective/vampirelord/destroy/T = new
 			objectives += T
 	switch(secondary)
 		if("1")
@@ -807,89 +812,6 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 		to_chat(world, span_redtext("The [special_role_text] has FAILED!"))
 		if(owner?.current)
 			owner.current.playsound_local(get_turf(owner.current), 'sound/misc/fail.ogg', 100, FALSE, pressure_affected = FALSE)
-// OBJECTIVES STORED HERE TEMPORARILY FOR EASE OF REFERENCE
-
-/datum/objective/vampirelord/conquer
-	name = "conquer"
-	explanation_text = "Make the Ruler of Enigma bow to my will."
-	team_explanation_text = ""
-	triumph_count = 5
-
-/datum/objective/vampirelord/conquer/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	if(istype(C))
-		if(C.kingsubmit)
-			return TRUE
-
-/datum/objective/vampirelord/ascend
-	name = "sun"
-	explanation_text = "Astrata has spurned me long enough. I must conquer the Sun."
-	team_explanation_text = ""
-	triumph_count = 5
-
-/datum/objective/vampirelord/ascend/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	if(C.ascended)
-		return TRUE
-
-/datum/objective/vampirelord/infiltrate/one
-	name = "infiltrate1"
-	explanation_text = "Make a member of the Church my spawn."
-	triumph_count = 5
-
-/datum/objective/vampirelord/infiltrate/one/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/churchjobs = list("Priest", "Priestess", "Cleric", "Acolyte", "Templar", "Churchling", "Crusader", "Inquisitor")
-	for(var/datum/mind/V in C.vampires)
-		if(V.current.job in churchjobs)
-			return TRUE
-
-/datum/objective/vampirelord/infiltrate/two
-	name = "infiltrate2"
-	explanation_text = "Make a member of the Nobility my spawn."
-	triumph_count = 5
-
-/datum/objective/vampirelord/infiltrate/two/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	var/list/noblejobs = list("Duke", "Duchess", "Heir", "Heiress", "Hand", "Steward")
-	for(var/datum/mind/V in C.vampires)
-		if(V.current.job in noblejobs)
-			return TRUE
-
-/datum/objective/vampirelord/spread
-	name = "spread"
-	explanation_text = "Have 10 vampire spawn."
-	triumph_count = 5
-
-/datum/objective/vampirelord/spread/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	if(C.vampires.len >= 10)
-		return TRUE
-
-/datum/objective/vampirelord/stock
-	name = "stock"
-	explanation_text = "Have a crimson crucible with 30000 vitae."
-	triumph_count = 1
-
-/datum/objective/vlordsurvive
-	name = "survive"
-	explanation_text = "I am eternal. I must ensure the foolish mortals don't destroy me."
-	triumph_count = 3
-
-/datum/objective/vlordsurvive/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	if(!C.vlord.stat)
-		return TRUE
-
-/datum/objective/vlordserve
-	name = "serve"
-	explanation_text = "I must serve my master, and ensure that they triumph."
-	triumph_count = 3
-
-/datum/objective/vlordserve/check_completion()
-	var/datum/game_mode/chaosmode/C = SSticker.mode
-	if(!C.vlord.stat)
-		return TRUE
 
 /datum/antagonist/vampirelord/roundend_report()
 	var/traitorwin = TRUE

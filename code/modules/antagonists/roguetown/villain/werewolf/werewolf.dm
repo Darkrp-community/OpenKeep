@@ -56,11 +56,25 @@
 	objectives -= O
 
 /datum/antagonist/werewolf/proc/forge_werewolf_objectives()
-	if(!(locate(/datum/objective/escape) in objectives))
-		var/datum/objective/werewolf/escape_objective = new
-		escape_objective.owner = owner
-		add_objective(escape_objective)
-		return
+	var/list/primary = pick(list("1","2"))
+	var/list/secondary = pick(list("1", "2"))
+	switch(primary)
+		if("1")
+			var/datum/objective/werewolf/conquer/T = new
+			objectives += T
+		if("2")
+			var/datum/objective/werewolf/spread/T = new
+			objectives += T
+	switch(secondary)
+		if("1")
+			var/datum/objective/werewolf/infiltrate/one/T = new
+			objectives += T
+		if("2")
+			var/datum/objective/werewolf/infiltrate/two/T = new
+			objectives += T
+
+	var/datum/objective/werewolf/survive/survive = new
+	objectives += survive
 
 /datum/antagonist/werewolf/greet()
 	to_chat(owner.current, span_userdanger("Ever since that bite, I have been a [name]."))
@@ -125,12 +139,12 @@
 	desc = ""
 	icon_state = null
 	body_parts_covered = FULL_BODY
-	armor = list("blunt" = 90, "slash" = 90, "stab" = 80, "piercing" = 70, "fire" = 40, "acid" = 0)
+	armor = ARMOR_SCALE
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	sewrepair = FALSE
-	max_integrity = 550
+	max_integrity = INTEGRITY_STRONG
 	item_flags = DROPDEL
 
 /datum/intent/simple/werewolf

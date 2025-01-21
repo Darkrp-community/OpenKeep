@@ -1,7 +1,10 @@
 /mob/living/proc/update_stamina() //update hud and regen after last_fatigued delay on taking
-	maximum_stamina = max_energy / 10
+	var/athletics_skill = 0
+	if(mind)
+		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
+	maximum_stamina = (STAEND + athletics_skill) * 10 //This here is the calculation for max STAMINA / GREEN
 
-	var/delay = (HAS_TRAIT(src, TRAIT_APRICITY) && GLOB.tod == "day") ? 13 : 20
+	var/delay = (HAS_TRAIT(src, TRAIT_APRICITY) && GLOB.tod == "day") ? 11 : 20
 	if(world.time > last_fatigued + delay) //regen fatigue
 		var/added = energy / max_energy
 		added = round(-10+ (added*-40))
@@ -12,7 +15,7 @@
 		else
 			stamina = 0
 
-	update_health_hud()
+	update_health_hud(TRUE)
 
 /mob/living/proc/update_energy()
 	///this is kinda weird and not at the same time for energy being tied to this,
@@ -20,7 +23,7 @@
 	var/athletics_skill = 0
 	if(mind)
 		athletics_skill = mind.get_skill_level(/datum/skill/misc/athletics)
-	max_energy = (STAEND + (athletics_skill / 2) ) * 100
+	max_energy = (STAEND + athletics_skill) * 100 // ENERGY / BLUE (Average of 1000)
 	if(cmode)
 		if(!HAS_TRAIT(src, TRAIT_BREADY))
 			adjust_energy(-2)
@@ -38,14 +41,14 @@
 	energy += added
 	if(energy > max_energy)
 		energy = max_energy
-		update_health_hud()
+		update_health_hud(TRUE)
 		return FALSE
 	else
 		if(energy <= 0)
 			energy = 0
 			if(m_intent == MOVE_INTENT_RUN) //can't sprint at zero stamina
 				toggle_rogmove_intent(MOVE_INTENT_WALK)
-		update_health_hud()
+		update_health_hud(TRUE)
 		return TRUE
 
 /mob/proc/adjust_stamina(added as num)
@@ -68,7 +71,7 @@
 							return FALSE
 	if(stamina >= maximum_stamina)
 		stamina = maximum_stamina
-		update_health_hud()
+		update_health_hud(TRUE)
 		if(m_intent == MOVE_INTENT_RUN) //can't sprint at full fatigue
 			toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
 		if(!emote_override)
@@ -94,7 +97,7 @@
 		return FALSE
 	else
 		last_fatigued = world.time
-		update_health_hud()
+		update_health_hud(TRUE)
 		return TRUE
 
 /mob/living/carbon

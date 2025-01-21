@@ -118,7 +118,7 @@
 					H.update_inv_head()
 
 /obj/item/clothing/neck/roguetown/keffiyeh/red
-	color = COLOR_MAROON
+	color = CLOTHING_BLOOD_RED
 
 /obj/item/clothing/neck/roguetown/keffiyeh/yellow
 	color = CLOTHING_PEAR_YELLOW
@@ -134,9 +134,6 @@
 
 /obj/item/clothing/neck/roguetown/keffiyeh/purple
 	color = CLOTHING_ROYAL_PURPLE
-
-/obj/item/clothing/neck/roguetown/keffiyeh/teal
-	color = CLOTHING_ROYAL_TEAL
 
 /obj/item/clothing/neck/roguetown/keffiyeh/black
 	color = CLOTHING_ROYAL_BLACK
@@ -308,40 +305,6 @@
 	resistance_flags = FIRE_PROOF
 	sellprice = 50
 	smeltresult = /obj/item/ingot/silver
-
-/obj/item/clothing/neck/roguetown/psycross/silver/pickup(mob/user)
-	. = ..()
-	var/mob/living/carbon/human/H = user
-	var/datum/antagonist/vampirelord/V_lord = H.mind.has_antag_datum(/datum/antagonist/vampirelord/)
-	if(H.mind)
-		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
-			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
-			H.fire_act(1,5)
-		if(V_lord)
-			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
-				H.Knockdown(10)
-				H.Paralyze(10)
-
-/obj/item/clothing/neck/roguetown/psycross/silver/mob_can_equip(mob/living/M, mob/living/equipper, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
-	. = ..()
-	var/mob/living/carbon/human/H = M
-	var/datum/antagonist/vampirelord/V_lord = H.mind?.has_antag_datum(/datum/antagonist/vampirelord/)
-	if(H.mind)
-		if(H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-			to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
-			H.Knockdown(20)
-			H.adjustFireLoss(60)
-			H.Paralyze(20)
-			H.fire_act(1,5)
-		if(V_lord)
-			if(V_lord.vamplevel < 4 && !H.mind.has_antag_datum(/datum/antagonist/vampirelord/lesser))
-				to_chat(H, "<span class='userdanger'>I can't pick up the silver, it is my BANE!</span>")
-				H.Knockdown(10)
-				H.Paralyze(10)
 
 // PANTHEON SILVER PSYCROSSES START
 

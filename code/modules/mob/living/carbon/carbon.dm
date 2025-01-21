@@ -99,7 +99,7 @@
 		mode() // Activate held item
 
 /mob/living/carbon/attackby(obj/item/I, mob/user, params)
-	if(!user.cmode)
+	if(!user.cmode && (istype(user.rmb_intent, /datum/rmb_intent/weak) || istype(user.rmb_intent, /datum/rmb_intent/strong)))
 		var/try_to_fail = !istype(user.rmb_intent, /datum/rmb_intent/weak)
 		var/list/possible_steps = list()
 		for(var/datum/surgery_step/surgery_step as anything in GLOB.surgery_steps)
@@ -506,6 +506,8 @@
 
 /mob/living/Stat()
 	..()
+	if(!client)
+		return
 	if(statpanel("Stats"))
 		stat("STR: \Roman [STASTR]")
 		stat("PER: \Roman [STAPER]")
@@ -517,6 +519,8 @@
 
 /mob/living/carbon/Stat()
 	..()
+	if(!client)
+		return
 	add_abilities_to_panel()
 
 /mob/living/carbon/attack_ui(slot)
