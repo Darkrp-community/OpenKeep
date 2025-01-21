@@ -20,7 +20,6 @@
 	department_flag = PEASANTS
 	display_order = JDO_CARPENTER
 	outfit = /datum/outfit/job/roguetown/carpenter
-	apprentice_name = "Carpenter"
 
 /datum/outfit/job/roguetown/carpenter/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -36,6 +35,12 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
+		if(prob(5))
+			H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/labor/lumberjacking, 4, TRUE)
+			H.mind?.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
+
 	head = /obj/item/clothing/head/roguetown/hatfur
 	if(prob(50))
 		head = /obj/item/clothing/head/roguetown/hatblu

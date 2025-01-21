@@ -3,8 +3,8 @@
 	flag = SERVANT
 	department_flag = APPRENTICES
 	faction = "Station"
-	total_positions = 9
-	spawn_positions = 9
+	total_positions = 8
+	spawn_positions = 8
 
 	allowed_races = list(
 		"Humen",
@@ -28,7 +28,7 @@
 		H.invisibility = INVISIBILITY_MAXIMUM
 		H.become_blind("advsetup")
 
-	tutorial = "You are the faceless, nameless labor that keeps the royal court fed, washed, and attended to. You work your fingers to the bone nearly every dae, and have naught to show for it but boney fingers. Perhaps this week you will finally be recognized, or allowed some respite?"
+	tutorial = "You work your fingers to the bone nearly every dae, and have naught to show for it but boney fingers. Perhaps this week you will finally be recognized, or allowed some respite?"
 
 	outfit = /datum/outfit/job/roguetown/servant
 	display_order = JDO_SERVANT
@@ -64,3 +64,42 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/black
 		else
 			cloak = /obj/item/clothing/cloak/apron
+
+/datum/advclass/servant/keep
+	name = "Keep's servant"
+	tutorial = "You are the faceless, nameless labor that keeps the royal court fed, washed, and attended to."
+	outfit = /datum/outfit/job/roguetown/servant/keep
+	maximum_possible_slots = 5
+
+	category_tags = list(CTAG_SERVANT)
+
+/datum/outfit/job/roguetown/servant/keep/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.mind)
+	neck = /obj/item/key/manor
+
+/datum/advclass/servant/inn
+	name = "Innkeeper's servant"
+	tutorial = "The Innkeeper needed waiters and here am I, serving the food, drinks and ensuring the rooms are clean."
+	outfit = /datum/outfit/job/roguetown/servant/inn
+	maximum_possible_slots = 2
+
+	category_tags = list(CTAG_SERVANT)
+
+/datum/outfit/job/roguetown/servant/inn/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.mind)
+	neck = /obj/item/key/tavern
+
+/datum/advclass/servant/matron_assistant
+	name = "Matron's servant"
+	tutorial = "I once was an orphan, the matron took me in and now I am forever in her debt. That orphanage, those who were like me need guidance, I shall assist the matron in her tasks."
+	outfit = /datum/outfit/job/roguetown/servant/matron_assistant
+	maximum_possible_slots = 1
+
+	category_tags = list(CTAG_SERVANT)
+
+/datum/outfit/job/roguetown/servant/matron_assistant/pre_equip(mob/living/carbon/human/H)
+	..()
+	if(H.mind)
+	neck = /obj/item/key/matron
