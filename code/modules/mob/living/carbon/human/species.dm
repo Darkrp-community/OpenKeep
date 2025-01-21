@@ -2665,7 +2665,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/knockback_tiles = 0
 			var/damage = actual_damage
 			if(chungus_str >= 3)
-				knockback_tiles = FLOOR(damage/((chungus_str - 2) * 2.5), 1)
+				knockback_tiles = FLOOR(damage/((chungus_str - 2) * 4), 1)
 			else
 				knockback_tiles = FLOOR(damage/2, 1)
 			if(knockback_tiles >= 1)
@@ -2687,7 +2687,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				var/knockback_tiles = 0
 				var/newforce = actual_damage
 				if(endurance >= 3)
-					knockback_tiles = FLOOR(newforce/((endurance - 2) * 2.5), 1)
+					knockback_tiles = FLOOR(newforce/((endurance - 2) * 4), 1)
 				else
 					knockback_tiles = FLOOR(newforce/2, 1)
 				if(knockback_tiles >= 1)
