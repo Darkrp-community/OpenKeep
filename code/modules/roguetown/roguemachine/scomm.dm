@@ -14,6 +14,7 @@
 	var/listening = TRUE
 	var/speaking = TRUE
 	var/dictating = FALSE
+	var/fucked = FALSE
 
 /obj/structure/roguemachine/scomm/r
 	pixel_y = 0
@@ -46,6 +47,11 @@
 	if(.)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
+	if(user.used_intent.type == INTENT_HARM)
+		playsound(loc, 'sound/combat/hits/punch/punch (1).ogg', 100, FALSE, -1)
+		fucked = FALSE
+		update_icon()
+		return
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
@@ -94,6 +100,8 @@
 		icon_state = "scomm1"
 	else
 		icon_state = "scomm0"
+	if(fucked)
+		icon_state = "scomm-fucked"
 
 /obj/structure/roguemachine/scomm/Destroy()
 	SSroguemachine.scomm_machines -= src
@@ -128,6 +136,11 @@
 		if(lowertext(raw_message) == "say laws")
 			dictate_laws()
 			return
+		if(aspect_chosen(/datum/round_aspect/faulty))
+			if(prob(22))
+				fucked = TRUE
+			if(fucked)
+				raw_message = stars(raw_message)
 		for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
 			S.repeat_message(raw_message, src, usedcolor, message_language)
 		for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
