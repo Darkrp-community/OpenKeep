@@ -1,4 +1,4 @@
-/datum/advclass/pilgrim/cheesemaker
+/datum/job/roguetown/cheesemaker
 	title =  "Cheesemaker"
 	tutorial = "Craftsmen who have mastered the art of curdling milks \
 				into delicious and long lasting wheels of cheese."
