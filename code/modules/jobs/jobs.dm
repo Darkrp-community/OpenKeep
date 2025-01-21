@@ -57,6 +57,7 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Miner",
 	"Hunter",
 	"Fisher",
+	"Cheesemaker",
 	"Butler",
 	"Mercenary",
 	"Bard",
