@@ -33,6 +33,8 @@
 /datum/outfit/job/roguetown/farmer/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
+		if(prob(5))
+
 		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
