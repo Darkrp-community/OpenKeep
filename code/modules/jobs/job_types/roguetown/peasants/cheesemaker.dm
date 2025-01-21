@@ -15,6 +15,9 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/cheesemaker
+	department_flag = PEASANTS
+	flag = CHEESEMAKER
+	display_order = JDO_CHEESEMAKER
 
 /datum/outfit/job/roguetown/cheesemaker/pre_equip(mob/living/carbon/human/H)
 	..()

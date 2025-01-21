@@ -15,9 +15,6 @@
 		"Half-Orc"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/cheesemaker
-	department_flag = PEASANTS
-	flag = CHEESEMAKER
-	display_order = JDO_CHEESEMAKER
 
 	category_tags = list(CTAG_PILGRIM)
 	apprentice_name = "Cheesemaker Apprentice"
