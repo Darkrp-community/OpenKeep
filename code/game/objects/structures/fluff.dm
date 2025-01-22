@@ -268,6 +268,7 @@
 	icon_state = "passage0"
 	density = TRUE
 	max_integrity = 2000
+	redstone_structure = TRUE
 
 /obj/structure/bars/passage/redstone_triggered(mob/user)
 	if(obj_broken)
@@ -283,6 +284,7 @@
 	icon_state = "shutter0"
 	density = TRUE
 	opacity = TRUE
+	redstone_structure = TRUE
 
 /obj/structure/bars/passage/shutter/redstone_triggered(mob/user)
 	if(obj_broken)
@@ -312,6 +314,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	attacked_sound = list('sound/combat/hits/onmetal/grille (1).ogg', 'sound/combat/hits/onmetal/grille (2).ogg', 'sound/combat/hits/onmetal/grille (3).ogg')
+	redstone_structure = TRUE
 	var/togg = FALSE
 
 /obj/structure/bars/grille/Initialize()
