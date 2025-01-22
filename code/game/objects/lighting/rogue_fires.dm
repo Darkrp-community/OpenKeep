@@ -362,8 +362,7 @@
 				var/obj/item/reagent_containers/food/snacks/S = W
 				if(istype(W, /obj/item/reagent_containers/food/snacks/egg)) // added
 					playsound(get_turf(user), 'modular/Neu_Food/sound/eggbreak.ogg', 100, TRUE, 0)
-					if(!do_after(user, 25))
-						return
+					sleep(25) // to get egg crack before frying hiss
 					W.icon_state = "rawegg" // added
 					rawegg = TRUE
 				if(!food)
