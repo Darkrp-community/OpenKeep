@@ -387,7 +387,7 @@ GLOBAL_PROTECT(tracy_init_reason)
 
 	log_world("World rebooted at [time_stamp()]")
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
-  
+
 	TgsReboot() // TGS can decide to kill us right here, so it's important to do it last
 	shutdown_byond_tracy()
 	..()
