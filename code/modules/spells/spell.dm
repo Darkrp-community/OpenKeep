@@ -300,7 +300,7 @@ GLOBAL_LIST_INIT(spells, typesof(/obj/effect/proc_holder/spell)) //needed for th
 
 	if(req_inhand)
 		if(!istype(user.get_active_held_item(), req_inhand))
-			to_chat(user, "<span class='warning'>I need \a [initial(req_inhand.name)] in my hand to cast this.</span>")
+			to_chat(user, "<span class='warning'>I'm missing something to cast this.</span>")
 			return FALSE
 
 	if(!skipcharge)
