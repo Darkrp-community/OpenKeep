@@ -11,7 +11,9 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Half-Orc"
+		"Half-Orc",
+		"Aasimar",
+		"Rakshari"
 	)
 	outfit = /datum/outfit/job/roguetown/noble
 	faction = "Station"

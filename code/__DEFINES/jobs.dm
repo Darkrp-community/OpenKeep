@@ -181,6 +181,7 @@
 #define JDO_PRINCE 1.2
 #define JDO_HAND 2
 #define JDO_STEWARD 3
+#define JDO_MINOR_NOBLE 3.5
 
 #define JDO_MAGICIAN 4
 #define JDO_WAPP 5
@@ -244,10 +245,8 @@
 #define JDO_PRISONER 31
 
 #define JDO_CHIEF 32
-#define JDO_MINOR_NOBLE 33
 
-
-#define JDO_ADVENTURER 34
+#define JDO_ADVENTURER 33
 #define JDO_PILGRIM 34.2
 #define JDO_MIGRANT  34.3
 #define JDO_BANDIT 34.3

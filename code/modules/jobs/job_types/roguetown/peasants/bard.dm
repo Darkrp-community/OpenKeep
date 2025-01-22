@@ -14,7 +14,8 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Half-Orc",
+		"Rakshari"
 	)
 	outfit = /datum/outfit/job/roguetown/bard
 	flag = BARD
