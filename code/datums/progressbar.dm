@@ -4,7 +4,7 @@
 /datum/progressbar
 	var/goal = 1
 	var/last_progress = 0
-	var/image/bar
+	var/obj/effect/world_progressbar/bar
 	var/shown = 0
 	var/mob/user
 	var/listindex
@@ -15,9 +15,7 @@
 		EXCEPTION("Invalid target given")
 	if (goal_number)
 		goal = goal_number
-	bar = image('icons/effects/progessbar.dmi', target, "prog_bar_0", HUD_LAYER)
-	bar.plane = ABOVE_HUD_PLANE
-	bar.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
+	bar = new /obj/effect/world_progressbar(get_turf(User))
 	user = User
 
 	LAZYINITLIST(user.progressbars)
@@ -30,14 +28,15 @@
 	animate(bar, pixel_y = 32 + (PROGRESSBAR_HEIGHT * (listindex - 1)), alpha = 255, time = PROGRESSBAR_ANIMATION_TIME, easing = SINE_EASING)
 
 /datum/progressbar/proc/update(progress)
-	for (var/client/C in GLOB.clients)
-		C.images += bar
-
 	progress = CLAMP(progress, 0, goal)
 	last_progress = progress
 	bar.icon_state = "prog_bar_[round(((progress / goal) * 100), 5)]"
 	if (!shown)
 		shown = TRUE
+
+	if(progress >= goal)
+		qdel(src)
+
 
 /datum/progressbar/proc/shiftDown()
 	--listindex
@@ -55,17 +54,21 @@
 
 	var/list/bars = user.progressbars[bar.loc]
 	bars.Remove(src)
+
 	if(!bars.len)
 		LAZYREMOVE(user.progressbars, bar.loc)
-
 	animate(bar, alpha = 0, time = PROGRESSBAR_ANIMATION_TIME)
-	addtimer(CALLBACK(src, PROC_REF(remove_from_client)), PROGRESSBAR_ANIMATION_TIME, TIMER_CLIENT_TIME)
 	QDEL_IN(bar, PROGRESSBAR_ANIMATION_TIME * 2) //for garbage collection safety
 	. = ..()
 
-/datum/progressbar/proc/remove_from_client()
-	for (var/client/C in GLOB.clients)
-		C.images += bar
-
 #undef PROGRESSBAR_ANIMATION_TIME
 #undef PROGRESSBAR_HEIGHT
+
+/obj/effect/world_progressbar
+	icon = 'icons/effects/progessbar.dmi'
+	icon_state = "prog_bar_0"
+	plane = SPLASHSCREEN_PLANE
+	layer = HUD_LAYER
+	appearance_flags = RESET_ALPHA | RESET_COLOR | RESET_TRANSFORM | KEEP_APART
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	appearance_flags = APPEARANCE_UI_IGNORE_ALPHA

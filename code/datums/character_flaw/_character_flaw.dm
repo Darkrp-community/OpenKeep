@@ -18,9 +18,9 @@ GLOBAL_LIST_INIT(character_flaws, list(
 	"Fire Servant"=/datum/charflaw/addiction/pyromaniac,
 	"Thief-Borne"=/datum/charflaw/addiction/kleptomaniac,
 	"Pain Freek"=/datum/charflaw/addiction/masochist,
+	"Hunted"=/datum/charflaw/hunted,
 	"Random Flaw or No Flaw"=/datum/charflaw/randflaw,
-	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,
-	"Hunted"=/datum/charflaw/hunted))
+	"Guaranteed No Flaw (3 TRI)"=/datum/charflaw/noflaw,))
 
 /datum/charflaw
 	var/name
@@ -301,7 +301,9 @@ GLOBAL_LIST_INIT(character_flaws, list(
 
 /datum/charflaw/hunted
 	name = "Hunted"
-	desc = "Something in my past has made me a target. I'm always looking over my shoulder."
+	desc = "Something in my past has made me a target. I'm always looking over my shoulder.	\
+	THIS IS A DIFFICULT FLAW, YOU WILL BE HUNTED AND HAVE ASSASINATION ATTEMPTS MADE AGAINST YOU WITHOUT ANY ESCALATION. \
+	EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
 	var/logged = FALSE
 
 /datum/charflaw/hunted/flaw_on_life(mob/user)

@@ -1,10 +1,11 @@
 /datum/migrant_role/dwarven_company/captain
-	name = "Foreman"
-	greet_text = "You are the foreman of a dwarven's expedition, following the steps of Matthios you shall lead your party to Malum's tomb."
+	name = "Captain"
+	greet_text = "You are the captain of a dwarven's expedition, following the tracks of Matthios's influence you shall lead your party in Malum's name."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/captain
 
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/dwarven_company/captain/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -17,6 +18,8 @@
 	backl = /obj/item/rogueweapon/sword/scimitar/falchion
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
+	pants = /obj/item/clothing/under/roguetown/trou
+	shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 	H.change_stat("strength", 3)
 	H.change_stat("perception", 2)
 	H.change_stat("intelligence", 1)
@@ -43,14 +46,17 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 /datum/migrant_role/dwarven_company/weaponsmith
 	name = "Weapon Smith"
-	greet_text = " You are the weaponsmith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
+	greet_text = " You are the weaponsmith of a dwarven expedition, obey your foremand as they lead you in Malum's name into the tomb of Matthios."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/weaponsmith
 
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/dwarven_company/weaponsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -72,6 +78,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.mind?.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 			H.mind?.adjust_skillrank(/datum/skill/craft/weaponsmithing, pick(1,2), TRUE)
@@ -103,12 +110,13 @@
 		H.change_stat("speed", -1)
 
 /datum/migrant_role/dwarven_company/armorsmith
-	name = "Weapon Smith"
-	greet_text = " You are the armorsmith of a dwarven expedition, obey your foremand as they lead you in Matthios steps into the tomb of Malum."
+	name = "Armor Smith"
+	greet_text = " You are the armorsmith of a dwarven expedition, obey your foremand as they lead you in Malum's name into the tomb of Matthios."
 	outfit = /datum/outfit/job/roguetown/dwarven_company/armorsmith
 
 	allowed_races = list("Dwarf")
 	grant_lit_torch = TRUE
+	show_wanderer_examine = FALSE
 
 /datum/outfit/job/roguetown/dwarven_company/armorsmith/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -130,6 +138,7 @@
 		H.mind?.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE) //
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		ADD_TRAIT(H, TRAIT_MALUMFIRE, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if(H.age == AGE_OLD)
 			H.mind?.adjust_skillrank(/datum/skill/craft/blacksmithing, pick(1,2), TRUE)
 			H.mind?.adjust_skillrank(/datum/skill/craft/armorsmithing, pick(1,2), TRUE)
@@ -161,7 +170,7 @@
 		H.change_stat("speed", -1)
 
 /datum/migrant_wave/dwarven_company
-	name = "Dwarven's expedition"
+	name = "Dwarven Expedition"
 	max_spawns = 4
 	shared_wave_type = /datum/migrant_wave/dwarven_company
 	downgrade_wave = /datum/migrant_wave/dwarven_company_down
@@ -171,10 +180,10 @@
 		/datum/migrant_role/dwarven_company/weaponsmith = 2,
 		/datum/migrant_role/dwarven_company/armorsmith = 2
 	)
-	greet_text = "Matthios opened the way, Malum's tomb await all dwarves bold enough to go for it, which will be us."
+	greet_text = "The way to Matthios's tomb is opened. Malum has called for all dwarves bold enough to go in, and we shall answer."
 
 /datum/migrant_wave/dwarven_company_down
-	name = "Dwarven's expedition"
+	name = "Dwarven Expedition"
 	max_spawns = 4
 	shared_wave_type = /datum/migrant_wave/dwarven_company
 	downgrade_wave = /datum/migrant_wave/dwarven_company_down_one
@@ -184,16 +193,16 @@
 		/datum/migrant_role/dwarven_company/armorsmith = 1,
 		/datum/migrant_role/dwarven_company/weaponsmith = 1
 	)
-	greet_text = "Matthios opened the way, Malum's tomb await all dwarves bold enough to go for it, which will be us."
+	greet_text = "The way to Matthios's tomb is opened. Malum has called for all dwarves bold enough to go in, and we shall answer."
 
 /datum/migrant_wave/dwarven_company_down_one
-	name = "Dwarven's expedition"
+	name = "Dwarven Expedition"
 	max_spawns = 4
 	shared_wave_type = /datum/migrant_wave/dwarven_company
 	can_roll = FALSE
 	roles = list(
 		/datum/migrant_role/dwarven_company/captain = 1,
 	)
-	greet_text = "Matthios opened the way, Malum's tomb await all dwarves bold enough to go for it, which will be me."
+	greet_text = "The way to Matthios's tomb is opened. Malum has called for all dwarves bold enough to go in, and we shall answer."
 
 

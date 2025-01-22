@@ -9,6 +9,7 @@
 	textper = 108
 	maxlen = 2000
 	throw_range = 3
+	var/old_render = TRUE
 
 
 /obj/item/paper/scroll/attackby(obj/item/P, mob/living/carbon/human/user, params)
@@ -61,13 +62,23 @@
 		return
 	/*font-size: 125%;*/
 	if(in_range(user, src) || isobserver(user))
-		user.hud_used.reads.icon_state = "scroll"
-		user.hud_used.reads.show()
-		user.hud_used.reads.maptext = info
-		user.hud_used.reads.maptext_width = 230
-		user.hud_used.reads.maptext_height = 200
-		user.hud_used.reads.maptext_y = 150
-		user.hud_used.reads.maptext_x = 120
+		if(old_render)
+			user << browse_rsc('html/book.png')
+			var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
+			<html><head><style type=\"text/css\">
+			body { background-image:url('book.png');background-repeat: repeat; }</style></head><body scroll=yes>"}
+			dat += "[info]<br>"
+			dat += "<a href='?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
+			dat += "</body></html>"
+			user << browse(dat, "window=reading;size=460x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0")
+		else
+			user.hud_used.reads.icon_state = "scroll"
+			user.hud_used.reads.show()
+			user.hud_used.reads.maptext = info
+			user.hud_used.reads.maptext_width = 230
+			user.hud_used.reads.maptext_height = 200
+			user.hud_used.reads.maptext_y = 150
+			user.hud_used.reads.maptext_x = 120
 
 		onclose(user, "reading", src)
 	else
@@ -122,6 +133,7 @@
 	var/list/fufilled_orders = list()
 	open = TRUE
 	textper = 150
+	old_render = FALSE
 
 /obj/item/paper/scroll/cargo/Destroy()
 	for(var/datum/supply_pack/SO in orders)
@@ -201,15 +213,17 @@
 	maxlen = 2000
 	var/confession_type = "antag" //for voluntary confessions
 
-/obj/item/paper/confession/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/natural/feather))
-		var/response = alert(user, "What voluntary confession do I want?","","Villainy", "Faith")
-		if(!response)
-			return
-		if(response == "Villainy")
-			confession_type = "antag"
-		else
-			confession_type = "patron"
+/obj/item/paper/confession/examine(mob/user)
+	. = ..()
+	. += span_info("Left click with a feather to sign, right click to change confession type.")
+
+/obj/item/paper/confession/attackby(atom/A, mob/living/user, params)
+	if(signed)
+		return ..()
+	if(istype(A, /obj/item/natural/feather))
+		attempt_confession(user)
+		return TRUE
+	return ..()
 
 /obj/item/paper/confession/update_icon_state()
 	if(mailer)
@@ -229,8 +243,16 @@
 	if(signed)
 		return ..()
 	if(M.stat >= UNCONSCIOUS) //unconscious cannot talk to confess, but soft crit can
+		return ..()
+	if(!ishuman(M))
+		return ..()
+	to_chat(user, span_info("I courteously offer the confession to [M]."))
+	attempt_confession(M, user)
+	return
+
+/obj/item/paper/confession/proc/attempt_confession(mob/living/carbon/human/M, mob/user)
+	if(!ishuman(M))
 		return
-	to_chat(user, "<span class='info'>I courteously offer the confession to [M].</span>")
 	var/input = alert(M, "Sign the confession of your true nature?", "CONFESSION OF [confession_type == "antag" ? "VILLAINY" : "FAITH"]", "Yes", "No")
 	if(M.stat >= UNCONSCIOUS)
 		return
@@ -238,10 +260,10 @@
 		return
 	testing("[M] is signing the confession.")
 	if(input == "Yes")
-		to_chat(user, span_info("[M] has agreed to confess their true nature."))
-		M.confess_sins(confession_type, resist=FALSE, user=user, torture=FALSE)
+		M.visible_message(span_info("[M] has agreed to confess their true [confession_type == "antag" ? "villainy" : "faith"]."), span_info("I agree to confess my true nature."))
+		M.confess_sins(confession_type, resist=FALSE, user=user, torture=FALSE, confession_paper = src)
 	else
-		to_chat(user, span_warning("[M] refused to sign the confession!"))
+		M.visible_message(span_boldwarning("[M] refused to sign the confession!"), span_boldwarning("I refused to sign the confession!"))
 	return
 
 /obj/item/paper/confession/read(mob/user)
@@ -259,7 +281,8 @@
 		user.hud_used.reads.show()
 		var/dat = {"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">
 					<html><head><style type=\"text/css\">
-					body { background-image:url('book.png');background-repeat: repeat; }</style></head><body scroll=yes>"}
+					body { background-image:url('book.png');background-repeat: repeat; }</style>
+					</head><body scroll=yes>"}
 		dat += "[info]<br>"
 		dat += "<a href='byond://?src=[REF(src)];close=1' style='position:absolute;right:50px'>Close</a>"
 		dat += "</body></html>"
@@ -267,6 +290,12 @@
 		onclose(user, "reading", src)
 	else
 		return "<span class='warning'>I'm too far away to read it.</span>"
+
+/obj/item/paper/confession/rmb_self(mob/user)
+	return TRUE
+
+/obj/item/paper/confession/attack_right(mob/user)
+	return TRUE
 
 /obj/item/merctoken
 	name = "mercenary token"
@@ -319,7 +348,8 @@
 
 /obj/item/paper/scroll/frumentarii
 	name = "List of Known Agents"
-	desc = "A list of the Hand's fingers."
+	desc = "A list of the hand's fingers."
+	old_render = FALSE
 
 	var/list/real_names = list()
 	var/list/removed_names = list()
@@ -387,7 +417,7 @@
 
 /obj/item/paper/scroll/sold_manifest
 	name = "Shipping Manifest"
-
+	old_render = FALSE
 	var/list/count = list()
 	var/list/items = list()
 

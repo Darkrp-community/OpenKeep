@@ -43,11 +43,12 @@
 	nomouseover = FALSE
 	var/swimdir = FALSE
 	var/notake = FALSE // cant pick up with reagent containers
-	shine = SHINE_SHINY
 	var/set_relationships_on_init = TRUE
 	var/list/blocked_flow_directions = list("2" = 0, "1" = 0, "8" = 0, "4" = 0)
 	var/we_cut = FALSE
 	var/childless = FALSE
+
+	var/cached_use = 0
 
 /turf/open/water/proc/set_watervolume(volume, list/adjusted_turfs)
 	water_volume = volume
@@ -122,8 +123,6 @@
 		QDEL_NULL(water_top_overlay)
 		for(var/obj/effect/overlay/water/water in contents)
 			qdel(water)
-		make_unshiny()
-		shine = 0
 		we_cut = TRUE
 		var/mutable_appearance/dirty = mutable_appearance('icons/turf/floors.dmi', "dirt")
 		add_overlay(dirty)
@@ -181,10 +180,10 @@
 	. = ..()
 
 /turf/open/water/river/creatable/attackby(obj/item/C, mob/user, params)
-	if(!river_processes)
-		return
 	if(istype(C, /obj/item/reagent_containers/glass/bucket/wooden))
 		try_modify_water(user, C)
+		return
+	. = ..()
 
 /turf/open/water/river/creatable/proc/try_modify_water(mob/user, obj/item/reagent_containers/glass/bucket/wooden/bucket)
 	if(user.used_intent.type == /datum/intent/splash)
@@ -216,6 +215,10 @@
 	check_surrounding_water()
 
 /turf/open/water/process()
+	if(cached_use)
+		adjust_originate_watervolume(cached_use)
+		cached_use = 0
+
 	if(water_overlay && water_volume <= 0 && !istype(src, /turf/open/water/river/creatable))
 		dryup()
 
@@ -277,7 +280,6 @@
 	roguesmooth(adjacencies)
 
 /turf/open/water/roguesmooth(adjacencies)
-	make_unshiny()
 	var/list/Yeah = ..()
 	if(water_overlay)
 		water_overlay.cut_overlays(TRUE)
@@ -287,7 +289,6 @@
 		water_top_overlay.cut_overlays(TRUE)
 		if(Yeah)
 			water_top_overlay.add_overlay(Yeah)
-	make_shiny(initial(shine))
 
 /turf/open/water/Entered(atom/movable/AM, atom/oldLoc)
 	. = ..()

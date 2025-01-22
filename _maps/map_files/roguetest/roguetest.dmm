@@ -39,12 +39,12 @@
 /area/rogue/indoors)
 "ak" = (
 /obj/structure/closet/crate/chest,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
-/obj/item/rogueweapon/hammer,
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/hammer/iron,
+/obj/item/rogueweapon/hammer/iron,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "al" = (
@@ -90,16 +90,18 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "aq" = (
-/obj/item/rogueweapon/hammer,
+/obj/item/rogueweapon/hammer/iron,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "ar" = (
-/obj/item/rogueweapon/hammer/claw,
+/obj/item/rogueweapon/hammer/steel,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors)
 "as" = (
-/obj/structure/closet/crate/chest,
-/turf/open/floor/rogue/dirt/road,
+/obj/structure/waterwheel,
+/turf/open/water/river{
+	dir = 8
+	},
 /area/rogue/indoors)
 "at" = (
 /turf/closed/mineral/rogue/bedrock,
@@ -251,7 +253,8 @@
 	pixel_y = 32
 	},
 /turf/open/water/acid{
-	water_volume = 500
+	water_volume = 500;
+	water_reagent = /datum/reagent/consumable/milk
 	},
 /area/rogue/outdoors)
 "aN" = (
@@ -1127,6 +1130,10 @@
 /obj/structure/rotation_piece/cog/large,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"hi" = (
+/obj/structure/fluff/millstone,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "hP" = (
 /obj/item/rogueweapon/polearm/woodstaff/aries,
 /turf/open/floor/rogue/cobble,
@@ -1151,6 +1158,18 @@
 /obj/structure/water_pump,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"mx" = (
+/obj/machinery/light/rogue/torchholder/l,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
+"mY" = (
+/obj/structure/rotation_piece,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
+"ne" = (
+/obj/structure/rotation_piece/cog/large,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "oH" = (
 /obj/structure/lever{
 	redstone_id = "test2"
@@ -1177,6 +1196,12 @@
 "ro" = (
 /obj/structure/minecart_rail{
 	dir = 2
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
+"rB" = (
+/obj/structure/rotation_piece/cog/large{
+	dir = 8
 	},
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
@@ -1226,10 +1251,30 @@
 /obj/structure/rotation_piece,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"zc" = (
+/obj/machinery/light/rogue/torchholder/r,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
+"Az" = (
+/obj/structure/rotation_piece/cog{
+	dir = 4
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
+"AO" = (
+/obj/structure/rotation_piece{
+	dir = 8
+	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "BE" = (
 /obj/structure/minecart_rail{
 	dir = 4
 	},
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
+"CO" = (
+/obj/structure/gearbox,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
 "Fo" = (
@@ -1257,9 +1302,17 @@
 /obj/structure/rotation_piece,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors)
+"Nb" = (
+/obj/structure/rotation_piece/cog,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/indoors)
 "QR" = (
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
+"Sz" = (
+/obj/structure/boiler,
+/turf/open/floor/rogue/dirt/road,
+/area/rogue/outdoors)
 "Ty" = (
 /obj/effect/landmark/start/lord{
 	dir = 8
@@ -1751,14 +1804,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+ab
+ab
+ab
+ab
+ab
+ab
+ab
 aa
 aa
 aa
@@ -2008,14 +2061,14 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+mx
+aj
+aj
+aj
+aj
+mx
+ab
 aa
 aa
 aa
@@ -2265,14 +2318,14 @@ at
 at
 at
 at
-at
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+aj
+as
+ne
+aj
+mY
+Nb
+ab
 aa
 aa
 aa
@@ -2522,14 +2575,14 @@ Ua
 Ua
 Ua
 Ua
-at
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+Nb
+mY
+Nb
+aj
+aj
+aj
+ab
 aa
 aa
 aa
@@ -2779,14 +2832,14 @@ al
 al
 al
 Ua
-at
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+aj
+aj
+aj
+aj
+aj
+aj
+ab
 aa
 aa
 aa
@@ -3036,14 +3089,14 @@ Ua
 Ua
 Ua
 Ua
-at
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+aj
+aj
+aj
+aj
+aj
+aj
+ab
 aa
 aa
 aa
@@ -3293,14 +3346,14 @@ al
 al
 al
 al
-at
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ab
+zc
+aj
+aj
+aj
+aj
+zc
+ab
 aa
 aa
 aa
@@ -3552,7 +3605,7 @@ ab
 ab
 ab
 ab
-ab
+aj
 ab
 ab
 ab
@@ -3809,7 +3862,7 @@ ab
 ab
 ab
 ab
-ab
+aj
 ab
 ab
 ax
@@ -4066,7 +4119,7 @@ ad
 ak
 an
 ap
-as
+aj
 au
 ab
 ax
@@ -4316,7 +4369,7 @@ al
 al
 cN
 al
-Ua
+Sz
 at
 ab
 ae
@@ -5600,8 +5653,8 @@ XC
 xp
 XC
 fe
-al
-al
+rB
+rB
 at
 ab
 ag
@@ -5851,7 +5904,7 @@ al
 al
 al
 at
-al
+Az
 cN
 al
 cN
@@ -6108,7 +6161,7 @@ al
 al
 al
 at
-al
+Az
 cN
 al
 aL
@@ -6365,14 +6418,14 @@ al
 al
 al
 at
-al
-cN
+CO
+xp
 XC
 Mn
 eE
-cN
-al
-al
+xp
+Mn
+hi
 at
 ab
 cQ
@@ -7653,7 +7706,7 @@ at
 XC
 cN
 aL
-al
+Az
 al
 ab
 aj
@@ -7906,11 +7959,11 @@ al
 al
 al
 XC
-Mn
+al
 XC
-al
-al
-al
+Mn
+Mn
+AO
 at
 ab
 ab

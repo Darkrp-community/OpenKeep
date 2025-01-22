@@ -28,6 +28,8 @@
 	wbalance = EASY_TO_DODGE
 	sellprice = 20
 	blade_dulling = DULLING_BASHCHOP
+	grid_height = 64
+	grid_width = 32
 
 /obj/item/rogueweapon/mace/getonmobprop(tag)
 	if(tag)
@@ -75,9 +77,11 @@
 	hitsound = list('sound/combat/hits/blunt/metalblunt (1).ogg', 'sound/combat/hits/blunt/metalblunt (2).ogg', 'sound/combat/hits/blunt/metalblunt (3).ogg')
 	penfactor = AP_CLUB_SMASH
 	damfactor = 1.1
-	swingdelay = 0
+	chargetime = 3
+	swingdelay = 3
+	charging_slowdown = 0.8
 	icon_state = "insmash"
-	misscost = 5
+	misscost = 10
 	item_damage_type = "blunt"
 
 /datum/intent/mace/smash/wood
@@ -207,6 +211,7 @@
 	wbalance = HARD_TO_DODGE
 	sellprice = 15
 	wdefense = MEDIOCHRE_PARRY
+
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()

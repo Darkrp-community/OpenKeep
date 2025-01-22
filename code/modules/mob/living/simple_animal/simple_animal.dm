@@ -165,6 +165,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	var/footstep_type
 
 	var/food = 0	//increase to make poop
+	var/food_max = 50
 	var/production = 0
 	var/pooptype = /obj/item/natural/poo/horse
 	var/pooprog = 0
@@ -239,6 +240,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 /mob/living/simple_animal/proc/tamed(mob/user)
 	INVOKE_ASYNC(src, PROC_REF(emote), "lower_head", null, null, null, TRUE)
 	tame = TRUE
+	faction += "[REF(user)]"
 	stop_automated_movement_when_pulled = TRUE
 	if(user)
 		owner = user

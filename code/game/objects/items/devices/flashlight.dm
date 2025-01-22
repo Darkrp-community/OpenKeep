@@ -159,7 +159,7 @@
 
 /obj/item/flashlight/flare/torch/Initialize()
 	. = ..()
-	soundloop = new(src, FALSE)
+	//soundloop = new(src, FALSE)
 
 /obj/item/flashlight/flare/torch/process()
 	open_flame(heat)
@@ -199,7 +199,7 @@
 
 /obj/item/flashlight/flare/torch/turn_off()
 	playsound(src.loc, 'sound/items/firesnuff.ogg', 50)
-	soundloop.stop()
+	soundloop?.stop()
 	STOP_PROCESSING(SSobj, src)
 	..()
 	if(ismob(loc))
@@ -217,7 +217,7 @@
 			damtype = BURN
 			update_brightness()
 			force = on_damage
-			soundloop.start()
+			//soundloop.start()
 			if(ismob(loc))
 				var/mob/M = loc
 				M.update_inv_hands()
