@@ -620,12 +620,12 @@
 		if(((user.used_intent.blade_class == BCLASS_STAB) || (user.used_intent.blade_class == BCLASS_CUT)) && (W.wlength == WLENGTH_SHORT))
 			if(wrotesign)
 				to_chat(user, "<span class='warning'>Something is already carved here.</span>")
-				return
 			else
 				var/inputty = stripped_input(user, "What would you like to carve here?", "", null, 200)
 				if(inputty && !wrotesign)
 					wrotesign = inputty
 					icon_state = "signwrote"
+			return
 	..()
 
 /obj/structure/fluff/statue
