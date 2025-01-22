@@ -142,3 +142,6 @@
 
 /datum/language_holder/hellspeak
 	languages = list(/datum/language/hellspeak)
+
+/datum/language_holder/abyssal
+	languages = list(/datum/language/abyssal)

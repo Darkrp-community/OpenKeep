@@ -18,7 +18,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Denmorian",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = ""
 	outfit = /datum/outfit/job/roguetown/tester

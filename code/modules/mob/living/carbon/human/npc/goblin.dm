@@ -10,6 +10,7 @@
 	rot_type = /datum/component/rot/corpse/goblin
 	var/gob_outfit = /datum/outfit/job/roguetown/npc/goblin
 	ambushable = FALSE
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_APOTHEOSIS //I had to give this to Goblins since they have many IDs.
 	base_intents = list(INTENT_HELP, INTENT_DISARM, INTENT_GRAB, /datum/intent/unarmed/claw)
 	a_intent = INTENT_HELP
 	possible_mmb_intents = list(INTENT_STEAL, INTENT_JUMP, INTENT_KICK, INTENT_BITE)

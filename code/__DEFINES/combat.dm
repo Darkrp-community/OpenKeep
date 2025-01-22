@@ -142,6 +142,7 @@
 #define POLEARM_BASH			/datum/intent/polearm/bash
 #define POLEARM_SWING			/datum/intent/polearm/bash/swing
 #define SPEAR_CUT			/datum/intent/polearm/cut
+#define MANCATCHER				/datum/intent/polearm/thrust/mancatcher
 
 #define POLEARM_THRUST		/datum/intent/polearm/thrust
 #define SPEAR_POKE			/datum/intent/polearm/thrust/poke

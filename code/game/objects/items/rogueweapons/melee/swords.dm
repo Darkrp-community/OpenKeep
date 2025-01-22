@@ -856,5 +856,200 @@
 	dropshrink = 0.75
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 25//lets make the two bars worth it
+	sellprice = 25//lets make the two bars worth it
 
 
+// Hoplite Kophesh
+/obj/item/rogueweapon/sword/khopesh
+	name = "ancient khopesh"
+	desc = "A bronze weapon of war from the era of Apotheosis. This blade is older than a few elven generations, but has been very well-maintained and still keeps a good edge."
+	force = 22 // Unique weapon from rare job, slightly more force than most one-handers
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/chop, /datum/intent/sword/strike)
+	gripped_intents = null
+	icon = 'icons/roguetown/weapons/64.dmi'
+	icon_state = "khopesh"
+	item_state = "khopesh"
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	pixel_y = -16
+	pixel_x = -16
+	dropshrink = 0.75
+	bigboy = TRUE // WHY DOES THIS FUCKING VARIABLE CONTROL WHETHER THE BLOOD OVERLAY WORKS ON 64x64 WEAPONS
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_HIP
+	smeltresult = null // No bronze ingots yet
+	max_blade_int = 300
+	max_integrity = 300
+	minstr = 10 // Even though it's technically one-handed, you gotta have some muscle to wield this thing
+	wdefense = 3 // Lower than average sword defense (meant to pair with a shield)
+	wbalance = -1 // Likely weighted towards the blade, for deep cuts and chops
+	sellprice = 200 // A noble collector would love to get his/her hands on one of these blades
+
+/obj/item/rogueweapon/sword/scimitar
+	slot_flags = ITEM_SLOT_HIP
+	force = 20
+	force_wielded = 25
+	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
+	name = "scimitar"
+	desc = "A Zybantu design for swords, these curved blades are a common sight in the lands of the Ziggurat."
+	icon_state = "scimitar"
+	icon = 'icons/roguetown/weapons/32.dmi'
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/rogueweapon/sword/uchigatana
+	name = "uchigatana"
+	desc = "Shorter and simpler than the Tachi, the Uchigatana is the primary sidearm for the Abyssariad and Heartfelt footsoldiers. As a Zatana, the curved blade favor powerfull chopping strikes - but lacks a protective crossguard and the curve makes it less efficient in thrusting."
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	icon_state = "uchigatana"
+	pixel_y = -16
+	pixel_x = -16
+	inhand_x_dimension = 64
+	inhand_y_dimension = 64
+	bigboy = TRUE
+	gripsprite = TRUE
+	smeltresult = /obj/item/ingot/steel
+
+/obj/item/rogueweapon/sword/uchigatana/fire //Experimental weapon. Not to be found ingame.
+	name = "fire uchigatana"
+	desc = "Shorter and simpler than the Tachi, the Uchigatana is the primary sidearm for the Abyssariad and Heartfelt footsoldiers. Unlike other uchigatanas, this sword in specifically seems curiously improved with 'frigus' runes."
+
+/obj/item/rogueweapon/sword/uchigatana/fire/attack(mob/M, mob/living/carbon/human/user)
+	if(ismob(M))
+		fire_effect(M, user)
+		..()
+
+/obj/item/rogueweapon/sword/uchigatana/fire/proc/fire_effect(mob/living/L, mob/user)
+	L.adjust_fire_stacks(1)
+	L.IgniteMob()
+	addtimer(CALLBACK(L, TYPE_PROC_REF(/mob/living, ExtinguishMob)), 5 SECONDS)
+	if(user)
+		L.lastattacker = user.real_name
+		L.lastattackerckey = user.ckey
+		L.visible_message("<span class='danger'>[user] has ignited [L] with [src]!</span>", \
+								"<span class='danger'>[user] has ignited you with [src]!</span>")
+	playsound(loc, 'sound/blank.ogg', 50, TRUE, -1)
+	return
+
+/obj/item/rogueweapon/sword/long/tachi //this sword is all fucked. Oh God. Help me.
+	name = "tachi"
+	desc = "A long, curved Zatana of Abyssariad make, introduced when Wokou raiders returned to the Fog Isles with captured horses and began developing their own cavalry tactics."
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	icon_state = "tachi"
+	item_state = "tachi"
+	pixel_y = -16
+	pixel_x = -18
+
+/obj/item/rogueweapon/sword/long/tachi/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse tachi"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+/obj/item/rogueweapon/sword/long/greatsword/odachi
+	name = "odachi"
+	desc = "Greatsword traditionally wielded in open battlefields just as it is a ceremonial blade. Though impractical for duels, it breaks spearlines and shields on a whim, requiring momentum with each slash."
+	icon_state = "odachi"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	parrysound = "bladedlarge"
+
+/obj/item/rogueweapon/sword/iron/jian
+	name = "iron jian"
+	desc = "A simple, double-edged iron straight sword of abyssariad design used in martial arts."
+	icon_state = "jian"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/scimitar/messer/dao
+	name = "iron dao"
+	desc = "A single edged iron saber of Abyssariad making for horseback use. Suitable for chopping."
+	icon_state = "dao"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao //this sprite disappeared by reasons unknown
+	name = "Yuntoudao"
+	desc = "A expensive Abyssariad saber with wide middle and tapered ends in a 'willow-leaf' shape, it concentrates the force of a strike in an axe-like blow, while retaining the swiftness of a saber."
+	icon_state = "yuntoudao"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/short/jian
+	name = "short jian"
+	desc = "A simple, shortened version of the double-edged Jian. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "shortjian"
+
+/obj/item/rogueweapon/sword/short/wakizashi
+	name = "wakizashi"
+	desc = "A shorter design of a Zatana designed to replace the tanto as a zamurai's sidearm. The sorii makes it cut deeper - but is not efficient at thrusting, and can't handle much stress."
+	icon_state = "wakizashi"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii)
+
+/datum/intent/sword/cut/sorii //It is the reverse of the Shortsword.
+	clickcd = 10
+	penfactor = 30
+
+/datum/intent/sword/thrust/sorii
+	clickcd = 10
+	damfactor = 0.85
+
+/obj/item/rogueweapon/sword/sabre/piandao
+	name = "piandao"
+	desc = "An curved abyssariad sword with a broad, single-edged blade that ends in a heavier curve for powerful and fast sweeping strikes."
+	icon_state = "piandao"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/sword/sabre/piandao/dec
+	name = "decorated piandao"
+	desc = "The Abyssariad saber with the hilt covered in gold and letters reflecting the user's family lineage."
+	icon_state = "piandaodec"
+	max_integrity = 550
+	sellprice = 140
+
+/obj/item/rogueweapon/sword/dragonslayer //It's a sword, yes. It will be used as a sword? My dudes we moving that one like warhammers at this point. So it's blunt at this point.
+	name = "dragonslayer eclipse sword"
+	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, they use a heap of raw iron. These are not crafted for fnesse, but for raw carnage in steel to obliterate Dragon's almost impenetrable skin."
+	gripped_intents = list(/datum/intent/dragonslayer/smash, /datum/intent/polearm/chop) //This is practically a mace... that can chop off heads since it's sharp.
+	icon_state = "eclipse_sword"
+	resistance_flags = FIRE_PROOF
+	smeltresult = /obj/item/ingot/steel
+	max_integrity = 500
+	force = 5 //You won't get ANYTHING by using in one hand. Trust me. EVEN IF YOU COULD.
+	force_wielded = 40 // I thought Gundam would nerf it. He buffed it instead. What a World!
+	slowdown = 1
+	wbalance = -1
+	sellprice = 300
+	w_class = WEIGHT_CLASS_HUGE
+	wbalance = -1 //haha... yeah.
+	wdefense = 3
+	minstr = 14
+	associated_skill = /datum/skill/combat/axesmaces //if you tell me that fighting with this sword is LIKE a sword, I will kill you (ingame)-Mono
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	parrysound = "largeblade"
+	pickup_sound = "brandish_blade"
+	bigboy = TRUE
+
+/datum/intent/dragonslayer/smash
+	name = "smash"
+	icon_state = "insmash"
+	attack_verb = list("clangs")
+	animname = "smash"
+	blade_class = BCLASS_CHOP
+	hitsound = list('sound/combat/hits/bladed/dragonslayer.ogg', 'sound/combat/hits/bladed/dragonslayer2.ogg')
+	penfactor = 30
+	damfactor = 1.2
+	chargetime = 5
+	swingdelay = 5
+	misscost = 35
+	warnie = "mobwarning"

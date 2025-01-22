@@ -12,7 +12,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Denmorian",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_TEMPLE_PATRONS
@@ -68,6 +72,13 @@
 			pants = /obj/item/clothing/under/roguetown/tights/red
 			shoes = /obj/item/clothing/shoes/roguetown/boots
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
+		if("Abyssor")
+			head = /obj/item/clothing/head/roguetown/padded/shrinekeeper
+			neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
+			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver
@@ -95,3 +106,4 @@
 	C.holder_mob = H
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
+

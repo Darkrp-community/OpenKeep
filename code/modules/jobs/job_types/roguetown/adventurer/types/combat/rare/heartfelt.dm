@@ -12,19 +12,19 @@
 
 /datum/outfit/job/roguetown/adventurer/heartfeltlord/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 	belt = /obj/item/storage/belt/rogue/leather/black
 	neck = /obj/item/clothing/neck/roguetown/gorget
-	head = /obj/item/clothing/head/roguetown/helmet
-	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
-	pants = /obj/item/clothing/under/roguetown/tights/black
-	cloak = /obj/item/clothing/cloak/heartfelt
+	head = /obj/item/clothing/head/roguetown/heartfelt
+	shoes = /obj/item/clothing/shoes/roguetown/ridingboots/gutal
+	pants = /obj/item/clothing/under/roguetown/trou/tobi/dark
+	cloak = /obj/item/clothing/cloak/newheartfelt
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 	beltl = /obj/item/scomstone
-	gloves = /obj/item/clothing/gloves/roguetown/leather/black
-	neck = /obj/item/clothing/neck/roguetown/chaincoif
-	beltl = /obj/item/rogueweapon/sword/long
+	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/black
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+	beltl = /obj/item/rogueweapon/sword/long/tachi
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -47,3 +47,6 @@
 
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
+	if(!HAS_TRAIT(H, TRAIT_KAIZOKU))
+		ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+		to_chat(H, "<span class='info'I am an Islander, and I respectively have the culture of one.</span>")

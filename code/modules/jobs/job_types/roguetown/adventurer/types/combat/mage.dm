@@ -46,6 +46,7 @@
 		H.mind.adjust_spellpoints(7)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/icebind) //testing, remove soon.
 
 	H.change_stat("strength", -2)
 	H.change_stat("intelligence", 3)

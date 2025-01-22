@@ -6,7 +6,7 @@
 	icon_living = "savageorc"
 	icon_dead = "savageorc_dead"
 	gender = MALE
-	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID|MOB_APOTHEOSIS
 	robust_searching = 1
 	speak_chance = 5
 	turns_per_move = 1
