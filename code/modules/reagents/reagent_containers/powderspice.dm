@@ -108,7 +108,7 @@
 			var/mob/living/carbon/C = M
 			var/obj/item/bodypart/CH = C.get_bodypart(BODY_ZONE_HEAD)
 			if(!CH)
-				to_chat(user, "<span class='warning'>[C.p_theyre(TRUE)] missing something.</span>")
+				to_chat(user, "<span class='warning'>[C.p_theyre(TRUE)] missing their head.</span>")
 			user.visible_message("<span class='danger'>[user] attempts to force [C] to inhale [src].</span>", \
 								"<span class='danger'>[user] attempts to force me to inhale [src]!</span>")
 			if(C.cmode)
