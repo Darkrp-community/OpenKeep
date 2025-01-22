@@ -268,6 +268,7 @@
 	icon_state = "passage0"
 	density = TRUE
 	max_integrity = 2000
+	redstone_structure = TRUE
 
 /obj/structure/bars/passage/redstone_triggered(mob/user)
 	if(obj_broken)
@@ -283,6 +284,7 @@
 	icon_state = "shutter0"
 	density = TRUE
 	opacity = TRUE
+	redstone_structure = TRUE
 
 /obj/structure/bars/passage/shutter/redstone_triggered(mob/user)
 	if(obj_broken)
@@ -312,6 +314,7 @@
 	blade_dulling = DULLING_BASHCHOP
 	obj_flags = CAN_BE_HIT | BLOCK_Z_OUT_DOWN | BLOCK_Z_IN_UP
 	attacked_sound = list('sound/combat/hits/onmetal/grille (1).ogg', 'sound/combat/hits/onmetal/grille (2).ogg', 'sound/combat/hits/onmetal/grille (3).ogg')
+	redstone_structure = TRUE
 	var/togg = FALSE
 
 /obj/structure/bars/grille/Initialize()
@@ -617,12 +620,12 @@
 		if(((user.used_intent.blade_class == BCLASS_STAB) || (user.used_intent.blade_class == BCLASS_CUT)) && (W.wlength == WLENGTH_SHORT))
 			if(wrotesign)
 				to_chat(user, "<span class='warning'>Something is already carved here.</span>")
-				return
 			else
 				var/inputty = stripped_input(user, "What would you like to carve here?", "", null, 200)
 				if(inputty && !wrotesign)
 					wrotesign = inputty
 					icon_state = "signwrote"
+			return
 	..()
 
 /obj/structure/fluff/statue
