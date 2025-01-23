@@ -1,7 +1,7 @@
-/datum/advclass/pilgrim/noble
-	name = "Noble"
-	tutorial = "The blood of a noble family runs through your veins. Perhaps you are visiting from some place far away, \
-	looking to enjoy the hospitality of the ruler of Vanderlin. You have many mammons to your name, but with wealth comes \
+/datum/job/roguetown/minor_noble
+	title = "Noble"
+	tutorial = "The blood of a noble family runs through your veins. You are the living proof that the minor houses \
+	of Vanderlin still exist in spite of the Monarch. You have many mammons to your name, but with wealth comes \
 	danger, so keep your wits and tread lightly..."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -11,15 +11,22 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Half-Orc"
+		"Half-Orc",
+		"Aasimar",
+		"Rakshari"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/noble
-	category_tags = list(CTAG_PILGRIM)
-	maximum_possible_slots = 2
+	outfit = /datum/outfit/job/roguetown/noble
+	faction = "Station"
+	display_order = JDO_MINOR_NOBLE
+	flag = MINOR_NOBLE
+	department_flag = NOBLEMEN
 	apprentice_name = "Servant"
+	total_positions = 2
+	spawn_positions = 2
+	min_pq = 1
+	give_bank_account = 60
 
-
-/datum/outfit/job/roguetown/adventurer/noble/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/noble/pre_equip(mob/living/carbon/human/H)
 	..()
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name

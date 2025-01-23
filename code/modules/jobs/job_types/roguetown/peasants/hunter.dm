@@ -1,11 +1,14 @@
-/datum/advclass/pilgrim/hunter
-	name = "Hunter"
+/datum/job/roguetown/hunter
+	title = "Hunter"
+	f_title = "Huntress"
 	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
 				or the boons of Dendor for their meat to sell, or consume."
-	allowed_sexes = list(MALE)
+	faction = "Station"
+	allowed_sexes = list(MALE,FEMALE)
+	flag = HUNTER
+	department_flag = PEASANTS
 	allowed_races = list(
 		"Humen",
-		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
@@ -14,12 +17,15 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/hunter
+	outfit = /datum/outfit/job/roguetown/hunter
+	min_pq = -100
+	give_bank_account = 15
+	display_order = JDO_HUNTER
+	total_positions = 4
+	spawn_positions = 4
+	apprentice_name = "Hunter"
 
-	category_tags = list(CTAG_PILGRIM)
-	apprentice_name = "Hunter Apprentice"
-
-/datum/outfit/job/roguetown/adventurer/hunter/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/hunter/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/tights/random
 	shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
@@ -59,24 +65,3 @@
 		else
 			H.change_stat("intelligence", 1)
 			H.change_stat("perception", 3)
-// Female variant below
-
-/datum/advclass/pilgrim/huntress
-	name = "Huntress"
-	tutorial = "Women that thrive on the woods, hunting creechers for pelt and hide, \
-				or the boons of Dendor for their meat to sell, or consume."
-	allowed_sexes = list(FEMALE)
-	allowed_races = list(
-		"Humen",
-		"Rakshari",
-		"Elf",
-		"Half-Elf",
-		"Dwarf",
-		"Tiefling",
-		"Dark Elf",
-		"Aasimar",
-		"Half-Orc"
-	)
-	outfit = /datum/outfit/job/roguetown/adventurer/hunter // Everything is the same
-	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
-	apprentice_name = "Hunteress Apprentice"

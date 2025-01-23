@@ -1,5 +1,5 @@
-/datum/advclass/pilgrim/cheesemaker
-	name = "Cheesemaker"
+/datum/job/roguetown/cheesemaker
+	title =  "Cheesemaker"
 	tutorial = "Craftsmen who have mastered the art of curdling milks \
 				into delicious and long lasting wheels of cheese."
 	allowed_sexes = list(MALE, FEMALE)
@@ -14,12 +14,15 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/cheesemaker
+	faction = "Station"
+	outfit = /datum/outfit/job/roguetown/cheesemaker
+	department_flag = PEASANTS
+	flag = CHEESEMAKER
+	display_order = JDO_CHEESEMAKER
+	total_positions = 2
+	spawn_positions = 2
 
-	category_tags = list(CTAG_PILGRIM)
-	apprentice_name = "Cheesemaker Apprentice"
-
-/datum/outfit/job/roguetown/adventurer/cheesemaker/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/cheesemaker/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
@@ -42,4 +45,4 @@
 	beltl = /obj/item/rogueweapon/knife/villager
 	backpack_contents = list(/obj/item/reagent_containers/powder/salt = 3, /obj/item/reagent_containers/food/snacks/rogue/cheddar = 1, /obj/item/natural/cloth = 2, /obj/item/book/rogue/yeoldecookingmanual = 1)
 	H.change_stat("intelligence", 1)
-	H.change_stat("constitution", 2) // Cheese diet.
+	H.change_stat("constitution", 2)

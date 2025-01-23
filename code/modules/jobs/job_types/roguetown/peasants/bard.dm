@@ -1,27 +1,30 @@
-
-/datum/advclass/pilgrim/bard
-	name = "Bard"
+/datum/job/roguetown/bard
+	title = "Bard"
 	tutorial = "Bards make up one of the largest populations of \
 	registered adventurers in Enigma, mostly because they are \
 	the last ones in a party to die. Their wish is to experience \
 	the greatest adventures of the age and write amazing songs about them."
+	faction = "Station"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Half-Orc",
+		"Rakshari"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/bard
-	category_tags = list(CTAG_PILGRIM)
-	apprentice_name = "Aspiring Bard"
+	outfit = /datum/outfit/job/roguetown/bard
+	flag = BARD
+	department_flag = PEASANTS
+	display_order = JDO_BARD
+	total_positions = 4
+	spawn_positions = 4
 
-/datum/outfit/job/roguetown/adventurer/bard/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/bard/pre_equip(mob/living/carbon/human/H)
 	..()
 	H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)

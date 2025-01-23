@@ -1,24 +1,28 @@
-/datum/advclass/pilgrimminer
-	name = "Miner"
+/datum/job/roguetown/miner
+	title = "Miner"
 	tutorial = "Hardy people who ceaselessly toil at the mines for ores and salt, \
 				who will ever know what they'll find beneath?"
+	faction = "Station"
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Half-Orc",
+		"Rakshari"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/miner
-	category_tags = list(CTAG_PILGRIM)
-	apprentice_name = "Miner Apprentice"
+	outfit = /datum/outfit/job/roguetown/miner
+	flag = MINER
+	department_flag = PEASANTS
+	display_order = JDO_MINER
+	total_positions = 12
+	spawn_positions = 12
 
-/datum/outfit/job/roguetown/adventurer/miner/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/miner/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/armingcap
 	pants = /obj/item/clothing/under/roguetown/trou

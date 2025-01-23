@@ -1,11 +1,13 @@
-/datum/advclass/pilgrim/fisher
-	name = "Fisher"
+/datum/job/roguetown/fisher
+	title = "Fisher"
 	tutorial = "Simple folk with an affinity for catching fish out of any body of water, \
 				they are decent cooks and swimmers, living off the gifts of Abyssor."
+	faction = "Station"
+	flag = FISHER
+	department_flag = PEASANTS
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
-		"Rakshari",
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
@@ -14,11 +16,14 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	outfit = /datum/outfit/job/roguetown/adventurer/fisher
-	category_tags = list(CTAG_PILGRIM)
-	apprentice_name = "Fisher Apprentice"
+	outfit = /datum/outfit/job/roguetown/fisher
+	min_pq = -100
+	give_bank_account = 8
+	total_positions = 5
+	spawn_positions = 5
+	display_order = JDO_FISHER
 
-/datum/outfit/job/roguetown/adventurer/fisher/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/fisher/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
 		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
