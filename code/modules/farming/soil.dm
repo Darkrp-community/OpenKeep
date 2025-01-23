@@ -555,7 +555,7 @@
 		if(!channel.water_logged)
 			continue
 		found_irrigation = TRUE
-		channel.water_parent.cached_use += 0.05
+		channel.water_parent.cached_use -= 0.05
 		START_PROCESSING(SSobj, channel.water_parent)
 		break
 	// If plant exists and is not dead, nutriment or water is not zero, reset the decay timer
