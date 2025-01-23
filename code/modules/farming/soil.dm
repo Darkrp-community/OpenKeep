@@ -578,11 +578,12 @@
 	uproot()
 	qdel(src)
 
-/obj/structure/soil/proc/uproot()
+/obj/structure/soil/proc/uproot(loot = TRUE)
 	if(!plant)
 		return
 	adjust_weeds(-100)
-	yield_uproot_loot()
+	if(loot)
+		yield_uproot_loot()
 	ruin_produce()
 	plant = null
 	update_icon()
@@ -609,7 +610,7 @@
 		new plant.produce_type(loc)
 	produce_ready = FALSE
 	if(!plant.perennial)
-		uproot()
+		uproot(loot = FALSE)
 	update_icon()
 
 /obj/structure/soil/proc/insert_plant(datum/plant_def/new_plant)

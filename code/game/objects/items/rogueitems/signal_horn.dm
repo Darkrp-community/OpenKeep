@@ -14,13 +14,13 @@
 	if(!COOLDOWN_FINISHED(src, sound_horn))
 		to_chat(user, span_warning("[src] is not ready to be used yet!"))
 		return
-	user.visible_message(span_warning("user] is about to sound [src]!"))
+	user.visible_message(span_warning("[user] is about to sound [src]!"))
 	if(do_after(user, 15))
 		sound_horn(user)
 		COOLDOWN_START(src, sound_horn, 1 MINUTES)
 
 /obj/item/signal_horn/proc/sound_horn(mob/living/user)
-	user.visible_message(span_warning("user] sounds the alarm!"))
+	user.visible_message(span_warning("[user] sounds the alarm!"))
 	playsound(src, 'sound/items/signalhorn.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 

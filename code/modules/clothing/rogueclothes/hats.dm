@@ -509,7 +509,8 @@
 
 /obj/item/clothing/head/roguetown/crown/serpcrown/Initialize()
 	. = ..()
-	SSroguemachine.crown = src
+	if(type == /obj/item/clothing/head/roguetown/crown/serpcrown)
+		SSroguemachine.crown = src
 
 /obj/item/clothing/head/roguetown/crown/serpcrown/proc/anti_stall()
 	src.visible_message(span_warning("[src] crumbles to dust, the ashes spiriting away in the direction of the Keep."))

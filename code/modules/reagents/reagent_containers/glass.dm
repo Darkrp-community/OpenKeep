@@ -198,8 +198,8 @@
 	..()
 
 /obj/item/reagent_containers/glass/bucket
-	name = "bugged bucket"
-	desc = "This bucket is bugged. Please inform a mapper about this error."
+	name = "bugged bucket please report to mappers"
+	desc = ""
 	icon = 'icons/roguetown/items/misc.dmi'
 	lefthand_file = 'modular/Neu_Food/icons/food_lefthand.dmi'
 	righthand_file = 'modular/Neu_Food/icons/food_righthand.dmi'
