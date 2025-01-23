@@ -933,7 +933,7 @@
 	icon_state = "jian1"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
-/obj/structure/frontierjustice/Initialize()
+/obj/item/rogueweapon/sword/iron/jian/Initialize()
 	. = ..()
 	icon_state = "jian[rand(1,2)]"
 
