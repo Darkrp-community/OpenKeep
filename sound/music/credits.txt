@@ -30,3 +30,14 @@ churchnight.ogg: Fear & Hunger 2: Termina - Cathedral Whispers
 combat_bandit3.ogg: Manhunt - White Trash
 combat_assassin2.ogg: Fear & Hunger 2: Termina - Monologue With The Moon
 PIG.ogg: Manhunt - Deliverance
+
+
+combat_changeling.ogg: Okami - Demon Lord Nine Tails.ogg
+combat_stormwarrior.ogg: Sephiroth - A Map of Eden Before the Storms.ogg
+combat_searaider.ogg - Sephiroth - Uthul Khulture.ogg
+combat_oldtides.ogg - Sephiroth - wolf tribes.ogg
+combat_decapitator.ogg: Shadow warrior 2 - Off With Your Head.ogg
+combat_emperor.ogg: shadow warrior 2 - Steel and Carbon.ogg
+combat_traditional.ogg: Tenchu Z - Spinning Lantern.ogg
+combat_navalretainers.ogg: Total_Luck - Tenchu Z.ogg
+combat_kyudo.ogg: Yuyan archers, AVATAR

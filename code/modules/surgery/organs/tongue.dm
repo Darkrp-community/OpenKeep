@@ -1,3 +1,4 @@
+
 /obj/item/organ/tongue
 	name = "tongue"
 	desc = ""
@@ -18,7 +19,8 @@
 		/datum/language/celestial,
 		/datum/language/hellspeak,
 		/datum/language/beast,
-		/datum/language/orcish
+		/datum/language/orcish,
+		/datum/language/abyssal
 	))
 
 /obj/item/organ/tongue/Initialize(mapload)
@@ -237,3 +239,15 @@
 		else
 			new_message += message[i]
 	speech_args[SPEECH_MESSAGE] = new_message
+
+/obj/item/organ/tongue/kitsune
+	name = "changeling tongue"
+	desc = "The tongue that inwardly bends the moldable changeling skull into a glasgow smile, or other shapes depending on their branch."
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "eldritch"
+	slot = ORGAN_SLOT_TONGUE
+	var/tongue_type = "eldritch"
+	var/can_wag = TRUE
+	var/wagging = FALSE
+	zone = BODY_ZONE_PRECISE_MOUTH
+	slot = ORGAN_SLOT_TONGUE
