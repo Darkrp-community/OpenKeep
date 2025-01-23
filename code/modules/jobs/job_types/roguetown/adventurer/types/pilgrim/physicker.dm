@@ -33,6 +33,7 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/phys
 	neck = /obj/item/clothing/neck/roguetown/phys
 	r_hand = /obj/item/storage/backpack/rogue/satchel/surgbag
+	beltl = /obj/item/key/clinic
 
 	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 	H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
