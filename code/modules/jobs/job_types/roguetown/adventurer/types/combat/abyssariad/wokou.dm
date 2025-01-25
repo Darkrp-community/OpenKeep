@@ -47,7 +47,7 @@
 		if("LinYou(Ambusher)") //Weaker iron armor, specialized exactly in being able to repair their own weaker armor.
 			var/roll = rand(1, 100)
 			H.set_blindness(0)
-			armor = /obj/item/clothing/suit/roguetown/armor/rattan
+			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/rattan
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/rattan
 			backl = /obj/item/storage/backpack/rogue/satchel
 			backr = /obj/item/rogueweapon/shield/wood/rattan

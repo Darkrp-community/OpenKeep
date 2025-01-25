@@ -461,14 +461,13 @@
 	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
 	created_item = /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko
 	craftdiff = 1
-
-/obj/item/clothing/suit/roguetown/armor/rattan //cheaper on iron, but has many sticks. Proper for this armor's context.
-/datum/anvil_recipe/armor/iplate
+//cheaper on iron, but has many sticks. Proper for this armor's context.
+/datum/anvil_recipe/armor/rattanarmor
 	name = "Iron-woven Rattan armor (2) (4s)"
 	recipe_name = "a Rattan Armor"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick,/obj/item/grown/log/tree/stick)
-	created_item = /obj/item/clothing/suit/roguetown/armor/rattan
+	created_item = /obj/item/clothing/suit/roguetown/armor/chainmail/rattan
 	craftdiff = 1
 
 /datum/anvil_recipe/armor/kikkoarmor //cheaper brigadine with hide.

@@ -929,13 +929,32 @@
 
 /obj/item/rogueweapon/sword/iron/jian
 	name = "iron jian"
-	desc = "A simple, double-edged iron straight sword of abyssariad design used in martial arts."
 	icon_state = "jian1"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 
 /obj/item/rogueweapon/sword/iron/jian/Initialize()
 	. = ..()
-	icon_state = "jian[rand(1,2)]"
+	var/design = rand(1, 6) //This system will be standardized to other weapons.
+	switch(design)
+		if(1)
+			name = "monk jian"
+			desc = "A simple, double-edged iron sword. With a short guard and slim grip, it is easier to use in martial arts that requires constant flick of the wrist."
+		if(2)
+			name = "frontierman jian"
+			desc = "A simple, double-edged iron sword. With a thicker pommel and stretched guard, it becomes more proper as sideweapons during sieges for overhead attacks."
+		if(3)
+			name = "guardsman jian"
+			desc = "A simple, double-edged iron sword of abyssariad with parrying hooks at cost of slashing effectiveness."
+		if(4)
+			name = "foreigner jian"
+			desc = "A simple, double-edged iron sword of abyssariad design with heartfelt influence, taking smithing standards from Zweihanders."
+		if(5)
+			name = "heartfelt jian"
+			desc = "A simple, double-edged iron sword of abyssariad design with heartfelt influence. Keeping a rather imperial style of guard."
+		if(6)
+			name = "duelist jian"
+			desc = "A simple, double-edged iron sword of abyssariad design with hand protection that resembles one side of the firelance apparatus. Usually used for training."
+	icon_state = "jian[design]"
 
 /obj/item/rogueweapon/sword/scimitar/messer/dao
 	name = "iron dao"
