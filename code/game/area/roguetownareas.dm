@@ -107,6 +107,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_dusk = null
 	droning_sound_night = null
 	first_time_text = "MALUMS ANVIL"
+	custom_area_sound = "sound/misc/stings/MalumSting.ogg"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 /area/rogue/indoors/shelter/mountains/decap
@@ -162,6 +163,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/carbon/human/species/goblin/npc/ambush = 45,
 				/mob/living/simple_animal/hostile/retaliate/rogue/mole = 25)
 	first_time_text = "THE MURDERWOOD"
+	custom_area_sound = "sound/misc/stings/ForestSting.ogg"
 	converted_type = /area/rogue/indoors/shelter/woods
 
 /area/rogue/indoors/shelter/woods
@@ -218,6 +220,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/trollbog = 35)	//Bogbugs bugged bigtime, so removed for now.
 
 	first_time_text = "THE TERRORBOG"
+	custom_area_sound = "sound/misc/stings/BogSting.ogg"
 	converted_type = /area/rogue/indoors/shelter/bog
 /area/rogue/indoors/shelter/bog
 	icon_state = "bog"
@@ -689,6 +692,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/sewers.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
+	first_time_text = "VANDERLIN'S SEWERS"
+	custom_area_sound = "sound/misc/stings/SewerSting.ogg"
 	ambientrain = RAIN_SEWER
 	converted_type = /area/rogue/outdoors/exposed/under/sewer
 
