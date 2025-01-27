@@ -449,6 +449,23 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "bath"
 	droning_sound = 'sound/music/area/bath.ogg'
 
+/*	..................   Areas to play with the music a bit   ................... */
+/area/rogue/indoors/town/bath/redhouse // lets try something different
+	droning_sound = 'sound/music/area/Fulminate.ogg'
+	converted_type = /area/rogue/outdoors/exposed/bath/redhouse
+
+/area/rogue/outdoors/exposed/bath/redhouse
+	droning_sound = 'sound/music/area/Fulminate.ogg'
+
+/area/rogue/indoors/town/tavern/saiga
+	droning_sound = 'sound/music/area/Folia1490.ogg'
+	droning_sound_night = 'sound/music/area/LeTourdion.ogg'
+	converted_type = /area/rogue/outdoors/exposed/tavern/saiga
+
+/area/rogue/outdoors/exposed/tavern/saiga
+	droning_sound = 'sound/music/area/Folia1490.ogg'
+	droning_sound_night = 'sound/music/area/LeTourdion.ogg'
+
 /area/rogue/indoors/town/garrison
 	name = "Garrison"
 	icon_state = "garrison"
