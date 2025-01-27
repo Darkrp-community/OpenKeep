@@ -100,7 +100,7 @@
 		if(tris2take)
 			adjust_triumphs(tris2take)
 		else
-			if(get_triumphs() > 0)
+			if(!istype(src, /mob/living/carbon/human/species/skeleton/death_arena) && get_triumphs() > 0)
 				adjust_triumphs(-1)
 
 		if(job == "Monarch")

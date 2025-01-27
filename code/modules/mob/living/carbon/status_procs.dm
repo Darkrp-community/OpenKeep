@@ -25,7 +25,7 @@
 	else
 		clear_fullscreen("high")
 //		clear_alert("high")
-	update_body_parts_head_only()
+//	update_body_parts_head_only()
 //	update_body_parts_eyes_only() FIX FOR PERMASPICEEYES, CAUSED VAMPEYES TO NEVER STOP BEING WHITE
 
 /mob/living/carbon/adjust_disgust(amount)
