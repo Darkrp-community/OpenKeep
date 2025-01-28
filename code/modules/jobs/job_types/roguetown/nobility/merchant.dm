@@ -13,7 +13,8 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Skylancer"  //Abyssariad: Non-military racial specialization, so they are allowed to work on this role.
 	)
 	tutorial = "You were born into wealth, learning from before you could talk about the basics of mathematics. With the trade empire of the Mercator guild behind you, life is good! These people are addicted to your wares and you are the literal beating heart of this economy: Dont let these filthy-covered troglodytes ever forget that."
 

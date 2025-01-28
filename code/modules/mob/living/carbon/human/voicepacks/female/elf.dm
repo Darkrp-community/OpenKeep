@@ -33,6 +33,8 @@
 				used = list('sound/vo/female/elf/painscream (1).ogg','sound/vo/female/elf/painscream (2).ogg')
 			if("scream")
 				used = list('sound/vo/female/elf/scream (1).ogg','sound/vo/female/elf/scream (2).ogg','sound/vo/female/elf/scream (3).ogg','sound/vo/female/elf/scream (4).ogg')
+			if("croak") //undine only.
+				used = list('sound/vo/general/undinecall.ogg','sound/vo/general/undinecall2.ogg','sound/vo/general/undinecall3.ogg','sound/vo/general/undinecall4.ogg','sound/vo/general/undinecall5.ogg','sound/vo/general/undinecall6.ogg')
 
 	if(!used) //we haven't found a racial specific sound so use generic
 		used = ..(soundin)
