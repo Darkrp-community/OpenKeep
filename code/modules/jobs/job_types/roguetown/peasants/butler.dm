@@ -62,3 +62,4 @@
 		beltr = /obj/item/keyring/butler
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		backr = /obj/item/storage/backpack/rogue/satchel
+*/

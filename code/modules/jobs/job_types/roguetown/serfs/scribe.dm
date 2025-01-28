@@ -26,3 +26,4 @@
 	jobtype = /datum/job/roguetown/scribe
 
 	pants = null
+*/

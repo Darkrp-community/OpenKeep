@@ -74,3 +74,4 @@
 			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch || /obj/item/clothing/mask/rogue/eyepatch/left ))
 				qdel(H.wear_mask)
 				mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
+*/

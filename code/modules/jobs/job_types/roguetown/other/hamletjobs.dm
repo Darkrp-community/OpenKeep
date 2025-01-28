@@ -144,9 +144,9 @@
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-/*
 /mob/proc/haltyell()
 	set name = "HALT!"
 	set category = "Noises"
 	emote("haltyell")
+
 */
