@@ -1,4 +1,4 @@
-/datum/job/roguetown/guardsman
+/*/datum/job/roguetown/guardsman
 	title = "Garrison Guard"
 	flag = GUARDSMAN
 	department_flag = GARRISON

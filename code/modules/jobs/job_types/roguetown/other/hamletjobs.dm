@@ -1,4 +1,4 @@
-/datum/job/roguetown/sheriff
+/*/datum/job/roguetown/sheriff
 	title = "Sheriff"
 	flag = CAPTAIN
 	department_flag = GARRISON
