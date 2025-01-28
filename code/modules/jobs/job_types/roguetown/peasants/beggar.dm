@@ -2,7 +2,7 @@
 /datum/job/roguetown/vagrant
 	title = "Beggar"
 	flag = BEGGAR
-	department_flag = PEASANTS
+	department_flag = ROGUES_GUILD
 	faction = "Station"
 	total_positions = 15
 	spawn_positions = 15

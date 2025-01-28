@@ -1,10 +1,10 @@
 /datum/job/roguetown/lord
 	title = "King"
 	flag = LORD
-	department_flag = NOBLEMEN
+	department_flag = THE_ROCK_THRONE
 	faction = "Station"
 	total_positions = 0
-	spawn_positions = 1
+	spawn_positions = 0
 
 	f_title = "Queen"
 	allowed_races = list(

@@ -6,7 +6,7 @@
 /datum/job/roguetown/drifters
 	title = "Drifter"
 	flag = WAVE_DRIFTER
-	department_flag = PEASANTS
+	department_flag = FREEFOLKS_SERFS
 	faction = "Station"
 	show_in_credits = FALSE
 

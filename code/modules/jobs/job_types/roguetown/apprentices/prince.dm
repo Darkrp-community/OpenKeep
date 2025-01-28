@@ -3,8 +3,8 @@
 	flag = PRINCE
 	department_flag = APPRENTICES
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 	f_title = "Princess"
 	allowed_races = list(
 		"Humen",

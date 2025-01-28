@@ -1,7 +1,7 @@
 /datum/job/roguetown/tester
 	title = "Tester"
 	flag = GRAVEDIGGER
-	department_flag = PEASANTS
+	department_flag = FREEFOLKS_SERFS
 	faction = "Station"
 #ifdef TESTSERVER
 	total_positions = 99

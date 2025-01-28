@@ -1,7 +1,7 @@
 /datum/job/roguetown/jester
 	title = "Jester"
-	flag = JESTER
-	department_flag = NOBLEMEN
+	flag = TOWN_JESTER
+	department_flag = THE_ROCK_THRONE
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

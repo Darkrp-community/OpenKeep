@@ -1,7 +1,7 @@
 /datum/job/roguetown/butcher
 	title = "Butcher"
-	flag = BEASTMASTER
-	department_flag = PEASANTS
+	flag = BUTCHER
+	department_flag = PROVISIONERS_GUILD
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

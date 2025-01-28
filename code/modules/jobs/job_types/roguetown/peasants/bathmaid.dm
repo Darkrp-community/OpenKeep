@@ -1,7 +1,7 @@
 /datum/job/roguetown/nitemaiden
 	title = "Nitemaiden"
 	flag = NITEMAIDEN
-	department_flag = TOWNERS
+	department_flag = ROGUES_GUILD
 	faction = "Station"
 	total_positions = 4
 	spawn_positions = 4

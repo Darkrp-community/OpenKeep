@@ -1,7 +1,7 @@
 /datum/job/roguetown/magician
-	title = "Court Magician"
-	flag = WIZARD
-	department_flag = NOBLEMEN
+	title = "Master Magos"
+	flag = MASTER_MAGOS
+	department_flag = THE_ROCK_THRONE
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

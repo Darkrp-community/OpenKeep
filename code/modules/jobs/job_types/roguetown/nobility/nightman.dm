@@ -1,7 +1,7 @@
-/datum/job/roguetown/niteman
-	title = "Niteman"
-	flag = NIGHTMAN
-	department_flag = TOWNERS
+/datum/job/roguetown/nitemaster
+	title = "Nitemaster"
+	flag = NITEMASTER
+	department_flag = ROGUES_GUILD
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -18,13 +18,13 @@
 	Some accuse you of have connections with the Rogues and Bandits of the land but surely its just slander..."
 
 	allowed_sexes = list(MALE)
-	outfit = /datum/outfit/job/roguetown/niteman
+	outfit = /datum/outfit/job/roguetown/nitemaster
 	display_order = JDO_NITEMAN
 	give_bank_account = 120
 	min_pq = 0
 	bypass_lastclass = TRUE
 
-/datum/outfit/job/roguetown/niteman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/nitemaster/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/roguehood/brown
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
@@ -49,13 +49,13 @@
 		H.change_stat("speed", 1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 2)
-	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitmaiden)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitemaiden)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/zeth()
 
 /*	.................   Unique Nitemaster recipes   ................... */
-/datum/crafting_recipe/forgery_nitmaiden
+/datum/crafting_recipe/forgery_nitemaiden
 	name = "Forge nitemaiden license"
 	time = 4 SECONDS
 	reqs = list(/obj/item/paper = 1,

@@ -1,8 +1,8 @@
 /datum/job/roguetown/bogwarden
 	title = "Warden of the Terrorbog"
 	tutorial = ""
-	flag = LORD
-	department_flag = NOBLEMEN
+	flag = HEAD_HUMEN
+	department_flag = PROVISIONERS_GUILD
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -24,8 +24,8 @@
 	title = "Huntmaster of the Murderwoods"
 	f_title = "Huntmistress of the Murderwoods"
 	tutorial = ""
-	flag = LORD
-	department_flag = NOBLEMEN
+	flag = RULER_ELF
+	department_flag = TOWER_OF_NOC
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -43,22 +43,22 @@
 	armor = /obj/item/clothing/suit/roguetown/shirt/rags
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 
-/datum/job/roguetown/hetman
-	title = "Hetman of Mount Decapitation"
+/datum/job/roguetown/hedtman
+	title = "Hedtman of Mount Decapitation"
 	tutorial = ""
-	flag = LORD
-	department_flag = NOBLEMEN
+	flag = ELDER_DWARF
+	department_flag = MAKERS_GUILD
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
 
-	outfit = /datum/outfit/job/roguetown/hetman
+	outfit = /datum/outfit/job/roguetown/hedtman
 	display_order = 6
 
 
-/datum/outfit/job/roguetown/hetman
-	name = "Hetman of Mount Decapitation"
-	jobtype = /datum/job/roguetown/hetman
+/datum/outfit/job/roguetown/hedtman
+	name = "Hedtman of Mount Decapitation"
+	jobtype = /datum/job/roguetown/hedtman
 
 	pants = /obj/item/clothing/under/roguetown/tights
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt

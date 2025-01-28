@@ -93,28 +93,22 @@
 #define JOB_DISPLAY_ORDER_AI 31
 #define JOB_DISPLAY_ORDER_CYBORG 32
 
-#define NOBLEMEN		(1<<0)
+#define THE_ROCK_THRONE	(1<<0)
 
-#define LORD		(1<<0)
-#define CONSORT		(1<<1)
-#define HAND		(1<<2)
-#define STEWARD		(1<<3)
-#define WIZARD		(1<<4)
-#define ARCHIVIST   (1<<5)
-#define BUTLER		(1<<6)
-#define JESTER  	(1<<7)
-#define ROYAL_GUARD	(1<<8)
+#define LORD			(1<<0)
+#define TREASURER		(1<<3)
+#define MASTER_MAGOS	(1<<4)
+#define TOWN_JESTER		(1<<7)
+#define GUILDMASTER		(1<<8)
 
 
-#define GARRISON		(1<<1)
+#define THE_HILLIAN_DIET		(1<<1)
 
-#define CAPTAIN		(1<<0)
-#define GUARDSMAN	(1<<1)
-#define WATCHMAN	(1<<2)
-#define DUNGEONEER	(1<<3)
+#define CAPTAIN			(1<<0)
+#define FOREIGN_GUARD	(1<<1)
 
 
-#define TEMPLE			(1<<2)
+#define TEMPLE		(1<<2)
 
 #define PRIEST		(1<<0)
 #define ACOLYTE		(1<<1)
@@ -124,43 +118,54 @@
 #define ADEPT		(1<<5)
 
 
-#define TOWNERS			(1<<3)
+#define MAKERS_GUILD	(1<<3)
+
+#define ELDER_DWARF		(1<<0)
+#define RUNEMEISTER		(1<<1)
+#define BLACKSMITH		(1<<2)
+#define TAILOR			(1<<3)
+#define MASON			(1<<4)
+
+
+#define TOWER_OF_NOC	(1<<4)
+
+#define RULER_ELF		(1<<0)
+#define ARCHIVIST		(1<<1)
+#define ALCHEMIST		(1<<2)
+#define FELDSHER		(1<<3)
+
+
+#define PROVISIONERS_GUILD	(1<<5)
+
+#define HEAD_HUMEN			(1<<0)
+#define JAEGWARD			(1<<1)
+#define SOILER				(1<<2)
+#define BUTCHER				(1<<3)
+#define INNKEEP				(1<<4)
+#define COOK				(1<<5)
+
+
+#define ROGUES_GUILD		(1<<6)
+
+#define NITEMASTER			(1<<0)
+#define NITEMAIDEN			(1<<1)
+#define ROGUE				(1<<2)
+#define BEGGAR				(1<<3)
+
+#define MGE			(1<<7)
 
 #define MERCHANT	(1<<0)
 #define STEVEDORE	(1<<1)
-#define BLACKSMITH	(1<<2)
-#define MASON		(1<<3)
-#define FELDSHER    (1<<4)
-#define INNKEEP		(1<<5)
-#define COOK		(1<<6)
-#define TAILOR		(1<<7)
-#define NIGHTMAN 	(1<<8)
-#define NITEMAIDEN	(1<<9)
-#define ALCHEMIST	(1<<10)
-#define SCRIBE		(1<<11)
+
+#define FREEFOLKS_SERFS		(1<<8)
+
+#define ADVENTURER			(1<<0)
+#define WAVE_DRIFTER 		(1<<1)
+#define TOWNER				(1<<2)
+#define GRAVEDIGGER			(1<<3)
 
 
-#define PEASANTS		(1<<4)
-
-#define MAYOR       (1<<0)
-#define FARMER		(1<<1)
-#define BEASTMASTER	(1<<2)
-#define FISHER		(1<<3)
-#define LUMBERJACK	(1<<4)
-#define MINER		(1<<5)
-#define HUNTER		(1<<6)
-#define BEGGAR		(1<<6)
-
-
-#define OUTSIDERS		(1<<5)
-
-#define ADVENTURER	(1<<0)
-#define WAVE_DRIFTER (1<<1)
-#define MERCENARY	(1<<2)
-#define GRAVEDIGGER	(1<<3)
-
-
-#define APPRENTICES		(1<<7)
+#define APPRENTICES		(1<<9)
 
 #define APPRENTICE	(1<<0)
 #define SQUIRE		(1<<1)
@@ -169,11 +174,15 @@
 #define PRINCE		(1<<4)
 
 
-#define JCOLOR_NOBLE "#9c40bf"
-#define JCOLOR_MERCHANT "#c2b449"
-#define JCOLOR_SOLDIER "#b64949"
-#define JCOLOR_SERF "#669968"
-#define JCOLOR_PEASANT "#936d6c"
+#define JCOLOR_THE_ROCK_THRONE "#9c40bf"
+#define JCOLOR_THE_HILLIAN_DIET "#c2b449"
+#define JCOLOR_TEMPLE "#b64949"
+#define JCOLOR_MAKERS_GUILD "#669968"
+#define JCOLOR_TOWNER_OF_NOC "#936d6c"
+#define JCOLOR_PROVISIONERS_GUILD "#936d6c"
+#define JCOLOR_ROGUES_GUILD "#936d6c"
+#define JCOLOR_MGE "#936d6c"
+#define JCOLOR_FREEFOLKS_SERFS "#936d6c"
 
 
 // job display orders //

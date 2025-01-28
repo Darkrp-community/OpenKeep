@@ -1,7 +1,7 @@
 /datum/job/roguetown/captain
 	title = "Captain"
 	flag = CAPTAIN
-	department_flag = GARRISON
+	department_flag = THE_HILLIAN_DIET
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1

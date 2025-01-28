@@ -1,7 +1,7 @@
 /datum/job/roguetown/stevedore
 	title = "Stevedore"
 	flag = STEVEDORE
-	department_flag = TOWNERS
+	department_flag = MGE
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2

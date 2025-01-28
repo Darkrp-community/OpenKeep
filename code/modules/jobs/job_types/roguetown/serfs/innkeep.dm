@@ -1,7 +1,7 @@
 /datum/job/roguetown/innkeep
 	title = "Innkeep"
 	flag = INNKEEP
-	department_flag = TOWNERS
+	department_flag = PROVISIONERS_GUILD
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
