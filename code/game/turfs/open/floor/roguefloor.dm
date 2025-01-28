@@ -1322,3 +1322,46 @@
 	.  = ..()
 	icon_state = "bathtile_pool_mid"
 /*	................................................ */
+
+
+/*	..................   Kaizoku Sand   ................... */
+/turf/open/floor/rogue/sand
+	icon = 'icons/roguetown/kaizoku/tileset/tileset.dmi'
+	icon_state = "sand1"
+	footstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_SOFT_BAREFOOT
+	clawfootstep = FOOTSTEP_SAND
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	landsound = 'sound/foley/jumpland/dirtland.wav'
+	neighborlay = "sandedges"
+	smooth = SMOOTH_TRUE
+	canSmoothWith = list(
+		/turf/closed/mineral/rogue,
+		/turf/closed/mineral,
+		/turf/closed/wall/mineral/rogue/stonebrick,
+		/turf/closed/wall/mineral/rogue/wood,
+		/turf/closed/wall/mineral/rogue/wooddark,
+		/turf/closed/wall/mineral/rogue/stone,
+		/turf/closed/wall/mineral/rogue/stone/moss,
+		/turf/open/floor/rogue/cobble,
+		/turf/open/floor/rogue/dirt,
+		/turf/open/floor/rogue/grass,
+		/turf/open/floor/rogue/grass/red,
+		/turf/open/floor/rogue/grass/yel,
+		/turf/open/floor/rogue/grass/cold,
+		/turf/open/floor/rogue/snow,
+		/turf/open/floor/rogue/snow/patchy,
+		/turf/open/floor/rogue/snow/rough
+	)
+
+/turf/open/floor/rogue/sand/cardinal_smooth(adjacencies)
+	// Apply custom smoothing for sand turfs
+	roguesmooth(adjacencies)
+
+/turf/open/floor/rogue/sand/Initialize()
+	. = ..()
+	icon_state = "sand[rand(1,4)]"
+
+/obj/effect/decal/turfedge_neu/sand
+	icon_state = "sandedge"
+	icon = 'icons/roguetown/kaizoku/tileset/tileset.dmi'

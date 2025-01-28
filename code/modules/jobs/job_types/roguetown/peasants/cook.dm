@@ -13,7 +13,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "Slice, chop, and into the pot... You've spent more nites than you can count cutting meat and vegetables until your fingers are bloody and raw, but it's honest work."
 

@@ -146,3 +146,8 @@
 	seed_identity = "red mushroom spores"
 	plant_def_type = /datum/plant_def/amanita
 */
+
+
+/obj/item/neuFarm/seed/rice
+	seed_identity = "weeperstears seeds"
+	plant_def_type = /datum/plant_def/rice

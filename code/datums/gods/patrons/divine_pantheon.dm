@@ -47,6 +47,12 @@
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
 	sins = "Fear, Hubris, Trying to Tame the Seas"
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal/abyssal
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
+	t2 = /obj/effect/proc_holder/spell/invoked/icebind
+	t3 = null
+	//	t3 = /obj/effect/proc_holder/spell/invoked/elemental //Not finished.
+
 
 /datum/patron/divine/necra
 	name = "Necra"

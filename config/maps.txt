@@ -13,15 +13,11 @@ Format:
 	votable (is this map votable)
 endmap
 
-map vanderlin
+map dun_manor
 	default
 	votable
 endmap
 
 map roguetown
-	disabled
-endmap
-
-map dun_manor
-	disabled
+	votable
 endmap
