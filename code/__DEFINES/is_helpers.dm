@@ -97,6 +97,10 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define issnowelf(A) (is_species(A, /datum/species/elf/snow))
 #define ishalfelf(A) (is_species(A, /datum/species/human/halfelf))
 #define istiefling(A) (is_species(A, /datum/species/tieberian))
+#define isabyssariad(A) (is_species(A, /datum/species/abyssariad))
+#define ischangeling(A) (is_species(A, /datum/species/abyssariad/changeling))
+#define isogrun(A) (is_species(A, /datum/species/abyssariad/ogrun))
+#define isskylancer(A) (is_species(A, /datum/species/abyssariad/skylancer))
 
 //more carbon mobs
 #define ismonkey(A) (istype(A, /mob/living/carbon/monkey))

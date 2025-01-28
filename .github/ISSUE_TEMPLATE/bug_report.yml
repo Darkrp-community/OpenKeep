@@ -14,7 +14,7 @@ body:
     label: Checks
     description: Verify that all of the following is true.
     options:
-      - label: I have searched the bug with a few keywords, and I confirm this bug was not yet reported.
+      - label: I have searched the bug with a few keywords, and I confirm this bug has not yet been reported.
         required: true
 
 - type: dropdown
@@ -25,7 +25,9 @@ body:
     description: Where did the bug happen?
     options:
       - Dun Manor
-      - DakkaTown
+      - Stonehamlet
+      - Warmongers
+      - DakkaTown (OBSOLETE)
   validations:
     required: true
 
@@ -61,7 +63,7 @@ body:
   id: staffdetails
   attributes:
     label: Staff ckey
-    description: If you talked with a staff member to have the bug resolved in-round please add their ckey here.
+    description: If you talked with a staff member to have the bug resolved in-round, please add their ckey here.
     placeholder: Staff ckey
   validations:
     required: false

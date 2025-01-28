@@ -46,6 +46,8 @@
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 #define TRAIT_LONGSTRIDER 				"Longstrider"
 #define TRAIT_MOB_FIRE_IMMUNE			"Fire Immune" // Not actual full immunity but reduces effect of fire_act()
+#define TRAIT_KAIZOKU					"Foglander Cultured"
+
 
 #define TRAIT_BASHDOORS "bashdoors"
 #define TRAIT_NOMOOD "no_mood"
@@ -116,6 +118,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames."),
 	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention."),
 	TRAIT_CABAL = span_info("In secret, I have studied the ways of Zizo's ascension, and know of others of the Cabal.")
+	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture.",
 	))
 
 // trait accessor defines

@@ -182,3 +182,15 @@
 		if("Dunked in water")
 			return CLOTHING_WET
 
+
+//Kaizoku Assets.
+
+#define CLOTHING_RONIN	 		"#861e1e"
+#define CLOTHING_EIDOLON		"#613a3f"
+#define CLOTHING_TOWERYAKKO		"#804d97"
+#define CLOTHING_KABUKIMONO		"#9b874f"
+
+#define CLOTHING_THUNDER		"#be8b48"
+#define CLOTHING_STORM			"#1a2677"
+#define CLOTHING_OCEAN			"#56928a"
+#define CLOTHING_ISLAND			"#bd3541"

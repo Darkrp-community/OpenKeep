@@ -240,3 +240,37 @@
 	if(!istype(T, /turf/open/floor/rogue))
 		return
 	return ..()
+
+//Abyssariad Walls.
+//Tier 'Plank' Abyssariad wall. Making a rough counterpart later.
+
+/datum/crafting_recipe/roguetown/turfs/woodwall/abyssal
+	name = "wagoya joinwall"
+	result = /turf/closed/wall/mineral/rogue/wood/abyssal
+	reqs = list(/obj/item/natural/plank = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/turfs/woodwindow/abyssal
+	name = "wagoya murderhole"
+	result = /turf/closed/wall/mineral/rogue/wood/abyssal/window
+	reqs = list(/obj/item/natural/plank = 2)
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 1
+
+//Abyssariad Walls.
+//Tier 'Stone' Abyssariad wall. Making a Stoneblock counterpart later.
+
+/datum/crafting_recipe/roguetown/turfs/stonewall/abyssal
+	name = "ishigaki wall"
+	result = /turf/closed/wall/mineral/rogue/stone
+	reqs = list(/obj/item/natural/stone = 2)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
+
+/datum/crafting_recipe/roguetown/turfs/stonewindow/abyssal
+	name = "ishigaki murderhole"
+	result = /turf/closed/wall/mineral/rogue/stone/window
+	reqs = list(/obj/item/natural/stoneblock = 2)
+	skillcraft = /datum/skill/craft/masonry
+	craftdiff = 1
