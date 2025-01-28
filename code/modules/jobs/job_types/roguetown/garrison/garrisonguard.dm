@@ -1,10 +1,10 @@
 /datum/job/roguetown/guardsman
-	title = "Foreign Guard"
-	flag = FOREIGN_GUARD
-	department_flag = THE_HILLIAN_DIET
+	title = "Garrison Guard"
+	flag = GUARDSMAN
+	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
