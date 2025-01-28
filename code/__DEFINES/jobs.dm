@@ -96,15 +96,16 @@
 #define THE_ROCK_THRONE	(1<<0)
 
 #define LORD			(1<<0)
-#define TREASURER		(1<<3)
-#define MASTER_MAGOS	(1<<4)
-#define TOWN_JESTER		(1<<7)
-#define GUILDMASTER		(1<<8)
+#define TREASURER		(1<<1)
+#define MASTER_MAGOS	(1<<2)
+#define TOWN_JESTER		(1<<3)
+#define GUILDMASTER		(1<<4)
 
 
 #define THE_HILLIAN_DIET		(1<<1)
 
 #define CAPTAIN			(1<<0)
+#define GATEKEEPER		(1<<1)
 #define FOREIGN_GUARD	(1<<1)
 
 

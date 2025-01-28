@@ -1,7 +1,7 @@
-/datum/job/roguetown/watchman
-	title = "Garrison Archer"
-	flag = WATCHMAN
-	department_flag = GARRISON
+/datum/job/roguetown/gatekeeper
+	title = "Gatekeeper"
+	flag = GATEKEEPER
+	department_flag = THE_HILLIAN_DIET
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0
@@ -25,17 +25,17 @@
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
 
-	outfit = /datum/outfit/job/roguetown/watchman
+	outfit = /datum/outfit/job/roguetown/gatekeeper
 	give_bank_account = 30
 	min_pq = 0
 
 	cmode_music = 'sound/music/combat_guard.ogg'
 
-/datum/outfit/job/roguetown/watchman
+/datum/outfit/job/roguetown/gatekeeper
 	name = "Garrison Archer"
-	jobtype = /datum/job/roguetown/watchman
+	jobtype = /datum/job/roguetown/gatekeeper
 
-/datum/outfit/job/roguetown/watchman/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/gatekeeper/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
