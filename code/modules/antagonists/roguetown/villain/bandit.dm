@@ -108,7 +108,7 @@
 			if(prob(35))
 				beltr = /obj/item/rogueweapon/sword/short/wakizashi //Higher Daisho
 			else
-				beltr = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto //Lesser Daisho
+				beltr = /obj/item/rogueweapon/knife/steel/tanto //Lesser Daisho
 
 			H.become_blind("TRAIT_GENERIC")
 

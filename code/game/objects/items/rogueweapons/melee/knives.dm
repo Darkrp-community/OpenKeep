@@ -402,21 +402,29 @@
 	icon_state = "kunai"
 	force = 8
 
-/obj/item/rogueweapon/huntingknife/idagger/steel/tanto
-	name = "tanto"
-	icon_state = "tanto"
+/obj/item/rogueweapon/knife/kaiken
+	name = "iron kaiken"
+	desc = "The weapon laws in colonized Abyssariad islands, with high humen or elven population, forbade non-warriors from carrying blades in public, so abyssariad colonists made weapons such as this."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
-	desc = "Initially a companion blade to the tachi in a zamurai's daisho, the tanto was later replaced by the wakizashi with the shift to infantry tactics after the Bloody Apotheosis."
-
-/obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
-	name = "kaiken"
-	desc = "The weapon laws in colonized Abyssariad islands, with high humen of elven population, forbade non-warriors from carrying blades in public, so abyssariad colonists made weapons such as this."
 	icon_state = "kaiken"
-	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
-	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut,/datum/intent/dagger/thrust/pick)
-	w_class = WEIGHT_CLASS_TINY
+	possible_item_intents = list(/datum/intent/dagger/thrust, /datum/intent/dagger/cut)
+	force = DAMAGE_DAGGER
+	smeltresult = null
+	sellprice = 15
 
-/obj/item/rogueweapon/huntingknife/idagger/sai //I love gundam for helping me on my request on this sai. I love HIM!!!!!!!!!!!!! -Monochrome
+/obj/item/rogueweapon/knife/steel/tanto
+	name = "steel tanto"
+	desc = "Initially a companion blade to the tachi in a zamurai's daisho, the tanto was later replaced by the wakizashi with the shift to infantry tactics after the Bloody Apotheosis."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "tanto"
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
+	force = DAMAGE_DAGGER+2
+	smeltresult = null
+	wdefense = AVERAGE_PARRY
+	wbalance = VERY_HARD_TO_DODGE
+	sellprice = 20
+
+/obj/item/rogueweapon/knife/hunting/sai //I love gundam for helping me on my request on this sai. I love HIM!!!!!!!!!!!!! -Monochrome
 	name = "sai"
 	desc = "Recognizable by its uniqueness and typically carried in pairs, the sai features a sharply-tapered central rod with two prongs at the cross-guards. It lacks blade for cutting, but it excels in jabbing and defending against other weapons."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'

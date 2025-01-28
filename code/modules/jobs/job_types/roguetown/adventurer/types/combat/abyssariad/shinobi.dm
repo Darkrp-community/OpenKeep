@@ -51,10 +51,10 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
 	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja
-	if(prob(50))
-		beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
+	if(prob(40))
+		beltl = /obj/item/rogueweapon/knife/steel/tanto
 	else
-		beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
+		beltl = /obj/item/rogueweapon/knife/kaiken
 
 	if(H.dna.species?.id == "undine")
 		to_chat(H, "<span class='warning'>Living in the Fog island's waterways, I've been trained and fed by the many Abyssariad monks. From their will, I am a branch of their skills.")
@@ -74,8 +74,8 @@
 				H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)
 			if("Raphael")
 				mask = /obj/item/clothing/mask/rogue/kaizoku/eyeband/raphael
-				beltr = /obj/item/rogueweapon/huntingknife/idagger/sai
-				beltl = /obj/item/rogueweapon/huntingknife/idagger/sai
+				beltr = /obj/item/rogueweapon/knife/hunting/sai
+				beltl = /obj/item/rogueweapon/knife/hunting/sai
 			if("Leonardo")
 				mask = /obj/item/clothing/mask/rogue/kaizoku/eyeband/leonardo
 				beltr = /obj/item/rogueweapon/sword/short/wakizashi
@@ -87,10 +87,7 @@
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/shozoku
 		beltr = /obj/item/quiver/arrows
-		if(prob(50))
-			beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
-		else
-			beltl = /obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
+		beltl = /obj/item/rogueweapon/knife/kaiken
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

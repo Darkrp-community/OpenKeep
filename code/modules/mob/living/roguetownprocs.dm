@@ -161,7 +161,7 @@
 					offhand_defense += (offhand.wdefense * WEAPON_DEFENSE_WEIGHT)
 					if(istype(offhand, /obj/item/rogueweapon/shield))
 						force_shield = TRUE
-					if(istype(offhand, /obj/item/rogueweapon/huntingknife/idagger/sai) && istype(mainhand, /obj/item/rogueweapon/huntingknife/idagger/sai))
+					if(istype(offhand, /obj/item/rogueweapon/knife/hunting/sai) && istype(mainhand, /obj/item/rogueweapon/knife/hunting/sai))
 						offhand_defense += (8 * WEAPON_DEFENSE_WEIGHT) // Sai's wdefense x 2
 					else
 						offhand_defense += (offhand.wdefense * WEAPON_DEFENSE_WEIGHT)

@@ -687,7 +687,7 @@
 	recipe_name = "a couple Tantos"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel/tanto
+	created_item = /obj/item/rogueweapon/knife/steel/tanto
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 2
@@ -696,8 +696,8 @@
 	name = "Kaiken knife x2"
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
-	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel/kaiken
+	req_bar = /obj/item/ingot/iron
+	created_item = /obj/item/rogueweapon/knife/kaiken
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 3
@@ -707,7 +707,7 @@
 	recipe_name = "a couple of Sai"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/huntingknife/idagger/steel
+	created_item = /obj/item/rogueweapon/knife/hunting/sai
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 3
