@@ -73,7 +73,7 @@
 /obj/item/alch/sinew
 	name = "sinew"
 	icon_state = "sinew"
-	dropshrink = 0.5
+	dropshrink = 0.9
 	dust_result = /obj/item/alch/viscera
 	possible_potion = "strpot"
 
