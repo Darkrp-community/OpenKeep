@@ -62,7 +62,7 @@
 
 /obj/item/alch/magicdust
 	name = "magicdust"
-	//icon_state = "magic_runedust"
+	icon_state = "magic_runedust"
 	possible_potion = "buffpot"
 
 /obj/item/alch/firedust
