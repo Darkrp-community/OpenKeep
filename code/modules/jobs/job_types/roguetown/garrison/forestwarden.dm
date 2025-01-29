@@ -21,7 +21,7 @@
 	bypass_lastclass = TRUE
 	selection_color = "#0d6929"
 	outfit = /datum/outfit/job/roguetown/forestwarden
-	give_bank_account = 50
+	give_bank_account = 40
 	min_pq = 5
 	cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 
@@ -53,6 +53,11 @@
 		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/labor/lumberjacking, 4, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind?.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 		H.change_stat("strength", 3)
 		H.change_stat("perception", 1)
 		H.change_stat("intelligence", 2)
