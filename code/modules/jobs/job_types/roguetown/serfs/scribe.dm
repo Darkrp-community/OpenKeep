@@ -1,4 +1,4 @@
-/datum/job/roguetown/scribe
+/*/datum/job/roguetown/scribe
 	title = "Scribe"
 	flag = SCRIBE
 	department_flag = TOWNERS
@@ -26,3 +26,4 @@
 	jobtype = /datum/job/roguetown/scribe
 
 	pants = null
+*/

@@ -1,7 +1,7 @@
 /datum/job/roguetown/captain
 	title = "Captain"
 	flag = CAPTAIN
-	department_flag = GARRISON
+	department_flag = THE_HILLIAN_DIET
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -110,3 +110,8 @@
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
+
+/mob/proc/haltyell()
+	set name = "HALT!"
+	set category = "Noises"
+	emote("haltyell")

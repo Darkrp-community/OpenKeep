@@ -1,10 +1,10 @@
-/datum/job/roguetown/guardsman
+/*/datum/job/roguetown/guardsman
 	title = "Garrison Guard"
 	flag = GUARDSMAN
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 8
-	spawn_positions = 8
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -295,3 +295,4 @@ Design philosphy:
 	set name = "HALT!"
 	set category = "Noises"
 	emote("haltyell")
+*/

@@ -1,7 +1,7 @@
 /datum/job/roguetown/deathknight
 	title = "Death Knight"
 	flag = GRAVEDIGGER
-	department_flag = PEASANTS
+	department_flag = FREEFOLKS_SERFS
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 0

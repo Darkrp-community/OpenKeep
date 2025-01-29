@@ -1,10 +1,10 @@
-/datum/job/roguetown/royalguard
+/*/datum/job/roguetown/royalguard
 	title = "Royal Guard"
 	flag = ROYAL_GUARD
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 2
-	spawn_positions = 2
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
@@ -142,3 +142,4 @@
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+*/

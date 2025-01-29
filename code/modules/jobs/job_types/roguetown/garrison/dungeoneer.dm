@@ -1,10 +1,10 @@
-/datum/job/roguetown/dungeoneer
+/*/datum/job/roguetown/dungeoneer
 	title = "Dungeoneer"
 	flag = DUNGEONEER
 	department_flag = GARRISON
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = list(
 		"Humen",
@@ -74,3 +74,4 @@
 			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch || /obj/item/clothing/mask/rogue/eyepatch/left ))
 				qdel(H.wear_mask)
 				mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
+*/

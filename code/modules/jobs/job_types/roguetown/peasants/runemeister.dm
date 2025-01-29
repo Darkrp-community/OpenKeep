@@ -1,7 +1,7 @@
-/datum/job/roguetown/prisoner
-	title = "Prisoner"
-	flag = GRAVEDIGGER
-	department_flag = PEASANTS
+/datum/job/roguetown/runemeister
+	title = "Runemeister"
+	flag = RUNEMEISTER
+	department_flag = MAKERS_GUILD
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 2
@@ -16,10 +16,9 @@
 		"Dark Elf",
 		"Aasimar"
 	)
-	tutorial = "For a crime, or false allegation; as a hostage against another, or held for ransom: your fate until this day has been ill-starred save its first. You are of noble birth. Perhaps your story, which none but you recall, will move some pity from callous hearts or promises of riches parole your release. Maybe your old associates conspire now to release you in a daring rescue. Yet it is far surer that your tears will rust this cursed mask than the sun shine upon your face a freed soul once more." // changed to reduce dictation of character. Nikov.
+	tutorial = "Dwarven technology is finicky, fragile and incredibly complex to the average denizen of Rockhill - thankfully, the Runemeister has dedicated their livelihood to its study. Construction of new SCOMs and installations of other logistical devices are costly but otherwise worthwhile for expansion sakes. Furthermore, maintenance and enchanting modification on equipment is a specialty for this master-rune maker." // changed to reduce dictation of character. Nikov.
 
-	outfit = /datum/outfit/job/roguetown/prisoner
-	bypass_jobban = TRUE
+	outfit = /datum/outfit/job/roguetown/runemeister
 	display_order = JDO_PRISONER
 	give_bank_account = 173
 	min_pq = -100
@@ -28,7 +27,7 @@
 
 	cmode_music = 'sound/music/combat_bum.ogg'
 
-/datum/outfit/job/roguetown/prisoner/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/runemeister/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown
 	mask = /obj/item/clothing/mask/rogue/facemask/prisoner
@@ -54,7 +53,3 @@
 		H.change_stat("speed", -1)
 		H.change_stat("constitution", -1)
 		H.change_stat("endurance", -1)
-		var/datum/antagonist/new_antag = new /datum/antagonist/prisoner()
-		H.mind.add_antag_datum(new_antag)
-		ADD_TRAIT(H, TRAIT_BANDITCAMP, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

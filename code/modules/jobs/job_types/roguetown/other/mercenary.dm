@@ -1,7 +1,7 @@
 /datum/job/roguetown/mercenary
-	title = "Mercenary"
-	flag = MERCENARY
-	department_flag = OUTSIDERS
+	title = "Foreign Guard"
+	flag = FOREIGN_GUARD
+	department_flag = THE_HILLIAN_DIET
 	faction = "Station"
 	total_positions = 4
 	spawn_positions = 4

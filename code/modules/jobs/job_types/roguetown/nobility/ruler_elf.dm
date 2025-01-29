@@ -1,19 +1,17 @@
-/datum/job/roguetown/consort
-	title = "Consort"
-	flag = CONSORT
-	department_flag = NOBLEMEN
+/datum/job/roguetown/ruler_elf
+	title = "Ruler of House Elf"
+	flag = RULER_ELF
+	department_flag = THE_HILLIAN_DIET
 	faction = "Station"
 	total_positions = 0
 	spawn_positions = 1
 
 	allowed_races = list(
-		"Humen",
-		"Elf",
-		"Half-Elf"
+		"Elf"
 	)
 	tutorial = "Yours was a marriage of political convenience rather than love, yet you have remained the ruling monarch's good friend and confidant throughout your marriage. But your love and loyalty will be tested, for daggers are equally pointed at your throat."
 
-	outfit = /datum/outfit/job/roguetown/consort
+	outfit = /datum/outfit/job/roguetown/ruler_elf
 	advclass_cat_rolls = list(CTAG_CONSORT = 20)
 
 	display_order = JDO_CONSORT
@@ -23,7 +21,7 @@
 
 	cmode_music = 'sound/music/combat_noble.ogg'
 
-/datum/job/roguetown/consort/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/roguetown/ruler_elf/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
@@ -35,7 +33,7 @@
 		else
 			SSfamilytree.AddRoyal(H, FAMILY_FATHER)
 
-/datum/outfit/job/roguetown/consort // Default equipment regardless of class.
+/datum/outfit/job/roguetown/ruler_elf // Default equipment regardless of class.
 	head = /obj/item/clothing/head/roguetown/crown/nyle
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	id = /obj/item/clothing/ring/silver
@@ -49,14 +47,14 @@
 - Lowborn: A good wholesome peasant spouse. Can cook and swing a pitchfork good. Not so smart or perceptive.
 */
 
-/datum/advclass/consort/highborn
+/datum/advclass/ruler_elf/highborn
 	name = "Highborn"
 	tutorial = "Of a minor noble house, yours is a rather typical tale; you were trained in manners, literature, and intrigue, all to be married off to the next ruler of this backwater island."
-	outfit = /datum/outfit/job/roguetown/consort/highborn
+	outfit = /datum/outfit/job/roguetown/ruler_elf/highborn
 
 	category_tags = list(CTAG_CONSORT)
 
-/datum/outfit/job/roguetown/consort/highborn/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/ruler_elf/highborn/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/black
@@ -86,14 +84,14 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
-/datum/advclass/consort/courtesan
+/datum/advclass/ruler_elf/courtesan
 	name = "Courtesan"
 	tutorial = "Though initially none envied your lot in life, it's certain that your midnight talents haven't gone to waste. Your honeyed words and charm have brought you right to being a ruler's beloved consort."
-	outfit = /datum/outfit/job/roguetown/consort/courtesan
+	outfit = /datum/outfit/job/roguetown/ruler_elf/courtesan
 
 	category_tags = list(CTAG_CONSORT)
 
-/datum/outfit/job/roguetown/consort/courtesan/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/ruler_elf/courtesan/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/black
@@ -125,14 +123,14 @@
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
-/datum/advclass/consort/lowborn
+/datum/advclass/ruler_elf/lowborn
 	name = "Lowborn"
 	tutorial = "You never could have dreamed your life would be like this. Though your origins are humble, something special about you - whether it was your good looks, your kind heart, or your bravery - has brought you into Rockhill Keep."
-	outfit = /datum/outfit/job/roguetown/consort/lowborn
+	outfit = /datum/outfit/job/roguetown/ruler_elf/lowborn
 
 	category_tags = list(CTAG_CONSORT)
 
-/datum/outfit/job/roguetown/consort/lowborn/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/ruler_elf/lowborn/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/green

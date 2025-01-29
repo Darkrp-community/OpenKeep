@@ -2,7 +2,7 @@
 	title = "Tailor"
 	f_title = "Seamstress"
 	flag = TAILOR
-	department_flag = TOWNERS
+	department_flag = MAKERS_GUILD
 	faction = "Station"
 	tutorial = "Cloth, furs, silk and leather are what you know best. You've tirelessly studied and poured your life into \
 				making clothing both for fashion and for protection for commoner and noble alike."

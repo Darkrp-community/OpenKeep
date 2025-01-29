@@ -1,7 +1,7 @@
-/datum/job/roguetown/mayor
-	title = "Mayor"
-	flag = MAYOR
-	department_flag = GARRISON
+/datum/job/roguetown/elder_dwarf
+	title = "Elder of House Dwarf"
+	flag = ELDER_DWARF
+	department_flag = THE_HILLIAN_DIET
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
@@ -18,18 +18,18 @@
 	tutorial = "The crown may lead officially, but the townsfolk of Rockhill look to you to manage the settlement and solve lesser issues. Remember the old ways of the law... not everything must end in bloodshed, but do what is necessary to maintain the peace."
 	whitelist_req = FALSE
 	bypass_lastclass = TRUE
-	outfit = /datum/outfit/job/roguetown/mayor
+	outfit = /datum/outfit/job/roguetown/elder_dwarf
 	display_order = JDO_CHIEF
 	give_bank_account = 80
 	min_pq = 1
 
 	cmode_music = 'sound/music/combat_bog.ogg'
 
-/datum/outfit/job/roguetown/mayor
+/datum/outfit/job/roguetown/elder_dwarf
 	name = "Mayor"
-	jobtype = /datum/job/roguetown/mayor
+	jobtype = /datum/job/roguetown/elder_dwarf
 
-/datum/outfit/job/roguetown/mayor/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/elder_dwarf/pre_equip(mob/living/carbon/human/H)
 	..()
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	head = /obj/item/clothing/head/roguetown/brimmed

@@ -1,4 +1,4 @@
-/datum/job/roguetown/sheriff
+/*/datum/job/roguetown/sheriff
 	title = "Sheriff"
 	flag = CAPTAIN
 	department_flag = GARRISON
@@ -144,9 +144,9 @@
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
 
-/*
 /mob/proc/haltyell()
 	set name = "HALT!"
 	set category = "Noises"
 	emote("haltyell")
+
 */

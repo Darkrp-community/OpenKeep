@@ -3,8 +3,8 @@
 	flag = SERVANT
 	department_flag = APPRENTICES
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 0
+	spawn_positions = 0
 
 	allowed_races = list(
 		"Humen",

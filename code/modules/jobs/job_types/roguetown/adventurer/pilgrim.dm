@@ -1,7 +1,7 @@
 /datum/job/roguetown/pilgrim
 	title = "Pilgrim"
 	flag = ADVENTURER
-	department_flag = PEASANTS
+	department_flag = FREEFOLKS_SERFS
 	faction = "Station"
 	total_positions = -1
 	spawn_positions = 20

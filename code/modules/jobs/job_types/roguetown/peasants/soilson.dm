@@ -1,7 +1,7 @@
 /datum/job/roguetown/farmer
 	title = "Soilson"
-	flag = FARMER
-	department_flag = PEASANTS
+	flag = SOILER
+	department_flag = PROVISIONERS_GUILD
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5

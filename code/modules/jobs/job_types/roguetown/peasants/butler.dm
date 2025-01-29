@@ -1,10 +1,10 @@
-/datum/job/roguetown/butler
+/*/datum/job/roguetown/butler
 	title = "Butler"
 	flag = BUTLER
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 0
+	spawn_positions = 0
 
 	f_title = "Housekeeper"
 	allowed_races = list(
@@ -62,3 +62,4 @@
 		beltr = /obj/item/keyring/butler
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		backr = /obj/item/storage/backpack/rogue/satchel
+*/

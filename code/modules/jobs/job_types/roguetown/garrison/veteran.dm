@@ -1,7 +1,7 @@
 /datum/job/roguetown/veteran
-	title = "Veteran"
-	flag = GUARDSMAN
-	department_flag = GARRISON
+	title = "Guildmaster"
+	flag = GUILDMASTER
+	department_flag = THE_ROCK_THRONE
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
