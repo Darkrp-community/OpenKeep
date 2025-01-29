@@ -1,17 +1,16 @@
-body {
-  	background-color: rgb(31, 20, 24);
-	background: url("try4_border.png"), url("try4.png");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-
-}
-
 #top_handwriting {
 	font-family: "UnifrakturMaguntia", cursive;
 	font-weight: 400;
 	font-style: normal;
 	font-size: 38px;
+	color:#ab2020;
+}
+
+#character_sheet {
+	font-family: "UnifrakturMaguntia", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24px;
 	color:#ab2020;
 }
 
