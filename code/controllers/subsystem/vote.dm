@@ -62,7 +62,7 @@ SUBSYSTEM_DEF(vote)
 			if (!C || C.is_afk())
 				non_voters -= non_voter_ckey
 		if(non_voters.len > 0)
-			else if(mode == "gamemode")
+			if(mode == "gamemode")
 				if(GLOB.master_mode in choices)
 					choices[GLOB.master_mode] += non_voters.len
 					if(choices[GLOB.master_mode] >= greatest_votes)
