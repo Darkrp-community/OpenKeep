@@ -194,3 +194,6 @@
 #define CLOTHING_STORM			"#1a2677"
 #define CLOTHING_OCEAN			"#56928a"
 #define CLOTHING_ISLAND			"#bd3541"
+// End Kaizoku Assets.
+
+#define hex2num(X) text2num(X, 16)

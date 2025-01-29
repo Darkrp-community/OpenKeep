@@ -63,7 +63,8 @@
 		return
 
 	M.key = key
-	client.verbs -= /client/proc/descend
+	if(client)
+		client.verbs -= /client/proc/descend
 	qdel(src)
 	return
 /*	Commented out. Resource intensive and not actually needed with the timer to put in hands and maze setup
