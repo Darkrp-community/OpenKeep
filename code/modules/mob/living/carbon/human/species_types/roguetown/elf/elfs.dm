@@ -91,7 +91,9 @@
 		"Coastal Elf" = SKIN_COLOR_COASTAL_ELF,
 		"Wood Elf" = SKIN_COLOR_WOOD_ELF,
 		"Sea Elf" = SKIN_COLOR_SEA_ELF,
-		"Sand Elf" = SKIN_COLOR_SAND_ELF,
+		"Jungle Elf" = SKIN_COLOR_JUNGLE_ELF,
+		"Savannah Elf" = SKIN_COLOR_SAVANNAH_ELF,
+		"Sand Elf" = SKIN_COLOR_SAND_ELF
 	))
 
 /datum/species/elf/snow/get_hairc_list()

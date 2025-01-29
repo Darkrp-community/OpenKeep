@@ -801,17 +801,11 @@
 	body_parts_covered = COVERAGE_TORSO
 	prevent_crits = ALL_CRITICAL_HITS_VAMP
 
-//................ Ancient Haubergon ............... //
-/obj/item/clothing/suit/roguetown/armor/haubergon_vampire
-	name = "ancient haubergon"
+//................ Ancient Maille ............... //
+/obj/item/clothing/suit/roguetown/armor/chainmail/maille_vampire
+	name = "ancient maille"
 	desc = "A style of armor long out of use. Rests easy on the shoulders."
 	icon_state = "vunder"
-	blocksound = CHAINHIT
-	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
-	pickup_sound = 'sound/foley/equip/equip_armor_chain.ogg'
-	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
-	anvilrepair = /datum/skill/craft/armorsmithing
-	smeltresult = /obj/item/ingot/steel
 	sellprice = VALUE_IRON_ARMOR_UNUSUAL
 
 	armor_class = AC_LIGHT
