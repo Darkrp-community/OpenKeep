@@ -13,6 +13,7 @@ hr
 {
 	background-color: #000000;
 	height: 2px;
+	border: 0;
 }
 
 a, button, a:link, a:visited, a:active, .linkOn, .linkOff

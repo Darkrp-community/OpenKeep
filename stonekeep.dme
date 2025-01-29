@@ -1471,7 +1471,6 @@
 #include "code\modules\cargo\packsrogue\tools.dm"
 #include "code\modules\cargo\packsrogue\weapons.dm"
 #include "code\modules\chatter\chatter.dm"
-#include "code\modules\client\asset_cache.dm"
 #include "code\modules\client\assets_rogue.dm"
 #include "code\modules\client\client_colour.dm"
 #include "code\modules\client\client_defines.dm"
