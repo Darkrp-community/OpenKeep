@@ -82,13 +82,13 @@ This is a filter that blocks use of the machine for that role. Could be expanded
 	var/contents
 	contents += "<center>TOWN STOCKPILE<BR>"
 	contents += "--------------<BR>"
-	contents += "<a href='?src=[REF(src)];change=1'>Stored Mammon: [budget]</a></center><BR>"
+	contents += "<a href='byond://?src[REF(src)];change=1'>Stored Mammon: [budget]</a></center><BR>"
 	for(var/datum/roguestock/stockpile/A in SStreasury.stockpile_datums)
 		contents += "[A.name]<BR>"
 		contents += "[A.desc]<BR>"
 		contents += "Stockpiled Amount: [A.held_items]<BR>"
 		if(!A.withdraw_disabled)
-			contents += "<a href='?src=[REF(src)];withdraw=[REF(A)]'>\[Withdraw ([A.withdraw_price])\]</a><BR><BR>"
+			contents += "<a href='byond://?src[REF(src)];withdraw=[REF(A)]'>\[Withdraw ([A.withdraw_price])\]</a><BR><BR>"
 		else
 			contents += "Withdrawing Disabled...<BR><BR>"
 	if(!canread)

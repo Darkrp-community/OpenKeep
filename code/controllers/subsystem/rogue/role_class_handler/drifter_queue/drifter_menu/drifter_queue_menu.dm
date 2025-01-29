@@ -30,9 +30,9 @@
 	data += "<table class='timer_table'><tr><td class='timer_fluff'>Time to next excursion:</td><td class='timer_time' id='queue_timer'>[SSrole_class_handler.time_left_until_next_wave_string]</td></tr></table>"
 	data += "<div class='queue_buttan'>"
 	if(linked_client in SSrole_class_handler.drifter_queue_joined_clients)
-		data += "<a class='leave_drifter_queue'href='?src=\ref[src];leave_queue=1'>LEAVE QUEUE</a>"
+		data += "<a class='leave_drifter_queue'href='byond://?src=\ref[src];leave_queue=1'>LEAVE QUEUE</a>"
 	else
-		data += "<a class='join_drifter_queue'href='?src=\ref[src];join_queue=1'>ENTER QUEUE</a>"
+		data += "<a class='join_drifter_queue'href='byond://?src=\ref[src];join_queue=1'>ENTER QUEUE</a>"
 	data += "</div>"
 	data += "<br>"
 	data += "<div class='table_fluff_container'><span class='table_fluff_text'>Forecast:</span><span class='table_fluff_fadeout_line'></span></div><br>"
@@ -64,7 +64,7 @@
 				else
 					data += "<td class='wave_number'>[i]: </td>"
 
-			data += "<td class='wave_type'><a class='wave_type_hlink' href='?src=\ref[src];'>[cur_datum.wave_type_name]<span class='wave_type_hlink_tooltext'>[cur_datum.wave_type_tooltip]</span></a></td>"
+			data += "<td class='wave_type'><a class='wave_type_hlink' href='byond://?src=\ref[src];'>[cur_datum.wave_type_name]<span class='wave_type_hlink_tooltext'>[cur_datum.wave_type_tooltip]</span></a></td>"
 			if(current_iteration == 1)
 				data += "<td><span id='current_count'>[SSrole_class_handler.drifter_wave_FULLY_entered_clients.len]</span>/[cur_datum.maximum_playercount]</td>"
 			else

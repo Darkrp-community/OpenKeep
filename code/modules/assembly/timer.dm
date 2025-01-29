@@ -93,11 +93,11 @@
 		var/second = time % 60
 		var/minute = (time - second) / 60
 		var/dat = "<TT><B>Timing Unit</B></TT>"
-		dat += "<BR>[(timing ? "<A href='?src=[REF(src)];time=0'>Timing</A>" : "<A href='?src=[REF(src)];time=1'>Not Timing</A>")] [minute]:[second]"
-		dat += "<BR><A href='?src=[REF(src)];tp=-30'>-</A> <A href='?src=[REF(src)];tp=-1'>-</A> <A href='?src=[REF(src)];tp=1'>+</A> <A href='?src=[REF(src)];tp=30'>+</A>"
-		dat += "<BR><BR><A href='?src=[REF(src)];repeat=[(loop ? "0'>Stop repeating" : "1'>Set to repeat")]</A>"
-		dat += "<BR><BR><A href='?src=[REF(src)];refresh=1'>Refresh</A>"
-		dat += "<BR><BR><A href='?src=[REF(src)];close=1'>Close</A>"
+		dat += "<BR>[(timing ? "<A href='byond://?src[REF(src)];time=0'>Timing</A>" : "<A href='byond://?src[REF(src)];time=1'>Not Timing</A>")] [minute]:[second]"
+		dat += "<BR><A href='byond://?src[REF(src)];tp=-30'>-</A> <A href='byond://?src[REF(src)];tp=-1'>-</A> <A href='byond://?src[REF(src)];tp=1'>+</A> <A href='byond://?src[REF(src)];tp=30'>+</A>"
+		dat += "<BR><BR><A href='byond://?src[REF(src)];repeat=[(loop ? "0'>Stop repeating" : "1'>Set to repeat")]</A>"
+		dat += "<BR><BR><A href='byond://?src[REF(src)];refresh=1'>Refresh</A>"
+		dat += "<BR><BR><A href='byond://?src[REF(src)];close=1'>Close</A>"
 		var/datum/browser/popup = new(user, "timer", name)
 		popup.set_content(dat)
 		popup.open()

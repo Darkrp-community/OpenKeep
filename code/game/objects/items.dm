@@ -477,7 +477,7 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 
 /obj/item/get_inspect_button()
 	if(has_inspect_verb || (obj_integrity < max_integrity))
-		return " <span class='info'><a href='?src=[REF(src)];inspect=1'>{?}</a></span>"
+		return " <span class='info'><a href='byond://?src[REF(src)];inspect=1'>{?}</a></span>"
 	return ..()
 
 

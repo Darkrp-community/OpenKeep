@@ -225,10 +225,10 @@
 
 	//handcuffed?
 	if(handcuffed)
-		. += "<A href='?src=[REF(src)];item=[SLOT_HANDCUFFED]'><span class='warning'>[m1] tied up with \a [handcuffed]!</span></A>"
+		. += "<A href='byond://?src[REF(src)];item=[SLOT_HANDCUFFED]'><span class='warning'>[m1] tied up with \a [handcuffed]!</span></A>"
 
 	if(legcuffed)
-		. += "<A href='?src=[REF(src)];item=[SLOT_LEGCUFFED]'><span class='warning'>[m3] \a [legcuffed] around [m2] legs!</span></A>"
+		. += "<A href='byond://?src[REF(src)];item=[SLOT_LEGCUFFED]'><span class='warning'>[m3] \a [legcuffed] around [m2] legs!</span></A>"
 
 	//Gets encapsulated with a warning span
 	var/list/msg = list()
@@ -464,13 +464,13 @@
 				var/obj/item/bodypart/bodypart = get_bodypart(zone)
 				if(!bodypart)
 					continue
-				. += "<a href='?src=[REF(src)];inspect_limb=[zone]'>Inspect [parse_zone(zone)]</a>"
-			. += "<a href='?src=[REF(src)];check_hb=1'>Check Heartbeat</a>"
+				. += "<a href='byond://?src[REF(src)];inspect_limb=[zone]'>Inspect [parse_zone(zone)]</a>"
+			. += "<a href='byond://?src[REF(src)];check_hb=1'>Check Heartbeat</a>"
 		else
 			var/checked_zone = check_zone(user.zone_selected)
-			. += "<a href='?src=[REF(src)];inspect_limb=[checked_zone]'>Inspect [parse_zone(checked_zone)]</a>"
+			. += "<a href='byond://?src[REF(src)];inspect_limb=[checked_zone]'>Inspect [parse_zone(checked_zone)]</a>"
 			if(!(mobility_flags & MOBILITY_STAND) && user != src && (user.zone_selected == BODY_ZONE_CHEST))
-				. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
+				. += "<a href='byond://?src[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
 
 	// Characters with the hunted flaw will freak out if they can't see someone's face.
 	if(!appears_dead)
@@ -497,7 +497,7 @@
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 		if(R)
-			. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+			. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='byond://?src[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='byond://?src[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
 		if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
 			var/cyberimp_detect
 			for(var/obj/item/organ/cyberimp/CI in internal_organs)
@@ -508,12 +508,12 @@
 				. += cyberimp_detect
 			if(R)
 				var/health_r = R.fields["p_stat"]
-				. += "<a href='?src=[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
+				. += "<a href='byond://?src[REF(src)];hud=m;p_stat=1'>\[[health_r]\]</a>"
 				health_r = R.fields["m_stat"]
-				. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
+				. += "<a href='byond://?src[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
 			R = find_record("name", perpname, GLOB.data_core.medical)
 			if(R)
-				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
+				. += "<a href='byond://?src[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
 			if(traitstring)
 				. += "<span class='info'>Detected physiological traits:\n[traitstring]"
 
@@ -526,11 +526,11 @@
 				if(R)
 					criminal = R.fields["criminal"]
 
-				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
-				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
-					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+				. += "<span class='deptradio'>Criminal status:</span> <a href='byond://?src[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
+				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='byond://?src[REF(src)];hud=s;view=1'>\[View\]</a>",
+					"<a href='byond://?src[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
+					"<a href='byond://?src[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
+					"<a href='byond://?src[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
 //	else if(isobserver(user) && traitstring)
 //		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
 	. += "ø ------------ ø</span>"

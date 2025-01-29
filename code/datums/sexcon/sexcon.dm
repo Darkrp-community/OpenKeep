@@ -305,13 +305,13 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 	var/list/dat = list()
 	var/force_name = get_force_string()
 	var/speed_name = get_speed_string()
-	dat += "<center><a href='?src=[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='?src=[REF(src)];task=speed_up'>\></a> ~|~ <a href='?src=[REF(src)];task=force_down'>\<</a> [force_name] <a href='?src=[REF(src)];task=force_up'>\></a></center>"
+	dat += "<center><a href='byond://?src[REF(src)];task=speed_down'>\<</a> [speed_name] <a href='byond://?src[REF(src)];task=speed_up'>\></a> ~|~ <a href='byond://?src[REF(src)];task=force_down'>\<</a> [force_name] <a href='byond://?src[REF(src)];task=force_up'>\></a></center>"
 	if(target == user)
 		dat += "<center>Doing unto yourself</center>"
 	else
 		dat += "<center>Doing unto [target]'s</center>"
 	if(current_action)
-		dat += "<center><a href='?src=[REF(src)];task=stop'>Stop</a></center>"
+		dat += "<center><a href='byond://?src[REF(src)];task=stop'>Stop</a></center>"
 	else
 		dat += "<br>"
 	dat += "<table width='100%'><td width='50%'></td><td width='50%'></td><tr>"
@@ -326,7 +326,7 @@ Admin logging is provided for orgasms and if you try to initiate sex with corpse
 			link = "linkOff"
 		if(current_action == action_type)
 			link = "linkOn"
-		dat += "<center><a class='[link]' href='?src=[REF(src)];task=action;action_type=[action_type]'>[action.name]</a></center>"
+		dat += "<center><a class='[link]' href='byond://?src[REF(src)];task=action;action_type=[action_type]'>[action.name]</a></center>"
 		dat += "</td>"
 		i++
 		if(i >= 2)

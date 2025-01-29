@@ -50,7 +50,7 @@
 	for(var/type in assembled)
 		var/obj/item/stack/ore/O = type
 		dat += "[initial(O.name)] - [assembled[type]]<br>"
-	dat += text("<br><br><A href='?src=[REF(src)];removeall=1'>Empty box</A>")
+	dat += text("<br><br><A href='byond://?src[REF(src)];removeall=1'>Empty box</A>")
 	user << browse(dat, "window=orebox")
 
 /obj/structure/ore_box/proc/dump_box_contents()
