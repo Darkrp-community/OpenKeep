@@ -3569,6 +3569,7 @@
 	dir = 1;
 	icon_state = "border"
 	},
+/obj/machinery/simple_dye_bin,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town/hamlet)
 "dEH" = (
@@ -3598,6 +3599,7 @@
 /obj/effect/decal/turfedge_neu{
 	dir = 5
 	},
+/obj/machinery/simple_dye_bin,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town/hamlet)
 "dFG" = (
@@ -3904,7 +3906,7 @@
 	icon_state = "barsbent";
 	layer = 2.81
 	},
-/turf/closed,
+/turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town)
 "dVD" = (
 /turf/open/floor/rogue/wood/nosmooth,
@@ -5223,7 +5225,7 @@
 /area/rogue/outdoors/rtfield/plague_district)
 "eZF" = (
 /obj/structure/roguewindow/solid,
-/turf/closed,
+/turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/tavern/saiga)
 "faa" = (
 /obj/item/rogueweapon/mace/woodclub/train_sword,
@@ -9046,7 +9048,7 @@
 /area/rogue/outdoors/town/roofs)
 "iJO" = (
 /obj/structure/roguewindow/solid,
-/turf/closed/wall/mineral/rogue/decowood,
+/turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors)
 "iJP" = (
 /obj/effect/decal/cleanable/blood/gibs/limb,
@@ -20744,6 +20746,13 @@
 /area/rogue/indoors/town/manor{
 	first_time_text = "STONEHILL CASTLE"
 	})
+"tRA" = (
+/obj/machinery/light/rogue/wallfire/candle{
+	pixel_x = 0;
+	pixel_y = -26
+	},
+/turf/open/floor/rogue/wood/nosmooth/saiga,
+/area/rogue/indoors/town)
 "tRE" = (
 /obj/item/reagent_containers/glass/cup/skull,
 /turf/open/floor/rogue/naturalstone,
@@ -23254,9 +23263,12 @@
 	first_time_text = "STONEHILL CASTLE"
 	})
 "wbn" = (
-/obj/structure/roguewindow/solid,
-/turf/closed,
-/area/rogue/indoors/town)
+/obj/effect/decal/turfedge_neu/alt{
+	dir = 4
+	},
+/obj/machinery/simple_dye_bin,
+/turf/open/floor/rogue/dirt,
+/area/rogue/outdoors/exposed/town/hamlet)
 "wbA" = (
 /obj/structure/chair/stool/rogue,
 /turf/open/floor/rogue/woodturned/saiga,
@@ -23477,6 +23489,7 @@
 "wjY" = (
 /obj/structure/table/wood/plain,
 /obj/item/reagent_containers/glass/cup/wooden,
+/obj/item/roguekey/mercenary,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town)
 "wkj" = (
@@ -62055,7 +62068,7 @@ kZt
 kZt
 kZt
 bZQ
-tMa
+wbn
 pfh
 dZq
 dZq
@@ -65124,7 +65137,7 @@ pSa
 pSa
 dqs
 rQz
-pSa
+rSm
 sQV
 cpM
 vSZ
@@ -65318,7 +65331,7 @@ fGl
 jRc
 hDV
 iqK
-pSa
+rSm
 wAB
 vcz
 cpM
@@ -66486,7 +66499,7 @@ ahG
 ahG
 hXw
 dZq
-dZd
+czT
 dZd
 gQz
 dZd
@@ -66890,7 +66903,7 @@ gcU
 xpT
 dZq
 hDi
-iJO
+mAQ
 qNw
 mAQ
 lNk
@@ -67072,7 +67085,7 @@ dZd
 dFG
 iLY
 iLY
-iLY
+tRA
 pLb
 fyl
 hZX
@@ -83921,11 +83934,11 @@ ePz
 ePz
 czT
 ePz
-wbn
+owy
 ePz
-wbn
+owy
 ePz
-wbn
+owy
 ePz
 ePz
 hZX
