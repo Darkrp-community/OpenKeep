@@ -49,7 +49,7 @@
 			if(!index)
 				index = H.real_name
 			S.name = "guard's tabard ([index])"
-		if(istype(H.cloak, /obj/item/clothing/cloak/jinbaori/guard))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/haramaki/jinbaori/guard))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -67,7 +67,7 @@
 		belt = /obj/item/storage/belt/rogue/leather
 	if(H.dna?.species && H.dna.species?.id == "abyssariad")
 		pants = /obj/item/clothing/under/roguetown/trou/tobi/random
-		cloak = /obj/item/clothing/cloak/jinbaori/guard //I can't put these somewhere else.
+		cloak = /obj/item/clothing/cloak/stabard/haramaki/jinbaori/guard //I can't put these somewhere else.
 		shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 		H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
@@ -187,7 +187,7 @@ Design philosphy:
 		if("Bardiche")
 			backr = /obj/item/rogueweapon/polearm/halberd/bardiche
 			if(H.dna.species?.id == "abyssariad")
-				backr = /obj/item/rogueweapon/polearm/halberd/naginata
+				backr = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata
 
 /datum/advclass/garrison/archer
 	name = "Garrison Archer"

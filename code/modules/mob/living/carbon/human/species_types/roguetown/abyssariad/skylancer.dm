@@ -147,4 +147,4 @@
 	return randname
 
 /datum/species/abyssariad/skylancer/random_surname()
-	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorm.txt.txt"))]"
+	return " [pick(world.file2list("strings/rt/names/abyssariad/abyssnorm.txt"))]"

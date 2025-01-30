@@ -26,7 +26,7 @@
 	name = "rags {ip}"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/rags)
 	reqs = list(/obj/item/natural/cloth = 2)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/burial_shroud
 	name = "cloth winding sheet"
@@ -42,49 +42,49 @@
 	result = list(/obj/item/clothing/cloak/half)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/apron
 	name = "cloth apron {ip}"
 	result = list(/obj/item/clothing/cloak/apron)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/clothgloves
 	name = "cloth gloves {ip}"
 	result = list(/obj/item/clothing/gloves/roguetown/fingerless)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/shortshirt
 	name = "cloth short shirt {ip}"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/shortshirt/uncolored)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/clothshirt
 	name = "cloth shirt {ip}"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/undershirt/uncolored)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/stripedtunic
 	name = "striped tunic {ip}"
 	result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/light/striped)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/clothtights
 	name = "cloth tights {ip}"
 	result = list(/obj/item/clothing/under/roguetown/tights/uncolored)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/headband
 	name = "cloth headband"
@@ -97,14 +97,14 @@
 	name = "crude straw hat {ip}"
 	result = list(/obj/item/clothing/head/roguetown/strawhat)
 	reqs = list(/obj/item/natural/fibers = 3)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/knitcap
 	name = "knit cap {ip}"
 	result = list(/obj/item/clothing/head/roguetown/knitcap)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/cmask
 	name = "cloth mask {ip}"
@@ -125,7 +125,7 @@
 	result = list(/obj/item/clothing/head/roguetown/fisherhat)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 1)
 	tools = list(/obj/item/needle)
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/sack
 	name = "sack hood"
@@ -144,11 +144,6 @@
 /*========= SKILL LEVEL: 1 REQUIRED ==========*/
 
 
-/datum/crafting_recipe/roguetown/sewing/stripedtunic
-	name = "striped tunic {ip}"
-	result = list(/obj/item/clothing/suit/roguetown/armor/gambeson/light/striped)
-	req_antikaizoku = TRUE
-
 /datum/crafting_recipe/roguetown/sewing/pcoif
 	name = "cloth coif"
 	result = list(/obj/item/clothing/neck/roguetown/coif/cloth)
@@ -162,7 +157,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/clothtrou
 	name = "cloth trousers {ip}"
@@ -170,7 +165,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/lgambeson
 	name = "light gambeson {ip}"
@@ -178,7 +173,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/sleepingbag
 	name = "sleepcloth"
@@ -211,7 +206,7 @@
 				/obj/item/natural/fibers = 1)
 	tools = list(/obj/item/needle)
 	craftdiff = 2
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/tabard
 	name = "tabard {ip}"
@@ -219,7 +214,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/stabard
 	name = "surcoat {ip}"
@@ -227,7 +222,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/bedsheetpelt
 	name = "leather bedsheet"
@@ -267,7 +262,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/cape
 	name = "cape {ip}"
@@ -275,7 +270,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 
 /*========= SKILL LEVEL: 4 REQUIRED ==========*/
@@ -285,14 +280,14 @@
 	result = list(/obj/item/clothing/head/roguetown/fancyhat)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/fashionablehat
 	name = "fashionable hat {ip}"
 	result = /obj/item/clothing/head/roguetown/fashionablehat
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/fancyhat
 	name = "fancy hat {ip}"
@@ -300,14 +295,14 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/plumedhat
 	name = "plumed hat {ip}"
 	result = list(/obj/item/clothing/head/roguetown/bardhat)
 	reqs = list(/obj/item/natural/fibers = 1, /obj/item/natural/cloth = 2, /obj/item/natural/feather = 1)
 	craftdiff = 4
-	req_antikaizoku = TRUE
+	req_imperial = TRUE
 
 /*========= ROLE LOCKED RECIPES ==========*/
 /datum/crafting_recipe/roguetown/sewing/tunic
@@ -327,74 +322,74 @@
 	result = list(/obj/item/clothing/gloves/roguetown/fingerless/yugake)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/monkgarb
 	name = "monk garbs {fl}"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/rags/monkgarb)
 	reqs = list(/obj/item/natural/cloth = 1,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/kimono
 	name = "kimono {fl}"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/kimono)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/kamishimo
 	name = "kamishimo upperside {fl}"
 	result = list(/obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/hakama
 	name = "hakama {fl}"
 	result = list(/obj/item/clothing/under/roguetown/tights/hakama)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/takuhatsugasa
 	name = "takuhatsugasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/takuhatsugasa)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/torioigasa
 	name = "torioigasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai/torioigasa)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 2)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/gasa
 	name = "gasa hat {fl}"
 	result = list(/obj/item/clothing/head/roguetown/tengai/gasa)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/lillys
 	name = "small lilly {fl}"
-	result = list(/obj/item/clothing/head/roguetown/lilly/small)
+	result = list(/obj/item/clothing/head/roguetown/lilly)
 	reqs = list(/obj/item/natural/fibers = 3)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/lillym
 	name = "medium lilly {fl}"
 	result = list(/obj/item/clothing/head/roguetown/lilly/medium)
 	reqs = list(/obj/item/natural/fibers = 4)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/lillyb
 	name = "big lilly {fl}"
 	result = list(/obj/item/clothing/head/roguetown/lilly/big)
 	reqs = list(/obj/item/natural/fibers = 5)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/eyeband
 	name = "eyeband"
@@ -407,7 +402,7 @@
 	result = list(/obj/item/clothing/under/roguetown/kaizoku/tribal)
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /*.............. recipes requiring skill 1 ..............*/
 
@@ -417,7 +412,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/roningasa
 	name = "roningasa hat {fl}"
@@ -425,7 +420,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/soheicloth
 	name = "sohei headcovering {fl}"
@@ -433,7 +428,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/sandogasa
 	name = "sandogasa hat {fl}"
@@ -441,7 +436,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/mino
 	name = "mino cloak {fl}"
@@ -449,7 +444,7 @@
 	reqs = list(/obj/item/natural/fibers = 8,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/tobi
 	name = "tobi trousers {fl}"
@@ -457,7 +452,7 @@
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/hitatare
 	name = "light hitatare {fl}"
@@ -465,7 +460,7 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /*.............. recipes requiring skill 2 ..............*/
 
@@ -476,15 +471,15 @@
 				/obj/item/natural/fibers = 1)
 	tools = list(/obj/item/needle)
 	craftdiff = 2
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/jinbaori
 	name = "jinbaori {fl}"
-	result = list(/obj/item/clothing/cloak/jinbaori)
+	result = list(/obj/item/clothing/cloak/stabard/haramaki/jinbaori)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/zukin
 	name = "stealthy hood {fl}"
@@ -492,7 +487,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 2
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/zubon
 	name = "stealthy trousers {fl}"
@@ -500,7 +495,7 @@
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 2)
 	craftdiff = 2
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /*.............. recipes requiring skill 3 ..............*/
 
@@ -510,7 +505,7 @@
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 3
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/onmyojigoofy
 	name = "onmyoji hat {fl}"
@@ -518,7 +513,7 @@
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 3
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/guardiancape
 	name = "guardianship cape {fl}"
@@ -526,15 +521,15 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 3
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/onmyojigoofy
 	name = "haramaki bellyband {fl}"
-	result = list(/obj/item/clothing/cloak/haramaki)
+	result = list(/obj/item/clothing/cloak/stabard/haramaki)
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 3
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /* .............. recipes requiring skill 4 ..............*/
 
@@ -544,12 +539,12 @@
 	reqs = list(/obj/item/natural/cloth = 2,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 4
-	req_kaizoku = TRUE
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/sewing/odoshi
 	name = "odoshi bodylacing {fl}"
-	result = list(/obj/item/clothing/cloak/haramaki/odoshi)
+	result = list(/obj/item/clothing/cloak/stabard/haramaki/odoshi)
 	reqs = list(/obj/item/natural/cloth = 5,
 				/obj/item/natural/fibers = 3)
 	craftdiff = 4
-	req_kaizoku = TRUE
+	req_islander = TRUE

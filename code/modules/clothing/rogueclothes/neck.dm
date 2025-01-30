@@ -576,12 +576,14 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/neck.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/neck.dmi'
 
-/obj/item/clothing/neck/roguetown/psicross/abyssanctum
+/obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 	name = "reformist abyssanctum amulet"
 	desc = "Despair thee not at the abyssal depths, for where light doth fade, vessels of might shall be therein carved, as Abyssor and the Weeper guide their own."
 	icon = 'icons/roguetown/kaizoku/clothingicon/neck.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/neck.dmi'
 	icon_state = "abyssanctum"
+	resistance_flags = FIRE_PROOF
+	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
 
 /obj/item/clothing/neck/roguetown/mercmedal/toweryakko
 	name = "soul compressor"

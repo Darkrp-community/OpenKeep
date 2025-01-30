@@ -1388,8 +1388,8 @@
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
 
-/datum/emote/living/croaks
-	key = "croaks"
+/datum/emote/living/croak
+	key = "croak"
 	message = "croaks."
 	emote_type = EMOTE_AUDIBLE
 	only_forced_audio = TRUE
