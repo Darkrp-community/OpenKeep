@@ -22,7 +22,7 @@
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE
 	charge_max = 60 SECONDS
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/abyssanctum)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum)
 	devotion_cost = 45
 
 /turf/open/proc/apply_ice_turf()
@@ -127,6 +127,7 @@
 			src.visible_message("<span class='danger'>[src]'s crushing pressure squeezes [L] mercilessly!</span>")
 			L.flash_fullscreen("whiteflash3")
 			L.adjustBruteLoss(rand(10, 30))
+			playsound(src, pick('sound/music/kaizoku/spells/abyssalpressure.ogg','sound/music/kaizoku/spells/abyssalpressure1.ogg','sound/music/kaizoku/spells/abyssalpressure2.ogg'), 100, FALSE)
 		if(L.stat == DEAD)
 			src.visible_message("<span class='danger'>[L]'s squeezed body is now released after death.</span>")
 			qdel(src)
@@ -191,7 +192,7 @@
 	movement_interrupt = FALSE
 	projectile_type = /obj/projectile/magic/purify
 	chargedloop = null
-	req_items = list(/obj/item/clothing/neck/roguetown/psicross/abyssanctum)
+	req_items = list(/obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum)
 	sound = 'sound/magic/magic_nulled.ogg'
 	invocation_type = "none"
 	//invocation = "delivers sharp jabs and a sudden clap, unleashing a freezing shockwave that forms and launches a jagged ice spike."
@@ -232,7 +233,7 @@
 			C.flash_fullscreen("whiteflash3")
 			return
 		if((C.faction = "orcs") || (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Had to give them these ones because there's a bunch of different goblin IDs. So Trait will have to stay until I care about giving each a respective var.
-			C.visible_message("<span class='danger'>[target]'s body is distorted by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
+			C.visible_message("<span class='danger'>[target]'s body is distorced by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
 			C.adjustFireLoss(rand(30, 50)) // 30 to 50 damage, less than full demons. More damage comes from freezing.
 			C.Knockdown(20) //Purification successful. You will be paralyzed.
 			C.Paralyze(1) // Creatures with demon essence from Apotheosis war gets the second end of the stick.
@@ -244,7 +245,7 @@
 			C.adjustBruteLoss(rand(5, 15)) // 10 to 15 damage. Don't even bother attacking these. They will not be frozen either.
 			return
 		else //Does not paralyze.
-			C.visible_message("<span class='danger'>[target]'s body is distorted by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
+			C.visible_message("<span class='danger'>[target]'s body is being crushed!</span>", "<span class='userdanger'>I feel a suffocating pressure building on my body!</span>")
 			C.adjustFireLoss(rand(20, 35)) //Normal creatures will still suffer the effects of Barotrauma, yet less in terms of damage. Will still freeze.
 			C.apply_status_effect(/datum/status_effect/debuff/freezing)
 			C.flash_fullscreen("whiteflash3")

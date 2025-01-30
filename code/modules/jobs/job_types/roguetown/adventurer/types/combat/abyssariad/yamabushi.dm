@@ -20,7 +20,6 @@
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/yamabushi
 	maximum_possible_slots = 2 //Less slots. It is split with Sohei.
-	min_pq = 2
 	category_tags = list(CTAG_ADVENTURER)
 	pickprob = 100
 	vampcompat = FALSE
@@ -33,6 +32,7 @@
 	switch(H.patron?.name)
 		if("Astrata")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/astrata
+			H.virginity = TRUE
 		if("Dendor")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 		if("Necra")
@@ -43,10 +43,13 @@
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/ravox
 		if("Noc")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/noc
-		if("Abyssor")
-			wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum //the only one allowed for Abyssariads bond to Abyssor.
+			H.virginity = TRUE
 		if("Pestra")
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/pestra
+		if("Malum")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/malum_steel
+		if("Abyssor")
+			wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 		else // Failsafe
 			wrists = /obj/item/clothing/neck/roguetown/psycross/silver
 
@@ -86,8 +89,6 @@
 		H.change_stat("constitution", 1)
 		H.change_stat("endurance", 2)
 		H.change_stat("speed", -1)
-	if(H.patron != /datum/patron/divine/abyssor)
-		to_chat(H, "<span class='userdanger'>As a Member of Abyssanctum, the Curator Branch ensured my duties would remain even if I found my faith in another God that is not Abyssor, as long it is Pantheonistic.")
 
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)

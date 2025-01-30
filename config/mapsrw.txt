@@ -13,9 +13,11 @@ Format:
 	votable (is this map votable)
 endmap
 
-map rogueworld
+map dun_manor
 	default
-	#voteweight 1.5
 	votable
 endmap
 
+map rogueworld
+	votable
+endmap

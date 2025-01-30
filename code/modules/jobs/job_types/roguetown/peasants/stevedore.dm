@@ -11,7 +11,11 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 
 	tutorial = "The strongest workers are hired by the Mercator guild, trained by monks of Ravox and expected to help out with handling troublemakers as well as moving cargo and messages around. The Merchant is your boss!"
@@ -57,5 +61,9 @@
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 
-	if(H.patron == /datum/patron/divine/ravox)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
+		if(H.patron == /datum/patron/divine/abyssor) //Abyssanctum have combative edge as well, but only for those culturally bound to fog islands. The gods are the same, but the religion is not.
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	else
+		if(H.patron == /datum/patron/divine/ravox)
+			H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)

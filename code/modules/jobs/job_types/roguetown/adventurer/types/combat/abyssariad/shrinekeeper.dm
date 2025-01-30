@@ -25,24 +25,35 @@
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/shrinekeepers/pre_equip(mob/living/carbon/human/H)
 	..()
-	head = /obj/item/clothing/head/roguetown/takuhatsugasa
-	neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+	neck = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 	shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
-	cloak = /obj/item/clothing/cloak/raincloak/mino
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	belt = /obj/item/storage/belt/rogue/leather/rope
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backl = /obj/item/storage/backpack/rogue/backpack
 	backr = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff/bostaff
-	shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
 
+	var/yesno = list("I wander and meditate.","I build shrines for Abyssor.")
+	var/monk = input("Wayfarer or Settler?", "Wayfarer or Settler?") as anything in yesno
+	switch(monk) //Just clothes.
+		if("I wander and meditate.")
+			head = /obj/item/clothing/head/roguetown/takuhatsugasa
+			cloak = /obj/item/clothing/cloak/raincloak/mino
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
+			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+			H.set_blindness(0)
+		if("I build shrines for Abyssor.")
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono/random
+			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
+			H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE) //They lose 'Medicine' to have 'Carpetry', because Shrinekeepers... repair shrines.
+			H.set_blindness(0)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/craft/carpentry, 1, TRUE) //They lose 'Medicine' to have 'Carpetry', because Shrinekeepers... repair shrines.
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
 

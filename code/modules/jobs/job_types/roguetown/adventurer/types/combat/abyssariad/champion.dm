@@ -122,9 +122,9 @@
 		beltl = /obj/item/rogueweapon/sword/uchigatana
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		cloak = /obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo/eidolon
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/eidolon
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
-		wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+		wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 		shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 		pants = /obj/item/clothing/under/roguetown/tights/hakama/eidolon
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable/tengu
