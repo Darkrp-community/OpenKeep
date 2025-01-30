@@ -56,7 +56,7 @@
 	else
 		beltl = /obj/item/rogueweapon/knife/kaiken
 
-	if(H.dna.species?.id == "undine")
+	if(H.dna.species.name == "Undine")
 		to_chat(H, "<span class='warning'>Living in the Fog island's waterways, I've been trained and fed by the many Abyssariad monks. From their will, I am a branch of their skills.")
 		var/TMNT = pickweight(list("Donatello" = 1, "Leonardo" = 1, "Michelangelo" = 1, "Raphael" = 1)) // is this a reference...?
 		H.become_blind("TRAIT_GENERIC")

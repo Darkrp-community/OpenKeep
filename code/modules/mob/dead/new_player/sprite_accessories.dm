@@ -458,7 +458,7 @@
 	name = "Fancy"
 	icon_state = "fancy_elf_f"
 	gender = FEMALE
-	specuse = list("elf", "abyssariad")
+	specuse = list("elf")
 
 /datum/sprite_accessory/hair/grumpy_f
 	name = "Grumpy"
@@ -518,7 +518,7 @@
 	name = "Majestic"
 	icon_state = "majestic_f"
 	gender = FEMALE
-	specuse = list("human")
+	specuse = list("human", "abyssariad")
 
 /datum/sprite_accessory/hair/messy
 	name = "Messy"
@@ -650,7 +650,7 @@
 	name = "Majestie"
 	icon_state = "majestic_elf"
 	gender = NEUTER
-	specuse = list("elf", "abyssariad")
+	specuse = list("elf")
 
 /datum/sprite_accessory/hair/locs
 	name = "Locs"
@@ -870,7 +870,7 @@
 	gender = NEUTER
 	icon = 'icons/roguetown/mob/detail.dmi'
 	use_static = TRUE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/detail/nothing
 	name = "Nothing"
@@ -1226,6 +1226,7 @@
 	name = "TiebHorns"
 	icon_state = "tiebhorns"
 	specuse = list("tiefling")
+	gender = NEUTER
 	color_src = SKINCOLOR
 	offsetti = TRUE
 
@@ -1603,31 +1604,38 @@
 
 //Abyssariad accessories.
 
+/datum/sprite_accessory/detail
+	name = ""
+	icon_state = null
+	gender = NEUTER
+	icon = 'icons/roguetown/mob/detail.dmi'
+	use_static = TRUE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
 /datum/sprite_accessory/detail/irezumi
 	name = "Blademaster Irezumi"
-	icon_state = "irezumi_blademaster"
-	icon = 'icons/roguetown/kaizoku/body_details/accessories.dmi'
-	specuse = list("abyssariad")
+	icon_state = "blademaster"
+	specuse = list("human", "abyssariad") //Humens are getting irezumis due to heartfelt.
 
 /datum/sprite_accessory/detail/irezumi/champion
 	name = "Champion Irezumi"
-	icon_state = "irezumi_champion"
+	icon_state = "champion"
 
 /datum/sprite_accessory/detail/irezumi/monk
 	name = "Monk Irezumi"
-	icon_state = "irezumi_monk"
+	icon_state = "monk"
 
 /datum/sprite_accessory/detail/irezumi/seduction
 	name = "Eyes Irezumi"
-	icon_state = "irezumi_seduction"
+	icon_state = "seduction"
 
 /datum/sprite_accessory/detail/irezumi/seductionalt
 	name = "Side-eyes Irezumi"
-	icon_state = "irezumi_seductionalt"
+	icon_state = "seductionalt"
 
 /datum/sprite_accessory/detail/irezumi/warrior
 	name = "Abyss Warrior Irezumi"
-	icon_state = "irezumi_warrior"
+	icon_state = "warrior"
 
 //kaizoku bodyparts
 
@@ -1696,13 +1704,14 @@
 	color_src = SKINCOLOR
 	offsetti = TRUE
 
-/datum/sprite_accessory/horns/human/oni
+/datum/sprite_accessory/tails/human/oni //Yes. It's a fucking tail now, I'm bullshitting my way out of this tiefling problem until we got horns fixed.
 	icon = 'icons/roguetown/kaizoku/body_details/attachment.dmi'
 	name = "Onihorn"
 	icon_state = "onihorn"
 	specuse = list("ogrun")
 	color_src = 0
 	offsetti = TRUE
+	gender = NEUTER
 
 /datum/sprite_accessory/tails/human/kappav
 	icon = 'icons/roguetown/kaizoku/body_details/attachment.dmi'

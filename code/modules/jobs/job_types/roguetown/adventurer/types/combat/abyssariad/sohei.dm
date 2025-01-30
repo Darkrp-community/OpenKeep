@@ -33,7 +33,7 @@
 	..()
 	neck = /obj/item/clothing/head/roguetown/soheicloth
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
-	wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
 	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
@@ -64,7 +64,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
 	switch(weapontype)
 		if("tsukushi")
-			backr = /obj/item/rogueweapon/polearm/halberd/naginata/tsukushi //weaker naginata, mass-produced iron tier. Slightly more rare than Yari.
+			backr = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata/tsukushi  //weaker naginata, mass-produced iron tier. Slightly more rare than Yari.
 		if("katakama")
 			backr = /obj/item/rogueweapon/polearm/spear/yari/katakama//Steel, more combat-effective and rarer than iron Yari.
 		if("yari")

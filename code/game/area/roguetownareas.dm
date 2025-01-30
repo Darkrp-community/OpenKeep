@@ -53,16 +53,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_TOWNNIGHT
 	spookysounds = SPOOKY_CROWS
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 	converted_type = /area/rogue/indoors/shelter
 
 /area/rogue/indoors/shelter
 	icon_state = "shelter"
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 /area/rogue/outdoors/mountains
 	name = "mountains"
@@ -71,17 +71,17 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
 	spookynight = SPOOKY_GEN
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 	soundenv = 17
 	converted_type = /area/rogue/indoors/shelter/mountains
 
 /area/rogue/indoors/shelter/mountains
 	icon_state = "mountains"
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 /area/rogue/outdoors/mountains/deception
 	name = "deception"
@@ -189,9 +189,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_FORESTNIGHT
 	spookysounds = SPOOKY_CROWS
 	spookynight = SPOOKY_FOREST
-	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	droning_sound = list('sound/music/area/forest.ogg', 'sound/ambience/kaizoku/Sibilant.ogg', 'sound/ambience/kaizoku/Sussurus.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Penumbra.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/forestnight.ogg', 'sound/ambience/kaizoku/Sibilant_night.ogg')
 	soundenv = 15
 	ambush_times = list("night","dawn","dusk","day")
 	ambush_types = list(
@@ -206,9 +206,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/indoors/shelter/woods
 	icon_state = "woods"
-	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	droning_sound = list('sound/music/area/forest.ogg', 'sound/ambience/kaizoku/Sibilant.ogg', 'sound/ambience/kaizoku/Sussurus.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Penumbra.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/forestnight.ogg', 'sound/ambience/kaizoku/Sibilant_night.ogg')
 
 /area/rogue/outdoors/woods_safe
 	name = "woods"
@@ -217,9 +217,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_FORESTNIGHT
 	spookysounds = SPOOKY_CROWS
 	spookynight = SPOOKY_FOREST
-	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	droning_sound = list('sound/music/area/forest.ogg', 'sound/ambience/kaizoku/Sibilant.ogg', 'sound/ambience/kaizoku/Sussurus.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Penumbra.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/forestnight.ogg', 'sound/ambience/kaizoku/Sibilant_night.ogg')
 	soundenv = 15
 	converted_type = /area/rogue/indoors/shelter/woods
 
@@ -244,9 +244,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_RIVERNIGHT
 	spookysounds = SPOOKY_FROG
 	spookynight = SPOOKY_FOREST
-	droning_sound = 'sound/music/area/forest.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/forestnight.ogg'
+	droning_sound = list('sound/music/area/forest.ogg', 'sound/ambience/kaizoku/Sibilant.ogg', 'sound/ambience/kaizoku/Sussurus.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Penumbra.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/forestnight.ogg', 'sound/ambience/kaizoku/Sibilant_night.ogg')
 	converted_type = /area/rogue/indoors/shelter/woods
 
 /area/rogue/outdoors/bog
@@ -282,9 +282,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "beach"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Abyssanctum.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 
 //// UNDER AREAS (no indoor rain sound usually)
@@ -293,18 +293,18 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/under
 	name = "basement"
 	icon_state = "under"
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/towngen.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Abyssanctum.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg','sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 	soundenv = 8
 	plane = INDOOR_PLANE
 	converted_type = /area/rogue/outdoors/exposed
 
 /area/rogue/outdoors/exposed
 	icon_state = "exposed"
-	droning_sound = 'sound/music/area/towngen.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/towngen.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Abyssanctum.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg','sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 /area/rogue/under/cave
 	name = "cave"
@@ -313,7 +313,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_GENCAVE
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound = list ('sound/music/area/caves.ogg', 'sound/ambience/kaizoku/Torment.ogg', 'sound/ambience/kaizoku/Bucolic.ogg', 'sound/ambience/kaizoku/Nebula.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -328,7 +328,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 /area/rogue/outdoors/caves
 	icon_state = "caves"
-	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound = list ('sound/music/area/caves.ogg', 'sound/ambience/kaizoku/Torment.ogg', 'sound/ambience/kaizoku/Bucolic.ogg', 'sound/ambience/kaizoku/Nebula.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -344,7 +344,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound = list ('sound/music/area/caves.ogg', 'sound/ambience/kaizoku/Torment.ogg', 'sound/ambience/kaizoku/Bucolic.ogg', 'sound/ambience/kaizoku/Nebula.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -384,7 +384,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound = list ('sound/music/area/caves.ogg', 'sound/ambience/kaizoku/Torment.ogg', 'sound/ambience/kaizoku/Bucolic.ogg', 'sound/ambience/kaizoku/Nebula.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 	ambush_times = list("night","dawn","dusk","day")
@@ -474,19 +474,19 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	name = "indoors"
 	icon_state = "blueold"
 	droning_sound = 'sound/music/area/indoor.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = list('sound/music/area/septimus.ogg','sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg')
 	converted_type = /area/rogue/outdoors/exposed/town
 
 /area/rogue/outdoors/exposed/town
 	icon_state = "town"
-	droning_sound = 'sound/music/area/towngen.ogg'
+	droning_sound = list('sound/music/area/towngen.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Abyssanctum.ogg')
 	droning_sound_dusk = null
 //	droning_sound_night = 'sound/music/area/night.ogg'
 
 /area/rogue/outdoors/exposed/town/hamlet
 	icon_state = "town"
-	droning_sound = 'sound/music/area/towngen.ogg'
+	droning_sound = list('sound/music/area/towngen.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Abyssanctum.ogg')
 	droning_sound_dusk = null
 	first_time_text = "STONEHILL HAMLET"
 
@@ -600,16 +600,16 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/town/church
 	name = "church"
 	icon_state = "church"
-	droning_sound = 'sound/music/area/church.ogg'
+	droning_sound = list('sound/music/area/church.ogg', 'sound/ambience/kaizoku/Syzygy.ogg')
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/churchnight.ogg'
+	droning_sound_night = list('sound/music/area/churchnight.ogg', 'sound/ambience/kaizoku/Resplendent.ogg')
 	converted_type = /area/rogue/outdoors/exposed/church
 
 /area/rogue/outdoors/exposed/church
 	icon_state = "church"
-	droning_sound = 'sound/music/area/church.ogg'
+	droning_sound = list('sound/music/area/church.ogg', 'sound/ambience/kaizoku/Syzygy.ogg')
 	droning_sound_dusk = null
-	droning_sound_night = 'sound/music/area/churchnight.ogg'
+	droning_sound_night = list('sound/music/area/churchnight.ogg', 'sound/ambience/kaizoku/Resplendent.ogg')
 
 /area/rogue/indoors/town/church/chapel
 	icon_state = "chapel"
@@ -667,34 +667,34 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	name = "the ship"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/night.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 /area/rogue/outdoors/coast
 	name = "the coast"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
 	droning_sound = 'sound/music/area/sargoth.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = list('sound/music/area/septimus.ogg','sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg')
 
 ///// OUTDOORS AREAS (again, for some reason)
 
 /area/rogue/outdoors/town
 	name = "outdoors"
 	icon_state = "town"
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-//	droning_sound_night = 'sound/music/area/night.ogg'	Too much guitar honestly
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 	converted_type = /area/rogue/indoors/shelter/town
 	first_time_text = "THE TOWN OF ROCKHILL"
 
 /area/rogue/indoors/shelter/town
 	icon_state = "town"
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 /area/rogue/outdoors/town/sargoth
 	name = "outdoors"
@@ -722,8 +722,8 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/indoors/shelter/town/roofs
 	icon_state = "roofs"
 	droning_sound = 'sound/music/area/field.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound_dusk = list('sound/music/area/septimus.ogg','sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg')
 
 /area/rogue/outdoors/town/dwarf
 	name = "makers quarter"
@@ -782,14 +782,14 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambientnight = AMB_GENCAVE
 	spookysounds = SPOOKY_CAVE
 	spookynight = SPOOKY_CAVE
-	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound = list ('sound/music/area/caves.ogg', 'sound/ambience/kaizoku/Torment.ogg', 'sound/ambience/kaizoku/Bucolic.ogg', 'sound/ambience/kaizoku/Nebula.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/outdoors/exposed/under/caves
 
 /area/rogue/outdoors/exposed/under/caves
 	icon_state = "caves"
-	droning_sound = 'sound/music/area/caves.ogg'
+	droning_sound = list ('sound/music/area/caves.ogg', 'sound/ambience/kaizoku/Torment.ogg', 'sound/ambience/kaizoku/Bucolic.ogg', 'sound/ambience/kaizoku/Nebula.ogg')
 	droning_sound_dusk = null
 	droning_sound_night = null
 
@@ -818,9 +818,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 /area/rogue/underworld
 	name = "underworld"
 	icon_state = "underworld"
-	droning_sound = 'sound/music/area/underworlddrone.ogg'
+	droning_sound = ('sound/ambience/kaizoku/Petrichor.ogg')
 	droning_sound_dusk = null
-	droning_sound_night = null
+	droning_sound_night = ('sound/ambience/kaizoku/Petrichor_night.ogg')
 	first_time_text = "The Forest of Repentence"
 
 
@@ -831,18 +831,18 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	name = "sophia's cry"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 // Players are penalized for entering the Guild Gaptain's quarters (FAFO)
 /area/rogue/outdoors/beach/boat/captain
 	name = "guild captain"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
-	droning_sound = 'sound/music/area/townstreets.ogg'
-	droning_sound_dusk = 'sound/music/area/septimus.ogg'
-	droning_sound_night = 'sound/music/area/sleeping.ogg'
+	droning_sound = list('sound/music/area/townstreets.ogg', 'sound/ambience/kaizoku/Zephyr.ogg', 'sound/ambience/kaizoku/Oceansanct.ogg', 'sound/ambience/kaizoku/Rogue_in_town.ogg')
+	droning_sound_dusk = list('sound/music/area/septimus.ogg', 'sound/ambience/kaizoku/Diaspora.ogg')
+	droning_sound_night = list('sound/music/area/sleeping.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg', 'sound/ambience/kaizoku/Town_in_Rogue.ogg')
 
 /area/rogue/indoors/town/theatre
 	name = "theatre"
@@ -886,3 +886,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	name = "lair (Inhumen)"
 	droning_sound = 'sound/music/area/decap.ogg'
 	first_time_text = "THE DEEP BOG"
+
+/area/rogue/under/town/kaizoku
+	name = "kaizoku isle"
+	icon_state = "town"
+	droning_sound = list('sound/ambience/kaizoku/Abyssanctum.ogg', 'sound/ambience/kaizoku/Abyssariad.ogg')
+	droning_sound_dusk = list('sound/ambience/kaizoku/kaizoku.ogg')
+	droning_sound_night = list('sound/ambience/kaizoku/Ephemeral.ogg', 'sound/ambience/kaizoku/Sanctumocean.ogg', 'sound/ambience/kaizoku/Defenestration.ogg')
+

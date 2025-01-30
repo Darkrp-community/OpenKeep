@@ -245,8 +245,8 @@
 	slot_flags = ITEM_SLOT_MASK
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo
-	name = "iron somen taisho"
-	icon_state = "ironmenpo"
+	name = "iron men-yoroi"
+	icon_state = "menyoroi"
 	desc = "Ever since the Onis has been dignified on Abyssariad fold, they have been exalted in war masks - and this became their default pattern for menpos ever since. "
 	max_integrity = 100
 	blocksound = PLATEHIT
@@ -265,7 +265,7 @@
 	sewrepair = FALSE
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/half
-	name = "iron half menpo"
+	name = "iron half mempo"
 	icon_state = "ironmempo"
 	max_integrity = 100
 	desc = "A cheaper menpo portraying the lower part of a Ogrun's head. It covers only the neck and the mouth."

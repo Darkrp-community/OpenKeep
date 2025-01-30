@@ -878,7 +878,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
-	gripsprite = TRUE
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/uchigatana/fire //Experimental weapon. Not to be found ingame.
@@ -976,10 +975,24 @@
 
 /obj/item/rogueweapon/sword/short/wakizashi
 	name = "wakizashi"
-	desc = "A shorter design of a Zatana designed to replace the tanto as a zamurai's sidearm. The sorii makes it cut deeper - but is not efficient at thrusting, and can't handle much stress."
-	icon_state = "wakizashi"
+	icon_state = "wakizashi1"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii)
+
+/obj/item/rogueweapon/sword/short/wakizashi/Initialize()
+	. = ..()
+	var/design = rand(1, 3) //This system will be standardized to other weapons.
+	switch(design)
+		if(1)
+			name = "wakizashi zatana"
+			desc = "A shorter zatana design with circular handguard and heartfelt-influenced pommel. The curveness of the blade makes it better at cutting than thrusting."
+		if(2)
+			name = "traditional wakizashi"
+			desc = "The traditional wakizashi used by abyssariads for centuries, with a lack of a pommel and a broader handguard for hand protection. The sorii of the blade improves the cutting power."
+		if(3)
+			name = "shirasaya wakizashi"
+			desc = "The cheaper adaptation of the Wakizashi with an complete lack of handguard and no tsuka ito covering the "
+	icon_state = "wakizashi[design]"
 
 /datum/intent/sword/cut/sorii //It is the reverse of the Shortsword.
 	clickcd = 10

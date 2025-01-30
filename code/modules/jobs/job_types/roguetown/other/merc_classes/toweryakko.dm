@@ -23,7 +23,7 @@
 	mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
 	belt = /obj/item/storage/belt/rogue/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
-	cloak = /obj/item/clothing/cloak/haramaki/odoshi/toweryakko
+	cloak = /obj/item/clothing/cloak/stabard/haramaki/odoshi/toweryakko
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
 	backr = /obj/item/rogueweapon/shield/abyssaltower
 	beltr = /obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
