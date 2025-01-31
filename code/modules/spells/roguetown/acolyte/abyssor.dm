@@ -37,18 +37,18 @@
 
 /obj/effect/proc_holder/spell/invoked/icebind/cast(list/targets, mob/living/user)
 	if(!targets.len || !targets[1])
-		to_chat(user, span_warning("<span class='userdanger'>Your spell fails to take hold, victimless.</span>"))
 		return FALSE
 	var/target = targets[1]
 
 	if(isliving(target))
 		var/mob/living/target_mob = target
-		if(!target_mob.has_status_effect(/datum/status_effect/abyssaltomb))
-			target_mob.apply_status_effect(/datum/status_effect/abyssaltomb)
-			target_mob.visible_message("<span class='warning'>[target_mob] is sealed within a crystalline abyssal tomb!</span>")
+		if(target_mob.buckled || target_mob.has_buckled_mobs())
+			to_chat(user, span_warning("<span class='userdanger'>Your target body is not freely loose to be encased in another dimension.</span>"))
+			return TRUE
 		else
-			to_chat(user, span_warning("<span class='userdanger'>Your target is already immobilized within a frigid tomb from the ocean!</span>"))
-		return TRUE
+			target_mob.apply_status_effect(/datum/status_effect/abyssaltomb)
+			to_chat(target_mob, span_warning("<span class='userdanger'>[target_mob] is encased with a abyssal pocket dimension leading to the seabed!</span>"))
+			return TRUE
 
 	if(isturf(target))
 		var/turf/open/T = target
@@ -83,8 +83,12 @@
 /datum/status_effect/abyssaltomb/on_remove()
 	if(tomb)
 		tomb.unbuckle_all_mobs() //Avoid Qdelling the mob
-		qdel(tomb)
-	tomb = null
+		if(QDELETED(tomb))
+			tomb = null
+			return ..()
+		else
+			tomb = null
+			qdel(tomb)
 	return ..()
 
 /obj/structure/abyssaltomb

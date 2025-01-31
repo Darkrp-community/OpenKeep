@@ -247,6 +247,29 @@
 	craftdiff = 4
 	sellprice = 50
 
+/datum/crafting_recipe/roguetown/weaving/shrinekeeper
+	name = "shrinekeeper robes"
+	result = list(/obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper)
+	reqs = list(/obj/item/natural/cloth = 4)
+	craftdiff = 4
+	sellprice = 25
+
+/datum/crafting_recipe/roguetown/weaving/shrinekabuto
+	name = "shrinekeeper kabuto"
+	result = list(/obj/item/clothing/head/roguetown/padded/shrinekeeper)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/reagent_containers/food/snacks/fish = 1)
+	craftdiff = 4
+	sellprice = 35
+
+/datum/crafting_recipe/roguetown/weaving/purificator
+	name = "purificators fistguard"
+	result = list(/obj/item/clothing/wrists/roguetown/shrinekeeper)
+	reqs = list(/obj/item/natural/cloth = 2,
+				/obj/item/reagent_containers/food/snacks/fish = 1)
+	craftdiff = 4
+	sellprice = 35
+
 /*========= SKILL LEVEL: 5 REQUIRED ==========*/
 
 /datum/crafting_recipe/roguetown/weaving/lordcloak

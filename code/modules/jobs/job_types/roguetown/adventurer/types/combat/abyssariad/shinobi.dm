@@ -39,7 +39,7 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE) //Shinobis produces bombs.
+	H.mind.adjust_skillrank(/datum/skill/craft/engineering, 3, TRUE) //Shinobis produces bombs.
 	if(prob(70))
 		beltl = /obj/item/clothing/gloves/roguetown/leather
 	else
