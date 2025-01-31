@@ -19,7 +19,7 @@
 	waves of their currently destroyed domain to provide information, supplies and messages in any \
 	battlefield. Just like the skies they branched from, they are vast and enduring - if not \
 	mysterious and deep, often appearing aloof and solitary to outsiders. Their society almost crumbled \
-	during The Bloody Apotheosis, but their bronze-age traditions lives on together with a deep \
+	during The Bloody Apotheosis, but their apotheosis-age traditions lives on together with a deep \
 	hatred for all things Graggar. They are refined souls that, when not belonging to military or clerical jobs, \
 	usually partakes in the society's mercantile division, usually as merchants, bankers and gem lapidary. \
 	Their specialized syrinxs makes them complex vocalizators for spionage and disguise."
