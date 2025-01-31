@@ -11,7 +11,7 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Ogrun"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/blacksmith
 	category_tags = list(CTAG_PILGRIM)

@@ -13,11 +13,11 @@
 	name = "Humen"
 	id = "human"
 	desc = "<b>Humen</b><br>\
-	Humenity, creation in Psydon's image. \
-	With their tenacity and overwhelming population, humens tend to outnumber the other species drastically. \
-	Humens come from a vast swathe of cultures and ethnicities all around Psydonia, most of which \
-	have historically been at odds with one another and other species. \
-	Humens tend to find fortune easier than the other species, and are so diverse that no other trait \
+	Humenity is the 'perfected race' of the weeping god. Noted for their \
+	tenacity and overwhelming population, humens tend to outnumber the other races drastically. \
+	Humens come from a vast swathe of cultures and ethnicities all around Grimoria, most of which \
+	have historically been at odds with one another and other races. \
+	Humens tend to find fortune easier than the other races, and are so diverse that no other racial trait \
 	are dominant in their species..."
 
 	skin_tone_wording = "Ancestry"
@@ -27,7 +27,7 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "wings" = "None")
 	use_skintones = 1
-	possible_ages = list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
@@ -49,7 +49,7 @@
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
 	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 2, "speed" = 0, "fortune" = 1)
-	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 1, "endurance" = 2, "speed" = 0, "fortune" = 1)
+	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 1, "constitution" = 0, "endurance" = 0, "speed" = 1, "fortune" = 1)
 	enflamed_icon = "widefire"
 
 	customizers = list(
@@ -67,17 +67,16 @@
 
 /datum/species/human/northern/get_skin_list()
 	return sortList(list(
-		"Ice Cap" = SKIN_COLOR_ICECAP, // - (Pale)
-		"Arctic" = SKIN_COLOR_ARCTIC, // - (White 1)
-		"Tundra" = SKIN_COLOR_TUNDRA, // - (White 2)
-		"Continental" = SKIN_COLOR_CONTINENTAL, // - (White 3)
-		"Temperate" = SKIN_COLOR_TEMPERATE, // - (White 4)
-		"Coastal" = SKIN_COLOR_COASTAL, // - (Latin)
-		"Subtropical" = SKIN_COLOR_SUBTROPICAL, // - (Mediterranean)
-		"Tropical Dry" = SKIN_COLOR_TROPICALDRY, // - (Mediterranean 2)
-		"Tropical Wet" = SKIN_COLOR_TROPICALWET, // - (Latin 2)
-		"Desert" = SKIN_COLOR_DESERT, //  - (Middle-east)
-		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS, // - (Black)
+		"Grenzelhoft" = SKIN_COLOR_GRENZELHOFT,
+		"Lowlander" = SKIN_COLOR_LOWLANDER,
+		"Mainlander" = SKIN_COLOR_MAINLANDER,
+		"Steppe" = SKIN_COLOR_STEPPE,
+		"Valorian" = SKIN_COLOR_VALORIAN,
+		"Heartfelt" = SKIN_COLOR_HEARTFELT,
+		"Islander" = SKIN_COLOR_ISLANDER,
+		"Southlander" = SKIN_COLOR_SOUTHLANDER,
+		"Zybantu" = SKIN_COLOR_ZYBANTU,
+		"Crimson Lands" = SKIN_COLOR_CRIMSONLANDS,
 	))
 
 /datum/species/human/northern/get_hairc_list()
@@ -129,3 +128,13 @@
 
 /datum/species/human/northern/random_surname()
 	return " [pick(world.file2list("strings/rt/names/human/humnorlast.txt"))]"
+
+/datum/species/human/northern/get_accent(mob/living/carbon/human/H)
+	switch(H.skin_tone)
+		if(SKIN_COLOR_GRENZELHOFT)
+			return strings("german_replacement.json", "german")
+		if(SKIN_COLOR_HEARTFELT)
+			return strings("steppes_replacement.json", "steppes")
+		if(SKIN_COLOR_MAINLANDER)
+			return strings("anglish_replacement.json", "anglish")
+	return null

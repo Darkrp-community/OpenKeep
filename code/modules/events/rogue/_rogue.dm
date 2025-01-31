@@ -38,8 +38,8 @@ GLOBAL_LIST_INIT(badomens, list())
 			used = "The Priest has perished! The Ten are weakened..."
 		if(OMEN_SKELETONSIEGE)
 			used = "Unwelcome visitors!"
-		if(OMEN_NOLORD)
-			used = "The Monarch is dead! We need a new ruler."
+/*		if(OMEN_NOLORD)
+			used = "The Monarch is dead! We need a new ruler."*/
 		if(OMEN_SUNSTEAL)
 			used = "The Sun, she is wounded!"
 		if(OMEN_ASCEND)

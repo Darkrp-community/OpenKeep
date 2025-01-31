@@ -12,9 +12,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/icon_override
 	var/icon_override_m
 	var/icon_override_f
-	var/list/possible_ages = ALL_AGES_LIST_WITH_CHILD
+	var/list/possible_ages = ALL_AGES_LIST
 	var/sexes = 1		// whether or not the race has sexual characteristics. at the moment this is only 0 for skeletons and shadows
 	var/patreon_req
+	var/minrace_pq = -999
 	var/max_age = 75
 	var/list/offset_features = list(OFFSET_ID = list(0,0), OFFSET_GLOVES = list(0,0),\
 	OFFSET_CLOAK = list(0,0), OFFSET_FACEMASK = list(0,0), OFFSET_HEAD = list(0,0), \
@@ -667,8 +668,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/handle_hair(mob/living/carbon/human/H, forced_colour)
 	var/list/offsets = H.dna.species.offset_features
-	if(H.age == AGE_CHILD)
-		offsets = H.dna.species.offset_features_child
 	H.remove_overlay(HAIR_LAYER)
 	H.remove_overlay(HAIREXTRA_LAYER)
 	var/obj/item/bodypart/head/HD = H.get_bodypart(BODY_ZONE_HEAD)
@@ -845,8 +844,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/handle_body(mob/living/carbon/human/H)
 	var/list/offsets = H.dna.species.offset_features
-	if(H.age == AGE_CHILD)
-		offsets = H.dna.species.offset_features_child
 	H.remove_overlay(BODY_LAYER)
 	H.remove_overlay(ABOVE_BODY_FRONT_LAYER)
 
@@ -1004,8 +1001,6 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 /datum/species/proc/handle_mutant_bodyparts(mob/living/carbon/human/H, forced_colour)
 	var/list/offsets = H.dna.species.offset_features
-	if(H.age == AGE_CHILD)
-		offsets = H.dna.species.offset_features_child
 	var/list/bodyparts_to_add = mutant_bodyparts.Copy()
 	var/list/relevent_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	var/list/standing	= list()
@@ -1203,24 +1198,14 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				else
 					accessory_overlay.color = forced_colour
 			if(S.offsetti)
-				if(H.age == AGE_CHILD)
-					if(H.gender == FEMALE)
-						if(OFFSET_FACE_F in offset_features_child)
-							accessory_overlay.pixel_x += offset_features_child[OFFSET_FACE_F][1]
-							accessory_overlay.pixel_y += offset_features_child[OFFSET_FACE_F][2]
-					else
-						if(OFFSET_FACE in offset_features_child)
-							accessory_overlay.pixel_x += offset_features_child[OFFSET_FACE][1]
-							accessory_overlay.pixel_y += offset_features_child[OFFSET_FACE][2]
+				if(H.gender == FEMALE)
+					if(OFFSET_FACE_F in offset_features)
+						accessory_overlay.pixel_x += offset_features[OFFSET_FACE_F][1]
+						accessory_overlay.pixel_y += offset_features[OFFSET_FACE_F][2]
 				else
-					if(H.gender == FEMALE)
-						if(OFFSET_FACE_F in offset_features)
-							accessory_overlay.pixel_x += offset_features[OFFSET_FACE_F][1]
-							accessory_overlay.pixel_y += offset_features[OFFSET_FACE_F][2]
-					else
-						if(OFFSET_FACE in offset_features)
-							accessory_overlay.pixel_x += offset_features[OFFSET_FACE][1]
-							accessory_overlay.pixel_y += offset_features[OFFSET_FACE][2]
+					if(OFFSET_FACE in offset_features)
+						accessory_overlay.pixel_x += offset_features[OFFSET_FACE][1]
+						accessory_overlay.pixel_y += offset_features[OFFSET_FACE][2]
 
 			standing += accessory_overlay
 
@@ -1234,24 +1219,15 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 				if(S.center)
 					inner_accessory_overlay = center_image(inner_accessory_overlay, S.dimension_x, S.dimension_y)
 				if(S.offsetti)
-					if(H.age == AGE_CHILD)
-						if(H.gender == FEMALE)
-							if(OFFSET_FACE_F in offset_features_child)
-								inner_accessory_overlay.pixel_x += offset_features_child[OFFSET_FACE_F][1]
-								inner_accessory_overlay.pixel_y += offset_features_child[OFFSET_FACE_F][2]
-						else
-							if(OFFSET_FACE in offset_features_child)
-								inner_accessory_overlay.pixel_x += offset_features_child[OFFSET_FACE][1]
-								inner_accessory_overlay.pixel_y += offset_features_child[OFFSET_FACE][2]
+				else
+					if(H.gender == FEMALE)
+						if(OFFSET_FACE_F in offset_features)
+							inner_accessory_overlay.pixel_x += offset_features[OFFSET_FACE_F][1]
+							inner_accessory_overlay.pixel_y += offset_features[OFFSET_FACE_F][2]
 					else
-						if(H.gender == FEMALE)
-							if(OFFSET_FACE_F in offset_features)
-								inner_accessory_overlay.pixel_x += offset_features[OFFSET_FACE_F][1]
-								inner_accessory_overlay.pixel_y += offset_features[OFFSET_FACE_F][2]
-						else
-							if(OFFSET_FACE in offset_features)
-								inner_accessory_overlay.pixel_x += offset_features[OFFSET_FACE][1]
-								inner_accessory_overlay.pixel_y += offset_features[OFFSET_FACE][2]
+						if(OFFSET_FACE in offset_features)
+							inner_accessory_overlay.pixel_x += offset_features[OFFSET_FACE][1]
+							inner_accessory_overlay.pixel_y += offset_features[OFFSET_FACE][2]
 				standing += inner_accessory_overlay
 
 		H.overlays_standing[layer] = standing.Copy()

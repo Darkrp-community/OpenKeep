@@ -96,12 +96,12 @@ GLOBAL_LIST_INIT(roguegamemodes, list(
 		if(ttime >= reb_end_time)
 			return TRUE
 
-	check_for_lord()
+//	check_for_lord()
 /*
 	if(ttime > 180 MINUTES) //3 hour cutoff
 		return TRUE*/
 
-/datum/game_mode/chaosmode/proc/check_for_lord(forced = FALSE)
+/*/datum/game_mode/chaosmode/proc/check_for_lord(forced = FALSE)
 	if(!forced && world.time < next_check_lord)
 		return
 	next_check_lord = world.time + 1 MINUTES
@@ -125,7 +125,7 @@ GLOBAL_LIST_INIT(roguegamemodes, list(
 			addomen(OMEN_NOLORD)
 		return FALSE
 	else
-		return TRUE
+		return TRUE*/
 
 /datum/game_mode/chaosmode/pre_setup()
 	if(allmig || roguefight)

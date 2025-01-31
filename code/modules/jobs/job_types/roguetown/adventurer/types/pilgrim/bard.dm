@@ -15,7 +15,11 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Half-Orc",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
 	category_tags = list(CTAG_PILGRIM)
@@ -53,24 +57,29 @@
 	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 	backpack_contents = list(/obj/item/flint)
+	if(H.dna?.species)
+		if(H.dna.species.id == "human")
+			backr = /obj/item/rogue/instrument/lute
+		if(H.dna.species.id == "dwarf")
+			backr = /obj/item/rogue/instrument/accord
+			H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'
+		if(H.dna.species.id == "elf")
+			backr = /obj/item/rogue/instrument/harp
+		if(H.dna.species.id == "tiefling")
+			backr = /obj/item/rogue/instrument/guitar
+		if(H.dna.species.id == "aasimar")
+			backr = /obj/item/rogue/instrument/drum // March along the drums of war.
+		if(H.dna.species.id == "abyssariad" || H.dna.species.name == "Undine")
+			backr = /obj/item/rogue/instrument/shamisen // Why do our shamisens sounds so rock-y? Consider it a 'Abyssariad Interation' of the japanese kind. Remember, not everything must be equal.
+			cloak = /obj/item/clothing/cloak/raincloak/guardiancloak/red
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead
+			head = /obj/item/clothing/head/roguetown/bardhat/bloodhunter
+			beltr = /obj/item/rogueweapon/knife/kaiken
+			shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
+			gloves = /obj/item/clothing/gloves/roguetown/fingerless/yugake
 
-	var/instruments = list(
-		"Harp" = /obj/item/rogue/instrument/harp,
-		"Lute" = /obj/item/rogue/instrument/lute,
-		"Accordion" = /obj/item/rogue/instrument/accord,
-		"Guitar" = /obj/item/rogue/instrument/guitar,
-		"Flute" = /obj/item/rogue/instrument/flute,
-		"Drum" = /obj/item/rogue/instrument/drum,
-		"Hurdy-Gurdy" = /obj/item/rogue/instrument/hurdygurdy,
-		"Viola" = /obj/item/rogue/instrument/viola)
-	var/instrument_choice = input("Choose your instrument.", "XYLIX") as anything in instruments
-	H.set_blindness(0)
-	if(instrument_choice && instruments[instrument_choice])
-		backr = instruments[instrument_choice]
-	else
-		backr = /obj/item/rogue/instrument/lute
-	if(H.dna?.species?.id == "dwarf")
-		H.cmode_music = 'sound/music/cmode/combat_dwarf.ogg'
+	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BARDIC_TRAINING, TRAIT_GENERIC)
 	H.change_stat("perception", 1)

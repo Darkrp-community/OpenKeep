@@ -16,7 +16,11 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Half-Orc",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "<br>Blood stained hands, do you even see it when they line your palms with golden treasures?  <br><br>\
 	You are a paid killer, redeemable only by fact that your loyalty can be bought,  \

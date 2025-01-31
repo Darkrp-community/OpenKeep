@@ -17,7 +17,7 @@
 		"Aasimar",
 		"Half-Orc"
 	)
-	allowed_ages = list(AGE_CHILD, AGE_ADULT, AGE_IMMORTAL)
+	allowed_ages = list(AGE_ADULT, AGE_IMMORTAL)
 	advclass_cat_rolls = list(CTAG_SERVANT = 20)
 
 /datum/job/roguetown/servant/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

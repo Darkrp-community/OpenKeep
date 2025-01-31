@@ -13,16 +13,15 @@
 	name = "Dark Elf"
 	id = "elf"
 	desc = "<b>Dark Elf</b><br>\
-	Conquered by Zizo, these elves hail from an underground expanse of \
-	newly-reborn empires. They lead harsh, matriarchal lives under the watchful guide of Zizo, \
-	the vast majority hoping to one day achieve such power and domination for themselves. \
-	Zizo's spawn, the last snow elves, integrated themselves- whether gleefully or resentfully- within the dark elf culture \
-	their grandmother had carved through conquest. \
-	To most in Psydonia, a dark elf is nothing more than a servant of Zizo waiting to betray for power, \
-	leading most dark elves to remain within their safe underground strongholds. Those who breach the surface \
-	rarely receive fair treatment. \
-	\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	Descending from a perversion of false immortality, Dark Elves are a unique and young species \
+	that have only recently found themselves a staple of daily life. \
+	They boast a proud, beauty-centric culture that compensates their cursed that ranges \
+	from skin tints to extreme deformations, with anyone falling behind their cripplingly high standards \
+	refered to as a Homonculus. While less graceful terms such as \
+	stitchface, zombie or corpsewalker are most commonly thrown out by the elder races \
+	Dark Elves tend to be extremely arrogant of others plights, with selfishness \
+	being seen as a massive boon in their societies, leading to storng rivalries among their enclaves. \
+	They are academic and usually well taught through are noted to suffer from their anatomy, which tends to be weak and brittle."
 
 	skin_tone_wording = "Parent House"
 
@@ -32,7 +31,7 @@
 	use_skintones = 1
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mem.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ft.dmi'
@@ -54,8 +53,8 @@
 	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,0), \
 	OFFSET_NECK_F = list(0,0), OFFSET_MOUTH_F = list(0,0), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	specstats = list("strength" = -1, "perception" = -1, "intelligence" = 1, "constitution" = 0, "endurance" = 2, "speed" = 2, "fortune" = 0)
-	specstats_f = list("strength" = 1, "perception" = -1, "intelligence" = 1, "constitution" = 1, "endurance" = 1, "speed" = 1, "fortune" = 0)
+	specstats = list("strength" = -1, "perception" = -1, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = 2, "fortune" = 0)
+	specstats_f = list("strength" = 0, "perception" = -1, "intelligence" = 1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -135,5 +134,5 @@
 /datum/species/elf/dark/random_surname()
 	return " [pick(world.file2list("strings/rt/names/elf/elfsnf.txt"))]"
 
-/datum/species/elf/dark/get_accent_list()
+/datum/species/elf/dark/get_accent(mob/living/carbon/human)
 	return strings("french_replacement.json", "french")

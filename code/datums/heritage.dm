@@ -242,7 +242,6 @@
 /datum/heritage/proc/SpeciesCalculation(datum/species/fledgling_species, datum/species/dad_species, datum/species/mom_species)
 	var/list/mixes = list(
 		"human+elf+" = /datum/species/human/halfelf,
-		"human+horc+" = /datum/species/halforc,
 		)
 	var/mix_text = ""
 	//Extremely straightforward basic parentage
@@ -260,8 +259,6 @@
 		mix_text += "dwarf+"
 	if(istype(dad_species, /datum/species/tieberian) || istype(mom_species, /datum/species/tieberian))
 		mix_text += "tiefling+"
-	if(istype(dad_species, /datum/species/rakshari	) || istype(mom_species, /datum/species/rakshari	))
-		mix_text += "rakshari+"
 
 	//If new hyrbids are made add the logic of their conception here.
 	if(istype(fledgling_species, mixes[mix_text]))
@@ -278,8 +275,6 @@
 		. += /datum/species/human/halfelf
 	if(istype(core_species, /datum/species/human/northern) || istype(core_species, /datum/species/dwarf/mountain))
 		. += /datum/species/dwarf/mountain
-	if(istype(core_species, /datum/species/human/northern) || istype(core_species, /datum/species/halforc))
-		. += /datum/species/halforc
 	if(istype(core_species, /datum/species/elf/dark) || istype(core_species, /datum/species/elf))
 		. += list(/datum/species/elf,/datum/species/elf/dark)
 

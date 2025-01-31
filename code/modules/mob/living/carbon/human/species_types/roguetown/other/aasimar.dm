@@ -15,14 +15,17 @@
 	name = "Aasimar"
 	id = "aasimar"
 	desc = "<b>Aasimar</b><br> \
-	Immortal offspring sculpted by one of the gods for use in servitude. \
-	Aasimar roaming alone on Psydonia often are those abandoned after serving their purpose. \
-	This species is often revered due to their celestial origin, but face great solitude \
-	as not many of their kind exist. Many an aasimar will detest the reverance in which they are greeted with,\
-	for their greatest failure or unuse that lead to their discarding is not subject for celebration. \
-	An aasimar may be crafted with any number of materials. \
-	Many resemble sculptures of stones or ceramic in skin, but their insides are just as mortal as \
-	any other. "
+	Immortal offspring created through unknown means by command of the goddess Astrata, \
+	used as soldiers to fight in the Apotheosis God-War. \
+	They quickly earned scorn and fear from the mortal races they fought alongside \
+	for their indifference to the suffering of their allies and unquestioning brutality. \
+	The aasimar who survived the war have been abandoned by Astrata, \
+	left to face an uncertain fate alongside the other races of Grimoria. \
+	It has been long since the Apotheosis and memories of their violent legacy have faded, \
+	but many still view these aasimar survivors as emotionally dull, stubborn, and simple-minded brutes... \
+	though this is not always the case. \
+	Aasimar are known for their incredible strength and resilience, and are a prized addition to any shield wall. \
+	However, they possess less capacity for independent thought due to their wartime construction."
 
 	skin_tone_wording = "Crafted With"
 	nutrition_mod = 2 // 200% higher hunger rate. Hungry, hungry aasimar
@@ -55,8 +58,8 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
-	specstats_f = list("strength" = 0, "perception" = 0, "intelligence" = 2, "constitution" = 1, "endurance" = 1, "speed" = -1, "fortune" = 0)
+	specstats = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
+	specstats_f = list("strength" = 1, "perception" = 0, "intelligence" = -2, "constitution" = 3, "endurance" = 1, "speed" = 0, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -169,5 +172,5 @@
 /datum/species/aasimar/random_surname()
 	return
 
-/datum/species/aasimar/get_accent_list()
+/datum/species/aasimar/get_accent(mob/living/carbon/human)
 	return strings("proper_replacement.json", "proper")

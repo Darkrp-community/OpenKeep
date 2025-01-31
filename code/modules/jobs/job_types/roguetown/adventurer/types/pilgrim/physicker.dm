@@ -14,7 +14,8 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc"
+		"Half-Orc",
+		"Changeling" //Abyssariad: Non-military racial specialization, so they are allowed to work on this role.
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/physicker
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)

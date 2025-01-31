@@ -60,9 +60,7 @@ SUBSYSTEM_DEF(familytree)
 		/datum/species/human/halfelf,
 		/datum/species/dwarf/mountain,
 		/datum/species/tieberian,
-		/datum/species/aasimar,
-		/datum/species/rakshari,
-		/datum/species/halforc
+		/datum/species/aasimar
 		)
 
 /datum/controller/subsystem/familytree/Initialize()
@@ -89,17 +87,10 @@ SUBSYSTEM_DEF(familytree)
 			AssignToHouse(H)
 
 		if(FAMILY_NEWLYWED)
-			if(H.age == AGE_CHILD)
-				AssignToHouse(H)
-				return
-			else
-				AssignNewlyWed(H)
+			AssignNewlyWed(H)
 
 		if(FAMILY_FULL)
 			if(H.virginity)
-				return
-			if(H.age == AGE_CHILD)
-				AssignToHouse(H)
 				return
 			AssignToFamily(H)
 
@@ -125,11 +116,8 @@ SUBSYSTEM_DEF(familytree)
 	//If no human and they are older than adult age.
 	if(!H)
 		return
-	//Akward way of assigning people as aunts and uncles to houses.
+	//Awkward way of assigning people as aunts and uncles to houses.
 	if(H.age > AGE_ADULT)
-		AssignAuntUncle(H)
-		return
-	if(H.age > AGE_CHILD)
 		AssignAuntUncle(H)
 		return
 	var/species = H.dna.species.type

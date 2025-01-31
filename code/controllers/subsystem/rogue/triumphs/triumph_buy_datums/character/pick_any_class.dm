@@ -39,7 +39,10 @@
 	"Tiefling",
 	"Dark Elf",
 	"Aasimar",
-	"Half-Orc"
+	"Changeling",
+	"Skylancer",
+	"Ogrun",
+	"Undine"
 	)
 	maximum_possible_slots = 0
 

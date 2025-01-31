@@ -43,8 +43,6 @@
 		item.forceMove(get_turf(src))
 		millable_contents -= item
 		var/wound_prob = 60
-		if(user.age == AGE_CHILD)
-			wound_prob -= 20
 		if(rotations_per_minute > 16 && prob(wound_prob))
 			visible_message(span_warning("[user] gets their arm stuck in [src]!"), span_warning("You get your arm caught in [src]"))
 			user.flash_fullscreen("redflash3")

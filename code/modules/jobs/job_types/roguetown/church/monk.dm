@@ -12,7 +12,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Vanderlin, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_TEMPLE_PATRONS
@@ -78,12 +82,12 @@
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 			H.cmode_music = 'sound/music/cmode/garrison/CombatForestGarrison.ogg'
 		if(/datum/patron/divine/abyssor)
-			head = /obj/item/clothing/head/roguetown/roguehood/random
-			neck = /obj/item/clothing/neck/roguetown/psycross/silver/abyssor
-			shoes = /obj/item/clothing/shoes/roguetown/boots
-			armor = /obj/item/clothing/suit/roguetown/shirt/robe/plain
-			H.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
-			H.mind?.adjust_skillrank(/datum/skill/labor/fishing, 1, TRUE)
+			head = /obj/item/clothing/head/roguetown/padded/shrinekeeper
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
+			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
 		if(/datum/patron/divine/ravox)
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/ravox

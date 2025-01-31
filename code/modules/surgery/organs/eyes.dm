@@ -425,3 +425,9 @@
 	eyes.update_accessory_colors()
 	if(eyes.owner)
 		eyes.owner.update_body_parts(TRUE)
+
+/obj/item/organ/eyes/rogue/tengu
+	name = "tengu eyes"
+	desc = ""
+	eye_icon_state = "eyes_closed"
+	icon_state = "eyes_closed"

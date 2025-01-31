@@ -11,19 +11,17 @@
 	name = "Tiefling"
 	id = "tiefling"
 	desc = "<b>Tiefling</b><br> \
-	Tieflings; also known as Infernal-Spawn, Hell-Bloods, Surface-Devils, and perhaps most humourously, thief-lings.\
-	Tieflings cannot reproduce with mortals, and thus are spawn of either devils, demons, or other tieflings. \
-	Their treatment ranges from shunning to distrust, depending on the region. Shopkeeps and merchants always keep a wary eye out when \
-	a tiefling passes by. The resentment feed into itself, leading to higher rates of tiefling ire and thievery against other species. \
-	Many tieflings resign to seeking a solitary and nomadic life, huddled in groups outside the watchful eyes of others. \
-	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side. \
-	Oddly positioned scales, hollow bones, and other varying oddities that may appear in a tiefling's biology \
-	make them considerably fragile. If to make matters worse, their hellish progenitors have left them a destiny of misfortune, \
-	though perhaps their immunity to fire opens new opportunities... \
-	A tiefling may develop any number of hellish features, a wide range of horns, potential hooves, odd spines and spikes, or scales. \
-	It is not uncommon for a tiefling to be generally unpleasant to look at in the eye of the commonfolk. \
-	\
-	THIS IS A DISCRIMINATED SPECIES. EXPECT A MORE DIFFICULT EXPERIENCE. PLAY AT YOUR OWN RISK."
+	Tieflings, also known as Infernal-Spawn, are a relatively new species in Grimoria\
+	Having shown up during the time of the Apotheosis War, \
+	descendants of mortals that willingly served and married Zizo Spawn in unholy union, \
+	they served as the chattel army under the forces of Zizo and Graggar. \
+	Due to their defeat and conversion, Tieflings have since been accepted, begrudgingly, as a proper Pantheon worshipping race. \
+	Their species has suffered vast tragedy throughout their short history, \
+	facing scrutiny, misjudgement and even genocide in the past. Wounding many tiefling psyche \
+	and leading to most seeking a solitary and nomadic life outside the watchful eyes of others. \
+	Tieflings can reproduce with mortals, but only produce more tieflings due to their strong Zizo taint, so no half-breeds exist. \
+	They also tend to be extremely perceptive and paranoid, as luck is rarely on their side \
+	and their unique anatomy makes them extremely susceptible to injury."
 
 	skin_tone_wording = "Progenitor"
 
@@ -33,7 +31,7 @@
 	use_skintones = 1
 	disliked_food = NONE
 	liked_food = NONE
-	possible_ages = list(AGE_CHILD, AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
+	possible_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/mm.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/fm.dmi'
@@ -54,7 +52,7 @@
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
 	specstats = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
-	specstats_f = list("strength" = 0, "perception" = 2, "intelligence" = 1, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = -1)
+	specstats_f = list("strength" = 0, "perception" = 3, "intelligence" = 2, "constitution" = -2, "endurance" = -1, "speed" = 1, "fortune" = -1)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -174,5 +172,5 @@
 /datum/species/tieberian/random_surname()
 	return " [pick(world.file2list("strings/rt/names/other/tieflast.txt"))]"
 
-/datum/species/tieberian/get_accent_list()
+/datum/species/tieberian/get_accent(mob/living/carbon/human)
 	return strings("spanish_replacement.json", "spanish")

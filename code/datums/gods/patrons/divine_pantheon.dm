@@ -69,10 +69,11 @@
 	sins = "Fear, Hubris, Forgetfulness"
 	boons = "Leeches will not latch onto you in dirty water."
 	added_traits = list(TRAIT_LEECHIMMUNE)
-	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
-	t1 = /obj/effect/proc_holder/spell/invoked/projectile/swordfish
-	t2 = /obj/effect/proc_holder/spell/self/summon_trident
-	t3 = /obj/effect/proc_holder/spell/invoked/ocean_embrace
+	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal/abyssal
+	t1 = /obj/effect/proc_holder/spell/invoked/projectile/purify
+	t2 = /obj/effect/proc_holder/spell/invoked/icebind
+	t3 = null
+	//	t3 = /obj/effect/proc_holder/spell/invoked/elemental //Not finished.
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
 		"THE OCEAN'S FURY IS ABYSSOR'S WILL!",

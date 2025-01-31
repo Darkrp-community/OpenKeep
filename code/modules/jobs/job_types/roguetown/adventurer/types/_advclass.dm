@@ -1,3 +1,4 @@
+
 /datum/advclass
 	var/name
 	var/outfit
@@ -12,7 +13,11 @@
 	"Tiefling",
 	"Dark Elf",
 	"Aasimar",
-	"Half-Orc"
+	"Half-Orc",
+	"Changeling",
+	"Skylancer",
+	"Ogrun",
+	"Undine"
 	)
 	var/list/allowed_patrons
 	var/list/allowed_ages

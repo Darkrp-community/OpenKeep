@@ -152,6 +152,10 @@
 					offhand_defense += (offhand.wdefense * 10)
 					if(istype(offhand, /obj/item/rogueweapon/shield))
 						force_shield = TRUE
+					if(istype(offhand, /obj/item/rogueweapon/knife/hunting/sai) && istype(mainhand, /obj/item/rogueweapon/knife/hunting/sai))
+						offhand_defense += (8 * 10) // Sai's wdefense x 2
+					else
+						offhand_defense += (offhand.wdefense * 10)
 			if(!force_shield)
 				if(mainhand_defense >= offhand_defense)
 					highest_defense += mainhand_defense

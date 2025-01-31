@@ -149,6 +149,13 @@
 	var/datum/team/prebels/RT = mind_datum.rev_team
 	var/shittime = world.time
 	playsound_local(src, 'sound/misc/rebel.ogg', 100, FALSE)
+	if(ishuman(src)) //Non-Burakumin Abyssariads cannot join peasant rebels. That would break their honor code. Burakumins can do it freely, as they have no honor.
+		var/mob/living/carbon/human/C = src
+		if((C.dna.species?.id == "abyssariad") && (!C.burakumin))
+			to_chat(src, "<span class='danger'>It would be a absolute DISHONOR to go against the Emperor's will.</span>")
+			to_chat(guy, "<span class='danger'>[src] cannot accept the offer.</span>")
+			RT.offers2join += "<span class='info'><B>[real_name]</B> <span class='red'>IS TOO LOYAL/span> [guy.real_name]: \"[offer]\"</span>"
+			return
 	var/garbaggio = alert(src, "[offer]","Rebellion", "Yes", "No")
 	if(world.time > shittime + 35 SECONDS)
 		to_chat(src,"<span class='danger'>Too late.</span>")

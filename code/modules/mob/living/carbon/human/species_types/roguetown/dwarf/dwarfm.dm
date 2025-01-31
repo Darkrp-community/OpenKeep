@@ -13,14 +13,13 @@
 	name = "Dwarf"
 	id = "dwarf"
 	desc = "<b>Dwarf</b><br>\
-	A proud and robust species of stunted folk, \
-	the dwarves are known for their pride in martial strength \
-	and their tenacity towards their ancient customs. \
-	A Dwarf, much like the rock that they carve their fortress out of \
-	is stubborn and ancient. They are revered craftsmen, sculptors, smiths, \
-	and miners. As an old saying goes, 'If you want it done right, lose 2 feet and grow a beard.' \
-	Despite their cultural praise, a long-standing fued remains between dwarves and elves \
-	stemming from old industrial practices. Dwarves hold a strong alliance with humenkind."
+	A stubborn and curious-minded race of stunted folk, \
+	the dwarves are known for inventing many mechanical contraptions.  \
+	Tradition and customs such as respect for Malum are pillars of their society, \
+	but is often also the cause of endless bickering and infighting over minute details. \
+	The metal clans originate from old fortresses and have developed distinct accents. \
+	The stone clans live in smaller groups, often underground, commonly employed as miners by other peoples, \
+	Dwarves are hearty, stout and prone to severe mood swings, but are not known for their speed or eyesight..."
 
 	skin_tone_wording = "Ore Attunement"
 
@@ -51,8 +50,8 @@
 	OFFSET_FACE_F = list(0,-5), OFFSET_BELT_F = list(0,-5), OFFSET_BACK_F = list(0,-5), \
 	OFFSET_NECK_F = list(0,-5), OFFSET_MOUTH_F = list(0,-5), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = -1, "fortune" = 0)
-	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = -1, "fortune" = 0)
+	specstats = list("strength" = 1, "perception" = -2, "intelligence" = 0, "constitution" = 3, "endurance" = 2, "speed" = -1, "fortune" = 0)
+	specstats_f = list("strength" = 1, "perception" = -2, "intelligence" = 1, "constitution" = 2, "endurance" = 2, "speed" = -1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	patreon_req = 0
 
@@ -78,17 +77,18 @@
 //		return list(SPAN_DWARF)
 	return message_language.spans
 
+
 /datum/species/dwarf/mountain/get_skin_list()
 	return sortList(list(
-		"Platinum" = SKIN_COLOR_PLATINUM, // - (White 1)
-		"Aurum" = SKIN_COLOR_AURUM, // - (White 2)
-		"Quicksilver" = SKIN_COLOR_QUICKSILVER, // - (White 3)
-		"Brass" = SKIN_COLOR_BRASS, // - (White 4)
-		"Iron" = SKIN_COLOR_IRON, // - (Tan)
-		"Malachite" = SKIN_COLOR_MALACHITE, // - (Middle-Eastern)
-		"Obsidian" = SKIN_COLOR_OBSIDIAN, // - (Black)
-		"Brimstone" = SKIN_COLOR_BRIMSTONE, // - (Black 2)
-		"Cerargyrite" =	SKIN_COLOR_CERARGYRITE, // - (Purple)
+		"Argent" = SKIN_COLOR_ARGENT,
+		"Aurum" = SKIN_COLOR_AURUM,
+		"Mercur" = SKIN_COLOR_MERCUR,
+		"Brass" = SKIN_COLOR_BRASS,
+		"Ferro" = SKIN_COLOR_FERRO,
+		"Phosphorite" = SKIN_COLOR_PHOSPHORITE,
+		"Obsidian" = SKIN_COLOR_OBSIDIAN,
+		"Pyrite" = SKIN_COLOR_PYRITE,
+		"Quartz" =	SKIN_COLOR_QUARTZ,
 	))
 
 /datum/species/dwarf/mountain/get_hairc_list()
@@ -143,7 +143,13 @@
 /datum/species/dwarf/mountain/random_surname()
 	return " [pick(world.file2list("strings/rt/names/dwarf/dwarmlast.txt"))]"
 
-
+/datum/species/dwarf/mountain/get_accent(mob/living/carbon/human/H)
+	switch(H.skin_tone)
+		if(SKIN_COLOR_GRENZDWARF)
+			return strings("grenzelhoft_replacement.json", "grenzelhoft")
+		else
+			return strings("dwarf_replacement.json", "dwarf")
+	return null
 
 /*------------------\
 | Poison Resistance |

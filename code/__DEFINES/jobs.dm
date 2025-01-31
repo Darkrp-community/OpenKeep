@@ -204,7 +204,6 @@
 #define JDO_CLERIC 13
 #define JDO_MONK 14
 #define JDO_GRAVETENDER 15
-#define JDO_CHURCHLING 15.1
 
 #define JDO_PURITAN 16
 #define JDO_SHEPHERD 17
@@ -225,7 +224,6 @@
 #define JDO_SERVANT 26
 
 #define JDO_INNKEEP 27
-#define JDO_INNKEEP_CHILD 27.5
 #define JDO_COOK 28
 
 #define JDO_BUTCHER 28.1
@@ -254,4 +252,6 @@
 #define JDO_MERCENARY 35
 
 #define JDO_VAGRANT 36
-#define JDO_ORPHAN 37
+
+#define JDO_NITEMAN 37.1
+#define JDO_NITEMAIDEN 37.2

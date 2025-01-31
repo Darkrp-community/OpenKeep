@@ -93,7 +93,8 @@ SUBSYSTEM_DEF(ticker)
 	var/gibbs = 0 // gibs been
 	var/snort = 0 // drugs snorted
 	var/beardshavers = 0 // beards shaven, includes  more than dwarves
-	// var/list/cuckers = list()
+	var/list/cuckers = list()
+	var/cums = 0
 
 	var/end_party = FALSE
 	var/last_lobby = 0
@@ -274,10 +275,10 @@ SUBSYSTEM_DEF(ticker)
 
 	if(("Monarch" in readied_jobs))
 		rulertype = "Monarch"
-	else
+/*	else
 		var/list/stuffy = list("Set a Ruler to 'high' in your class preferences to start the game!", "PLAY Ruler NOW!", "A Ruler is required to start.", "Pray for a Ruler.", "One day, there will be a Ruler.", "Just try playing Ruler.", "If you don't play Ruler, the game will never start.", "We need at least one Ruler to start the game.", "We're waiting for you to pick Ruler to start.", "Still no Ruler is readied..", "I'm going to lose my mind if we don't get a Ruler readied up.","No. The game will not start because there is no Ruler.","What's the point of Vanderlin without a Ruler?")
 		to_chat(world, "<span class='purple'>[pick(stuffy)]</span>")
-		return FALSE
+		return FALSE*/
 
 /*
 #ifdef DEPLOY_TEST
