@@ -195,18 +195,17 @@
 	reqs = list(/obj/item/alch/bone = 2, /obj/item/natural/cloth = 4)
 	result = /obj/item/clothing/suit/roguetown/armor/ceramic/light
 	category = CAT_NONE
-/*
+
 /datum/crafting_recipe/obsidian_club
 	name = "Obsidian Club"
 	time = 4 SECONDS
-	reqs = list(/obj/item/grown/log/tree/lumber = 1, /obj/item/natural/stone =  4, /obj/item/ash = 1)
+	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/stone =  4, /obj/item/ash = 1)
 	result = /obj/item/rogueweapon/mace/ararebo/obsidian
 	category = CAT_NONE
 
 /datum/crafting_recipe/obsidian_spear
 	name = "Obsidian Spear"
 	time = 4 SECONDS
-	reqs = list(/obj/item/grown/log/tree/lumber = 1, /obj/item/natural/cloth = 1, /obj/item/natural/stone =  2, /obj/item/ash = 1)
+	reqs = list(/obj/item/grown/log/tree/small = 1, /obj/item/natural/cloth = 1, /obj/item/natural/stone =  2, /obj/item/ash = 1)
 	result = /obj/item/rogueweapon/polearm/spear/stone/obsidian
 	category = CAT_NONE
-*/

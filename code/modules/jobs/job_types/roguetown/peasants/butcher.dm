@@ -72,8 +72,8 @@
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
-//		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
-//		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
 
 	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
 		to_chat(H, "<span class='warning'>Despite what some people believe, my role in society is respected, as my abyssal honor is not put in test in a daily basis.")

@@ -88,8 +88,8 @@
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
-//					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
-//					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
 					H.verbs |= /mob/proc/croak
 //				if(H.dna.species.id == "Abyssariad"||H.dna.species.name == "Undine") // Not finished yet because I can't test it now.
 //					if(H.patron == /datum/patron/divine/abyssor)
