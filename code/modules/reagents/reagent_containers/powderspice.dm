@@ -173,7 +173,7 @@
 	qdel(src)
 
 /obj/item/reagent_containers/powder/salt
-	name = "coder salt remove"
+	name = "salt"
 	desc = ""
 	gender = PLURAL
 	icon_state = "salt"
