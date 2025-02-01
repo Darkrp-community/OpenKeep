@@ -72,15 +72,8 @@ GLOBAL_LIST_INIT(apprentices_positions, list(
 	"Squire",
 	"Smithy Apprentice",
 	"Magician's Apprentice",
-	"Servant",
-	"Orphan"
+	"Servant"
 	))
-
-GLOBAL_LIST_INIT(youngfolk_positions, list(
-	"Innkeepers Son",
-	"Orphan",
-	"Churchling",
-))
 
 GLOBAL_LIST_INIT(allmig_positions, list(
 	"Adventurer",
@@ -117,11 +110,10 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions
 	sorting_order += GLOB.allmig_positions
-	sorting_order += GLOB.youngfolk_positions
 	return sorting_order
 
 GLOBAL_LIST_INIT(exp_jobsmap, list(
-	EXP_TYPE_TOWNER = list("titles" = peasant_positions | apprentices_positions | youngfolk_positions | serf_positions),
+	EXP_TYPE_TOWNER = list("titles" = peasant_positions | apprentices_positions | serf_positions),
 	EXP_TYPE_NOBLE = list("titles" = noble_positions),
 	EXP_TYPE_CHURCH = list("titles" = church_positions),
 	EXP_TYPE_GUARDS = list("titles" = garrison_positions),

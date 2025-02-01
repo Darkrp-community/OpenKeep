@@ -22,9 +22,6 @@
 		for(var/X in GLOB.apprentices_positions)
 			peopleiknow += X
 			peopleknowme += X
-		for(var/X in GLOB.youngfolk_positions)
-			peopleiknow += X
-			peopleknowme += X
 
 /datum/outfit/job/roguetown
 	uniform = null
