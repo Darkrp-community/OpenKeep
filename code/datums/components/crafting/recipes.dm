@@ -21,9 +21,10 @@
 	var/structurecraft = null
 	var/buildsame = FALSE //allows palisades to be built on top of each other just not the same dir
 	var/wallcraft = FALSE
-	var/craftdiff = 1
+	var/craftdiff = 1	//crafting diff, every diff removes 25% chance to craft
 	var/sellprice = 0
-	//crafting diff, every diff removes 25% chance to craft
+	var/req_imperial = FALSE
+	var/req_islander = FALSE
 /*
 /datum/crafting_recipe/example
 	name = ""
