@@ -1,12 +1,12 @@
-/datum/patron/psydon
-	name = "Psydon"
+/datum/patron/forgotten
+	name = "Forgotten God"
 	domain = "God of Humenity, Dreams and Creation"
-	desc = "Deceased, slain by Necra in His final moments. She ripped His body apart to create The Ten... but He's still out there somewhere, right?"
-	flaws = "Grudge-Holding, Judgemental, Self-Sacrificing"
+	desc = "Forgotten but not gone, the Great Hero has left his realm to battle the Forbidden in Hell."
+	flaws = "Secretive, Judgemental, Self-Sacrificing"
 	worshippers = "Grenzelhofters, Inquisitors, Heroes"
 	sins = "Apostasy, Demon Worship, Betraying thy Father"
-	boons = "None. Psydon is dead, His power divided."
-	associated_faith = /datum/faith/psydon
+	boons = "None. He is forgotten."
+	associated_faith = /datum/faith/forgotten
 	confess_lines = list(
 		"THERE IS ONLY ONE GOD!",
 		"THE SUCCESSORS HALT HIS RETURN!",

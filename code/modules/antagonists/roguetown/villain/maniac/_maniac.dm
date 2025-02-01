@@ -89,7 +89,7 @@ GLOBAL_VAR_INIT(maniac_highlander, 0) // THERE CAN ONLY BE ONE!
 	if(owner.current)
 		if(ishuman(owner.current))
 			var/mob/living/carbon/human/dreamer = owner.current
-			dreamer.set_patron(/datum/patron/inhumen/graggar_zizo)
+			dreamer.set_patron(/datum/patron/inhumen/zizo)
 			dreamer.cmode_music = 'sound/music/cmode/antag/combat_maniac.ogg'
 			owner.adjust_skillrank(/datum/skill/combat/knives, 6, TRUE)
 			owner.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)

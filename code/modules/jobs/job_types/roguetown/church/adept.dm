@@ -29,7 +29,7 @@
 /datum/outfit/job/roguetown/adept
 	name = "Adept"
 	jobtype = /datum/job/roguetown/adept
-	allowed_patrons = list(/datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/forgotten)
 
 /datum/outfit/job/roguetown/adept // Base outfit for Adepts, before loadouts
 	belt = /obj/item/storage/belt/rogue/leather
@@ -136,7 +136,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/psydon)
+		H.set_patron(/datum/patron/forgotten)
 		H.verbs |= /mob/living/carbon/human/proc/torture_victim
 		H.verbs |= /mob/living/carbon/human/proc/faith_test
 		if(!H.has_language(/datum/language/oldpsydonic))

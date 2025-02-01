@@ -6,7 +6,7 @@
 /datum/patron/divine/astrata
 	name = "Astrata"
 	domain = "Goddess of Order, the Sun Queen"
-	desc = "Crafted from the head of Psydon, twin of Noc. She gifted mankind the Sun, protecting Psydonia from all forces which may seek it harm: from both outside and within."
+	desc = "The Firstborn of the Forgotten God, twin of Noc, gifted mankind the Sun."
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
@@ -25,10 +25,10 @@
 /datum/patron/divine/noc
 	name = "Noc"
 	domain = "God of Knowledge, the Moon Prince"
-	desc = "Crafted from the helmet of Psydon, twin of Astrata. He gifted mankind divine wisdom."
-	flaws = "Close-minded, Vindictive, Haughty"
+	desc = "The Firstborn of the Forgotten God, twin of Astrata, gifted mankind divine wisdom."
+	flaws = "Resentful, Vindictive, Haughty"
 	worshippers = "Magic Practitioners, Scholars, Scribes"
-	sins = "Ignorance, Burning Books, Rashness"
+	sins = "Ignorance, Burning Books, Indulgence of Lust"
 	boons = "You learn and teach apprentices slightly better."
 	added_traits = list(TRAIT_TUTELAGE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
@@ -43,8 +43,8 @@
 
 /datum/patron/divine/dendor
 	name = "Dendor"
-	domain = "God of Nature and Beasts"
-	desc = "Crafted from the bones of Psydon as the embodiment of the natural world. Driven mad with time."
+	domain = "Force of Nature and Beasts"
+	desc = "The embodiment of the unchanged natural world. Driven mad with time."
 	flaws = "Madness, Rebelliousness, Disorderliness"
 	worshippers = "Druids, Beasts, Madmen"
 	sins = "Deforestation, Overhunting, Disrespecting Nature"
@@ -62,11 +62,11 @@
 
 /datum/patron/divine/abyssor
 	name = "Abyssor"
-	domain = "God of Seas and Storms"
-	desc = "Crafted from the blood of Psydon as sovereign of the waters. Enraged by ignorance of Him from followers of The Ten."
+	domain = "Force of Seas and Storms"
+	desc = "The World-Whale, the sovereign of the seas and storms."
 	flaws= "Reckless, Stubborn, Destructive"
 	worshippers = "Sailors of the Sea and Sky, Horrid Sea-Creachers, Fog Islanders"
-	sins = "Fear, Hubris, Forgetfulness"
+	sins = "Fear, Hubris, Trying to Tame the Seas"
 	boons = "Leeches will not latch onto you in dirty water."
 	added_traits = list(TRAIT_LEECHIMMUNE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal/abyssal
@@ -82,11 +82,11 @@
 
 /datum/patron/divine/necra
 	name = "Necra"
-	domain = "Mother Goddess of Death and Decay"
-	desc = "The Veiled Lady, once close partner to Psydon. She created the Nine others from his corpse, guiding them from the Underworld."
-	flaws = "Unchanging, Apathetic, Easy to Bore"
-	worshippers = "Orderlies, Gravetenders, Mourners"
-	sins = "Heretical Magic, Untimely Death, Disturbance of Rest"
+	domain = "Force of Death and Decay"
+	desc = "The Undermaiden, also known as the Veiled Lady. A feared but respected Force and keeper of the dead."
+	flaws = "Unchanging, Apathetic, Strict"
+	worshippers = "Dark Elves, Gravekeepers, Mourners"
+	sins = "Undeath"
 	boons = "You may see the presence of a soul in a body."
 	added_traits = list(TRAIT_SOUL_EXAMINE)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal
@@ -101,8 +101,8 @@
 
 /datum/patron/divine/ravox
 	name = "Ravox"
-	domain = "God of Warfare, Justice, and Bravery"
-	desc = "Crafted from the the blade of Psydon, a champion of all who seek righteousness for themselves and others."
+	domain = "Saint of Warfare, Struggle, and Chivalry"
+	desc = "The blade of the Pantheon, a patron of all who struggle in warfare."
 	flaws = "Carelessness, Aggression, Pride"
 	worshippers = "Warriors, Sellswords, Guardsmen"
 	sins = "Cowardice, Cruelty, Stagnation"
@@ -118,10 +118,10 @@
 
 /datum/patron/divine/xylix
 	name = "Xylix"
-	domain = "Diety of Trickery, Freedom, and Inspiration"
-	desc = "Crafted from the silver tongue of Psydon. Xylix is a force of change and deceit, yet allows little known of their gender let alone presence."
-	flaws = "Petulance, Deception, Gambling-Prone"
-	worshippers = "Cheats, Performers, The Hopeless"
+	domain = "Saint of Trickery, Freedom, and Inspiration"
+	desc = "Some say he does not exist, but regardless he shadows the Pantheon."
+	flaws = "Petulance, Deception, Irreverence"
+	worshippers = "Cheats, Artists, the Hopeless"
 	sins = "Boredom, Predictability, Routine"
 	boons = "You can rig different forms of gambling in your favor."
 	added_traits = list(TRAIT_BLACKLEG)
@@ -142,10 +142,10 @@
 
 /datum/patron/divine/pestra
 	name = "Pestra"
-	domain = "Goddess of Disease, Alchemy, and Medicine"
-	desc = "Crafted from Psydon's intestines left behind. She slithered out, bringing forth the cycle of life and decay."
+	domain = "Saint of Disease, Alchemy, and Prophecy"
+	desc = "The finest alchemist to ever live, made saint by her own brew."
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
-	worshippers = "The Ill and Infirm, Alchemists, Physicians"
+	worshippers = "The Ill and Infirm, Alchemists, Necromancers"
 	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
 	boons = "You may consume rotten food without being sick."
 	added_traits = list(TRAIT_ROT_EATER)
@@ -161,10 +161,10 @@
 
 /datum/patron/divine/malum
 	name = "Malum"
-	domain = "God of Toil, Innovation, and Creation"
-	desc = "Crafted from the hands of Psydon. He would later use his own to construct wonderous inventions."
+	domain = "Saint of Toil, Value, and Craft"
+	desc = "Father of the dwarves, master of crafting and industry."
 	flaws = "Obsessive, Exacting, Overbearing"
-	worshippers = "Smiths, Miners, Sculptors"
+	worshippers = "Smiths, Miners, Artisans"
 	sins = "Cheating, Shoddy Work, Suicide"
 	boons = "You recover more energy when sleeping."
 	added_traits = list(TRAIT_BETTER_SLEEP)
@@ -180,11 +180,11 @@
 
 /datum/patron/divine/eora
 	name = "Eora"
-	domain = "Goddess of Love, Family, and Art"
-	desc = "Crafted from the heart of Psydon, a spreader of love and beauty, and strengthener of bonds."
+	domain = "Saint of Love, Life, and Beauty"
+	desc = "A Saint who sees beauty everywhere and has not a shred of hate in her heart."
 	flaws= "Naivete, Impulsiveness, Ignorance"
-	worshippers = "Mothers, Artists, Married Couples"
-	sins = "Sadism, Abandonment, Ruining Beauty"
+	worshippers = "Lovers, Nite-workers, Doting Grandparents"
+	sins = "Sadism, Celibacy, Ruining Beauty"
 	boons = "You can understand others' needs better."
 	added_traits = list(TRAIT_EXTEROCEPTION)
 	t0 = /obj/effect/proc_holder/spell/invoked/lesser_heal

@@ -36,7 +36,7 @@
 /datum/outfit/job/roguetown/inquisitor
 	name = "Inquisitor"
 	jobtype = /datum/job/roguetown/inquisitor
-	allowed_patrons = list(/datum/patron/psydon)
+	allowed_patrons = list(/datum/patron/forgotten)
 
 /datum/outfit/job/roguetown/inquisitor/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -89,7 +89,7 @@
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/psydon)
+		H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
@@ -283,9 +283,9 @@
 					if("Godless")
 						held_confession.bad_type = "A DAMNED ANTI-THEIST"
 						held_confession.antag = "worshiper of nothing"
-					if("Baotha")
+/*					if("Baotha")
 						held_confession.bad_type = "A FOLLOWER OF THE REMORSELESS RUINER"
-						held_confession.antag = "worshiper of " + antag_type
+						held_confession.antag = "worshiper of " + antag_type*/
 					if("Peasant Rebel")
 						return // Inquisitors don't care about peasant revolts targeting the King
 					else

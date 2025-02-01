@@ -65,7 +65,7 @@
 /obj/item/clothing/head/peaceflower/attack_hand(mob/user)
 	if (!peace_check(user))
 		return ..()
-
+/*
 //Putting this here for now until we have a better place. Ook wants this to inject drugs eventually. I guess this is decent for now.
 /obj/item/clothing/head/corruptflower
 	name = "baothan bud"
@@ -113,7 +113,7 @@
 /obj/item/clothing/head/corruptflower/MouseDrop(atom/over_object)
 	if (!cursed_check(usr))
 		return ..()
-
+*/
 /obj/effect/proc_holder/spell/invoked/bud
 	name = "Eoran Bloom"
 	desc = ""

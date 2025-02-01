@@ -123,7 +123,7 @@ GLOBAL_LIST_EMPTY(vampire_objects)
 	eyes = new /obj/item/organ/eyes/night_vision/zombie
 	eyes.Insert(owner.current)
 	H.equipOutfit(/datum/outfit/job/roguetown/vamplord)
-	H.set_patron(/datum/patron/psydon) //Servant forever of he who is forgotten.
+	H.set_patron(/datum/patron/forgotten) //Servant forever of he who is forgotten.
 
 	return TRUE
 
