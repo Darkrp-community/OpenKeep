@@ -18,8 +18,8 @@
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji
 	category_tags = list(CTAG_ADVENTURER)
-	maximum_possible_slots = 2
-	pickprob = 100
+	maximum_possible_slots = 0
+	pickprob = 0 //Temporary while spells are broken.
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji
 	allowed_patrons = list(/datum/patron/divine/abyssor)
@@ -73,7 +73,7 @@
 		H.change_stat("endurance", -1)
 		H.change_stat("speed", -2)
 		//placeholder spells.
-		/* Commented out because these spells are ass wizard spells.
+		/* Commented out because these spells are legacy /tg/ wizard spells.
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fireball) //They are intended to have their own powers. I will make that later in the future with the help of another coder.
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/lightningbolt)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/projectile/fetch)
