@@ -969,7 +969,7 @@
 
 /obj/item/rogueweapon/sword/short/jian
 	name = "short steel jian"
-	desc = "A simple, shortened version of the double-edged Jian made in steel. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+	desc = "A simple, shortened version of the double-edged Jian made of steel. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "shortjian1"
 
