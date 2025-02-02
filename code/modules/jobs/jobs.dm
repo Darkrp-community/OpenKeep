@@ -35,6 +35,13 @@ GLOBAL_LIST_INIT(church_positions, list(
 	"Adept"
 	))
 
+GLOBAL_LIST_INIT(rogue_positions, list(
+	"Nitemaster",
+	"Nitemaiden",
+	"Rogue",
+	"Beggar"
+	))
+
 GLOBAL_LIST_INIT(serf_positions, list(
 	"Innkeep",
 	"Armorer",
@@ -42,7 +49,6 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	"Tailor",
 	"Alchemist",
 	"Artificier",
-	"Matron",
 	"Physicker",
 	"Scribe",
 	))
@@ -62,7 +68,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	"Mercenary",
 	"Bard",
 	"Prisoner",
-	"Beggar",
 	"Adventurer",
 	"Pilgrim",
 	"Bandit",
@@ -106,6 +111,7 @@ GLOBAL_LIST_EMPTY(job_assignment_order)
 	sorting_order += GLOB.noble_positions
 	sorting_order += GLOB.garrison_positions
 	sorting_order += GLOB.church_positions
+	sorting_order += GLOB.rogue_positions
 	sorting_order += GLOB.serf_positions
 	sorting_order += GLOB.peasant_positions
 	sorting_order += GLOB.apprentices_positions

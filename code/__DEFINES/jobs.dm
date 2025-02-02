@@ -133,9 +133,8 @@
 #define MASON		(1<<3)
 #define TAILOR		(1<<4)
 #define ARTIFICER	(1<<5)
-#define MATRON 		(1<<6)
-#define PHYSICKER	(1<<7)
-#define SCRIBE		(1<<8)
+#define PHYSICKER	(1<<6)
+#define SCRIBE		(1<<7)
 
 #define PEASANTS		(1<<4)
 
@@ -162,17 +161,18 @@
 #define SERVANT		(1<<2)
 #define PRINCE		(1<<3)
 
-#define YOUNGFOLK           (1<<6)
-#define INNKEEPCHILD    (1<<1)
-#define CHURCHLING      (1<<2)
-#define ORPHAN		    (1<<3)
-
 #define JCOLOR_NOBLE "#9c40bf"
 #define JCOLOR_MERCHANT "#c2b449"
 #define JCOLOR_SOLDIER "#b64949"
 #define JCOLOR_SERF "#669968"
 #define JCOLOR_PEASANT "#936d6c"
 
+#define ROGUES_GUILD		(1<<6)
+
+#define NITEMASTER			(1<<0)
+#define NITEMAIDEN			(1<<1)
+#define ROGUE				(1<<2)
+#define BEGGAR				(1<<3)
 
 // job display orders //
 
@@ -251,7 +251,7 @@
 
 #define JDO_MERCENARY 35
 
-#define JDO_VAGRANT 36
-
-#define JDO_NITEMAN 37.1
-#define JDO_NITEMAIDEN 37.2
+#define JDO_NITEMASTER 36
+#define JDO_NITEMAIDEN 36.1
+#define JDO_ROGUE 36.2
+#define JDO_BEGGAR 36.3

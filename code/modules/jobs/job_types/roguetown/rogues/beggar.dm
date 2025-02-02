@@ -1,8 +1,7 @@
-
 /datum/job/roguetown/vagrant
 	title = "Beggar"
 	flag = APPRENTICE
-	department_flag = PEASANTS
+	department_flag = ROGUES_GUILD
 	faction = "Station"
 	total_positions = 15
 	spawn_positions = 15
@@ -15,8 +14,6 @@
 		"Tiefling",
 		"Dark Elf",
 		"Aasimar",
-		"Half-Orc",
-		"Rakshari",
 		"Changeling",
 		"Skylancer",
 		"Ogrun",
@@ -27,7 +24,7 @@
 	banned_leprosy = FALSE
 
 	tutorial = "The stench of your piss-laden clothes dont bug you anymore, the glances of disgust and loathing others give you is just a friendly greeting; the only reason you've not been killed already is because volfs are known to be repelled by decaying flesh. You're going to be a solemn reminder of what happens when something unwanted is born into this world."
-	display_order = JDO_VAGRANT
+	display_order = JDO_BEGGAR
 	show_in_credits = FALSE
 	min_pq = -100
 	can_random = FALSE

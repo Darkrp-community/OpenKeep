@@ -276,7 +276,7 @@ GLOBAL_LIST_EMPTY(roundstart_court_agents)
 	if(isnull(victim) || !Adjacent(user))
 		return
 
-	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "Monarch"
+	var/list/possible_positions = GLOB.noble_positions + GLOB.garrison_positions + GLOB.church_positions + GLOB.rogue_positions + GLOB.serf_positions + GLOB.peasant_positions + GLOB.apprentices_positions + GLOB.allmig_positions - "Monarch"
 	var/new_pos = input(user, "Select their new position", src, null) as anything in possible_positions
 
 	if(isnull(new_pos) || !Adjacent(user))
