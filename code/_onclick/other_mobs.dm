@@ -99,12 +99,12 @@
 		if(ishuman(src) && ishuman(user))
 			var/mob/living/carbon/human/target = src
 			var/datum/job/job = SSjob.GetJob(target.job)
-			if(length(user.mind?.apprentices) >= user.mind?.max_apprentices)
+/*			if(length(user.mind?.apprentices) >= user.mind?.max_apprentices)
 				return
 			if(job?.type == /datum/job/roguetown/vagrant && target.mind && !target.mind.apprentice)
 				to_chat(user, span_notice("You offer apprenticeship to [target]."))
 				user.mind?.make_apprentice(target)
-				return
+				return*/
 
 	if(user.cmode)
 		if(user.rmb_intent)
