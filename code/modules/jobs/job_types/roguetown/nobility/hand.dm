@@ -126,7 +126,7 @@
 
 //Tutor start. Trades combat skills for more knowledge and skills - for older hands, hands that don't do combat - people who wanna play old advisors.
 /datum/outfit/job/roguetown/hand/tutor/pre_equip(mob/living/carbon/human/H)
-	head = /obj/item/clothing/head/roguetown/courtierhat
+	head = /obj/item/clothing/head/roguetown/fashionablehat
 	mask = /obj/item/clothing/mask/rogue/spectacles/golden
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
