@@ -857,7 +857,7 @@
 				current.add_stress(/datum/stressevent/apprentice_making_me_proud)
 	if(sleep_adv.add_sleep_experience(skill, amt, silent))
 		return TRUE
-
+/*
 /datum/mind/proc/make_apprentice(mob/living/youngling)
 	if(youngling?.mind.apprentice)
 		return
@@ -886,3 +886,4 @@
 		title = apprentice_name
 	youngling.mind.our_apprentice_name = "[current.real_name]'s [title]"
 	to_chat(current, span_notice("[youngling.real_name] has become your apprentice."))
+*/

@@ -1559,7 +1559,7 @@ Slots: [job.spawn_positions]</span>
 					log_character("[parent] changed their characters name to [new_name].")
 
 				if("age")
-					var/new_age = input(user, "Choose your character's age (Youngling-[pref_species.max_age])", "Yils Dead") as null|anything in pref_species.possible_ages
+					var/new_age = input(user, "Choose your character's age (Adult-[pref_species.max_age])", "Yils Dead") as null|anything in pref_species.possible_ages
 					if(new_age)
 						age = new_age
 						var/list/hairs
