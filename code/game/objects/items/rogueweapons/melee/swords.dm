@@ -985,7 +985,7 @@
 			desc = "A simple, shortened version of the double-edged Jian in steel. With a thicker pommel and stretched guard, it becomes more proper as sideweapons during sieges for overhead attacks."
 		if(3)
 			name = "duelist short jian"
-			desc = "A simple, shortened version of the double-edged with hand protection that resembles one side of the firelance apparatus. Usually used for training."
+			desc = "A simple, shortened version of the double-edged with hand protection that resembles one side of the fire lance apparatus. Usually used for training."
 	icon_state = "shortjian[design]"
 
 /obj/item/rogueweapon/sword/short/wakizashi
