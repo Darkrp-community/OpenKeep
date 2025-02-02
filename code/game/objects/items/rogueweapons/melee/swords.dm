@@ -1035,9 +1035,24 @@
 
 /obj/item/rogueweapon/sword/short/jian
 	name = "short steel jian"
-	desc = "A simple, shortened version of the double-edged Jian. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+	desc = "A simple, shortened version of the double-edged Jian made of steel. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	icon_state = "shortjian"
+
+/obj/item/rogueweapon/sword/short/jian/Initialize()
+	. = ..()
+	var/design = rand(1, 3) //This system will be standardized to other weapons.
+	switch(design)
+		if(1)
+			name = "conscript short jian"
+			desc = "A simple, shortened version of the double-edged Jian in steel. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+		if(2)
+			name = "frontierman short jian"
+			desc = "A simple, shortened version of the double-edged Jian in steel. With a thicker pommel and stretched guard, it becomes more proper as side weapons during sieges for overhead attacks."
+		if(3)
+			name = "duelist short jian"
+			desc = "A simple, shortened version of the double-edged with hand protection that resembles one side of the fire lance apparatus. Usually used for training."
+	icon_state = "shortjian[design]"
 
 /obj/item/rogueweapon/sword/short/wakizashi
 	name = "wakizashi"
@@ -1057,7 +1072,7 @@
 			desc = "The traditional wakizashi used by abyssariads for centuries, with a lack of a pommel and a broader handguard for hand protection. The sorii of the blade improves the cutting power."
 		if(3)
 			name = "shirasaya wakizashi"
-			desc = "The cheaper adaptation of the Wakizashi with an complete lack of handguard and no tsuka ito covering the "
+			desc = "The cheaper adaptation of the Wakizashi with an complete lack of handguard and no tsuka ito protecting the hand."
 	icon_state = "wakizashi[design]"
 
 /datum/intent/sword/cut/sorii //It is the reverse of the Shortsword.
@@ -1082,8 +1097,8 @@
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/dragonslayer //It's a sword, yes. It will be used as a sword? My dudes we moving that one like warhammers at this point. So it's blunt at this point.
-	name = "dragonslayer eclipse sword"
-	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, they use a heap of raw iron. These are not crafted for fnesse, but for raw carnage in steel to obliterate Dragon's almost impenetrable skin."
+	name = "eclipse sword"
+	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, it is a heap of raw iron made to penetrate dragon skin."
 	gripped_intents = list(/datum/intent/dragonslayer/smash, /datum/intent/polearm/chop) //This is practically a mace... that can chop off heads since it's sharp.
 	icon_state = "eclipse_sword"
 	resistance_flags = FIRE_PROOF

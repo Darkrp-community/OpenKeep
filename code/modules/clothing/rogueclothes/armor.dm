@@ -1275,7 +1275,7 @@
 	color = RANDOM_NOBLE_DYES
 	..()
 
-/obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/AdjustClothes(mob/user)
+/obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/AdjustClothes(mob/user)
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED

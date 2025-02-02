@@ -25,7 +25,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 	cloak = /obj/item/clothing/cloak/stabard/haramaki/odoshi/toweryakko
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
-	backr = /obj/item/rogueweapon/shield/abyssaltower
+	backr = /obj/item/rogueweapon/shield/tower/abyssaltower
 	beltr = /obj/item/rogueweapon/sword/scimitar/falchion/yuntoudao
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami

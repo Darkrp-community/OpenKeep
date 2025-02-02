@@ -11,6 +11,8 @@
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/marauder
 	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 6
+	pickprob = 100
 	tutorial = "Ever since Grenzelhoft invasions on Fog Islands, the Undine Tribes became allies of many Abyssariad clans and guardians. Even if untrue for the entire government itself, Undine Marauders take part of Abyssariad expeditions as ''allies'' and formidable annihilators of Humens and Goblins alike."
 
 /datum/outfit/job/roguetown/adventurer/marauder/pre_equip(mob/living/carbon/human/H)

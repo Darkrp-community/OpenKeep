@@ -498,7 +498,8 @@
 
 /obj/structure/flora/roguegrass/swampweed/Initialize()
 	if(prob(88))
-		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/swampweed = 1))
+		bushtype3 = pickweight(list(/obj/item/reagent_containers/food/snacks/produce/swampweed = 1,
+									/obj/item/reagent_containers/food/snacks/fogdart = 1))
 	loot_replenish3()
 	pixel_x += rand(-3,3)
 	return ..()

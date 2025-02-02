@@ -63,6 +63,13 @@
 /datum/species/elf/undine/check_roundstart_eligible()
 	return TRUE
 
+/datum/species/elf/undine/after_creation(mob/living/carbon/C)
+	..()
+	if(C.has_language(/datum/language/elvish))
+		C.remove_language(/datum/language/elvish)
+	C.grant_language(/datum/language/abyssal)
+	to_chat(C, "<span class='info'>I can speak Abyssal with ,a before my speech.</span>")
+
 /datum/species/elf/undine/get_span_language(datum/language/message_language)
 	if(!message_language)
 		return

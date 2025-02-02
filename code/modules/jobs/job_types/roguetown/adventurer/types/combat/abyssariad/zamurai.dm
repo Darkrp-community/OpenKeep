@@ -14,7 +14,7 @@
 	"Ogrun")
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai
 	maximum_possible_slots = 1
-	pickprob = 50
+	pickprob = 100
 	tutorial = "A lower-ranking zamurai serving the warrior caste that became adrift during a expedition, \
 	keeping their trusty steed. They are expected to uphold their oficial duties and following the strict \
 	martial code of the Abyssal Tide, at least on paper."
@@ -27,6 +27,7 @@
 	return ..()
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/zamurai/pre_equip(mob/living/carbon/human/H)
+	..()
 	pants = /obj/item/clothing/under/roguetown/trou/tobi/random //Fully intended to give them Haidate Tatami, but the armor is strong enough already.
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/suneate
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal //kote already protects the hands.

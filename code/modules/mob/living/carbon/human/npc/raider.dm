@@ -178,13 +178,13 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 	switch(loadout)
 		if(1)
 			r_hand = /obj/item/rogueweapon/sword/uchigatana
-			l_hand = /obj/item/rogueweapon/shield/abyssaltower
+			l_hand = /obj/item/rogueweapon/shield/tower/abyssaltower
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/mirror
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/cursed
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random
 		if(2)
 			r_hand = /obj/item/rogueweapon/mace/steel/ararebo
-			l_hand = /obj/item/rogueweapon/shield/abyssaltower
+			l_hand = /obj/item/rogueweapon/shield/tower/abyssaltower
 			head = /obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto/cursed
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai
@@ -262,7 +262,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 		if(3)
 			r_hand = /obj/item/rogueweapon/mace/steel/ararebo/dustcurse
-			l_hand = /obj/item/rogueweapon/shield/abyssaltower/dustcurse
+			l_hand = /obj/item/rogueweapon/shield/tower/abyssaltower/dustcurse
 			armor = /obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi
 			head = /obj/item/clothing/head/roguetown/helmet/visored/zunari/cursed
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai
