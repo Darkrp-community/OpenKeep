@@ -161,18 +161,18 @@
 #define SERVANT		(1<<2)
 #define PRINCE		(1<<3)
 
-#define JCOLOR_NOBLE "#9c40bf"
-#define JCOLOR_MERCHANT "#c2b449"
-#define JCOLOR_SOLDIER "#b64949"
-#define JCOLOR_SERF "#669968"
-#define JCOLOR_PEASANT "#936d6c"
-
 #define ROGUES_GUILD		(1<<6)
 
 #define NITEMASTER			(1<<0)
 #define NITEMAIDEN			(1<<1)
 #define ROGUE				(1<<2)
 #define BEGGAR				(1<<3)
+
+#define JCOLOR_NOBLE "#9c40bf"
+#define JCOLOR_MERCHANT "#c2b449"
+#define JCOLOR_SOLDIER "#b64949"
+#define JCOLOR_SERF "#669968"
+#define JCOLOR_PEASANT "#936d6c"
 
 // job display orders //
 
