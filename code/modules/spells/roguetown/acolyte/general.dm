@@ -41,7 +41,7 @@
 		var/situational_bonus = 10
 		//this if chain is stupid, replace with variables on /datum/patron when possible?
 		switch(user.patron.type)
-			if(/datum/patron/forgotten)
+			if(/datum/patron/psydon)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
 			if(/datum/patron/divine/astrata)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
@@ -65,7 +65,6 @@
 					conditional_buff = TRUE
 			if(/datum/patron/divine/abyssor)
 				target.visible_message(span_info("A mist of salt-scented vapour settles on [target]!"), span_notice("I'm invigorated by healing vapours!"))
-				target.reagents.add_reagent(/datum/reagent/medicine/abyssalpurificator, 15) //Addictional chemical to remove demonic corruption. That's a system coming to second part of Kaizoku.
 				// if our user or target is standing in water, heal a flat amount extra
 				if (istype(get_turf(target), /turf/open/water) || istype(get_turf(user), /turf/open/water))
 					conditional_buff = TRUE
@@ -249,95 +248,20 @@
 
 /obj/effect/proc_holder/spell/invoked/mockery/cast(list/targets, mob/living/user)
 	if(isliving(targets[1]))
+		var/message
+		if(!user.cmode)
+			message = input(user, "What should you say?", "Vicious Mockery")
+			if(!message)
+				return FALSE
+		else
+			if(ishuman(user))
+				var/mob/living/carbon/human/B = user
+				message = pick_list_replacements("bard.json", "[B.dna.species.id]_mockery")
+			else
+				message = "Boo!" //That's a failsafe.
 		playsound(get_turf(user), 'sound/magic/mockery.ogg', 40, FALSE)
+		user.say(message, forced = "spell")
 		var/mob/living/victim = targets[1]
 		if(victim.can_hear())
 			victim.apply_status_effect(/datum/status_effect/debuff/viciousmockery)
 		return TRUE
-
-/obj/effect/proc_holder/spell/invoked/mockery/invocation(mob/user = usr)
-	if(ishuman(user))
-		var/mob/living/carbon/human/B = user
-		switch(B.dna.species.id)
-			if("human") // Half elves too
-				switch(rand(1,5))
-					if(1)
-						user.say("Your mother was a Rous, and your father smelled of jacksberries!", forced = "spell")
-					if(2)
-						user.say("What are you going to do for a face when the troll wants his arse back?!", forced = "spell")
-					if(3)
-						user.say("I pass wind at thy general vacinity!", forced = "spell")
-					if(4)
-						user.say("That's a face not even Eora could love!", forced = "spell")
-					if(5)
-						user.say("I shall ne'er desist from thee, nor shall I ever disappoint thee much~", forced = "spell")
-
-			if("elf")
-				switch(rand(1,5))
-					if(1)
-						user.say("As graceful as a drunken mole, I see!", forced = "spell")
-					if(2)
-						user.say("I've fought zads more fierce than you!", forced = "spell")
-					if(3)
-						user.say("You're making this so easy, I'm losing confidence in myself... barely!", forced = "spell")
-					if(4)
-						user.say("OHH-HOH-HOH-HOH-HOH!", forced = "spell")
-					if(5)
-						user.say("Uncultured churls, barely worth my words!", forced = "spell")
-
-			if("dwarf")
-				switch(rand(1,5))
-					if(1)
-						user.say("If yer mind was as sharp as yer ears, we wouldn't be in this mess!", forced = "spell")
-					if(2)
-						user.say("Ye kick softer than a newborn saiga!", forced = "spell")
-					if(3)
-						user.say("Make it quick, dullard! T'is happy hour in the tavern!", forced = "spell")
-					if(4)
-						user.say("Ohh, is the milk drinker gonna cry?", forced = "spell")
-					if(5)
-						user.say("Ye couldn't dent a grain a sand with a pick from Malum!", forced = "spell")
-
-			if("tiefling")
-				switch(rand(1,5))
-					if(1)
-						user.say("Oh wow, everyone, look at this fool with two left feet!", forced = "spell")
-					if(2)
-						user.say("You're not worth a wheat grain of what I can do!", forced = "spell")
-					if(3)
-						user.say("Good job Slowpoke Rodriguez, you almost had me! Almost!", forced = "spell")
-					if(4)
-						user.say("Come on, entertain me a little longer!", forced = "spell")
-					if(5)
-						user.say("Dance with the devil and win a prize!", forced = "spell")
-
-			if("aasimar")
-				switch(rand(1,5))
-					if(1)
-						user.say("Your imperfect body could never match the fires I was forged on.", forced = "spell")
-					if(2)
-						user.say("You're in for a world of hurt, impudent one.", forced = "spell")
-					if(3)
-						user.say("Your name shall be stricken down from the annals of history.", forced = "spell")
-					if(4)
-						user.say("I couldn't sing your praises even if I were forged to!", forced = "spell")
-					if(5)
-						user.say("What manner of blabbering creecher art thou?", forced = "spell")
-			if("abyssariad")
-				switch(pick(1,2,3,4,5,6,7,8))
-					if(1)
-						user.say("Even the sea refuses to swallow a fool like ye!", forced = "spell")
-					if(2)
-						user.say("I'd say ye head be thick as an oni's skull, but different of ye, onis can think.", forced = "spell")
-					if(3)
-						user.say("Is that yer battle stance, or are ye just tryin' not to keel over?", forced = "spell")
-					if(4)
-						user.say("Do the waves weep for yer blade's sad fate, or be it just ye", forced = "spell")
-					if(5)
-						user.say("Yer tongue's sharper than yer blade, but neither does a lick o' damage.", forced = "spell")
-					if(6)
-						user.say("If brains were gold, ye'd be poorer than a sunken wreck.", forced = "spell")
-					if(7)
-						user.say("Ye've the charm of a beached whale, and the smell to match.", forced = "spell")
-					if(8)
-						user.say("Ye fight like a landlubber, and yer wits be even slower!", forced = "spell")
