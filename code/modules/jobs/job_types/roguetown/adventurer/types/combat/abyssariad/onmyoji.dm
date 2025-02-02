@@ -19,6 +19,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 2
+	pickprob = 100
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/onmyoji
 	allowed_patrons = list(/datum/patron/divine/abyssor)

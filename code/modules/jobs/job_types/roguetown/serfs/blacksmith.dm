@@ -87,7 +87,11 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 
 	tutorial = "You studied for many decades under your master with a few other apprentices to become a Weaponsmith, a trade that is as ancient as the secrets of steel itself! You've repaired the blades of cooks, the cracked hoes of peasants and greased the spears of many soldiers into war."
@@ -159,7 +163,11 @@
 		"Elf",
 		"Half-Elf",
 		"Dwarf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 
 	tutorial = "You can smith armor and weapons alike with ease, but do not forget your apprentices. If nothing else, they can be used for errands or thrown out if bumbling fools. The masons next door are also part of the Makers Guild."

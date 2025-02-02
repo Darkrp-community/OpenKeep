@@ -1084,8 +1084,9 @@
 	icon_state = "mino"
 	inhand_mod = FALSE
 	hoodtype = null
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	icon = 'icons/roguetown/kaizoku/clothingicon/cloaks.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
+	sleeved = 'icons/roguetown/kaizoku/clothing/cloaks.dmi'
 	sleevetype = "shirt"
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 

@@ -505,6 +505,7 @@
 	name = "jumonji yari"
 	desc = "The design of the katakama yari taken to its logical conclusion, the jumonji yari features an elongated tang on each side that is the same length as the forward point. There is no polearms that offers better defense without harming efficiency."
 	icon_state = "jumonjiyari"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 
 /obj/item/rogueweapon/polearm/halberd/bardiche/naginata
 	name = "naginata"
