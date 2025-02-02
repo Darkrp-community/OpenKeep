@@ -41,7 +41,7 @@
 		var/situational_bonus = 10
 		//this if chain is stupid, replace with variables on /datum/patron when possible?
 		switch(user.patron.type)
-			if(/datum/patron/psydon)
+			if(/datum/patron/forgotten)
 				target.visible_message(span_info("A strange stirring feeling pours from [target]!"), span_notice("Sentimental thoughts drive away my pains!"))
 			if(/datum/patron/divine/astrata)
 				target.visible_message(span_info("A wreath of gentle light passes over [target]!"), span_notice("I'm bathed in holy light!"))
