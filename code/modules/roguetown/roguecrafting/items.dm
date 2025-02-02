@@ -546,6 +546,13 @@
 	craftdiff = 1
 	skillcraft = /datum/skill/craft/crafting
 
+/*/datum/crafting_recipe/roguetown/kusaripeasant
+	name = "handmade kusarigama"
+	result = /obj/item/rogueweapon/flail/kusarigama/peasant
+	reqs = list(/obj/item/rogueweapon/sickle/kama = 1,
+				/obj/item/rope/chain = 1)
+	craftdiff = 1*/ //Commented until sickles/kamas are fixed.
+
 /datum/crafting_recipe/roguetown/shinobiarrow
 	name = "shinobi arrow(5)"
 	result = list(/obj/item/ammo_casing/caseless/rogue/arrow/poison/fog,
@@ -556,6 +563,8 @@
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/arrow = 5,
 				/obj/item/reagent_containers/food/snacks/fogdart = 1)
 	craftdiff = 1
+	skillcraft = /datum/skill/craft/engineering
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/shinobibolt
 	name = "sedative bolt(5)"
@@ -567,10 +576,38 @@
 	reqs = list(/obj/item/ammo_casing/caseless/rogue/bolt = 5,
 				/obj/item/reagent_containers/food/snacks/fogdart = 1)
 	craftdiff = 1
-/*
-/datum/crafting_recipe/roguetown/kusaripeasant
-	name = "handmade kusarigama"
-	result = /obj/item/rogueweapon/flail/kusarigama/peasant
-	reqs = list(/obj/item/rogueweapon/sickle/kama = 1,
-				/obj/item/rope/chain = 1)
-	craftdiff = 1*/
+	skillcraft = /datum/skill/craft/engineering
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/smokebomb
+	name = "smoke bomb"
+	result = /obj/item/grenade/smoke_bomb
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
+				/obj/item/natural/dirtclod = 1,
+				/obj/item/paper/scroll)
+	craftdiff = 2
+	skillcraft = /datum/skill/craft/engineering
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/poisonbomb
+	name = "poison bomb"
+	result = /obj/item/grenade/smoke_bomb/poison
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
+				/obj/item/natural/dirtclod = 1,
+				/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
+	craftdiff = 3
+	skillcraft = /datum/skill/craft/engineering
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/zhentianlei
+	name = "zhentianlei bomb"
+	result = /obj/item/zhentianlei
+	reqs = list(/obj/item/natural/cloth = 1,
+				/obj/item/sanctiflux = 1,
+				/obj/item/ingot/iron = 1
+				)
+	craftdiff = 4
+	skillcraft = /datum/skill/craft/engineering
+	req_islander = TRUE
