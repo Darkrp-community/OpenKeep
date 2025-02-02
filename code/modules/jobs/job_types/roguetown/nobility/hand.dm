@@ -60,7 +60,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/keyring/hand = 1)
+	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1, /obj/item/keyring/hand = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -92,7 +92,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/keyring/hand = 1, /obj/item/lockpickring/mundane)
+	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1, /obj/item/keyring/hand = 1, /obj/item/lockpickring/mundane)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
@@ -132,7 +132,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	backr = /obj/item/storage/backpack/rogue/satchel
-	backpack_contents = list(/obj/item/rogueweapon/huntingknife/idagger/steel/special = 1, /obj/item/keyring/hand = 1, /obj/item/reagent_containers/glass/bottle/rogue/poison = 1) //starts with a vial of poison, like all totally trustworthy people do!
+	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1, /obj/item/keyring/hand = 1, /obj/item/reagent_containers/glass/bottle/rogue/poison = 1) //starts with a vial of poison, like all totally trustworthy people do!
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
