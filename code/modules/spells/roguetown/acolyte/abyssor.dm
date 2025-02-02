@@ -47,7 +47,7 @@
 			return TRUE
 		else
 			target_mob.apply_status_effect(/datum/status_effect/abyssaltomb)
-			to_chat(target_mob, span_warning("<span class='userdanger'>[target_mob] is encased with a abyssal pocket dimension leading to the seabed!</span>"))
+			to_chat(target_mob, span_warning("<span class='userdanger'>[target_mob] is encased within an abyssal pocket dimension leading to the seabed!</span>"))
 			return TRUE
 
 	if(isturf(target))
