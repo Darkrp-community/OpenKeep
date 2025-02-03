@@ -316,7 +316,6 @@ GLOBAL_VAR(restart_counter)
 	s += "<b>Gritty Medieval Fantasy Roleplay<b><br>"
 	s += "<b>New Map: Dun Manor<b><br>"
 	s += "<b>Whitelist Enabled: https://discord.gg/qwwYV6dbcg</b></center><br>"
-	//s += "<b>Powerbottoms Welcome</b><br>"
 #else
 	s += "<big><b>ROGUEWORLD</b></big></a><br>"
 	s += "<b>Fantasy Computer Survival Game</b></center><br>"
