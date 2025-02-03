@@ -21,7 +21,7 @@
 	For whatever reason you have traded your reputation for a supply of drugs and nitemaidens to employ and profit from. The licenses can be bought from the Feldsher, or just make a forgery yourself to save money. <br>\
 	Some accuse you of have connections with the Rogues and Bandits of the land but surely its just slander..."
 
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/niteman
 	display_order = JDO_NITEMAN
 	give_bank_account = 120
@@ -54,8 +54,10 @@
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 2)
 
-		if(h.gender == FEMALE)
-				armor = /obj/item/clothing/suit/roguetown/armor/armordressalt
+	if(H.gender == MALE)
+           	 armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/niteman
+		else
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dress
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitmaiden)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
