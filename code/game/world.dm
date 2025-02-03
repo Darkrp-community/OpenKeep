@@ -313,7 +313,7 @@ GLOBAL_VAR(restart_counter)
 	s += "<center><a href=\"https://discord.gg/qwwYV6dbcg\">"
 #ifdef MATURESERVER
 	s += "<big><b>Stonekeep: Grit & Loathing in Grimoria (18+)</b></big></a><br>"
-	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
+	s += "<b>Gritty Medieval Fantasy Roleplay<b><br>"
 	s += "<b>New Map: Dun Manor<b><br>"
 	s += "<b>Whitelist Enabled: https://discord.gg/qwwYV6dbcg</b></center><br>"
 	//s += "<b>Powerbottoms Welcome</b><br>"
