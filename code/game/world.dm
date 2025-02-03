@@ -314,7 +314,7 @@ GLOBAL_VAR(restart_counter)
 #ifdef MATURESERVER
 	s += "<big><b>Stonekeep: Grit & Loathing in Grimoria (18+)</b></big></a><br>"
 	s += "<b>Gritty Medieval Fantasy Roleplay<b><br>"
-	s += "<b>New Map: Dun Manor<b><br>"
+	s += "<b>NEW CONTENT: Kaizoku Fog Islands DLC<b><br>"
 	s += "<b>Whitelist Enabled: https://discord.gg/qwwYV6dbcg</b></center><br>"
 #else
 	s += "<big><b>ROGUEWORLD</b></big></a><br>"
