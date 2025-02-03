@@ -6,7 +6,7 @@
 |---------------------------|------------------------------------------------|
 | Discord          | [https://discord.gg/qwwYV6dbcg](https://discord.gg/qwwYV6dbcg) |
 | Code                      | [https://github.com/Darkrp-community/OpenKeep](https://github.com/Darkrp-community/OpenKeep)    |
-| Wiki                      | [https://wiki.stonekeep.xyz/index.php/Main_Page] (https://wiki.stonekeep.xyz) |
+| Wiki (Under Construction)                      | [https://wiki.stonekeep.xyz/index.php/Main_Page] (https://wiki.stonekeep.xyz) |
 
 ## LICENSE
 
