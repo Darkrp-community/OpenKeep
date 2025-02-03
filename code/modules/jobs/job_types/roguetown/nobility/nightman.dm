@@ -5,12 +5,16 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+	f_title = "Nitematron"
 
 	allowed_races = list(
 		"Humen",
 		"Dwarf",
 		"Elf",
 		"Half-Elf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar",
 	)
 
 	tutorial = "Even nobles can be disgraced and fall on hard times, despite inheriting a fine bathhouse building. <br>\
@@ -49,6 +53,9 @@
 		H.change_stat("speed", 1)
 		H.change_stat("intelligence", 1)
 		H.change_stat("perception", 2)
+
+		if(h.gender == FEMALE)
+				armor = /obj/item/clothing/suit/roguetown/armor/armordressalt
 	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitmaiden)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
