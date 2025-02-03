@@ -317,7 +317,7 @@ GLOBAL_VAR(restart_counter)
 	s += "<b>NEW CONTENT: Kaizoku Fog Islands DLC<b><br>"
 	s += "<b>Whitelist Enabled: https://discord.gg/qwwYV6dbcg</b></center><br>"
 #else
-	s += "<big><b>ROGUEWORLD</b></big></a><br>"
+	s += "<big><b>STONEKEEP</b></big></a><br>"
 	s += "<b>Fantasy Computer Survival Game</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"
