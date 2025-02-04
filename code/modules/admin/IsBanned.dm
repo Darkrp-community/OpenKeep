@@ -53,7 +53,7 @@ GLOBAL_VAR(last_connection)
 		if(num >= 10)
 			if(check_patreon_lvl(ckey) < 2)
 				log_access("Failed Login: [key] - TrialExpire")
-				return list("reason"="trialexpire", "desc" = "\nBecome whitelisted to continue playing here! discord.gg/stonekeep")
+				return list("reason"="trialexpire", "desc" = "\nBecome whitelisted to continue playing here! discord.gg/qwwYV6dbcg")
 #endif
 */
 /*	//Blacklist
