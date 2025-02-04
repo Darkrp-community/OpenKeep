@@ -1079,7 +1079,7 @@
 				if(alert(src, "Commit ritualistic disembowelment?",,"YES","NO") == "YES")
 					var/obj/item/inhand = C.get_active_held_item()
 					if(inhand)
-						if(istype(inhand, /obj/item/rogueweapon/huntingknife || /obj/item/rogueweapon/sword))
+						if(istype(inhand, /obj/item/rogueweapon/knife/kaizoku || /obj/item/rogueweapon/sword))
 							say("Hesitation is DEFEAT!")
 							visible_message("<span class='warning'> used [inhand] to carve their own guts before splitting themselves apart!</span>", \
 							"<span class='notice'>You voluntarily sever your boundaries to this consciousness as abyssal vitae spills out in waves.</span>", null, null, pulledby)

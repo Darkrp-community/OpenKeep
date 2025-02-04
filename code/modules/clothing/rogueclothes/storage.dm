@@ -66,18 +66,15 @@
 	new /obj/item/needle/thorn(src)
 	new /obj/item/roguekey/bandit(src)
 
-//Mercs belt starts with a bandage and a key to their guildhall.
+//Mercs belt variants start with a bandage and a key to their guildhall.
 /obj/item/storage/belt/rogue/leather/mercenary/PopulateContents()
 	new /obj/item/natural/cloth(src)
 	new /obj/item/roguekey/mercenary(src)
 
-/obj/item/storage/belt/rogue/leather/merc_nokey/PopulateContents()
-	new /obj/item/natural/cloth (src)
-	new /obj/item/roguecoin/copper/pile (src)
-/obj/item/storage/belt/rogue/leather/merc_nokey/shalal
+/obj/item/storage/belt/rogue/leather/mercenary/shalal
 	name = "shalal belt"
 	icon_state = "shalal"
-/obj/item/storage/belt/rogue/leather/merc_nokey/black
+/obj/item/storage/belt/rogue/leather/mercenary/black
 	name = "black belt"
 	icon_state = "blackbelt"
 

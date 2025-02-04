@@ -684,7 +684,7 @@
 	swingsound = BLADEWOOSH_HUGE
 	wlength = WLENGTH_GREAT
 	slot_flags = ITEM_SLOT_BACK
-	minstr = 13 //Requirement is halved when wielded in two hands either way. No sane person should be thinking of using this one-handed.
+	minstr = 12 // To be able to wield this weapon you must be able to PICK IT UP WITHOUT IT FALLING OFF YOUR HANDS. Realistically no class/race combo has over 13 STR when maxrolling.
 	wbalance = EASY_TO_DODGE
 	sellprice = 90
 
@@ -1046,7 +1046,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	wbalance = -1 //haha... yeah.
 	wdefense = 3
-	minstr = 14
+	minstr = 13
 	associated_skill = /datum/skill/combat/axesmaces //if you tell me that fighting with this sword is LIKE a sword, I will kill you (ingame)-Mono
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	slot_flags = ITEM_SLOT_BACK

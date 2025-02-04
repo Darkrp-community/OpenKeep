@@ -20,7 +20,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/sword/rapier/iron
 	pants = /obj/item/clothing/under/roguetown/tights/green
