@@ -37,7 +37,7 @@
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
 	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
-	beltr = /obj/item/rogueweapon/knife/hunting/sai
+	beltr = /obj/item/rogueweapon/knife/kaizoku/sai
 
 	var/background = pickweight(list("thunder" = 1, "storm" = 1, "ocean" = 1, "island" = 1)) //This is just flavour. Mostly unwritten portrayal how different Soheis were of each other. Leave it up to the players to interact.
 	var/weapontype = pickweight(list("yari" = 6, "tsukushi" = 5, "katakama" = 3)) // Rolls for various polearms.

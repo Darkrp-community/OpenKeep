@@ -165,7 +165,7 @@
 	smeltresult = /obj/item/ash
 	minstr = 2
 	sellprice = 5
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 
 /obj/item/rogueweapon/mace/woodclub/Initialize(mapload)
 	. = ..()
@@ -199,7 +199,7 @@
 	minstr = 2
 	wbalance = HARD_TO_DODGE
 	sellprice = 15
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 
 /obj/item/rogueweapon/mace/cudgel/getonmobprop(tag)
 	. = ..()
@@ -378,7 +378,7 @@
 	minstr = 5
 	smeltresult = /obj/item/ingot/copper
 	sellprice = 10
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 
 //................ Copper goden ............... //
 /obj/item/rogueweapon/mace/goden/copper

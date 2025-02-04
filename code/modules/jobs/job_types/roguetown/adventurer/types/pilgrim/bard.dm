@@ -72,7 +72,7 @@
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
 			shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead
 			head = /obj/item/clothing/head/roguetown/bardhat/bloodhunter
-			beltr = /obj/item/rogueweapon/knife/kaiken
+			beltr = /obj/item/rogueweapon/knife/kaizoku/kaiken
 			shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 			gloves = /obj/item/clothing/gloves/roguetown/fingerless/yugake
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz

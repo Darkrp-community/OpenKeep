@@ -66,7 +66,7 @@
 			backr = /obj/item/rogueweapon/polearm/spear/stone/obsidian
 			backl = /obj/item/rogueweapon/shield/wood/rattan
 			beltr = /obj/item/rogueweapon/mace/cudgel/rungu
-			beltl = /obj/item/rogueweapon/huntingknife/kunai
+			beltl = /obj/item/rogueweapon/knife/kaizoku/kunai
 			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/tribal
@@ -100,7 +100,7 @@
 
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/kunai = 1)
+			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/knife/kaizoku/kunai = 1)
 
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			H.change_stat("strength", -1)

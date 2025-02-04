@@ -16,7 +16,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather//leather armor so they match other roles that get heavy leather gloves
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/jacket/sea/marauder
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/red
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/shield/tower/buckleriron
 	pants = /obj/item/clothing/under/roguetown/loincloth/brown

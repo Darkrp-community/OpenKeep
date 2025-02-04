@@ -15,8 +15,10 @@
 #define DAMAGE_MACE_WIELD 25
 #define DAMAGE_HEAVYCLUB_WIELD 30
 
+#define DAMAGE_WEAK_KNIFE 8
 #define DAMAGE_KNIFE 10
 #define DAMAGE_DAGGER 12
+#define DAMAGE_GOOD_DAGGER 14
 
 #define DAMAGE_STAFF 12
 #define DAMAGE_STAFF_WIELD 23 //Even a wooden quarterstaff is a devastating weapon.
@@ -63,7 +65,7 @@
 //wdefense defines
 #define TERRIBLE_PARRY -1
 #define BAD_PARRY 0
-#define MEDIOCHRE_PARRY 1
+#define MEDIOCRE_PARRY 1
 #define AVERAGE_PARRY 2
 #define GOOD_PARRY 2.5
 #define GREAT_PARRY 3
