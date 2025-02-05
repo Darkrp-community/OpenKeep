@@ -24,7 +24,7 @@
 	display_order = JDO_ARMORER
 	bypass_lastclass = TRUE
 	give_bank_account = 30
-	min_pq = 0
+	min_pq = -10
 	selection_color = "#d68e08"
 
 /datum/outfit/job/roguetown/armorsmith/pre_equip(mob/living/carbon/human/H)
