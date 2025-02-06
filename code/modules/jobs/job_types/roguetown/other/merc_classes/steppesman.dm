@@ -26,7 +26,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey/black
+	belt = /obj/item/storage/belt/rogue/leather/mercenary/black
 	beltr = /obj/item/rogueweapon/sword/sabre
 	beltl= /obj/item/quiver/arrows
 	pants = /obj/item/clothing/under/roguetown/tights/red

@@ -96,13 +96,12 @@
 	..()
 	prime()
 
-/obj/item/grenade/smoke_bomb/smokebomb/prime()
+/obj/item/grenade/smoke_bomb/prime()
 	update_mob()
 	playsound(src, 'sound/blank.ogg', 50, TRUE, -3)
 	var/datum/effect_system/smoke_spread/bad/smoke = new
 	smoke.set_up(4, src)
 	smoke.start()
-	qdel(smoke)
 	qdel(src)
 
 /obj/item/grenade/smoke_bomb/poison

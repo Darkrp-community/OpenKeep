@@ -59,7 +59,7 @@
 			if("moan")
 				used = list('sound/vo/female/abyssariad/moan1.ogg','sound/vo/female/abyssariad/moan2.ogg','sound/vo/female/abyssariad/moan4.ogg','sound/vo/female/abyssariad/moan5.ogg')
 			if("birdcall")
-				used = list('sound/vo/female/abyssariad/moan1.ogg','sound/vo/female/abyssariad/moan2.ogg','sound/vo/female/abyssariad/moan4.ogg','sound/vo/female/abyssariad/moan5.ogg')
+				used = list('sound/vo/general/tengucall1.ogg','sound/vo/general/tengucall2.ogg','sound/vo/general/tengucall3.ogg','sound/vo/general/tengucall4.ogg','sound/vo/general/tengucall5.ogg','sound/vo/general/tengucall5.ogg','sound/vo/general/tengucall6.ogg','sound/vo/general/tengucall7.ogg','sound/vo/general/tengucall8.ogg','sound/vo/general/tengucall9.ogg','sound/vo/general/tengucall10.ogg','sound/vo/general/tengucall12.ogg','sound/vo/general/tengucall13.ogg','sound/vo/general/tengucall14.ogg','sound/vo/general/brazilianmeme.ogg')
 	if(!used) //we haven't found a racial specific sound so use generic
 		used = ..(soundin)
 	return used

@@ -1100,10 +1100,14 @@
 	icon_state = "kikko"
 	adjustable = CAN_CADJUST
 
-/obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
+/obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/eidolon
 	color = CLOTHING_EIDOLON
 
-/obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/AdjustClothes(mob/user)
+/obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/rich/Initialize()
+	color = RANDOM_NOBLE_DYES
+	..()
+
+/obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/AdjustClothes(mob/user)
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
@@ -1257,6 +1261,11 @@
 // Randomized color Hitatare
 /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random/Initialize()
 	color = RANDOM_PEASANT_DYES
+	..()
+
+// Randomized color Hitatare
+/obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/rich/Initialize()
+	color = RANDOM_NOBLE_DYES
 	..()
 
 // Ronin Hitatare

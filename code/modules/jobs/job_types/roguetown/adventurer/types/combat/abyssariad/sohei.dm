@@ -33,11 +33,11 @@
 	..()
 	neck = /obj/item/clothing/head/roguetown/soheicloth
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/sanmaido
-	wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron/tatami
 	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi
 	head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane
-	beltr = /obj/item/rogueweapon/knife/hunting/sai
+	beltr = /obj/item/rogueweapon/knife/kaizoku/sai
 
 	var/background = pickweight(list("thunder" = 1, "storm" = 1, "ocean" = 1, "island" = 1)) //This is just flavour. Mostly unwritten portrayal how different Soheis were of each other. Leave it up to the players to interact.
 	var/weapontype = pickweight(list("yari" = 6, "tsukushi" = 5, "katakama" = 3)) // Rolls for various polearms.
@@ -64,7 +64,7 @@
 			head = /obj/item/clothing/head/roguetown/helmet/skullcap/hachigane/island
 	switch(weapontype)
 		if("tsukushi")
-			backr = /obj/item/rogueweapon/polearm/halberd/naginata/tsukushi //weaker naginata, mass-produced iron tier. Slightly more rare than Yari.
+			backr = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata/tsukushi  //weaker naginata, mass-produced iron tier. Slightly more rare than Yari.
 		if("katakama")
 			backr = /obj/item/rogueweapon/polearm/spear/yari/katakama//Steel, more combat-effective and rarer than iron Yari.
 		if("yari")

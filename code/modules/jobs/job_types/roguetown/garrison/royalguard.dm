@@ -25,7 +25,7 @@
 
 	outfit = /datum/outfit/job/roguetown/royalguard
 	give_bank_account = 30
-	min_pq = 2
+	min_pq = 0
 	selection_color = "#920909"
 
 	cmode_music = 'sound/music/combat_old.ogg'
@@ -42,7 +42,7 @@
 			if(!index)
 				index = H.real_name
 			S.name = "knight's tabard ([index])"
-		if(istype(H.cloak, /obj/item/clothing/cloak/haramaki/odoshi/zamurai))
+		if(istype(H.cloak, /obj/item/clothing/cloak/stabard/haramaki/odoshi/zamurai))
 			var/obj/item/clothing/S = H.cloak
 			var/index = findtext(H.real_name, " ")
 			if(index)
@@ -80,14 +80,14 @@
 		pants = /obj/item/clothing/under/roguetown/chainlegs/sendan
 		neck = null //Abyssariads rarely uses gorgets. For that they use menpos.
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
-		cloak = /obj/item/clothing/cloak/haramaki/odoshi/zamurai
+		cloak = /obj/item/clothing/cloak/stabard/haramaki/odoshi/zamurai
 		shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
 		armor = /obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi/royal
 		shoes = /obj/item/clothing/shoes/roguetown/boots/armor/light/kusaritabi
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 		beltr = /obj/item/rogueweapon/sword/uchigatana
 		backr = /obj/item/storage/backpack/rogue/satchel
-		r_hand = /obj/item/rogueweapon/polearm/halberd/naginata
+		r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata
 		backl = /obj/item/rogueweapon/shield/tower/metal/abyssal
 		if(prob(30))
 			head = /obj/item/clothing/head/roguetown/helmet/visored/zunari

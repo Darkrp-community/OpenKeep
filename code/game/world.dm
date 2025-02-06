@@ -310,15 +310,14 @@ GLOBAL_VAR(restart_counter)
 
 /world/proc/update_status()
 	var/s = ""
-	s += "<center><a href=\"https://discord.gg/stonekeep\">"
+	s += "<center><a href=\"https://discord.gg/qwwYV6dbcg\">"
 #ifdef MATURESERVER
-	s += "<big><b>STONEKEEP (18+) (Immersive RP)</b></big></a><br>"
-	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
-	s += "<b>New Map: Dun Manor<b><br>"
-	s += "<b>Whitelist Enabled: discord.gg/stonekeep</b></center><br>"
-	//s += "<b>Powerbottoms Welcome</b><br>"
+	s += "<big><b>Stonekeep: Grit & Loathing in Grimoria (18+)</b></big></a><br>"
+	s += "<b>Gritty Medieval Fantasy Roleplay<b><br>"
+	s += "<b>NEW CONTENT: Kaizoku Fog Islands DLC<b><br>"
+	s += "<b>Whitelist Enabled: https://discord.gg/qwwYV6dbcg</b></center><br>"
 #else
-	s += "<big><b>ROGUEWORLD</b></big></a><br>"
+	s += "<big><b>STONEKEEP</b></big></a><br>"
 	s += "<b>Fantasy Computer Survival Game</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"

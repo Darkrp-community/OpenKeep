@@ -83,7 +83,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai
 	mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/half
 	pants = /obj/item/clothing/under/roguetown/trou/tobi/random
-	cloak = /obj/item/clothing/cloak/jinbaori/raider
+	cloak = /obj/item/clothing/cloak/stabard/haramaki/jinbaori/raider
 	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 
@@ -145,7 +145,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 	..()
 	pants = /obj/item/clothing/under/roguetown/chainlegs/sendan
 	mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
-	cloak = /obj/item/clothing/cloak/haramaki/odoshi/raider
+	cloak = /obj/item/clothing/cloak/stabard/haramaki/odoshi/raider
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/suneate/cursed
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/kote/cursed
@@ -178,23 +178,23 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 	switch(loadout)
 		if(1)
 			r_hand = /obj/item/rogueweapon/sword/uchigatana
-			l_hand = /obj/item/rogueweapon/shield/abyssaltower
+			l_hand = /obj/item/rogueweapon/shield/tower/abyssaltower
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/mirror
 			head = /obj/item/clothing/head/roguetown/helmet/sallet/tosei_kabuto/cursed
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random
 		if(2)
 			r_hand = /obj/item/rogueweapon/mace/steel/ararebo
-			l_hand = /obj/item/rogueweapon/shield/abyssaltower
+			l_hand = /obj/item/rogueweapon/shield/tower/abyssaltower
 			head = /obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto/cursed
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai
 		if(3)
-			r_hand = /obj/item/rogueweapon/polearm/halberd/naginata/dustcurse
+			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata/dustcurse
 			armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/abyssariad
 			head = /obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto/cursed
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
 		if(4)
-			r_hand = /obj/item/rogueweapon/polearm/halberd/naginata/dustcurse
+			r_hand = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata/dustcurse
 			armor = /obj/item/clothing/suit/roguetown/armor/medium/surcoat/heartfelt/abyssariad
 			head = /obj/item/clothing/head/roguetown/helmet/visored/sallet/tosei_kabuto/cursed
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/tatami
@@ -225,7 +225,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 
 	pants = /obj/item/clothing/under/roguetown/chainlegs/sendan/cursed
 	mask = /obj/item/clothing/mask/rogue/kaizoku/menpo
-	cloak = /obj/item/clothing/cloak/haramaki/odoshi/raider
+	cloak = /obj/item/clothing/cloak/stabard/haramaki/odoshi/raider
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/suneate/cursed
 	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/kote/cursed
@@ -262,7 +262,7 @@ GLOBAL_LIST_INIT(ashigaru_aggro, world.file2list("strings/rt/ashigaruaggrolines.
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 		if(3)
 			r_hand = /obj/item/rogueweapon/mace/steel/ararebo/dustcurse
-			l_hand = /obj/item/rogueweapon/shield/abyssaltower/dustcurse
+			l_hand = /obj/item/rogueweapon/shield/tower/abyssaltower/dustcurse
 			armor = /obj/item/clothing/suit/roguetown/armor/brigandine/oyoroi
 			head = /obj/item/clothing/head/roguetown/helmet/visored/zunari/cursed
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/ruankai

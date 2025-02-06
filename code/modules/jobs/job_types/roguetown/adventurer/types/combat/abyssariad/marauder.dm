@@ -11,6 +11,8 @@
 	"Undine")
 	outfit = /datum/outfit/job/roguetown/adventurer/marauder
 	category_tags = list(CTAG_ADVENTURER)
+	maximum_possible_slots = 6
+	pickprob = 100
 	tutorial = "Ever since Grenzelhoft invasions on Fog Islands, the Undine Tribes became allies of many Abyssariad clans and guardians. Even if untrue for the entire government itself, Undine Marauders take part of Abyssariad expeditions as ''allies'' and formidable annihilators of Humens and Goblins alike."
 
 /datum/outfit/job/roguetown/adventurer/marauder/pre_equip(mob/living/carbon/human/H)
@@ -64,7 +66,7 @@
 			backr = /obj/item/rogueweapon/polearm/spear/stone/obsidian
 			backl = /obj/item/rogueweapon/shield/wood/rattan
 			beltr = /obj/item/rogueweapon/mace/cudgel/rungu
-			beltl = /obj/item/rogueweapon/huntingknife/kunai
+			beltl = /obj/item/rogueweapon/knife/kaizoku/kunai
 			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 			wrists = /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/tribal
@@ -98,7 +100,7 @@
 
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
-			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/huntingknife/kunai = 1)
+			backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/knife/kaizoku/kunai = 1)
 
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			H.change_stat("strength", -1)

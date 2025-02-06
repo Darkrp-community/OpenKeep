@@ -505,15 +505,16 @@
 	name = "jumonji yari"
 	desc = "The design of the katakama yari taken to its logical conclusion, the jumonji yari features an elongated tang on each side that is the same length as the forward point. There is no polearms that offers better defense without harming efficiency."
 	icon_state = "jumonjiyari"
+	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 
-/obj/item/rogueweapon/polearm/halberd/naginata
+/obj/item/rogueweapon/polearm/halberd/bardiche/naginata
 	name = "naginata"
 	desc = "Its earliest form being a tachi blade mounted upon a long wooden pole, the naginata was the first polearm to come into widespread use by the Abyssariad, who developed the weapon in order to better combat Humen and Elven cavalry."
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	icon_state = "naginata"
 	dropshrink = 0.8
 
-/obj/item/rogueweapon/polearm/halberd/naginata/dustcurse/dropped()
+/obj/item/rogueweapon/polearm/halberd/bardiche/naginata/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse naginata"
 	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
@@ -522,7 +523,7 @@
 		return
 	qdel(src)
 
-/obj/item/rogueweapon/polearm/halberd/naginata/tsukushi //make two instead of only one
+/obj/item/rogueweapon/polearm/halberd/bardiche/naginata/tsukushi //make two instead of only one
 	name = "tsukushi naginata"
 	desc = "A cheaper, easier to construct iron Naginata with a blade held by its guard instead of its tang. Likely developed from a scythe, the blade is easily found on poor, wandering monks."
 	force_wielded = DAMAGE_SPEAR_WIELD+3
@@ -530,6 +531,7 @@
 	smeltresult = /obj/item/ingot/iron
 	dropshrink = 0.8
 	wdefense = 4
+	slot_flags = ITEM_SLOT_BACK
 
 /obj/item/rogueweapon/polearm/halberd/bisento //Giving the Bisento storeable 'back' because, otherwise, people will SUFFER spawning with it. Too bugged for my taste.
 	name = "bisento"
@@ -612,8 +614,7 @@
 		return
 
 	to_chat(src.loc, "<span class='info'>The firelance's fuze starts to rebel in sparking lights.</span>")
-	playsound(src.loc, 'sound/items/firelight.ogg', 100)
-
+	playsound(src.loc, 'sound/music/kaizoku/spells/firelance_cooking.ogg', 100)
 	lit = TRUE
 	spawn(20) // 2 seconds
 		if(lit)
@@ -662,6 +663,7 @@
 					if(iscarbon(L) && L != user)
 						L.visible_message("<span class='danger'>[L] is engulfed in flames!</span>")
 						L.adjustFireLoss(rand(10, 20)) //Enough damage to ensure the player will move away.
+	playsound(src.loc, 'sound/music/kaizoku/spells/firelance.ogg', 100)
 	cocked = FALSE
 	fuel_source = FALSE // Consume  fuel after use
 	update_icon()
@@ -700,7 +702,7 @@
 				for(var/zone in limb_list)
 					limb = user.get_bodypart(zone)
 					if(limb)
-						playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
+						playsound(src,'sound/misc/guillotine.ogg', rand(30,60), TRUE)
 						to_chat(user, "<span class='danger'>Without a gourd, [user]'s [limb] was accidentally snatched by jagged blades, bleeding before being severed!</span>")
 						limb.dismember()
 						qdel(limb)

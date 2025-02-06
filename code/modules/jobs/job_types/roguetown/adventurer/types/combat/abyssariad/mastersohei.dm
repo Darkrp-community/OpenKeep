@@ -28,7 +28,7 @@
 /datum/outfit/job/roguetown/adventurer/abyssariad/mastersohei/pre_equip(mob/living/carbon/human/H)
 	..()
 	head = /obj/item/clothing/head/roguetown/helmet/heavy/bucket/soheidemon
-	wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 	pants = /obj/item/clothing/under/roguetown/chainlegs/sendan
 	shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
@@ -38,7 +38,7 @@
 	cloak = /obj/item/clothing/cloak/odoshisohei
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/random
 	gloves = /obj/item/clothing/gloves/roguetown/chain/kikko
-	backl = /obj/item/rogueweapon/polearm/halberd/bisento
+	r_hand = /obj/item/rogueweapon/polearm/halberd/bisento
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)

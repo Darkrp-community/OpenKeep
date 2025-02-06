@@ -170,3 +170,6 @@
 	resistance_flags = FLAMMABLE
 	sewrepair = TRUE
 	anvilrepair = null
+	armor = ARMOR_MINIMAL //giving them these just because if makes sense.
+	prevent_crits = MINOR_CRITICALS
+

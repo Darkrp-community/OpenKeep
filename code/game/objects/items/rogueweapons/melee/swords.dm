@@ -684,7 +684,7 @@
 	swingsound = BLADEWOOSH_HUGE
 	wlength = WLENGTH_GREAT
 	slot_flags = ITEM_SLOT_BACK
-	minstr = 13 //Requirement is halved when wielded in two hands either way. No sane person should be thinking of using this one-handed.
+	minstr = 12 // To be able to wield this weapon you must be able to PICK IT UP WITHOUT IT FALLING OFF YOUR HANDS. Realistically no class/race combo has over 13 STR when maxrolling.
 	wbalance = EASY_TO_DODGE
 	sellprice = 90
 
@@ -878,7 +878,6 @@
 	inhand_x_dimension = 64
 	inhand_y_dimension = 64
 	bigboy = TRUE
-	gripsprite = TRUE
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/uchigatana/fire //Experimental weapon. Not to be found ingame.
@@ -970,16 +969,45 @@
 
 /obj/item/rogueweapon/sword/short/jian
 	name = "short steel jian"
-	desc = "A simple, shortened version of the double-edged Jian. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+	desc = "A simple, shortened version of the double-edged Jian made of steel. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
-	icon_state = "shortjian"
+	icon_state = "shortjian1"
+
+/obj/item/rogueweapon/sword/short/jian/Initialize()
+	. = ..()
+	var/design = rand(1, 3) //This system will be standardized to other weapons.
+	switch(design)
+		if(1)
+			name = "conscript short jian"
+			desc = "A simple, shortened version of the double-edged Jian in steel. This is usually given to Abyssariad citizens as a right for self-defense by the emperor's will."
+		if(2)
+			name = "frontierman short jian"
+			desc = "A simple, shortened version of the double-edged Jian in steel. With a thicker pommel and stretched guard, it becomes more proper as side weapons during sieges for overhead attacks."
+		if(3)
+			name = "duelist short jian"
+			desc = "A simple, shortened version of the double-edged with hand protection that resembles one side of the fire lance apparatus. Usually used for training."
+	icon_state = "shortjian[design]"
 
 /obj/item/rogueweapon/sword/short/wakizashi
 	name = "wakizashi"
-	desc = "A shorter design of a Zatana designed to replace the tanto as a zamurai's sidearm. The sorii makes it cut deeper - but is not efficient at thrusting, and can't handle much stress."
-	icon_state = "wakizashi"
+	icon_state = "wakizashi1"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii)
+
+/obj/item/rogueweapon/sword/short/wakizashi/Initialize()
+	. = ..()
+	var/design = rand(1, 3) //This system will be standardized to other weapons.
+	switch(design)
+		if(1)
+			name = "wakizashi zatana"
+			desc = "A shorter zatana design with circular handguard and heartfelt-influenced pommel. The curveness of the blade makes it better at cutting than thrusting."
+		if(2)
+			name = "traditional wakizashi"
+			desc = "The traditional wakizashi used by abyssariads for centuries, with a lack of a pommel and a broader handguard for hand protection. The sorii of the blade improves the cutting power."
+		if(3)
+			name = "shirasaya wakizashi"
+			desc = "The cheaper adaptation of the Wakizashi with an complete lack of handguard and no tsuka ito protecting the hand."
+	icon_state = "wakizashi[design]"
 
 /datum/intent/sword/cut/sorii //It is the reverse of the Shortsword.
 	clickcd = 10
@@ -1003,8 +1031,8 @@
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/dragonslayer //It's a sword, yes. It will be used as a sword? My dudes we moving that one like warhammers at this point. So it's blunt at this point.
-	name = "dragonslayer eclipse sword"
-	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, they use a heap of raw iron. These are not crafted for fnesse, but for raw carnage in steel to obliterate Dragon's almost impenetrable skin."
+	name = "eclipse sword"
+	desc = "Dragonslayers uses swords too big to be called a sword. Massive, thick, heavy and far too rough. Indeed, it is a heap of raw iron made to penetrate dragon skin."
 	gripped_intents = list(/datum/intent/dragonslayer/smash, /datum/intent/polearm/chop) //This is practically a mace... that can chop off heads since it's sharp.
 	icon_state = "eclipse_sword"
 	resistance_flags = FIRE_PROOF
@@ -1018,7 +1046,7 @@
 	w_class = WEIGHT_CLASS_HUGE
 	wbalance = -1 //haha... yeah.
 	wdefense = 3
-	minstr = 14
+	minstr = 13
 	associated_skill = /datum/skill/combat/axesmaces //if you tell me that fighting with this sword is LIKE a sword, I will kill you (ingame)-Mono
 	icon = 'icons/roguetown/kaizoku/weapons/64.dmi'
 	slot_flags = ITEM_SLOT_BACK
