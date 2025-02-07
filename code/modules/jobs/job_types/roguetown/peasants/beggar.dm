@@ -14,7 +14,11 @@
 		"Half-Elf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/vagrant
 	bypass_lastclass = FALSE
@@ -71,6 +75,14 @@
 	H.change_stat("intelligence", -3)
 	H.change_stat("constitution", -2)
 	H.change_stat("endurance", -2)
+	if(H.dna.species?.id == "abyssariad")
+		mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
+		to_chat(H, "<span class='userdanger'>In failure I forfeited my honor and values of the Abyssal Tide. If I am to claim the essence of an Abyssariad once more, I must prove myself worthy.</span>")
+		H.burakumin = TRUE
+		if(H.wear_mask)
+			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch || /obj/item/clothing/mask/rogue/eyepatch/left ))
+				qdel(H.wear_mask)
+				mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
 
 /datum/outfit/job/roguetown/vagrant
 	name = "Beggar"

@@ -13,7 +13,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "Some say youre a strange individual, some say youre a cheat while some claim you are a savant in the art of sausage making. Without your skilled hands and knifework most of the livestock around the town would be wasted. "
 
@@ -58,3 +62,19 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/labor/butchering, 5, TRUE)
 
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor) //Guayo asked me to give this to the Butcher.
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumhelmet)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
+		H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
+		to_chat(H, "<span class='warning'>Despite what some people believe, my role on society is respected, as my abyssal honor is not put in test in a daily basis.")
+		if(H.gender == MALE)
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/random
+			wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+		else
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono/random

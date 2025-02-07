@@ -523,8 +523,24 @@
 				qdel(mmb_intent)
 				input = null
 				mmb_intent = null
+				if(ishuman(src))
+					var/mob/living/carbon/human/K = src
+					if(K.dna.species.name == "Changeling")
+						//K.mawchange = FALSE
+						//K.overlay_eldritchjaw = 1  // disactivates jaw -  overlays are BAD for that. Don't use it.
+						//emote.wag_mouth = FALSE //I can't make a wag system.
+						visible_message("<span class='warning'>[src]'s face knits together.</span>")
+						playsound(src.loc, 'sound/combat/fracture/fracturewet (2).ogg', 50, 1)
 			else
 				mmb_intent = new INTENT_BITE(src)
+				if(ishuman(src))
+					var/mob/living/carbon/human/K = src
+					if(K.dna.species.name == "Changeling")
+						//K.mawchange = TRUE
+						//K.overlay_eldritchjaw = 0  // activates jaw -  overlays are BAD for that. Don't use it.
+						//emote.wag_mouth = TRUE //I can't make a wag system.
+						visible_message("<span class='warning'>[src]'s face splits into a deadly maw.</span>")
+						playsound(src.loc, 'sound/combat/fracture/fracturewet (2).ogg', 50, 1)
 		if(QINTENT_JUMP)
 			if(mmb_intent?.type == INTENT_JUMP)
 				qdel(mmb_intent)

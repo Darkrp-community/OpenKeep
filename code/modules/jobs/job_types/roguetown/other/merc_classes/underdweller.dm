@@ -16,7 +16,7 @@
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather//arm armor since they don't get heavy gloves like other mercs do
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/iron
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltr = /obj/item/rogueweapon/knife/hunting
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather

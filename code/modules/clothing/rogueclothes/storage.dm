@@ -66,18 +66,15 @@
 	new /obj/item/needle/thorn(src)
 	new /obj/item/roguekey/bandit(src)
 
-//Mercs belt starts with a bandage and a key to their guildhall.
+//Mercs belt variants start with a bandage and a key to their guildhall.
 /obj/item/storage/belt/rogue/leather/mercenary/PopulateContents()
 	new /obj/item/natural/cloth(src)
 	new /obj/item/roguekey/mercenary(src)
 
-/obj/item/storage/belt/rogue/leather/merc_nokey/PopulateContents()
-	new /obj/item/natural/cloth (src)
-	new /obj/item/roguecoin/copper/pile (src)
-/obj/item/storage/belt/rogue/leather/merc_nokey/shalal
+/obj/item/storage/belt/rogue/leather/mercenary/shalal
 	name = "shalal belt"
 	icon_state = "shalal"
-/obj/item/storage/belt/rogue/leather/merc_nokey/black
+/obj/item/storage/belt/rogue/leather/mercenary/black
 	name = "black belt"
 	icon_state = "blackbelt"
 
@@ -356,3 +353,41 @@
 	new /obj/item/rogueweapon/surgery/cautery(src)
 	new /obj/item/natural/worms/leech/parasite(src)
 	new /obj/item/rogueweapon/surgery/hammer(src)
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho
+	name = "daisho belt"
+	desc = "A oil-boiled reinforced silk or leather belt used by Abyssariads for practicing Daisho."
+	icon_state = "daisho"
+	sellprice = 5
+	icon = 'icons/roguetown/kaizoku/clothingicon/belts.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/belts.dmi'
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/random/Initialize()
+	color = RANDOM_PEASANT_DYES
+	..()
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/ninja/PopulateContents()
+	new /obj/item/reagent_containers/food/snacks/fogdart(src)
+	new /obj/item/reagent_containers/food/snacks/fogdart(src)
+	new /obj/item/rogueweapon/tetsubishi(src)
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/thunder
+	name = "thunder daisho belt"
+	color = CLOTHING_THUNDER
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/storm
+	name = "storm daisho belt"
+	color = CLOTHING_STORM
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/ocean
+	name = "ocean daisho belt"
+	color = CLOTHING_OCEAN
+
+/obj/item/storage/belt/rogue/kaizoku/leather/daisho/island
+	name = "island daisho belt"
+	color = CLOTHING_ISLAND
+
+/obj/item/storage/backpack/rogue/satchel/ninja/PopulateContents()
+	new /obj/item/grenade/smoke_bomb(src)
+	new /obj/item/grenade/smoke_bomb/poison(src)
+	new /obj/item/throwing_star/ninja(src)

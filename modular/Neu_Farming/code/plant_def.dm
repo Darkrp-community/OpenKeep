@@ -216,6 +216,16 @@
 	can_grow_underground = TRUE
 */
 
+/datum/plant_def/rice
+	name = "weeperstears patch"
+	icon_state = "rice"
+	produce_type = /obj/item/reagent_containers/food/snacks/produce/rice
+	produce_amount_min = 4
+	produce_amount_max = 6
+	maturation_nutrition = HUNGRINESS_TINY
+	maturation_time = FAST_GROWING
+
+
 #undef FAST_GROWING
 #undef VERY_FAST_GROWING
 

@@ -12,7 +12,11 @@
 	allowed_races = list("Humen",
 	"Elf",
 	"Half-Elf",
-	"Dwarf",
+	"Dwarf",,
+	"Changeling",
+	"Skylancer",
+	"Ogrun",
+	"Undine"
 	)
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE

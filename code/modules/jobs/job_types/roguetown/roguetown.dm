@@ -63,10 +63,38 @@
 		if(H.dna)
 			H.dna.species.random_underwear(H.gender)
 			if(H.dna.species)
+				if(H.dna.species.id == "human")
+					if(H.skin_tone == SKIN_COLOR_HEARTFELT)
+						ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+						H.grant_language(/datum/language/abyssal)
 				if(H.dna.species.id == "elf")
 					H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 				if(H.dna.species.id == "dwarf")
 					H.mind.adjust_skillrank(/datum/skill/labor/mining, 1, TRUE)
+				if(H.dna.species.id == "abyssariad")
+					H.verbs |= /mob/proc/throatsing
+					H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
+					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+				if(H.dna.species.name == "Changeling")
+					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) // When their Skull-bending "wag system" comes about, it will be their debuff to counter this.
+				if(H.dna.species.name == "Skylancer")
+					H.verbs |= /mob/proc/birdcall
+				if(H.dna.species.name == "Undine")
+					H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
+					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumhelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/mediumarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lighthelmet)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/lightarmor)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_spear)
+					H.mind.teach_crafting_recipe(/datum/crafting_recipe/obsidian_club)
+					H.verbs |= /mob/proc/croak
+//				if(H.dna.species.id == "Abyssariad"||H.dna.species.name == "Undine") // Not finished yet because I can't test it now.
+//					if(H.patron == /datum/patron/divine/abyssor)
+//						H.set_patron(/datum/patron/goodabyssanctum/abyssor) //so they spawn with their unique powers.
+
 	H.underwear_color = null
 	H.update_body()
 

@@ -209,6 +209,14 @@
 			if(M.density)
 				to_chat(user, "<span class='warning'>Something in the way.</span>")
 				return
+	if(R.req_imperial) //Requires Imperial or 'else' culture.
+		if(HAS_TRAIT(user, TRAIT_KAIZOKU))
+			to_chat(user, "<span class='warning'>I literally cannot fathom how imperials do this. Case hardening? Riveting? Fullering? Fluting? What is that?</span>")
+			return
+	if(R.req_islander) //Requires Fog-island/Heartfell culture.
+		if(!HAS_TRAIT(user, TRAIT_KAIZOKU))
+			to_chat(user, "<span class='warning'>I literally cannot fathom how islanders do this. Differential hardening? Steel folding? Lost-wax casting? Tatami? What is that?</span>")
+			return
 	if(R.req_table)
 		if(!(locate(/obj/structure/table) in T))
 			to_chat(user, "<span class='warning'>I need to make this on a table.</span>")

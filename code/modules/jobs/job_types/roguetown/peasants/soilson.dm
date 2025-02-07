@@ -15,7 +15,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "It is a simple life you live, your basic understanding of life is something many would be envious of if they knew how perfect it was. You know a good day's work, the sweat on your brow is yours: Famines and plague may take its toll, but you know how to celebrate life well. Till the soil and produce fresh food for those around you, and maybe youll be more than an unsung hero someday."
 
@@ -52,22 +56,50 @@
 		ADD_TRAIT(H, TRAIT_SEEDKNOW, TRAIT_GENERIC)
 
 	neck = /obj/item/storage/belt/rogue/pouch/coins/poor
-	if(H.gender == MALE)
-		head = /obj/item/clothing/head/roguetown/roguehood/random
-		if(prob(50))
-			head = /obj/item/clothing/head/roguetown/strawhat
-		pants = /obj/item/clothing/under/roguetown/tights/random
-		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
-		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
+		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+		gloves = /obj/item/clothing/gloves/roguetown/fingerless/yugake
+		armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/random
+		beltl = /obj/item/rogueweapon/sickle/kama //proper weapontool. Unique crafting for a handmade flail.kama
+		shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 		belt = /obj/item/storage/belt/rogue/leather/rope
 		beltr = /obj/item/roguekey/soilson
-		beltl = /obj/item/rogueweapon/knife/villager
+		if(H.gender == FEMALE)
+			shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono
+		else
+			shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
+			pants = /obj/item/clothing/under/roguetown/trou/tobi
+		var/helmettype = pickweight(list("Gasa" = 1, "Roningasa" = 1, "Sandogasa" = 1, "Takuhatsugasa" = 1, "Torioigasa" = 1))
+		switch(helmettype)
+			if("Gasa")
+				head = /obj/item/clothing/head/roguetown/tengai/gasa
+			if("Roningasa")
+				head = /obj/item/clothing/head/roguetown/tengai/roningasa
+			if("Sandogasa")
+				head = /obj/item/clothing/head/roguetown/tengai/sandogasa
+			if("Takuhatsugasa")
+				head = /obj/item/clothing/head/roguetown/takuhatsugasa
+			if("Torioigasa")
+				head =/obj/item/clothing/head/roguetown/tengai/torioigasa
 	else
-		head = /obj/item/clothing/head/roguetown/armingcap
-		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
-		belt = /obj/item/storage/belt/rogue/leather/rope
-		beltr = /obj/item/roguekey/soilson
-		beltl = /obj/item/rogueweapon/knife/villager
+		if(H.gender == MALE)
+			head = /obj/item/clothing/head/roguetown/roguehood/random
+			if(prob(50))
+				head = /obj/item/clothing/head/roguetown/strawhat
+			pants = /obj/item/clothing/under/roguetown/tights/random
+			armor = /obj/item/clothing/suit/roguetown/armor/gambeson/light/striped
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/random
+			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+			belt = /obj/item/storage/belt/rogue/leather/rope
+			beltr = /obj/item/roguekey/soilson
+			beltl = /obj/item/rogueweapon/knife/villager
+		else
+			head = /obj/item/clothing/head/roguetown/armingcap
+			armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+			shoes = /obj/item/clothing/shoes/roguetown/simpleshoes
+			belt = /obj/item/storage/belt/rogue/leather/rope
+			beltr = /obj/item/roguekey/soilson
+			beltl = /obj/item/rogueweapon/knife/villager
+

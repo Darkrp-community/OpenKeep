@@ -336,7 +336,7 @@ GLOBAL_VAR(restart_counter)
 	s += "<b>Dark Medieval Fantasy Roleplay https://discord.gg/qZw267fFsX</b></center><br>"
 	s += "<b>Hosted by SS13.RU Team</b></center><br>"
 #else
-	s += "<big><b>ROGUEWORLD</b></big></a><br>"
+	s += "<big><b>STONEKEEP</b></big></a><br>"
 	s += "<b>Fantasy Computer Survival Game</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"

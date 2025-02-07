@@ -173,3 +173,18 @@
 			to_chat(src, "<font color='purple'>I gained [prayersesh] devotion!</font>")
 			return
 	to_chat(src, "<font color='purple'>I gained [prayersesh] devotion!</font>")
+
+//kaizoku asset
+
+/datum/devotion/cleric_holder/proc/grant_spells_sohei(mob/living/carbon/human/H)
+	if(!H || !H.mind)
+		return
+
+	var/datum/patron/A = H.patron
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/invoked/icebind, A.t0)
+	for(var/spell_type in spelllist)
+		if(!spell_type || H.mind.has_spell(spell_type))
+			continue
+		H.mind.AddSpell(new spell_type)
+	level = CLERIC_T0
+	max_devotion = 150

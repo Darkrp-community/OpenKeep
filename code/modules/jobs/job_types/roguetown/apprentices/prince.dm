@@ -19,8 +19,8 @@
 	outfit = /datum/outfit/job/roguetown/prince
 	display_order = JDO_PRINCE
 	give_bank_account = TRUE
-	bypass_lastclass = FALSE
-	min_pq = 2
+	bypass_lastclass = TRUE
+	min_pq = 0
 
 /datum/job/roguetown/prince/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()

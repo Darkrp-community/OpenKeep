@@ -15,7 +15,7 @@
 
 	outfit = /datum/outfit/job/roguetown/inquisitor
 	display_order = JDO_INQUISITOR
-	min_pq = 4
+	min_pq = 0
 	bypass_lastclass = TRUE
 
 /datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)

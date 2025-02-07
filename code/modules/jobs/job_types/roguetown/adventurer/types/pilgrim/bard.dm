@@ -13,7 +13,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/bard
 	category_tags = list(CTAG_PILGRIM, CTAG_TOWNER)
@@ -62,6 +66,15 @@
 			backr = /obj/item/rogue/instrument/guitar
 		if(H.dna.species.id == "aasimar")
 			backr = /obj/item/rogue/instrument/drum // March along the drums of war.
+		if(H.dna.species.id == "abyssariad" || H.dna.species.name == "Undine")
+			backr = /obj/item/rogue/instrument/shamisen // Why do our shamisens sounds so rock-y? Consider it a 'Abyssariad Interation' of the japanese kind. Remember, not everything must be equal.
+			cloak = /obj/item/clothing/cloak/raincloak/guardiancloak/red
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
+			shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead
+			head = /obj/item/clothing/head/roguetown/bardhat/bloodhunter
+			beltr = /obj/item/rogueweapon/knife/kaizoku/kaiken
+			shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt
+			gloves = /obj/item/clothing/gloves/roguetown/fingerless/yugake
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC) // Bardic rizz
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_BARDIC_TRAINING, TRAIT_GENERIC)

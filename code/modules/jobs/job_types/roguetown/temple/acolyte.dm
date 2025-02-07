@@ -12,7 +12,11 @@
 		"Half-Elf",
 		"Dwarf",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "Chores, exercise, prayer... and more chores. You are a humble acolyte at the temple in Rockhill, not yet a trained guardian or an ordained priest. But who else would keep the fires lit and the floors clean?"
 	allowed_patrons = ALL_TEMPLE_PATRONS
@@ -81,6 +85,13 @@
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver/dendor
 			beltr = /obj/item/rogueweapon/knife/stone
+		if("Abyssor")
+			head = /obj/item/clothing/head/roguetown/padded/shrinekeeper
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
+			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
+			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
+			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
+			wrists = /obj/item/clothing/wrists/roguetown/shrinekeeper
 		else // Failsafe
 			head = /obj/item/clothing/head/roguetown/roguehood/random
 			neck = /obj/item/clothing/neck/roguetown/psycross/silver

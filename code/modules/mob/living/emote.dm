@@ -1507,3 +1507,21 @@
 	else
 		to_chat(user, "<span class='warning'>You're incapable of slapping in your current state.</span>")
 */
+
+/datum/emote/living/throatsing
+	key = "throatsing"
+	message = "murmurs a guttural, throaty warble."
+	emote_type = EMOTE_AUDIBLE
+	only_forced_audio = TRUE
+
+/datum/emote/living/croak
+	key = "croak"
+	message = "croaks."
+	emote_type = EMOTE_AUDIBLE
+	only_forced_audio = TRUE
+
+/datum/emote/living/birdcall
+	key = "birdcall"
+	message = "performs a enthusiastic Skylancer call."
+	emote_type = EMOTE_AUDIBLE
+	only_forced_audio = TRUE

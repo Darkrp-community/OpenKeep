@@ -14,7 +14,11 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	tutorial = "<br>Blood stained hands, do you even see it when they line your palms with golden treasures?  <br><br>\
 	You are a paid killer, redeemable only by fact that your loyalty can be bought,  \
@@ -23,7 +27,7 @@
 	display_order = JDO_MERCENARY
 	bypass_lastclass = FALSE
 	give_bank_account = 3
-	min_pq = 2
+	min_pq = 0
 	outfit = null
 	outfit_female = null
 	advclass_cat_rolls = list(CTAG_MERCENARY = 20)
