@@ -281,7 +281,9 @@
 /mob/living/carbon/human/attack_hand(mob/user)
 	if(..())	//to allow surgery to return properly.
 		return
-	retaliate(user)
+	var/list/not_lethal_intents = list(/datum/intent/unarmed/shove, /datum/intent/unarmed/grab, /datum/intent/unarmed/help)
+	if(!(user.used_intent.type in not_lethal_intents))
+		retaliate(user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		dna.species.spec_attack_hand(H, src)

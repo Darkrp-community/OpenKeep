@@ -1,5 +1,5 @@
 /mob/living/carbon/human/species/orc
-	name = "orc"
+	name = "evil orc"
 
 	icon = 'icons/roguetown/mob/monster/Orc.dmi'
 	icon_state = "orc"
@@ -124,7 +124,7 @@
 			emote("aggro")
 	. = ..()
 
-/mob/living/carbon/human/species/orc/proc/configure_mind()
+/mob/living/carbon/human/species/orc/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src

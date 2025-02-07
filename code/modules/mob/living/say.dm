@@ -254,6 +254,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 /mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode)
 	. = ..()
 	if(!client)
+
 		return
 	var/deaf_message
 	var/deaf_type

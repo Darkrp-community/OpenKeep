@@ -21,7 +21,7 @@
 	wander = TRUE
 	ambushable = FALSE
 
-/mob/living/carbon/human/species/skeleton/skilled/proc/configure_mind()
+/mob/living/carbon/human/species/skeleton/skilled/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src
@@ -352,7 +352,7 @@
 	faction = list("bums", "station")
 	grant_language(/datum/language/common)
 
-/mob/living/carbon/human/species/human/northern/bum/skilled/proc/configure_mind()
+/mob/living/carbon/human/species/human/northern/bum/skilled/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src
@@ -485,7 +485,7 @@
 	wander = TRUE
 	attack_speed = 2
 
-/mob/living/carbon/human/species/goblin/skilled/proc/configure_mind()
+/mob/living/carbon/human/species/goblin/skilled/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src

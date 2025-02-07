@@ -60,12 +60,30 @@
 			resisting = FALSE
 		else
 			stand_attempts = 0
-			if(!handle_combat())
-				if(mode == AI_IDLE && !pickupTarget)
-					npc_idle()
-					if(del_on_deaggro && last_aggro_loss && (world.time >= last_aggro_loss + del_on_deaggro))
-						if(deaggrodel())
-							return TRUE
+
+		// If we see no players within 20 tiles, skip
+		var/has_player_in_range = FALSE
+		for(var/mob/living/carbon/human/M in view(20, src))
+			if(M.client)
+				has_player_in_range = TRUE
+				break
+		if(has_player_in_range)
+			if(world.time >= next_gpt_status_call)
+				next_gpt_status_call = world.time + gpt_status_interval
+				call_gpt_status_sync()
+
+			if(gpt_enabled)
+				aggressive = 0
+				process_ai_gpt()
+			else
+				aggressive = initial(aggressive)
+
+		if(!handle_combat())
+			if(mode == AI_IDLE && !pickupTarget)
+				npc_idle()
+				if(del_on_deaggro && last_aggro_loss && (world.time >= last_aggro_loss + del_on_deaggro))
+					if(deaggrodel())
+						return TRUE
 	else
 		walk_to(src,0)
 		return TRUE
@@ -233,7 +251,7 @@
 	if(L.name in friends)
 		return FALSE
 
-	if(enemies[L])
+	if(L in enemies)
 		return TRUE
 
 	if(aggressive && !faction_check_mob(L))
@@ -268,13 +286,29 @@
 
 			if(!get_active_held_item() && !get_inactive_held_item() && !mind?.has_antag_datum(/datum/antagonist/zombie))
 				// pickup any nearby weapon
+				var/obj/item/weapon = null
+				for(var/obj/item/I in contents)
+					if(!weapon)
+						if(I.force > 7)
+							weapon = I
+					else
+						if(I.force > weapon.force)
+							weapon = I
+
 				for(var/obj/item/I in view(1,src))
 					if(!isturf(I.loc))
 						continue
 					if(blacklistItems[I])
 						continue
-					if(I.force > 7)
-						equip_item(I)
+					if(!weapon)
+						if(I.force > 7)
+							weapon = I
+					else
+						if(I.force > weapon.force)
+							weapon = I
+
+				if(weapon)
+					put_in_hands(weapon)
 
 			// if can't reach target for long enough, go idle
 			if(frustration >= 15)

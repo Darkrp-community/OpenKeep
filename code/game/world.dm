@@ -212,6 +212,7 @@ GLOBAL_VAR(restart_counter)
 	// log which is ultimately public.
 	log_runtime(GLOB.revdata.get_log_message())
 
+
 /world/Topic(T, addr, master, key)
 	TGS_TOPIC //redirect to server tools if necessary
 

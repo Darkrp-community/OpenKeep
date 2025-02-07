@@ -300,7 +300,7 @@
 	d_intent = INTENT_PARRY //these ones will parry instead of dodge, making them much more dangerous
 	configure_mind()
 
-/mob/living/carbon/human/species/skeleton/npc/warrior/skilled/proc/configure_mind()
+/mob/living/carbon/human/species/skeleton/npc/warrior/skilled/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src

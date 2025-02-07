@@ -31,7 +31,7 @@
 	spawn(10)
 		after_creation() //so their stats are rolled
 
-/mob/living/carbon/human/species/elf/snow/wood/proc/configure_mind()
+/mob/living/carbon/human/species/elf/snow/wood/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src

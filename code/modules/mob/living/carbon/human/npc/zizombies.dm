@@ -117,7 +117,7 @@
 			emote("rage")
 	. = ..()
 
-/mob/living/carbon/human/species/zizombie/proc/configure_mind()
+/mob/living/carbon/human/species/zizombie/configure_mind()
 	if(!mind)
 		mind = new /datum/mind(src)
 		mind.current = src
