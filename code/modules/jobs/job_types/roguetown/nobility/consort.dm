@@ -3,7 +3,7 @@
 	flag = CONSORT
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
+	total_positions = 1
 	spawn_positions = 1
 
 	allowed_races = list(
@@ -18,7 +18,7 @@
 
 	display_order = JDO_CONSORT
 	bypass_lastclass = TRUE
-	min_pq = 4
+	min_pq = 0
 	give_bank_account = 500
 
 	cmode_music = 'sound/music/combat_noble.ogg'

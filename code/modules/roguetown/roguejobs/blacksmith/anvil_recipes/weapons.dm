@@ -679,7 +679,7 @@
 	recipe_name = "a Kunai"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/huntingknife/kunai
+	created_item = /obj/item/rogueweapon/knife/kaizoku/kunai
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/tanto
@@ -687,7 +687,7 @@
 	recipe_name = "a couple Tantos"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/knife/steel/tanto
+	created_item = /obj/item/rogueweapon/knife/kaizoku/tanto
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 2
@@ -697,7 +697,7 @@
 	recipe_name = "a couple Daggers"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/rogueweapon/knife/kaiken
+	created_item = /obj/item/rogueweapon/knife/kaizoku/kaiken
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 3
@@ -707,7 +707,7 @@
 	recipe_name = "a couple of Sai"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/rogueweapon/knife/hunting/sai
+	created_item = /obj/item/rogueweapon/knife/kaizoku/sai
 	createmultiple = TRUE
 	createditem_num = 1
 	craftdiff = 3
@@ -745,7 +745,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/polearm/halberd/naginata
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata
 	craftdiff = 2
 
 /datum/anvil_recipe/weapons/tsukushi
@@ -754,7 +754,7 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
-	created_item = /obj/item/rogueweapon/polearm/halberd/naginata/tsukushi
+	created_item = /obj/item/rogueweapon/polearm/halberd/bardiche/naginata/tsukushi
 	craftdiff = 1
 	createmultiple = TRUE
 	createditem_num = 1

@@ -312,13 +312,12 @@ GLOBAL_VAR(restart_counter)
 	var/s = ""
 	s += "<center><a href=\"https://discord.gg/stonekeep\">"
 #ifdef MATURESERVER
-	s += "<big><b>STONEKEEP (18+) (Immersive RP)</b></big></a><br>"
-	s += "<b>Dark Medieval Fantasy Roleplay<b><br>"
-	s += "<b>New Map: StoneHamlet <b><br>"
-	s += "<b>Whitelist Enabled: discord.gg/stonekeep</b></center><br>"
-	//s += "<b>Powerbottoms Welcome</b><br>"
+	s += "<big><b>Stonekeep: Grit & Loathing in Grimoria (18+)</b></big></a><br>"
+	s += "<b>Gritty Medieval Fantasy Roleplay<b><br>"
+	s += "<b>NEW CONTENT: Kaizoku Fog Islands DLC<b><br>"
+	s += "<b>Whitelist Enabled: https://discord.gg/stonekeep</b></center><br>"
 #else
-	s += "<big><b>ROGUEWORLD</b></big></a><br>"
+	s += "<big><b>STONEKEEP</b></big></a><br>"
 	s += "<b>Fantasy Computer Survival Game</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"

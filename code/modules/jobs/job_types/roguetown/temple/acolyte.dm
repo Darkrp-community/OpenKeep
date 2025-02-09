@@ -74,7 +74,7 @@
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/malum
 		if("Abyssor")
 			head = /obj/item/clothing/head/roguetown/padded/shrinekeeper
-			neck = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+			neck = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 			armor = /obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
 			shirt = /obj/item/clothing/suit/roguetown/shirt/rags/monkgarb/random
 			shoes = /obj/item/clothing/shoes/roguetown/sandals/geta

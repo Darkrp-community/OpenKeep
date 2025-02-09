@@ -41,10 +41,10 @@
 	pants = /obj/item/clothing/under/roguetown/trou/tobi/random
 
 	H.become_blind("TRAIT_GENERIC")
-	var/wokoutype = list("LinYou(Ambusher)","Dustrider(Scout)","Muqian(Towerdweller)","Shuhen(Militia)","Kaizoku(Navy)")
+	var/wokoutype = list("LinYou (Ambusher)","Dustrider (Scout)","Muqian (Towerdweller)","Shuhen (Militia)","Kaizoku (Navy)", "Jizamurai (Enforcer)")
 	var/specialization = input("Choose your culture", "Available culture") as anything in wokoutype
 	switch(specialization) //as far I know, all roles here are meant to be balanced.
-		if("LinYou(Ambusher)") //Weaker iron armor, specialized exactly in being able to repair their own weaker armor.
+		if("LinYou (Ambusher)") //Weaker iron armor, specialized exactly in being able to repair their own weaker armor.
 			var/roll = rand(1, 100)
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/chainmail/rattan
@@ -68,7 +68,7 @@
 			H.change_stat("intelligence", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("Dustrider(Scout)") // Full light armor, highest quality of light armor. Loses shield and money for bow. Literally mongolian, but lacking a horse. Only Dodge expert.
+		if("Dustrider (Scout)") // Full light armor, highest quality of light armor. Loses shield and money for bow. Literally mongolian, but lacking a horse. Only Dodge expert.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide/dustwalker
 			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/deelcoat
@@ -77,9 +77,9 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltr = /obj/item/quiver/arrows
 			if(prob(60))
-				beltl = /obj/item/rogueweapon/huntingknife/kunai //so they HAVE something to use in melee combat.
+				beltl = /obj/item/rogueweapon/knife/kaizoku/kunai //so they HAVE something to use in melee combat.
 			else
-				beltl = /obj/item/rogueweapon/knife/steel/tanto // luckyroll. Now you have a short-short sword.
+				beltl = /obj/item/rogueweapon/knife/kaizoku/tanto // luckyroll. Now you have a short-short sword.
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 
 			//please tell me if this is balanced or not.
@@ -90,7 +90,7 @@
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			to_chat(H, span_warning( "<span class='info'>Hailing from the arid heart of the island, I am a 'Dustwalker'. I left my horse behind to try my luck among the sailing allies, but my trusted bow remains with me.</span>"))
 
-		if("Shuhen(Militia)")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
+		if("Shuhen (Militia)")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/plate/mirror/iron
 			head = /obj/item/clothing/head/roguetown/tengai/gasa
@@ -115,7 +115,7 @@
 			H.change_stat("intelligence", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("Muqian(Towerdweller)") //The 20% of Wokou Population. Practically the best armored - but has no shield and no money, and have to rely on flails for combat. 'Kusari/Chain-People'
+		if("Muqian (Towerdweller)") //The 20% of Wokou Population. Practically the best armored - but has no shield and no money, and have to rely on flails for combat. 'Kusari/Chain-People'
 			H.set_blindness(0)
 			shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/kusari
 			neck = /obj/item/clothing/neck/roguetown/chaincoif/iron/kusari_zukin
@@ -131,7 +131,7 @@
 			H.change_stat("intelligence", -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
-		if("Kaizoku(Navy)") // Special one. "AYO THIS IS THE PROJECT NAME!!!" Start with Steel Weapon - but uses weak light armor, but they have DRIP, and non-rattan shield, because from where they come from, has no Rattan.
+		if("Kaizoku (Navy)") // Special one. "AYO THIS IS THE PROJECT NAME!!!" Start with Steel Weapon - but uses weak light armor, but they have DRIP, and non-rattan shield, because from where they come from, has no Rattan.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/kaizoku
 			head = /obj/item/clothing/head/roguetown/helmet/leather/malgai/kaizoku
@@ -148,5 +148,26 @@
 			H.change_stat("perception", -1)
 			H.change_stat("endurance", 2)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+		if("Jizamurai (Enforcer)")
+			H.set_blindness(0)
+			armor = /obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/rich
+			head = /obj/item/clothing/head/roguetown/tengai/gasa
+			cloak = /obj/item/clothing/cloak/stabard/haramaki/jinbaori/jizamurai
+			mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/steel/half
+			mouth = /obj/item/clothing/mask/cigarette/pipe/westman
+			neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+			shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/rich
+			pants = /obj/item/clothing/under/roguetown/trou/tobi/random
+			beltr = /obj/item/rogueweapon/sword/short/wakizashi
+			beltl = /obj/item/rogueweapon/sword/uchigatana
+			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			to_chat(H, span_warning("<span class='info'>As a minor Zamurai lord, my roots are bound to the sword. I shall protect the weak and the innocent from corruption, as its reach ends where my blade begins. </span>"))
+
+			//Strength and Endurance.
+			H.change_stat("strength", 2)
+			H.change_stat("endurance", 2)
+			H.change_stat("perception", -1)
+			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
+			ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
 	H.cure_blind("TRAIT_GENERIC")

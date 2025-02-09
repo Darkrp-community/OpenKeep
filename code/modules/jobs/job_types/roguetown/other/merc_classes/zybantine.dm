@@ -24,7 +24,7 @@
 	neck = /obj/item/clothing/neck/roguetown/keffiyeh/red
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/coatplates
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/black
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey/shalal
+	belt = /obj/item/storage/belt/rogue/leather/mercenary/shalal
 	beltr = /obj/item/rogueweapon/sword/long/rider
 	pants = /obj/item/clothing/under/roguetown/tights/red
 	shoes = /obj/item/clothing/shoes/roguetown/shalal

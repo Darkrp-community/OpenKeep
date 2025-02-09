@@ -3,7 +3,7 @@
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
-	total_positions = 0
+	total_positions = 1
 	spawn_positions = 1
 
 	f_title = "Queen"
@@ -17,7 +17,7 @@
 	tutorial = "Elevated to your throne by a web of intrigue, you are the absolute authority of this island and at the center of every plot within it. All are envious of your position and would replace you in less than a heartbeat; show them the error of their ways."
 	bypass_lastclass = TRUE
 	whitelist_req = FALSE
-	min_pq = 4
+	min_pq = 0
 	give_bank_account = 500
 	selection_color = "#786194"
 

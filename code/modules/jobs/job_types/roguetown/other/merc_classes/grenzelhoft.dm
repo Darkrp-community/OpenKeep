@@ -20,7 +20,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzel
 	armor = /obj/item/clothing/suit/roguetown/armor/cuirass/grenzelhoft
 	shirt = /obj/item/clothing/suit/roguetown/shirt/grenzelhoft
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/poor
 	beltl = /obj/item/rogueweapon/mace/cudgel
 	pants = /obj/item/clothing/under/roguetown/grenzelpants

@@ -19,7 +19,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/abyssariad/champion
 	category_tags = list(CTAG_ADVENTURER)
 	maximum_possible_slots = 1
-	pickprob = 100
+	pickprob = 50
 
 /datum/outfit/job/roguetown/adventurer/abyssariad/champion/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -68,9 +68,10 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 5, TRUE)
 
-			H.change_stat("strength", 2)
+			H.change_stat("strength", 3)
 			H.change_stat("endurance", 2)
 			H.change_stat("constitution", 2)
+			H.change_stat("intelligence", -1) // To justify +3 STR to wield their sword
 			H.change_stat("speed", -1)
 
 		backr = /obj/item/storage/backpack/rogue/satchel
@@ -122,9 +123,9 @@
 		beltl = /obj/item/rogueweapon/sword/uchigatana
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		cloak = /obj/item/clothing/suit/roguetown/shirt/tunic/kamishimo/eidolon
-		armor = /obj/item/clothing/suit/roguetown/armor/leather/studded/kikko/eidolon
+		armor = /obj/item/clothing/suit/roguetown/armor/leather/splint/kikko/eidolon
 		shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/light/hitatare/eidolon
-		wrists = /obj/item/clothing/neck/roguetown/psicross/abyssanctum
+		wrists = /obj/item/clothing/neck/roguetown/psycross/silver/abyssanctum
 		shoes = /obj/item/clothing/shoes/roguetown/sandals/geta
 		pants = /obj/item/clothing/under/roguetown/tights/hakama/eidolon
 		mask = /obj/item/clothing/mask/rogue/kaizoku/menpo/facemask/colourable/tengu

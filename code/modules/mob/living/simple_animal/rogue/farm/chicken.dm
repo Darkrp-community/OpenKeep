@@ -2,6 +2,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
 	name = "\improper chicken"
 	desc = "A fat and mostly flightless bird. They produce eggs, or 'cackleberries'."
+	icon = 'icons/roguetown/mob/monster/chicken.dmi'
 	icon_state = "chicken_brown"
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
