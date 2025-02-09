@@ -39,7 +39,7 @@
 	pants = /obj/item/clothing/under/roguetown/trou/tobi/kabukimono
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots/cloudhead/kabukimono
 	gloves = /obj/item/clothing/gloves/roguetown/leather/abyssal/kabukimono
-	belt = /obj/item/storage/belt/rogue/leather
+	belt = /obj/item/storage/belt/rogue/leather/mercenary
 	beltl = /obj/item/rogueweapon/mace/cudgel/jitte
 	cloak = /obj/item/clothing/cloak/raincloak/horocloak/kabukimono
 	shirt = /obj/item/clothing/suit/roguetown/shirt/tunic/kimono/kabukimono

@@ -207,7 +207,7 @@ Design philosphy:
 		neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 		beltr = /obj/item/quiver/arrows
-		beltl = /obj/item/rogueweapon/knife/steel/tanto
+		beltl = /obj/item/rogueweapon/knife/kaizoku/tanto
 		backpack_contents = list(/obj/item/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>If I am bound to the king, I must be one with my bloodline.</span>")
@@ -262,7 +262,7 @@ Design philosphy:
 		beltr = /obj/item/rogueweapon/sword/rapier
 		head = /obj/item/clothing/head/roguetown/tengai/gasa
 		neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
-		beltl = /obj/item/rogueweapon/knife/steel/tanto
+		beltl = /obj/item/rogueweapon/knife/kaizoku/tanto
 		backpack_contents = list(/obj/item/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>Since my clan became bound to the king, I must be one with my bloodline. I am no Clanless.</span>")

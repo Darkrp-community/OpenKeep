@@ -77,9 +77,9 @@
 			backl = /obj/item/storage/backpack/rogue/satchel
 			beltr = /obj/item/quiver/arrows
 			if(prob(60))
-				beltl = /obj/item/rogueweapon/huntingknife/kunai //so they HAVE something to use in melee combat.
+				beltl = /obj/item/rogueweapon/knife/kaizoku/kunai //so they HAVE something to use in melee combat.
 			else
-				beltl = /obj/item/rogueweapon/knife/steel/tanto // luckyroll. Now you have a short-short sword.
+				beltl = /obj/item/rogueweapon/knife/kaizoku/tanto // luckyroll. Now you have a short-short sword.
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 
 			//please tell me if this is balanced or not.

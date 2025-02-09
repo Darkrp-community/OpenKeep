@@ -342,7 +342,7 @@
 	max_integrity = 300
 	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
 
-/obj/item/rogueweapon/shield/abyssaltower/dustcurse/dropped()
+/obj/item/rogueweapon/shield/tower/abyssaltower/dustcurse/dropped()
 	. = ..()
 	name = "Dustcurse abyssal towershield"
 	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.

@@ -158,7 +158,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	axe_cut = 18
 
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 	minstr = 6
 
 	sellprice = 20
