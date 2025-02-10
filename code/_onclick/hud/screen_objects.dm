@@ -743,6 +743,8 @@
 /atom/movable/screen/rogmove/sprint/toggle(mob/user)
 	if(isobserver(user))
 		return
+	if(HAS_TRAIT(user, TRAIT_HOBBLED))
+		return
 	if(user.m_intent == MOVE_INTENT_RUN)
 		user.toggle_rogmove_intent(MOVE_INTENT_WALK)
 	else
