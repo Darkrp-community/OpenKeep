@@ -549,8 +549,10 @@
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town)
 "aBY" = (
-/obj/machinery/light/rogue/torchholder/r,
-/turf/open/floor/rogue/dirt,
+/obj/effect/decal/turfedge_neu{
+	dir = 1
+	},
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/town/hamlet)
 "aBZ" = (
 /obj/machinery/light/rogue/wallfire/candle/weak/l,
@@ -3562,14 +3564,12 @@
 /turf/open/floor/rogue/cobble/alt,
 /area/rogue/indoors/town/garrison)
 "dEz" = (
-/obj/effect/decal/turfedge_neu{
-	dir = 9
-	},
 /obj/structure/fluff/railing/border{
 	dir = 1;
 	icon_state = "border"
 	},
 /obj/machinery/simple_dye_bin,
+/obj/effect/decal/turfedge_neu,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/exposed/town/hamlet)
 "dEH" = (
@@ -5616,7 +5616,7 @@
 	dir = 5;
 	icon_state = "border"
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/town/hamlet)
 "fqM" = (
 /obj/structure/bed/rogue/wooldouble,
@@ -16066,7 +16066,7 @@
 	dir = 4;
 	icon_state = "border"
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/town/hamlet)
 "pnL" = (
 /obj/structure/fluff/railing/border{
@@ -18075,13 +18075,10 @@
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/under/town/basement)
 "rij" = (
-/obj/effect/decal/turfedge_neu{
-	dir = 9
-	},
 /obj/structure/gate/bars{
 	gid = "townin"
 	},
-/turf/open/floor/rogue/dirt/road,
+/turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/town/hamlet)
 "rik" = (
 /obj/structure/fluff/railing/border{
@@ -22641,9 +22638,9 @@
 /area/rogue/indoors/town/church)
 "vxz" = (
 /obj/effect/decal/turfedge_neu{
-	dir = 1
+	dir = 8
 	},
-/turf/open/floor/rogue/dirt,
+/turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/exposed/town/hamlet)
 "vxR" = (
 /obj/structure/fluff/walldeco/bath/wallrope{
@@ -62604,7 +62601,7 @@ xEd
 xEd
 ube
 rGt
-wAB
+dZq
 xEd
 hAB
 xEd
@@ -62798,7 +62795,7 @@ xEd
 okB
 fcD
 dZq
-wAB
+dZq
 niZ
 xEd
 xEd
@@ -62818,10 +62815,10 @@ dZq
 aSg
 vWP
 oqC
-wAB
+dZq
 qZO
 czT
-wAB
+dZq
 xkE
 ivL
 tXA
@@ -62978,17 +62975,7 @@ xGO
 pNR
 pfh
 dZq
-wAB
 dZq
-dZq
-dZq
-dZq
-dZq
-iDy
-iDy
-iDy
-iDy
-iDy
 dZq
 dZq
 dZq
@@ -62999,24 +62986,34 @@ iDy
 iDy
 iDy
 iDy
+dZq
+dZq
+dZq
+dZq
+dZq
 iDy
-wAB
+iDy
+iDy
+iDy
+iDy
+iDy
+dZq
 dZq
 dZq
 dZq
 dxL
 iNB
 heN
-dZq
-dZq
-dZq
-dZq
-wAB
-dZq
-dZq
+fwO
+vxz
+vxz
+vWg
+fwO
+vWg
+tZR
 rij
 jFj
-wAB
+dZq
 pCV
 pCV
 pCV
@@ -63030,12 +63027,12 @@ dZq
 dZq
 dZq
 dZq
-wAB
-wAB
 dZq
 dZq
 dZq
-wAB
+dZq
+dZq
+dZq
 dZq
 dZq
 dZq
@@ -63169,46 +63166,46 @@ aMV
 pCV
 pCp
 qsl
-wAB
-wAB
-wAB
+dZq
+dZq
+dZq
 pdq
-wAB
 dZq
-wAB
 dZq
-wAB
-wAB
-wAB
 dZq
-wAB
+dZq
+dZq
+dZq
+dZq
+dZq
+dZq
 pdq
-wAB
-wAB
-wAB
 dZq
-wAB
+dZq
+dZq
+dZq
+dZq
 pxU
-wAB
-wAB
-wAB
-wAB
-wAB
+dZq
+dZq
+dZq
+dZq
+dZq
 pdq
-wAB
-wAB
+dZq
+dZq
 pxU
 pxU
-wAB
-wAB
+fwO
+tZR
 pnK
 pnK
 pnK
 fqu
-wAB
+iNB
 pdq
-wAB
-vxz
+tZR
+tZR
 jbJ
 ygV
 pCV
@@ -63226,9 +63223,9 @@ xkE
 vWP
 xkE
 xkE
-oII
-wAB
-oII
+pxU
+dZq
+pxU
 xkE
 xkE
 vWP
@@ -63367,7 +63364,6 @@ ygV
 mGt
 dZq
 dZq
-wAB
 dZq
 dZq
 dZq
@@ -63375,12 +63371,13 @@ dZq
 dZq
 dZq
 dZq
-wAB
 dZq
 dZq
 dZq
-aBY
-wAB
+dZq
+dZq
+nHt
+dZq
 cwL
 hdL
 rtE
@@ -63393,16 +63390,16 @@ dZq
 dZq
 dZq
 dZq
-dZq
-fwO
+aBY
+tZR
 try
 cXq
 slK
 dEz
-vWg
-dZq
 dZq
 dxL
+tZR
+tZR
 qsl
 pXN
 pCV
@@ -63411,9 +63408,9 @@ pCV
 pCV
 pCV
 sfQ
-wAB
-wAB
-wAB
+dZq
+dZq
+dZq
 mgZ
 mGt
 dZq
@@ -63421,11 +63418,11 @@ dZq
 dZq
 dZq
 dZq
-wAB
-wAB
 dZq
 dZq
-wAB
+dZq
+dZq
+dZq
 dZq
 dZq
 dZq
@@ -63568,9 +63565,9 @@ jMn
 uXz
 dZq
 dZq
-wAB
+dZq
 nHt
-wAB
+dZq
 dZq
 frr
 rSm
@@ -63762,7 +63759,7 @@ hTQ
 sph
 kyb
 dZq
-wAB
+dZq
 rSm
 pSa
 pSa
@@ -64150,7 +64147,7 @@ ioW
 ePC
 jcR
 lxV
-wAB
+dZq
 pSa
 rSm
 rtp
@@ -64538,7 +64535,7 @@ uuL
 dUL
 ixW
 rGt
-wAB
+dZq
 pSa
 ajF
 fcR
@@ -68892,8 +68889,8 @@ mDZ
 jRP
 fyl
 hHf
-hQx
-hQx
+bsm
+bsm
 bsm
 fyl
 bsm
@@ -69093,7 +69090,7 @@ fyl
 fyl
 bsm
 bsm
-hQx
+bsm
 mDZ
 fyl
 fyl
@@ -69870,7 +69867,7 @@ let
 xYU
 fyl
 mDZ
-hQx
+bsm
 bsm
 mDZ
 fNt
@@ -70259,7 +70256,7 @@ oHv
 fyl
 fyl
 lmG
-hQx
+bsm
 fyl
 oHv
 fNt
@@ -70453,7 +70450,7 @@ fyl
 fyl
 fyl
 oHv
-hQx
+bsm
 fyl
 fyl
 fNt
@@ -70647,7 +70644,7 @@ fyl
 oHv
 fyl
 mDZ
-hQx
+bsm
 mDZ
 fyl
 fNt
@@ -70841,7 +70838,7 @@ fyl
 fyl
 fyl
 bsm
-hQx
+bsm
 osA
 fyl
 fNt
@@ -71035,7 +71032,7 @@ oHv
 fyl
 fyl
 bsm
-hQx
+bsm
 mDZ
 fyl
 fNt
@@ -71229,7 +71226,7 @@ fyl
 fyl
 fyl
 fyl
-hQx
+bsm
 bsm
 oHv
 fNt
@@ -71423,7 +71420,7 @@ fyl
 fyl
 oHv
 mDZ
-hQx
+bsm
 bsm
 fyl
 fyl
@@ -71617,7 +71614,7 @@ fyl
 fyl
 fyl
 mDZ
-hQx
+bsm
 bsm
 mDZ
 fyl
@@ -71811,7 +71808,7 @@ osA
 fyl
 fyl
 mDZ
-hQx
+bsm
 bsm
 mDZ
 oHv
@@ -72005,7 +72002,7 @@ mDZ
 fyl
 fyl
 fyl
-hQx
+bsm
 bsm
 fyl
 fyl
@@ -72199,7 +72196,7 @@ fyl
 fyl
 fyl
 oHv
-hQx
+bsm
 bsm
 mDZ
 fyl
@@ -72393,7 +72390,7 @@ fyl
 fyl
 fyl
 fyl
-hQx
+bsm
 bsm
 fyl
 fyl
@@ -72587,7 +72584,7 @@ fyl
 oHv
 fyl
 mDZ
-hQx
+bsm
 hQx
 oHv
 fyl
@@ -72782,7 +72779,7 @@ fyl
 fyl
 mDZ
 hHf
-hQx
+bsm
 fyl
 fyl
 fNt
@@ -72975,8 +72972,8 @@ oHv
 fyl
 fyl
 fyl
-hQx
-hQx
+bsm
+bsm
 mDZ
 fyl
 fNt
@@ -73169,7 +73166,7 @@ fyl
 fyl
 oHv
 bsm
-hQx
+bsm
 fyl
 fyl
 oHv
@@ -73363,7 +73360,7 @@ rog
 mDZ
 mDZ
 bsm
-hQx
+bsm
 fyl
 fyl
 fyl
@@ -73557,7 +73554,7 @@ sXm
 mDZ
 mDZ
 bsm
-hQx
+bsm
 fyl
 oHv
 fyl
@@ -73751,7 +73748,7 @@ rog
 oHv
 fyl
 bsm
-hQx
+bsm
 fyl
 fyl
 fNt
@@ -73945,7 +73942,7 @@ rog
 fyl
 fyl
 fyl
-hQx
+bsm
 fyl
 fyl
 fNt
@@ -74139,7 +74136,7 @@ rog
 sXm
 fyl
 mDZ
-hQx
+bsm
 fyl
 oHv
 fNt
@@ -74526,7 +74523,7 @@ sXf
 mzw
 sXf
 mDZ
-hQx
+bsm
 bsm
 mDZ
 mzw
@@ -74720,7 +74717,7 @@ psp
 psp
 mzw
 mDZ
-hQx
+bsm
 emc
 mDZ
 rog
