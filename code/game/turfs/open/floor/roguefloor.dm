@@ -639,6 +639,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 	smooth = SMOOTH_MORE
+	slowdown = -0.2
 	canSmoothWith = list(/turf/closed/mineral/rogue,
 						/turf/closed/mineral,
 						/turf/closed/wall/mineral/rogue/stonebrick,
@@ -849,6 +850,7 @@
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 	neighborlay = "herringedge"
 	smooth = SMOOTH_TRUE
+	slowdown = -0.5
 	canSmoothWith = list(/turf/open/floor/rogue/herringbone,
 						/turf/open/floor/rogue/blocks,
 						/turf/open/floor/rogue/dirt,
