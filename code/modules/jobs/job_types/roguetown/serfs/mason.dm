@@ -27,6 +27,8 @@
 	give_bank_account = 8
 	min_pq = -50
 
+	cmode_music = 'sound/music/combat_dwarf.ogg'//rock n stone devouts, why no?
+
 /datum/outfit/job/roguetown/mason/pre_equip(mob/living/carbon/human/H)
 	..()
 	if(H.mind)
@@ -71,7 +73,7 @@
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
+	H.grant_language(/datum/language/dwarvish)
 
-	if(H.dna.species.id == "dwarf")
-		head = /obj/item/clothing/head/roguetown/helmet/leather/minershelm
-		H.cmode_music = 'sound/music/combat_dwarf.ogg'
+	if(H.dna.species.id == "elf")
+		H.remove_language(/datum/language/dwarvish)//no elf shall speak dwarfvish.
