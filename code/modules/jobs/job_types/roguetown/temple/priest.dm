@@ -143,6 +143,7 @@
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stressevent/psycurse)
 					H.remove_overlay()
+					REMOVE_TRAIT(H, TRAIT_BRANDED, TRAIT_GENERIC)
 			return
 		var/found = FALSE
 		for(var/mob/living/carbon/H in GLOB.player_list)
