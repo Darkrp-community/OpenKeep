@@ -433,6 +433,11 @@
 			list(type = /obj/item/rogueweapon/knife/dagger/silver, count = 1),
 			cost = 2,
 			max_purchases = 4
+		),
+		"Brand (5)" = list(
+			list(type = /obj/item/rogueweapon/brand, count = 3),
+			cost = 5,
+			max_purchases = 2
 		)
 	)
 	testing("Items defined: [items]")

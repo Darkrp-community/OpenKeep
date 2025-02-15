@@ -297,3 +297,96 @@
 	desc = "a simple distracting tool used to cause a commotion and bleeding so its user can scramble."
 	icon_state = "shuriken"
 	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+
+/obj/item/rogueweapon/brand
+    force = 5
+    possible_item_intents = list(/datum/intent/use, /datum/intent/mace/strike)
+    name = "branding iron"
+    desc = ""
+    icon_state = "brand0"
+    icon = 'icons/roguetown/weapons/tools.dmi'
+    sharpness = IS_BLUNT
+    //dropshrink = 0.8
+    wlength = 10
+    slot_flags = ITEM_SLOT_HIP
+    associated_skill = null
+    var/hott = FALSE
+    smeltresult = /obj/item/ingot/iron
+
+/obj/item/rogueweapon/brand/examine(mob/user)
+    . = ..()
+    if(hott)
+        . += "<span class='warning'>The tip is hot to the touch.</span>"
+
+/obj/item/rogueweapon/brand/get_temperature()
+    if(hott)
+        return FIRE_MINIMUM_TEMPERATURE_TO_SPREAD
+    return ..()
+
+/obj/item/rogueweapon/brand/fire_act(added, maxstacks)
+    . = ..()
+    hott = world.time
+    update_icon()
+    addtimer(CALLBACK(src, PROC_REF(make_unhot), world.time), 10 SECONDS)
+
+/obj/item/rogueweapon/brand/update_icon()
+    . = ..()
+    if(hott)
+        icon_state = "brand1"
+    else
+        icon_state = "brand0"
+
+/obj/item/rogueweapon/brand/proc/make_unhot(input)
+    if(hott == input)
+        hott = FALSE
+
+/obj/item/rogueweapon/brand/attack_self(mob/user)
+    hott = FALSE
+    update_icon()
+
+/obj/item/rogueweapon/brand/dropped()
+    . = ..()
+    hott = FALSE
+    update_icon()
+
+/obj/item/rogueweapon/brand/attack(mob/living/target, mob/living/user)
+    . = ..()
+    if(HAS_TRAIT(target, TRAIT_BRANDED)) // prevents being branded multiple times.
+        return
+    else
+        if(hott && istype(target, /mob/living/carbon/human))
+            var/mob/living/carbon/human/H = target
+            var/mutable_appearance/branded = mutable_appearance('icons/effects/effects.dmi', "brand")
+            branded.layer = BODY_LAYER // Ensure the overlay is above the mob but below clothing
+            if(!get_location_accessible(H, check_zone(user.zone_selected)))
+                to_chat(user, "<span class='warning'>Something in the way.</span>")
+                return
+            else
+                if(user.zone_selected != BODY_ZONE_HEAD)
+                    return
+                user.visible_message("<span class='warning'>[user] begins to brand [target]...</span>")
+                addtimer(CALLBACK(src, /obj/item/rogueweapon/brand/proc/apply_brand, H, user, branded), 3 SECONDS)
+
+/obj/item/rogueweapon/brand/proc/apply_brand(var/mob/living/carbon/human/H, var/mob/living/user, var/mutable_appearance/branded)
+    if(!H || !user || !branded)
+        return
+    H.overlays_standing[BODY_LAYER] += branded // Add the overlay to the specific layer
+    H.apply_overlay(BODY_LAYER) // Apply the overlay
+    to_chat(H, "<span class='warning'>Searing pain spreads through your head as you are branded!</span>")
+    to_chat(user, "<span class='warning'>Flesh burns as you apply the brand...</span>")
+    H.emote("scream")
+    var/damage = 10
+    H.apply_damage(damage, BURN, BODY_ZONE_HEAD)
+    playsound(src.loc, 'sound/misc/frying.ogg', 80)
+    hott = FALSE
+    ADD_TRAIT(H, TRAIT_BRANDED, TRAIT_GENERIC)
+    update_icon()
+
+/obj/item/rogueweapon/brand/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -9,"sy" = 1,"nx" = 12,"ny" = 1,"wx" = -8,"wy" = 1,"ex" = 6,"ey" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
+			if("onbelt")
+				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)

@@ -47,6 +47,18 @@
 				icon_state = "[base_state]0"
 			return
 
+/obj/machinery/light/rogue/firebowl/attackby(obj/item/W, mob/living/user, params)
+    if(istype(W, /obj/item/rogueweapon/brand) && on)
+        var/obj/item/rogueweapon/brand/T = W
+        if(T.hott == FALSE)
+            var/tyme = world.time
+            T.hott = tyme
+            addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/brand, make_unhot), tyme), 100)
+            T.update_icon()
+            to_chat(user, "<span class='info'>The branding iron is now red hot.</span>")
+            return TRUE
+    return ..()
+
 /obj/machinery/light/rogue/firebowl/stump
 	icon_state = "stumpfire1"
 	base_state = "stumpfire"
@@ -104,6 +116,18 @@
 	fueluse = 0
 	crossfire = FALSE
 	cookonme = TRUE
+
+/obj/machinery/light/rogue/wallfire/attackby(obj/item/W, mob/living/user, params)
+    if(istype(W, /obj/item/rogueweapon/brand) && on)
+        var/obj/item/rogueweapon/brand/T = W
+        if(T.hott == FALSE)
+            var/tyme = world.time
+            T.hott = tyme
+            addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/brand, make_unhot), tyme), 100)
+            T.update_icon()
+            to_chat(user, "<span class='info'>The branding iron is now red hot.</span>")
+            return TRUE
+    return ..()
 
 /obj/machinery/light/rogue/wallfire/big_fireplace
 	icon_state = "fireplace1"
@@ -304,6 +328,18 @@
 			playsound(src.loc, 'sound/foley/torchfixtureput.ogg', 70)
 		return
 	. = ..()
+
+/obj/machinery/light/rogue/torchholder/attackby(obj/item/W, mob/living/user, params)
+    if(istype(W, /obj/item/rogueweapon/brand) && on)
+        var/obj/item/rogueweapon/brand/T = W
+        if(T.hott == FALSE)
+            var/tyme = world.time
+            T.hott = tyme
+            addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/brand, make_unhot), tyme), 100)
+            T.update_icon()
+            to_chat(user, "<span class='info'>The branding iron is now red hot.</span>")
+            return TRUE
+    return ..()
 
 /obj/machinery/light/rogue/torchholder/cold
 	lacks_torch = TRUE
@@ -540,6 +576,18 @@
 				if(affecting && affecting.receive_damage( 0, 5 ))		// 5 burn damage
 					H.update_damage_overlays()
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
+
+/obj/machinery/light/rogue/campfire/attackby(obj/item/W, mob/living/user, params)
+    if(istype(W, /obj/item/rogueweapon/brand) && on)
+        var/obj/item/rogueweapon/brand/T = W
+        if(T.hott == FALSE)
+            var/tyme = world.time
+            T.hott = tyme
+            addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/brand, make_unhot), tyme), 100)
+            T.update_icon()
+            to_chat(user, "<span class='info'>The branding iron is now red hot.</span>")
+            return TRUE
+    return ..()
 
 /obj/machinery/light/rogue/campfire/densefire
 	icon_state = "densefire1"

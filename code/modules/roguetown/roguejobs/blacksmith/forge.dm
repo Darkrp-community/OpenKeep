@@ -21,3 +21,15 @@
 			user.visible_message("<span class='info'>[user] heats the bar.</span>")
 			return
 	return ..()
+
+/obj/machinery/light/rogue/forge/attackby(obj/item/W, mob/living/user, params)
+    if(istype(W, /obj/item/rogueweapon/brand) && on)
+        var/obj/item/rogueweapon/brand/T = W
+        if(T.hott == FALSE)
+            var/tyme = world.time
+            T.hott = tyme
+            addtimer(CALLBACK(T, TYPE_PROC_REF(/obj/item/rogueweapon/brand, make_unhot), tyme), 100)
+            T.update_icon()
+            to_chat(user, "<span class='info'>The branding iron is now red hot.</span>")
+            return TRUE
+    return ..()

@@ -117,6 +117,9 @@
 	if(leprosy == 1)
 		. += "<span class='necrosis'>A LEPER...</span>"
 
+	if(HAS_TRAIT(src, TRAIT_BRANDED))
+		. += "<span class='userdanger'>HERETIC! SHAME!</span>"
+
 	if(user != src)
 		var/datum/mind/Umind = user.mind
 		if(Umind && mind)

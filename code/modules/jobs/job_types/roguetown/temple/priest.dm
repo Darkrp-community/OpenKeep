@@ -142,6 +142,7 @@
 			for(var/mob/living/carbon/H in GLOB.player_list)
 				if(H.real_name == inputty)
 					H.remove_stress(/datum/stressevent/psycurse)
+					H.remove_overlay()
 			return
 		var/found = FALSE
 		for(var/mob/living/carbon/H in GLOB.player_list)
