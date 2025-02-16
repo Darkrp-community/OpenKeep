@@ -173,6 +173,7 @@
 	icon_state = "surgrobe"
 	item_state = "surgrobe"
 
+
 //................ Yellow Robes ............... //
 /obj/item/clothing/suit/roguetown/shirt/robe/yellowrobe
 	name = "yellow robe"
@@ -184,3 +185,16 @@
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	resistance_flags = FLAMMABLE
+
+//kaizoku stuff
+
+/obj/item/clothing/suit/roguetown/shirt/robe/shrinekeeper
+	name = "shrinekeeper robe"
+	desc = "Silk-woven and shimmering like tides at dusk, for those who honors the will of the abyss."
+	icon_state = "shrinekeeper"
+	r_sleeve_status = SLEEVE_NORMAL
+	l_sleeve_status = SLEEVE_NORMAL
+	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
+	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
+	sleevetype = "shirt"

@@ -5,7 +5,11 @@
 	allowed_races = list(
 		"Humen",
 		"Half-Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	outfit = /datum/outfit/job/roguetown/mercenary/steppesman
 	category_tags = list(CTAG_MERCENARY)
@@ -22,12 +26,18 @@
 	gloves = /obj/item/clothing/gloves/roguetown/leather
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
-	belt = /obj/item/storage/belt/rogue/leather/merc_nokey/black
+	belt = /obj/item/storage/belt/rogue/leather/mercenary/black
 	beltr = /obj/item/rogueweapon/sword/sabre
 	beltl= /obj/item/quiver/arrows
 	pants = /obj/item/clothing/under/roguetown/tights/red
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	backr = /obj/item/storage/backpack/rogue/satchel
+	if(HAS_TRAIT(H, TRAIT_KAIZOKU))
+		backl = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
+		beltr = /obj/item/rogueweapon/sword/sabre/piandao
+		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
+	backpack_contents = list(/obj/item/rogueweapon/knife/hunting = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1)
 
 	if(H.mind)//quick fighter that has Dodge Expert and a bow for ranged attacks, 4 weapon skills
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)

@@ -292,3 +292,105 @@
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
+
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
+///////////////////////////////////////////////////////////////////
+
+/obj/item/rogueweapon/shield/wood/rattan //The description about the firearm projectiles protection is actually real for this shield, pretty neat thing to include here. It won't change gamewise tho
+	name = "rattan shield"
+	desc = "A lightweight rattan shield woven with leather padding and hardened in oil, known for keeping shrapnel and firearm projectiles stuck after being shot at. \nIt can exceptionally block attacks but is more brittle than metal."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	icon_state = "rattanshield"
+	dropshrink = 0.8
+	coverage = 50
+	max_integrity = 150
+
+/obj/item/rogueweapon/shield/wood/rattan/attack_hand(mob/user)
+		..()
+
+/obj/item/rogueweapon/shield/wood/rattan/getonmobprop(tag)
+	. = ..()
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -5,"sy" = -1,"nx" = 6,"ny" = -1,"wx" = 0,"wy" = -2,"ex" = 0,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+
+/obj/item/rogueweapon/shield/tower/abyssaltower
+	name = "abyssal towershield"
+	desc = "The legendary shield frame named 'Naraku-kai no Tate', long used by Abyssariad champions in the old age against demonic incursions on Fog Islands. It has resemblance with Aasimar's tower shields, which was proper for the time."
+	icon_state = "abyssaltower"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	force = 15
+	throwforce = 10
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	wbalance = -1 // Heavy, big shield
+	resistance_flags = FLAMMABLE
+	wdefense = 6
+	coverage = 65
+	parrysound = list('sound/combat/parry/shield/towershield (1).ogg','sound/combat/parry/shield/towershield (2).ogg','sound/combat/parry/shield/towershield (3).ogg')
+	max_integrity = 300
+	smeltresult = /obj/item/ingot/iron // Made with an iron ingot, let us recover it
+
+/obj/item/rogueweapon/shield/tower/abyssaltower/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse abyssal towershield"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+
+/obj/item/rogueweapon/shield/tower/metal/abyssal
+	name = "spiked steel aegis"
+	desc = "Light steel spikes are visible on this shield to protect the user against the chaotic close-quarter skirmishes where grappling and flanking is common, but can be caught on enemy armor and weapons."
+	icon_state = "aegis"
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	possible_item_intents = list(/datum/intent/shield/bash/metal, /datum/intent/shield/block/metal)
+	force = 20
+	throwforce = 10
+	throw_speed = 1
+	throw_range = 3
+	wlength = WLENGTH_NORMAL
+	resistance_flags = null
+	flags_1 = CONDUCT_1
+	wdefense = 7
+	coverage = 70
+	attacked_sound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	parrysound = list('sound/combat/parry/shield/metalshield (1).ogg','sound/combat/parry/shield/metalshield (2).ogg','sound/combat/parry/shield/metalshield (3).ogg')
+	max_integrity = 500
+	blade_dulling = DULLING_BASH
+	sellprice = 30
+	smeltresult = /obj/item/ingot/steel // Made with steel, let us repurpose it
+
+/obj/item/rogueweapon/shield/tower/metal/abyssal/getonmobprop(tag)
+	if(tag)
+		switch(tag)
+			if("gen")
+				return list("shrink" = 0.6,"sx" = -5,"sy" = -1,"nx" = 6,"ny" = -1,"wx" = 0,"wy" = -2,"ex" = 0,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 1,"eflip" = 0)
+			if("onback")
+				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
+	return ..()
+
+/obj/item/rogueweapon/shield/tower/metal/attack_hand(mob/user)
+		..()
+
+/obj/item/rogueweapon/shield/tower/metal/abyssal/dustcurse/dropped()
+	. = ..()
+	name = "Dustcurse spiked steel aegis"
+	minstr = 0 //asset solely to be used by NPCs. This will not be found on the hands of players.
+	to_chat(src, "<span class='warning'>A haunting wind scatters [usr] into dust, sweeping it back to the ocean!</span>")
+	if(QDELETED(src))
+		return
+	qdel(src)
+

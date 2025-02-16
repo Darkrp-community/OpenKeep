@@ -20,7 +20,7 @@
 	pickup_sound = 'sound/foley/equip/swordsmall2.ogg'
 	equip_sound = 'sound/foley/dropsound/holster_sword.ogg'
 	drop_sound = 'sound/foley/dropsound/blade_drop.ogg'
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
 	sharpness = IS_SHARP
@@ -109,7 +109,7 @@
 	icon_state = "huntingknife"
 	max_blade_int = 140
 	max_integrity = INTEGRITY_STRONG
-	wdefense = MEDIOCHRE_PARRY
+	wdefense = MEDIOCRE_PARRY
 	wbalance = HARD_TO_DODGE
 	smeltresult = /obj/item/ingot/steel
 	sellprice = 30
@@ -174,7 +174,7 @@
 
 //................ Steel Dagger ............... //
 /obj/item/rogueweapon/knife/dagger/steel
-	force = DAMAGE_DAGGER+2
+	force = DAMAGE_GOOD_DAGGER
 	name = "steel dagger"
 	desc = "A dagger made of refined steel."
 	icon_state = "sdagger"
@@ -351,7 +351,7 @@
 
 //................ Stone Knife ............... //
 /obj/item/rogueweapon/knife/stone
-	force = DAMAGE_KNIFE
+	force = DAMAGE_WEAK_KNIFE
 	throwforce = DAMAGE_KNIFE
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
 	name = "stone knife"
@@ -371,6 +371,8 @@
 	name = "villager knife"
 	desc = "The loyal companion of simple peasants, for cutting hard bread and carving wood."
 	icon_state = "villagernife"
+	force = DAMAGE_WEAK_KNIFE
+	smeltresult = null // Enough of this exploit. Three can be crafted or more ordered, so no smelting them.
 
 /obj/item/rogueweapon/knife/copper
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
@@ -385,4 +387,58 @@
 	smeltresult = /obj/item/ash
 	sellprice = 10
 
+///////////////////////////////////////////////////////////////////
+// Part of Kaizoku project that is still yet to be finished.     //
+// The Demo usage is meant for Stonekeep and Warmongers.		 //
+// If the usage for other sources is desired, before it finishes,//
+// ask monochrome9090 for permission. Respect the artists's will.//
+// If you want this quality content, COMMISSION me instead. 	 //
+// For this project, requirements are low, and mostly lore-based.//
+// I just do not desire for the Abyssariads to be butchered.	 //
+///////////////////////////////////////////////////////////////////
 
+// Parent Kaizoku knife, for all intents and purposes of checks for seppuku and such.
+/obj/item/rogueweapon/knife/kaizoku
+	name = "parent Kaizoku knife"
+	desc = "You should not see be seeing this. Yell at coders or mappers for fucking up."
+	icon = 'icons/roguetown/kaizoku/weapons/32.dmi'
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust) // None of them have chop
+	smeltresult = null // As every dagger craftable by pairs made of good metal
+
+
+/obj/item/rogueweapon/knife/kaizoku/kunai //Practically a villager knife with more utility. It helps others to climb walls.
+	name = "kunai"
+	desc = "A simple stabbing weapon made of iron which originated as a masonry or gardening tool, useful for climbing walls in similar ways to pitons."
+	icon_state = "kunai"
+	force = DAMAGE_WEAK_KNIFE
+	wbalance = VERY_HARD_TO_DODGE
+
+/obj/item/rogueweapon/knife/kaizoku/kaiken
+	name = "iron kaiken"
+	desc = "The weapon laws in colonized Abyssariad islands, with high humen or elven population, forbade non-warriors from carrying blades in public, so abyssariad colonists made weapons such as this."
+	icon_state = "kaiken"
+	force = DAMAGE_DAGGER
+	max_integrity = INTEGRITY_STRONG
+	sellprice = 15
+
+/obj/item/rogueweapon/knife/kaizoku/tanto
+	name = "steel tanto"
+	desc = "Initially a companion blade to the tachi in a zamurai's daisho, the tanto was later replaced by the wakizashi with the shift to infantry tactics after the Bloody Apotheosis."
+	icon_state = "tanto"
+	force = DAMAGE_GOOD_DAGGER
+	max_integrity = INTEGRITY_STRONGER
+	w_class = WEIGHT_CLASS_NORMAL
+	wdefense = AVERAGE_PARRY
+	wbalance = VERY_HARD_TO_DODGE
+	sellprice = 20
+
+/obj/item/rogueweapon/knife/kaizoku/sai //I love gundam for helping me on my request on this sai. I love HIM!!!!!!!!!!!!! -Monochrome
+	name = "sai"
+	desc = "Recognizable by its uniqueness and typically carried in pairs, the sai features a sharply-tapered central rod with two prongs at the cross-guards. It lacks blade for cutting, but it excels in jabbing and defending against other weapons."
+	icon_state = "sai"
+	w_class = WEIGHT_CLASS_NORMAL
+	force = DAMAGE_KNIFE+1
+	max_integrity = INTEGRITY_STRONG
+	smeltresult = null
+	wdefense = 5
+	wbalance = VERY_HARD_TO_DODGE

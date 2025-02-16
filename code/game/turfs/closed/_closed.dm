@@ -154,6 +154,10 @@
 				amt2raise = floor(L.STAINT/2)
 				boon = L.mind?.get_learning_boon(/datum/skill/misc/climbing)
 				var/obj/structure/table/TA = locate() in L.loc
+				var/obj/item/offhand = user.get_inactive_held_item()
+				if(offhand)
+					if(istype(offhand, /obj/item/rogueweapon/knife/kaizoku/kunai))
+						myskill += 3
 				if(TA)
 					myskill += 1
 				else

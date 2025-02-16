@@ -27,10 +27,6 @@
 	if(isnum(vol) && vol > 0)
 		volume = vol
 	create_reagents(volume, reagent_flags)
-	if(spawned_disease)
-		var/datum/disease/F = new spawned_disease()
-		var/list/data = list("viruses"= list(F))
-		reagents.add_reagent(/datum/reagent/blood, disease_amount, data)
 
 	add_initial_reagents()
 
@@ -52,6 +48,7 @@
 /obj/item/reagent_containers/proc/add_initial_reagents()
 	if(list_reagents)
 		reagents.add_reagent_list(list_reagents)
+	update_icon()
 
 /obj/item/reagent_containers/attack(mob/M, mob/user, def_zone)
 	return ..()
@@ -135,7 +132,7 @@
 	reagents.expose_temperature(1000)
 	..()
 
-/obj/item/reagent_containers/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
+/obj/item/reagent_containers/temperature_expose(exposed_temperature, exposed_volume)
 	reagents.expose_temperature(exposed_temperature)
 
 /obj/item/reagent_containers/on_reagent_change(changetype)

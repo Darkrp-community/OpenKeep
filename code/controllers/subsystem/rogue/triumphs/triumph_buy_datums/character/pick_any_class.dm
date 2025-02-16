@@ -38,7 +38,11 @@
 	"Dwarf",
 	"Tiefling",
 	"Dark Elf",
-	"Aasimar"
+	"Aasimar",
+	"Changeling",
+	"Skylancer",
+	"Ogrun",
+	"Undine"
 	)
 	maximum_possible_slots = 0
 
@@ -59,6 +63,8 @@
 		if(CTAG_ADEPT in CHECKS.category_tags)
 			continue
 		if(CTAG_CONSORT in CHECKS.category_tags)
+			continue
+		if(CTAG_HAND in CHECKS.category_tags)
 			continue
 		possible_classes += CHECKS
 

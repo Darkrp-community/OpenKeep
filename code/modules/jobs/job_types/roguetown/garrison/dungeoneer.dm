@@ -13,7 +13,10 @@
 		"Dwarf",
 		"Tiefling",
 		"Dark Elf",
-		"Aasimar"
+		"Aasimar",
+		"Changeling", //Abyssariad dungeoneers, on the standards of Rockhill, are burakumins. Their non-impure version is the Kaishakunin.
+		"Skylancer",
+		"Ogrun"
 	)
 	allowed_sexes = list(MALE, FEMALE)
 
@@ -23,7 +26,7 @@
 
 	outfit = /datum/outfit/job/roguetown/dungeoneer
 	give_bank_account = 50	// Bought loyalty was previously the same as any guardsman, now in line with village elder, etc. N.
-	min_pq = 2
+	min_pq = 0
 
 	cmode_music = 'sound/music/combat_weird.ogg'
 
@@ -62,3 +65,12 @@
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+	if(H.dna.species?.id == "abyssariad")
+		mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
+		H.burakumin = TRUE
+		to_chat(H, "<span class='userdanger'>My honor is forfeit; I have become a tool of cruelty and torture. The swift and merciful death that must be yearned to my victims are no option for me here. Perhaps one dae my sins will no longer linger.</span>")
+		if(H.wear_mask)
+			if(istype(H.wear_mask, /obj/item/clothing/mask/rogue/eyepatch || /obj/item/clothing/mask/rogue/eyepatch/left ))
+				qdel(H.wear_mask)
+				mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
