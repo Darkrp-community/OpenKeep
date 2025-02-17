@@ -38,3 +38,31 @@
 	var/mob/living/carbon/human/H = user
 	var/obj/item/bodypart/l_arm/rproesthetic/L = new()
 	L.attach_limb(H)
+
+/datum/charflaw/limbloss/r_leg
+	name = "Wooden Leg (R)"
+	desc = "I lost my right leg long ago, but the wooden leg doesn't bleed as much."
+	lost_zone = BODY_ZONE_R_LEG
+
+/datum/charflaw/limbloss/r_leg/on_mob_creation(mob/user)
+	..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	ADD_TRAIT(H, TRAIT_HOBBLED, TRAIT_GENERIC)
+	var/obj/item/bodypart/r_leg/rproesthetic/L = new()
+	L.attach_limb(H)
+
+/datum/charflaw/limbloss/l_leg
+	name = "Wooden Leg (L)"
+	desc = "I lost my left leg long ago, but the wooden leg doesn't bleed as much."
+	lost_zone = BODY_ZONE_L_LEG
+
+/datum/charflaw/limbloss/l_leg/on_mob_creation(mob/user)
+	..()
+	if(!ishuman(user))
+		return
+	var/mob/living/carbon/human/H = user
+	ADD_TRAIT(H, TRAIT_HOBBLED, TRAIT_GENERIC)
+	var/obj/item/bodypart/l_leg/rproesthetic/L = new()
+	L.attach_limb(H)

@@ -90,6 +90,7 @@
 		if(H.pegleg < 1)
 			H.pegleg++
 		user.visible_message("<span class='notice'>[user] attaches [src] to [H].</span>")
+		ADD_TRAIT(H, TRAIT_HOBBLED, TRAIT_GENERIC)
 		return 1
 
 /obj/item/bodypart/r_leg/rproesthetic
@@ -122,4 +123,5 @@
 		if(H.pegleg < 1)
 			H.pegleg++
 		user.visible_message("<span class='notice'>[user] attaches [src] to [H].</span>")
+		ADD_TRAIT(H, TRAIT_HOBBLED, TRAIT_GENERIC)
 		return 1

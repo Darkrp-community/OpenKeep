@@ -45,6 +45,7 @@
 #define TRAIT_SHOCKIMMUNE				"Shock Immunity"
 #define TRAIT_LONGSTRIDER 				"Longstrider"
 #define TRAIT_MOB_FIRE_IMMUNE			"Fire Immune" // Not actual full immunity but reduces effect of fire_act()
+#define TRAIT_HOBBLED					"Hobbled"
 #define TRAIT_KAIZOKU					"Foglander Cultured"
 
 
@@ -114,6 +115,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames."),
+	TRAIT_HOBBLED = "For one reason or another I am unable to run.",
 	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture.",
 	))
 
