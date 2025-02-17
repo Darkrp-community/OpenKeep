@@ -73,7 +73,6 @@
 	H.change_stat("endurance", 1)
 	H.change_stat("constitution", 1)
 	H.change_stat("speed", -1)
-	H.grant_language(/datum/language/dwarvish)
 
-	if(H.dna.species.id == "elf")
-		H.remove_language(/datum/language/dwarvish)//no elf shall speak dwarfvish.
+	if(!H.has_language(/datum/language/dwarvish) && !H.dna.species.id == "elf")
+		H.grant_language(/datum/language/dwarvish)
