@@ -47,9 +47,9 @@
 		H.underwear_color = CLOTHING_SOOT_BLACK
 		H.update_body()
 	if(H.dna.species.id == "dwarf")
-		H.skin_tone = SKIN_COLOR_GRENZDWARF
+		H.skin_tone = SKIN_COLOR_METALKLANG
 	if(H.dna.species.id == "human")
-		H.skin_tone = SKIN_COLOR_GRENZELHOFT
+		H.skin_tone = SKIN_COLOR_ARCTIC
 	if(!H.has_language(/datum/language/oldpsydonic))
 		H.grant_language(/datum/language/oldpsydonic)
 		to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
