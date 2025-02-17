@@ -1,4 +1,4 @@
 <!-- Most valid html will work in here, excluding images. -->
-<center>STONEKEEP Discord Server: <a href="https://discord.gg/qwwYV6dbcg">discord.gg/qwwYV6dbcg</a></center>
+<center>STONEKEEP Discord Server: <a href="https://discord.gg/stonekeep">discord.gg/stonekeep</a></center>
 <center>* Now with asian monster people! *</center>
 <!-- We're no longer so unstable, also it's shit advertising. -->
