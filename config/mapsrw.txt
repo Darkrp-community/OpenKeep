@@ -18,6 +18,11 @@ map dun_manor
 	votable
 endmap
 
-map rogueworld
+map stonehamlet
+	disabled
+	votable
+endmap
+
+map roguetown
 	votable
 endmap
