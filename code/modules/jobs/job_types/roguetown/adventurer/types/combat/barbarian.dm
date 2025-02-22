@@ -1,6 +1,6 @@
 /datum/advclass/combat/barbarian
 	name = "Barbarian"
-	tutorial = "Wildfolk and warriors all, Barbarians embody the fiercest and most primal aspect of Ravox. Raw strength and brutal cunning makes them excellent fighters but poorly adjusted to the civilized, docile lands of lords and ladies."
+	tutorial = "Wildfolks and warriors all, Barbarians embody the fiercest and most primal aspect of Ravox. Raw strength and brutal cunning makes them excellent fighters but poorly adjusted to the civilized, docile lands of lords and ladies."
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
