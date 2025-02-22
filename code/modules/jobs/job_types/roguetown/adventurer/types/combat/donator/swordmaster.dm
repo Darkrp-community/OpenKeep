@@ -1,7 +1,7 @@
 /datum/advclass/combat/swordmaster
 	name = "Hedge Knight"
 	tutorial = "You spent years serving the eastern Grenzelhoftian lords, and now you spend your days as a travelling hedge knight. Upon this island, you like to increase the fame of your sword skills, as well as your honor."
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE) //which one of you chuddies remove female from this role?
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/swordmaster
 	maximum_possible_slots = 1
@@ -25,9 +25,9 @@
 		H.change_stat("speed", -1)
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/honorary = "Ritter"
+		var/honorary = "Retter"
 		if(H.gender == FEMALE)
-			honorary = "Ritterin"
+			honorary = "Retterin"
 		H.real_name = "[honorary] [prev_real_name]"
 		H.name = "[honorary] [prev_name]"
 
