@@ -53,7 +53,7 @@
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
 		if(H.dna.species?.id != "abyssariad")
-			var/honorary = "Sir"
+			var/honorary = "Ser"
 			if(H.gender == FEMALE)
 				honorary = "Dame"
 			H.real_name = "[honorary] [prev_real_name]"
