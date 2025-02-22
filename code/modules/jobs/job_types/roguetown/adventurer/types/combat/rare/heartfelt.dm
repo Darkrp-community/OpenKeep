@@ -49,8 +49,8 @@
 		var/honorary = "Lord"
 		if(H.gender == FEMALE)
 			honorary = "Lady"
-	H.real_name = "[honorary] [prev_real_name]"
-	H.name = "[honorary] [prev_name]"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	if(!HAS_TRAIT(H, TRAIT_KAIZOKU))
