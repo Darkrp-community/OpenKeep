@@ -2,7 +2,7 @@
 	name = "Hunter"
 	tutorial = "Peasants that thrive on the woods, hunting creechers for pelt and hide, \
 				or the boons of Dendor for their meat to sell, or consume."
-	allowed_sexes = list(MALE, FEMALE)
+	allowed_sexes = list(MALE)
 	allowed_races = list(
 		"Humen",
 		"Elf",
