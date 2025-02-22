@@ -1,11 +1,14 @@
 /datum/advclass/combat/barbarian
 	name = "Barbarian"
-	tutorial = "Wildmen and warriors all, Barbarians embody the fiercest and most primal aspect of Ravox. Raw strength and brutal cunning makes them excellent fighters but poorly adjusted to the civilized, docile lands of lords and ladies."
-	allowed_sexes = list(MALE)
+	tutorial = "Wildfolk and warriors all, Barbarians embody the fiercest and most primal aspect of Ravox. Raw strength and brutal cunning makes them excellent fighters but poorly adjusted to the civilized, docile lands of lords and ladies."
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list(
 		"Humen",
+		"Elf",
+		"Dwarf",
 		"Half-Elf",
-		"Tiefling"
+		"Tiefling",
+		"Aasimar",
 	)
 	outfit = /datum/outfit/job/roguetown/adventurer/barbarian
 	min_pq = 0
