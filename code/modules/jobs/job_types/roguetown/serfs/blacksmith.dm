@@ -179,6 +179,8 @@
 	min_pq = 0
 	selection_color = "#d68e08"
 
+	cmode_music = 'sound/music/combat_dwarf.ogg'//rock n stone devouts, why no?
+
 /datum/outfit/job/roguetown/blacksmith/pre_equip(mob/living/carbon/human/H)
 	..()
 	id = /obj/item/clothing/ring/silver/makers_guild
@@ -221,3 +223,6 @@
 	H.change_stat("strength", 1)
 	H.change_stat("endurance", 2)
 	H.change_stat("speed", -1)
+
+	if(!H.has_language(/datum/language/dwarvish) && !H.dna.species.id == "elf")
+		H.grant_language(/datum/language/dwarvish)
