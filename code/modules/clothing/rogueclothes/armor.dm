@@ -114,7 +114,7 @@
 	desc = "Favored by the female nobility, to maintain both vitality and good taste while out hunting."
 	icon_state = "armordress"
 	allowed_sex = list(FEMALE)
-	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad", "half-elf", "dark elf")
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_NORMAL
 	sellprice = VALUE_PADDED_DRESS
@@ -327,7 +327,7 @@
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/hand
 	name = "noble coat"
 	icon_state = "handcoat"
-	desc = "A quality silken coat, discretely lined with thin metal platr on the inside to protect its affluent wearer."
+	desc = "A quality silken coat, discretely lined with thin metal plate on the inside to protect its affluent wearer."
 	sellprice = VALUE_LEATHER_ARMOR_LORD
 
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
