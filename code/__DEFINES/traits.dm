@@ -26,6 +26,7 @@
 #define TRAIT_RETARD_ANATOMY			"Inhumen Anatomy" //can't wear hats and shoes
 #define TRAIT_NASTY_EATER 				"Inhumen Digestion" //can eat rotten food, organs, poison berries, and drink murky water
 #define TRAIT_NOFALLDAMAGE1 		"Minor fall damage immunity"
+#define TRAIT_DEATHSIGHT 			"Veiled Whispers" // Is notified when a player character dies, but not told exactly where or how.
 #define TRAIT_ROT_EATER				"Blessing of Pestra" //can eat rotten food
 #define TRAIT_ORGAN_EATER				"Blessing of Graggar"
 #define TRAIT_SOUL_EXAMINE				"Blessing of Necra" //can check bodies to see if they have departed
@@ -63,6 +64,7 @@
 #define TRAIT_IWASREVIVED "iwasrevived" //prevents PQ gain from reviving the same person twice
 #define TRAIT_IWASUNZOMBIFIED "iwasunzombified" //prevents PQ gain from curing a zombie twice
 #define TRAIT_ZIZOID_HUNTED "zizoidhunted" // Used to signal character has been marked by death by the Zizoid cult
+#define TRAIT_CABAL "Of the Cabal" //Zizo cultists recognize each other too
 
 // JOB RELATED TRAITS
 
@@ -114,7 +116,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_INTRAINING = "I'm going to be a knight someday! I can use training dummies more effectively than others.",
 	TRAIT_MALUMFIRE = "My hands are blessed by Malum to forge items of superb quality.",
 	TRAIT_MOB_FIRE_IMMUNE = span_info("I am not easily burned by flames."),
-	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture.",
+	TRAIT_DEATHSIGHT = span_info("I can feel when someone nearby draws the Undermaiden's attention."),
+	TRAIT_CABAL = span_info("In secret, I have studied the ways of Zizo's ascension, and know of others of the Cabal."),
+	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture."
 	))
 
 // trait accessor defines
