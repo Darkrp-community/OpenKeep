@@ -84,7 +84,7 @@
 	to_chat(affected, span_userdanger("[pick(heartaches)]"))
 	if(HAS_TRAIT(affected, TRAIT_CRITICAL_WEAKNESS))
 		affected.death()
-	if(affected.mind.has_antag_datum(/datum/antagonist/vampirelord/))
+	if(affected.mind?.has_antag_datum(/datum/antagonist/vampirelord/))
 		var/datum/antagonist/vampirelord/VL = affected.mind.has_antag_datum(/datum/antagonist/vampirelord)
 		VL.handle_vitae(-2000)
 
