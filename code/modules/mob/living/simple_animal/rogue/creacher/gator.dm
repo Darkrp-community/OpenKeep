@@ -1,5 +1,5 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/gator
-	icon = 'modular/stonekeep/icons/roguetown/mob/monster/gator.dmi'
+	icon = 'icons/roguetown/mob/monster/gator.dmi'
 	name = "gator"
 	desc = "Vicious and patient creachers; tales have been told of passersby being grabbed and dragged underwater, never to be seen again."
 	icon_state = "gator"
@@ -29,14 +29,14 @@
 					/obj/item/reagent_containers/food/snacks/rogue/meat)
 
 	base_intents = list(/datum/intent/simple/bite)
-	attack_sound = list('modular/stonekeep/sound/vo/mobs/gator/gatorattack1.ogg', 'modular/stonekeep/sound/vo/mobs/gator/gatorattack2.ogg')
+	attack_sound = list('sound/vo/mobs/gator/gatorattack1.ogg', 'sound/vo/mobs/gator/gatorattack2.ogg')
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 
-	TOTALCON = 10
-	TOTALSTR = 14
-	TOTALSPD = 2
-	TOTALEND = 8
+	STACON = 10
+	STASTR = 14
+	STASPD = 2
+	STAEND = 8
 
 	retreat_distance = 0
 	minimum_distance = 0
@@ -87,13 +87,13 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/gator/get_sound(input)
 	switch(input)
 		if("aggro")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatoraggro1.ogg','modular/stonekeep/sound/vo/mobs/gator/gatoraggro2.ogg','modular/stonekeep/sound/vo/mobs/gator/gatoraggro3.ogg','modular/stonekeep/sound/vo/mobs/gator/gatoraggro4.ogg')
+			return pick('sound/vo/mobs/gator/gatoraggro1.ogg','sound/vo/mobs/gator/gatoraggro2.ogg','sound/vo/mobs/gator/gatoraggro3.ogg','sound/vo/mobs/gator/gatoraggro4.ogg')
 		if("pain")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatorpain.ogg')
+			return pick('sound/vo/mobs/gator/gatorpain.ogg')
 		if("death")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatordeath.ogg')
+			return pick('sound/vo/mobs/gator/gatordeath.ogg')
 		if("idle")
-			return pick('modular/stonekeep/sound/vo/mobs/gator/gatoridle1.ogg')
+			return pick('sound/vo/mobs/gator/gatoridle1.ogg')
 
 /mob/living/simple_animal/hostile/retaliate/rogue/gator/taunted(mob/user)
 	emote("aggro")
