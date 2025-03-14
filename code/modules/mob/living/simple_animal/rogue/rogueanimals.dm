@@ -1,5 +1,6 @@
 #define TROLL_HEALTH 500
 #define BOGTROLL_HEALTH 350
+#define GATOR_HEALTH 220
 #define MOLE_HEALTH 200
 #define BOGBUG_HEALTH 160
 #define SPIDER_HEALTH 120
@@ -483,4 +484,3 @@
 	playsound(src,'sound/misc/eat.ogg', rand(30,60), TRUE)
 	qdel(A)
 	food = max(food + 30, 100)
-
