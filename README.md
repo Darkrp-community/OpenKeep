@@ -4,7 +4,7 @@
 
 | Website                   | Link                                           |
 |---------------------------|------------------------------------------------|
-| Discord          | [https://discord.gg/qwwYV6dbcg](https://discord.gg/qwwYV6dbcg) |
+| Discord          | [https://discord.gg/stonekeep](https://discord.gg/stonekeep) |
 | Code                      | [https://github.com/Darkrp-community/OpenKeep](https://github.com/Darkrp-community/OpenKeep)    |
 | Wiki (Under Construction)                      | [https://wiki.stonekeep.xyz](https://wiki.stonekeep.xyz) |
 

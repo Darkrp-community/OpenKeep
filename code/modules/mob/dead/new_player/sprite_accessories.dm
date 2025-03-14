@@ -417,6 +417,43 @@
 	gender = FEMALE
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
+/datum/sprite_accessory/hair/conscriptf
+	name = "conscript"
+	icon_state = "conscript_f"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
+/datum/sprite_accessory/hair/tiedcutf
+	name = "tied sidecut"
+	icon_state = "tsidecut_f"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
+/datum/sprite_accessory/hair/wildcutf
+	name = "wild sidecut"
+	icon_state = "wildside_f"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
+/datum/sprite_accessory/hair/tomboy1
+	name = "short 1"
+	icon_state = "tomboy_f"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
+/datum/sprite_accessory/hair/tomboy2
+	name = "short 2"
+	icon_state = "tomboy2_f"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
+/datum/sprite_accessory/hair/tomboy3
+	name = "short 3"
+	icon_state = "rogue_f"
+	gender = FEMALE
+	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
+
+
 /datum/sprite_accessory/hair/barbarian
 	name = "Barbarian"
 	icon_state = "barbarian_f"
