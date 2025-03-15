@@ -1530,6 +1530,7 @@
 #include "code\modules\clothing\rogueclothes\mask.dm"
 #include "code\modules\clothing\rogueclothes\neck.dm"
 #include "code\modules\clothing\rogueclothes\pants.dm"
+#include "code\modules\clothing\rogueclothes\psydonian.dm"
 #include "code\modules\clothing\rogueclothes\quiver.dm"
 #include "code\modules\clothing\rogueclothes\rings.dm"
 #include "code\modules\clothing\rogueclothes\robes.dm"
