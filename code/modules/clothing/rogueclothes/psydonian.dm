@@ -33,7 +33,7 @@
 
 
 //................ Full Blackplate Helmet ............... //
-obj/item/clothing/head/roguetown/helmet/visored/psyrant
+/obj/item/clothing/head/roguetown/helmet/visored/psyrant
 	name = "blackplate visored barbute"
 	desc = "A blackplate imperial helmet with a psydonian cross-visor."
 	icon = 'icons/roguetown/clothing/special/psyrant.dmi'
