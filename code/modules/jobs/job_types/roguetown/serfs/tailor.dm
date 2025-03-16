@@ -9,14 +9,18 @@
 	total_positions = 1
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_races = list("Humen",
-	"Elf",
-	"Half-Elf",
-	"Dwarf",,
-	"Changeling",
-	"Skylancer",
-	"Ogrun",
-	"Undine"
+	allowed_races = list(
+		"Humen",
+		"Elf",
+		"Dwarf",
+		"Half-Elf",
+		"Tiefling",
+		"Dark Elf",
+		"Aasimar",
+		"Changeling",
+		"Skylancer",
+		"Ogrun",
+		"Undine"
 	)
 	give_bank_account = TRUE
 	bypass_lastclass = TRUE

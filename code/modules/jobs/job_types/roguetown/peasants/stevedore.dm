@@ -15,7 +15,8 @@
 		"Changeling",
 		"Skylancer",
 		"Ogrun",
-		"Undine"
+		"Undine",
+		"Tiefling"
 	)
 
 	tutorial = "The strongest workers are hired by the Mercator guild, trained by monks of Ravox and expected to help out with handling troublemakers as well as moving cargo and messages around. The Merchant is your boss!"

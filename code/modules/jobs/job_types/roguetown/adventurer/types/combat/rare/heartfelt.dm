@@ -1,8 +1,8 @@
 /datum/advclass/combat/heartfeltlord
 	name = "Lord of Heartfelt"
-	tutorial = "You are the proud lord of Heartfelt, \
+	tutorial = "You are the proud ruler of Heartfelt, \
 	but why have you come to Rockhill?"
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = list("Humen")
 	outfit = /datum/outfit/job/roguetown/adventurer/heartfeltlord
 	min_pq = 2
@@ -44,7 +44,13 @@
 		H.change_stat("speed", 1)
 		H.change_stat("perception", 2)
 		H.change_stat("fortune", 5)
-
+		var/prev_real_name = H.real_name
+		var/prev_name = H.name
+		var/honorary = "Lord"
+		if(H.gender == FEMALE)
+			honorary = "Lady"
+		H.real_name = "[honorary] [prev_real_name]"
+		H.name = "[honorary] [prev_name]"
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	if(!HAS_TRAIT(H, TRAIT_KAIZOKU))
