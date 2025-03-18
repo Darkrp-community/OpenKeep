@@ -64,7 +64,7 @@
 			H.dna.species.random_underwear(H.gender)
 			if(H.dna.species)
 				if(H.dna.species.id == "human")
-					if(H.skin_tone == SKIN_COLOR_HEARTFELT)
+					if(H.skin_tone == SKIN_COLOR_COASTAL)
 						ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
 						H.grant_language(/datum/language/abyssal)
 				if(H.dna.species.id == "elf")
