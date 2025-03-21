@@ -73,3 +73,6 @@
 		shoes = /obj/item/clothing/shoes/roguetown/shortboots
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
+
+	if(!H.has_language(/datum/language/dwarvish) && !H.dna.species.id == "elf")//discriminated races shouldn't learn dwarfvish either but that goes for other pull request
+		H.grant_language(/datum/language/dwarvish)
