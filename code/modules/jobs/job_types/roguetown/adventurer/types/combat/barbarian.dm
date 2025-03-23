@@ -18,21 +18,21 @@
 	belt = /obj/item/storage/belt/rogue/leather
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
-	var/armortype = pickweight(list("Cloak" = 5, "Hide" = 3, "Helmet" = 2))
+	pants = /obj/item/clothing/under/roguetown/loincloth/brown//so they don't run buttnaked
+	head = /obj/item/clothing/head/roguetown/helmet/horned/barbarian//guaranteed head protection since they already can be one shotted by a chest hit
+	var/armortype = pickweight(list("Cloak" = 3, "Hide" = 3))
 	var/weapontype = pickweight(list("Sword" = 4, "Club" = 3, "Axe" = 2)) //clubs and axes share a weapon type
 	switch(armortype)
 		if("Cloak")
 			cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
 		if("Hide")
 			armor = /obj/item/clothing/suit/roguetown/armor/leather/hide
-		if("Helmet")
-			head = /obj/item/clothing/head/roguetown/helmet/horned
 	switch(weapontype)
 		if("Sword")
 			beltr = /obj/item/rogueweapon/sword/iron
 			H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 		if("Club")
-			beltr = /obj/item/rogueweapon/mace/goden/shillelagh
+			backl = /obj/item/rogueweapon/mace/goden/shillelagh
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
 		if("Axe")
 			beltr = /obj/item/rogueweapon/axe/iron
