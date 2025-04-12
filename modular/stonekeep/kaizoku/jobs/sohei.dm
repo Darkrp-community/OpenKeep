@@ -39,7 +39,7 @@
 	head = /obj/item/clothing/head/helmet/kaizoku/hachigane
 	beltr = /obj/item/weapon/knife/hunting/sai
 
-	var/background = pickweight(list("thunder" = 1, "storm" = 1, "ocean" = 1, "island" = 1)) //This is just flavour. Mostly unwritten portrayal how different Soheis were of each other. Leave it up to the players to interact.
+	var/background = pickweight(list("thunder" = 1, "storm" = 1, "deluge" = 1, "island" = 1)) //This is just flavour. Mostly unwritten portrayal how different Soheis were of each other. Leave it up to the players to interact.
 	var/weapontype = pickweight(list("yari" = 6, "tsukushi" = 5, "katakama" = 3)) // Rolls for various polearms.
 	switch(background)
 		if("thunder")
@@ -47,11 +47,11 @@
 			pants = /obj/item/clothing/pants/trou/tobi/thunder
 			belt = /obj/item/storage/belt/kaizoku/leather/daisho/thunder
 			head = /obj/item/clothing/head/helmet/kaizoku/hachigane/thunder
-		if("storm")
-			neck = /obj/item/clothing/head/soheicloth/storm
-			pants = /obj/item/clothing/pants/trou/tobi/storm
-			belt = /obj/item/storage/belt/kaizoku/leather/daisho/storm
-			head = /obj/item/clothing/head/helmet/kaizoku/hachigane/storm
+		if("deluge")
+			neck = /obj/item/clothing/head/soheicloth/deluge
+			pants = /obj/item/clothing/pants/trou/tobi/deluge
+			belt = /obj/item/storage/belt/kaizoku/leather/daisho/deluge
+			head = /obj/item/clothing/head/helmet/kaizoku/hachigane/deluge
 		if("ocean")
 			neck = /obj/item/clothing/head/soheicloth/ocean
 			pants = /obj/item/clothing/pants/trou/tobi/ocean

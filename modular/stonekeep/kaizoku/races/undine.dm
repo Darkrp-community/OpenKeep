@@ -108,7 +108,7 @@
 	"green - leaf" = "2f3c2e",
 	"green - moss" = "3b3c2a",
 	"white - silver" = "e8fdfd",
-	"white - oceanid" = "afdddd"
+	"white - oceanid" = "b8d4de"
 	))
 
 /datum/species/elf/undine/random_name(gender,unique,lastname)

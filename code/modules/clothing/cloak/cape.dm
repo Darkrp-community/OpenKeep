@@ -73,7 +73,7 @@
 /obj/item/clothing/cloak/cape/archivist
 	icon_state = "puritan_cape"
 	color = CLOTHING_SOOT_BLACK
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/cape/rogue
 	name = "cape"

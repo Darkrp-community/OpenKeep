@@ -1155,7 +1155,18 @@
 
 // The src mob is trying to strip an item from someone
 // Override if a certain type of mob should be behave differently when stripping items (can't, for example)
-/mob/living/stripPanelUnequip(obj/item/what, mob/who, where)
+/mob/living/stripPanelUnequip(obj/item/what, mob/living/who, where) //Some modifications were done here for Abyssariad Raiders. I suggest finding a way to modularize it.
+	if(istype(who, /mob/living))
+		if(who.abyssariadraider == TRUE && who.stat == CONSCIOUS)
+			src.visible_message(
+				"<span class='danger'>[who] grabs [src]'s exposed arm before slamming them on the ground!</span>")
+			src.AdjustKnockdown(5 + rand(3, 5))
+			src.apply_damage(rand(5, 10), BRUTE, BODY_ZONE_CHEST)
+			playsound(get_turf(src), 'sound/combat/shieldraise.ogg', 100, TRUE)
+			if(length(GLOB.custodian_handsoff))
+				who.say(pick(GLOB.custodian_handsoff))
+			return
+
 	if(!what.canStrip(who))
 		to_chat(src, "<span class='warning'>I can't remove \the [what.name], it appears to be stuck!</span>")
 		return

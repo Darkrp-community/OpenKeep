@@ -27,6 +27,22 @@ GLOBAL_LIST_EMPTY(mountainevil_starts)
 	//a var used for a rather niched power.
 	var/purification = FALSE
 
+	//These vars are used for Changeling special quirks.
+	var/mutable_appearance/eldritch_maw
+	var/mob/living/carbon/human/var/list/transformed = null
+	var/true_gender_string // <- this stores "male" or "female" for full safety
+	var/list/true_original_form = null
+	var/original_gender_mimicry = null
+	var/overlay_eldritchjaw = 0
+
+	//This var is used for Skylancer special quirk.
+	var/flight_processing = FALSE
+
+	//Vars for Abyssariad Raiders NPCs, specifically for special attacks.
+	var/special_timer = 0
+	var/special_cooldown = 20 // 20 seconds
+	var/shuriken_count = 0 //used only for NPC stuff.
+
 
 #define SK_LORD			(1<<0)
 #define SK_CONSORT		(1<<1)

@@ -334,6 +334,17 @@
 /mob/living/carbon/human/proc/monkey_attack(mob/living/L)
 	if(next_move > world.time)
 		return
+	if(abyssariadraider) // Special attack logic for event-oriented 'traditionalist' Foglander enemies.
+		if(prob(5))
+			say(pick(GLOB.custodian_quotes))
+		if(L.surrendering == 1) //If the target actually followed what the raider said...
+			src.killyielder(target)//Fuck them up John.
+			return
+		if(world.time >= special_timer + special_cooldown) // Enforce proper cooldown.
+			if(prob(20)) // 20% chance to execute special attack.
+				src.special_attacks(src, L, null)
+				special_timer = world.time + 15 SECONDS + rand(2, 5)
+				return
 	var/obj/item/Weapon = get_active_held_item()
 	var/obj/item/OffWeapon = get_inactive_held_item()
 	if(Weapon && OffWeapon)
@@ -437,3 +448,114 @@
 		return FALSE
 
 #undef MAX_RANGE_FIND
+
+/mob/living/carbon/human/proc/killyielder(mob/living/target)
+	var/obj/item/bodypart/head = target.get_bodypart(BODY_ZONE_HEAD)
+	if(head)
+		var/obj/item/I = target.get_item_by_slot(SLOT_HEAD) // First, this code selects the head.
+		if(I) //Then proceeds to remove any head protection.
+			target.doUnEquip(I)
+			I.forceMove(get_turf(target))
+
+		target.visible_message(
+			span_danger("[src] delivers a merciless blow, severing [target]'s head!"),
+			span_notice("Blood sprays violently as [target]'s head is sent flying!")
+		)
+
+		head.dismember() //I am not yet sure if chains will be able to protect the head from this.
+		target.emote("scream")
+		src.say(pick(GLOB.custodian_tease))
+
+/mob/living/carbon/human/proc/special_attacks(mob/user, atom/A, params) //Attack for the Foglander Raiders.
+	var/mob/living/target = A
+	var/crit_roll = rand(1, 2)
+
+	if(target.IsStun() || target.IsKnockdown() || target.lying) // Prioritize Execution move if target is stunned or paralyzed
+		Execution(target)
+		return  // You're very unlucky if NPC Execution happened.
+
+	switch(crit_roll)
+		if(1)
+			Disarmroll(target) // This attack disarms the enemy and kicks the weapon away.
+			return
+		if(2)
+			KnockbackAttack(target) // This attack pushes the enemy itself away, and can knockdown. Very risky with Execution.
+			return
+
+/mob/living/carbon/human/proc/Disarmroll(mob/living/target)
+	var/obj/item/W = target.get_active_held_item()
+	if(W)
+		var/turf/item_target = get_edge_target_turf(src, get_dir(src, get_step_away(target, src)))
+		target.dropItemToGround(W)
+		if(item_target)
+			W.throw_at(item_target, 6, 1) //KICKED AWAY!
+		target.visible_message(span_danger("[src] strikes [target]'s arm with an open palm, bruising the tendons!"))
+		emote("laugh")
+		playsound(get_turf(src),'sound/combat/shieldraise.ogg', 200, TRUE)
+	else
+		KnockbackAttack(target)
+
+
+/mob/living/carbon/human/proc/KnockbackAttack(mob/living/target)
+	if (!target)
+		return
+
+	target.do_attack_animation(src, ATTACK_EFFECT_SMASH)
+	target.visible_message(span_danger("[src]'s muscular hand reaches [target]'s throat.")) //I love to make this weird.
+	src.say(pick(GLOB.custodian_special))
+	src.emote("laugh")
+
+	var/clap_distance = round((src.STASTR - target.STACON) / 2 + rand(-1,4)) //the rand adds randomness to the result.
+	var/turf/throwtarget = get_edge_target_turf(src, get_dir(src, get_step_away(target, src)))
+	target.throw_at(throwtarget, clap_distance, 2, src)
+
+	if(target.cmode)
+		if(clap_distance >= 3) //Knockdown comes only after 3 tiles-of-force.
+			target.AdjustKnockdown(1 + rand(2, 3)) // Potentially knocks down
+			target.visible_message(span_danger("[src] launches [target] away like a mere claydoll!"))
+		else
+			target.visible_message(span_danger("[src] pushes [target] away, unable to break their stance."))
+	else
+		target.AdjustKnockdown(5 + rand(5, 10)) //If the player is not on combat mode, that means they are not ready to act against martial attacks.
+		target.visible_message(span_danger("[src] launches [target] away like a mere claydoll!"))
+
+/mob/living/carbon/human/proc/Execution(mob/living/target) //Dude, the player is beyond damned now.
+	var/list/limb_list = list(
+		BODY_ZONE_L_ARM,
+		BODY_ZONE_R_ARM,
+		BODY_ZONE_L_LEG,
+		BODY_ZONE_R_LEG,
+		BODY_ZONE_CHEST
+	)
+	var/obj/item/bodypart/BP = target.get_bodypart(limb_list) //Choose one single limb to PUNISH.
+
+	target.do_attack_animation(src, ATTACK_EFFECT_KICK)
+	target.visible_message(span_danger("[src] looms over [target] and crushes them with their feet!"))
+	target.apply_damage(rand(30, 50), BRUTE, BP) // Big oof.
+	target.SetSleeping(20) // Just to give a scare. Not really to make the player sleep midbattle.
+	playsound(get_turf(src),'sound/combat/shieldbash_wood.ogg', 200, TRUE)
+	if(BP)
+		BP.add_wound(/datum/wound/fracture)
+		BP.update_disabled() // HAHAHAHA
+
+/mob/living/carbon/human/proc/throw_star(mob/living/target)
+	if(shuriken_count >= 1 && target && ismob(target))
+		var/obj/item/throwing_star/ninja/star = new /obj/item/throwing_star/ninja(get_turf(src))
+		shuriken_count--
+
+		src.visible_message(span_danger("[src] swiftly hurls a shuriken at [target]!"))
+		star.thrownby = src
+
+		// Simulate a throw for visuals
+		star.safe_throw_at(target, 10, 4, src, 1, 0, null, 35)
+
+		// Manually embed if the target is human
+		if(ishuman(target))
+			var/mob/living/carbon/human/H = target
+			if(can_embed(star) && !HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
+				var/obj/item/bodypart/L = pick(H.bodyparts)
+				L.add_embedded_object(star, silent = FALSE, crit_message = TRUE)
+				H.emote("embed")
+				L.receive_damage(star.w_class * star.embedding.embedded_impact_pain_multiplier)
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
+				return

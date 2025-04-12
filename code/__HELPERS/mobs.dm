@@ -64,6 +64,7 @@
 
 /// TO BE DELETED, INTEGRATE INTO SPECIES DATUM
 /proc/random_features()
+	// Initialize accessory lists
 	if(!GLOB.tails_list_human.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/tails/human, GLOB.tails_list_human)
 	if(!GLOB.tails_list_lizard.len)
@@ -84,31 +85,31 @@
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/body_markings, GLOB.body_markings_list)
 	if(!GLOB.wings_list.len)
 		init_sprite_accessory_subtypes(/datum/sprite_accessory/wings, GLOB.wings_list)
-	return list(
-		"mcolor" = pick(
-			"FFFFFF",
-			"7F7F7F",
-			"7FFF7F",
-			"7F7FFF",
-			"FF7F7F",
-			"7FFFFF",
-			"FF7FFF",
-			"FFFF7F",
-		),
+
+	var/list/features = list(
+		"mcolor" = pick("FFFFFF", "7F7F7F", "7FFF7F", "7F7FFF", "FF7F7F", "7FFFFF", "FF7FFF", "FFFF7F"),
 		"ethcolor" = pick_assoc(GLOB.color_list_ethereal),
 		"tail_lizard" = pick(GLOB.tails_list_lizard),
-		"tail_human" = "TiebTail", //1: should be its own feature, 2: shouldn't be doing this...
-		"wings" = "None",
-		"snout" = pick(GLOB.snouts_list),
-		"horns" = pick(GLOB.horns_list),
-		"ears" = "ElfW", //horcs, tiefs, elves
 		"frills" = pick(GLOB.frills_list),
 		"spines" = pick(GLOB.spines_list),
 		"body_markings" = pick(GLOB.body_markings_list),
 		"legs" = "Normal Legs",
-		"caps" = pick(GLOB.caps_list)
+		"caps" = pick(GLOB.caps_list),
 	)
 
+	// Only assign these if not already provided in default_features
+	if(!("tail_human" in features))
+		features["tail_human"] = "TiebTail"
+	if(!("wings" in features))
+		features["wings"] = "None"
+	if(!("snout" in features))
+		features["snout"] = pick(GLOB.snouts_list)
+	if(!("horns" in features))
+		features["horns"] = pick(GLOB.horns_list)
+	if(!("ears" in features))
+		features["ears"] = "ElfW"
+
+	return features
 /// TO BE DELETED
 /proc/random_hairstyle(gender)
 	switch(gender)

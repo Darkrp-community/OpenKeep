@@ -2199,6 +2199,7 @@
 #include "modular\stonekeep\kaizoku\animals.dm"
 #include "modular\stonekeep\kaizoku\armor.dm"
 #include "modular\stonekeep\kaizoku\audio.dm"
+#include "modular\stonekeep\kaizoku\raiders.dm"
 #include "modular\stonekeep\kaizoku\smithing.dm"
 #include "modular\stonekeep\kaizoku\spells.dm"
 #include "modular\stonekeep\kaizoku\weapons.dm"

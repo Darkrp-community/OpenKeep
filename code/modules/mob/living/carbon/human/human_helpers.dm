@@ -169,7 +169,7 @@
 	if(randomise_flags & RANDOMIZE_EYE_COLOR)
 		eye_color = random_eye_color()
 	if(randomise_flags & RANDOMIZE_FEATURES)
-		dna.features = random_features()
+		dna.features = merged_features(species)// Temporary code replacement. Unsure if it works. -Monochrome
 
 /*
 * Family Tree subsystem helpers

@@ -36,7 +36,7 @@
 
 	var/yesno = list("Yes. I am Iron-hearted.","No. I am Civilian.")
 	var/military = input("Sworn to the Fog Island ranks?", "Emperor's regiment?") as anything in yesno
-	var/background = pickweight(list("thunder" = 1, "storm" = 1, "ocean" = 1, "island" = 1)) //This is just flavour in the same way Soheis are. Wait, are they related??? Leave it to the Players to explain.
+	var/background = pickweight(list("thunder" = 1, "deluge" = 1, "ocean" = 1, "island" = 1)) //This is just flavour in the same way Soheis are. Wait, are they related??? Leave it to the Players to explain.
 	switch(military) //Just clothes.
 		if("Yes. I am Iron-hearted.") //Cooler clothing. Roleplay-wise, an champion-type, theme unique solely to Kaizoku as far I'm aware.
 			switch(background)
@@ -44,10 +44,10 @@
 					armor = /obj/item/clothing/shirt/robe/wizard/guardian/thunder
 					head = /obj/item/clothing/head/wizhat/onmyoji/thunder
 					pants = /obj/item/clothing/pants/trou/tobi/thunder
-				if("storm")
-					armor = /obj/item/clothing/shirt/robe/wizard/guardian/storm
-					head = /obj/item/clothing/head/wizhat/onmyoji/storm
-					pants = /obj/item/clothing/pants/trou/tobi/storm
+				if("deluge")
+					armor = /obj/item/clothing/shirt/robe/wizard/guardian/deluge
+					head = /obj/item/clothing/head/wizhat/onmyoji/deluge
+					pants = /obj/item/clothing/pants/trou/tobi/deluge
 				if("ocean")
 					armor = /obj/item/clothing/shirt/robe/wizard/guardian/ocean
 					head = /obj/item/clothing/head/wizhat/onmyoji/ocean

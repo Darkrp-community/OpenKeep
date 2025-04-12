@@ -114,6 +114,8 @@
 #define TRAIT_MINCED "minced"
 #define TRAIT_SEXPASS "sexpass"
 #define TRAIT_DARKLING "Darkling"
+#define TRAIT_CHANGELING_METABOLISM		"Changeling Metabolism"
+#define TRAIT_DESECRANT					"Desecrant"
 
 GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WEBWALK = "I can move freely between webs.",
@@ -183,7 +185,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_FOREIGNER = span_notice("I'm not from around here."),
 	TRAIT_GOODLOVER = span_love("It's a lucky thing to share my bed."), //STONEKEEP EDIT
 	TRAIT_DARKLING = span_info("I am a creature of the dark and am sensitive to the light. The hateful sun is especially harsh on my eyes, and I prefer to sleep during the dae."), //STONEKEEP EDIT
-	TRAIT_KAIZOKU = "Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture.", //STONEKEEP EDIT
+	TRAIT_KAIZOKU = span_info("Whether by birth or by learning, I've inherited the Islander ways instead of Imperial culture."), // STONEKEEP EDIT
+	TRAIT_CHANGELING_METABOLISM = span_info("My metabolism breaks down demonic impurity. Now, I crave flesh rather than the greens."), // STONEKEEP EDIT
+	TRAIT_DESECRANT = span_info("I've forsaken honor and on the path of becoming Dai, for my soul is diseased and Abyssor looks down on me."), // STONEKEEP EDIT
 	))
 
 // trait accessor defines

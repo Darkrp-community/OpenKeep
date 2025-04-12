@@ -2777,3 +2777,13 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/modifier = -distance
 	if(!prob(STAEND+skill_modifier+modifier))
 		Knockdown(8)
+
+
+//Stonelin part. May require to be moved somewhere else, as it is not a 'modular' kaizoku thing.
+
+/proc/merged_features(datum/species/spec)
+	var/list/features = random_features()
+	if(spec?.default_features)
+		for(var/key in spec.default_features)
+			features[key] = spec.default_features[key]
+	return features

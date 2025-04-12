@@ -242,8 +242,8 @@ get_accent_list()
 	name = "thunder daisho belt"
 	color = CLOTHING_THUNDER
 
-/obj/item/storage/belt/kaizoku/leather/daisho/storm
-	name = "storm daisho belt"
+/obj/item/storage/belt/kaizoku/leather/daisho/deluge
+	name = "deluge daisho belt"
 	color = CLOTHING_STORM
 
 /obj/item/storage/belt/kaizoku/leather/daisho/ocean
@@ -519,14 +519,26 @@ get_accent_list()
 			if(H.dna.species)
 				if(H.dna.species.id == "abyssariad")
 					H.verbs |= /mob/proc/throatsing
-					H.cmode_music = list('modular/stonekeep/kaizoku/sound/combat/combat_changeling.ogg','modular/stonekeep/kaizoku/sound/combat/combat_stormwarrior.ogg','modular/stonekeep/kaizoku/sound/combat/combat_searaider.ogg','modular/stonekeep/kaizoku/sound/combat/combat_oldtides.ogg','modular/stonekeep/kaizoku/sound/combat/combat_decapitator.ogg','modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg','modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg','modular/stonekeep/kaizoku/sound/combat/combat_navalretainers.ogg','modular/stonekeep/kaizoku/sound/combat/combat_kyudo.ogg')
+					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
+					H.verbs |= /mob/proc/abyssaltide
+					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
 					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
-				if(H.dna.species.name == "Changeling")
-					ADD_TRAIT(H, TRAIT_STRONGBITE, TRAIT_GENERIC) // When their Skull-bending "wag system" comes about, it will be their debuff to counter this.
-				if(H.dna.species.name == "Skylancer")
-					H.verbs |= /mob/proc/birdcall
-				if(H.dna.species.name == "Undine")
-					H.cmode_music = list('modular/stonekeep/kaizoku/sound/combat/combat_changeling.ogg','modular/stonekeep/kaizoku/sound/combat/combat_stormwarrior.ogg','modular/stonekeep/kaizoku/sound/combat/combat_searaider.ogg','modular/stonekeep/kaizoku/sound/combat/combat_oldtides.ogg','modular/stonekeep/kaizoku/sound/combat/combat_decapitator.ogg','modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg','modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg','modular/stonekeep/kaizoku/sound/combat/combat_navalretainers.ogg','modular/stonekeep/kaizoku/sound/combat/combat_kyudo.ogg')
+					if(H.dna.species.name == "Changeling")
+						H.verbs |= /mob/living/carbon/human/proc/toggle_changeling_maw
+						H.verbs |= /mob/living/carbon/human/proc/toggle_shapeshift
+						//H.verbs |= /mob/living/carbon/human/proc/toggle_mimicry //This one isn't working.
+						ADD_TRAIT(H, TRAIT_CHANGELING_METABOLISM, TRAIT_GENERIC) //Both an advantage and a disadvantage, essentially carnivore code + Venom bite.
+						ADD_TRAIT(H, TRAIT_BEAUTIFUL, TRAIT_GENERIC) //Mythology Kitsune trope //hopefully// done right. Seduction may go a long way to KILL victims.
+						// please. Don't make me feel like I did a wrong move here. I swear to INARI. You people fucked up too much for my taste.
+					if(H.dna.species.name == "Skylancer")
+						H.verbs |= /mob/proc/birdcall
+						H.verbs |= /mob/living/carbon/human/proc/fly
+						H.verbs |= /mob/living/carbon/human/proc/fly_up
+					if(H.dna.species.name == "Ogrun")
+						H.verbs |= /mob/living/carbon/human/proc/warcry
+				if(H.dna.species.name == "Undine") //undine ability; Making below-average armor with normal random things/butchered goods.
+					H.verbs |= /mob/living/carbon/human/proc/abyssalcombat
+					H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_traditional.ogg'
 					ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedarmor)
 					H.mind.teach_crafting_recipe(/datum/crafting_recipe/reinforcedhelmet)

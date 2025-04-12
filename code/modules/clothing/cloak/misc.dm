@@ -8,7 +8,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	nodismemsleeves = TRUE
 
 
@@ -36,7 +36,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -63,7 +63,7 @@
 	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_CLOAK
 	allowed_sex = list(MALE)
-	allowed_race = list("human", "tiefling", "aasimar")
+	allowed_race = list("human", "tiefling", "aasimar", "abyssariad")
 	sellprice = 50
 	nodismemsleeves = TRUE
 
@@ -84,7 +84,7 @@
 	toggle_icon_state = FALSE
 	color = CLOTHING_SOOT_BLACK
 	allowed_sex = list(MALE, FEMALE)
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/half/ComponentInitialize()
 	. = ..()
@@ -215,7 +215,7 @@
 //.............inquisitor cloaks......... (For inquisitors..)
 /obj/item/clothing/cloak/cape/puritan
 	icon_state = "puritan_cape"
-	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar", "abyssariad")
 
 /obj/item/clothing/cloak/cape/inquisitor
 	name = "Inquisitors Cloak"
@@ -308,4 +308,4 @@
 	sleevetype = "shirt"
 	nodismemsleeves = TRUE
 	inhand_mod = TRUE
-	allowed_race = list("human", "tiefling", "elf", "aasimar")
+	allowed_race = list("human", "tiefling", "elf", "aasimar", "abyssariad")

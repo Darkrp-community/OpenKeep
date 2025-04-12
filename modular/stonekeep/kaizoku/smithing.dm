@@ -104,7 +104,7 @@
 	recipe_name = "a Kikko Leather Do"
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/natural/hide, /obj/item/natural/hide)
-	created_item = /obj/item/clothing/armor/leather/studded/kikko
+	created_item = /obj/item/clothing/armor/leather/splint/kikko/military
 	craftdiff = 1
 //cheaper on iron, but has many sticks. Proper for this armor's context.
 /datum/anvil_recipe/armor/rattanarmor

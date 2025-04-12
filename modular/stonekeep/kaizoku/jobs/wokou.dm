@@ -152,7 +152,7 @@
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("Jizamurai (Enforcer)")
 			H.set_blindness(0)
-			armor = /obj/item/clothing/armor/leather/splint/kikko/rich
+			armor = /obj/item/clothing/armor/leather/splint/kikko/military
 			head = /obj/item/clothing/head/tengai/gasa
 			cloak = /obj/item/clothing/cloak/stabard/haramaki/jinbaori/jizamurai
 			mask = /obj/item/clothing/face/kaizoku/menpo/steel/half

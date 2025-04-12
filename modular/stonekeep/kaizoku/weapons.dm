@@ -318,9 +318,6 @@
 	coverage = 50
 	max_integrity = 150
 
-/obj/item/weapon/shield/wood/rattan/attack_hand(mob/user)
-		..()
-
 /obj/item/weapon/shield/wood/rattan/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -1544,3 +1541,268 @@
 	wdefense = GOOD_PARRY
 
 
+// =================================================================================
+// ========================		FOGLANDER TRADESECTOR		========================
+
+/obj/structure/firewagon
+	name = "abyssal firewagon"
+	desc = "A terrifying war machine that unleashes a volley of firebolts."
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+	icon_state = "firewagon"
+	anchored = FALSE
+	density = TRUE
+	max_integrity = 9999
+	drag_slowdown = 1
+	w_class = WEIGHT_CLASS_GIGANTIC
+	var/obj/item/firewagonrockets/loaded = null  //Since we can't have nice things.
+
+/obj/structure/firewagon/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/item/firewagonrockets))
+		if(loaded)
+			return
+		user.visible_message("<span class='notice'>\The [user] starts loading \the [I] into \the [src]'s container.</span>")
+		if(!do_after(user, 10 SECONDS, TRUE, src))
+			return
+		I.forceMove(src)
+		loaded = I
+		user.visible_message("<span class='notice'>\The [user] loads \the [I] into \the [src].</span>")
+		return
+
+	if(istype(I, /obj/item/flashlight/flare/torch))
+		var/obj/item/flashlight/flare/torch/LR = I
+		if(!loaded)
+			return
+		if(LR.on)
+			playsound(src.loc, 'modular/stonekeep/kaizoku/sound/battlesound/hwanchafire.ogg', 100)
+			user.visible_message("<span class='danger'>\The [user] lights \the [src]!</span>")
+			fire(user)
+		return
+
+	return ..()
+
+/obj/structure/firewagon/proc/fire(var/mob/firer)
+	for(var/mob/living/carbon/H in hearers(7, src))
+		shake_camera(H, 6, 5)
+		H.blur_eyes(4)
+		H.playsound_local(get_turf(H), 'sound/foley/tinnitus.ogg', 75, FALSE)
+
+	flick("hwancha_fire", src)
+	if(!loaded)
+		return
+
+	var/pellets = 8
+	var/spread = 30
+	var/projectile_type = /obj/projectile/bullet/arrow //Not a special type of storm-maker? Release the standard.
+
+	if(istype(loaded, /obj/item/firewagonrockets/pyro))
+		projectile_type = /obj/projectile/bullet/arrow/pyro //SPECIAL ATTACK!!!
+
+	for (var/i = 1, i <= pellets, i++)
+		var/obj/projectile/bullet/arrow/fired_projectile = new projectile_type(get_turf(src))
+		fired_projectile.firer = firer
+		fired_projectile.fired_from = src
+
+		var/spread_angle = rand(-spread, spread)
+		fired_projectile.fire(dir2angle(dir) + spread_angle)
+
+	QDEL_NULL(loaded)
+	sleep(2)
+
+/obj/item/firewagonrockets
+	name = "firewagon storm-maker"
+	desc = "A wooden container filled of arrows for usage in a Firewagon."
+	icon_state = "firewagon_ammo"
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+
+/obj/item/firewagonrockets/pyro
+	name = "firewagon inferno-maker"
+	desc = "A wooden container filled of pyroarrows for usage in a Firewagon."
+	icon_state = "firefirewagon_ammo"
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+
+/obj/structure/kaizoku/crate
+	name = "illegal immigrant crate"
+	desc = "Something scratches from the inside. It is written on the wood, 'Deported Illegal Immigrant. Exiled for petty crimes.'"
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector32.dmi'
+	icon_state = "animal_cage"
+	anchored = FALSE
+	var/mob_path = /mob/living/carbon/human/species/human/northern
+
+/obj/structure/kaizoku/crate/attackby(obj/item/W, mob/living/user)
+	if(istype(W, /obj/item/weapon/knife))
+		to_chat(user, "<span class='danger'>You cut off the straps holding the wood planks together.</span>")
+		playsound(src, 'sound/misc/slide_wood (1).ogg', 50, TRUE)
+		new mob_path(get_turf(src)) // Spawn the mob
+		qdel(src) // Remove the crate
+	else
+		to_chat(user, "<span class='warning'>You need a knife to cut this open.</span>")
+
+/obj/structure/kaizoku/crate/fogbeast
+	name = "fogbeast crate"
+	desc = "Something neighs from the inside. The crate is unusually heavy."
+	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse/tamed
+
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon
+	name = "huochong handcannon"
+	desc = "Rather outdated weapon from fog islands brought to the trading docks, as the new innovations, such as the chongtong, are kept away from espionage."
+	icon = 'modular/stonekeep/kaizoku/icons/mapset/tradesector64.dmi'
+	icon_state = "handcannon"
+	item_state = "handcannon"
+	bigboy = TRUE
+	recoil = 10
+	randomspread = 3
+	spread = 4
+	force = 12
+	experimental_inhand = FALSE
+	experimental_onback = FALSE
+	var/click_delay = 0.5
+	var/obj/item/ramrod/rod
+	cartridge_wording = "ball"
+	var/rammed = FALSE
+	var/powdered = FALSE
+	var/inserted = FALSE
+	load_sound = 'sound/foley/nockarrow.ogg'
+	fire_sound = 'sound/combat/Ranged/muskshoot.ogg'
+	equip_sound = 'sound/foley/gun_equip.ogg'
+	pickup_sound = 'sound/foley/gun_equip.ogg'
+	drop_sound = 'sound/foley/gun_drop.ogg'
+	dropshrink = 1
+	associated_skill = /datum/skill/combat/firearms
+	possible_item_intents = list(/datum/intent/mace/strike)
+	sharpness = IS_BLUNT
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/musk
+	bigboy = TRUE
+	gripsprite = TRUE
+	wlength = WLENGTH_LONG
+	w_class = WEIGHT_CLASS_BULKY
+	slot_flags = ITEM_SLOT_BACK
+	sellprice = 150
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/Initialize()
+	. = ..()
+	var/obj/item/ramrod/rrod = new(src)
+	rod = rrod
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/attackby(obj/item/I, mob/user, params)
+	if(istype(I, /obj/projectile/bullet/reusable/bullet))
+		if(!powdered)
+			to_chat(user, "<span class='warning'>Lacking in gunpowder, you think twice before putting the projectile inside.</span>")
+			return
+		if(inserted)
+			to_chat(user, "<span class='warning'>You attempt to put the projectile inside, but something already occupies the space.</span>")
+			return
+		inserted = TRUE
+		chambered = I
+		qdel(I)
+		to_chat(user, "<span class='info'>You hear the ball of lead bouncing inside the barrel until it meets cushioning gunpowder.</span>")
+		playsound(src.loc, 'sound/combat/Ranged/muskclick.ogg', 70)
+		update_icon()
+		return
+
+	else if(istype(I, /obj/item/reagent_containers/glass/bottle/aflask))
+		if(powdered)
+			to_chat(user, "<span class='warning'>If you put more gunpowder than it already has, you risk exploding the barrel.</span>")
+			return
+
+		if(I.reagents.get_reagent_amount(/datum/reagent/blastpowder) >= 5)
+			I.reagents.remove_reagent(/datum/reagent/blastpowder, 5)
+
+			powdered = TRUE
+			to_chat(user, "<span class='info'>You pour gunpowder into the handcannon.</span>")
+			playsound(src.loc, 'sound/foley/gunpowder_fill.ogg', 70)
+			update_icon()
+			return
+		else
+			to_chat(user, "<span class='warning'>Not enough blastpowder in [I] to powder the [src].</span>")
+			return
+
+	else if(istype(I, /obj/item/ramrod))
+		if(!powdered || !inserted)
+			to_chat(user, "<span class='warning'>You must load both gunpowder and a ball before tamping!</span>")
+			return
+		if(rammed)
+			to_chat(user, "<span class='warning'>Already tamped!</span>")
+			return
+		rammed = TRUE
+		to_chat(user, "<span class='info'>You use [I] to tamp down the load in the [src].</span>")
+		playsound(src.loc, 'sound/foley/nockarrow.ogg', 70)
+		update_icon()
+		return
+
+	else if(istype(I, /obj/item/flashlight/flare/torch))
+		if(!rammed)
+			to_chat(user, "<span class='warning'>You haven't tamped down the load!</span>")
+			return
+		fire(user)
+		return
+
+	return ..()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/MiddleClick(mob/user, params)
+	. = ..()
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		if(rod)
+			H.put_in_hands(rod)
+			rod = null
+			to_chat(user, "<span class='info'>You remove the ramrod from [src].</span>")
+		else if(istype(H.get_active_held_item(), /obj/item/ramrod))
+			var/obj/item/ramrod/rrod = H.get_active_held_item()
+			rrod.forceMove(src)
+			rod = rrod
+			to_chat(user, "<span class='info'>You place the ramrod into [src].</span>")
+		playsound(src.loc, 'sound/foley/struggle.ogg', 100)
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/proc/tamp(mob/user)
+	if(!powdered || !inserted)
+		to_chat(user, "<span class='warning'>You must load both gunpowder and a ball before tamping!</span>")
+		return
+	if(rammed)
+		to_chat(user, "<span class='warning'>Already tamped!</span>")
+		return
+	rammed = TRUE
+	to_chat(user, "<span class='info'>You use the ramrod to tamp down the load.</span>")
+	playsound(src.loc, 'sound/foley/nockarrow.ogg', 70)
+	update_icon()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/update_icon()
+	if(rod)
+		icon_state = "handcannon_ramrod"
+	else
+		icon_state = "handcannon_noram"
+	update_icon_state()
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/handcannon/proc/fire(var/mob/living/user)
+	if(!chambered)
+		to_chat(user, "<span class='warning'>There's no ball loaded!</span>")
+		return
+	rammed = FALSE
+	powdered = FALSE
+	inserted = FALSE
+	chambered = null
+	to_chat(src.loc, "<span class='warning'>[user] position the fuse near the ignition point.</span>")
+	spawn(20)
+		to_chat(src.loc, "<span class='danger'>The fuse sparks, setting off the charge as the handcannon roars to life!</span>")
+	spawn(30)
+
+		update_icon()
+		playsound(src.loc, 'modular/stonekeep/kaizoku/sound/battlesound/hwanchafire.ogg', 100)
+
+		// Effects
+		for(var/mob/living/carbon/H in hearers(5, user))
+			shake_camera(H, 4, 3)
+			H.blur_eyes(3)
+			H.playsound_local(get_turf(H), 'sound/foley/tinnitus.ogg', 70)
+
+		step(user, get_dir(user, turn(user.dir, 180)))
+		new /obj/effect/particle_effect/smoke(get_turf(user))
+
+		var/turf/start = get_turf(user)
+		var/dir = user.dir
+		var/obj/projectile/bullet/reusable/bullet/shot = new /obj/projectile/bullet/reusable/bullet(start)
+		shot.firer = user
+		shot.fired_from = src
+		shot.fire(dir2angle(dir))

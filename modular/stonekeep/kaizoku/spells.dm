@@ -502,7 +502,7 @@
 			C.apply_status_effect(/datum/status_effect/debuff/freezing/severe)
 			C.flash_fullscreen("whiteflash3")
 			return
-		if((C.faction = "orcs") || (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Had to give them these ones because there's a bunch of different goblin IDs. So Trait will have to stay until I care about giving each a respective var.
+		if((C.faction && C.faction == "orcs")|| (C.dna.species?.id == "tiefling") ||(HAS_TRAIT(C, TRAIT_NASTY_EATER ))) // Fixed Runtime.
 			C.visible_message("<span class='danger'>[target]'s body is distorced by the crushing force of the abyssal waters!</span>", "<span class='userdanger'>I feel the suffocating pressure of the deep crushing my lungs!</span>")
 			C.adjustFireLoss(rand(30, 50)) // 30 to 50 damage, less than full demons. More damage comes from freezing.
 			C.Knockdown(20) //Purification successful. You will be paralyzed.
@@ -623,3 +623,62 @@
 */
 
 
+/datum/status_effect/debuff/shaken
+	id = "shaken"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/shaken
+	effectedstats = list("perception" = -3, "intelligence" = -2, "speed" = -2)
+	duration = 45 SECONDS
+
+/atom/movable/screen/alert/status_effect/debuff/shaken
+	name = "shaken"
+	desc = "By the divines! What the hell was that?!"
+	icon_state = "shaken"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
+
+/datum/status_effect/debuff/withdrawal
+	id = "withdrawal"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/withdrawal
+	effectedstats = list("strength" = -2, "constitution" = -3, "endurance" = -3) //Don't use this during battle. You will weaken yourself.
+	duration = 6 MINUTES
+
+/atom/movable/screen/alert/status_effect/debuff/withdrawal
+	name = "withdrawal"
+	desc = "My body needs time to call my Orcish Heritage."
+	icon_state = "withdrawal"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
+
+/datum/status_effect/buff/recovery
+	id = "recovery"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/recovery
+	effectedstats = null
+	duration = 45 SECONDS
+
+/atom/movable/screen/alert/status_effect/buff/recovery
+	name = "Recovery"
+	desc = "My body weakens to recover from foul wounds."
+	icon_state = "recovery"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/screen_alert.dmi'
+
+/datum/status_effect/buff/recovery/on_apply()
+	. = ..()
+	var/mob/living/carbon/H = owner
+	if(!H)
+		return
+
+	START_PROCESSING(SSfastprocess, src)
+
+/datum/status_effect/buff/recovery/process()
+	. = ..()
+	var/mob/living/carbon/H = owner
+
+	H.blood_volume = min(H.blood_volume + 10, BLOOD_VOLUME_MAXIMUM)
+	H.adjustBruteLoss(-0.5)
+	H.adjustFireLoss(-0.5)
+	H.adjustOxyLoss(-1)
+	H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -5)
+	H.adjustCloneLoss(-1)
+	H.adjustToxLoss(-1)
+
+/datum/status_effect/buff/recovery/on_remove()
+	. = ..()
+	STOP_PROCESSING(SSfastprocess, src)

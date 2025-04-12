@@ -338,6 +338,9 @@
 				if(A.z != src.z)
 					if(!HAS_TRAIT(src, TRAIT_ZJUMP))
 						return
+				if(is_flying()) //another stonekeep change
+					to_chat(src, span_warning("I'm not even on the ground."))
+					return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)
 				if(m_intent == MOVE_INTENT_RUN)
@@ -392,6 +395,10 @@
 					return
 				if(HAS_TRAIT(src, TRAIT_NO_BITE))
 					to_chat(src, span_warning("I can't bite."))
+					return
+				if(HAS_TRAIT(src, TRAIT_CHANGELING_METABOLISM) && ismob(A))
+					var/mob/living/L = A
+					src.changeling_devour_target(L)
 					return
 				changeNext_move(mmb_intent.clickcd)
 				face_atom(A)

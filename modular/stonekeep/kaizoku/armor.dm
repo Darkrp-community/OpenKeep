@@ -17,20 +17,19 @@
 
 //................ Armored surcoat (Heartfelt Hand) ............... //
 /obj/item/clothing/armor/medium/surcoat/heartfelt/hand
-	name = "heartfelt kikko coat"
-	desc = "A coat of armor typicially worn by distinguished retainers of Heartfeltian nobles, using exotic silks adquired from Fog Island."
+	name = "turtleshell royal coat"
+	desc = "A suit of defensive plates donned by heartfeltian aristocracy. Crafted from rare silks sourced from Fog Islands."
 	icon_state = "heartfelt_kikkocoat"
 	item_state = "heartfelt_kikkocoat"
 
 /obj/item/clothing/armor/medium/surcoat/heartfelt/hand/female
-	name = "heartfelt kikko dress"
-	desc = "A dress of armor typicially worn by distinguished retainers of Heartfeltian nobles, using exotic silks adquired from Fog Island."
+	name = "turtleshell royal dress"
 	icon_state = "heartfelt_kikkodress"
 	item_state = "heartfelt_kikkodress"
 
 /obj/item/clothing/armor/leather/vest/muneate //exists only for the drip.
-	name = "muneate"
-	desc = "A simple leather chest protector for casual archers. Barely protective- almost useless."
+	name = "leather chestguard"
+	desc = "The 'Muneate', designed for casual archers. Its effectiveness strictly limited to reflecting the slap of a bowstring, proper for horse archery."
 	icon_state = "muneate"
 	item_state = "muneate"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
@@ -45,8 +44,8 @@
 	color = CLOTHING_FOREST_GREEN
 
 /obj/item/clothing/armor/plate/nanbando
-	name = "nanban-dou-sode"
-	desc = "Abyssariad steel cuirass, refined and with additional sode for protection. Rare and prized by High-ranking zamurais, this design has been acquired from raided humen settlements."
+	name = "abyssal half-plate"
+	desc = "Refined abyssal steel cuirass that features additional shoulder protection. Prized and used by high-ranking zamurais."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -54,8 +53,8 @@
 	item_state = "nanbando"
 
 /obj/item/clothing/armor/cuirass/nanbando
-	name = "nanban-dou"
-	desc = "The Abyssariad steel cuirass that only protects the chest. Relatively common among the ones from the lower Zamurai caste."
+	name = "abyssal cuirass"
+	desc = "A full set of refined abyssal steel armor, equipped with additional auxiliary parts for full body protection."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -64,7 +63,7 @@
 	body_parts_covered = CHEST
 
 /obj/item/clothing/armor/plate/full/nanbando
-	name = "nanban-do-gusoku"
+	name = "abyssal full plate"
 	desc = "A complete set of abyssariad steel armor, refined and with additional auxiliary parts for protection."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
@@ -83,28 +82,24 @@
 	qdel(src)
 
 /obj/item/clothing/armor/chainmail/tatami
-	name = "lamellae-tatami do"
-	desc = "a foldable, lightweight armor for convenient motion and manufacturing ease. \
-	It is made of rectangular steel lamellae sewn into chainmail and is a massforged armor. \
-	Considered the backbone of abyssariad military armor, often used below mirror-armor and o-yoroi."
+	name = "steel foldable armor"
+	desc = "The 'Kozane-Tatami Do', a mass-produced, foldable armor made of steel lamellae integrated into chainmail, a staple in fog island's military."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "laminartatami"
 
 /obj/item/clothing/armor/chainmail/iron/tatami
-	name = "tatami karuta-gane"
-	desc = "a foldable, lightweight armor for convenient motion and manufacturing ease. \
-	It is made of lacquered, card-like iron squares sewn into a padded cloth or leather backing."
+	name = "iron foldable armor"
+	desc = "The 'Tatami karuta-gane'. A foldable lightweight armor with lacquered iron squares or tiles on padded chains."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "tatami"
 
 /obj/item/clothing/armor/chainmail/hauberk/kusari
-	name = "kusari katabira"
-	desc = "Or simply 'single-layer chainmail robe', this armor is made of riveted steel rings  \
-	patched together with slim plates protecting elbows. The armor reaches down to the legs and arms."
+	name = "chainmail robe"
+	desc = "The 'Kusari katabira'. It is made of riveted steel rings with slim plates at the elbows. It extends down to cover the legs and arms."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -113,8 +108,8 @@
 
 /obj/item/clothing/armor/plate/mirror/iron
 	name = "iron mirror armor"
+	desc = "Usually used with a Kusari Katabira, this armor's frame is defined by polished iron plates with a central metal disk."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
-	desc = "Polished iron plates defines the frame of this armor with a metal disk at its center. This is the armor design used by the Islander army together with a kusari katabira."
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "imirrorarmor"
@@ -127,23 +122,35 @@
 /obj/item/clothing/armor/plate/mirror
 	name = "steel mirror armor"
 	icon_state = "mirrorarmor"
-	desc = "Polished steel plates defines the frame of this armor with a metal disk at its center. This is the armor design used by the Islander army together with a kusari katabira."
+	desc = "Usually used with a Kusari Katabira, this armor's frame is defined by polished steel plates with a central metal disk."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "mirrorarmor"
 
-/obj/item/clothing/armor/brigandine/oyoroi //I did everything I could to fix this shit. I couldn't. So the entire 'colourscheme overlay' ordeal went to hell.
-	name = "o-yoroi"
-	desc = "Heavy-duty lamellar armor esteemed high-ranking zamurais on horseback or on land."
+/obj/item/clothing/armor/brigandine/oyoroi
+	name = "great lamellar armor"
+	desc = "The 'O-yoroi', a heavy-duty lamellar armor favored by high-ranking zamurais on horseback, with pauldrons functioning similarly to shields in battle."
+	desc = "Usually used with a Kusari Katabira, this armor's frame is defined by polished steel plates with a central metal disk."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "halfoyoroi"
 
+/obj/item/clothing/armor/brigandine/oyoroi/update_icon()
+	cut_overlays()
+	if(get_detail_tag())
+		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
+		pic.appearance_flags = RESET_COLOR
+		if(get_detail_color())
+			pic.color = get_detail_color()
+		add_overlay(pic)
+
+/obj/item/clothing/suit/armor/brigandine/oyoroi/cursed
+	name = "soulbinded o-yoroi gusoku"
+
 /obj/item/clothing/armor/brigandine/oyoroi/cursed/Initialize()
 	. = ..()
-	name = "soulbinded o-yoroi gusoku"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
 /obj/item/clothing/armor/brigandine/oyoroi/cursed/obj_break(damage_flag)
@@ -154,29 +161,18 @@
 
 /obj/item/clothing/armor/brigandine/oyoroi/royal/Initialize()
 	. = ..()
-	AddComponent(/datum/component/squeak, list('sound/foley/footsteps/armor/coatplates (1).ogg',\
-												'sound/foley/footsteps/armor/coatplates (2).ogg',\
-												'sound/foley/footsteps/armor/coatplates (3).ogg'), 100)
-
-/obj/item/clothing/armor/brigandine/oyoroi/royal/update_icon()
-	cut_overlays()
 	detail_tag = "_met"
 	detail_color = GLOB.lordprimary
-	if(get_detail_tag())
-		var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-		pic.appearance_flags = RESET_COLOR
-		if(get_detail_color())
-			pic.color = get_detail_color()
-		add_overlay(pic)
+	update_icon()
 
 /obj/item/clothing/armor/brigandine/oyoroi/captain/Initialize()
 	. = ..()
 	if(GLOB.lordprimary)
-		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
+		lordcolor(GLOB.lordprimary, GLOB.lordsecondary)
 	else
 		GLOB.lordcolor += src
 
-/obj/item/clothing/armor/brigandine/oyoroi/captain/lordcolor(primary,secondary)
+/obj/item/clothing/armor/brigandine/oyoroi/captain/lordcolor(primary, secondary)
 	detail_tag = "_met"
 	detail_color = primary
 	update_icon()
@@ -189,10 +185,16 @@
 	return ..()
 
 /obj/item/clothing/armor/brigandine/oyoroi/oyoroigusoku
-	name = "o-yoroi gusoku"
-	desc = "Heavy-duty, complete set of lamellar armor esteemed by high-ranking zamurais on horseback or on land."
+	name = "complete great lamellar armor"
+	desc = "The 'O-yoroi gusoku', a heavy-duty lamellar armor favored by high-ranking zamurais on horseback, with pauldrons functioning similarly to shields in battle."
 	icon_state = "oyoroi"
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
+
+/obj/item/clothing/armor/brigandine/oyoroi/oyoroigusoku/Initialize()
+	. = ..()
+	detail_tag = "_met"
+	detail_color = GLOB.lordprimary
+	update_icon()
 
 /obj/item/clothing/armor/brigandine/oyoroi/oyoroigusoku/cursed/Initialize()
 	. = ..()
@@ -206,46 +208,47 @@
 	qdel(src)
 
 /obj/item/clothing/armor/cuirass/sanmaido
-	name = "san mai-do"
-	desc = "A cheap cuirass with three main plates riveted together with cloth. Flexible and dynamic, integral for many poor footsoldiers"
+	name = "three-plates cuirass"
+	desc = "The 'San mai-do', a cost-effective cuirass composed of three main plates riveted together. Usually painted black, it is favored by poor foot soldiers and warrior monks."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "sanmaido"
 
 /obj/item/clothing/armor/leather/abyssal
-	name = "leather lamellar armor"
-	desc = "Also know as 'Tiejia', this islander leather armor features small rectangular leather plates laced together to cover vital organs."
+	name = "leather cuirass"
+	desc = "Also know as 'Tiejia', this is an leather armor featuring rectangular leather lamellae laced together to cover vital organs."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "tiejia"
 
 /obj/item/clothing/armor/leather/hide/dustwalker
-	name = "leather cavalry armor"
-	desc = "The Khatag Teghelgah designed to be used by abyssariad light cavalry and horse archers on the heart of Fog Island."
+	name = "rawhide dynasty armor" //Han dynasty leather armor
+	desc = "The 'Khatag Teghelgah'. It is designed to be used by abyssariad light cavalry and horse archers on the heart of Fog Island."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "arisan_khuyag"
 
 /obj/item/clothing/armor/leather/splint/kikko //This one is more realistic than Studded Leather armor. A reminder that Studded leather armor is a misinterpretation of a Brigandine.
-	name = "kikko jacket"
-	desc = "A cheaper and lighter version of Kikko Tatami, a leather jacket with metal hexagon plates in a turtle-shell pattern."
+	name = "turtleshell jacket"
+	desc = "The 'Kikko-Jaketto', essentially a leather jacket with metal hexagon plates in a pattern similar to a turtle's shell."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 	icon_state = "kikko"
 	adjustable = CAN_CADJUST
 
-/obj/item/clothing/armor/leather/splint/kikko/eidolon
-	color = CLOTHING_EIDOLON
+/obj/item/clothing/armor/leather/splint/kikko/random/Initialize()
+	. = ..()
+	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
 
-/obj/item/clothing/armor/leather/splint/kikko/rich/Initialize()
-	color = pick_assoc(GLOB.noble_dyes)
-	..()
+/obj/item/clothing/armor/leather/splint/kikko/military/Initialize()
+	. = ..()
+	color = pick("#534b40", "#685542", "#264d26")
 
-/obj/item/clothing/armor/leather/studded/kikko/AdjustClothes(mob/user)
+/obj/item/clothing/armor/leather/splint/kikko/AdjustClothes(mob/user)
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED
@@ -264,8 +267,8 @@
 					H.update_inv_armor()
 
 /obj/item/clothing/armor/leather/hide/shozoku
-	name = "shozoku"
-	desc = "The main garment used by Ninjas and Kunoichis to blend into the night. Not viable during daylight, but it is easy to store anywhere, and any time."
+	name = "stealth attire"
+	desc = "The secondary attire for shinobis and kunoichis to blend into the night, the use is not suitable for daylight."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -276,7 +279,7 @@
 /obj/item/clothing/armor/chainmail/rattan //New armor; Iron-to-steel tier.
 	slot_flags = ITEM_SLOT_ARMOR
 	name = "rattan armor"
-	desc = "A flexible and durable full body coat made from oil-boiled rattan and layered iron wires. Used by LinYou Raiders, it can be easily repaired."
+	desc = "A flexible and durable full-body coat crafted from oil-boiled rattan and layered iron wires. By being easily repairable, it is used by LinYou Wokous."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -307,7 +310,7 @@
 //New Rare Heartfelt equipment
 /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad
 	name = "abyssariad kikko gusoku"
-	desc = "The Heartfelt design reforged in the ways of Fog Islands to better supply quick-moving zamurai cavalry, replacing the heavier and costier O-Yoroi lamellar."
+	desc = "Reforged in a more recent standard to better equip low-ranking zamurai after the Rebellion of Three Waves, this armor replaces the expensive O-Yoroi lamellar."
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS //does not protect the arms. Countering the Brigandine that protects the arms, but not legs.
 	icon_state = "kikkoabyssal"
 	item_state = "kikkoabyssal"
@@ -317,7 +320,7 @@
 	name = "kaizoku's waitao"
 	icon_state = "waitao_coat"
 	color = null
-	desc = "A silken coat of Heartfelt making used by the Abyssariad Kaizoku, those who brought the name of Fog Islands to the outsiders by accident. Or just artistic folk."
+	desc = "Silken coats of heartfelt making, used by the sons of Kaizoku, or just artistic folk."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
@@ -339,7 +342,7 @@
 /obj/item/clothing/armor/gambeson/ruankai
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	name = "padded ruankai"
-	desc = "made of layered cotton or silk, it is quilted together to absorb shock from blows to protect wearer as a cushioning layer. Enough to survive a horse's kick."
+	desc = "Made of layered cloth quilted together, it became a cushioning armor sufficient to withstand a horse's kick."
 	icon_state = "ruankai"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
@@ -415,16 +418,25 @@
 	color = CLOTHING_EIDOLON
 
 /obj/item/clothing/armor/gambeson/heavy/deelcoat
-	name = "reinforced deel coat"
-	desc = "A loose-fitting abyssariad tunic usually made with horse leather, traditionally used by the Dustwalkers. The dense padding greatly protects the user against blunt trauma."
+	name = "reinforced warcoat"
+	desc = "A loose-fitting Abyssariad warcoat, typically made of horse leather and traditionally used by the Dustwalkers."
 	icon_state = "deel"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
 
+/obj/item/clothing/armor/leather/jacket/firecoat
+	name = "stormforger coat"
+	desc = "Asbestos-layered, loose-fitting coat used by stormforgers to protect against the dangerous ambers of lava casting."
+	icon_state = "stormforger"
+	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
+	resistance_flags = FIRE_PROOF
+
 /obj/item/clothing/armor/leather/splint/ninjakappa //same as studded leather armor
 	name = "tribalistic bronze cuirass"
-	desc = "A layered armor with oil-boiled leather reinforced with bronze plates sew into the fabric. Light and flexible, it is used by Undines who became part of underground shinobi operations to destroy illegal gangs, drugdealers and centers of prostitution."
+	desc = "layered armor of bronze plates sewn into oil-boiled leather. Used by Undines in shinobi operations."
 	icon_state = "ninjakappa"
 	item_state = "ninjakappa"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
@@ -509,8 +521,8 @@
 	inhand_mod = FALSE
 	hoodtype = null
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/cloaks.dmi'
-	mob_overlay_icon = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
-	sleeved = 'icons/roguetown/clothing/onmob/detailed/tabards.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
+	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/cloaks.dmi'
 	sleevetype = "shirt"
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 
@@ -702,7 +714,7 @@
 	edelay_type = 4
 	equip_delay_self = 20
 	heat_protection = FULL_BODY
-	body_parts_covered = FULL_BODY
+	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	color = "#7e0707"
 
@@ -712,7 +724,7 @@
 // ========================		BOOTS	============================
 
 /obj/item/clothing/shoes/boots/armor/light/kusaritabi
-	name = "kusari tabi"
+	name = "chains tabi"
 	icon_state = "kusaritabi"
 	item_state = "kusaritabi"
 	desc = "The riveted chainmail version of the unarmored Tabi footwear."
@@ -721,7 +733,7 @@
 	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/feet.dmi'
 
 /obj/item/clothing/shoes/boots/armor/suneate
-	name = "suneate boots"
+	name = "three-plate greaves"
 	desc = "Armored suneate made from steel offering heavy protection against both melee and ranged attacks."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/feet.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/feet.dmi'
@@ -781,12 +793,12 @@
 
 /obj/item/clothing/shoes/shortboots/cloudhead/kabukimono
 	name = "kabuki-maru cloudhead shoes"
-	desc = "The same traditional cloudhead shoes of the Abyssariads, but colored in rich yellow tone and with intense implication of being used by a lowly burakumin whom belongs to an armed gang."
+	desc = "The same traditional cloudhead shoes of the Abyssariads, but colored in rich yellow tone and with intense implication of being used by a desecrant whom belongs to an armed gang."
 	color = "#9b874f"
 
 /obj/item/clothing/shoes/shortboots/cloudhead/toweryakkos
 	name = "tower-yakko cloudhead shoes"
-	desc = "The same traditional cloudhead shoes of the Abyssariads, but colored in rich purple tone and with intense implication of being used by a lowly burakumin whom belongs to an armed gang."
+	desc = "The same traditional cloudhead shoes of the Abyssariads, but colored in rich purple tone and with intense implication of being used by a desecrant whom belongs to an armed gang."
 	color = "#804d97"
 
 /obj/item/clothing/shoes/ridingboots/gutal
@@ -803,8 +815,8 @@
 // ========================		GLOVES	============================
 
 /obj/item/clothing/gloves/fingerless/yugake
-	name = "leather yugake"
-	desc = "Traditional archery gloves used by foglanders to protect the fingers from the impact of the bow's string. Reinforced and sturdy."
+	name = "archery armguard"
+	desc = "The 'Yugake', a traditional archery gloves used by foglanders to protect the fingers from the impact of the bow's string. Reinforced and sturdy with cloth."
 	icon_state = "yugake"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/gloves.dmi'
@@ -840,7 +852,7 @@
 	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 
 /obj/item/clothing/gloves/chain/kikko
-	name = "kikko steel tekko"
+	name = "turtle-shell steel gauntlets"
 	desc = "Gauntlets made of steel in a shape that seems alike the shells of a turtle."
 	icon_state = "kikkotekko"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
@@ -848,7 +860,7 @@
 	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 
 /obj/item/clothing/gloves/chain/iron/kikko
-	name = "kikko iron tekko"
+	name = "turtle-shell iron gauntlets"
 	icon_state = "ikikkotekko"
 	desc = "Gauntlets made of iron in a shape that seems alike the shells of a turtle."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
@@ -856,7 +868,7 @@
 	sleeved = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
 
 /obj/item/clothing/gloves/plate/lamellaetekko
-	name = "lamellae tekko"
+	name = "lamellae gauntlets"
 	desc = "Gauntlets made of steel plates, in sendan style. Offers great protection for the hands while allowing delicate hand dexterity."
 	icon_state = "tatamitekko" //that's not a tatami design.
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/gloves.dmi'
@@ -868,7 +880,7 @@
 // ========================		HEAD	============================
 
 /obj/item/clothing/head/takuhatsugasa
-	name = "takuhatsugasa"
+	name = "alms umbrella hat"
 	icon_state = "takuhatsugasa"
 	desc = "A type of hat worn by monks during their begging rounds - or when punching demons into submission."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
@@ -881,7 +893,7 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/head/tengai
-	name = "tengai"
+	name = "lay-monk hat"
 	icon_state = "tengai"
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
 	desc = "A wide-brimmed hat traditionally worn by wandering monks of the Abyssanctum fold."
@@ -899,31 +911,31 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/head/tengai/yamabushi
-	name = "yamabushi tengai"
+	name = "yamabushi lay-monk hat"
 	icon_state = "stengai"
 	desc = "A tengai painted in black tar traditionally worn by Abyssanctum yamabushis."
 	bloody_icon_state = "helmetblood"
 
 /obj/item/clothing/head/tengai/gasa
-	name = "gasa"
+	name = "umbrella hat"
 	icon_state = "gasa"
 	desc = "A conical straw hat used to protect from the sun and rain. Commonly used by commoners, or casually by the Zamurais and their retainers."
 	flags_inv = HIDEEARS
 
 /obj/item/clothing/head/lilly
-	name = "small lilypad gasa"
+	name = "small lilypad"
 	icon_state = "lilypad_small"
 	desc = "a small lilypad used by Undines to protect from sun and rain. This comes as a intercultural exchange mimicking Abyssariad's gasas."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
 
 /obj/item/clothing/head/lilly/medium
-	name = "medium lilypad gasa"
+	name = "medium lilypad"
 	icon_state = "lilypad_medium"
 	desc = "a medium lilypad used by Undines to protect from sun and rain. This comes as a intercultural exchange mimicking Abyssariad's gasas."
 
 /obj/item/clothing/head/lilly/big
-	name = "big lilypad gasa"
+	name = "big lilypad"
 	icon_state = "lilypad_big"
 	desc = "a big lilypad used by Undines to protect from sun and rain. This comes as a intercultural exchange mimicking Abyssariad's gasas."
 
@@ -935,27 +947,27 @@
 	bloody_icon_state = null
 
 /obj/item/clothing/head/tengai/torioigasa
-	name = "torioigasa"
+	name = "birdchaser umbrella hat"
 	icon_state = "torioigasa"
 	desc = "A traditional Abyssariad hat designed for long travels on the murklands. Most used by commoners."
 	bloody_icon_state = null
 
 /obj/item/clothing/head/tengai/sandogasa
-	name = "sandogasa"
+	name = "large umbrella hat"
 	icon_state = "sandogasa"
 	flags_inv = HIDEEARS
 	desc = "A large hat providing ample shade and protection from the elements, including rain."
 	bloody_icon_state = null
 
 /obj/item/clothing/head/tengai/sandogasa/yamabushi
-	name = "yamabushi sandogasa"
+	name = "yamabushi large umbrella hat"
 	icon_state = "ssandogasa"
 	desc = "A sandogasa painted in black tar traditionally worn by Abyssanctum yamabushis."
 	bloody_icon_state = null
 
 /obj/item/clothing/head/soheicloth
 	name = "sohei coverings"
-	desc = "Blessed fabric bathed in holy water, keeping a sohei protected from corruptive gases - and providing anonymity. Their symbol of devotion that manifests their humbleness."
+	desc = "Blessed fabric bathed in holy water, keeping a sohei protected from corruptive gases - and providing anonymity."
 	icon_state = "soheicloth"
 	body_parts_covered = HEAD|HAIR
 	body_parts_covered = HEAD|HAIR|EARS|MOUTH
@@ -968,8 +980,8 @@
 	name = "thunder sohei coverings"
 	color = CLOTHING_THUNDER
 
-/obj/item/clothing/head/soheicloth/storm
-	name = "storm sohei coverings"
+/obj/item/clothing/head/soheicloth/deluge
+	name = "deluge sohei coverings"
 	color = CLOTHING_STORM
 
 /obj/item/clothing/head/soheicloth/ocean
@@ -988,13 +1000,9 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
 
-
-
 /obj/item/clothing/head/helmet/zijinguan
-	name = "zijinguan" //This is actually a ming dynasty helmet
-	desc = "A cheaper version of the Myrmidon helmet that dates back to the age of guardianship, \
-	yet still remains efficient. This helmet has became the symbol of abyssariad military culture \
-	of the commoner class alongside the jingasa."
+	name = "footsoldier helmet" //This is actually a ming dynasty helmet
+	desc = "A cost-effective Myrmidon helmet from the age of guardianship, the current symbol of Abyssariad military culture for commoners."
 	icon_state = "zijinguan"
 	flags_inv = HIDEEARS
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
@@ -1015,13 +1023,18 @@
 			pic.color = get_detail_color()
 		add_overlay(pic)
 
-
+/obj/item/clothing/head/helmet/zijinguan/Initialize()
+	. = ..()
+	if(GLOB.lordprimary)
+		detail_color = GLOB.lordprimary
+	else
+		detail_color = "#8B0000" // Fallback color
+	update_icon()
 
 /obj/item/clothing/head/helmet/sallet/tosei_kabuto
-	name = "tosei kabuto"
-	desc = "Made from multiple steel plates riveted together, arranged in a radial pattern, \
-	having great balance and weight distribution - protecting even against round balls from firearms. \
-	Often used by the Zamurai class, this helmet is no rare find on a battlefield."
+	name = "riveted helmet"
+	desc = "Forged from riveted steel in a radial pattern, this gives a strong foundation for a \
+	helmet capable of protecting even against musket balls. Don't expect to be safe from the whip effect on the neck, but your skull will stay in place."
 	icon_state = "tosei_kabuto"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
@@ -1042,9 +1055,9 @@
 	qdel(src)
 
 /obj/item/clothing/head/helmet/visored/sallet/tosei_kabuto
-	name = "masked tosei kabuto"
-	desc = "Made from multiple steel plates riveted together, arranged in a radial pattern. \
-	This one has a mask to protect the face of whoever uses it, albeit it does make sight difficult."
+	name = "masked riveted helmet"
+	desc = "Forged from riveted steel in a radial pattern, this gives a strong foundation for a \
+	helmet capable of protecting even against musket balls. Don't expect to be safe from the whip effect on the neck, but your skull will stay in place."
 	icon_state = "toseikabuto_visor"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
@@ -1065,10 +1078,8 @@
 	qdel(src)
 
 /obj/item/clothing/head/helmet/visored/zunari //knight helmet.
-	name = "zunari kabuto"
-	desc = "An Etchu Zunari Kabuto with the front end of its longitudinal plate \
-	overlapping the brows, over the eyes, rather than being riveted beneath it \
-	to efficiently reflect blows and arrows - and protect against the sun and sweat."
+	name = "layered zamurai helmet"
+	desc = "The 'Etchu Zunari Kabuto' helmet, with forward-overlapping brow plates to deflect blows and arrows, while shielding from the sun and sweat."
 	icon_state = "zunari_kabuto"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
@@ -1107,9 +1118,9 @@
 	icon_state = "tricorn"
 
 /obj/item/clothing/head/helmet/leather/malgai/duulga //same changes of 'leather' to 'hide' has been brought over to this hat + mouth protection, because Mongol hat go brrtt
-	name = "arisan duulga"
-	desc = "The thick, oil-boiled layered leather helmet used by Abyssariads Dustriders \
-	from the arid, steppelands on the heart of the Fog Islands."
+	name = "abyssal leather helmet"
+	desc = "The thick, oil-boiled layered 'arisan duulga' used by Abyssariads Dustriders \
+	from the arid steppelands on the heart of the Fog Islands."
 	icon_state = "arisan_duulga"
 	armor = ARMOR_LEATHER_GOOD
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
@@ -1133,10 +1144,8 @@
 	max_integrity = INTEGRITY_POOR
 
 /obj/item/clothing/head/helmet/kaizoku/jingasa //the same as a Kettle. Just don't want the 64x64 bits.
-	name = "jingasa"
-	desc = "A metal gasa in conical shape. Mainly worn by Ashigarus, it protects against \
-	arrows and direct blow. Most efficient together with padding underneath due to the \
-	large space for the helmet to move after hit, easing impact."
+	name = "armored umbrella helmet"
+	desc = "The 'Jingasa, a metal gasa in conical shape. Mainly worn by Ashigarus, it has a wide brim to deflect projectiles and a gap within acting as a buffer zone."
 	icon_state = "jingasa"
 	flags_inv = HIDEEARS
 	bloody_icon = 'icons/effects/blood64x64.dmi'
@@ -1168,28 +1177,28 @@
 	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = INTEGRITY_STRONG
 
-/obj/item/clothing/head/helmet/kaizoku/hachigane
-	name = "hachi-gane"
-	desc = "Simple, lamellar head protection made for humble monks, ronins and the poor - with the material often gathered from iron panning."
+/obj/item/clothing/head/helmet/kaizoku/hachigane //This is, in essence, a skullcap.
+	name = "forehead protector"
+	desc = "The 'Hachigane', a simple, lamellar head protection made for humble monks, ronins and the poor - with the material often gathered from iron panning."
 	icon_state = "hachi-gane"
 
 /obj/item/clothing/head/helmet/kaizoku/hachigane/thunder
-	name = "thunder hachi-gane"
+	name = "thunder forehead protector"
 	desc = "Simple, lamellar head protection. Marked in yellow for the mountainous magicians and monks who praises Abyssor's thunders."
 	color = CLOTHING_THUNDER
 
-/obj/item/clothing/head/helmet/kaizoku/hachigane/storm
-	name = "storm hachi-gane"
+/obj/item/clothing/head/helmet/kaizoku/hachigane/deluge
+	name = "deluge forehead protector"
 	desc = "Simple, lamellar head protection. Marked in dark blue for the lighthouse keepers of Abyssanctum's faith, who keeps the eternal fire going."
 	color = CLOTHING_STORM
 
 /obj/item/clothing/head/helmet/kaizoku/hachigane/ocean
-	name = "sea hachi-gane"
+	name = "ocean forehead protector"
 	desc = "Simple, lamellar head protection. Marked in light blue for the expeditionary magicians and monks of Abyssanctum's faith, long married to the seas."
 	color = CLOTHING_SEA
 
 /obj/item/clothing/head/helmet/kaizoku/hachigane/island
-	name = "island hachi-gane"
+	name = "island forehead protector"
 	desc = "Simple, lamellar head protection. Marked in red for the soilgazers of Abyssanctum's faith, those bent in ensuring no plague shall reach their blessed islands. "
 	color = CLOTHING_ISLAND
 
@@ -1288,7 +1297,7 @@
 	armor = ARMOR_PLATE
 
 /obj/item/clothing/head/helmet/heavy/bucket/soheidemon
-	name = "armored sohei cowl"
+	name = "warpriest battle cowl"
 	desc = "A fabric blessed both in holy water and steel. A mask-like metal reinforcement \
 	covered with yellow silk protects the skull of these Sohei warriors."
 	icon_state = "soheidemon"
@@ -1303,8 +1312,8 @@
 // 'bone-tier' Undine equipments.
 
 /obj/item/clothing/head/wizhat/onmyoji
-	name = "onmyoji warhat"
-	desc = "Surprisingly huge hats used by Onmyojis whom take part of the abyssal championage in warfare. The hat shadows hides the eyes from the lower castes."
+	name = "stormcaller warhat"
+	desc = "Surprisingly huge hats used by stormcaller whom take part of the abyssal championage in warfare. The hat shadows hides the eyes from the lower castes."
 	icon_state = "abyssalhat"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
@@ -1320,19 +1329,19 @@
 	color = pick("#4756d8", "#759259", "#bf6f39", "#c1b144")
 
 /obj/item/clothing/head/wizhat/onmyoji/thunder
-	name = "thunder onmyoji warhat"
+	name = "thunder stormcaller warhat"
 	color = CLOTHING_THUNDER
 
-/obj/item/clothing/head/wizhat/onmyoji/storm
-	name = "storm onmyoji warhat"
+/obj/item/clothing/head/wizhat/onmyoji/deluge
+	name = "deluge stormcaller warhat"
 	color = CLOTHING_STORM
 
 /obj/item/clothing/head/wizhat/onmyoji/ocean
-	name = "sea onmyoji warhat"
+	name = "ocean stormcaller warhat"
 	color = CLOTHING_SEA
 
 /obj/item/clothing/head/wizhat/onmyoji/island
-	name = "island onmyoji warhat"
+	name = "island stormcaller warhat"
 	color = CLOTHING_ISLAND
 
 /obj/item/clothing/head/wizhat/onmyoji/black
@@ -1340,7 +1349,7 @@
 
 /obj/item/clothing/head/wizhat/onmyoji/eboshi
 	name = "eboshi hat"
-	desc = "traditional Onmyoji hats for those who desires to practice natural sciences and divinations rather than warfare."
+	desc = "traditional stormcallers hats for those who desires to practice natural sciences and divinations rather than warfare."
 	icon_state = "eboshihat"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
@@ -1511,9 +1520,10 @@
 	name = "iron half mempo"
 	icon_state = "ironmempo"
 	max_integrity = INTEGRITY_WORST
-	desc = "A cheaper menpo portraying the lower part of a Ogrun's head. It covers only the neck and the mouth."
+	desc = "A cheaper mempo portraying the lower part of a Ogrun's head. It covers only the neck and the mouth."
 	body_parts_covered = NECK|MOUTH
 	flags_cover = HEADCOVERSMOUTH | MASKCOVERSMOUTH
+	flags_inv = null
 
 /obj/item/clothing/face/kaizoku/menpo/steel
 	name = "steel men-yoroi"
@@ -1523,15 +1533,16 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 
 /obj/item/clothing/face/kaizoku/menpo/steel/half
-	name = "steel mempo"
+	name = "steel half-mempo"
 	icon_state = "steelmempo"
 	desc = "The lower part of a menpo portraying the maws of a Ogrun's head. It covers only the neck and the mouth, often used by warriors that cares about their sight."
 	max_integrity = 200
 	body_parts_covered = NECK|MOUTH
 	flags_cover = HEADCOVERSMOUTH | MASKCOVERSMOUTH
+	flags_inv = null
 
 /obj/item/clothing/face/kaizoku/menpo/facemask
-	name = "iron mask"
+	name = "iron merkkin mask"
 	icon_state = "irontribal"
 	desc = "The old, barely used mask of the almost extinct Merkpeople, with fish-like characteristics. Usually used by Undines."
 	max_integrity = 100
@@ -1667,25 +1678,25 @@
 // =================================================================
 // ========================		NECK	============================
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin
-	name = "karuta zukin"
-	desc = "A protective hood composed of rectangular plates sewn onto a fabric backing, offering a more solid \
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
+	name = "foldable lamellae hood"
+	desc = "The 'Karuta Zukin', a protective hood composed of rectangular plates sewn onto a fabric backing, offering a more solid \
 	defense while remaining flexible."
 	icon_state = "karuta_zukin"
 	item_state = "karuta_zukin"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
-	adjustable = CAN_CADJUST
 
 /obj/item/clothing/neck/chaincoif/karuta_zukin/random/Initialize()
+	. = ..()
 	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
-	..()
 
 /obj/item/clothing/neck/chaincoif/karuta_zukin/military/Initialize()
-	color = pick("#3d3a36", "#685542", "#264d26")
-	..()
+	. = ..()
+	color = pick("#534b40", "#685542", "#264d26")
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/kabukimono
+/obj/item/clothing/neck/chaincoif/karuta_zukin/kabukimono/Initialize()
+	. = ..()
 	color = "#9b874f"
 
 /obj/item/clothing/neck/chaincoif/karuta_zukin/AdjustClothes(mob/user)
@@ -1745,8 +1756,8 @@
 // ========================		PANTS	============================
 
 /obj/item/clothing/pants/chainlegs/iron/haidate_tatami
-	name = "haidate tatami"
-	desc = "Flexible thigh guard with interlocking scales sewn into the fabric. Ideal for agility during battle."
+	name = "foldable thighguard"
+	desc = "The 'Haidate Tatami', a flexible thigh guard with interlocking scales sewn into the fabric. Ideal for agility during battle."
 	gender = PLURAL
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/pants.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/pants.dmi'
@@ -1756,8 +1767,8 @@
 	alternate_worn_layer = SHOESLEEVE_LAYER
 
 /obj/item/clothing/pants/chainlegs/sendan
-	name = "haidate sendan"
-	desc = "Segmented thigh armor with overlapping plates that allows engagement in prolonged combat, without causing mobility issues."
+	name = "segmented thighguard"
+	desc = "A 'sendan tatami', a segmented thigh armor with overlapping plates that allows engagement in prolonged combat, without causing mobility issues."
 	icon_state = "haidate_sendan"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/pants.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/pants.dmi'
@@ -1766,12 +1777,12 @@
 
 /obj/item/clothing/pants/chainlegs/sendan/cursed/Initialize()
 	. = ..()
-	name = "soulbinded kote"
+	name = "soulbinded thighguard"
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
 /obj/item/clothing/pants/platelegs/yoroihakama
-	name = "yoroihakama"
-	desc = "Hakama with extreme plate reinforcement, with protuding plates protecting the hips, and many interlocking steel plates under the cloth."
+	name = "steel plated trousers"
+	desc = "The 'Yoroi-Hakama', essentially a Hakama with plate reinforcement, with protuding plates protecting the hips, and many interlocking steel plates under the cloth."
 	gender = PLURAL
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/pants.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/pants.dmi'
@@ -1806,12 +1817,12 @@
 	name = "thunder tobi pants"
 	color = CLOTHING_THUNDER
 
-/obj/item/clothing/pants/trou/tobi/storm
-	name = "storm tobi pants"
+/obj/item/clothing/pants/trou/tobi/deluge
+	name = "deluge tobi pants"
 	color = CLOTHING_STORM
 
 /obj/item/clothing/pants/trou/tobi/ocean
-	name = "sea tobi pants"
+	name = "ocean tobi pants"
 	color = CLOTHING_SEA
 
 /obj/item/clothing/pants/trou/tobi/island
@@ -1846,7 +1857,7 @@
 	color = CLOTHING_RED_OCHRE
 
 /obj/item/clothing/pants/tights/hakama
-	name = "hakama"
+	name = "abyssal trouser"
 	icon_state = "hakama"
 	alternate_worn_layer = SHOESLEEVE_LAYER
 	desc = "Suitable for the Abyssariad-cultured, in which large battle-skirts does not hurt their masculinity, differently of the frail Imperial counterpart."
@@ -1953,6 +1964,7 @@
 	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_shirts.dmi'
 	icon_state = "kimono"
 	item_state = "kimono"
+	sleevetype = "shirt"
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	boobed = TRUE
 	r_sleeve_status = SLEEVE_NORMAL
@@ -1989,7 +2001,7 @@
 	..()
 
 /obj/item/clothing/shirt/tunic/kamishimo //I know this is actually a Kataginu, but it is know more as 'Kamishimo', even if lacking a Hakama. Because HAKAMA is its own thing here.
-	name = "kataginu"
+	name = "shoulder robe"
 	desc = "A formal kimono used by men, a short sleeveless garment made of hemp which usually comes together with a hakama, and worn on top of a kosode or kimono. To use one without cloth underneath, conveys a ronin nature."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/shirt.dmi'
 	mob_overlay_icon ='modular/stonekeep/kaizoku/icons/clothing/shirt.dmi'
@@ -2012,7 +2024,7 @@
 	color = CLOTHING_EIDOLON
 
 /obj/item/clothing/shirt/looseshirt
-	name = "kimono jinbei"
+	name = "kimono summer shirt"
 	desc = "A summer shirt that goes along with a tobi, used during the hot summers on Fog islands."
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/shirt.dmi'
@@ -2050,7 +2062,7 @@
 	body_parts_covered = CHEST|VITALS
 
 /obj/item/clothing/shirt/robe/wizard/guardian
-	name = "onmyoji's warfare garb"
+	name = "stormcaller's warfare garb"
 	desc = "The garbs used by Abyssariad magicians during times of warfare, holding the marks of Abyssor upon the cloth."
 	icon_state = "abyssaltunic"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/shirt.dmi'
@@ -2077,8 +2089,8 @@
 	desc = "The garbs used by Abyssariad magicians during times of warfare. Marked in yellow for the mountainous magicians and monks who praises Abyssor's thunders."
 	color = CLOTHING_THUNDER
 
-/obj/item/clothing/shirt/robe/wizard/guardian/storm
-	name = "storm onmyoji's warfare garb"
+/obj/item/clothing/shirt/robe/wizard/guardian/deluge
+	name = "deluge stormcaller's warfare garb"
 	desc = "The garbs used by Abyssariad magicians during times of warfare. Marked in dark blue for the lighthouse keepers of Abyssanctum's faith, who keeps the eternal fire going."
 	color = CLOTHING_STORM
 
@@ -2094,7 +2106,7 @@
 
 /obj/item/clothing/shirt/kaizoku/robe
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "onmyoji's garb"
+	name = "loose abyssal garb"
 	desc = "Casual abyssariad garbs usually used by magicians, or those living on the frigid, treacherous mountains on the edges of the Fog islands."
 	icon_state = "loosetunic"
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/shirt.dmi'
@@ -2159,8 +2171,8 @@
 // ========================	BRACERS	================================
 
 /obj/item/clothing/wrists/bracers/kote
-	name = "kote"
-	desc = "A sashinuki kote, the armored sleeves and gloves knitted into a jacketed layer. It belongs as one of the armor component of sangu, together with suneate and haidate."
+	name = "armored sleeve"
+	desc = "The 'sashinuki kote', armored sleeves and gloves knitted into a jacketed layer. It belongs as one of the armor component of sangu, together with suneate and haidate."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/wrists.dmi'
 	mob_overlay_icon ='modular/stonekeep/kaizoku/icons/clothing/wrists.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/icons/clothing/wrists.dmi'
@@ -2196,7 +2208,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/wrists/bracers/leather/khudagach
-	name = "khudagach bracers"
+	name = "abyssal leather bracers"
 	desc = "Oil-boiled leather bracers made to protect the forearms and wrists of abyssariad archers, light cavalry and farming folk."
 	icon_state = "khudagach"
 	item_state = "khudagach"
@@ -2235,3 +2247,4 @@
 	resistance_flags = FLAMMABLE
 	sewrepair = TRUE
 	anvilrepair = null
+	alternate_worn_layer = BELT_LAYER //Keep them exposed above armor and tabards.

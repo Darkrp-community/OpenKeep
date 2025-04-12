@@ -132,6 +132,11 @@ GLOBAL_LIST_INIT(traits_by_type, list(
 		"Foreigner" = TRAIT_FOREIGNER,
 		"Beautiful" = TRAIT_BEAUTIFUL,
 		"Ugly" = TRAIT_UGLY,
+		"Foglander Cultured" = TRAIT_KAIZOKU,
+		"Changeling Metabolism" = TRAIT_CHANGELING_METABOLISM,
+		"Filthy Desecrant" = TRAIT_DESECRANT,
+
+
 	),
 	/obj/item/bodypart = list(
 		"TRAIT_PARALYSIS" = TRAIT_PARALYSIS

@@ -122,7 +122,7 @@
 		beltl = /obj/item/weapon/sword/uchigatana
 		neck = /obj/item/clothing/neck/gorget
 		cloak = /obj/item/clothing/shirt/tunic/kamishimo/eidolon
-		armor = /obj/item/clothing/armor/leather/splint/kikko/eidolon
+		armor = /obj/item/clothing/armor/leather/splint/kikko/military
 		shirt = /obj/item/clothing/armor/gambeson/light/hitatare/eidolon
 		wrists = /obj/item/clothing/neck/psycross/silver/abyssanctum
 		shoes = /obj/item/clothing/shoes/sandals/geta
