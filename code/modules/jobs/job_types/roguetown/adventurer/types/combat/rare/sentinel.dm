@@ -54,9 +54,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
-	H.change_stat("strength", 1)
-	H.change_stat("perception", 2)
-	H.change_stat("speed", 1)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_SPD, 1)
 
 	if(prob(33))
 		if(!H.has_language(/datum/language/elvish))

@@ -63,10 +63,10 @@
 			else
 				wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 
-	H.change_stat("intelligence", 1)
-	H.change_stat("strength", 1)
-	H.change_stat("perception", 2)
-	H.change_stat("constitution", 2)
+	H.change_stat(STATKEY_INT, 1)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_CON, 2)
 
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
 

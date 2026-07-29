@@ -48,9 +48,9 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.change_stat("speed", 1)
-		H.change_stat("intelligence", 1)
-		H.change_stat("perception", 2)
+		H.change_stat(STATKEY_SPD, 1)
+		H.change_stat(STATKEY_INT, 1)
+		H.change_stat(STATKEY_PER, 2)
 		H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitmaiden)
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/trou/leather

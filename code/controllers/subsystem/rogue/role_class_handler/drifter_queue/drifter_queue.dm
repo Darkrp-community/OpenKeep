@@ -206,7 +206,6 @@
 
 	var/atom/movable/screen/splash/Spl = new(character.client, TRUE)
 	Spl.Fade(TRUE)
-	character.update_parallax_teleport()
 
 	SSticker.minds += character.mind
 	GLOB.joined_player_list += character.ckey

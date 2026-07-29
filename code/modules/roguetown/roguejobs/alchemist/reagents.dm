@@ -57,7 +57,7 @@
 
 /datum/reagent/medicine/manapot/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.rogstam_add(100)
+		M.adjust_vigor(100)
 	..()
 	. = 1
 
@@ -70,7 +70,7 @@
 
 /datum/reagent/medicine/strongmana/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.99)
-		M.rogstam_add(200)
+		M.adjust_vigor(200)
 	..()
 	. = 1
 
@@ -260,6 +260,19 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 			M.adjustToxLoss(4.5) // just enough so 5u will kill you dead with no help
 	return ..()
 
+/datum/reagent/organpoison
+	name = "Organ Poison"
+	description = ""
+	reagent_state = LIQUID
+	color = "#2c1818"
+	taste_description = "sour meat"
+	metabolization_rate = 0.1
+
+/datum/reagent/organpoison/on_mob_life(mob/living/carbon/M)
+	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
+		M.add_nausea(9)
+		M.adjustToxLoss(3)
+	return ..()
 
 //Potion reactions
 /datum/chemical_reaction/alch/stronghealth

@@ -27,9 +27,6 @@
 	myturf.lighting_object = src
 	myturf.luminosity = 0
 
-	for(var/turf/open/space/S in RANGE_TURFS(1, src)) //RANGE_TURFS is in code\__HELPERS\game.dm
-		S.update_starlight()
-
 	needs_update = TRUE
 	SSlighting.objects_queue += src
 
@@ -140,15 +137,6 @@
 
 /atom/movable/lighting_object/ex_act(severity)
 	return 0
-
-/atom/movable/lighting_object/singularity_act()
-	return
-
-/atom/movable/lighting_object/singularity_pull()
-	return
-
-/atom/movable/lighting_object/blob_act()
-	return
 
 /atom/movable/lighting_object/onTransitZ()
 	return

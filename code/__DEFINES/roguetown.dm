@@ -277,33 +277,31 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 
 
 /*--------------------\
-| ARMOR VALUE DEFINES |	- So armor makes sense. Basic arrow got 25 AP so less than 25 "bullet" does nothing vs arrows generally
+| ARMOR VALUE DEFINES |	- So armor makes sense. Basic arrow got 25 AP so less than 25 "pierce" does nothing vs arrows generally
 \--------------------*/
 
 // Light AC
-#define ARMOR_MINIMAL		list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_WEAK			list("melee" = 10, "bullet" = 5, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_MINIMAL		list("crush" = 5, "slash" = 5, "stab" = 5, "pierce" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_WEAK			list("crush" = 10, "slash" = 10, "stab" = 10, "pierce" = 5, "fire" = 0, "acid" = 0)
 
-#define ARMOR_PADDED_BAD	list("melee" = 15, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PADDED		list("melee" = 25, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PADDED_GOOD	list("melee" = 30, "bullet" = 35, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED_BAD	list("crush" = 15, "slash" = 15, "stab" = 15, "pierce" = 15, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED		list("crush" = 25, "slash" = 25, "stab" = 25, "pierce" = 25, "fire" = 0, "acid" = 0)
+#define ARMOR_PADDED_GOOD	list("crush" = 30, "slash" = 30, "stab" = 30, "pierce" = 30, "fire" = 0, "acid" = 0)
 
-#define ARMOR_LEATHER_WORST	list("melee" = 20, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_LEATHER_BAD	list("melee" = 30, "bullet" = 10, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_LEATHER		list("melee" = 35, "bullet" = 15, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define	ARMOR_LEATHER_GOOD	list("melee" = 40, "bullet" = 20, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_LEATHER_BAD	list("crush" = 30, "slash" = 30, "stab" = 30, "pierce" = 10, "fire" = 0, "acid" = 0)
+#define ARMOR_LEATHER		list("crush" = 35, "slash" = 35, "stab" = 35, "pierce" = 15, "fire" = 0, "acid" = 0)
+#define	ARMOR_LEATHER_GOOD	list("crush" = 40, "slash" = 40, "stab" = 40, "pierce" = 20, "fire" = 0, "acid" = 0)
+#define ARMOR_SCALE			list("crush" = 65, "slash" = 65, "stab" = 65, "pierce" = 65, "fire" = 0, "acid" = 0)
 
 // Medium AC
-#define ARMOR_MAILLE_IRON	list("melee" = 50, "bullet" = 30, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_MAILLE		list("melee" = 55, "bullet" = 40, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_MAILLE_GOOD	list("melee" = 60, "bullet" = 45, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-
-#define ARMOR_SCALE			list("melee" = 65, "bullet" = 65, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_MAILLE_IRON	list("crush" = 5, "slash" = 5, "stab" = 50, "pierce" = 30, "fire" = 0, "acid" = 0)
+#define ARMOR_MAILLE		list("crush" = 5, "slash" = 5, "stab" = 55, "pierce" = 40, "fire" = 0, "acid" = 0)
+#define ARMOR_MAILLE_GOOD	list("crush" = 60, "slash" = 60, "stab" = 60, "pierce" = 45, "fire" = 0, "acid" = 0)
 
 // Heavy AC
-#define ARMOR_PLATE_BAD		list("melee" = 65, "bullet" = 50, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE			list("melee" = 80, "bullet" = 70, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE_GOOD	list("melee" = 90, "bullet" = 85, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_BAD		list("crush" = 65, "slash" = 70, "stab" = 70, "pierce" = 0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE			list("crush" =80, "slash" =70, "stab" =70, "pierce" =0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_GOOD	list("crush" =90, "slash" =90, "stab" =90, "pierce" =85, "fire" = 0, "acid" = 0)
 
 
 /*-----------------------\

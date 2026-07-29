@@ -60,22 +60,22 @@ There are several things that need to be remembered:
 
 //HAIR OVERLAY
 /mob/living/carbon/human/update_hair()
-	dna.species.handle_hair(src)
+	dna?.species?.handle_hair(src)
 
 //used when putting/removing clothes that hide certain mutant body parts to just update those and not update the whole body.
 /mob/living/carbon/human/proc/update_mutant_bodyparts()
-	dna.species.handle_mutant_bodyparts(src)
+	dna?.species?.handle_mutant_bodyparts(src)
 
 
 /mob/living/carbon/human/update_body()
-	dna.species.handle_body(src)
+	dna?.species?.handle_body(src) //create destroy moment
 	..()
 
 /mob/living/carbon/human/update_fire()
 	if(fire_stacks < 10)
 		return ..("Generic_mob_burning")
 	else
-		var/burning = dna.species.enflamed_icon
+		var/burning = dna?.species?.enflamed_icon
 		if(!burning)
 			return ..("widefire")
 		return ..(burning)
@@ -85,7 +85,7 @@ There are several things that need to be remembered:
 	START_PROCESSING(SSdamoverlays,src)
 
 /mob/living/carbon/human/proc/update_damage_overlays_real()
-	if(dna.species)
+	if(dna?.species)
 		if(dna.species.update_damage_overlays(src))
 			return
 	remove_overlay(DAMAGE_LAYER)
@@ -285,8 +285,6 @@ There are several things that need to be remembered:
 		update_inv_shirt()
 		update_inv_mouth()
 		update_transform()
-		//mutations
-		update_mutations_overlay()
 		//damage overlays
 		update_damage_overlays()
 
@@ -1762,9 +1760,7 @@ generate/load female uniform sprites matching all previously decided variables
 /mob/living/carbon/human/generate_icon_render_key()
 	. = "[dna.species.limbs_id]"
 
-	if(dna.check_mutation(HULK))
-		. += "-coloured-hulk"
-	else if(dna.species.use_skintones)
+	if(dna.species.use_skintones)
 		. += "-coloured-[skin_tone]"
 	else if(dna.species.fixed_mut_color)
 		. += "-coloured-[dna.species.fixed_mut_color]"

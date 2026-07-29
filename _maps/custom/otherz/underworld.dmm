@@ -3,7 +3,7 @@
 /turf/open/floor/rogue/underworld/road,
 /area/rogue)
 "b" = (
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/rogue/dirt,
 /area/rogue/underworld)
 "c" = (
 /obj/effect/landmark/underworldsafe,
@@ -11,7 +11,7 @@
 /area/rogue)
 "d" = (
 /obj/structure/underworld/barrier,
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/rogue/dirt,
 /area/rogue/underworld)
 "e" = (
 /turf/open/floor/rogue/underworld/road,
@@ -44,11 +44,11 @@
 /turf/open/floor/rogue/churchrough,
 /area/rogue/underworld)
 "l" = (
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/rogue/dirt,
 /area/rogue)
 "m" = (
 /obj/effect/landmark/underworldsafe,
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/rogue/dirt,
 /area/rogue)
 "n" = (
 /obj/structure/flora/roguetree/underworld,
@@ -67,11 +67,11 @@
 /area/rogue/underworld)
 "q" = (
 /obj/structure/flora/roguetree/underworld,
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/rogue/dirt,
 /area/rogue/underworld)
 "r" = (
 /obj/effect/landmark/underworldcoin,
-/turf/open/floor/plating/dirt/dark,
+/turf/open/floor/rogue/dirt,
 /area/rogue/underworld)
 "s" = (
 /obj/effect/landmark/underworldsafe,

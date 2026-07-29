@@ -134,10 +134,10 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 	H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
 
-	H.change_stat("strength", 2)
-	H.change_stat("perception", 2)
-	H.change_stat("endurance", 2)
-	H.change_stat("constitution", 1)
+	H.change_stat(STATKEY_STR, 2)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_CON, 1)
 
 	H.verbs |= /mob/proc/haltyell
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)

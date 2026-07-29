@@ -94,19 +94,6 @@
 			affecting = get_bodypart(BODY_ZONE_CHEST)
 		apply_damage(damage, M.melee_damage_type, affecting)
 
-/mob/living/carbon/spirit/attack_slime(mob/living/simple_animal/slime/M)
-	if(..()) //successful slime attack
-		var/damage = rand(5, 35)
-		if(M.is_adult)
-			damage = rand(20, 40)
-		var/dam_zone = dismembering_strike(M, pick(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG))
-		if(!dam_zone) //Dismemberment successful
-			return 1
-		var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-		if(!affecting)
-			affecting = get_bodypart(BODY_ZONE_CHEST)
-		apply_damage(damage, BRUTE, affecting)
-
 /mob/living/carbon/spirit/acid_act(acidpwr, acid_volume, bodyzone_hit)
 	. = 1
 	if(!bodyzone_hit || bodyzone_hit == BODY_ZONE_HEAD)
@@ -137,14 +124,14 @@
 
 		if (EXPLODE_HEAVY)
 			take_overall_damage(60, 60)
-			damage_clothes(200, BRUTE, "bomb")
+			damage_clothes(200, BRUTE, "crush")
 			adjustEarDamage(30, 120)
 			if(prob(70))
 				Unconscious(200)
 
 		if(EXPLODE_LIGHT)
 			take_overall_damage(30, 0)
-			damage_clothes(50, BRUTE, "bomb")
+			damage_clothes(50, BRUTE, "crush")
 			adjustEarDamage(15,60)
 			if (prob(50))
 				Unconscious(160)

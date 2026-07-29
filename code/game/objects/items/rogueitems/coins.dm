@@ -45,7 +45,17 @@
 	pixel_y = rand(-5, 5)
 	if(isturf(T) && quantity > 1)
 		for(var/i in 2 to quantity) // exclude the first coin
-			var/obj/item/roguecoin/new_coin = new type
+			var/spawned_type = type
+			if(base_type)
+				switch(base_type)
+					if(CTYPE_GOLD)
+						spawned_type = /obj/item/roguecoin/gold
+					if(CTYPE_SILV)
+						spawned_type = /obj/item/roguecoin/silver
+					else
+						spawned_type = /obj/item/roguecoin/copper
+
+			var/obj/item/roguecoin/new_coin = new spawned_type
 			new_coin.forceMove(T)
 			new_coin.set_quantity(1) // prevent exploits with coin piles
 			new_coin.pixel_x = rand(-8, 8)
@@ -72,7 +82,7 @@
 	if(G.base_type != base_type)
 		return
 	if(user)
-		if(user.get_inactive_held_item() != G && !isturf(G.loc))
+		if(user.get_inactive_held_item() != G && !isturf(G.loc) && user.get_active_held_item() != G)
 			return
 
 	var/amt_to_merge = min(G.quantity, MAX_COIN_STACK_SIZE - quantity)
@@ -164,7 +174,10 @@
 /obj/item/roguecoin/attackby(obj/item/I, mob/user)
 	if(istype(I, /obj/item/roguecoin))
 		var/obj/item/roguecoin/G = I
-		G.merge(src, user)
+		if(item_flags & IN_STORAGE)
+			merge(G, user)
+		else
+			G.merge(src, user)
 		return
 	return ..()
 

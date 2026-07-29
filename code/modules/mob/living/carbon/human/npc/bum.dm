@@ -49,7 +49,7 @@ GLOBAL_LIST_INIT(outlaw_aggro, world.file2list("strings/rt/outlawaggrolines.txt"
 	QDEL_NULL(sexcon)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
-//	ADD_TRAIT(src, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+//	ADD_TRAIT(src, TRAIT_NOSTAM, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/roguetown/vagrant)
 
 /mob/living/carbon/human/species/human/northern/bum/npc_idle()

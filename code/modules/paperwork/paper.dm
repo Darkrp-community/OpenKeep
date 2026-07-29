@@ -52,7 +52,6 @@
 	w_class = WEIGHT_CLASS_TINY
 	throw_range = 1
 	throw_speed = 1
-	pressure_resistance = 0
 	slot_flags = ITEM_SLOT_HEAD
 	body_parts_covered = HEAD
 	resistance_flags = FLAMMABLE
@@ -184,13 +183,6 @@
 
 	if(usr.incapacitated() || !usr.is_literate())
 		return
-	if(ishuman(usr))
-		var/mob/living/carbon/human/H = usr
-		if(HAS_TRAIT(H, TRAIT_CLUMSY) && prob(25))
-			to_chat(H, "<span class='warning'>I cut myself on the paper! Ahhhh! Ahhhhh!</span>")
-			H.damageoverlaytemp = 9001
-			H.update_damage_hud()
-			return
 	var/n_name = stripped_input(usr, "What would you like to label the paper?", "Paper Labelling", null, MAX_NAME_LEN)
 	if((loc == usr && usr.stat == CONSCIOUS))
 		name = "paper[(n_name ? text("- '[n_name]'") : null)]"
@@ -280,18 +272,11 @@
 
 	t = parsemarkdown(t, user, iscrayon)
 
-	if(!iscrayon)
-		if(istype(P, /obj/item/pen))
-			var/obj/item/pen/J = P
-			t = "<font face=\"[J.font]\" color=[J.colour]>[t]</font>"
-		else if(istype(P, /obj/item/natural/thorn))
-			t = "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#862f20>[t]</font>"
-		else if(istype(P, /obj/item/natural/feather))
-			t = "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#14103f>[t]</font>"
+	if(istype(P, /obj/item/natural/thorn))
+		t = "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#862f20>[t]</font>"
+	else if(istype(P, /obj/item/natural/feather))
+		t = "<font face=\"[FOUNTAIN_PEN_FONT]\" color=#14103f>[t]</font>"
 
-	else
-		var/obj/item/toy/crayon/C = P
-		t = "<font face=\"[CRAYON_FONT]\" color=[C.paint_color]><b>[t]</b></font>"
 
 	// Count the fields
 	var/laststart = 1
@@ -365,20 +350,15 @@
 		if(!t || !usr.canUseTopic(src, BE_CLOSE, literate))
 			return
 		var/obj/item/i = usr.get_active_held_item()	//Check to see if he still got that darn pen, also check if he's using a crayon or pen.
-		var/iscrayon = 0
-		if(!istype(i, /obj/item/pen))
-			if(istype(i, /obj/item/toy/crayon))
-				iscrayon = 1
-			else
-				if(!istype(i, /obj/item/natural/thorn))
-					if(!istype(i, /obj/item/natural/feather))
-						return
+		if(!istype(i, /obj/item/natural/thorn))
+			if(!istype(i, /obj/item/natural/feather))
+				return
 
-		if(!in_range(src, usr) && loc != usr && !istype(loc, /obj/item/clipboard) && loc.loc != usr && usr.get_active_held_item() != i)	//Some check to see if he's allowed to write
+		if(!in_range(src, usr) && loc != usr && loc.loc != usr && usr.get_active_held_item() != i)	//Some check to see if he's allowed to write
 			return
 
 		log_paper("[key_name(usr)] writing to paper [t]")
-		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
+		t = parsepencode(t, i, usr, FALSE) // Encode everything from pencode to html
 
 		if(t != null)	//No input from the user means nothing needs to be added
 			if((length(info) + length(t)) > maxlen)
@@ -415,7 +395,7 @@
 	if(is_blind(user))
 		return ..()
 
-	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn)|| istype(P, /obj/item/natural/feather))
+	if(istype(P, /obj/item/natural/thorn)|| istype(P, /obj/item/natural/feather))
 		if(length(info) > maxlen)
 			to_chat(user, "<span class='warning'>[src] is full of verba.</span>")
 			return
@@ -426,61 +406,6 @@
 		else
 			to_chat(user, "<span class='warning'>I can't write.</span>")
 			return
-	if(!P.can_be_package_wrapped())
-		return ..()
-
-	to_chat(user, "<span class='info'>I start to wrap [P] in [src]...</span>")
-	if(do_after(user, 30, 0, target = src))
-		if(user.is_holding(P))
-			if(!user.dropItemToGround(P))
-				return
-		else if(!isturf(P.loc))
-			return
-		var/obj/item/smallDelivery/D = new /obj/item/smallDelivery(get_turf(P.loc))
-		if(user.Adjacent(D))
-			D.add_fingerprint(user)
-			P.add_fingerprint(user)
-			user.put_in_hands(D)
-		P.forceMove(D)
-		var/size = round(P.w_class)
-		D.name = "[weightclass2text(size)] package"
-		D.w_class = size
-		size = min(size, 5)
-		D.icon_state = "deliverypackage[size]"
-
-/*	else if(istype(P, /obj/item/stamp))
-
-		if(!in_range(src, user))
-			return
-
-		var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/simple/paper)
-		if (isnull(stamps))
-			stamps = sheet.css_tag()
-		stamps += sheet.icon_tag(P.icon_state)
-		var/mutable_appearance/stampoverlay = mutable_appearance('icons/obj/bureaucracy.dmi', "paper_[P.icon_state]")
-		stampoverlay.pixel_x = rand(-2, 2)
-		stampoverlay.pixel_y = rand(-3, 2)
-
-		LAZYADD(stamped, P.icon_state)
-		add_overlay(stampoverlay)
-
-		to_chat(user, "<span class='notice'>I stamp the paper with your rubber stamp.</span>")
-
-	if(P.get_temperature())
-		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(10))
-			user.visible_message("<span class='warning'>[user] accidentally ignites [user.p_them()]self!</span>", \
-								"<span class='danger'>I miss the paper and accidentally light myself on fire!</span>")
-			user.dropItemToGround(P)
-			user.adjust_fire_stacks(1)
-			user.IgniteMob()
-			return
-
-		if(!(in_range(user, src))) //to prevent issues as a result of telepathically lighting a paper
-			return
-
-		user.dropItemToGround(src)
-		user.visible_message("<span class='danger'>[user] lights [src] ablaze with [P]!</span>", "<span class='danger'>I light [src] on fire!</span>")
-		fire_act()*/
 
 	add_fingerprint(user)
 	return ..()

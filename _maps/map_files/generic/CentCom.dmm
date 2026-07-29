@@ -1349,10 +1349,6 @@
 "eq" = (
 /turf/open/floor/rogue/tile/masonic/spiral,
 /area/rogue)
-"eB" = (
-/obj/item/nullrod/claymore/chainsaw_sword,
-/turf/closed/wall/mineral/rogue/decostone/cand,
-/area/rogue)
 "eD" = (
 /obj/structure/fluff/railing/wood{
 	dir = 1
@@ -2424,17 +2420,6 @@
 "tN" = (
 /turf/closed,
 /area/rogue/under)
-"tQ" = (
-/obj/docking_port/stationary{
-	dwidth = 9;
-	height = 6;
-	id = "supply_away";
-	json_key = "cargo";
-	name = "CentCom";
-	width = 17
-	},
-/turf/open/water/swamp,
-/area/rogue/outdoors)
 "tS" = (
 /obj/structure/fluff/statue/tdummy,
 /turf/open/floor/rogue/dirt/road,
@@ -2593,7 +2578,7 @@
 /area/rogue)
 "wB" = (
 /obj/effect/landmark/start/new_player,
-/turf/open/floor/plating,
+/turf/open/floor/rogue/blocks,
 /area/start)
 "wO" = (
 /turf/closed,
@@ -2832,7 +2817,6 @@
 /obj/item/roguecoin/gold/pile,
 /obj/item/roguecoin/gold/pile,
 /obj/item/roguecoin/gold/pile,
-/obj/item/card/id/gold,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue)
 "Ae" = (
@@ -3020,7 +3004,6 @@
 /turf/open/floor/rogue/grass,
 /area/rogue/outdoors)
 "Dt" = (
-/obj/structure/fluff/divine/nexus,
 /obj/structure/fluff/wallclock,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue)
@@ -3094,7 +3077,6 @@
 /obj/item/roguecoin/gold/pile,
 /obj/item/roguecoin/gold/pile,
 /obj/item/roguecoin/gold/pile,
-/obj/item/bikehorn/golden,
 /turf/open/floor/rogue/ruinedwood/chevron,
 /area/rogue)
 "Fl" = (
@@ -4017,7 +3999,7 @@
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "RX" = (
-/turf/closed/indestructible/riveted,
+/turf/closed/wall/mineral/rogue/wood,
 /area/start)
 "Sc" = (
 /obj/item/rope/chain,
@@ -4346,7 +4328,7 @@
 /turf/open/floor/rogue/metal/barograte,
 /area/rogue/indoors/vampire_manor)
 "Vz" = (
-/turf/closed/indestructible/splashscreen,
+/turf/closed/splashscreen,
 /area/start)
 "VB" = (
 /turf/open/floor/rogue/dirt,
@@ -4545,12 +4527,6 @@
 /obj/machinery/light/rogue/hearth,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/bandit_lair)
-"Yt" = (
-/obj/structure/bookcase,
-/obj/item/book/rogue/nitebeast,
-/obj/item/book/rogue/yeoldecookingmanual,
-/turf/open/floor/rogue/metal/barograte,
-/area/rogue/indoors/vampire_manor)
 "Yv" = (
 /obj/machinery/light/rogue/firebowl/stump,
 /turf/open/floor/rogue/dirt/road,
@@ -11073,7 +11049,7 @@ rQ
 rQ
 rQ
 bX
-eB
+RP
 ke
 sZ
 HX
@@ -16736,7 +16712,7 @@ iu
 iu
 iu
 iu
-tQ
+iu
 iu
 AU
 "}

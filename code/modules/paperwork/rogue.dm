@@ -12,7 +12,7 @@
 
 
 /obj/item/paper/scroll/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
 		if(!open)
 			to_chat(user, "<span class='warning'>Open me.</span>")
 			return
@@ -124,7 +124,7 @@
 	textper = 150
 
 /obj/item/paper/scroll/cargo/Destroy()
-	for(var/datum/supply_order/SO in orders)
+	for(var/datum/supply_pack/SO in orders)
 		orders -= SO
 	return ..()
 
@@ -175,8 +175,8 @@
 	if(orders.len)
 		info += "Orders: <br/>"
 		info += "<ul>"
-		for(var/datum/supply_order/A in orders)
-			info += "<li>[A.pack.name]</li><br/>"
+		for(var/datum/supply_pack/A in orders)
+			info += "<li>[A.name] - [A.cost]</li><br/>"
 		info += "</ul>"
 
 	info += "<br/></font>"
@@ -201,7 +201,7 @@
 		to_chat(user, "<span class='warning'>The paper resists my attempts to write upon it!</span>")
 		return
 
-/obj/item/paper/confession/update_icon_state() 
+/obj/item/paper/confession/update_icon_state()
 	if(mailer)
 		icon_state = "paper_prep"
 		name = "letter"
@@ -271,7 +271,7 @@
 	var/signed = 0
 
 /obj/item/merctoken/attackby(obj/item/P, mob/living/carbon/human/user, params)
-	if(istype(P, /obj/item/pen) || istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
+	if(istype(P, /obj/item/natural/thorn) || istype(P, /obj/item/natural/feather))
 		if(!user.can_read(src))
 			to_chat(user, "<span class='warning'>Even a reader would find these verba incomprehensible.</span>")
 			return

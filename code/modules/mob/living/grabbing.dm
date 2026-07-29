@@ -142,15 +142,31 @@
 /obj/item/grabbing/attack(mob/living/M, mob/living/user)
 	if(!valid_check())
 		return FALSE
-	if(M != grabbed)
-		if(!istype(limb_grabbed, /obj/item/bodypart/head))
-			return FALSE
-		if(M != user)
-			return FALSE
-		user.changeNext_move(CLICK_CD_RESIST)
-		headbutt(user)
-		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_MELEE)	//12 deciseconds, modified by User Speed, plus 4 for buffer
+	var/skill_diff = 0
+	var/combat_modifier = 1
+	if(user.mind)
+		skill_diff += (user.mind.get_skill_level(/datum/skill/combat/wrestling))
+	if(M.mind)
+		skill_diff -= (M.mind.get_skill_level(/datum/skill/combat/wrestling))
+
+	if(M.surrendering)																//If the target has surrendered
+		combat_modifier = 2
+
+	if(M.restrained())																//If the target is restrained
+		combat_modifier += 0.25
+
+	if(!(M.mobility_flags & MOBILITY_STAND) && user.mobility_flags & MOBILITY_STAND) //We are on the ground, target is not
+		combat_modifier += 0.1
+
+	if(user.cmode && !M.cmode)
+		combat_modifier += 0.3
+	else if(!user.cmode && M.cmode)
+		combat_modifier -= 0.3
+
+
+	combat_modifier *= ((skill_diff * 0.1) + 1)
+
 	switch(user.used_intent.type)
 		if(/datum/intent/grab/upgrade)
 			if(!(M.status_flags & CANPUSH) || HAS_TRAIT(M, TRAIT_PUSHIMMUNE))
@@ -245,7 +261,7 @@
 
 /obj/item/grabbing/proc/twistlimb(mob/living/user) //implies limb_grabbed and sublimb are things
 	var/mob/living/carbon/C = grabbed
-	var/armor_block = C.run_armor_check(limb_grabbed, "melee")
+	var/armor_block = C.run_armor_check(limb_grabbed, "crush")
 	var/damage = user.get_punch_dmg()
 	playsound(C.loc, "genblunt", 100, FALSE, -1)
 	C.next_attack_msg.Cut()
@@ -261,8 +277,8 @@
 	var/mob/living/carbon/C = grabbed
 	var/obj/item/bodypart/Chead = C.get_bodypart(BODY_ZONE_HEAD)
 	var/obj/item/bodypart/Hhead = H.get_bodypart(BODY_ZONE_HEAD)
-	var/armor_block = C.run_armor_check(Chead, "melee")
-	var/armor_block_user = H.run_armor_check(Hhead, "melee")
+	var/armor_block = C.run_armor_check(Chead, "crush")
+	var/armor_block_user = H.run_armor_check(Hhead, "crush")
 	var/damage = H.get_punch_dmg()
 	C.next_attack_msg.Cut()
 	playsound(C.loc, "genblunt", 100, FALSE, -1)
@@ -482,7 +498,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/mob/living/carbon/C = grabbed
-	var/armor_block = C.run_armor_check(sublimb_grabbed, "melee")
+	var/armor_block = C.run_armor_check(sublimb_grabbed, "stab")
 	var/damage = user.get_punch_dmg()
 	if(HAS_TRAIT(user, TRAIT_STRONGBITE))
 		damage = damage*2
@@ -494,7 +510,8 @@
 		if(user.mind)
 			if(user.mind.has_antag_datum(/datum/antagonist/werewolf))
 				var/mob/living/carbon/human/human = user
-				caused_wound?.werewolf_infect_attempt()
+				if(istype(caused_wound))
+					caused_wound?.werewolf_infect_attempt()
 				if(prob(30))
 					human.werewolf_feed(C)
 			if(user.mind.has_antag_datum(/datum/antagonist/zombie))

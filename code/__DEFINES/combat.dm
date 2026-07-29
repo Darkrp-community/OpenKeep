@@ -10,6 +10,7 @@
 #define CLONE		"clone"
 #define STAMINA 	"stamina"
 #define BRAIN		"brain"
+#define MELEE_ATTACK_TYPES list(crush, slash, stab)
 
 //bitflag damage defines used for suicide_act
 #define BRUTELOSS 	            	(1<<0)

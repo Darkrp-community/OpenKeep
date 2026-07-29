@@ -58,9 +58,9 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/armorsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -70,9 +70,9 @@
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/armorsmith
 		backl =	/obj/item/rogueweapon/hammer/sledgehammer
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 
 /datum/job/roguetown/weaponsmith
 	title = "Weaponsmith"
@@ -134,9 +134,9 @@
 		beltr = /obj/item/keyring/weaponsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backl =	/obj/item/rogueweapon/hammer/sledgehammer
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -145,9 +145,9 @@
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
 		beltr = /obj/item/keyring/weaponsmith
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 
 
 /datum/job/roguetown/blacksmith
@@ -218,6 +218,6 @@
 	if(H.dna.species.id == "dwarf")
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
 		H.cmode_music = 'sound/music/combat_dwarf.ogg'
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 2)
-	H.change_stat("speed", -1)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_SPD, -1)

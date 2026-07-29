@@ -34,13 +34,13 @@
 	var/obj/structure/ladder/L
 
 	if (!down)
-		L = locate() in SSmapping.get_turf_below(T)
+		L = locate() in GET_TURF_BELOW(T)
 		if (L)
 			down = L
 			L.up = src  // Don't waste effort looping the other way
 			L.update_icon()
 	if (!up)
-		L = locate() in SSmapping.get_turf_above(T)
+		L = locate() in GET_TURF_ABOVE(T)
 		if (L)
 			up = L
 			L.down = src  // Don't waste effort looping the other way
@@ -69,11 +69,6 @@
 
 	else	//wtf make your ladders properly assholes
 		icon_state = "ladder00"
-
-/obj/structure/ladder/singularity_pull()
-	if (!(resistance_flags & INDESTRUCTIBLE))
-		visible_message("<span class='danger'>[src] is torn to pieces by the gravitational pull!</span>")
-		qdel(src)
 
 /obj/structure/ladder/proc/travel(going_up, mob/user, is_ghost, obj/structure/ladder/ladder)
 	if(is_ghost)

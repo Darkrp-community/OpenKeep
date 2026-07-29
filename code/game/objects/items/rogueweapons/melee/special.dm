@@ -19,12 +19,16 @@
 	minstr = 5
 	blade_dulling = DULLING_BASHCHOP
 
+	grid_height = 96
+	grid_width = 32
+
 /datum/intent/lordbash
 	name = "bash"
 	blade_class = BCLASS_BLUNT
 	icon_state = "inbash"
 	attack_verb = list("bashes", "strikes")
 	penfactor = 10
+	item_damage_type = "crush"
 
 /datum/intent/lord_electrocute
 	name = "electrocute"
@@ -85,9 +89,8 @@
 
 			if(istype(user.used_intent, /datum/intent/lord_silence))
 				HU.visible_message("<span class='warning'>[HU] silences [H] with \the [src].</span>")
-				H.dna.add_mutation(/datum/mutation/human/mute)
-				addtimer(CALLBACK(H.dna, TYPE_PROC_REF(/datum/dna/, remove_mutation), /datum/mutation/human/mute), 20 SECONDS)
-				to_chat(H, "<span class='danger'>I'm silenced by the scepter!</span>")
+				H.set_silence(20 SECONDS)
+				to_chat(H, "<span class='danger'>I feel a ringing in my ears as I'm silenced by the scepter!</span>")
 				return
 
 /obj/item/rogueweapon/mace/stunmace
@@ -208,7 +211,6 @@
 	block_chance = 0
 	armor_penetration = 5
 	sharpness = IS_SHARP
-	custom_materials = null
 	can_parry = FALSE
 	wlength = 6
 	sellprice = 1

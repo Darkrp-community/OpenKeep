@@ -1,5 +1,100 @@
 //NOT using the existing /obj/machinery/door type, since that has some complications on its own, mainly based on its
 //machineryness
+/proc/lockid_to_lockpick_difficulty(lockid)
+	if(!lockid)
+		return 5
+	switch(lockid)
+		if("vault")
+			return 1
+		if("lord")
+			return 1
+		if("manor")
+			return 2
+		if("guest")
+			return 2
+		if("butler")
+			return 3
+		if("dungeon")
+			return 2
+		if("garrison")
+			return 2
+		if("forrestgarrison")
+			return 2
+		if("soilson")
+			return 4
+		if("warehouse")
+			return 3
+		if("sheriff")
+			return 3
+		if("merchant")
+			return 2
+		if("shop")
+			return 5
+		if("tavern")
+			return 5
+		if("roomi")
+			return 6
+		if("roomii")
+			return 6
+		if("roomiii")
+			return 6
+		if("roomiv")
+			return 6
+		if("roomv")
+			return 6
+		if("roomvi")
+			return 6
+		if("medroomi")
+			return 5
+		if("medroomii")
+			return 5
+		if("medroomiii")
+			return 5
+		if("medroomiv")
+			return 5
+		if("medroomv")
+			return 5
+		if("medroomvi")
+			return 5
+		if("luxroomi")
+			return 3
+		if("luxroomi")
+			return 3
+		if("luxroomii")
+			return 3
+		if("luxroomiii")
+			return 3
+		if("luxroomiv")
+			return 3
+		if("luxroomv")
+			return 3
+		if("luxroomvi")
+			return 3
+		if("blacksmith")
+			return 3
+		if("butcher")
+			return 3
+		if("walls")
+			return 2
+		if("priest")
+			return 3
+		if("hpriest")
+			return 2
+		if("tower")
+			return 3
+		if("mage")
+			return 2
+		if("confession")
+			return 1
+		if("hand")
+			return 1
+		if("steward")
+			return 2
+		if("doctor")
+			return 3
+		else
+			return 5
+
 
 /obj/structure/mineral_door
 	name = "metal door"
@@ -12,7 +107,7 @@
 	icon_state = "metal"
 	max_integrity = 1000
 	integrity_failure = 0.5
-	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 50, "acid" = 50)
+	armor = list("crush" = 10, "slash" = 0, "stab" = 0, "pierce" = 100,	"fire" = 50, "acid" = 50)
 	CanAtmosPass = ATMOS_PASS_DENSITY
 
 	var/ridethrough = FALSE
@@ -117,6 +212,7 @@
 	if(lockhash)
 		GLOB.lockhashes += lockhash
 	else if(keylock)
+		AddElement(/datum/element/lockpickable, list(/obj/item/lockpick), list(/obj/item/lockpick), lockid_to_lockpick_difficulty(lockid))
 		if(lockid)
 			if(GLOB.lockids[lockid])
 				lockhash = GLOB.lockids[lockid]
@@ -155,7 +251,7 @@
 		if(HAS_TRAIT(user, TRAIT_BASHDOORS))
 			if(locked)
 				user.visible_message(span_warning("[user] bashes into [src]!"))
-				take_damage(200, "brute", "melee", 1)
+				take_damage(200, "brute", "crush", 1)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
 				force_open()
@@ -164,7 +260,7 @@
 		if(HAS_TRAIT(user, TRAIT_ROTMAN))
 			if(locked)
 				user.visible_message(span_warning("The deadite bashes into [src]!"))
-				take_damage(50, "brute", "melee", 1)
+				take_damage(50, "brute", "crush", 1)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 90)
 				force_open()
@@ -198,7 +294,7 @@
 		if( user.used_intent.type == /datum/intent/unarmed/claw )
 			user.changeNext_move(CLICK_CD_MELEE)
 			to_chat(user, "<span class='warning'>The deadite claws at the door!!</span>")
-			take_damage(40, "brute", "melee", 1)
+			take_damage(40, "brute", "crush", 1)
 			return
 		if(isliving(user))
 			var/mob/living/L = user
@@ -311,13 +407,10 @@
 			door_rattle()
 			return
 		trykeylock(I, user)
-	if(istype(I, /obj/item/lockpick))
-		trypicklock(I, user)
+	if(repairable && (user.mind.get_skill_level(repair_skill) > 0) && ((istype(I, repair_cost_first)) || (istype(I, repair_cost_second)))) // At least 1 skill level needed)
+		repairdoor(I,user)
 	else
-		if(repairable && (user.mind.get_skill_level(repair_skill) > 0) && ((istype(I, repair_cost_first)) || (istype(I, repair_cost_second)))) // At least 1 skill level needed
-			repairdoor(I,user)
-		else
-			return ..()
+		return ..()
 
 /obj/structure/mineral_door/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
@@ -465,7 +558,7 @@
 					continue
 			else
 				playsound(loc, 'sound/items/pickbad.ogg', 40, TRUE)
-				I.take_damage(1, BRUTE, "blunt")
+				I.take_damage(1, BRUTE, "crush")
 				to_chat(user, span_warning("Clack."))
 				continue
 		return

@@ -134,8 +134,9 @@
 		return
 	if(istype(O, /obj/effect/decal/cleanable))
 		var/cleanme = TRUE
-		if(istype(O, /obj/effect/decal/cleanable/blood))
+		if(istype(O, /obj/effect/decal/cleanable/blood/old))
 			if(!wet)
+				to_chat(user, span_warning("[src] is too dry to clean [O]!"))
 				cleanme = FALSE
 			add_blood_DNA(O.return_blood_DNA())
 		if(prob(40 + (wet*10)) && cleanme)
@@ -316,7 +317,7 @@
 
 /obj/item/natural/bundle/stick
 	name = "bundle of sticks"
-	desc = "A bundle of wooden sticks, weak when seperated, mighty together."
+	desc = "A bundle of wooden sticks."
 	icon_state = "stickbundle1"
 	possible_item_intents = list(/datum/intent/use)
 	maxamount = 10

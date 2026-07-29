@@ -146,13 +146,9 @@
 	if(A.outdoors)
 		return AREA_SPACE
 	var/list/SPECIALS = list(
-		/area/shuttle,
 		/area/centcom,
-		/area/asteroid,
 		/area/tdome,
 		/area/wizard_station,
-		/area/hilbertshotel,
-		/area/hilbertshotelstorage
 	)
 	for (var/type in SPECIALS)
 		if ( istype(A,type) )

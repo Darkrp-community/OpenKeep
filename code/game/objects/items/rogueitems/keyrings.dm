@@ -10,18 +10,61 @@
 	w_class = WEIGHT_CLASS_TINY
 	dropshrink = 0
 	throwforce = 0
-	var/list/keys = list()
+	var/list/keys = list()   //Used to generate starting keys on initialization, check contents instead for actual keys
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK|ITEM_SLOT_MOUTH|ITEM_SLOT_WRISTS
 	experimental_inhand = FALSE
-	dropshrink = 0.7
+	dropshrink = 0.
+	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
+	component_type = /datum/component/storage/concrete/roguetown/keyring
 
 /obj/item/keyring/Initialize()
 	. = ..()
-	if(keys.len)
-		for(var/X in keys)
-			addtoring(new X())
-			keys -= X
+	for(var/X in keys)
+		var/obj/item/key/new_key = new X(loc)
+		if(!SEND_SIGNAL(src, COMSIG_TRY_STORAGE_INSERT, new_key, null, TRUE, TRUE))
+			qdel(new_key)
+
 	update_icon()
+	update_desc()
+
+/obj/item/keyring/attack_right(mob/user)
+	var/datum/component/storage/CP = GetComponent(/datum/component/storage)
+	if(CP)
+		CP.rmb_show(user)
+		return TRUE
+
+/obj/item/keyring/update_icon()
+	. = ..()
+	switch(contents.len)
+		if(0)
+			icon_state = "keyring0"
+		if(1)
+			icon_state = "keyring1"
+		if(2)
+			icon_state = "keyring2"
+		if(3)
+			icon_state = "keyring3"
+		if(4)
+			icon_state = "keyring4"
+		else
+			icon_state = "keyring5"
+
+/obj/item/keyring/proc/update_desc()
+	if(contents.len)
+		desc = span_info("Holds \Roman[contents.len] key\s, including:")
+		for(var/obj/item/key/KE in contents)
+			desc += span_info("\n- [KE.name ? "\A [KE.name]." : "An unknown key."]")
+	else
+		desc = ""
+
+/obj/item/keyring/Entered(atom/movable/arrived, atom/old_loc, list/atom/old_locs)
+	. = ..()
+	playsound(src, "sound/items/gems (1).ogg", 35, FALSE)
+	update_desc()
+
+/obj/item/keyring/Exited(atom/movable/gone, direction)
+	. = ..()
+	update_desc()
 
 /obj/item/keyring/getonmobprop(tag)
 	. = ..()
@@ -51,79 +94,6 @@
 "eflip" = 8)
 			if("onbelt")
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
-
-/obj/item/keyring/proc/addtoring(obj/item/I)
-	if(!I || !istype(I))
-		return 0
-	I.loc = src
-	keys += I
-	update_icon()
-	update_desc()
-
-/obj/item/keyring/proc/removefromring(mob/user)
-	if(!keys.len)
-		return
-	var/obj/item/roguekey/K = keys[keys.len]
-	keys -= K
-	K.loc = user.loc
-	update_icon()
-	update_desc()
-	return K
-
-/obj/item/keyring/pre_attack(target, user, params)
-	. = ..()
-	var/used_hash
-	if(istype(target, /obj/structure/closet))
-		var/obj/structure/closet/C = target
-		if(C.masterkey)
-			used_hash = C.lockhash
-	if(istype(target, /obj/structure/mineral_door))
-		var/obj/structure/mineral_door/D = target
-		if(D.masterkey)
-			used_hash = D.lockhash
-	for(var/obj/item/roguekey/K in keys)
-		if(istype(K, /obj/item/roguekey/lord))
-			K.lockhash = used_hash
-
-/obj/item/keyring/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/roguekey))
-		if(keys.len >= 10)
-			to_chat(user, "<span class='warning'>Too many keys.</span>")
-			return
-		user.dropItemToGround(I)
-		addtoring(I)
-	else
-		return ..()
-
-/obj/item/keyring/attack_right(mob/user)
-	if(keys.len)
-		to_chat(user, "<span class='notice'>I steal a key off the ring.</span>")
-		var/obj/item/roguekey/K = removefromring(user)
-		user.put_in_active_hand(K)
-
-/obj/item/keyring/update_icon()
-	..()
-	if(!keys.len)
-		icon_state = "keyring0"
-		return
-	if(keys.len >= 5)
-		icon_state = "keyring5"
-		return
-	switch(keys.len)
-		if(1)
-			icon_state = "keyring1"
-		if(2)
-			icon_state = "keyring2"
-		if(3)
-			icon_state = "keyring3"
-		if(4)
-			icon_state = "keyring4"
-
-/obj/item/keyring/proc/update_desc()
-	if(keys.len)
-		desc = "<span class='info'>\Roman [keys.len] keys.</span>"
-	else
-		desc = ""
 
 /obj/item/lockpickring
 	name = "lockpickring"
@@ -198,7 +168,7 @@
 /obj/item/lockpickring/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/lockpick))
 		if(picks.len >= 3)
-			to_chat(user, "<span class='warning'>Too many lockpicks.</span>")
+			to_chat(user, span_warning("Too many lockpicks."))
 			return
 		user.dropItemToGround(I)
 		addtoring(I)
@@ -207,7 +177,7 @@
 
 /obj/item/lockpickring/attack_right(mob/user)
 	if(picks.len)
-		to_chat(user, "<span class='notice'>I steal a pick off the ring.</span>")
+		to_chat(user, span_notice("I steal a pick off the ring."))
 		var/obj/item/lockpick/K = removefromring(user)
 		user.put_in_active_hand(K)
 
@@ -229,7 +199,7 @@
 
 /obj/item/lockpickring/proc/update_desc()
 	if(picks.len)
-		desc = "<span class='info'>\Roman [picks.len] lockpicks.</span>"
+		desc = span_info("\Roman[picks.len] lockpick\s.")
 	else
 		desc = ""
 

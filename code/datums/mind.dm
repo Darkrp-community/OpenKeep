@@ -448,17 +448,6 @@
 		return antaggy.isgoodguy
 
 
-/datum/mind/proc/remove_traitor()
-	remove_antag_datum(/datum/antagonist/traitor)
-
-/datum/mind/proc/remove_wizard()
-	remove_antag_datum(/datum/antagonist/wizard)
-	special_role = null
-
-/datum/mind/proc/remove_all_antag() //For the Lazy amongst us.
-	remove_traitor()
-	remove_wizard()
-
 /datum/mind/proc/equip_traitor(employer = "The Syndicate", silent = FALSE, datum/antagonist/uplink_owner)
 	return
 
@@ -530,12 +519,6 @@
 			to_chat(usr,"<span class='warning'>Invalid antagonist ref to be removed.</span>")
 			return
 		A.admin_remove(usr)
-
-	if (href_list["role_edit"])
-		var/new_role = input("Select new role", "Assigned role", assigned_role) as null|anything in sortList(get_all_jobs())
-		if (!new_role)
-			return
-		assigned_role = new_role
 
 	else if (href_list["memory_edit"])
 		var/new_memo = copytext(sanitize(input("Write new memory", "Memory", memory) as null|message),1,MAX_MESSAGE_LEN)
@@ -671,16 +654,6 @@
 		obj_count++
 
 
-/datum/mind/proc/make_Traitor()
-	if(!(has_antag_datum(/datum/antagonist/traitor)))
-		add_antag_datum(/datum/antagonist/traitor)
-
-/datum/mind/proc/make_Wizard()
-	if(!has_antag_datum(/datum/antagonist/wizard))
-		special_role = ROLE_WIZARD
-		assigned_role = ROLE_WIZARD
-		add_antag_datum(/datum/antagonist/wizard)
-
 /datum/mind/proc/AddSpell(obj/effect/proc_holder/spell/S)
 	if(!S)
 		return
@@ -812,22 +785,6 @@
 	..()
 	if(!mind.assigned_role)
 		mind.assigned_role = "Unassigned" //default
-
-//AI
-/mob/living/silicon/ai/mind_initialize()
-	..()
-	mind.assigned_role = "AI"
-
-//BORG
-/mob/living/silicon/robot/mind_initialize()
-	..()
-	mind.assigned_role = "Cyborg"
-
-//PAI
-/mob/living/silicon/pai/mind_initialize()
-	..()
-	mind.assigned_role = ROLE_PAI
-	mind.special_role = ""
 
 // Get a bonus multiplier dependant on age to apply to exp gains. Arg is a skill path.
 /datum/mind/proc/get_learning_boon(skill)

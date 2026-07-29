@@ -133,7 +133,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/wiz
 	name = "Fading Power"
-	desc = "My magical power wanes as I defile my body"
+	desc = "My magical power wanes"
 	icon_state = "hunger3"
 ////////////////////
 
@@ -236,7 +236,7 @@
 
 /atom/movable/alert/status_effect/debuff/badmeal
 	name = "Foul Food!"
-	desc = "<span class='warning'>That tasted like zcum!"
+	desc = "<span class='warning'>That tasted like saiga shit!"
 	icon_state = "badmeal"
 
 /datum/status_effect/debuff/badmeal/on_apply()

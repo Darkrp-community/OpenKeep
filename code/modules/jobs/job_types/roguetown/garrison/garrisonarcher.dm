@@ -67,9 +67,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // For rapier use
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("perception", 2)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", 2)
+		H.change_stat(STATKEY_INT, 1)
+		H.change_stat(STATKEY_PER, 2)
+		H.change_stat(STATKEY_END, 1)
+		H.change_stat(STATKEY_SPD, 2)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)

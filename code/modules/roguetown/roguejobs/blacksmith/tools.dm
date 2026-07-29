@@ -14,6 +14,9 @@
 	associated_skill = /datum/skill/combat/axesmaces
 	smeltresult = /obj/item/ingot/iron
 
+	grid_width = 32
+	grid_height = 64
+
 /obj/proc/unbreak()
 	return
 
@@ -128,6 +131,9 @@
 	var/hott = FALSE
 	smeltresult = /obj/item/ingot/iron
 
+	grid_width = 32
+	grid_height = 64
+
 /obj/item/rogueweapon/tongs/examine(mob/user)
 	. = ..()
 	if(hott)
@@ -135,7 +141,7 @@
 
 /obj/item/rogueweapon/tongs/get_temperature()
 	if(hott)
-		return FIRE_MINIMUM_TEMPERATURE_TO_SPREAD
+		return 150+T0C
 	return ..()
 
 /obj/item/rogueweapon/tongs/fire_act(added, maxstacks)

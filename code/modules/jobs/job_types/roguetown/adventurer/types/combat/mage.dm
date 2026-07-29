@@ -47,9 +47,9 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 
-	H.change_stat("strength", -2)
-	H.change_stat("intelligence", 3)
-	H.change_stat("constitution", -2)
-	H.change_stat("endurance", -1)
-	H.change_stat("speed", -2)
+	H.change_stat(STATKEY_STR, -2)
+	H.change_stat(STATKEY_INT, 3)
+	H.change_stat(STATKEY_CON, -2)
+	H.change_stat(STATKEY_END, -1)
+	H.change_stat(STATKEY_SPD, -2)
 

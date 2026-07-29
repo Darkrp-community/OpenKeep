@@ -11,7 +11,7 @@
 	// This shouldn't be modified directly, use the helper procs.
 	var/list/baseturfs = /turf/open/transparent/openspace
 
-	var/temperature = T20C
+	var/temperature = 293.15
 	var/to_be_destroyed = 0 //Used for fire, if a melting temperature was reached, it will be destroyed
 	var/max_fire_temperature_sustained = 0 //The max temperature of the fire which it was subjected to
 
@@ -24,7 +24,6 @@
 	var/explosion_level = 0	//for preventing explosion dodging
 	var/explosion_id = 0
 
-	var/requires_activation	//add to air processing after initialize?
 	var/changing_turf = FALSE
 
 	var/bullet_bounce_sound = 'sound/blank.ogg' //sound played when a shell casing is ejected ontop of the turf.
@@ -84,21 +83,17 @@
 	if(!IS_DYNAMIC_LIGHTING(src) && IS_DYNAMIC_LIGHTING(A))
 		add_overlay(/obj/effect/fullbright)
 
-	if(requires_activation)
-		CALCULATE_ADJACENT_TURFS(src)
-		SSair.add_to_active(src)
-
 	if (light_power && (light_outer_range || light_inner_range))
 		update_light()
 
 	if(turf_integrity == null)
 		turf_integrity = max_integrity
 
-	var/turf/T = SSmapping.get_turf_above(src)
+	var/turf/T = GET_TURF_ABOVE(src)
 	if(T)
 		T.multiz_turf_new(src, DOWN)
 		SEND_SIGNAL(T, COMSIG_TURF_MULTIZ_NEW, src, DOWN)
-	T = SSmapping.get_turf_below(src)
+	T = GET_TURF_BELOW(src)
 	if(T)
 		T.multiz_turf_new(src, UP)
 		SEND_SIGNAL(T, COMSIG_TURF_MULTIZ_NEW, src, UP)
@@ -113,18 +108,15 @@
 
 	return INITIALIZE_HINT_NORMAL
 
-/turf/proc/Initalize_Atmos(times_fired)
-	CALCULATE_ADJACENT_TURFS(src)
-
 /turf/Destroy(force)
 	. = QDEL_HINT_IWILLGC
 	if(!changing_turf)
 		stack_trace("Incorrect turf deletion")
 	changing_turf = FALSE
-	var/turf/T = SSmapping.get_turf_above(src)
+	var/turf/T = GET_TURF_ABOVE(src)
 	if(T)
 		T.multiz_turf_del(src, DOWN)
-	T = SSmapping.get_turf_below(src)
+	T = GET_TURF_BELOW(src)
 	if(T)
 		T.multiz_turf_del(src, UP)
 	STOP_PROCESSING(SSweather,src)
@@ -139,10 +131,8 @@
 		for(var/I in B.vars)
 			B.vars[I] = null
 		return
-	SSair.remove_from_active(src)
 	QDEL_LIST(blueprint_data)
 	flags_1 &= ~INITIALIZED_1
-	requires_activation = FALSE
 	..()
 
 #define SEE_SKY_YES 1
@@ -175,51 +165,6 @@
 		if(!istype(CT, /turf/open/transparent/openspace))
 			can_see_sky = SEE_SKY_NO
 			return can_see_sky()
-
-/turf/proc/update_see_sky()
-	can_see_sky = null
-	var/can = can_see_sky()
-	var/area/A = get_area(src)
-	if(istype(A,/area/shuttle))
-		return
-	if(can)
-		if(!A.outdoors)
-			var/area2new = /area/rogue/outdoors
-			if(A.converted_type)
-				area2new = A.converted_type
-			var/area/nuarea
-			if(primary_area)
-				nuarea = type2area(primary_area)
-				if(!nuarea.outdoors)
-					nuarea = null
-			if(!nuarea)
-				nuarea = type2area(area2new)
-				primary_area = A.type
-			if(nuarea)
-				A.contents -= src
-				nuarea.contents += src
-				change_area(A, nuarea)
-	else
-		if(A.outdoors)
-			var/area2new = /area/rogue/indoors/shelter
-			if(A.converted_type)
-				area2new = A.converted_type
-			var/area/nuarea
-			if(primary_area)
-				nuarea = type2area(primary_area)
-				if(nuarea.outdoors)
-					nuarea = null
-			if(!nuarea)
-				nuarea = type2area(area2new)
-				primary_area = A.type
-			if(!nuarea)
-				var/area/NA = new area2new()
-				nuarea = NA
-				primary_area = NA.type
-			if(nuarea)
-				A.contents -= src
-				nuarea.contents += src
-				change_area(A, nuarea)
 
 /turf/attack_hand(mob/user)
 	. = ..()
@@ -396,7 +341,7 @@
 /turf/open/Entered(atom/movable/AM)
 	..()
 	//melting
-	if(isobj(AM) && air && air.temperature > T0C)
+	if(isobj(AM) && temperature > 273.15)
 		var/obj/O = AM
 		if(O.obj_flags & FROZEN)
 			O.make_unfrozen()
@@ -461,26 +406,12 @@
 		if(O.level == 1 && (O.flags_1 & INITIALIZED_1))
 			O.hide(src.intact)
 
-// override for space turfs, since they should never hide anything
-/turf/open/space/levelupdate()
-	for(var/obj/O in src)
-		if(O.level == 1 && (O.flags_1 & INITIALIZED_1))
-			O.hide(0)
-
-// Removes all signs of lattice on the pos of the turf -Donkieyo
-/turf/proc/RemoveLattice()
-	var/obj/structure/lattice/L = locate(/obj/structure/lattice, src)
-	if(L && (L.flags_1 & INITIALIZED_1))
-		qdel(L)
-
 /turf/proc/phase_damage_creatures(damage,mob/U = null)//>Ninja Code. Hurts and knocks out creatures on this turf //NINJACODE
 	for(var/mob/living/M in src)
 		if(M==U)
 			continue//Will not harm U. Since null != M, can be excluded to kill everyone.
 		M.adjustBruteLoss(damage)
 		M.Unconscious(damage * 4)
-	for(var/obj/mecha/M in src)
-		M.take_damage(damage*2, BRUTE, "melee", 1)
 
 /turf/proc/Bless()
 	new /obj/effect/blessing(src)
@@ -520,27 +451,11 @@
 
 ////////////////////////////////////////////////////
 
-/turf/singularity_act()
-	if(intact)
-		for(var/obj/O in contents) //this is for deleting things like wires contained in the turf
-			if(O.level != 1)
-				continue
-			if(O.invisibility == INVISIBILITY_MAXIMUM)
-				O.singularity_act()
-	ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
-	return(2)
-
-/turf/proc/can_have_cabling()
-	return TRUE
-
-/turf/proc/can_lay_cable()
-	return can_have_cabling() & !intact
-
 /turf/proc/burn_tile()
 
 /turf/proc/is_shielded()
 
-/turf/contents_explosion(severity, target)
+/turf/contents_explosion(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 	var/affecting_level
 	if(severity == 1)
 		affecting_level = 1
@@ -558,7 +473,7 @@
 				var/atom/movable/AM = A
 				if(!AM.ex_check(explosion_id))
 					continue
-			A.ex_act(severity, target)
+			A.ex_act(severity, target,, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 			CHECK_TICK
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
@@ -640,7 +555,7 @@
 
 /turf/proc/add_vomit_floor(mob/living/M, toxvomit = NONE)
 
-	var/obj/effect/decal/cleanable/vomit/V = new /obj/effect/decal/cleanable/vomit(src, M.get_static_viruses())
+	var/obj/effect/decal/cleanable/vomit/V = new /obj/effect/decal/cleanable/vomit(src)
 
 	//if the vomit combined, apply toxicity and reagents to the old vomit
 	if (QDELETED(V))

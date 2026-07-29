@@ -56,9 +56,9 @@
 	if(H.dna.species.id == "dwarf")
 		shoes = /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
 
-	H.change_stat("intelligence", 2)
-	H.change_stat("speed", 2)
-	H.change_stat("perception", 1)
+	H.change_stat(STATKEY_INT, 2)
+	H.change_stat(STATKEY_SPD, 2)
+	H.change_stat(STATKEY_PER, 1)
 
 /obj/item/luxury_dyes
 	name = "luxury dyes"
