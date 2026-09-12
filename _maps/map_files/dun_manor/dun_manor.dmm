@@ -6866,8 +6866,8 @@
 /area/rogue/indoors/town/manor)
 "gJP" = (
 /obj/structure/closet/crate/chest/neu,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/walls,
 /obj/item/roguekey/walls,
 /obj/item/roguekey/garrison,
@@ -8676,8 +8676,8 @@
 /area/rogue/indoors/town/manor)
 "ixN" = (
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/structure/table/wood{
 	dir = 9;
 	icon_state = "largetable"
@@ -9349,7 +9349,7 @@
 "jes" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/table/wood/fancy/blue,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/merchant,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
@@ -13545,7 +13545,7 @@
 	},
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/rogue/wood,
@@ -17123,7 +17123,7 @@
 "qHt" = (
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/table/wood{
 	dir = 10;
 	icon_state = "largetable"
@@ -17254,7 +17254,7 @@
 /area/rogue/indoors/town/church/chapel)
 "qPX" = (
 /obj/structure/table/wood/fancy/royalblack,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/church/chapel)
 "qPZ" = (
@@ -20260,7 +20260,7 @@
 /obj/structure/closet/crate/roguecloset{
 	lockid = "butler"
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/church/chapel)

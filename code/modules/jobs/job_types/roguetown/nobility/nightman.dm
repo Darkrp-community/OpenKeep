@@ -35,7 +35,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 	belt = /obj/item/storage/belt/rogue/leather/nitemaster
 	beltr = /obj/item/rogueweapon/knife/dagger/steel/special
-	beltl = /obj/item/keyring/niteman
+	beltl = /obj/item/storage/keyring/niteman
 	ADD_TRAIT(H, TRAIT_GOODLOVER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	if(H.mind)

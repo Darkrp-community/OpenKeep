@@ -1826,7 +1826,7 @@
 /area/rogue/under/town/basement)
 "bPp" = (
 /obj/structure/rack/rogue,
-/obj/item/keyring/dungeoneer,
+/obj/item/storage/keyring/dungeoneer,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
 "bPq" = (
@@ -2338,7 +2338,7 @@
 /obj/structure/table/wood/reinf_long{
 	dir = 8
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/ruinedwood/spiralfade,
 /area/rogue/indoors/town/shop)
 "cnQ" = (
@@ -2581,7 +2581,7 @@
 	icon_state = "tablewood2"
 	},
 /obj/item/candle/yellow,
-/obj/item/keyring/blacksmith,
+/obj/item/storage/keyring/blacksmith,
 /obj/machinery/light/rogue/wallfire/candle,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/shelter/town/dwarf)
@@ -4395,7 +4395,7 @@
 "eqm" = (
 /obj/structure/closet/crate/drawer,
 /obj/structure/fluff/wallclock/r,
-/obj/item/keyring/hand,
+/obj/item/storage/keyring/hand,
 /obj/item/natural/cloth,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
@@ -23338,7 +23338,7 @@
 	},
 /obj/item/clothing/neck/roguetown/gorget,
 /obj/item/rogueweapon/knife/dagger/steel,
-/obj/item/keyring/steward,
+/obj/item/storage/keyring/steward,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town)
 "weW" = (
@@ -24425,7 +24425,7 @@
 /area/rogue/indoors/town/tavern/saiga)
 "xgA" = (
 /obj/structure/table/wood/plain,
-/obj/item/keyring/guard,
+/obj/item/storage/keyring/guard,
 /turf/open/floor/rogue/wood/saiga,
 /area/rogue/indoors/town/garrison)
 "xgK" = (

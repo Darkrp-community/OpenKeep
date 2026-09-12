@@ -40,7 +40,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	id = /obj/item/clothing/ring/silver
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/consort
+	beltl = /obj/item/storage/keyring/consort
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/rich
 
 /* ! ! ! CONSORT CLASSES ! ! !

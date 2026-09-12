@@ -1524,9 +1524,9 @@
 /area/rogue/indoors/bandit_lair)
 "hy" = (
 /obj/structure/table/wood/reinforced,
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/carpet,
 /area/rogue)
 "hz" = (

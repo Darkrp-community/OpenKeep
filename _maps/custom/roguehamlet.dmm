@@ -1630,7 +1630,7 @@
 /area/rogue/under/town/basement)
 "bPp" = (
 /obj/structure/rack/rogue,
-/obj/item/keyring/dungeoneer,
+/obj/item/storage/keyring/dungeoneer,
 /turf/open/floor/rogue/concrete,
 /area/rogue/indoors/town/cell)
 "bPq" = (
@@ -1682,7 +1682,7 @@
 	icon_state = "tablewood1"
 	},
 /obj/machinery/light/rogue/wallfire/candle,
-/obj/item/keyring/guard,
+/obj/item/storage/keyring/guard,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "bQY" = (
@@ -3986,7 +3986,7 @@
 "eqm" = (
 /obj/structure/closet/crate/drawer,
 /obj/structure/fluff/wallclock/r,
-/obj/item/keyring/hand,
+/obj/item/storage/keyring/hand,
 /obj/item/natural/cloth,
 /turf/open/floor/carpet/royalblack,
 /area/rogue/indoors/town/manor{
@@ -4002,7 +4002,7 @@
 /obj/structure/rack/rogue{
 	pixel_y = 16
 	},
-/obj/item/keyring/guardcastle,
+/obj/item/storage/keyring/guardcastle,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/garrison)
 "erc" = (
@@ -4613,7 +4613,7 @@
 /obj/item/paper/confession,
 /obj/item/paper/confession,
 /obj/structure/closet/crate/chest/neu_iron,
-/obj/item/keyring/inquisitor,
+/obj/item/storage/keyring/inquisitor,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "eRY" = (
@@ -8137,7 +8137,7 @@
 /area/rogue/indoors/town/shop)
 "iDr" = (
 /obj/structure/rack/rogue,
-/obj/item/keyring/guardcastle,
+/obj/item/storage/keyring/guardcastle,
 /turf/open/floor/rogue/wood/nosmooth,
 /area/rogue/indoors/town/garrison)
 "iDN" = (
@@ -10700,7 +10700,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/keyring/guard,
+/obj/item/storage/keyring/guard,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "lmR" = (
@@ -17714,7 +17714,7 @@
 /area/rogue/outdoors/exposed/manorgarri)
 "sry" = (
 /obj/structure/rack/rogue,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/shop)
 "srS" = (
@@ -21556,7 +21556,7 @@
 	},
 /obj/item/clothing/neck/roguetown/gorget,
 /obj/item/rogueweapon/knife/dagger/steel,
-/obj/item/keyring/steward,
+/obj/item/storage/keyring/steward,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town)
 "weW" = (
@@ -21937,7 +21937,7 @@
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
 /obj/item/candle/yellow,
-/obj/item/keyring/servant,
+/obj/item/storage/keyring/servant,
 /obj/item/soap,
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/exposed/under/basement)

@@ -755,8 +755,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "cL" = (
@@ -843,7 +843,7 @@
 	},
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "cZ" = (
@@ -5551,7 +5551,7 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/merchant,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/shop)
 "tV" = (
@@ -9500,7 +9500,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,

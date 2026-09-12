@@ -42,7 +42,7 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/innkeep
+	beltl = /obj/item/storage/keyring/innkeep
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random

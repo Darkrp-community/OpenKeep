@@ -83,7 +83,7 @@
 			to_chat(H, "<span class='warning'>The King acquired my clan - so I have to belong to one before reaching this royal duty I serve.</span>")
 			clanfication(H)
 
-	backpack_contents = list(/obj/item/keyring/captain = 1, /obj/item/signal_horn = 1)
+	backpack_contents = list(/obj/item/storage/keyring/captain = 1, /obj/item/signal_horn = 1)
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 4, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)

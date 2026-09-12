@@ -920,7 +920,7 @@
 /area/rogue/indoors/town/manor)
 "ado" = (
 /obj/structure/closet/crate/chest,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/tile{
 	icon_state = "chess"
 	},
@@ -2272,8 +2272,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "ahB" = (
@@ -2378,7 +2378,7 @@
 	},
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "ahS" = (
@@ -2961,7 +2961,7 @@
 	icon_state = "largetable";
 	dir = 4
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/tile{
 	icon_state = "greenstone"
 	},
@@ -4136,7 +4136,7 @@
 /area/rogue)
 "ang" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "anh" = (
@@ -4393,7 +4393,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,
@@ -5364,7 +5364,7 @@
 /area/rogue/indoors)
 "aqL" = (
 /obj/item/roguekey/shop,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/table/wood{
 	icon_state = "largetable";
 	dir = 10
@@ -6807,7 +6807,7 @@
 "avf" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/wood,
 /area/rogue)
 "avg" = (
@@ -7236,7 +7236,7 @@
 "awx" = (
 /obj/structure/table/wood,
 /obj/item/roguekey/dungeon,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /turf/open/floor/rogue/concrete,
 /area/rogue)

@@ -259,7 +259,7 @@
 /obj/structure/closet/attackby(obj/item/W, mob/user, params)
 	if(user in src)
 		return
-	if(istype(W, /obj/item/roguekey) || istype(W, /obj/item/keyring))
+	if(istype(W, /obj/item/roguekey) || istype(W, /obj/item/storage/keyring))
 		trykeylock(W, user)
 		return
 	if(istype(W, /obj/item/lockpick))
@@ -279,8 +279,8 @@
 	if(broken)
 		to_chat(user, "<span class='warning'>The lock is broken.</span>")
 		return
-	if(istype(I,/obj/item/keyring))
-		var/obj/item/keyring/R = I
+	if(istype(I,/obj/item/storage/keyring))
+		var/obj/item/storage/keyring/R = I
 		if(!R.keys.len)
 			return
 		var/list/keysy = shuffle(R.keys.Copy())
