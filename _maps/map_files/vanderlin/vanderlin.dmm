@@ -8951,21 +8951,6 @@
 "dGg" = (
 /turf/closed/wall/mineral/stone,
 /area/outdoors/town/keep)
-"dGl" = (
-/obj/structure/flora/grass/bush/wall/tall{
-	pixel_x = -8
-	},
-/obj/structure/flora/grass/bush_meagre{
-	pixel_x = 20;
-	pixel_y = -5
-	},
-/obj/structure/flora/grass/bush{
-	layer = 4.4;
-	pixel_x = 25;
-	pixel_y = 7
-	},
-/turf/open/floor/cobble/mossy,
-/area/under/town/basement)
 "dGo" = (
 /obj/effect/decal/cobbleedge/alt{
 	dir = 9
@@ -27783,6 +27768,21 @@
 /obj/structure/carpet/blue,
 /turf/open/floor/wood,
 /area/outdoors/exposed/church)
+"lez" = (
+/obj/structure/flora/grass/bush_meagre{
+	pixel_x = 20;
+	pixel_y = -5
+	},
+/obj/structure/flora/grass/bush/wall/tall{
+	pixel_x = -8
+	},
+/obj/structure/flora/grass/bush{
+	layer = 4.4;
+	pixel_x = 25;
+	pixel_y = 7
+	},
+/turf/open/floor/cobble/mossy,
+/area/under/town/basement)
 "leB" = (
 /obj/structure/rack/shelf/biggest,
 /obj/item/burial_shroud,
@@ -29216,6 +29216,9 @@
 "lHj" = (
 /obj/structure/flora/grass/water,
 /turf/open/floor/grass/healthy,
+/area/under/town/basement)
+"lHM" = (
+/turf/open/openspace,
 /area/under/town/basement)
 "lHP" = (
 /obj/machinery/light/fueled/wallfire/candle/blue{
@@ -47221,8 +47224,8 @@
 /turf/open/floor/carpet/royalblack,
 /area/indoors/town/keep/phys)
 "sAa" = (
-/obj/structure/dungeon_entry/center/vanderlin,
-/turf/open/floor/cobble/mossy,
+/obj/structure/dungeon_elevator,
+/turf/open/openspace,
 /area/under/town/basement)
 "sAi" = (
 /obj/effect/decal/cleanable/debris/wood,
@@ -56324,10 +56327,7 @@
 /turf/open/floor/churchrough,
 /area/indoors/town/church/chapel)
 "wdm" = (
-/obj/structure/fluff/traveltile{
-	aportalgoesto = "vanderlin-forest_town-forest";
-	aportalid = "vanderlin-forest_town-town"
-	},
+/obj/structure/fluff/traveltile/fast/vanderlin/basin_forest,
 /turf/open/floor/dirt/road,
 /area/outdoors/basin)
 "wdr" = (
@@ -86790,7 +86790,7 @@ ozq
 jQb
 cZN
 cZN
-dGl
+ryr
 gcf
 msU
 lHj
@@ -86992,7 +86992,7 @@ ozq
 jQb
 cZN
 cZN
-ryr
+lez
 lUx
 msU
 wRn
@@ -87193,7 +87193,7 @@ ozq
 ozq
 jQb
 cZN
-cZN
+lHM
 sAa
 ryr
 ryr
@@ -87395,8 +87395,8 @@ ozq
 ozq
 jQb
 cZN
-cZN
-ryr
+lHM
+lHM
 wRn
 ryr
 ryr
