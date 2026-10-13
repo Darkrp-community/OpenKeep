@@ -38518,7 +38518,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/ruinedwood/two,
 /area/indoors/town)
-<<<<<<< Updated upstream
 "pmx" = (
 /obj/structure/mirror/courtagent{
 	pixel_x = -32;
@@ -38537,8 +38536,6 @@
 	},
 /turf/closed/wall/mineral/stone,
 /area/indoors/town/smithy)
-=======
->>>>>>> Stashed changes
 "pmN" = (
 /turf/open/floor/metal/alt,
 /area/indoors/town/shop)
