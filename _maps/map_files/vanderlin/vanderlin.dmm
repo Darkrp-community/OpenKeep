@@ -2597,8 +2597,8 @@
 /turf/open/floor/grass,
 /area/outdoors/town/roofs)
 "bgQ" = (
-/obj/structure/window/solid,
-/turf/closed/wall/mineral/craftstone,
+/obj/structure/table/wood/plain,
+/turf/open/floor/ruinedwood/spiral,
 /area/indoors/town/smithy)
 "bho" = (
 /obj/structure/fluff/walldeco/church/line{
@@ -28110,6 +28110,7 @@
 	pixel_x = -32;
 	pixel_y = 0
 	},
+/obj/structure/table/wood/plain,
 /turf/open/floor/ruinedwood/spiral,
 /area/indoors/town/smithy)
 "llz" = (
@@ -38529,13 +38530,6 @@
 /obj/item/soap/bath,
 /turf/open/floor/tile/bath,
 /area/indoors/town/keep/courtagent)
-"pmC" = (
-/obj/machinery/light/fueled/wallfire/candle{
-	pixel_x = -32;
-	pixel_y = 0
-	},
-/turf/closed/wall/mineral/stone,
-/area/indoors/town/smithy)
 "pmN" = (
 /turf/open/floor/metal/alt,
 /area/indoors/town/shop)
@@ -122972,9 +122966,9 @@ mxi
 vtd
 mlB
 sCJ
+jxr
 sCJ
-sCJ
-sCJ
+jxr
 sCJ
 hWg
 bKi
@@ -123174,9 +123168,9 @@ opk
 bKi
 lgF
 rWG
-dlK
+bgQ
 akP
-dlK
+bgQ
 llx
 sCJ
 ujt
@@ -124588,9 +124582,9 @@ mHV
 syu
 qBh
 sCJ
-bgQ
+jxr
 ujt
-bgQ
+jxr
 jxr
 ujt
 ujt
