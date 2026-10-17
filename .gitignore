@@ -234,3 +234,8 @@ config/admins.txt
 
 # OpenDream-compiled DME
 /stonekeep.json
+
+### C#
+# Build results
+[Bb]in/
+[Oo]bj/
