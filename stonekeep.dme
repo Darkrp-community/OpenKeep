@@ -1526,6 +1526,7 @@
 #include "code\modules\projectiles\boxes_magazines\internal\_internal.dm"
 #include "code\modules\projectiles\guns\ballistic.dm"
 #include "code\modules\projectiles\guns\ballistic\launchers.dm"
+#include "code\modules\projectiles\guns\ballistic\revolver.dm"
 #include "code\modules\projectiles\projectile\magic.dm"
 #include "code\modules\projectiles\projectile\reusable\_reusable.dm"
 #include "code\modules\reagents\chem_splash.dm"
