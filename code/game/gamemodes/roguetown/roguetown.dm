@@ -1,5 +1,5 @@
 // This mode will become the main basis for the typical roguetown round. Based off of chaos mode.
-GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "Bandits", "CANCEL")) // This is mainly used for forcemgamemodes
+GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "Bandits", "Lich", "CANCEL")) // This is mainly used for forcemgamemodes
 
 /datum/game_mode/chaosmode
 	name = "roguemode"
@@ -168,6 +168,26 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			continue
 		else
 			return TRUE
+
+/datum/game_mode/chaosmode/proc/pick_lich()
+	restricted_jobs = list("King", "Queen", "Merchant", "Priest")
+	antag_candidates = get_players_for_role(ROLE_LICH)
+	var/datum/mind/lichman = pick_n_take(antag_candidates)
+	if(lichman)
+		var/blockme = FALSE
+		if(!(lichman in allantags))
+			blockme = TRUE
+		if(blockme)
+			return
+		allantags -= lichman
+		pre_liches += lichman
+		lichman.special_role = ROLE_LICH
+		lichman.restricted_roles = restricted_jobs.Copy()
+		testing("[key_name(lichman)] has been selected as the [lichman.special_role]")
+		log_game("[key_name(lichman)] has been selected as the [lichman.special_role]")
+	for(var/antag in pre_liches)
+		GLOB.pre_setup_antags |= antag
+	restricted_jobs = list()
 
 /datum/game_mode/chaosmode/proc/pick_bandits()
 	//BANDITS
@@ -414,6 +434,13 @@ GLOBAL_LIST_INIT(roguegamemodes, list("Rebellion", "Vampire Lord", "Extended", "
 			addtimer(CALLBACK(cultist, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
 			GLOB.pre_setup_antags -= cultist
 			cultists += cultist
+
+///////////////// LICH
+	for(var/datum/mind/lichman in pre_liches)
+		var/datum/antagonist/new_antag = new /datum/antagonist/lich()
+		addtimer(CALLBACK(lichman, TYPE_PROC_REF(/datum/mind, add_antag_datum), new_antag), rand(10,100))
+		GLOB.pre_setup_antags -= lichman
+		liches += lichman
 
 ///////////////// WWOLF
 	for(var/datum/mind/werewolf in pre_werewolves)
