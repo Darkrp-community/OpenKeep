@@ -14,7 +14,7 @@
 #define DEVILRESURRECTTIME 600
 
 GLOBAL_LIST_EMPTY(allDevils)
-GLOBAL_LIST_INIT(lawlorify, list (
+GLOBAL_LIST_INIT(lawlorify, alist (
 		LORE = list(
 			OBLIGATION_FOOD = "This devil seems to always offer its victims food before slaughtering them.",
 			OBLIGATION_FIDDLE = "This devil will never turn down a musical challenge.",
