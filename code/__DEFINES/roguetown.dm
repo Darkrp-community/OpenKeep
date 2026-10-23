@@ -300,8 +300,8 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 
 // Heavy AC
 #define ARMOR_PLATE_BAD		list("crush" = 65, "slash" = 70, "stab" = 70, "pierce" = 0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE			list("crush" =80, "slash" =70, "stab" =70, "pierce" =0, "fire" = 0, "acid" = 0)
-#define ARMOR_PLATE_GOOD	list("crush" =90, "slash" =90, "stab" =90, "pierce" =85, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE			list("crush" = 80, "slash" = 70, "stab" = 70, "pierce" =0, "fire" = 0, "acid" = 0)
+#define ARMOR_PLATE_GOOD	list("crush" = 90, "slash" = 90, "stab" = 90, "pierce" = 85, "fire" = 0, "acid" = 0)
 
 
 /*-----------------------\

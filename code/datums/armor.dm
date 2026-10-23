@@ -7,8 +7,11 @@
 
 /datum/armor
 	datum_flags = DF_USE_TAG
+	//bruising
 	var/crush
+	//cutting
 	var/slash
+	//piercing
 	var/stab
 	var/pierce
 	//Protection against fighting
