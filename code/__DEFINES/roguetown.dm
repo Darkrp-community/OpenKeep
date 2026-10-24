@@ -288,6 +288,7 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 #define ARMOR_PADDED		list("crush" = 25, "slash" = 25, "stab" = 25, "pierce" = 25, "fire" = 0, "acid" = 0)
 #define ARMOR_PADDED_GOOD	list("crush" = 30, "slash" = 30, "stab" = 30, "pierce" = 30, "fire" = 0, "acid" = 0)
 
+#define ARMOR_LEATHER_WORST list("crush" = 15, "slash" = 15, "stab" = 15, "pierce" = 15, "fire" = 0, "acid" = 0)
 #define ARMOR_LEATHER_BAD	list("crush" = 30, "slash" = 30, "stab" = 30, "pierce" = 10, "fire" = 0, "acid" = 0)
 #define ARMOR_LEATHER		list("crush" = 35, "slash" = 35, "stab" = 35, "pierce" = 15, "fire" = 0, "acid" = 0)
 #define	ARMOR_LEATHER_GOOD	list("crush" = 40, "slash" = 40, "stab" = 40, "pierce" = 20, "fire" = 0, "acid" = 0)

@@ -13,6 +13,7 @@
 	var/slash
 	//piercing
 	var/stab
+	//projectile impact
 	var/pierce
 	//Protection against fighting
 	var/fire

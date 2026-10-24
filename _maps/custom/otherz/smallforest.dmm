@@ -126,7 +126,7 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
 "aQ" = (
-/turf/closed/mineral/rogue/wood/boss,
+/turf/closed/wall/mineral/rogue/wood/boss,
 /area/rogue/outdoors/woods)
 "aR" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mole,

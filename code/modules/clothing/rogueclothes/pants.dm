@@ -492,7 +492,7 @@
 	icon_state = "marauder_leg"
 	item_state = "marauder_leg"
 	sewrepair = FALSE
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 60, "slash" = 60, "stab" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 200
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = AC_MEDIUM

@@ -396,7 +396,7 @@
 
 /obj/item/grabbing/proc/smashlimb(atom/A, mob/living/user) //implies limb_grabbed and sublimb are things
 	var/mob/living/carbon/C = grabbed
-	var/armor_block = C.run_armor_check(limb_grabbed, "melee")
+	var/armor_block = C.run_armor_check(limb_grabbed, "crush")
 	var/damage = user.get_punch_dmg()
 	C.next_attack_msg.Cut()
 	if(C.apply_damage(damage, BRUTE, limb_grabbed, armor_block))

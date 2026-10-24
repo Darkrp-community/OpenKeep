@@ -951,7 +951,7 @@
 							visible_message("<span class='warning'> used [inhand] to carve their own guts before splitting themselves apart!</span>", \
 							"<span class='notice'>You voluntarily sever your boundaries to this consciousness as abyssal vitae spills out in waves.</span>", null, null, pulledby)
 							to_chat(C, "<span class='warning'>Your ancestors honors your sacrifice.</span>")
-							apply_damage(250, BRUTE, "chest", run_armor_check("chest", "melee", damage = 10))
+							apply_damage(250, BRUTE, "chest", run_armor_check("chest", "stab", damage = 10))
 							spill_organs(FALSE, FALSE, TRUE)
 							spawn_gibs()
 							adjust_triumphs(1)
@@ -963,7 +963,7 @@
 							visible_message("<span class='warning'>'s claws carves their own guts before splitting themselves apart!</span>", \
 							"<span class='notice'>You voluntarily sever your boundaries to this consciousness as abyssal vitae spills out in waves.</span>", null, null, pulledby)
 							to_chat(C, "<span class='warning'>Your ancestors honors your sacrifice.</span>")
-							apply_damage(250, BRUTE, "chest", run_armor_check("chest", "melee", damage = 10))
+							apply_damage(250, BRUTE, "chest", run_armor_check("chest", "slash", damage = 10))
 							spill_organs(FALSE, FALSE, TRUE)
 							spawn_gibs()
 							adjust_triumphs(1)
