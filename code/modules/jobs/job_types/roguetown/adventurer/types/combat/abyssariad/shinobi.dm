@@ -90,7 +90,7 @@
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/hankyu
 
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-		H.change_stat("perception", 1)
-		H.change_stat("speed", 3)
-		H.change_stat("constitution", 1)
+		H.change_stat(STATKEY_PER, 1)
+		H.change_stat(STATKEY_SPD, 3)
+		H.change_stat(STATKEY_CON, 1)
 	H.cure_blind("TRAIT_GENERIC")

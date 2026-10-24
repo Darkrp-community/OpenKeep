@@ -28,48 +28,8 @@
 			else
 				walk_to(src,0)
 
-/mob/living/carbon/monkey/handle_mutations_and_radiation()
-	if(radiation)
-		if(radiation > RAD_MOB_KNOCKDOWN && prob(RAD_MOB_KNOCKDOWN_PROB))
-			if(!IsParalyzed())
-				emote("collapse")
-			Paralyze(RAD_MOB_KNOCKDOWN_AMOUNT)
-			to_chat(src, "<span class='danger'>I feel weak.</span>")
-		if(radiation > RAD_MOB_MUTATE)
-			if(prob(1))
-				to_chat(src, "<span class='danger'>I mutate!</span>")
-				easy_randmut(NEGATIVE+MINOR_NEGATIVE)
-				emote("gasp")
-				domutcheck()
-
-				if(radiation > RAD_MOB_MUTATE * 2 && prob(50))
-					gorillize()
-					return
-		if(radiation > RAD_MOB_VOMIT && prob(RAD_MOB_VOMIT_PROB))
-			vomit(10, TRUE)
-	return ..()
-
-/mob/living/carbon/monkey/handle_breath_temperature(datum/gas_mixture/breath)
-	if(abs(BODYTEMP_NORMAL - breath.temperature) > 50)
-		switch(breath.temperature)
-			if(-INFINITY to 120)
-				adjustFireLoss(3)
-			if(120 to 200)
-				adjustFireLoss(1.5)
-			if(200 to 260)
-				adjustFireLoss(0.5)
-			if(360 to 400)
-				adjustFireLoss(2)
-			if(400 to 1000)
-				adjustFireLoss(3)
-			if(1000 to INFINITY)
-				adjustFireLoss(8)
-
-/mob/living/carbon/monkey/handle_environment(datum/gas_mixture/environment)
-	if(!environment)
-		return
-
-	var/loc_temp = get_temperature(environment)
+/mob/living/carbon/monkey/handle_environment()
+	var/loc_temp = BODYTEMP_NORMAL
 
 	if(stat != DEAD)
 		adjust_bodytemperature(natural_bodytemperature_stabilization())
@@ -110,24 +70,6 @@
 
 	else
 		clear_alert("temp")
-
-	//Account for massive pressure differences
-
-	var/pressure = environment.return_pressure()
-	var/adjusted_pressure = calculate_affecting_pressure(pressure) //Returns how much pressure actually affects the mob.
-	switch(adjusted_pressure)
-		if(HAZARD_HIGH_PRESSURE to INFINITY)
-			adjustBruteLoss( min( ( (adjusted_pressure / HAZARD_HIGH_PRESSURE) -1 )*PRESSURE_DAMAGE_COEFFICIENT , MAX_HIGH_PRESSURE_DAMAGE) )
-			throw_alert("pressure", /atom/movable/screen/alert/highpressure, 2)
-		if(WARNING_HIGH_PRESSURE to HAZARD_HIGH_PRESSURE)
-			throw_alert("pressure", /atom/movable/screen/alert/highpressure, 1)
-		if(WARNING_LOW_PRESSURE to WARNING_HIGH_PRESSURE)
-			clear_alert("pressure")
-		if(HAZARD_LOW_PRESSURE to WARNING_LOW_PRESSURE)
-			throw_alert("pressure", /atom/movable/screen/alert/lowpressure, 1)
-		else
-			adjustBruteLoss( LOW_PRESSURE_DAMAGE )
-			throw_alert("pressure", /atom/movable/screen/alert/lowpressure, 2)
 
 	return
 

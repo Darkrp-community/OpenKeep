@@ -83,12 +83,6 @@
 	icon_state = "shieldsparkles"
 	duration = 3
 
-/obj/effect/temp_visual/dir_setting/ninja
-	name = "ninja shadow"
-	icon = 'icons/mob/mob.dmi'
-	icon_state = "uncloak"
-	duration = 9
-
 /obj/effect/temp_visual/dir_setting/ninja/cloak
 	icon_state = "cloak"
 
@@ -164,9 +158,6 @@
 		if(EAST)
 			icon_state = "beam_splash_e"
 
-/obj/projectile/curse_hand/update_icon()
-	icon_state = "[icon_state][handedness]"
-
 /obj/effect/temp_visual/wizard
 	name = "water"
 	icon = 'icons/mob/mob.dmi'
@@ -189,16 +180,6 @@
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "blspell"
 	duration = 5
-
-/obj/effect/temp_visual/guardian
-	randomdir = 0
-
-/obj/effect/temp_visual/guardian/phase
-	duration = 5
-	icon_state = "phasein"
-
-/obj/effect/temp_visual/guardian/phase/out
-	icon_state = "phaseout"
 
 /obj/effect/temp_visual/decoy
 	desc = ""
@@ -239,15 +220,6 @@
 	light_outer_range =  LIGHT_RANGE_FIRE
 	light_color = LIGHT_COLOR_FIRE
 	duration = 10
-
-/obj/effect/temp_visual/revenant
-	name = "spooky lights"
-	icon_state = "purplesparkles"
-
-/obj/effect/temp_visual/revenant/cracks
-	name = "glowing cracks"
-	icon_state = "purplecrack"
-	duration = 6
 
 /obj/effect/temp_visual/gravpush
 	name = "gravity wave"

@@ -82,7 +82,7 @@
 	var/damage = 10
 	var/damage_type = BRUTE //BRUTE, BURN, TOX, OXY, CLONE are the only things that should be in here
 	var/nodamage = FALSE //Determines if the projectile will skip any damage inflictions
-	var/flag = "bullet" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
+	var/flag = "pierce" //Defines what armor to use when it hits things.  Must be set to bullet, laser, energy,or bomb
 	///How much armor this projectile pierces.
 	var/armor_penetration = 0
 	var/projectile_type = /obj/projectile
@@ -91,17 +91,9 @@
 	var/reflect_range_decrease = 5			//amount of original range that falls off when reflecting, so it doesn't go forever
 	var/reflectable = NONE // Can it be reflected or not?
 		//Effects
-	var/stun = 0
-	var/knockdown = 0
 	var/paralyze = 0
-	var/immobilize = 0
-	var/unconscious = 0
-	var/irradiate = 0
-	var/stutter = 0
-	var/slur = 0
+	var/stun = 0
 	var/eyeblur = 0
-	var/drowsy = 0
-	var/stamina = 0
 	var/jitter = 0
 	var/dismemberment = 0 //The higher the number, the greater the bonus to dismembering. 0 will not dismember at all.
 	var/impact_effect_type //what type of impact effect to show when hitting something
@@ -111,7 +103,7 @@
 
 	var/woundclass = null
 	var/embedchance = 0
-	var/obj/item/dropped = FALSE
+	var/obj/item/dropped = null
 	var/ammo_type
 
 	var/arcshot = FALSE
@@ -249,7 +241,7 @@
 		playsound(loc, hitsound_wall, volume, TRUE, -1)
 
 	if(arcshot)
-		if(A.loc != original)
+		if(A.loc != original.loc)
 			if(ismob(A))
 				var/mob/M = A
 				if(!CHECK_BITFIELD(movement_type, UNSTOPPABLE))
@@ -556,7 +548,7 @@
 					return TRUE
 	if(!ignore_source_check && firer)
 		var/mob/M = firer
-		if((target == firer) || ((target == firer.loc) && ismecha(firer.loc)) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target)))
+		if((target == firer) || (target in firer.buckled_mobs) || (istype(M) && (M.buckled == target)))
 			return FALSE
 	if(!ignore_loc && (loc != target.loc))
 		return FALSE
@@ -572,7 +564,9 @@
 		if(!direct_target)
 			//If they're able to 1. stand or 2. use items or 3. move, AND they are not softcrit,  they are not stunned enough to dodge projectiles passing over.
 			//If they're dead they shouldn't be getting hit by indirect fire
-			if((CHECK_BITFIELD(L.mobility_flags, MOBILITY_USE | MOBILITY_STAND | MOBILITY_MOVE) && L.stat == CONSCIOUS) || L.stat == DEAD)
+			if((CHECK_BITFIELD(L.mobility_flags, MOBILITY_USE | MOBILITY_STAND | MOBILITY_MOVE) && L.stat == CONSCIOUS) || L.stat == UNCONSCIOUS)
+				return FALSE
+			if(L.lying)
 				return FALSE
 	return TRUE
 
@@ -704,6 +698,3 @@
 		QDEL_IN(thing, duration)
 	if(cleanup)
 		cleanup_beam_segments()
-
-/obj/projectile/experience_pressure_difference()
-	return

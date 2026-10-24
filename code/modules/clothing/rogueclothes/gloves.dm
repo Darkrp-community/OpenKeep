@@ -163,6 +163,9 @@
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONG //250 Integrity, good for 7~ halberd stabs.
 
+	grid_width = 64
+	grid_height = 32
+
 /obj/item/clothing/gloves/roguetown/rare
 	icon = 'icons/roguetown/clothing/Racial_Armour.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/onmob_racial.dmi'

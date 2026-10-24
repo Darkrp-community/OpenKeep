@@ -29,7 +29,7 @@
 
 ///returns the damage value of the attack after processing the obj's various armor protections
 /obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armor_penetration = 0)
-	if(damage_flag == "melee" && damage_amount < damage_deflection)
+	if(damage_flag == "crush" && damage_amount < damage_deflection)
 		testing("damtest55")
 		return 1
 	if(damage_type != BRUTE && damage_type != BURN)
@@ -59,25 +59,37 @@
 		if(BURN)
 			playsound(src.loc, "burn", 100, FALSE, -1)
 
-/obj/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/obj/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "crush")
 	..()
 	if(AM.throwforce > 5)
-		take_damage(AM.throwforce*0.1, BRUTE, "melee", 1, get_dir(src, AM))
+		take_damage(AM.throwforce*0.1, BRUTE, damage_type, 1, get_dir(src, AM))
 
-/obj/ex_act(severity, target)
+/obj/ex_act(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 	if(resistance_flags & INDESTRUCTIBLE)
 		return
 	..() //contents explosion
-	if(target == src)
-		take_damage(INFINITY, BRUTE, "bomb", 0)
-		return
-	switch(severity)
-		if(1)
-			take_damage(INFINITY, BRUTE, "bomb", 0)
-		if(2)
-			take_damage(rand(100, 250), BRUTE, "bomb", 0)
-		if(3)
-			take_damage(rand(10, 90), BRUTE, "bomb", 0)
+	var/ddist = devastation_range
+	var/hdist = heavy_impact_range
+	var/ldist = light_impact_range
+	var/fdist = flame_range
+	var/fodist = get_dist(src, epicenter)
+	var/brute_loss = 0
+
+	switch (severity)
+		if (EXPLODE_DEVASTATE)
+			brute_loss = (250 * ddist) - (250 * max((fodist - 1), 0))
+
+		if (EXPLODE_HEAVY)
+			brute_loss = (100 * hdist) - (100 * max((fodist - 1), 0))
+
+		if(EXPLODE_LIGHT)
+			brute_loss = ((25 * ldist) - (25 * fodist))
+
+	take_damage(brute_loss, BRUTE, "crush", 0)
+
+	if(fdist && !QDELETED(src))
+		var/stacks = ((fdist - fodist) * 2)
+		fire_act(stacks)
 
 /obj/bullet_act(obj/projectile/P)
 	. = ..()
@@ -85,27 +97,6 @@
 	visible_message("<span class='danger'>[src] is hit by \a [P]!</span>", null, null, COMBAT_MESSAGE_RANGE)
 	if(!QDELETED(src)) //Bullet on_hit effect might have already destroyed this object
 		take_damage(P.damage, P.damage_type, P.flag, 0, turn(P.dir, 180), P.armor_penetration)
-
-///Called to get the damage that hulks will deal to the obj.
-/obj/proc/hulk_damage()
-	return 150 //the damage hulks do on punches to this object, is affected by melee armor
-
-/obj/attack_hulk(mob/living/carbon/human/user)
-	..()
-	user.visible_message("<span class='danger'>[user] smashes [src]!</span>", "<span class='danger'>I smash [src]!</span>", null, COMBAT_MESSAGE_RANGE)
-	if(density)
-		playsound(src.loc, 'sound/blank.ogg', 100, TRUE)
-	else
-		playsound(src, 'sound/blank.ogg', 50, TRUE)
-	take_damage(hulk_damage(), BRUTE, "melee", 0, get_dir(src, user))
-	return TRUE
-
-/obj/blob_act(obj/structure/blob/B)
-	if(isturf(loc))
-		var/turf/T = loc
-		if(T.intact && level == 1) //the blob doesn't destroy thing below the floor
-			return
-	take_damage(400, BRUTE, "melee", 0, get_dir(src, B))
 
 /obj/proc/attack_generic(mob/user, damage_amount = 0, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, armor_penetration = 0) //used by attack_alien, attack_animal, and attack_slime
 	user.do_attack_animation(src)
@@ -137,18 +128,6 @@
 /obj/proc/collision_damage(atom/movable/pusher, force = MOVE_FORCE_DEFAULT, direction)
 	var/amt = max(0, ((force - (move_resist * MOVE_FORCE_CRUSH_RATIO)) / (move_resist * MOVE_FORCE_CRUSH_RATIO)) * 10)
 	take_damage(amt, BRUTE)
-
-/obj/attack_slime(mob/living/simple_animal/slime/user)
-	if(!user.is_adult)
-		return
-	attack_generic(user, rand(10, 15), BRUTE, "melee", 1)
-
-/obj/singularity_act()
-	ex_act(EXPLODE_DEVASTATE)
-	if(src && !QDELETED(src))
-		qdel(src)
-	return 2
-
 
 ///// ACID
 

@@ -56,7 +56,7 @@
 	beltl = /obj/item/rogueweapon/mace/spiked
 	backr = /obj/item/rogueweapon/shield/wood/adept
 	gloves = /obj/item/clothing/gloves/roguetown/leather
-	backpack_contents = list(/obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
+	backpack_contents = list(/obj/item/storage/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
@@ -71,10 +71,10 @@
 	H.mind.adjust_skillrank(/datum/skill/combat/firearms, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-	H.change_stat("strength", 2)
-	H.change_stat("intelligence", -2)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 1)
+	H.change_stat(STATKEY_STR, 2)
+	H.change_stat(STATKEY_INT, -2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_CON, 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
@@ -100,7 +100,7 @@
 	backl = /obj/item/quiver/bolts
 	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/raincloak/brown
-	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
+	backpack_contents = list(/obj/item/lockpick = 1, /obj/item/storage/keyring/shepherd = 1, /obj/item/rogueweapon/knife/dagger/silver = 1)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
@@ -118,9 +118,9 @@
 	H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/firearms, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
-	H.change_stat("strength", -1)
-	H.change_stat("perception", 2)
-	H.change_stat("speed", 2)
+	H.change_stat(STATKEY_STR, -1)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_SPD, 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)

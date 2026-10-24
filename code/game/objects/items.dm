@@ -1,7 +1,5 @@
 GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/effects/fire.dmi', "fire"))
 
-
-GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 // if true, everyone item when created will have its name changed to be
 // more... RPG-like.
 
@@ -55,7 +53,6 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/w_class = WEIGHT_CLASS_NORMAL
 	var/slot_flags = 0		//This is used to determine on which slots an item can fit.
 	pass_flags = PASSTABLE
-	pressure_resistance = 4
 	var/obj/item/master = null
 
 	var/heat_protection = 0 //flags which determine which body parts are protected from heat. Use the HEAD, CHEST, GROIN, etc. flags. See setup.dm
@@ -169,8 +166,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 
 	var/wlength = WLENGTH_NORMAL		//each weapon length class has its own inherent dodge properties
 	var/wbalance = 0
-	var/wdefense = 0 //better at defending. Each points gives a flat 10% bonus to parry
-	var/minstr = 0  //for weapons
+	var/wdefense = 0					//Flat bonus to defense
+	var/wdodgebonus = 0					//Bonus for dodging
+	var/wparrybonus = 0					//Bonus to parrying
+	var/wparryspeed = 0					//Minor reduction in parry cooldown time, for
+	var/minstr = 0						//for weapons
 
 	var/sleeved = null
 	var/sleevetype = null
@@ -222,6 +222,7 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	var/list/blocksound //played when an item that is equipped blocks a hit
 
 	var/list/onprop = list()
+	var/damage_type = "crush"
 	var/force_reupdate_inhand = TRUE
 
 	var/is_silver = FALSE
@@ -248,6 +249,11 @@ GLOBAL_VAR_INIT(rpg_loot_items, FALSE)
 	if(!experimental_inhand)
 		inhand_x_dimension = 32
 		inhand_y_dimension = 32
+
+	if(grid_width <= 0)
+		grid_width = (w_class * world.icon_size)
+	if(grid_height <= 0)
+		grid_height = (w_class * world.icon_size)
 	update_transform()
 
 GLOBAL_LIST_INIT(IconStates_cache, list())
@@ -328,9 +334,6 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		new path(src)
 	actions_types = null
 
-	if(GLOB.rpg_loot_items)
-		AddComponent(/datum/component/fantasy)
-
 	if(force_string)
 		item_flags |= FORCE_STRING_OVERRIDE
 
@@ -374,10 +377,6 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		return 0
 	else
 		return 1
-
-/obj/item/blob_act(obj/structure/blob/B)
-	if(B && B.loc == loc)
-		qdel(src)
 
 //user: The mob that is suiciding
 //damagetype: The type of damage the item will inflict on the user
@@ -457,7 +456,7 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 
 		if(istype(src,/obj/item/clothing))
 			var/obj/item/clothing/C = src
-			if(C.prevent_crits)
+			if(length(C.prevent_crits))
 				if(C.prevent_crits.len)
 					inspec += "\n<b>DEFENSE</b>"
 					for(var/X in C.prevent_crits)
@@ -502,12 +501,7 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if(user.get_num_arms() < 2)
 			to_chat(user, "<span class='warning'>[src] is too bulky to carry in one hand!</span>")
 			return
-		var/obj/item/twohanded/required/H
-		H = user.get_inactive_held_item()
 		if(get_dist(src,user) > 1)
-			return
-		if(H != null)
-			to_chat(user, "<span class='warning'>[src] is too bulky to carry in one hand!</span>")
 			return
 
 	if(w_class == WEIGHT_CLASS_GIGANTIC)
@@ -553,6 +547,9 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		to_chat(user,"<span class='notice'>I start picking up [src]...</span>")
 		if(!do_mob(user,src,30*grav_power))
 			return
+
+	if(SEND_SIGNAL(loc, COMSIG_STORAGE_BLOCK_USER_TAKE, src, user, TRUE))
+		return
 
 	if(!ontable() && isturf(loc))
 		if(!move_after(user,3,target = src))
@@ -695,13 +692,6 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if(altgripped || wielded)
 			ungrip(user, FALSE)
 	if(twohands_required)
-		var/slotbit = slotdefine2slotbit(slot)
-		if(slot_flags & slotbit)
-			var/datum/O = user.is_holding_item_of_type(/obj/item/twohanded/offhand)
-			if(!O || QDELETED(O))
-				return
-			qdel(O)
-			return
 		if(slot == SLOT_HANDS)
 			wield(user)
 		else
@@ -821,7 +811,6 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 			M.become_blind(EYE_DAMAGE)
 			to_chat(M, "<span class='danger'>I go blind!</span>")
 
-/obj/item/singularity_pull()
 
 /obj/item/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(hit_atom && !QDELETED(hit_atom))
@@ -846,7 +835,7 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 
 		else
 			playsound(src, drop_sound, YEET_SOUND_VOLUME, TRUE, ignore_walls = FALSE)
-		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum)
+		return hit_atom.hitby(src, 0, itempush, throwingdatum=throwingdatum, damage_type = src.damage_type)
 
 /obj/item/throw_at(atom/target, range, speed, mob/thrower, spin=1, diagonals_first = 0, datum/callback/callback, force)
 	thrownby = thrower
@@ -983,12 +972,9 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 	else
 		. = ""
 
-/obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/obj/item/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "crush")
 	return
 //	return SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum, damage_type)  TO DO enable when damage type fixed I guess
-
-/obj/item/attack_hulk(mob/living/carbon/human/user)
-	return FALSE
 
 /obj/item/attack_animal(mob/living/simple_animal/M)
 	if (obj_flags & CAN_BE_HIT)
@@ -1189,9 +1175,6 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 		if(force_wielded)
 			force = initial(force)
 		wdefense = wdefense - 1
-		var/obj/item/twohanded/offhand/O = user.get_inactive_held_item()
-		if(O && istype(O))
-			O.unwield()
 	if(altgripped)
 		altgripped = FALSE
 	update_transform()
@@ -1231,10 +1214,6 @@ GLOBAL_LIST_INIT(IconStates_cache, list())
 	update_transform()
 	to_chat(user, "<span class='notice'>I wield [src] with both hands.</span>")
 	playsound(loc, pick('sound/combat/weaponr1.ogg','sound/combat/weaponr2.ogg'), 100, TRUE)
-	var/obj/item/twohanded/offhand/O = new(user) ////Let's reserve his other hand~
-	O.name = "[name] - offhand"
-	O.wielded = TRUE
-	user.put_in_inactive_hand(O)
 	if(twohands_required)
 		if(!wielded)
 			user.dropItemToGround(src)

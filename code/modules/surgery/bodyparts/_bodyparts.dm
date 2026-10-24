@@ -12,7 +12,6 @@
 	var/mob/living/carbon/owner = 0
 	var/mob/living/carbon/original_owner = 0
 	var/status = BODYPART_ORGANIC
-	var/needs_processing = FALSE
 
 	var/static_icon = FALSE
 	var/body_zone //BODY_ZONE_CHEST, BODY_ZONE_L_ARM, etc , used for def_zone
@@ -21,17 +20,13 @@
 	var/body_part = 0 //bitflag used to check which clothes cover this bodypart
 	var/use_digitigrade = NOT_DIGITIGRADE //Used for alternate legs, useless elsewhere
 	var/held_index = 0 //are we a hand? if so, which one!
-	var/is_pseudopart = FALSE //For limbs that don't really exist, eg chainsaws
 
 	var/disabled = BODYPART_NOT_DISABLED //If disabled, limb is as good as missing
 	var/body_damage_coeff = 1 //Multiplier of the limb's damage that gets applied to the mob
-	var/stam_damage_coeff = 0.75
 	var/brutestate = 0
 	var/burnstate = 0
 	var/brute_dam = 0
 	var/burn_dam = 0
-	var/stamina_dam = 0
-	var/max_stamina_damage = 0
 	var/max_damage = 0
 
 	var/cremation_progress = 0 //Gradually increases while burning when at full damage, destroys the limb when at 100
@@ -93,6 +88,9 @@
 	/// Visual features of the bodypart, such as hair and accessories
 	var/list/bodypart_features
 
+	grid_width = 32
+	grid_height = 64
+
 	resistance_flags = FLAMMABLE
 
 /obj/item/bodypart/grabbedintents(mob/living/user, precise)
@@ -102,9 +100,6 @@
 	if(precise == BODY_ZONE_PRECISE_GROIN)
 		return list(/datum/intent/grab/move, /datum/intent/grab/twist, /datum/intent/grab/shove)
 	return list(/datum/intent/grab/move, /datum/intent/grab/shove)
-
-/obj/item/bodypart/blob_act()
-	take_damage(max_damage)
 
 /obj/item/bodypart/Destroy()
 	if(owner)
@@ -223,20 +218,6 @@
 	if(owner && !(NOBLOOD in owner.dna?.species?.species_traits))
 		owner.death()
 
-/obj/item/bodypart/proc/consider_processing()
-	if(stamina_dam > DAMAGE_PRECISION)
-		. = TRUE
-	//else if.. else if.. so on.
-	else
-		. = FALSE
-	needs_processing = .
-
-//Return TRUE to get whatever mob this is in to update health.
-/obj/item/bodypart/proc/on_life(stam_regen)
-	if(stamina_dam > DAMAGE_PRECISION && stam_regen)					//DO NOT update health here, it'll be done in the carbon's life.
-		heal_damage(0, 0, INFINITY, null, FALSE)
-		. |= BODYPART_LIFE_UPDATE_HEALTH
-
 /obj/item/bodypart/Initialize()
 	. = ..()
 	update_HP()
@@ -252,10 +233,10 @@
 //Applies brute and burn damage to the organ. Returns 1 if the damage-icon states changed at all.
 //Damage will not exceed max_damage using this proc
 //Cannot apply negative damage
-/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, stamina = 0, blocked = 0, updating_health = TRUE, required_status = null)
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, blocked = 0, updating_health = TRUE, required_status = null)
 	update_HP()
 	var/hit_percent = (100-blocked)/100
-	if((!brute && !burn && !stamina) || hit_percent <= 0)
+	if((!brute && !burn) || hit_percent <= 0)
 		return FALSE
 	if(owner && (owner.status_flags & GODMODE))
 		return FALSE	//godmode
@@ -266,12 +247,10 @@
 	var/dmg_mlt = CONFIG_GET(number/damage_multiplier) * hit_percent
 	brute = round(max(brute * dmg_mlt, 0),DAMAGE_PRECISION)
 	burn = round(max(burn * dmg_mlt, 0),DAMAGE_PRECISION)
-	stamina = round(max(stamina * dmg_mlt, 0),DAMAGE_PRECISION)
 	brute = max(0, brute - brute_reduction)
 	burn = max(0, burn - burn_reduction)
-	//No stamina scaling.. for now..
 
-	if(!brute && !burn && !stamina)
+	if(!brute && !burn)
 		return FALSE
 
 	//cap at maxdamage
@@ -284,9 +263,6 @@
 	else
 		burn_dam += burn
 
-	//We've dealt the physical damages, if there's room lets apply the stamina damage.
-	stamina_dam += round(CLAMP(stamina, 0, max_stamina_damage - stamina_dam), DAMAGE_PRECISION)
-
 	if(owner)
 		if((brute + burn) < 10)
 			owner.flash_fullscreen("redflash1")
@@ -297,38 +273,29 @@
 
 	if(owner && updating_health)
 		owner.updatehealth()
-		if(stamina > DAMAGE_PRECISION)
-			owner.update_stamina()
-			owner.stam_regen_start_time = world.time + STAMINA_REGEN_BLOCK_TIME
-			. = TRUE
-	consider_processing()
+
 	update_disabled()
 	return update_bodypart_damage_state() || .
 
 //Heals brute and burn damage for the organ. Returns 1 if the damage-icon states changed at all.
 //Damage cannot go below zero.
 //Cannot remove negative damage (i.e. apply damage)
-/obj/item/bodypart/proc/heal_damage(brute, burn, stamina, required_status, updating_health = TRUE)
+/obj/item/bodypart/proc/heal_damage(brute, burn, required_status, updating_health = TRUE)
 	update_HP()
 	if(required_status && (status != required_status)) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
 
 	brute_dam	= round(max(brute_dam - brute, 0), DAMAGE_PRECISION)
 	burn_dam	= round(max(burn_dam - burn, 0), DAMAGE_PRECISION)
-	stamina_dam = round(max(stamina_dam - stamina, 0), DAMAGE_PRECISION)
 	if(owner && updating_health)
 		owner.updatehealth()
-	consider_processing()
 	update_disabled()
 	//cremation_progress = min(0, cremation_progress - ((brute_dam + burn_dam)*(100/max_damage)))
 	return update_bodypart_damage_state()
 
 //Returns total damage.
-/obj/item/bodypart/proc/get_damage(include_stamina = FALSE)
-	var/total = brute_dam + burn_dam
-	if(include_stamina)
-		total = max(total, stamina_dam)
-	return total
+/obj/item/bodypart/proc/get_damage()
+	return brute_dam + burn_dam
 
 //Checks disabled status thresholds
 /obj/item/bodypart/proc/update_disabled()
@@ -456,10 +423,7 @@
 		else
 			species_color = ""
 
-		if(!dropping_limb && H.dna.check_mutation(HULK))
-			mutation_color = "00aa00"
-		else
-			mutation_color = ""
+		mutation_color = ""
 
 		dmg_overlay_type = S.damage_overlay_type
 
@@ -577,8 +541,6 @@
 	body_part = CHEST
 	px_x = 0
 	px_y = 0
-	stam_damage_coeff = 1
-	max_stamina_damage = 120
 	var/obj/item/cavity_item
 	aux_zone = "boob"
 	aux_layer = BODYPARTS_LAYER
@@ -587,6 +549,9 @@
 	offset = OFFSET_ARMOR
 	offset_f = OFFSET_ARMOR_F
 	dismemberable = FALSE
+
+	grid_width = 64
+	grid_height = 96
 
 /obj/item/bodypart/chest/set_disabled(new_disabled)
 	. = ..()
@@ -622,7 +587,6 @@
 	icon_state = "default_human_l_arm"
 	attack_verb = list("slapped", "punched")
 	max_damage = 100
-	max_stamina_damage = 50
 	body_zone = BODY_ZONE_L_ARM
 	body_part = ARM_LEFT
 	aux_zone = BODY_ZONE_PRECISE_L_HAND
@@ -688,7 +652,6 @@
 	held_index = 2
 	px_x = 6
 	px_y = 0
-	max_stamina_damage = 50
 	subtargets = list(BODY_ZONE_PRECISE_R_HAND)
 	grabtargets = list(BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_R_ARM)
 	offset = OFFSET_GLOVES
@@ -742,7 +705,6 @@
 	body_damage_coeff = 1
 	px_x = -2
 	px_y = 12
-	max_stamina_damage = 50
 	aux_zone = "l_leg_above"
 	aux_layer = LEG_PART_LAYER
 	subtargets = list(BODY_ZONE_PRECISE_L_FOOT)
@@ -792,7 +754,6 @@
 	body_damage_coeff = 1
 	px_x = 2
 	px_y = 12
-	max_stamina_damage = 50
 	aux_zone = "r_leg_above"
 	aux_layer = LEG_PART_LAYER
 	subtargets = list(BODY_ZONE_PRECISE_R_FOOT)

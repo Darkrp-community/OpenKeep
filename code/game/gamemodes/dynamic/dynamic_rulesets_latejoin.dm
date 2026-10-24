@@ -13,11 +13,11 @@
 			candidates.Remove(P)
 			continue
 		if(antag_flag_override)
-			if(!(antag_flag_override in P.client.prefs.be_special) || is_banned_from(P.ckey, list(antag_flag_override, ROLE_SYNDICATE)))
+			if(!(antag_flag_override in P.client.prefs.be_special))
 				candidates.Remove(P)
 				continue
 		else
-			if(!(antag_flag in P.client.prefs.be_special) || is_banned_from(P.ckey, list(antag_flag, ROLE_SYNDICATE)))
+			if(!(antag_flag in P.client.prefs.be_special))
 				candidates.Remove(P)
 				continue
 		if (P.mind.assigned_role in restricted_roles) // Does their job allow for it?
@@ -48,23 +48,3 @@
 	M.mind.special_role = antag_flag
 	M.mind.add_antag_datum(antag_datum)
 	return TRUE
-
-//////////////////////////////////////////////
-//                                          //
-//           SYNDICATE TRAITORS             //
-//                                          //
-//////////////////////////////////////////////
-
-/datum/dynamic_ruleset/latejoin/infiltrator
-	name = "Syndicate Infiltrator"
-	antag_datum = /datum/antagonist/traitor
-	antag_flag = ROLE_TRAITOR
-	protected_roles = list("Security Officer", "Warden", "Head of Personnel", "Detective", "Head of Security", "Captain")
-	restricted_roles = list("AI","Cyborg")
-	required_candidates = 1
-	weight = 7
-	cost = 5
-	requirements = list(40,30,20,10,10,10,10,10,10,10)
-	high_population_requirement = 10
-	repeatable = TRUE
-	flags = TRAITOR_RULESET

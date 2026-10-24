@@ -48,7 +48,7 @@
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	neck = /obj/item/clothing/neck/roguetown/bevor
 	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
-	backpack_contents = list(/obj/item/keyring/inquisitor = 1)
+	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1)
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Ritter"
@@ -74,11 +74,11 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.change_stat("intelligence", 2)
-		H.change_stat("strength", 1)
-		H.change_stat("perception", 2)
-		H.change_stat("speed", 2)
-		H.change_stat("endurance", 1)
+		H.change_stat(STATKEY_INT, 2)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_PER, 2)
+		H.change_stat(STATKEY_SPD, 2)
+		H.change_stat(STATKEY_END, 1)
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
 			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")

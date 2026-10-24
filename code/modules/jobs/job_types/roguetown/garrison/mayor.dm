@@ -39,7 +39,7 @@
 	cloak = /obj/item/clothing/cloak/half
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
 	belt = /obj/item/storage/belt/rogue/leather/black
-	beltr = /obj/item/keyring/mayor
+	beltr = /obj/item/storage/keyring/mayor
 	beltl = /obj/item/flashlight/flare/torch/lantern
 	r_hand = /obj/item/rogueweapon/polearm/woodstaff/quarterstaff
 	if(H.mind)
@@ -58,11 +58,11 @@
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
-			H.change_stat("strength", 1)
-			H.change_stat("perception", 1)
-			H.change_stat("intelligence", 2)
+			H.change_stat(STATKEY_STR, 1)
+			H.change_stat(STATKEY_PER, 1)
+			H.change_stat(STATKEY_INT, 2)
 		else
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("intelligence", 2)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_INT, 2)
 	H.verbs |= /mob/proc/haltyell

@@ -227,18 +227,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(radio_return & NOPASS)
 		return 1
 
-	//No screams in space, unless you're next to someone.
-	var/turf/T = get_turf(src)
-	var/datum/gas_mixture/environment = T.return_air()
-	var/pressure = (environment)? environment.return_pressure() : 0
-	if(pressure < SOUND_MINIMUM_PRESSURE)
-		message_range = 1
-
-	if(pressure < ONE_ATMOSPHERE*0.4) //Thin air, let's italicise the message
-		spans |= SPAN_ITALICS
-
-
-	send_speech(message, message_range, src, bubble_type, spans, language, message_mode)
+	send_speech(message, message_range, src, bubble_type, spans, language, message_mode, original_message)
 
 	if(succumbed)
 		succumb(1)
@@ -250,6 +239,18 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(!message_language)
 		return
 	return message_language.spans
+
+// Whether the mob can see runechat from the speaker, assuming he will see his message on the text box
+/mob/proc/can_see_runechat(atom/movable/speaker)
+	if(!client || !client.prefs)
+		return FALSE
+	if(!client.prefs.chat_on_map)
+		return FALSE
+	if(stat >= UNCONSCIOUS)
+		return FALSE
+	if(!ismob(speaker) && !client.prefs.see_chat_non_mob)
+		return FALSE
+	return TRUE
 
 /mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode)
 	. = ..()
@@ -266,24 +267,37 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		deaf_type = 2 // Since you should be able to hear myself without looking
 
 	// Create map text prior to modifying message for goonchat
-	if(client?.prefs)
-		if (client?.prefs.chat_on_map && stat != UNCONSCIOUS && (client.prefs.see_chat_non_mob || ismob(speaker)) && can_hear())
-			create_chat_message(speaker, message_language, raw_message, spans, message_mode)
+	if(can_see_runechat(speaker) && can_hear())
+		create_chat_message(speaker, message_language, raw_message, spans, message_mode)
 	// Recompose message for AI hrefs, language incomprehension.
 	message = compose_message(speaker, message_language, raw_message, radio_freq, spans, message_mode)
 	show_message(message, MSG_AUDIBLE, deaf_message, deaf_type)
 	return message
 
-/mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode)
+/mob/living/send_speech(message, message_range = 6, obj/source = src, bubble_type = bubble_icon, list/spans, datum/language/message_language=null, message_mode, original_message)
 	var/static/list/eavesdropping_modes = list(MODE_WHISPER = TRUE, MODE_WHISPER_CRIT = TRUE)
 	var/eavesdrop_range = 0
 	var/Zs_too = FALSE
+	var/Zs_all = FALSE
+	var/Zs_yell = FALSE
+	var/listener_has_ceiling	= TRUE
+	var/speaker_has_ceiling		= TRUE
+
+	var/turf/speaker_turf = get_turf(src)
+	var/turf/speaker_ceiling = get_step_multiz(speaker_turf, UP)
+	if(speaker_ceiling)
+		if(istransparentturf(speaker_ceiling))
+			speaker_has_ceiling = FALSE
 	if(eavesdropping_modes[message_mode])
 		eavesdrop_range = EAVESDROP_EXTRA_RANGE
 	if(message_mode != MODE_WHISPER)
+		Zs_too = TRUE
 		if(say_test(message) == "2")	//CIT CHANGE - ditto
+			message_range += 5
+			Zs_yell = TRUE
+		if(say_test(message) == "3")	//Big "!!" shout
 			message_range += 10
-			Zs_too = TRUE
+			Zs_all = TRUE
 	var/list/listening = get_hearers_in_view(message_range+eavesdrop_range, source)
 	var/list/the_dead = list()
 //	var/list/yellareas	//CIT CHANGE - adds the ability for yelling to penetrate walls and echo throughout areas
@@ -307,7 +321,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 					continue
 				if(!(M.client.prefs.chat_toggles & CHAT_GHOSTEARS)) //they're talking normally and we have hearing at any range off
 					continue
-		if(!is_in_zweb(src.z,M.z))
+		if(!is_in_zweb(src.z,M.z) && !(M.client.prefs.chat_toggles & CHAT_GHOSTEARS))
 			continue
 		listening |= M
 		the_dead[M] = TRUE
@@ -321,13 +335,45 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/rendered = compose_message(src, message_language, message, , spans, message_mode)
 	for(var/_AM in listening)
 		var/atom/movable/AM = _AM
-		if(!Zs_too && !isobserver(AM))
+		var/turf/listener_turf = get_turf(AM)
+		var/turf/listener_ceiling = get_step_multiz(listener_turf, UP)
+		if(listener_ceiling)
+			listener_has_ceiling = TRUE
+			if(istransparentturf(listener_ceiling))
+				listener_has_ceiling = FALSE
+		if((!Zs_too && !isobserver(AM)) || message_mode == MODE_WHISPER)
 			if(AM.z != src.z)
 				continue
+		if(Zs_too && AM.z != src.z && !Zs_all)
+			if(!Zs_yell)
+				if(listener_turf.z < speaker_turf.z && listener_has_ceiling)	//Listener is below the speaker and has a ceiling above them
+					continue
+				if(listener_turf.z > speaker_turf.z && speaker_has_ceiling)		//Listener is above the speaker and the speaker has a ceiling above
+					continue
+				if(listener_has_ceiling && speaker_has_ceiling)	//Both have a ceiling, on different z-levels -- no hearing at all
+					continue
+			else
+				if(abs((listener_turf.z - speaker_turf.z)) >= 2)	//We're yelling with only one "!", and the listener is 2 or more z levels above or below us.
+					continue
+			var/listener_obstructed = TRUE
+			var/speaker_obstructed = TRUE
+			if(src != AM && !Zs_yell)	//We always hear ourselves. Zs_yell will allow a "!" shout to bypass walls one z level up or below.)	//We always hear ourselves.
+				if(!speaker_has_ceiling && isliving(AM))
+					var/mob/living/M = AM
+					for(var/mob/living/MH in viewers(world.view, speaker_ceiling))
+						if(M == MH && MH.z == speaker_ceiling?.z)
+							speaker_obstructed = FALSE
+
+				if(!listener_has_ceiling)
+					for(var/mob/living/ML in viewers(world.view, listener_ceiling))
+						if(ML == src && ML.z == listener_ceiling?.z)
+							listener_obstructed = FALSE
+				if(listener_obstructed && speaker_obstructed)
+					continue
 		if(eavesdrop_range && get_dist(source, AM) > message_range && !(the_dead[AM]))
-			AM.Hear(eavesrendered, src, message_language, eavesdropping, , spans, message_mode)
+			AM.Hear(eavesrendered, src, message_language, eavesdropping, , spans, message_mode, original_message)
 		else
-			AM.Hear(rendered, src, message_language, message, , spans, message_mode)
+			AM.Hear(rendered, src, message_language, message, , spans, message_mode, original_message)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_LIVING_SAY_SPECIAL, src, message)
 
 	//speech bubble

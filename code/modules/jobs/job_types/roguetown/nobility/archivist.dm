@@ -32,7 +32,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights/black
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/keyring/archivist
+	beltl = /obj/item/storage/keyring/archivist
 	backl = /obj/item/storage/backpack/rogue/satchel
 	neck = /obj/item/clothing/neck/roguetown/psycross/noc
 	backpack_contents = list(/obj/item/literary/apprentice = 1)
@@ -54,9 +54,9 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
-		H.change_stat("strength", -1)
-		H.change_stat("intelligence", 8)
-		H.change_stat("constitution", -1)
-		H.change_stat("endurance", -1)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, -1)
+		H.change_stat(STATKEY_INT, 8)
+		H.change_stat(STATKEY_CON, -1)
+		H.change_stat(STATKEY_END, -1)
+		H.change_stat(STATKEY_SPD, -1)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

@@ -434,7 +434,7 @@
 /obj/item/clothing/under/roguetown/trou/tobi/dragonslayer
 	desc = "Baggy pants of abyssariad design. This one is coated in asbestos, and may be just as dangerous."
 	color = "#3d4681"
-	armor = list("melee" = 20, "bullet" = 0, "laser" = 75,"energy" = 75, "bomb" = 75, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 30, "slash" = 60, "stab" = 60, "pierce" = 50, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/under/roguetown/trou/leather/fur
 	name = "thick tobi"
@@ -449,7 +449,6 @@
 	..()
 
 /obj/item/clothing/under/roguetown/trou/leather/fur/dragonslayer
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	color = CLOTHING_RED_OCHRE
 
@@ -493,7 +492,7 @@
 	icon_state = "marauder_leg"
 	item_state = "marauder_leg"
 	sewrepair = FALSE
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 60, "slash" = 60, "stab" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 200
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	armor_class = AC_MEDIUM
@@ -522,7 +521,7 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/pants.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_pants.dmi'
 	max_integrity = 100
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 70, "slash" = 80, "stab" = 80, "pierce" = 50, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CHOP, BCLASS_BLUNT)
 	body_parts_covered = LEGS|FEET
 	gender = PLURAL

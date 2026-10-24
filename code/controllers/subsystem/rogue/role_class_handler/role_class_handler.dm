@@ -38,7 +38,7 @@ SUBSYSTEM_DEF(role_class_handler)
 
 
 /*
-	We init and build the retard azz listszz
+	We init and build the lists
 */
 /datum/controller/subsystem/role_class_handler/Initialize()
 	build_dumbass_category_lists()
@@ -69,7 +69,7 @@ SUBSYSTEM_DEF(role_class_handler)
 	init_subtypes(/datum/advclass, all_classes) // Init all the classes
 	sorted_class_categories[CTAG_ALLCLASS] = all_classes
 
-	//Time to sort these retards, and sort them we shall.
+	//Time to sort these outsiders, and sort them we shall.
 	for(var/datum/advclass/retard_datum in all_classes)
 		for(var/ctag in retard_datum.category_tags)
 			if(!sorted_class_categories[ctag]) // New cat

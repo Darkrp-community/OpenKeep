@@ -28,7 +28,7 @@
 	inherent_traits = list(TRAIT_NOMOBSWAP)
 	default_features = list("mcolor" = "FFF", "ears" = "Kappae", "tail_human" = "Kappav")
 	use_skintones = 1
-	skinned_type = /obj/item/stack/sheet/animalhide/human
+	skinned_type = /obj/item/stack/sheets/hides/human
 	disliked_food = NONE
 	liked_food = NONE
 	use_f = TRUE

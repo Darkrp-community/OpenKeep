@@ -28,7 +28,7 @@
 	icon_state = "blackboots"
 	item_state = "blackboots"
 	sellprice = 10
-
+	armor = list("crush" = 15, "slash" = 15, "stab" = 15,  "pierce" = 5, "fire" = 0, "acid" = 0)
 	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD
@@ -42,7 +42,7 @@
 	icon_state = "nobleboots"
 	item_state = "nobleboots"
 	sellprice = 10
-
+	armor = list("crush" = 20, "slash" = 20, "stab" = 20,  "pierce" = 15, "fire" = 0, "acid" = 0)
 	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STRONGER //Durable.
@@ -55,7 +55,7 @@
 	icon_state = "shortboots"
 	item_state = "shortboots"
 
-	armor = ARMOR_LEATHER_WORST
+	armor = ARMOR_LEATHER_BAD
 	prevent_crits = MINOR_CRITICALS
 	max_integrity = INTEGRITY_STANDARD
 
@@ -164,7 +164,7 @@
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	break_sound = 'sound/foley/breaksound.ogg'
 	sellprice = 25
-
+	armor = list("crush" = 100, "slash" = 100, "stab" = 100,  "pierce" = 80, "fire" = 0, "acid" = 0)
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE
 	prevent_crits = ALL_EXCEPT_STAB
@@ -176,7 +176,7 @@
 	item_state = "soldierboots"
 	desc = "Lightly armored boots made from iron offering protection against both melee and ranged attacks."
 	sellprice = 20
-
+	armor = list("crush" = 80, "slash" = 80, "stab" = 80,  "pierce" = 60, "fire" = 0, "acid" = 0)
 	armor_class = AC_MEDIUM
 	armor = ARMOR_PLATE_BAD
 	prevent_crits = ALL_EXCEPT_STAB
@@ -191,7 +191,7 @@
 	item_state = "leatherboots"
 	resistance_flags = FLAMMABLE
 	sellprice = 10
-
+	armor = list("crush" = 20, "slash" = 20, "stab" = 20,  "pierce" = 10, "fire" = 0, "acid" = 0)
 	armor = ARMOR_LEATHER
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_STANDARD //Slightly thicker, less durable than riding or noble boots.
@@ -203,7 +203,7 @@
 	icon_state = "furlinedboots"
 	item_state = "furlinedboots"
 	sewrepair = TRUE
-
+	armor = list("crush" = 30, "slash" = 10, "stab" = 20,  "pierce" = 0, "fire" = 0, "acid" = 0)
 	armor = ARMOR_LEATHER
 	prevent_crits = ALL_EXCEPT_STAB
 	max_integrity = INTEGRITY_STRONG
@@ -216,7 +216,7 @@
 	item_state = "furlinedanklets"
 	sewrepair = TRUE
 	is_barefoot = TRUE
-
+	armor = list("crush" = 20, "slash" = 20, "stab" = 5,  "pierce" = 0, "fire" = 0, "acid" = 0)
 	armor = ARMOR_LEATHER_BAD
 	prevent_crits = CUT_AND_MINOR_CRITS
 	max_integrity = INTEGRITY_POOR
@@ -231,7 +231,7 @@
 	item_state = "furlinedanklets"
 	is_barefoot = TRUE
 	sewrepair = TRUE
-
+	armor = list("crush" = 5, "slash" = 5, "stab" = 5,  "pierce" = 0, "fire" = 0, "acid" = 0) //Thinks its fair for a piece of cloth and fiber.
 	armor = ARMOR_PADDED_BAD
 	prevent_crits = MINOR_CRITICALS
 	max_integrity = INTEGRITY_POOR
@@ -250,7 +250,7 @@
 	item_state = "grenzelboots"
 	sleeved = 'icons/roguetown/clothing/onmob/helpers/stonekeep_merc.dmi'
 	sellprice = 20
-
+	armor = list("crush" = 25, "slash" = 25, "stab" = 25,  "pierce" = 15, "fire" = 0, "acid" = 0)
 	armor = ARMOR_LEATHER_GOOD
 	prevent_crits = ALL_EXCEPT_CHOP_AND_STAB
 	max_integrity = INTEGRITY_STRONG
@@ -268,7 +268,7 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 	clothing_flags = CANT_SLEEP_IN
 	sellprice = 30
-
+	armor = list("crush" = 100, "slash" = 100, "stab" = 100,  "pierce" = 100, "fire" = 0, "acid" = 0)
 	armor_class = AC_HEAVY
 	armor = ARMOR_PLATE_GOOD
 	prevent_crits = ALL_EXCEPT_STAB
@@ -381,12 +381,11 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 	sleeved = 'icons/roguetown/kaizoku/clothing/feet.dmi'
 	desc = "A tabi reinforced in dragon bones and asbestos, making it fire immune. Not very protective against physical damage, but still fairly durable."
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 0,"energy" = 0, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
+	armor = list("crush" = 100, "slash" = 100, "stab" = 100,  "pierce" = 80, "fire" = 100, "acid" = 0)
 	max_integrity = 250
 	armor_class = AC_MEDIUM
 	heat_protection = LEGS|FEET
 	body_parts_covered = LEGS|FEET
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/shoes/roguetown/sandals/geta

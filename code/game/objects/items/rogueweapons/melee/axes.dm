@@ -27,6 +27,7 @@
 	penfactor = AP_AXE_CHOP
 	swingdelay = 1
 	misscost = 5
+	item_damage_type = "slash"
 
 /datum/intent/axe/chop/charged //Charged chop for the battleaxe and bearded axe.
 	name = "overhead chop"
@@ -54,6 +55,7 @@
 	penfactor = AP_AXE_CUT
 	swingdelay = 0
 	misscost = 5
+	item_damage_type = "slash"
 
 /*--------------\
 | Impale intent |	big AP
@@ -71,7 +73,7 @@
 	penfactor = AP_HEAVYAXE_STAB
 	swingdelay = 1
 	misscost = 10
-
+	item_damage_type = "stab"
 /datum/intent/pick
 	penfactor = AP_PICK //This is used in some actual weapons, so giving it some AP is likely wise. Hefty swing delay means it is impractical in combat.
 	name = "pick"

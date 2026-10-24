@@ -1,6 +1,5 @@
 /obj/structure
 	icon = 'icons/obj/structures.dmi'
-	pressure_resistance = 8
 	max_integrity = 300
 	interaction_flags_atom = INTERACT_ATOM_ATTACK_HAND | INTERACT_ATOM_UI_INTERACT
 	layer = BELOW_OBJ_LAYER
@@ -17,7 +16,7 @@
 
 /obj/structure/Initialize()
 	if (!armor)
-		armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+		armor = list("crush" = 0, "slash" = 0, "stab" = 0, "pierce" = 0, "fire" = 50, "acid" = 50)
 	. = ..()
 	if(smooth)
 		queue_smooth(src)
@@ -34,7 +33,7 @@
 			var/mob/living/carbon/human/H = AM
 			if(H.dir == get_dir(H,src) && H.m_intent == MOVE_INTENT_RUN && !H.lying)
 				H.Immobilize(10)
-				H.apply_damage(15, BRUTE, "chest", H.run_armor_check("chest", "melee", damage = 15))
+				H.apply_damage(15, BRUTE, "chest", H.run_armor_check("chest", "crush", damage = 15))
 				H.toggle_rogmove_intent(MOVE_INTENT_WALK, TRUE)
 				playsound(src, "genblunt", 100, TRUE)
 				H.visible_message("<span class='warning'>[H] runs into [src]!</span>", "<span class='warning'>I run into [src]!</span>")
@@ -116,12 +115,8 @@
 		adjusted_climb_time *= 2
 	if(!ishuman(user))
 		adjusted_climb_time = 0 //simple mobs instantly climb
-	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
-		adjusted_climb_time *= 0.8
 	adjusted_climb_time -= user.STASPD * 2
 	adjusted_climb_time = max(adjusted_climb_time, 0)
-//	if(adjusted_climb_time)
-//		user.visible_message("<span class='warning'>[user] starts climbing onto [src].</span>", "<span class='warning'>I start climbing onto [src]...</span>")
 	structureclimber = user
 	if(do_mob(user, user, adjusted_climb_time))
 		if(src.loc) //Checking if structure has been destroyed
@@ -129,8 +124,6 @@
 				user.visible_message("<span class='warning'>[user] climbs onto [src].</span>", \
 									"<span class='notice'>I climb onto [src].</span>")
 				log_combat(user, src, "climbed onto")
-//				if(climb_offset)
-//					user.set_mob_offsets("structure_climb", _x = 0, _y = climb_offset)
 				if(climb_stun)
 					user.Stun(climb_stun)
 				if(climb_sound)

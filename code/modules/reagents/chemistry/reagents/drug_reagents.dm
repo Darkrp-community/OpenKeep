@@ -159,56 +159,6 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/krokodil
-	name = "Krokodil"
-	description = "Cools and calms you down. If overdosed it will deal significant Brain and Toxin damage. If addicted it will begin to deal fatal amounts of Brute damage as the subject's skin falls off."
-	reagent_state = LIQUID
-	color = "#0064B4"
-	overdose_threshold = 20
-	addiction_threshold = 15
-
-
-/datum/reagent/drug/krokodil/on_mob_life(mob/living/carbon/M)
-	var/high_message = pick("You feel calm.", "You feel collected.", "You feel like you need to relax.")
-	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smacked out", /datum/mood_event/narcotic_heavy, name)
-	..()
-
-/datum/reagent/drug/krokodil/overdose_process(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.25*REM)
-	M.adjustToxLoss(0.25*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/drug/krokodil/addiction_act_stage1(mob/living/M)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2*REM)
-	M.adjustToxLoss(2*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/drug/krokodil/addiction_act_stage2(mob/living/M)
-	if(prob(25))
-		to_chat(M, "<span class='danger'>My skin feels loose...</span>")
-	..()
-
-/datum/reagent/drug/krokodil/addiction_act_stage3(mob/living/M)
-	if(prob(25))
-		to_chat(M, "<span class='danger'>My skin starts to peel away...</span>")
-	M.adjustBruteLoss(3*REM, 0)
-	..()
-	. = 1
-
-/datum/reagent/drug/krokodil/addiction_act_stage4(mob/living/carbon/human/M)
-	CHECK_DNA_AND_SPECIES(M)
-	if(!istype(M.dna.species, /datum/species/krokodil_addict))
-		to_chat(M, "<span class='danger'>My skin falls off easily!</span>")
-		M.adjustBruteLoss(50*REM, 0) // holy shit my skin just FELL THE FUCK OFF
-		M.set_species(/datum/species/krokodil_addict)
-	else
-		M.adjustBruteLoss(5*REM, 0)
-	..()
-	. = 1
 
 /datum/reagent/drug/methamphetamine
 	name = "Methamphetamine"
@@ -237,7 +187,6 @@
 	M.AdjustUnconscious(-40, FALSE)
 	M.AdjustParalyzed(-40, FALSE)
 	M.AdjustImmobilized(-40, FALSE)
-	M.adjustStaminaLoss(-2, 0)
 	M.Jitter(2)
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, rand(1,4))
 	if(prob(5))
@@ -294,106 +243,6 @@
 	..()
 	. = 1
 
-/datum/reagent/drug/bath_salts
-	name = "Bath Salts"
-	description = "Makes you impervious to stuns and grants a stamina regeneration buff, but you will be a nearly uncontrollable tramp-bearded raving lunatic."
-	reagent_state = LIQUID
-	color = "#FAFAFA"
-	overdose_threshold = 20
-	addiction_threshold = 10
-	taste_description = "salt" // because they're bathsalts?
-	var/datum/brain_trauma/special/psychotic_brawling/bath_salts/rage
-
-/datum/reagent/drug/bath_salts/on_mob_metabolize(mob/living/L)
-	..()
-	ADD_TRAIT(L, TRAIT_STUNIMMUNE, type)
-	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-	if(iscarbon(L))
-		var/mob/living/carbon/C = L
-		rage = new()
-		C.gain_trauma(rage, TRAUMA_RESILIENCE_ABSOLUTE)
-
-/datum/reagent/drug/bath_salts/on_mob_end_metabolize(mob/living/L)
-	REMOVE_TRAIT(L, TRAIT_STUNIMMUNE, type)
-	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
-	if(rage)
-		QDEL_NULL(rage)
-	..()
-
-/datum/reagent/drug/bath_salts/on_mob_life(mob/living/carbon/M)
-	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
-	if(prob(5))
-		to_chat(M, "<span class='notice'>[high_message]</span>")
-	SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "salted", /datum/mood_event/stimulant_heavy, name)
-	M.adjustStaminaLoss(-5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 4)
-	M.hallucination += 5
-	if((M.mobility_flags & MOBILITY_MOVE) && !ismovableatom(M.loc))
-		step(M, pick(GLOB.cardinals))
-		step(M, pick(GLOB.cardinals))
-	..()
-	. = 1
-
-/datum/reagent/drug/bath_salts/overdose_process(mob/living/M)
-	M.hallucination += 5
-	if((M.mobility_flags & MOBILITY_MOVE) && !ismovableatom(M.loc))
-		for(var/i in 1 to 8)
-			step(M, pick(GLOB.cardinals))
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
-	if(prob(33))
-		M.drop_all_held_items()
-	..()
-
-/datum/reagent/drug/bath_salts/addiction_act_stage1(mob/living/M)
-	M.hallucination += 10
-	if((M.mobility_flags & MOBILITY_MOVE) && !ismovableatom(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.Jitter(5)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(20))
-		M.emote(pick("twitch","drool","moan"))
-	..()
-
-/datum/reagent/drug/bath_salts/addiction_act_stage2(mob/living/M)
-	M.hallucination += 20
-	if((M.mobility_flags & MOBILITY_MOVE) && !ismovableatom(M.loc))
-		for(var/i = 0, i < 8, i++)
-			step(M, pick(GLOB.cardinals))
-	M.Jitter(10)
-	M.Dizzy(10)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(30))
-		M.emote(pick("twitch","drool","moan"))
-	..()
-
-/datum/reagent/drug/bath_salts/addiction_act_stage3(mob/living/M)
-	M.hallucination += 30
-	if((M.mobility_flags & MOBILITY_MOVE) && !ismovableatom(M.loc))
-		for(var/i = 0, i < 12, i++)
-			step(M, pick(GLOB.cardinals))
-	M.Jitter(15)
-	M.Dizzy(15)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(40))
-		M.emote(pick("twitch","drool","moan"))
-	..()
-
-/datum/reagent/drug/bath_salts/addiction_act_stage4(mob/living/carbon/human/M)
-	M.hallucination += 30
-	if((M.mobility_flags & MOBILITY_MOVE) && !ismovableatom(M.loc))
-		for(var/i = 0, i < 16, i++)
-			step(M, pick(GLOB.cardinals))
-	M.Jitter(50)
-	M.Dizzy(50)
-	M.adjustToxLoss(5, 0)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10)
-	if(prob(50))
-		M.emote(pick("twitch","drool","moan"))
-	..()
-	. = 1
-
 /datum/reagent/drug/aranesp
 	name = "Aranesp"
 	description = "Amps you up, gets you going, and rapidly restores stamina damage. Side effects include breathlessness and toxicity."
@@ -404,7 +253,6 @@
 	var/high_message = pick("You feel amped up.", "You feel ready.", "You feel like you can push it to the limit.")
 	if(prob(5))
 		to_chat(M, "<span class='notice'>[high_message]</span>")
-	M.adjustStaminaLoss(-18, 0)
 	M.adjustToxLoss(0.5, 0)
 	if(prob(50))
 		M.losebreath++
@@ -526,7 +374,6 @@
 		M.emote(pick("twitch","drool"))
 	if(prob(20))
 		M.losebreath++
-		M.adjustStaminaLoss(4, 0)
 	if(prob(15))
 		M.adjustToxLoss(2, 0)
 	..()

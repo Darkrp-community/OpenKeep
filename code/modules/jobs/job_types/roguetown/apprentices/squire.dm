@@ -27,7 +27,7 @@
 /datum/outfit/job/roguetown/squire/pre_equip(mob/living/carbon/human/H)
 	..()
 	neck = /obj/item/storage/belt/rogue/pouch
-	beltl = /obj/item/keyring/mguard
+	beltl = /obj/item/storage/keyring/mguard
 	backr = /obj/item/storage/backpack/rogue/satchel
 	pants = /obj/item/clothing/under/roguetown/tights
 	shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
@@ -46,9 +46,9 @@
 
 	H.virginity = TRUE
 
-	H.change_stat("perception", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("speed", 1)
+	H.change_stat(STATKEY_PER, 1)
+	H.change_stat(STATKEY_CON, 1)
+	H.change_stat(STATKEY_SPD, 1)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)

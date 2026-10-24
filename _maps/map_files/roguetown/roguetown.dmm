@@ -3122,7 +3122,7 @@
 /area/rogue/indoors/town)
 "dta" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/steward,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town)
@@ -8939,7 +8939,7 @@
 /obj/structure/table/wood{
 	icon_state = "tablewood1"
 	},
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/walls,
 /turf/open/floor/rogue/wood,
@@ -10153,7 +10153,7 @@
 /area/rogue/indoors/town/manor)
 "kVy" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
 /obj/item/roguekey/manor,
@@ -17567,7 +17567,7 @@
 "teB" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/reagent_containers/glass/bottle/rogue/wine,
-/obj/item/keyring/hand,
+/obj/item/storage/keyring/hand,
 /turf/open/floor/rogue/carpet,
 /area/rogue/indoors/town/manor)
 "teG" = (
@@ -19820,7 +19820,7 @@
 /area/rogue/indoors/town)
 "vrM" = (
 /obj/structure/closet/crate/drawer,
-/obj/item/keyring/inquisitor,
+/obj/item/storage/keyring/inquisitor,
 /turf/open/floor/rogue/ruinedwood/darker,
 /area/rogue/indoors/town/church)
 "vss" = (
@@ -21031,7 +21031,7 @@
 "wGM" = (
 /obj/structure/closet/crate/roguecloset/inn,
 /obj/item/reagent_containers/powder/spice,
-/obj/item/keyring,
+/obj/item/storage/storage/keyring,
 /obj/item/roguekey/merchant,
 /obj/item/clothing/suit/roguetown/shirt/tunic/random,
 /turf/open/floor/rogue/wood,
@@ -21293,7 +21293,7 @@
 "wWN" = (
 /obj/structure/closet/crate/drawer,
 /obj/item/reagent_containers/glass/bottle/rogue/manapot,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "wXf" = (

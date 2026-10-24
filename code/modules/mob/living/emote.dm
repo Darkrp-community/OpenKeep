@@ -2,7 +2,7 @@
 /* EMOTE DATUMS */
 /datum/emote/living
 	mob_type_allowed_typecache = /mob/living
-	mob_type_blacklist_typecache = list(/mob/living/simple_animal/slime, /mob/living/brain)
+	mob_type_blacklist_typecache = list(/mob/living/brain)
 
 
 
@@ -413,8 +413,7 @@
 	. = ..()
 	if(prob(50))
 		danceanim(user)
-	else
-		dance_rotate(user, CALLBACK(user, TYPE_PROC_REF(/mob, dance_flip)))
+
 /datum/emote/living/dance/proc/danceanim(mob/living/user, repeats = 20)
 	var/start_y = user.pixel_y
 	var/offset = 4  // Height of the bop
@@ -1077,7 +1076,7 @@
 		if(C.silent || !C.can_speak_vocal())
 			message = "makes a muffled scream!"
 		if(intentional)
-			if(!C.rogfat_add(3)) // I guess this is here to reduce spamming? Or some other concept? Reduced from 10
+			if(!C.adjust_stam(3)) // I guess this is here to reduce spamming? Or some other concept? Reduced from 10
 				to_chat(C, "<span class='warning'>I try to scream but my voice fails me.</span>")
 				. = FALSE
 

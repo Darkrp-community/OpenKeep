@@ -31,10 +31,10 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 3)
-			H.change_stat("intelligence", 1)
-			H.change_stat("speed", -2)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 3)
+			H.change_stat(STATKEY_INT, 1)
+			H.change_stat(STATKEY_SPD, -2)
 
 		r_hand = /obj/item/rogueweapon/polearm/halberd/bisento //Bisento cannot be stored in the back. Sometimes not even spawning. So I gave them an Wakizashi too in case the worst happens.
 		pants = /obj/item/clothing/under/roguetown/trou/leather/fur
@@ -68,11 +68,11 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 5, TRUE)
 
-			H.change_stat("strength", 3)
-			H.change_stat("endurance", 2)
-			H.change_stat("constitution", 2)
-			H.change_stat("intelligence", -1) // To justify +3 STR to wield their sword
-			H.change_stat("speed", -1)
+			H.change_stat(STATKEY_STR, 3)
+			H.change_stat(STATKEY_END, 2)
+			H.change_stat(STATKEY_CON, 2)
+			H.change_stat(STATKEY_INT, -1) // To justify +3 STR to wield their sword
+			H.change_stat(STATKEY_SPD, -1)
 
 		backr = /obj/item/storage/backpack/rogue/satchel
 		backl = /obj/item/rogueweapon/sword/dragonslayer
@@ -109,11 +109,11 @@
 			H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-			H.change_stat("strength", 2)
-			H.change_stat("speed", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("perception", -2) //Using a urn on the head, struggling for years to understand how the magic reflected light functions surely can't lead to a good sight.
-			H.change_stat("intelligence", -1)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_SPD, 2)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_PER, -2) //Using a urn on the head, struggling for years to understand how the magic reflected light functions surely can't lead to a good sight.
+			H.change_stat(STATKEY_INT, -1)
 			to_chat(H, "<span class='warning'>You are a member of the abyssal windrunners, scarred by hellfire and face-forged in abyssal urn. You defy the limits of flesh, faith and speed shields your flesh when armor will not.")
 		backl = /obj/item/storage/backpack/rogue/satchel
 		head = /obj/item/clothing/head/roguetown/helmet/heavy/bronzepot // cursed item.

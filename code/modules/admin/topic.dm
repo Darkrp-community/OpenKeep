@@ -103,51 +103,6 @@
 			return
 		SSticker.mode.admin_panel()
 
-	else if(href_list["call_shuttle"])
-		if(!check_rights(R_ADMIN))
-			return
-
-
-		switch(href_list["call_shuttle"])
-			if("1")
-				if(EMERGENCY_AT_LEAST_DOCKED)
-					return
-				SSshuttle.emergency.request()
-				log_admin("[key_name(usr)] called the Emergency Shuttle.")
-				message_admins("<span class='adminnotice'>[key_name_admin(usr)] called the Emergency Shuttle to the station.</span>")
-
-			if("2")
-				if(EMERGENCY_AT_LEAST_DOCKED)
-					return
-				switch(SSshuttle.emergency.mode)
-					if(SHUTTLE_CALL)
-						SSshuttle.emergency.cancel()
-						log_admin("[key_name(usr)] sent the Emergency Shuttle back.")
-						message_admins("<span class='adminnotice'>[key_name_admin(usr)] sent the Emergency Shuttle back.</span>")
-					else
-						SSshuttle.emergency.cancel()
-						log_admin("[key_name(usr)] called the Emergency Shuttle.")
-						message_admins("<span class='adminnotice'>[key_name_admin(usr)] called the Emergency Shuttle to the station.</span>")
-
-
-
-	else if(href_list["edit_shuttle_time"])
-		if(!check_rights(R_SERVER))
-			return
-
-		var/timer = input("Enter new shuttle duration (seconds):","Edit Shuttle Timeleft", SSshuttle.emergency.timeLeft() ) as num|null
-		if(!timer)
-			return
-		SSshuttle.emergency.setTimer(timer*10)
-		log_admin("[key_name(usr)] edited the Emergency Shuttle's timeleft to [timer] seconds.")
-		minor_announce("The emergency shuttle will reach its destination in [round(SSshuttle.emergency.timeLeft(600))] minutes.")
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] edited the Emergency Shuttle's timeleft to [timer] seconds.</span>")
-	else if(href_list["trigger_centcom_recall"])
-		if(!check_rights(R_ADMIN))
-			return
-
-		usr.client.trigger_centcom_recall()
-
 	else if(href_list["toggle_continuous"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -271,12 +226,8 @@
 				var/mob/living/carbon/human/newmob = M.change_mob_type( /mob/living/carbon/human , null, null, delmob )
 				if(posttransformoutfit && istype(newmob))
 					newmob.equipOutfit(posttransformoutfit)
-			if("slime")
-				M.change_mob_type( /mob/living/simple_animal/slime , null, null, delmob )
 			if("monkey")
 				M.change_mob_type( /mob/living/carbon/monkey , null, null, delmob )
-			if("robot")
-				M.change_mob_type( /mob/living/silicon/robot , null, null, delmob )
 			if("cat")
 				M.change_mob_type( /mob/living/simple_animal/pet/cat , null, null, delmob )
 			if("runtime")
@@ -287,22 +238,10 @@
 				M.change_mob_type( /mob/living/simple_animal/pet/dog/corgi/Ian , null, null, delmob )
 			if("pug")
 				M.change_mob_type( /mob/living/simple_animal/pet/dog/pug , null, null, delmob )
-			if("crab")
-				M.change_mob_type( /mob/living/simple_animal/crab , null, null, delmob )
-			if("coffee")
-				M.change_mob_type( /mob/living/simple_animal/crab/Coffee , null, null, delmob )
 			if("parrot")
 				M.change_mob_type( /mob/living/simple_animal/parrot , null, null, delmob )
 			if("polyparrot")
 				M.change_mob_type( /mob/living/simple_animal/parrot/Poly , null, null, delmob )
-			if("constructarmored")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/armored , null, null, delmob )
-			if("constructbuilder")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/builder , null, null, delmob )
-			if("constructwraith")
-				M.change_mob_type( /mob/living/simple_animal/hostile/construct/wraith , null, null, delmob )
-			if("shade")
-				M.change_mob_type( /mob/living/simple_animal/shade , null, null, delmob )
 
 	else if(href_list["boot2"])
 		if(!check_rights(R_ADMIN))
@@ -990,10 +929,6 @@
 		for(var/obj/item/I in L)
 			L.dropItemToGround(I, TRUE)
 
-		if(ishuman(L))
-			var/mob/living/carbon/human/observer = L
-			observer.equip_to_slot_or_del(new /obj/item/clothing/under/suit/black(observer), SLOT_PANTS)
-			observer.equip_to_slot_or_del(new /obj/item/clothing/shoes/sneakers/black(observer), SLOT_SHOES)
 		L.Unconscious(100)
 		sleep(5)
 		L.forceMove(pick(GLOB.tdomeobserve))
@@ -1013,28 +948,6 @@
 		L.revive(full_heal = TRUE, admin_revive = TRUE)
 		message_admins("<span class='danger'>Admin [key_name_admin(usr)] healed / revived [key_name_admin(L)]!</span>")
 		log_admin("[key_name(usr)] healed / Revived [key_name(L)].")
-
-	else if(href_list["makeslime"])
-		if(!check_rights(R_SPAWN))
-			return
-
-		var/mob/living/carbon/human/H = locate(href_list["makeslime"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.")
-			return
-
-		usr.client.cmd_admin_slimeize(H)
-
-	else if(href_list["makeblob"])
-		if(!check_rights(R_SPAWN))
-			return
-
-		var/mob/living/carbon/human/H = locate(href_list["makeblob"])
-		if(!istype(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.")
-			return
-
-		usr.client.cmd_admin_blobize(H)
 
 	else if(href_list["makeanimal"])
 		if(!check_rights(R_SPAWN))
@@ -1090,12 +1003,6 @@
 		sleep(2)
 		C.jumptocoord(x,y,z)
 
-	else if(href_list["admincheckdevilinfo"])
-		if(!check_rights(R_ADMIN))
-			return
-		var/mob/M = locate(href_list["admincheckdevilinfo"])
-		output_devil_info(M)
-
 	else if(href_list["adminmoreinfo"])
 		var/mob/M = locate(href_list["adminmoreinfo"]) in GLOB.mob_list
 		if(!ismob(M))
@@ -1135,7 +1042,7 @@
 				if(DEAD)
 					status = "<font color='red'><b>Dead</b></font>"
 			health_description = "Status = [status]"
-			health_description += "<BR>Oxy: [L.getOxyLoss()] - Tox: [L.getToxLoss()] - Fire: [L.getFireLoss()] - Brute: [L.getBruteLoss()] - Clone: [L.getCloneLoss()] - Brain: [L.getOrganLoss(ORGAN_SLOT_BRAIN)] - Stamina: [L.getStaminaLoss()]"
+			health_description += "<BR>Oxy: [L.getOxyLoss()] - Tox: [L.getToxLoss()] - Fire: [L.getFireLoss()] - Brute: [L.getBruteLoss()] - Clone: [L.getCloneLoss()] - Brain: [L.getOrganLoss(ORGAN_SLOT_BRAIN)]"
 		else
 			health_description = "This mob type has no health to speak of."
 
@@ -1224,41 +1131,6 @@
 
 		src.manage_free_slots()
 
-
-	else if(href_list["adminspawncookie"])
-		if(!check_rights(R_ADMIN|R_FUN))
-			return
-
-		var/mob/living/carbon/human/H = locate(href_list["adminspawncookie"])
-		if(!ishuman(H))
-			to_chat(usr, "This can only be used on instances of type /mob/living/carbon/human.")
-			return
-		//let's keep it simple
-		//milk to plasmemes and skeletons, meat to lizards, electricity bars to ethereals, cookies to everyone else
-		var/cookiealt = /obj/item/reagent_containers/food/snacks/cookie
-		if(isskeleton(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
-		else if(isplasmaman(H))
-			cookiealt = /obj/item/reagent_containers/food/condiment/milk
-		else if(isethereal(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/energybar
-		else if(islizard(H))
-			cookiealt = /obj/item/reagent_containers/food/snacks/meat/slab
-		var/obj/item/new_item = new cookiealt(H)
-		if(H.put_in_hands(new_item))
-			H.update_inv_hands()
-		else
-			qdel(new_item)
-			log_admin("[key_name(H)] has their hands full, so they did not receive their [new_item.name], spawned by [key_name(src.owner)].")
-			message_admins("[key_name(H)] has their hands full, so they did not receive their [new_item.name], spawned by [key_name(src.owner)].")
-			return
-
-		log_admin("[key_name(H)] got their [new_item], spawned by [key_name(src.owner)].")
-		message_admins("[key_name(H)] got their [new_item], spawned by [key_name(src.owner)].")
-		SSblackbox.record_feedback("amount", "admin_cookies_spawned", 1)
-		to_chat(H, "<span class='adminnotice'>My prayers have been answered!! You received the <b>best [new_item.name]!</b></span>")
-		SEND_SOUND(H, sound('sound/blank.ogg'))
-
 	else if(href_list["adminsmite"])
 		if(!check_rights(R_ADMIN|R_FUN))
 			return
@@ -1291,12 +1163,6 @@
 		var/mob/M = locate(href_list["HeadsetMessage"])
 		usr.client.admin_headset_message(M)
 
-	else if(href_list["reject_custom_name"])
-		if(!check_rights(R_ADMIN))
-			return
-		var/obj/item/station_charter/charter = locate(href_list["reject_custom_name"])
-		if(istype(charter))
-			charter.reject_proposed(usr)
 	else if(href_list["jumpto"])
 		if(!isobserver(usr) && !check_rights(R_ADMIN))
 			return
@@ -1312,7 +1178,47 @@
 			return
 		var/mob/M = locate(href_list["getmob"])
 		usr.client.Getmob(M)
+	else if(href_list["increase_skill"])
+		var/mob/M = locate(href_list["increase_skill"])
+		var/datum/skill/skill = href_list["skill"]
+		M.mind?.adjust_skillrank(text2path(skill), 1)
+		log_admin("[usr] increased [M]'s [initial(skill.name)] skill.")
+		show_player_panel_next(M, "skills")
 
+	else if(href_list["decrease_skill"])
+		var/mob/M = locate(href_list["decrease_skill"])
+		var/datum/skill/skill = href_list["skill"]
+		M.mind?.adjust_skillrank(text2path(skill), -1)
+		log_admin("[usr] decreased [M]'s [initial(skill.name)] skill.")
+		show_player_panel_next(M, "skills")
+
+	else if(href_list["add_language"])
+		var/mob/M = locate(href_list["add_language"])
+		var/datum/language/lang = text2path(href_list["language"])
+		M.grant_language(lang)
+		log_admin("[usr] added [lang] to [M].")
+		show_player_panel_next(M, "languages")
+
+	else if(href_list["remove_language"])
+		var/mob/M = locate(href_list["remove_language"])
+		var/datum/language/lang = text2path(href_list["language"])
+		M.remove_language(lang)
+		log_admin("[usr] removed [lang] to [M].")
+		show_player_panel_next(M, "languages")
+
+	else if(href_list["add_stat"])
+		var/mob/living/M = locate(href_list["add_stat"])
+		var/statkey = href_list["stat"]
+		M.change_stat(statkey, 1)
+		log_admin("[usr] increased [M]'s [statkey].")
+		show_player_panel_next(M, "stats")
+
+	else if(href_list["lower_stat"])
+		var/mob/living/M = locate(href_list["lower_stat"])
+		var/statkey = href_list["stat"]
+		M.change_stat(statkey, -1)
+		log_admin("[usr] decreased [M]'s [statkey].")
+		show_player_panel_next(M, "stats")
 	else if(href_list["sendmob"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1613,6 +1519,29 @@
 		var/client/C = M.client
 		usr.client.cmd_admin_mod_antag_rep(C, href_list["modantagrep"])
 		show_player_panel(M)
+
+	else if(href_list["editpq"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/mob/M = locate(href_list["mob"]) in GLOB.mob_list
+		var/client/mob_client = M.client
+		var/amt2change = input("How much to modify the PQ by? (20 to -20, or 0 to just add a note)") as null|num
+		if(!check_rights(R_ADMIN,0))
+			amt2change = CLAMP(amt2change, -20, 20)
+		var/raisin = stripped_input("State a short reason for this change", "Game Master", "", null)
+		if(!amt2change && !raisin)
+			return
+		adjust_playerquality(amt2change, mob_client.ckey, usr.ckey, raisin)
+		for(var/client/C in GLOB.clients) // I hate this, but I'm not refactoring the cancer above this point.
+			if(lowertext(C.key) == lowertext(mob_client.ckey))
+				to_chat(C, "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">Your PQ has been adjusted by [amt2change] by [usr.key] for reason: [raisin]</span></span>")
+				return
+	else if(href_list["showpq"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/mob/M = locate(href_list["mob"]) in GLOB.mob_list
+		var/client/mob_client = M.client
+		check_pq_menu(mob_client.key)
 
 	else if(href_list["slowquery"])
 		if(!check_rights(R_ADMIN))

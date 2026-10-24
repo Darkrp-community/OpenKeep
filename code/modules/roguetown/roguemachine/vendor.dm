@@ -29,8 +29,8 @@
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 			to_chat(user, "<span class='warning'>Wrong key.</span>")
 			return
-	if(istype(P, /obj/item/keyring))
-		var/obj/item/keyring/K = P
+	if(istype(P, /obj/item/storage/keyring))
+		var/obj/item/storage/keyring/K = P
 		for(var/obj/item/roguekey/KE in K.keys)
 			if(KE.lockid == keycontrol)
 				locked = !locked

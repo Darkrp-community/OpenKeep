@@ -58,6 +58,7 @@
 /client/MouseDown(object, location, control, params)
 	if(mob.incapacitated())
 		return
+	SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEDOWN, object, location, control, params)
 
 	tcompare = object
 
@@ -167,6 +168,7 @@
 /client/MouseUp(object, location, control, params)
 	charging = 0
 //	mob.update_warning()
+	SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEUP, object, location, control, params)
 
 	mouse_pointer_icon = 'icons/effects/mousemice/human.dmi'
 
@@ -292,7 +294,7 @@
 					L.visible_message("<span class='danger'>[L] raises their shield to block!</span>")
 					playsound(L, 'sound/combat/shieldraise.ogg', 100, TRUE)
 			else
-				if(!L.rogfat_add(L.used_intent.chargedrain))
+				if(!L.adjust_stam(L.used_intent.chargedrain))
 					L.stop_attack()
 		return TRUE
 	else

@@ -961,10 +961,10 @@
 /area/rogue/indoors/town/tavern)
 "dL" = (
 /obj/structure/table/wood/plain,
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/apartments/apartment1,
 /obj/item/roguekey/apartments/apartment2,
 /obj/item/roguekey/apartments/apartment3,
@@ -1066,7 +1066,7 @@
 /area/rogue/outdoors/town)
 "ee" = (
 /obj/structure/table/wood/fine,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/merchant,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
@@ -1746,7 +1746,6 @@
 /area/rogue/indoors/town/garrison)
 "gB" = (
 /obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/grown/garlic,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
 "gC" = (
@@ -5317,7 +5316,7 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/under/town/basement)
 "un" = (
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
@@ -5574,7 +5573,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
 "vo" = (
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/dungeon,
 /obj/structure/closet/crate/chest/neu_iron,
@@ -5705,9 +5704,6 @@
 /area/rogue/indoors/town)
 "vM" = (
 /obj/structure/closet/crate/roguecloset,
-/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
-/obj/item/clothing/mask/gas/plaguedoctor,
-/obj/item/clothing/head/plaguedoctorhat,
 /obj/item/roguekey/apothecary,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
@@ -7976,7 +7972,7 @@
 "EB" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/rogueweapon/polearm/woodstaff/aries,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/inquisition,
 /obj/item/roguekey/monastery,
 /obj/item/roguekey/church,
@@ -11223,9 +11219,9 @@
 /obj/structure/closet/crate/roguecloset/lord{
 	name = "Spare Keys"
 	},
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/roguekey/manor,
 /obj/item/roguekey/manor,
@@ -11276,7 +11272,6 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/town)
 "QW" = (
-/turf/open/space/basic,
 /area/rogue/outdoors/town)
 "QX" = (
 /turf/open/floor/rogue/church,
@@ -11563,7 +11558,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
 "RZ" = (
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/roguekey/walls,
 /obj/item/roguekey/dungeon,
@@ -13446,8 +13441,8 @@
 /area/rogue/indoors/town/church)
 "Ze" = (
 /obj/structure/table/wood/plain,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/walls,

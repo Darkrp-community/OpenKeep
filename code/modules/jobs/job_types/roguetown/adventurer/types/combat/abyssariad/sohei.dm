@@ -87,11 +87,11 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/magic/holy, 1, TRUE)
 			H.mind.adjust_skillrank(/datum/skill/combat/shields, 1, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("constitution", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("perception", -2) //imagine training meditation so hard you end up edging your own eyes, but start noticing spirits. (schizophrenia)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 2)
+		H.change_stat(STATKEY_CON, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_PER, -2) //imagine training meditation so hard you end up edging your own eyes, but start noticing spirits. (schizophrenia)
+		H.change_stat(STATKEY_SPD, -1)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Sohei are strong for a common role, but cannot pray to gain more abilities beyond t1

@@ -7,6 +7,8 @@
 	resistance_flags = FLAMMABLE
 	sewrepair = TRUE
 	anvilrepair = null
+	grid_width = 32
+	grid_height = 64
 
 /obj/item/clothing/wrists/roguetown/bracers
 	name = "plate vambraces"
@@ -125,9 +127,8 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
 	sleeved = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 50, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 0)
+	armor = list("crush" = 0, "slash" = 0, "stab" = 0,"pierce" = 0,"fire" = 100, "acid" = 0)
 	heat_protection = ARMS|HANDS
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
@@ -142,7 +143,7 @@
 /obj/item/clothing/wrists/roguetown/bracers/bonebracer
 	name = "bone bracers"
 	desc = "the bracers made of bone, usually created and used by tribalistic Undines."
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 30, "slash" = 40, "stab" = 40, "pierce" = 30, "fire" = 0, "acid" = 0)
 	icon = 'icons/roguetown/kaizoku/clothingicon/wrists.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/wrists.dmi'
 	sleeved = 'icons/roguetown/kaizoku/clothing/wrists.dmi'

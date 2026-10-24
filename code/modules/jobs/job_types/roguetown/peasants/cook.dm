@@ -54,11 +54,11 @@
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
-		H.change_stat("strength", 1)
-		H.change_stat("constitution", 1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_CON, 1)
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
-		H.change_stat("constitution", 2)
+		H.change_stat(STATKEY_CON, 2)
 
 
 /datum/outfit/job/roguetown/cook

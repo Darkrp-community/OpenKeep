@@ -34,7 +34,7 @@
 	pants = /obj/item/clothing/under/roguetown/tights
 	armor = /obj/item/clothing/suit/roguetown/shirt/jester
 	belt = /obj/item/storage/belt/rogue/leather
-	beltr = /obj/item/keyring/jester
+	beltr = /obj/item/storage/keyring/jester
 	beltl = /obj/item/storage/belt/rogue/pouch
 	head = /obj/item/clothing/head/roguetown/jester
 	neck = /obj/item/clothing/neck/roguetown/coif
@@ -48,8 +48,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,2), TRUE)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/mockery) // Mock people to your heart's content!
-		H.STAINT = rand(1, 20)
-		H.STALUC = rand(1, 20)
+		H.TOTALINT = rand(1, 20)
+		H.TOTALLUC = rand(1, 20)
 		H.cmode_music = 'sound/music/combat_jester.ogg'
 /*		if(H.gender == MALE)
 			if(H.dna?.species)

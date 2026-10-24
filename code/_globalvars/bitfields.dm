@@ -48,6 +48,7 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"NOBLUDGEON" = NOBLUDGEON,
 		"ABSTRACT" = ABSTRACT,
 		"IN_STORAGE" = IN_STORAGE,
+		"SHRINK_ENCHANT" = SHRINK_ENCHANT,
 		),
 	"admin_flags" = list(
 		"BUILDMODE" = R_BUILD,
@@ -173,15 +174,6 @@ GLOBAL_LIST_INIT(bitfields, list(
 		"UI" = MOBILITY_UI,
 		"STORAGE" = MOBILITY_STORAGE,
 		"PULL" = MOBILITY_PULL,
-		),
-	"rad_flags" = list(
-		"RAD_PROTECT_CONTENTS" = RAD_PROTECT_CONTENTS,
-		"RAD_NO_CONTAMINATE" = RAD_NO_CONTAMINATE,
-		),
-	"disease_flags" = list (
-		"CURABLE" = CURABLE,
-		"CAN_CARRY"	= CAN_CARRY,
-		"CAN_RESIST" = CAN_RESIST
 		),
 	"mob_biotypes" = list (
 		"MOB_ORGANIC" = MOB_ORGANIC,
