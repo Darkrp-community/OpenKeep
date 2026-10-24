@@ -116,7 +116,7 @@
 	var/datum/heritage/family_datum
 	var/list/temp_ui_list = list()
 
-	var/has_stubble = TRUE
+	var/has_stubble = FALSE
 
 	var/original_name = null
 
