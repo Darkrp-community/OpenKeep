@@ -282,7 +282,7 @@
 	if(SEND_SIGNAL(src, COMSIG_LOCKPICK_ONMOUSEDOWN, source, _target, location, control, params) & COMPONENT_LOCKPICK_ONMOUSEDOWN_BYPASS)
 		return
 
-	source.click_intercept_time = world.time //From this point onwards Click() will no longer be triggered
+
 
 	INVOKE_ASYNC(src, PROC_REF(move_pick_forward))
 

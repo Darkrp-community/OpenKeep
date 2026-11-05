@@ -20,6 +20,7 @@ GLOBAL_LIST_EMPTY(explosions)
 	var/stopped = 0		//This is the number of threads stopped !DOESN'T COUNT THREAD 2!
 	var/static/id_counter = 0
 
+
 #define EX_PREPROCESS_EXIT_CHECK \
 	if(!running) {\
 		stopped = 2;\
@@ -212,7 +213,7 @@ GLOBAL_LIST_EMPTY(explosions)
 			dist = EXPLODE_NONE
 
 		//------- EX_ACT AND TURF FIRES -------
-		var/atom/target
+		var/atom/target = null
 		if(T == epicenter) // Ensures explosives detonating from bags trigger other explosives in that bag
 			var/list/items = list()
 			for(var/I in T)

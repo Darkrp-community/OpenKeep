@@ -86,7 +86,7 @@
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	desc = "A beacon."
-	light_outer_range = 2			// luminosity when on
+	light_outer_range = 5			// luminosity when on
 	light_power = 20
 	light_color = LIGHT_COLOR_BLOOD_MAGIC
 
