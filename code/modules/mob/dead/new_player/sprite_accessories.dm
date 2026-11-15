@@ -376,13 +376,13 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
 /datum/sprite_accessory/hair/tied_long
-	name = "Tied long"
+	name = "Tied Long"
 	icon_state = "tiedlong"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
 
 /datum/sprite_accessory/hair/tied_sidecut
-	name = "Tied sidecut"
+	name = "Tied Sidecut"
 	icon_state = "tsidecut"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling")
@@ -436,37 +436,37 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/hair/conscriptf
-	name = "conscript"
+	name = "Conscript (Female)"
 	icon_state = "conscript_f"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/hair/tiedcutf
-	name = "tied sidecut"
+	name = "Tied Sidecut (Female)"
 	icon_state = "tsidecut_f"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/hair/wildcutf
-	name = "wild sidecut"
+	name = "Wild Sidecut"
 	icon_state = "wildside_f"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/hair/tomboy1
-	name = "short 1"
+	name = "Tomboy 1"
 	icon_state = "tomboy_f"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/hair/tomboy2
-	name = "short 2"
+	name = "Tomboy 2"
 	icon_state = "tomboy2_f"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
 
 /datum/sprite_accessory/hair/tomboy3
-	name = "short 3"
+	name = "Tomboy 3"
 	icon_state = "rogue_f"
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "abyssariad")
