@@ -25,10 +25,7 @@
 	var/fancy_open = FALSE
 
 /obj/item/storage/fancy/PopulateContents()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(spawn_type)
-		for(var/i = 1 to STR.max_items)
-			new spawn_type(src)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_FILL_TYPE, spawn_type)
 
 /obj/item/storage/fancy/update_icon()
 	if(fancy_open)
@@ -58,24 +55,6 @@
 	. = ..()
 	fancy_open = TRUE
 	update_icon()
-
-/*
- * Donut Box
- */
-
-/obj/item/storage/fancy/donut_box
-	icon = 'icons/obj/food/containers.dmi'
-	icon_state = "donutbox6"
-	icon_type = "donut"
-	name = "donut box"
-	spawn_type = /obj/item/reagent_containers/food/snacks/donut
-	fancy_open = TRUE
-
-/obj/item/storage/fancy/donut_box/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/donut))
 
 /*
  * Egg Box
@@ -245,30 +224,11 @@
 	icon_state = "midori"
 	spawn_type = /obj/item/clothing/mask/cigarette/rollie/nicotine
 
-/obj/item/storage/fancy/cigarettes/cigpack_candy
-	name = "\improper Timmy's First Candy Smokes packet"
-	desc = ""
-	icon_state = "candy"
-	icon_type = "candy cigarette"
-	spawn_type = /obj/item/clothing/mask/cigarette/candy
-	candy = TRUE
-
-/obj/item/storage/fancy/cigarettes/cigpack_candy/Initialize()
-	. = ..()
-	if(prob(7))
-		spawn_type = /obj/item/clothing/mask/cigarette/candy/nicotine //uh oh!
-
 /obj/item/storage/fancy/cigarettes/cigpack_shadyjims
 	name = "\improper Shady Jim's Super Slims packet"
 	desc = ""
 	icon_state = "shadyjim"
 	spawn_type = /obj/item/clothing/mask/cigarette/shadyjims
-
-/obj/item/storage/fancy/cigarettes/cigpack_xeno
-	name = "\improper Xeno Filtered packet"
-	desc = ""
-	icon_state = "slime"
-	spawn_type = /obj/item/clothing/mask/cigarette/xeno
 
 /obj/item/storage/fancy/cigarettes/zig
 	name = "zigbox"
@@ -310,84 +270,3 @@
 	cut_overlays()
 	if(!contents.len)
 		add_overlay("[icon_state]_empty")
-
-/////////////
-//CIGAR BOX//
-/////////////
-
-/obj/item/storage/fancy/cigarettes/cigars
-	name = "\improper premium cigar case"
-	desc = ""
-	icon = 'icons/obj/cigarettes.dmi'
-	icon_state = "cigarcase"
-	w_class = WEIGHT_CLASS_NORMAL
-	icon_type = "premium cigar"
-	spawn_type = /obj/item/clothing/mask/cigarette/cigar
-
-/obj/item/storage/fancy/cigarettes/cigars/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 5
-	STR.set_holdable(list(/obj/item/clothing/mask/cigarette/cigar))
-
-/obj/item/storage/fancy/cigarettes/cigars/update_icon()
-	cut_overlays()
-	if(fancy_open)
-		icon_state = "[initial(icon_state)]_open"
-
-		var/cigar_position = 1 //generate sprites for cigars in the box
-		for(var/obj/item/clothing/mask/cigarette/cigar/smokes in contents)
-			var/mutable_appearance/cigar_overlay = mutable_appearance(icon, "[smokes.icon_off]_[cigar_position]")
-			add_overlay(cigar_overlay)
-			cigar_position++
-
-	else
-		icon_state = "[initial(icon_state)]"
-
-/obj/item/storage/fancy/cigarettes/cigars/cohiba
-	name = "\improper Cohiba Robusto cigar case"
-	desc = ""
-	icon_state = "cohibacase"
-	spawn_type = /obj/item/clothing/mask/cigarette/cigar/cohiba
-
-/obj/item/storage/fancy/cigarettes/cigars/havana
-	name = "\improper premium Havanian cigar case"
-	desc = ""
-	icon_state = "cohibacase"
-	spawn_type = /obj/item/clothing/mask/cigarette/cigar/havana
-
-/*
- * Heart Shaped Box w/ Chocolates
- */
-
-/obj/item/storage/fancy/heart_box
-	name = "heart-shaped box"
-	desc = ""
-	icon = 'icons/obj/food/containers.dmi'
-	item_state = "chocolatebox"
-	icon_state = "chocolatebox"
-	icon_type = "chocolate"
-	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
-	spawn_type = /obj/item/reagent_containers/food/snacks/tinychocolate
-
-/obj/item/storage/fancy/heart_box/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 8
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/tinychocolate))
-
-
-/obj/item/storage/fancy/nugget_box
-	name = "nugget box"
-	desc = ""
-	icon = 'icons/obj/food/containers.dmi'
-	icon_state = "nuggetbox"
-	icon_type = "nugget"
-	spawn_type = /obj/item/reagent_containers/food/snacks/nugget
-
-/obj/item/storage/fancy/nugget_box/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_items = 6
-	STR.set_holdable(list(/obj/item/reagent_containers/food/snacks/nugget))

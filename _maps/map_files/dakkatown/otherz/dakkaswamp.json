@@ -2,5 +2,5 @@
     "map_name": "dakkaswamp",
     "map_path": "map_files/dakkatown/otherz",
     "map_file": "dakkaswamp.dmm",
-	"traits": [{"Up": 1}, {"Down": -1}]
+	"traits": [{"Up": true}, {"Down": true}]
 }

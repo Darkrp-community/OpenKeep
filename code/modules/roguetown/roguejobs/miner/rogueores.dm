@@ -3,6 +3,8 @@
 	icon = 'icons/roguetown/items/ore.dmi'
 	icon_state = "ore"
 	w_class = WEIGHT_CLASS_NORMAL
+	grid_width = 32
+	grid_height = 32
 
 /obj/item/rogueore/gold
 	name = "raw gold"
@@ -33,7 +35,7 @@
 	icon_state = "oreiron1"
 	smeltresult = /obj/item/ingot/iron
 	sellprice = 5
-	dust_result = /obj/item/alch/irondust 
+	dust_result = /obj/item/alch/irondust
 
 /obj/item/rogueore/iron/Initialize()
 	icon_state = "oreiron[rand(1,3)]"
@@ -69,6 +71,9 @@
 	icon_state = "ingot"
 	w_class = WEIGHT_CLASS_NORMAL
 	smeltresult = null
+
+	grid_width = 64
+	grid_height = 32
 	var/datum/anvil_recipe/currecipe
 	var/quality = SMELTERY_LEVEL_NORMAL
 

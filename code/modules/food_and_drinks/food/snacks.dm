@@ -139,9 +139,12 @@ All foods are distributed among various categories. Use common sense.
 			return FALSE
 		else
 			var/obj/item/reagent_containers/NU = new become_rot_type(loc)
+			var/atom/movable/location = loc
 			NU.reagents.clear_reagents()
 			reagents.trans_to(NU.reagents, reagents.maximum_volume)
 			qdel(src)
+			if(!location || !SEND_SIGNAL(location, COMSIG_TRY_STORAGE_INSERT, NU, null, TRUE, TRUE))
+				NU.forceMove(get_turf(NU.loc))
 			return TRUE
 	else
 		color = "#6c6897"
@@ -282,11 +285,11 @@ All foods are distributed among various categories. Use common sense.
 				if(0 to NUTRITION_LEVEL_STARVING)
 					user.visible_message("<span class='notice'>[user] hungrily [eatverb]s \the [src], gobbling it down!</span>", "<span class='notice'>I hungrily [eatverb] \the [src], gobbling it down!</span>")
 					M.changeNext_move(CLICK_CD_MELEE * 0.5)
-/*			if(M.rogstam <= 50)
+/*			if(M.vigor <= 50)
 				user.visible_message("<span class='notice'>[user] hungrily [eatverb]s \the [src], gobbling it down!</span>", "<span class='notice'>I hungrily [eatverb] \the [src], gobbling it down!</span>")
-			else if(M.rogstam > 50 && M.rogstam < 500)
+			else if(M.vigor > 50 && M.vigor < 500)
 				user.visible_message("<span class='notice'>[user] hungrily [eatverb]s \the [src].</span>", "<span class='notice'>I hungrily [eatverb] \the [src].</span>")
-			else if(M.rogstam > 500 && M.rogstam < 1000)
+			else if(M.vigor > 500 && M.vigor < 1000)
 				user.visible_message("<span class='notice'>[user] [eatverb]s \the [src].</span>", "<span class='notice'>I [eatverb] \the [src].</span>")
 			if(HAS_TRAIT(M, TRAIT_VORACIOUS))
 			M.changeNext_move(CLICK_CD_MELEE * 0.5) nom nom nom*/
@@ -533,7 +536,7 @@ All foods are distributed among various categories. Use common sense.
 	. = ..()
 	if(!dunkable || !proximity)
 		return
-	if(istype(M, /obj/item/reagent_containers/glass) || istype(M, /obj/item/reagent_containers/food/drinks))	//you can dunk dunkable snacks into beakers or drinks
+	if(istype(M, /obj/item/reagent_containers/glass))	//you can dunk dunkable snacks into beakers or drinks
 		if(!M.is_drainable())
 			to_chat(user, "<span class='warning'>[M] is unable to be dunked in!</span>")
 			return
@@ -578,3 +581,12 @@ All foods are distributed among various categories. Use common sense.
 	else
 		return ..()
 
+/obj/item/reagent_containers/food/snacks/badrecipe
+	name = "burned mess"
+	desc = ""
+	icon_state = "badrecipe"
+	list_reagents = list(/datum/reagent/toxin/bad_food = 30)
+	filling_color = "#8B4513"
+	foodtype = GROSS
+	burntime = 0
+	cooktime = 0

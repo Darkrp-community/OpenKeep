@@ -38,17 +38,17 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/music, pick(1,1,2,3), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE) // Privilege of living a life raising nobility. Knows the very basics about riding a mount
-		H.change_stat("strength", -1)
-		H.change_stat("intelligence", 2)
-		H.change_stat("perception", 1)
-		H.change_stat("endurance", 1)
+		H.change_stat(STATKEY_STR, -1)
+		H.change_stat(STATKEY_INT, 2)
+		H.change_stat(STATKEY_PER, 1)
+		H.change_stat(STATKEY_END, 1)
 
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/guard
 		shoes = /obj/item/clothing/shoes/roguetown/nobleboot
 		belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-		beltr = /obj/item/keyring/butler
+		beltr = /obj/item/storage/keyring/butler
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/vest/butler
 		backr = /obj/item/storage/backpack/rogue/satchel
@@ -59,6 +59,6 @@
 		shoes = /obj/item/clothing/shoes/roguetown/ridingboots
 		cloak = /obj/item/clothing/cloak/apron
 		belt = /obj/item/storage/belt/rogue/leather/cloth/lady
-		beltr = /obj/item/keyring/butler
+		beltr = /obj/item/storage/keyring/butler
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
 		backr = /obj/item/storage/backpack/rogue/satchel

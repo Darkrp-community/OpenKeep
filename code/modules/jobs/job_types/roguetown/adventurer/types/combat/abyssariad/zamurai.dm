@@ -77,10 +77,10 @@
 			if(H.mind)
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.
 				H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-				H.change_stat("strength", 2)
-				H.change_stat("endurance", 2)
-				H.change_stat("constitution", 2)
-				H.change_stat("speed", -1)
+				H.change_stat(STATKEY_STR, 2)
+				H.change_stat(STATKEY_END, 2)
+				H.change_stat(STATKEY_CON, 2)
+				H.change_stat(STATKEY_SPD, -1)
 
 		if("Yumibushi(Ranged)") // Ranged Focus.
 			H.set_blindness(0)
@@ -90,7 +90,7 @@
 			if(H.mind)
 				H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 				H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-				H.change_stat("perception", 2)
-				H.change_stat("speed", 2)
-				H.change_stat("strength", 1)
+				H.change_stat(STATKEY_PER, 2)
+				H.change_stat(STATKEY_SPD, 2)
+				H.change_stat(STATKEY_STR, 1)
 	H.cure_blind("TRAIT_GENERIC")

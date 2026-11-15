@@ -87,10 +87,6 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak,
 /turf/open/floor/rogue/twig,
 /area/rogue/outdoors/bog)
-"u" = (
-/mob/living/carbon/human/species/goblin/npc/ambush,
-/turf/open/floor/rogue/twig,
-/area/rogue/outdoors/bog)
 "v" = (
 /obj/structure/fluff/railing/fence{
 	dir = 1
@@ -153,10 +149,6 @@
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/bog)
-"I" = (
-/mob/living/carbon/human/species/goblin/npc/ambush,
-/turf/open/floor/rogue/cobblerock,
-/area/rogue/outdoors/bog)
 "J" = (
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/outdoors/bog)
@@ -206,10 +198,6 @@
 /area/rogue/outdoors/bog)
 "U" = (
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/bog)
-"V" = (
-/mob/living/carbon/human/species/goblin/npc/ambush,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/outdoors/bog)
 "W" = (
@@ -471,7 +459,7 @@ F
 T
 y
 b
-u
+b
 y
 T
 T
@@ -617,11 +605,11 @@ m
 Z
 k
 T
-V
+T
 T
 J
 g
-I
+J
 T
 T
 y
@@ -770,7 +758,7 @@ J
 J
 T
 J
-I
+J
 T
 y
 b
@@ -842,7 +830,7 @@ k
 F
 F
 F
-V
+T
 T
 T
 S
@@ -997,7 +985,7 @@ F
 T
 y
 c
-u
+b
 c
 y
 T

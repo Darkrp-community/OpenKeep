@@ -2,11 +2,7 @@ GLOBAL_LIST_EMPTY(cable_list)					    //Index for all cables, so that powernets 
 GLOBAL_LIST_EMPTY(portals)					        //list of all /obj/effect/portal
 GLOBAL_LIST_EMPTY(airlocks)					        //list of all airlocks
 GLOBAL_LIST_EMPTY(mechas_list)				        //list of all mechs. Used by hostile mobs target tracking.
-GLOBAL_LIST_EMPTY(shuttle_caller_list)  		    //list of all communication consoles and AIs, for automatic shuttle calls when there are none.
 GLOBAL_LIST_EMPTY(machines)					        //NOTE: this is a list of ALL machines now. The processing machines list is SSmachine.processing !
-GLOBAL_LIST_EMPTY(navigation_computers)				//list of all /obj/machinery/computer/camera_advanced/shuttle_docker
-GLOBAL_LIST_EMPTY(syndicate_shuttle_boards)	        //important to keep track of for managing nukeops war declarations.
-GLOBAL_LIST_EMPTY(navbeacons)					    //list of all bot nagivation beacons, used for patrolling.
 GLOBAL_LIST_EMPTY(teleportbeacons)			        //list of all tracking beacons used by teleporters
 GLOBAL_LIST_EMPTY(deliverybeacons)			        //list of all MULEbot delivery beacons.
 GLOBAL_LIST_EMPTY(deliverybeacontags)			    //list of all tags associated with delivery beacons.
@@ -16,7 +12,6 @@ GLOBAL_LIST_EMPTY(singularities)				    //list of all singularities on the stati
 
 GLOBAL_LIST(chemical_reactions_list)				//list of all /datum/chemical_reaction datums. Used during chemical reactions
 GLOBAL_LIST(chemical_reagents_list)				//list of all /datum/reagent datums indexed by reagent id. Used by chemistry stuff
-GLOBAL_LIST_EMPTY(materials_list)				//list of all /datum/material datums indexed by material id.
 GLOBAL_LIST_EMPTY(tech_list)					//list of all /datum/tech datums indexed by id.
 GLOBAL_LIST_EMPTY(crafting_recipes)				//list of all table craft recipes
 GLOBAL_LIST_EMPTY(anvil_recipes)				//list of all anvil crafted recipes

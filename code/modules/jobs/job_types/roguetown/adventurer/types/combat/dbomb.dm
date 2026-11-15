@@ -38,5 +38,5 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 1)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_END, 1)

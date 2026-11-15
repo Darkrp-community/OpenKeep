@@ -14,11 +14,7 @@
 		return "<span class='boldnotice'>Another deadite. My ally.</span>"
 
 /datum/antagonist/skeleton/on_gain()
-//	if(!(locate(/datum/objective/escape) in objectives))
-//		var/datum/objective/escape/boat/escape_objective = new
-//		escape_objective.owner = owner
-//		objectives += escape_objective
-//		return
+
 	return ..()
 
 /datum/antagonist/skeleton/on_removal()

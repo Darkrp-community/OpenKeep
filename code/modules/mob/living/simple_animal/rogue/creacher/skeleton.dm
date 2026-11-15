@@ -181,5 +181,5 @@
 	hitsound = 'sound/combat/hits/hi_arrow2.ogg'
 	embedchance = 100
 	woundclass = BCLASS_STAB
-	flag =  "piercing"
+	flag =  "pierce"
 	speed = 2

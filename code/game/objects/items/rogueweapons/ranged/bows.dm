@@ -18,7 +18,6 @@
 	randomspread = 0
 	spread = 0
 	can_parry = TRUE
-	pin = /obj/item/firing_pin
 	force = 15
 	verbage = "nock"
 	cartridge_wording = "arrow"

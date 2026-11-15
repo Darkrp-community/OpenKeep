@@ -35,7 +35,7 @@
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/veryrich = 1, /obj/item/merctoken = 1)
 	beltr = /obj/item/rogueweapon/sword/rapier
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltl = /obj/item/keyring/merchant
+	beltl = /obj/item/storage/keyring/merchant
 	armor = /obj/item/clothing/suit/roguetown/shirt/robe/merchant
 	head = /obj/item/clothing/head/roguetown/chaperon
 	id = /obj/item/clothing/ring/gold/guild_mercator
@@ -51,9 +51,9 @@
 	ADD_TRAIT(H, TRAIT_SEEPRICES, type)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 
-	H.change_stat("intelligence", 2)
-	H.change_stat("perception", 1)
-	H.change_stat("strength", -1)
+	H.change_stat(STATKEY_INT, 2)
+	H.change_stat(STATKEY_PER, 1)
+	H.change_stat(STATKEY_STR, -1)
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)

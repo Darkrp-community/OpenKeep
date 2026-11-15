@@ -42,18 +42,18 @@
 	shoes = /obj/item/clothing/shoes/roguetown/shortboots
 	neck = /obj/item/storage/belt/rogue/pouch/coins/mid
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/innkeep
+	beltl = /obj/item/storage/keyring/innkeep
 	beltr = /obj/item/reagent_containers/glass/bottle/rogue/beer/blackgoat
 	if(H.gender == MALE)
 		pants = /obj/item/clothing/under/roguetown/tights/random
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt/random
 		cloak = /obj/item/clothing/cloak/apron/waist
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 1)
 	else
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress
-		H.change_stat("endurance", 1)
-		H.change_stat("constitution", 1)
+		H.change_stat(STATKEY_END, 1)
+		H.change_stat(STATKEY_CON, 1)
 
 /datum/outfit/job/roguetown/innkeep
 	var/reminder = "<br><br><font color='#3d8985'><span class='bold'>Remember the keys to the finer rooms are kept separate from the peddlar.</span></font><br><br>"

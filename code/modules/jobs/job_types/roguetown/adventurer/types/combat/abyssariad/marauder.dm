@@ -52,10 +52,10 @@
 			to_chat(H, span_warning( "<span class='info'>I am a warrior from Boneclad Clan! Revenge against paupers-folk! No more shall we pity the fool! To be forced to work is only for weaklings and the disgraced!</span>"))
 
 			//same as normal warriors.
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("constitution", 1)
-			H.change_stat("intelligence", -1)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_CON, 1)
+			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 		if("bodysnatcher") //Starts with blade as survival tool. Has Tier 2 makeshift armor, spear and throwable ranged weapon. Spear focus.

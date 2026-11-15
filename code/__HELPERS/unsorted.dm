@@ -239,7 +239,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/list/pois = list()
 	for(var/mob/M in mobs)
 		if(skip_mindless && (!M.mind || !M.ckey))
-//			if(!isbot(M) && !iscameramob(M) && !ismegafauna(M))
 			continue
 		if(M.client && M.client.holder && M.client.holder.fakekey) //stealthmins
 			continue
@@ -249,10 +248,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 			name += " \[[M.real_name]\]"
 		if(M.stat == DEAD)
 			continue
-/*			if(isobserver(M))
-				name += " \[ghost\]"
-			else
-				name += " \[dead\]"*/
 		pois[name] = M
 
 	if(!mobs_only)
@@ -649,16 +644,95 @@ will handle it, but:
 		return FALSE
 	return TRUE
 
+/proc/wash_atom(atom/A, clean = CLEAN_WEAK)
+	SEND_SIGNAL(A, COMSIG_COMPONENT_CLEAN_ACT, clean)
+	if(isobj(A))
+		wash_obj(A,clean)
+		var/obj/O = A
+		O.wash_act(clean)
+	else if(isturf(A))
+		wash_turf(A,clean)
+	else if(isliving(A))
+		wash_mob(A,clean)
+
+/obj/proc/wash_act(clean = CLEAN_WEAK)
+	return
+
+/proc/wash_obj(obj/O, clean = CLEAN_WEAK)
+	. = SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, clean)
+
+/proc/wash_turf(turf/tile, clean = CLEAN_WEAK)
+	SEND_SIGNAL(tile, COMSIG_COMPONENT_CLEAN_ACT, clean)
+	for(var/obj/effect/E in tile)
+		if(is_cleanable(E))
+			qdel(E)
+
+/proc/wash_mob(mob/living/L, clean = CLEAN_WEAK)
+	SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, clean)
+	if(iscarbon(L))
+		var/mob/living/carbon/M = L
+		. = TRUE
+
+		for(var/obj/item/I in M.held_items)
+			wash_obj(I)
+
+		if(M.back && wash_obj(M.back))
+			M.update_inv_back(0)
+
+		var/list/obscured = M.check_obscured_slots()
+
+		if(M.head && wash_obj(M.head,clean))
+			M.update_inv_head()
+
+		if(M.glasses && !(SLOT_GLASSES in obscured) && wash_obj(M.glasses,clean))
+			M.update_inv_glasses()
+
+		if(M.wear_mask && !(SLOT_WEAR_MASK in obscured) && wash_obj(M.wear_mask,clean))
+			M.update_inv_wear_mask()
+
+		if(M.ears && !(HIDEEARS in obscured) && wash_obj(M.ears,clean))
+			M.update_inv_ears()
+
+		if(M.wear_neck && !(SLOT_NECK in obscured) && wash_obj(M.wear_neck,clean))
+			M.update_inv_neck()
+
+		if(M.shoes && !(HIDESHOES in obscured) && wash_obj(M.shoes,clean))
+			M.update_inv_shoes()
+
+		var/washgloves = FALSE
+		if(M.gloves && !(HIDEGLOVES in obscured))
+			washgloves = TRUE
+
+		if(ishuman(M))
+			var/mob/living/carbon/human/H = M
+
+			if(H.wear_armor && wash_obj(H.wear_armor,clean))
+				H.update_inv_armor()
+			else if(H.wear_shirt && wash_obj(H.wear_shirt,clean))
+				H.update_inv_shirt()
+			else if(H.wear_pants && wash_obj(H.wear_pants,clean))
+				H.update_inv_pants()
+
+			if(washgloves)
+				SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
+
+			if(!H.is_mouth_covered())
+				H.lip_style = null
+				H.update_body()
+
+			if(H.belt && wash_obj(H.belt,clean))
+				H.update_inv_belt()
+		else
+			SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
+	else
+		SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRENGTH_BLOOD)
 /*
 Checks if that loc and dir has an item on the wall
 */
 GLOBAL_LIST_INIT(WALLITEMS, typecacheof(list(
-	/obj/structure/extinguisher_cabinet, /obj/structure/reagent_dispensers/peppertank,
-	/obj/structure/sign,
 	/obj/structure/noticeboard,
-	/obj/item/storage/secure/safe,
-	/obj/structure/mirror, /obj/structure/fireaxecabinet,
-	/obj/structure/sign/picture_frame
+	/obj/structure/mirror,
+	/obj/structure/fireaxecabinet,
 	)))
 
 GLOBAL_LIST_INIT(WALLITEMS_EXTERNAL, typecacheof(list(
@@ -993,31 +1067,6 @@ rough example of the "cone" made by the 3 dirs checked
 	sleep(duration)
 	A.cut_overlay(O)
 
-/proc/get_random_station_turf()
-	return safepick(get_area_turfs(pick(GLOB.the_station_areas)))
-
-/proc/get_safe_random_station_turf() //excludes dense turfs (like walls) and areas that have valid_territory set to FALSE
-	for (var/i in 1 to 5)
-		var/list/L = get_area_turfs(pick(GLOB.the_station_areas))
-		var/turf/target
-		while (L.len && !target)
-			var/I = rand(1, L.len)
-			var/turf/T = L[I]
-			var/area/X = get_area(T)
-			if(!T.density && X.valid_territory)
-				var/clear = TRUE
-				for(var/obj/O in T)
-					if(O.density)
-						clear = FALSE
-						break
-				if(clear)
-					target = T
-			if (!target)
-				L.Cut(I,I+1)
-		if (target)
-			return target
-
-
 /proc/get_closest_atom(type, list, source)
 	var/closest_atom
 	var/closest_distance
@@ -1193,16 +1242,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 #define FOR_DVIEW_END GLOB.dview_mob.loc = null
 
-//can a window be here, or is there a window blocking it?
-/proc/valid_window_location(turf/T, dir_to_check)
-	if(!T)
-		return FALSE
-	for(var/obj/O in T)
-		if(istype(O, /obj/structure/window))
-			var/obj/structure/window/W = O
-			if(W.ini_dir == dir_to_check || W.ini_dir == FULLTILE_WINDOW_DIR || dir_to_check == FULLTILE_WINDOW_DIR)
-				return FALSE
-	return TRUE
 
 #define UNTIL(X) while(!(X)) stoplag()
 
@@ -1368,36 +1407,15 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 		REMOVE_TRAIT(the_atom2,trait,source)
 
 /proc/get_random_food()
-	var/list/blocked = list(/obj/item/reagent_containers/food/snacks/store/bread,
-		/obj/item/reagent_containers/food/snacks/breadslice,
-		/obj/item/reagent_containers/food/snacks/store/cake,
-		/obj/item/reagent_containers/food/snacks/cakeslice,
+	var/list/blocked = list(
 		/obj/item/reagent_containers/food/snacks/store,
-		/obj/item/reagent_containers/food/snacks/pie,
-		/obj/item/reagent_containers/food/snacks/kebab,
-		/obj/item/reagent_containers/food/snacks/pizza,
-		/obj/item/reagent_containers/food/snacks/pizzaslice,
-		/obj/item/reagent_containers/food/snacks/salad,
 		/obj/item/reagent_containers/food/snacks/meat,
 		/obj/item/reagent_containers/food/snacks/meat/slab,
-		/obj/item/reagent_containers/food/snacks/soup,
 		/obj/item/reagent_containers/food/snacks/grown,
-		/obj/item/reagent_containers/food/snacks/grown/mushroom,
-		/obj/item/reagent_containers/food/snacks/deepfryholder,
-		/obj/item/reagent_containers/food/snacks/clothing,
-		/obj/item/reagent_containers/food/snacks/grown/shell, //base types
-		/obj/item/reagent_containers/food/snacks/store/bread,
 		/obj/item/reagent_containers/food/snacks/grown/nettle
 		)
-	blocked |= typesof(/obj/item/reagent_containers/food/snacks/customizable)
 
 	return pick(subtypesof(/obj/item/reagent_containers/food/snacks) - blocked)
-
-/proc/get_random_drink()
-	var/list/blocked = list(/obj/item/reagent_containers/food/drinks/soda_cans,
-		/obj/item/reagent_containers/food/drinks/bottle
-		)
-	return pick(subtypesof(/obj/item/reagent_containers/food/drinks) - blocked)
 
 //For these two procs refs MUST be ref = TRUE format like typecaches!
 /proc/weakref_filter_list(list/things, list/refs)

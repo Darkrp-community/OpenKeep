@@ -11,7 +11,6 @@
 	randomspread = 0
 	spread = 0
 	can_parry = FALSE
-	pin = /obj/item/firing_pin
 	force = 6
 	var/cocked = FALSE
 	cartridge_wording = "dart"
@@ -96,6 +95,7 @@
 	chargetime = 1
 	chargedrain = 1
 	charging_slowdown = 1
+	item_damage_type = "pierce"
 
 /datum/intent/shoot/blowgun/can_charge()
 	if(mastermob)

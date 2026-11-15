@@ -180,8 +180,6 @@
 
 	if(usr.incapacitated())
 		return TRUE
-	if(ismecha(usr.loc)) // stops inventory actions in a mech
-		return TRUE
 
 	if(hud?.mymob && slot_id)
 		var/obj/item/inv_item = hud.mymob.get_item_by_slot(slot_id)
@@ -288,10 +286,6 @@
 	if(usr != user)
 		return TRUE
 	if(world.time <= user.next_move)
-		return TRUE
-//	if(user.incapacitated())
-//		return TRUE
-	if (ismecha(user.loc)) // stops inventory actions in a mech
 		return TRUE
 
 	if(user.active_hand_index == held_index)
@@ -624,70 +618,6 @@
 			L.toggle_cmode()
 			update_icon()
 
-/atom/movable/screen/act_intent/robot
-	icon = 'icons/mob/screen_cyborg.dmi'
-	screen_loc = ui_borg_intents
-
-/atom/movable/screen/internals
-	name = "toggle internals"
-	icon_state = "internal0"
-	screen_loc = null
-
-/atom/movable/screen/internals/Click(location, control, params)
-	if(!iscarbon(usr))
-		return
-	var/mob/living/carbon/C = usr
-	if(C.incapacitated())
-		return
-
-	if(C.internal)
-		C.internal = null
-		to_chat(C, "<span class='notice'>I are no longer running on internals.</span>")
-		icon_state = "internal0"
-	else
-		if(!C.getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-			if(!istype(C.wear_mask, /obj/item/clothing/mask))
-				to_chat(C, "<span class='warning'>I are not wearing an internals mask!</span>")
-				return 1
-			else
-				var/obj/item/clothing/mask/M = C.wear_mask
-				if(M.mask_adjusted) // if mask on face but pushed down
-					M.adjustmask(C) // adjust it back
-				if( !(M.clothing_flags & MASKINTERNALS) )
-					to_chat(C, "<span class='warning'>I are not wearing an internals mask!</span>")
-					return
-
-		var/obj/item/I = C.is_holding_item_of_type(/obj/item/tank)
-		if(I)
-			to_chat(C, "<span class='notice'>I are now running on internals from [I] in your [C.get_held_index_name(C.get_held_index_of_item(I))].</span>")
-			C.internal = I
-		else if(ishuman(C))
-			var/mob/living/carbon/human/H = C
-			if(istype(H.s_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>I are now running on internals from [H.s_store] on your [H.wear_armor.name].</span>")
-				H.internal = H.s_store
-			else if(istype(H.belt, /obj/item/tank))
-				to_chat(H, "<span class='notice'>I are now running on internals from [H.belt] on your belt.</span>")
-				H.internal = H.belt
-			else if(istype(H.l_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>I are now running on internals from [H.l_store] in your left pocket.</span>")
-				H.internal = H.l_store
-			else if(istype(H.r_store, /obj/item/tank))
-				to_chat(H, "<span class='notice'>I are now running on internals from [H.r_store] in your right pocket.</span>")
-				H.internal = H.r_store
-
-		//Separate so CO2 jetpacks are a little less cumbersome.
-		if(!C.internal && istype(C.back, /obj/item/tank))
-			to_chat(C, "<span class='notice'>I are now running on internals from [C.back] on your back.</span>")
-			C.internal = C.back
-
-		if(C.internal)
-			icon_state = "internal1"
-		else
-			to_chat(C, "<span class='warning'>I don't have an oxygen tank!</span>")
-			return
-	C.update_action_buttons_icon()
-
 /atom/movable/screen/mov_intent
 	name = "run/walk toggle"
 	icon = 'icons/mob/screen_midnight.dmi'
@@ -962,16 +892,27 @@
 	master = new_master
 
 /atom/movable/screen/storage/Click(location, control, params)
+	var/list/modifiers = params2list(params)
+	if(modifiers["right"])
+		if(master)
+			var/obj/item/flipper = usr.get_active_held_item()
+			if((!usr.Adjacent(flipper) && !usr.DirectAccess(flipper)) || !isliving(usr) || usr.incapacitated())
+				return
+			var/old_width = flipper.grid_width
+			var/old_height = flipper.grid_height
+			flipper.grid_height = old_width
+			flipper.grid_width = old_height
+			update_hovering(location, control, params)
+			return
+
 	if(world.time <= usr.next_move)
 		return TRUE
 	if(usr.incapacitated())
 		return TRUE
-	if (ismecha(usr.loc)) // stops inventory actions in a mech
-		return TRUE
 	if(master)
 		var/obj/item/I = usr.get_active_held_item()
 		if(I)
-			master.attackby(null, I, usr, params)
+			master.attackby(src, I, usr, params, TRUE)
 	return TRUE
 
 /atom/movable/screen/throw_catch
@@ -1387,56 +1328,10 @@
 	icon_state = "health0"
 	screen_loc = ui_health
 
-/atom/movable/screen/healths/robot
-	icon = 'icons/mob/screen_cyborg.dmi'
-	screen_loc = ui_borg_health
-
-/atom/movable/screen/healths/blob
-	name = "blob health"
-	icon_state = "block"
-	screen_loc = ui_internal
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/atom/movable/screen/healths/blob/naut
-	name = "health"
-	icon = 'icons/mob/blob.dmi'
-	icon_state = "nauthealth"
-
-/atom/movable/screen/healths/blob/naut/core
-	name = "overmind health"
-	screen_loc = ui_health
-	icon_state = "corehealth"
-
-/atom/movable/screen/healths/guardian
-	name = "summoner health"
-	icon = 'icons/mob/guardian.dmi'
-	icon_state = "base"
-	screen_loc = ui_health
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/atom/movable/screen/healths/revenant
-	name = "essence"
-	icon = 'icons/mob/actions/backgrounds.dmi'
-	icon_state = "bg_revenant"
-	screen_loc = ui_health
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
 /atom/movable/screen/healths/construct
 	icon = 'icons/mob/screen_construct.dmi'
 	icon_state = "artificer_health0"
 	screen_loc = ui_construct_health
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/atom/movable/screen/healths/slime
-	icon = 'icons/mob/screen_slime.dmi'
-	icon_state = "slime_health0"
-	screen_loc = ui_slime_health
-	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
-
-/atom/movable/screen/healths/lavaland_elite
-	icon = 'icons/mob/screen_elite.dmi'
-	icon_state = "elite_health0"
-	screen_loc = ui_health
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /atom/movable/screen/healthdoll
@@ -1847,6 +1742,25 @@
 				hud_used.rmb_intent.update_icon()
 				hud_used.rmb_intent.collapse_intents()
 
+/// Cycles through right-mouse-button intents. Loops.
+/mob/living/proc/cycle_rmb_intent()
+	if(!length(possible_rmb_intents))
+		return
+
+	// Find the index of the current intent
+	var/index = possible_rmb_intents.Find(rmb_intent.type)
+	var/A
+
+	if(index == -1)
+		A = possible_rmb_intents[1]
+	else
+		index = (index % length(possible_rmb_intents)) + 1
+		A = possible_rmb_intents[index]
+	rmb_intent = new A()
+
+	if(hud_used?.rmb_intent)
+		hud_used.rmb_intent.update_icon()
+		hud_used.rmb_intent.collapse_intents()
 
 /atom/movable/screen/time
 	name = "Sir Sun"
@@ -1873,24 +1787,24 @@
 		if(PARTICLEWEATHER_RAIN)
 			add_overlay("rainlay")
 
-/atom/movable/screen/rogfat
+/atom/movable/screen/stam
 	name = "stamina"
 	icon_state = "fat100"
 	icon = 'icons/mob/rogueheat.dmi'
-	screen_loc = rogueui_fat
+	screen_loc = ui_stam
 
-/atom/movable/screen/rogstam
-	name = "fatigue"
+/atom/movable/screen/vigor
+	name = "vigor"
 	icon_state = "stam100"
 	icon = 'icons/mob/rogueheat.dmi'
-	screen_loc = rogueui_fat
+	screen_loc = ui_stam
 
 /atom/movable/screen/heatstamover
 	name = ""
 	mouse_opacity = 0
 	icon_state = "heatstamover"
 	icon = 'icons/mob/rogueheat.dmi'
-	screen_loc = rogueui_fat
+	screen_loc = ui_stam
 	layer = HUD_LAYER+0.1
 
 /atom/movable/screen/scannies

@@ -99,7 +99,7 @@ Design philosphy:
 		backr = /obj/item/rogueweapon/shield/wood/rattan
 		beltr = /obj/item/rogueweapon/sword/scimitar/messer/dao
 		beltl = /obj/item/rogueweapon/mace/ararebo
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>If I am bound to the king, I must be one with my bloodline.</span>")
 			clanfication(H)
@@ -112,7 +112,7 @@ Design philosphy:
 		backr = /obj/item/rogueweapon/shield/wood
 		beltr = /obj/item/rogueweapon/sword/scimitar/messer
 		beltl = /obj/item/rogueweapon/mace
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/shields, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
@@ -124,9 +124,9 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 2)
-	H.change_stat("constitution", 1)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_CON, 1)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
@@ -147,7 +147,7 @@ Design philosphy:
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		head = /obj/item/clothing/head/roguetown/helmet/jingasa
 		beltr = /obj/item/rogueweapon/sword/scimitar/messer/dao
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>If I am bound to the king, I must be one with my bloodline.</span>")
 			clanfication(H)
@@ -158,7 +158,7 @@ Design philosphy:
 		neck = /obj/item/clothing/neck/roguetown/gorget
 		head = /obj/item/clothing/head/roguetown/helmet/kettle
 		beltr = /obj/item/rogueweapon/sword/scimitar/messer
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
@@ -170,10 +170,10 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 1)
-	H.change_stat("speed", -1) // Stronk and gets training in hard hitting polearms, but slower
+	H.change_stat(STATKEY_STR, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_CON, 1)
+	H.change_stat(STATKEY_SPD, -1) // Stronk and gets training in hard hitting polearms, but slower
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
@@ -208,7 +208,7 @@ Design philosphy:
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather/khudagach
 		beltr = /obj/item/quiver/arrows
 		beltl = /obj/item/rogueweapon/knife/kaizoku/tanto
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>If I am bound to the king, I must be one with my bloodline.</span>")
 			clanfication(H)
@@ -222,7 +222,7 @@ Design philosphy:
 		wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 		beltr = /obj/item/quiver/arrows
 		beltl = /obj/item/rogueweapon/knife/dagger/steel/special
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 	//Stats for class
 	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 4, TRUE)
@@ -238,9 +238,9 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("perception", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("speed", 2)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_SPD, 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell
@@ -254,7 +254,7 @@ Design philosphy:
 /datum/outfit/job/roguetown/guardsman/fencer/pre_equip(mob/living/carbon/human/H)
 	..()
 	//Gets studded leather (which hopefully will be renamed splint mail at some point...) and a chain coif
-	backpack_contents = list(/obj/item/keyring/guard)
+	backpack_contents = list(/obj/item/storage/keyring/guard)
 	if(H.dna.species?.id == "abyssariad")
 		to_chat(H, "<span class='warning'>My clan was bound to sworn to the king's cause under the Heavenly Emperor's will. As an Ashigaru retainer, their lineage is held in high regard, and I shall serve their bloodline as I would my daimyo.")
 		armor = /obj/item/clothing/suit/roguetown/armor/leather/splint/kikko
@@ -263,7 +263,7 @@ Design philosphy:
 		head = /obj/item/clothing/head/roguetown/tengai/gasa
 		neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military
 		beltl = /obj/item/rogueweapon/knife/kaizoku/tanto
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 		if(findtext(H.real_name, " Clanless"))
 			to_chat(H, "<span class='userdanger'>Since my clan became bound to the king, I must be one with my bloodline. I am no Clanless.</span>")
 			clanfication(H)
@@ -275,7 +275,7 @@ Design philosphy:
 		beltl = /obj/item/rogueweapon/knife/dagger/steel/special
 		head = /obj/item/clothing/head/roguetown/roguehood/red
 		neck = /obj/item/clothing/neck/roguetown/chaincoif
-		backpack_contents = list(/obj/item/keyring/guard)
+		backpack_contents = list(/obj/item/storage/keyring/guard)
 
 	H.mind.adjust_skillrank(/datum/skill/combat/swords, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
@@ -285,8 +285,8 @@ Design philosphy:
 	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
 	H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-	H.change_stat("endurance", 2)
-	H.change_stat("speed", 2)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_SPD, 2)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/proc/haltyell

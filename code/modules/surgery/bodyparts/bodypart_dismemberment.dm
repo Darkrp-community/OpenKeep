@@ -162,13 +162,6 @@
 		bandage = null
 
 	if(!special)
-		if(was_owner.dna)
-			//some mutations require having specific limbs to be kept.
-			for(var/datum/mutation/human/mutation as anything in was_owner.dna.mutations)
-				if(mutation.limb_req != body_zone)
-					continue
-				was_owner.dna.force_lose(mutation)
-
 		for(var/obj/item/organ/organ as anything in was_owner.internal_organs) //internal organs inside the dismembered limb are dropped.
 			var/org_zone = check_zone(organ.zone)
 			if(org_zone != body_zone)
@@ -189,12 +182,6 @@
 
 	// drop_location = null happens when a "dummy human" used for rendering icons on prefs screen gets its limbs replaced.
 	if(!drop_location)
-		qdel(src)
-		return TRUE
-
-	// pseudoparts shouldn't have organs, but just in case
-	if(is_pseudopart)
-		drop_organs(was_owner)
 		qdel(src)
 		return TRUE
 
@@ -323,19 +310,14 @@
 
 	qdel(owner.GetComponent(/datum/component/creamed)) //clean creampie overlay
 
-	//Make sure de-zombification happens before organ removal instead of during it
-	var/obj/item/organ/zombie_infection/ooze = owner.getorganslot(ORGAN_SLOT_ZOMBIE)
-	if(istype(ooze))
-		ooze.transfer_to_limb(src, owner)
-
 	name = "[owner.real_name]'s head"
 	. = ..()
-	if(brainmob)
-		QDEL_NULL(brainmob)
-	var/obj/item/organ/brain/BR = locate(/obj/item/organ/brain) in contents
-	if(BR)
-		if(BR.brainmob)
-			QDEL_NULL(BR.brainmob)
+	//if(brainmob)
+	//	QDEL_NULL(brainmob)
+	//var/obj/item/organ/brain/BR = locate(/obj/item/organ/brain) in contents
+	//if(BR)
+	//	if(BR.brainmob)
+	//		QDEL_NULL(BR.brainmob)
 
 //Attach a limb to a human and drop any existing limb of that type.
 /obj/item/bodypart/proc/replace_limb(mob/living/carbon/C, special)
@@ -365,7 +347,7 @@
 		if(held_index > C.hand_bodyparts.len)
 			C.hand_bodyparts.len = held_index
 		C.hand_bodyparts[held_index] = src
-		if(C.dna.species.mutanthands && !is_pseudopart)
+		if(C.dna.species.mutanthands)
 			C.put_in_hand(new C.dna.species.mutanthands(), held_index)
 		if(C.hud_used)
 			var/atom/movable/screen/inventory/hand/hand = C.hud_used.hand_slots["[held_index]"]

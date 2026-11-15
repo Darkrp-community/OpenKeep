@@ -44,5 +44,5 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt
 		cloak = /obj/item/clothing/cloak/apron/brown
 
-	H.change_stat("endurance", 2)
+	H.change_stat(STATKEY_END, 2)
 

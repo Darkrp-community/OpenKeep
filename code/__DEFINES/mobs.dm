@@ -1,7 +1,16 @@
 /*ALL MOB-RELATED DEFINES THAT DON'T BELONG IN ANOTHER FILE GO HERE*/
 
 //This was previously in vampirelord.dm and mob/living/stats.dm, the person defined it twice because vampirelord came in below that stats file, so now both of them can get it here.
-#define MOBSTATS list("strength", "perception", "intelligence", "constitution", "endurance", "speed", "fortune")
+#define STATKEY_STR "strength"
+#define STATKEY_PER "perception"
+#define STATKEY_INT "intelligence"
+#define STATKEY_CON "constitution"
+#define STATKEY_END "endurance"
+#define STATKEY_SPD "speed"
+#define STATKEY_LCK "fortune"
+
+#define MOBSTATS list(STATKEY_STR, STATKEY_PER, STATKEY_INT, STATKEY_CON, STATKEY_END, STATKEY_SPD , STATKEY_LCK)
+
 
 //Misc mob defines
 
@@ -85,8 +94,6 @@
 // Health/damage defines for carbon mobs
 #define HUMAN_MAX_OXYLOSS 3
 #define HUMAN_CRIT_MAX_OXYLOSS (SSmobs.wait/30)
-
-#define STAMINA_REGEN_BLOCK_TIME (10 SECONDS)
 
 #define HEAT_DAMAGE_LEVEL_1 1 //Amount of damage applied when your body temperature just passes the 360.15k safety point
 #define HEAT_DAMAGE_LEVEL_2 1 //Amount of damage applied when your body temperature passes the 400K point
@@ -468,6 +475,9 @@
 
 //SPECIAL SKIN TONES
 #define SKIN_COLOR_ROT "878f79"
+
+/// Humans are slowed by the difference between bodytemp and BODYTEMP_COLD_DAMAGE_LIMIT divided by this
+#define COLD_SLOWDOWN_FACTOR				20
 
 //DEFAULT ABYSSARIAD SKIN TONES
 #define SKIN_COLOR_OATHBOUND_MUQIAN "ffe0d1"

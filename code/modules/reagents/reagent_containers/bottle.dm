@@ -98,11 +98,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 		icon_state = "clear_bottle[rand(1,4)]"
 	update_icon()
 
-/obj/item/reagent_containers/glass/bottle/epinephrine
-	name = "epinephrine bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30)
-
 /obj/item/reagent_containers/glass/bottle/toxin
 	name = "toxin bottle"
 	desc = ""
@@ -113,33 +108,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/spewium = 30)
 
-/obj/item/reagent_containers/glass/bottle/morphine
-	name = "morphine bottle"
-	desc = ""
-	icon = 'icons/obj/chemical.dmi'
-	list_reagents = list(/datum/reagent/medicine/morphine = 30)
-
-/obj/item/reagent_containers/glass/bottle/chloralhydrate
-	name = "poppy milk vial"
-	desc = ""
-	icon_state = "bottle20"
-	list_reagents = list(/datum/reagent/toxin/chloralhydrate = 20)
-
-/obj/item/reagent_containers/glass/bottle/mannitol
-	name = "mannitol bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/mannitol = 30)
-
-/obj/item/reagent_containers/glass/bottle/multiver
-	name = "multiver bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/C2/multiver = 30)
-
-/obj/item/reagent_containers/glass/bottle/syriniver
-	name = "syriniver bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/C2/syriniver = 30)
-
 /obj/item/reagent_containers/glass/bottle/mutagen
 	name = "unstable mutagen bottle"
 	desc = ""
@@ -149,11 +117,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	name = "purple aetherium bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/plasma = 30)
-
-/obj/item/reagent_containers/glass/bottle/synaptizine
-	name = "synaptizine bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/synaptizine = 30)
 
 /obj/item/reagent_containers/glass/bottle/ammonia
 	name = "ammonia bottle"
@@ -169,13 +132,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	name = "Fluorosulfuric Acid Bottle"
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/acid/fluacid = 30)
-
-/obj/item/reagent_containers/glass/bottle/adminordrazine
-	name = "Adminordrazine Bottle"
-	desc = ""
-	icon = 'icons/obj/drinks.dmi'
-	icon_state = "holyflask"
-	list_reagents = list(/datum/reagent/medicine/adminordrazine = 30)
 
 /obj/item/reagent_containers/glass/bottle/capsaicin
 	name = "Capsaicin Bottle"
@@ -195,18 +151,8 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 
 /obj/item/reagent_containers/glass/bottle/traitor/Initialize()
 	. = ..()
-	extra_reagent = pick(/datum/reagent/toxin/polonium, /datum/reagent/toxin/histamine, /datum/reagent/toxin/formaldehyde, /datum/reagent/toxin/venom, /datum/reagent/toxin/fentanyl, /datum/reagent/toxin/cyanide)
+	extra_reagent = pick(/datum/reagent/toxin/histamine, /datum/reagent/toxin/formaldehyde, /datum/reagent/toxin/venom, /datum/reagent/toxin/fentanyl, /datum/reagent/toxin/cyanide)
 	reagents.add_reagent(extra_reagent, 3)
-
-/obj/item/reagent_containers/glass/bottle/polonium
-	name = "polonium bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/toxin/polonium = 30)
-
-/obj/item/reagent_containers/glass/bottle/magillitis
-	name = "magillitis bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/magillitis = 5)
 
 /obj/item/reagent_containers/glass/bottle/venom
 	name = "venom bottle"
@@ -233,11 +179,6 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/pancuronium = 30)
 
-/obj/item/reagent_containers/glass/bottle/sodium_thiopental
-	name = "sodium thiopental bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/toxin/sodium_thiopental = 30)
-
 /obj/item/reagent_containers/glass/bottle/coniine
 	name = "coniine bottle"
 	desc = ""
@@ -258,103 +199,11 @@ GLOBAL_LIST_INIT(wisdoms, world.file2list("strings/rt/wisdoms.txt"))
 	desc = ""
 	list_reagents = list(/datum/reagent/toxin/histamine = 30)
 
-/obj/item/reagent_containers/glass/bottle/diphenhydramine
-	name = "antihistamine bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/diphenhydramine = 30)
-
-/obj/item/reagent_containers/glass/bottle/potass_iodide
-	name = "anti-radiation bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/potass_iodide = 30)
-
 /obj/item/reagent_containers/glass/bottle/salglu_solution
 	name = "saline-glucose solution bottle"
 	desc = ""
 	icon_state = "bottle1"
 	list_reagents = list(/datum/reagent/medicine/salglu_solution = 30)
-
-/obj/item/reagent_containers/glass/bottle/atropine
-	name = "atropine bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/medicine/atropine = 30)
-
-/obj/item/reagent_containers/glass/bottle/romerol
-	name = "romerol bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/romerol = 30)
-
-/obj/item/reagent_containers/glass/bottle/random_virus
-	name = "Experimental disease culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/advance/random
-
-/obj/item/reagent_containers/glass/bottle/pierrot_throat
-	name = "Pierrot's Throat culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/pierrot_throat
-
-/obj/item/reagent_containers/glass/bottle/cold
-	name = "Rhinovirus culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/advance/cold
-
-/obj/item/reagent_containers/glass/bottle/flu_virion
-	name = "Flu virion culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/advance/flu
-
-/obj/item/reagent_containers/glass/bottle/retrovirus
-	name = "Retrovirus culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/dna_retrovirus
-
-/obj/item/reagent_containers/glass/bottle/gbs
-	name = "GBS culture bottle"
-	desc = ""//Or simply - General BullShit
-	amount_per_transfer_from_this = 5
-	spawned_disease = /datum/disease/gbs
-
-/obj/item/reagent_containers/glass/bottle/fake_gbs
-	name = "GBS culture bottle"
-	desc = ""//Or simply - General BullShit
-	spawned_disease = /datum/disease/fake_gbs
-
-/obj/item/reagent_containers/glass/bottle/brainrot
-	name = "Brainrot culture bottle"
-	desc = ""
-	icon_state = "bottle3"
-	spawned_disease = /datum/disease/brainrot
-
-/obj/item/reagent_containers/glass/bottle/magnitis
-	name = "curse of Ferrum potion"
-	desc = "Dangerous magical potion that has something to do with iron being the opposite of lightning, or was it the rust remover?"
-	spawned_disease = /datum/disease/magnitis
-
-/obj/item/reagent_containers/glass/bottle/wizarditis
-	name = "Wizarditis culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/wizarditis
-
-/obj/item/reagent_containers/glass/bottle/anxiety
-	name = "horrifica mentata extract"
-	desc = "Buds from exotic flowers, distilled and left to settle for a decade. This is the result. The unpleasant effects on the drinker are best countered with alcohol the label says."
-	spawned_disease = /datum/disease/anxiety
-
-/obj/item/reagent_containers/glass/bottle/fluspanish
-	name = "Spanish flu culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/fluspanish
-
-/obj/item/reagent_containers/glass/bottle/tuberculosis
-	name = "Fungal Tuberculosis culture bottle"
-	desc = ""
-	spawned_disease = /datum/disease/tuberculosis
-
-/obj/item/reagent_containers/glass/bottle/tuberculosiscure
-	name = "BVAK bottle"
-	desc = ""
-	list_reagents = list(/datum/reagent/vaccine/fungal_tb = 30)
 
 //Oldstation.dmm chemical storage bottles
 

@@ -24,8 +24,11 @@ SUBSYSTEM_DEF(outdoor_effects)
 
 /datum/controller/subsystem/outdoor_effects/proc/InitializeTurfs(list/targets)
 	for (var/z in SSmapping.levels_by_trait(ZTRAIT_STATION))
-		for (var/turf/T in block(locate(1,1,z), locate(world.maxx,world.maxy,z)))
-			GLOB.SUNLIGHT_QUEUE_WORK += T
+		init_z_turfs(z)
+
+/datum/controller/subsystem/outdoor_effects/proc/init_z_turfs(z)
+	for (var/turf/T in block(locate(1,1,z), locate(world.maxx,world.maxy,z)))
+		GLOB.SUNLIGHT_QUEUE_WORK += T
 
 /* set sunlight color + add weather effect to clients */
 /datum/controller/subsystem/outdoor_effects/fire(resumed, init_tick_checks)

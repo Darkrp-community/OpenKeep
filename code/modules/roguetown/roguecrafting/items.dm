@@ -538,39 +538,6 @@
 	skillcraft = /datum/skill/craft/engineering
 	req_islander = TRUE
 
-/datum/crafting_recipe/roguetown/smokebomb
-	name = "smoke bomb"
-	result = /obj/item/grenade/smoke_bomb
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
-				/obj/item/natural/dirtclod = 1,
-				/obj/item/paper/scroll)
-	craftdiff = 2
-	skillcraft = /datum/skill/craft/engineering
-	req_islander = TRUE
-
-/datum/crafting_recipe/roguetown/poisonbomb
-	name = "poison bomb"
-	result = /obj/item/grenade/smoke_bomb/poison
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/reagent_containers/food/snacks/produce/fyritius = 1,
-				/obj/item/natural/dirtclod = 1,
-				/obj/item/reagent_containers/food/snacks/produce/jacksberry/poison = 1)
-	craftdiff = 3
-	skillcraft = /datum/skill/craft/engineering
-	req_islander = TRUE
-
-/datum/crafting_recipe/roguetown/zhentianlei
-	name = "zhentianlei bomb"
-	result = /obj/item/zhentianlei
-	reqs = list(/obj/item/natural/cloth = 1,
-				/obj/item/sanctiflux = 1,
-				/obj/item/ingot/iron = 1
-				)
-	craftdiff = 4
-	skillcraft = /datum/skill/craft/engineering
-	req_islander = TRUE
-
 /datum/crafting_recipe/roguetown/sanctiflux
 	name = "sanctiflux"
 	result = /obj/item/sanctiflux

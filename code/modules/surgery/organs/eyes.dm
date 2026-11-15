@@ -37,18 +37,20 @@
 
 /obj/item/organ/eyes/update_overlays()
 	. = ..()
-	if(eye_color && (icon_state == "eyeball"))
+	if(initial(eye_color) && (icon_state == "eyeball"))
 		var/mutable_appearance/iris_overlay = mutable_appearance(src.icon, "eyeball-iris")
 		iris_overlay.color = "#" + eye_color
 		. += iris_overlay
 
 /obj/item/organ/eyes/update_accessory_colors()
 	var/list/colors_list = list()
-	colors_list += eye_color
-	if(heterochromia)
-		colors_list += second_color
-	else
+	if(initial(eye_color))
 		colors_list += eye_color
+	if(initial(second_color))
+		if(heterochromia)
+			colors_list += second_color
+		else
+			colors_list += eye_color
 	accessory_colors = color_list_to_string(colors_list)
 
 /obj/item/organ/eyes/imprint_organ_dna(datum/organ_dna/organ_dna)
@@ -63,13 +65,11 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/HMN = owner
 		old_eye_color = HMN.eye_color
-		if(eye_color)
+		if(initial(eye_color))
 			HMN.eye_color = eye_color
 			HMN.regenerate_icons()
 		else
 			eye_color = HMN.eye_color
-		if(HAS_TRAIT(HMN, TRAIT_NIGHT_VISION) && !lighting_alpha)
-			lighting_alpha = LIGHTING_PLANE_ALPHA_NV_TRAIT
 	for(var/datum/wound/facial/eyes/eye_wound as anything in M.get_wounds())
 		qdel(eye_wound)
 	M.update_tint()
@@ -79,7 +79,7 @@
 
 /obj/item/organ/eyes/Remove(mob/living/carbon/M, special = 0)
 	. = ..()
-	if(ishuman(M) && eye_color)
+	if(ishuman(M))
 		var/mob/living/carbon/human/HMN = M
 		HMN.eye_color = old_eye_color
 		HMN.regenerate_icons()
@@ -142,6 +142,7 @@
 /obj/item/organ/eyes/night_vision/zombie
 	name = "undead eyes"
 	desc = ""
+	eye_color = "#FFFFFF"
 
 /obj/item/organ/eyes/night_vision/werewolf
 	name = "moonlight eyes"

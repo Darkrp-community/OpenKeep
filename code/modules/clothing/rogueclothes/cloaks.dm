@@ -13,6 +13,9 @@
 	anvilrepair = null
 	smeltresult = /obj/item/ash
 
+	grid_width = 64
+	grid_height = 64
+
 
 //////////////////////////
 /// TABARD
@@ -569,12 +572,7 @@
 
 /obj/item/clothing/cloak/lordcloak/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 3
-		STR.max_w_class = WEIGHT_CLASS_BULKY
-		STR.max_items = 1
+	AddComponent(/datum/component/storage/concrete/roguetown/cloak/lord)
 
 /obj/item/clothing/cloak/lordcloak/dropped(mob/living/carbon/human/user)
 	..()
@@ -659,12 +657,7 @@
 
 /obj/item/clothing/cloak/raincloak/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 3
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 1
+	AddComponent(/datum/component/storage/concrete/roguetown/cloak)
 
 /obj/item/clothing/cloak/raincloak/dropped(mob/living/carbon/human/user)
 	..()
@@ -891,12 +884,7 @@
 
 /obj/item/clothing/cloak/half/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 3
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 1
+	AddComponent(/datum/component/storage/concrete/roguetown/cloak)
 
 /obj/item/clothing/cloak/half/dropped(mob/living/carbon/human/user)
 	..()
@@ -1279,6 +1267,5 @@
 	equip_delay_self = 20
 	heat_protection = FULL_BODY
 	body_parts_covered = FULL_BODY
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | LAVA_PROOF
 	color = "#7e0707"

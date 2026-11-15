@@ -18,6 +18,10 @@
 	anvilrepair = null
 	smeltresult = /obj/item/ash
 
+	grid_width = 64
+	grid_height = 64
+
+
 /obj/item/clothing/suit/roguetown/shirt/undershirt
 	name = "shirt"
 	desc = ""
@@ -521,7 +525,6 @@
 	color = CLOTHING_SOOT_BLACK
 
 /obj/item/clothing/suit/roguetown/shirt/looseshirt/dragonslayer
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	color = CLOTHING_WINESTAIN_RED
 

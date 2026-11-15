@@ -62,10 +62,10 @@
 			to_chat(H, span_warning( "<span class='info'>Hailing from the tropical edges, I am a 'LinYou', armored in humble, oil-boiled wickerwork and iron, I am trained to perform long-term expeditions and guerrila tactics on any soil.</span>"))
 
 			//same as normal warriors.
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("constitution", 1)
-			H.change_stat("intelligence", -1)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_CON, 1)
+			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 		if("Dustrider (Scout)") // Full light armor, highest quality of light armor. Loses shield and money for bow. Literally mongolian, but lacking a horse. Only Dodge expert.
@@ -83,10 +83,10 @@
 			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 
 			//please tell me if this is balanced or not.
-			H.change_stat("strength", 1)
-			H.change_stat("speed", 2)
-			H.change_stat("intelligence", -1)
-			H.change_stat("endurance", 1)
+			H.change_stat(STATKEY_STR, 1)
+			H.change_stat(STATKEY_SPD, 2)
+			H.change_stat(STATKEY_INT, -1)
+			H.change_stat(STATKEY_END, 1)
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			to_chat(H, span_warning( "<span class='info'>Hailing from the arid heart of the island, I am a 'Dustwalker'. I left my horse behind to try my luck among the sailing allies, but my trusted bow remains with me.</span>"))
 
@@ -109,10 +109,10 @@
 			to_chat(H, span_warning("<span class='info'>Farmlands shall never struggle under my might, as I came from the Outskirts where the demons once brew, I slaughtered the Grezenholft like pigs - and I can do it again. May the waters fortalify the soil I step on.</span>"))
 
 			//same as normal warriors.
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("constitution", 1)
-			H.change_stat("intelligence", -1)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_CON, 1)
+			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 		if("Muqian (Towerdweller)") //The 20% of Wokou Population. Practically the best armored - but has no shield and no money, and have to rely on flails for combat. 'Kusari/Chain-People'
@@ -125,10 +125,10 @@
 			to_chat(H, span_warning("<span class='info'>I am a Muqian, I hail from the towers of civilization, those upheld in sturdy chains alike my body. May the dices of destiny enlight my ways.</span>"))
 
 			//same as normal warriors.
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 1)
-			H.change_stat("constitution", 1)
-			H.change_stat("intelligence", -1)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_CON, 1)
+			H.change_stat(STATKEY_INT, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 
 		if("Kaizoku (Navy)") // Special one. "AYO THIS IS THE PROJECT NAME!!!" Start with Steel Weapon - but uses weak light armor, but they have DRIP, and non-rattan shield, because from where they come from, has no Rattan.
@@ -142,11 +142,11 @@
 			to_chat(H, span_warning("<span class='info'>I am a son of Kaizoku and I am one with the destroyed Atoll, my life is on the seas. The major empire's supply lines shall crumble against my ways of warfare. May the Abyssal Emperor live FOREVER. </span>"))
 
 			//focused on having more stamina.
-			H.change_stat("strength", 1)
-			H.change_stat("speed", 2)
-			H.change_stat("intelligence", -1)
-			H.change_stat("perception", -1)
-			H.change_stat("endurance", 2)
+			H.change_stat(STATKEY_STR, 1)
+			H.change_stat(STATKEY_SPD, 2)
+			H.change_stat(STATKEY_INT, -1)
+			H.change_stat(STATKEY_PER, -1)
+			H.change_stat(STATKEY_END, 2)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 		if("Jizamurai (Enforcer)")
 			H.set_blindness(0)
@@ -164,9 +164,9 @@
 			to_chat(H, span_warning("<span class='info'>As a minor Zamurai lord, my roots are bound to the sword. I shall protect the weak and the innocent from corruption, as its reach ends where my blade begins. </span>"))
 
 			//Strength and Endurance.
-			H.change_stat("strength", 2)
-			H.change_stat("endurance", 2)
-			H.change_stat("perception", -1)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_END, 2)
+			H.change_stat(STATKEY_PER, -1)
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 

@@ -76,11 +76,7 @@
 
 	/// Will move to flags_1 when i can be arsed to (2019, has not done so)
 	var/rad_flags = NONE
-	/// Radiation insulation types
-	var/rad_insulation = RAD_NO_INSULATION
 
-	///The custom materials this atom is made of, used by a lot of things like furniture, walls, and floors (if I finish the functionality, that is.)
-	var/list/custom_materials
 	///Bitfield for how the atom handles materials.
 	var/material_flags = NONE
 	///Modifier that raises/lowers the effect of the amount of a material, prevents small and easy to get items from being death machines.
@@ -173,13 +169,6 @@
 	if (canSmoothWith)
 		canSmoothWith = typelist("canSmoothWith", canSmoothWith)
 
-	var/temp_list = list()
-	for(var/i in custom_materials)
-		temp_list[getmaterialref(i)] = custom_materials[i] //Get the proper instanced version
-
-	custom_materials = null //Null the list to prepare for applying the materials properly
-	set_custom_materials(temp_list)
-
 	ComponentInitialize()
 	InitializeAIController()
 
@@ -255,50 +244,12 @@
 	if(!T)
 		return FALSE
 
-	if(is_reserved_level(T.z))
-		for(var/A in SSshuttle.mobile)
-			var/obj/docking_port/mobile/M = A
-			if(M.launch_status == ENDGAME_TRANSIT)
-				for(var/place in M.shuttle_areas)
-					var/area/shuttle/shuttle_area = place
-					if(T in shuttle_area)
-						return TRUE
-
 	if(!is_centcom_level(T.z))//if not, don't bother
 		return FALSE
 
 	//Check for centcom itself
 	if(istype(T.loc, /area/centcom))
 		return TRUE
-
-	//Check for centcom shuttles
-	for(var/A in SSshuttle.mobile)
-		var/obj/docking_port/mobile/M = A
-		if(M.launch_status == ENDGAME_LAUNCHED)
-			for(var/place in M.shuttle_areas)
-				var/area/shuttle/shuttle_area = place
-				if(T in shuttle_area)
-					return TRUE
-
-/**
- * Is the atom in any of the centcom syndicate areas
- *
- * Either in the syndie base on centcom, or any of their shuttles
- *
- * Also used in gamemode code for win conditions
- */
-/atom/proc/onSyndieBase()
-	var/turf/T = get_turf(src)
-	if(!T)
-		return FALSE
-
-	if(!is_centcom_level(T.z))//if not, don't bother
-		return FALSE
-
-	if(istype(T.loc, /area/shuttle/syndicate) || istype(T.loc, /area/syndicate_mothership) || istype(T.loc, /area/shuttle/assault_pod))
-		return TRUE
-
-	return FALSE
 
 /**
  * Is the atom in an away mission
@@ -316,12 +267,6 @@
 		return TRUE
 
 	return FALSE
-
-
-
-///This atom has been hit by a hulkified mob in hulk mode (user)
-/atom/proc/attack_hulk(mob/living/carbon/human/user)
-	SEND_SIGNAL(src, COMSIG_ATOM_HULK_ATTACK, user)
 
 /**
  * Ensure a list of atoms/reagents exists inside this atom
@@ -360,26 +305,6 @@
 ///Hook for multiz???
 /atom/proc/update_multiz(prune_on_fail = FALSE)
 	return FALSE
-
-///Take air from the passed in gas mixture datum
-/atom/proc/assume_air(datum/gas_mixture/giver)
-	qdel(giver)
-	return null
-
-///Remove air from this atom
-/atom/proc/remove_air(amount)
-	return null
-
-///Return the current air environment in this atom
-/atom/proc/return_air()
-	if(loc)
-		return loc.return_air()
-	else
-		return null
-
-///Return the air if we can analyze it
-/atom/proc/return_analyzable_air()
-	return null
 
 ///Check if this atoms eye is still alive (probably)
 /atom/proc/check_eye(mob/user)
@@ -490,10 +415,6 @@
 	if(desc)
 		. += "<span class='info'>[desc]</span>"
 
-//	if(custom_materials)
-//		for(var/i in custom_materials)
-//			var/datum/material/M = i
-//			. += "<u>It is made out of [M.name]</u>."
 	if(reagents)
 		if(reagents.flags & TRANSPARENT)
 			if(length(reagents.reagent_list))
@@ -570,19 +491,10 @@
  *
  * Default behaviour is to call contents_explosion() and send the COMSIG_ATOM_EX_ACT signal
  */
-/atom/proc/ex_act(severity, target)
+/atom/proc/ex_act(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 	set waitfor = FALSE
-	contents_explosion(severity, target)
-	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
-
-/**
- * React to a hit by a blob objecd
- *
- * default behaviour is to send the COMSIG_ATOM_BLOB_ACT signal
- */
-/atom/proc/blob_act(obj/structure/blob/B)
-	SEND_SIGNAL(src, COMSIG_ATOM_BLOB_ACT, B)
-	return
+	contents_explosion(severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
+	SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target, epicenter, devastation_range, heavy_impact_range, light_impact_range, flame_range)
 
 /atom/proc/fire_act(added, maxstacks)
 	SEND_SIGNAL(src, COMSIG_ATOM_FIRE_ACT, added, maxstacks)
@@ -598,7 +510,7 @@
  * deleted shortly after hitting something (during explosions or other massive events that
  * throw lots of items around - singularity being a notable example)
  */
-/atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/atom/proc/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "crush")
 //	SEND_SIGNAL(src, COMSIG_ATOM_HITBY, AM, skipcatch, hitpush, blocked, throwingdatum, damage_type)  TO DO enable when damage type fixed I guess
 	if(density && !has_gravity(AM)) //thrown stuff bounces off dense stuff in no grav, unless the thrown stuff ends up inside what it hit(embedding, bola, etc...).
 		addtimer(CALLBACK(src, PROC_REF(hitby_react), AM), 2)
@@ -633,12 +545,6 @@
 		blood_dna["UNKNOWN DNA"] = "X*"
 	return blood_dna
 
-/mob/living/carbon/alien/get_blood_dna_list()
-	return list("UNKNOWN DNA" = "X*")
-
-/mob/living/silicon/get_blood_dna_list()
-	return list("MOTOR OIL" = "SAE 5W-30") //just a little flavor text.
-
 ///to add a mob's dna info into an object's blood_dna list.
 /atom/proc/transfer_mob_blood_dna(mob/living/L)
 	// Returns 0 if we have that blood already
@@ -658,28 +564,9 @@
 		return FALSE
 	return add_blood_DNA(blood_dna)
 
-///Is this atom in space
-/atom/proc/isinspace()
-	if(isspaceturf(get_turf(src)))
-		return TRUE
-	else
-		return FALSE
-
 ///Called when gravity returns after floating I think
 /atom/proc/handle_fall()
 	return
-
-///Respond to the singularity eating this atom
-/atom/proc/singularity_act()
-	return
-
-/**
- * Respond to the singularity pulling on us
- *
- * Default behaviour is to send COMSIG_ATOM_SING_PULL and return
- */
-/atom/proc/singularity_pull()
-
 
 /**
  * Respond to acid being used on our atom
@@ -696,14 +583,6 @@
  */
 /atom/proc/emag_act(mob/user)
 	SEND_SIGNAL(src, COMSIG_ATOM_EMAG_ACT, user)
-
-/**
- * Respond to a radioactive wave hitting this atom
- *
- * Default behaviour is to send COMSIG_ATOM_RAD_ACT and return
- */
-/atom/proc/rad_act(strength)
-	SEND_SIGNAL(src, COMSIG_ATOM_RAD_ACT, strength)
 
 /**
  * Respond to narsie eating our atom
@@ -896,7 +775,6 @@
 			. += "<option value='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[curturf.x];Y=[curturf.y];Z=[curturf.z]'>Jump To</option>"
 	VV_DROPDOWN_OPTION(VV_HK_MODIFY_TRANSFORM, "Modify Transform")
 	VV_DROPDOWN_OPTION(VV_HK_ADD_REAGENT, "Add Reagent")
-	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EMP, "EMP Pulse")
 	VV_DROPDOWN_OPTION(VV_HK_TRIGGER_EXPLOSION, "Explosion")
 	VV_DROPDOWN_OPTION(VV_HK_ADD_AI, "Add AI controller")
 
@@ -946,8 +824,6 @@
 			return
 		ai_controller = new result(src)
 
-	if(href_list[VV_HK_TRIGGER_EMP] && check_rights(R_FUN))
-		usr.client.cmd_admin_emp(src)
 	if(href_list[VV_HK_MODIFY_TRANSFORM] && check_rights(R_VAREDIT))
 		var/result = input(usr, "Choose the transformation to apply","Transform Mod") as null|anything in list("Scale","Translate","Rotate")
 		var/matrix/M = transform
@@ -1089,10 +965,6 @@
 /atom/proc/GenerateTag()
 	return
 
-///Connect this atom to a shuttle
-/atom/proc/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	return
-
 /// Generic logging helper
 /atom/proc/log_message(message, message_type, color=null, log_globally=TRUE)
 	if(!log_globally)
@@ -1208,29 +1080,6 @@
 /atom/proc/intercept_zImpact(atom/movable/AM, levels = 1)
 	. |= SEND_SIGNAL(src, COMSIG_ATOM_INTERCEPT_Z_FALL, AM, levels)
 
-///Sets the custom materials for an item.
-/atom/proc/set_custom_materials(list/materials, multiplier = 1)
-
-	if(!materials)
-		materials = custom_materials
-
-	if(custom_materials) //Only runs if custom materials existed at first. Should usually be the case but check anyways
-		for(var/i in custom_materials)
-			var/datum/material/custom_material = getmaterialref(i)
-			custom_material.on_removed(src, material_flags) //Remove the current materials
-
-	if(!length(materials))
-		return
-
-	custom_materials = list() //Reset the list
-
-	for(var/x in materials)
-		var/datum/material/custom_material = getmaterialref(x)
-
-		if(!(material_flags & MATERIAL_NO_EFFECTS))
-			custom_material.on_applied(src, materials[custom_material] * multiplier * material_modifier, material_flags)
-		custom_materials[custom_material] += materials[x] * multiplier
-
 /**
  * Returns true if this atom has gravity for the passed in turf
  *
@@ -1245,30 +1094,31 @@
  * * Gravity if the Z level has an SSMappingTrait for ZTRAIT_GRAVITY
  * * otherwise no gravity
  */
-/atom/proc/has_gravity(turf/T)
-	if(!T || !isturf(T))
-		T = get_turf(src)
+/atom/proc/has_gravity(turf/gravity_turf)
+	if(!isturf(gravity_turf))
+		gravity_turf = get_turf(src)
 
-	if(!T)
+	if(!gravity_turf) //no gravity in nullspace
 		return 0
 
-	var/list/forced_gravity = list()
-	SEND_SIGNAL(src, COMSIG_ATOM_HAS_GRAVITY, T, forced_gravity)
-	if(!forced_gravity.len)
-		SEND_SIGNAL(T, COMSIG_TURF_HAS_GRAVITY, src, forced_gravity)
-	if(forced_gravity.len)
-		var/max_grav
-		for(var/i in forced_gravity)
+	//the list isnt created every time as this proc is very hot, its only accessed if anything is actually listening to the signal too
+	var/static/list/forced_gravity = list()
+	if(SEND_SIGNAL(src, COMSIG_ATOM_HAS_GRAVITY, gravity_turf, forced_gravity))
+		if(!length(forced_gravity))
+			SEND_SIGNAL(gravity_turf, COMSIG_TURF_HAS_GRAVITY, src, forced_gravity)
+
+		var/max_grav = 0
+		for(var/i in forced_gravity)//our gravity is the strongest return forced gravity we get
 			max_grav = max(max_grav, i)
+		forced_gravity.Cut()
+		//cut so we can reuse the list, this is ok since forced gravity movers are exceedingly rare compared to all other movement
 		return max_grav
 
-	if(isspaceturf(T)) // Turf never has gravity
-		return 0
+	var/area/turf_area = gravity_turf.loc
+	// force_no_gravity has been removed because this is Roguetown code
+	// it'd be trivial to readd if you needed it, though
+	return SSmapping.gravity_by_z_level["[gravity_turf.z]"] || turf_area.has_gravity
 
-	var/area/A = get_area(T)
-	if(A.has_gravity) // Areas which always has gravity
-		return A.has_gravity
-	return SSmapping.level_trait(T.z, ZTRAIT_GRAVITY)
 
 /**
 * Instantiates the AI controller of this atom. Override this if you want to assign variables first.

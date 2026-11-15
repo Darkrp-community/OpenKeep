@@ -194,9 +194,9 @@
 /obj/projectile/magic/aoe/fireball/rogue
 	name = "fireball"
 	exp_heavy = 0
-	exp_light = 0
+	exp_light = 3
 	exp_flash = 0
-	exp_fire = 1
+	exp_fire = 3
 	damage = 10
 	damage_type = BURN
 	nodamage = FALSE
@@ -232,9 +232,9 @@
 	sound = list('sound/magic/fireball.ogg')
 	active = FALSE
 	releasedrain = 50
-	chargedrain = 1
+	chargedrain = 3
 	chargetime = 15
-	charge_max = 10 SECONDS
+	charge_max = 20 SECONDS
 	warnie = "spellwarning"
 	no_early_release = TRUE
 	movement_interrupt = TRUE
@@ -247,8 +247,9 @@
 	exp_light = 1
 	exp_flash = 2
 	exp_fire = 2
+	exp_hotspot = 0
 	flag = "magic"
-	speed = 4
+	speed = 6
 
 /obj/effect/proc_holder/spell/invoked/projectile/spitfire
 	name = "Spitfire"
@@ -453,7 +454,7 @@
 		if (PRESTI_MOTE)
 			extra_fatigue = 15 // same deal here
 
-	user.rogfat_add(fatigue_used + extra_fatigue)
+	user.adjust_stam(fatigue_used + extra_fatigue)
 
 	var/skill_level = user.mind?.get_skill_level(attached_spell.associated_skill)
 	if (skill_level >= SKILL_LEVEL_EXPERT)
@@ -516,15 +517,7 @@
 	var/skill_level = user.mind?.get_skill_level(attached_spell.associated_skill)
 	cleanspeed = initial(cleanspeed) - (skill_level * 3) // 3 cleanspeed per skill level, from 35 down to a maximum of 17 (pretty quick)
 
-	if (istype(target, /obj/structure/window))
-		user.visible_message(span_notice("[user] gestures at \the [target.name], tiny motes of arcyne power running across its surface..."), span_notice("I begin to clean \the [target.name] with my arcyne power..."))
-		if (do_after(user, src.cleanspeed, target = target))
-			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
-			target.set_opacity(initial(target.opacity))
-			to_chat(user, span_notice("I render \the [target.name] clean."))
-			return TRUE
-		return FALSE
-	else if (istype(target, /obj/effect/decal/cleanable))
+	if (istype(target, /obj/effect/decal/cleanable))
 		user.visible_message(span_notice("[user] gestures at \the [target.name], arcyne power slowly scouring it away..."), span_notice("I begin to scour \the [target.name] away with my arcyne power..."))
 		if (do_after(user, src.cleanspeed, target = target))
 			to_chat(user, span_notice("I expunge \the [target.name] with my mana."))
@@ -996,7 +989,7 @@
 		if(!do_after(user, 5 SECONDS, target = spelltarget))
 			return
 		spelltarget.apply_status_effect(/datum/status_effect/buff/darkvision)
-		user.rogfat_add(80)
+		user.adjust_stam(80)
 		if(spelltarget != user)
 			user.visible_message("[user] draws a glyph in the air and touches [spelltarget] with an arcyne focus.")
 		else

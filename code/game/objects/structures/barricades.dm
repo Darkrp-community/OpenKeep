@@ -56,7 +56,7 @@
 
 /////BARRICADE TYPES///////
 
-/obj/structure/barricade/wooden
+/obj/structure/barricade
 	name = "wooden barricade"
 	desc = ""
 	icon = 'icons/obj/structures.dmi'
@@ -64,7 +64,7 @@
 	bar_material = WOOD
 	var/drop_amount = 3
 
-/obj/structure/barricade/wooden/rogue
+/obj/structure/barricade/rogue
 	name = "wooden barricade"
 	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
@@ -73,30 +73,13 @@
 	bar_material = WOOD
 	drop_amount = 0
 
-/obj/structure/barricade/wooden/rogue/crude
+/obj/structure/barricade/rogue/crude
 	name = "crude plank barricade"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "woodenbarricade_r2"
 	max_integrity = 40
 
-/obj/structure/barricade/wooden/attackby(obj/item/I, mob/user)
-	if(istype(I,/obj/item/stack/sheet/mineral/wood))
-		var/obj/item/stack/sheet/mineral/wood/W = I
-		if(W.amount < 5)
-			to_chat(user, "<span class='warning'>I need at least five wooden planks to make a wall!</span>")
-			return
-		else
-			to_chat(user, "<span class='notice'>I start adding [I] to [src]...</span>")
-			if(do_after(user, 50, target=src))
-				W.use(5)
-				var/turf/T = get_turf(src)
-				T.PlaceOnTop(/turf/closed/wall/mineral/wood/nonmetal)
-				qdel(src)
-				return
-	return ..()
-
-
-/obj/structure/barricade/wooden/crude
+/obj/structure/barricade/crude
 	name = "crude plank barricade"
 	desc = ""
 	icon_state = "woodenbarricade-old"
@@ -104,13 +87,10 @@
 	max_integrity = 50
 	proj_pass_rate = 65
 
-/obj/structure/barricade/wooden/crude/snow
+/obj/structure/barricade/crude/snow
 	desc = ""
 	icon_state = "woodenbarricade-snow-old"
 	max_integrity = 75
-
-/obj/structure/barricade/wooden/make_debris()
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src), drop_amount)
 
 #undef SINGLE
 #undef VERTICAL

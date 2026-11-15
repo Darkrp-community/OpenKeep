@@ -5,10 +5,14 @@
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	permeability_coefficient = 0.9
 	slot_flags = ITEM_SLOT_ICLOTHING
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 0, "slash" = 0, "stab" = 0,  "pierce" = 0, "fire" = 0, "acid" = 0)
 	equip_sound = 'sound/blank.ogg'
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
+
+	grid_width = 64
+	grid_height = 64
+
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE

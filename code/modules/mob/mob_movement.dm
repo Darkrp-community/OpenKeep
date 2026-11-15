@@ -191,13 +191,15 @@
 		mob.stop_attack(FALSE)
 		mob.changeNext_move(CLICK_CD_MELEE)
 
-	for(var/X in open_popups)
-//		var/datum/browser/popup = new(mob, X, "", 5, 5)
-//		popup.set_content()
-//		popup.open()
-//		popup.close()
-		mob << browse(null, "window=[X]")
-		open_popups -= X
+	for(var/datum/browser/X in open_popups)
+		if(!X.no_close_movement)
+	//		var/datum/browser/popup = new(mob, X, "", 5, 5)
+	//		popup.set_content()
+	//		popup.open()
+	//		popup.close()
+			mob << browse(null, "window=[X.window_id]")
+			open_popups -= X
+
 /**
  * Checks to see if you're being grabbed and if so attempts to break it
  *
@@ -296,10 +298,6 @@
 			if(stepTurf)
 				for(var/obj/effect/decal/cleanable/food/salt/S in stepTurf)
 					to_chat(L, "<span class='warning'>[S] bars your passage!</span>")
-					if(isrevenant(L))
-						var/mob/living/simple_animal/revenant/R = L
-						R.reveal(20)
-						R.stun(20)
 					return
 				if(stepTurf.flags_1 & NOJAUNT_1)
 					to_chat(L, "<span class='warning'>Some strange aura is blocking the way.</span>")
@@ -342,8 +340,6 @@
 			continue
 		else if(isturf(A))
 			var/turf/turf = A
-			if(isspaceturf(turf))
-				continue
 			if(!turf.density && !mob_negates_gravity())
 				continue
 			return A
@@ -624,9 +620,9 @@
 		if(MOVE_INTENT_RUN)
 			if(isliving(src))
 				var/mob/living/L = src
-				if(L.rogfat >= L.maxrogfat)
+				if(L.stam >= L.max_stam)
 					return
-				if(L.rogstam <= 0)
+				if(L.vigor <= 0)
 					return
 				if(ishuman(L))
 					var/mob/living/carbon/human/H = L
@@ -643,24 +639,13 @@
 	return TRUE
 
 /mob/living/carbon/human/check_armor_skill()
-	if(istype(src.wear_armor, /obj/item/clothing))
-		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == AC_HEAVY)
-			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
+	if(worn_armor_class == AC_HEAVY)
+		if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
+			return FALSE
+	if(worn_armor_class == AC_MEDIUM)
+		if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
+			if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
 				return FALSE
-		if(CL.armor_class == AC_MEDIUM)
-			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
-				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
-					return FALSE
-	if(istype(src.wear_shirt, /obj/item/clothing))
-		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == AC_HEAVY)
-			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
-				return FALSE
-		if(CL.armor_class == AC_MEDIUM)
-			if(!HAS_TRAIT(src, TRAIT_HEAVYARMOR))
-				if(!HAS_TRAIT(src, TRAIT_MEDIUMARMOR))
-					return FALSE
 	return TRUE
 
 /mob/living/proc/check_armor_weight()
@@ -688,18 +673,10 @@
 /mob/living/carbon/human/check_dodge_skill()
 	if(!HAS_TRAIT(src, TRAIT_DODGEEXPERT))
 		return FALSE
-	if(istype(src.wear_armor, /obj/item/clothing))
-		var/obj/item/clothing/CL = src.wear_armor
-		if(CL.armor_class == AC_HEAVY)
-			return FALSE
-		if(CL.armor_class == AC_MEDIUM)
-			return FALSE
-	if(istype(src.wear_shirt, /obj/item/clothing))
-		var/obj/item/clothing/CL = src.wear_shirt
-		if(CL.armor_class == AC_HEAVY)
-			return FALSE
-		if(CL.armor_class == AC_MEDIUM)
-			return FALSE
+	if(worn_armor_class == AC_HEAVY)
+		return FALSE
+	if(worn_armor_class == AC_MEDIUM)
+		return FALSE
 	if(istype(src.wear_pants, /obj/item/clothing))
 		var/obj/item/clothing/CL = src.wear_pants
 		if(CL.armor_class == AC_HEAVY)

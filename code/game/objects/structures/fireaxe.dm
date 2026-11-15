@@ -5,7 +5,7 @@
 	icon_state = "fireaxe"
 	anchored = TRUE
 	density = FALSE
-	armor = list("melee" = 50, "bullet" = 20, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50)
+	armor = list("crush" = 50, "slash" = 20, "stab" = 0, "pierce" = 100, "fire" = 90, "acid" = 50)
 	max_integrity = 150
 	integrity_failure = 0.33
 	var/locked = FALSE
@@ -70,12 +70,6 @@
 		broken = TRUE
 		playsound(src, 'sound/blank.ogg', 100, TRUE)
 	..()
-
-/obj/structure/fireaxecabinet/blob_act(obj/structure/blob/B)
-	if(heirloom)
-		heirloom.forceMove(loc)
-		heirloom = null
-	qdel(src)
 
 /obj/structure/fireaxecabinet/attack_hand(mob/user)
 	. = ..()
@@ -157,7 +151,7 @@
 	icon_state = "innrack"
 	anchored = TRUE
 	density = FALSE
-	armor = list("melee" = 50, "bullet" = 20, "laser" = 0, "energy" = 100, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 50)
+	armor = list("crush" = 50, "slash" = 20, "stab" = 0, "pierce" = 100, "fire" = 90, "acid" = 50)
 	max_integrity = 150
 	integrity_failure = 0.33
 	var/obj/item/rogueweapon/mace/goden/shillelagh/heirloom

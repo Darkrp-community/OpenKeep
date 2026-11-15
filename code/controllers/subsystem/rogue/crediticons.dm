@@ -8,7 +8,7 @@ SUBSYSTEM_DEF(crediticons)
 	var/list/currentrun = list()
 
 /datum/controller/subsystem/crediticons/fire(resumed = 0)
-	if (!resumed)
+	if(!resumed)
 		src.currentrun = processing.Copy()
 
 	//cache for sanic speed (lists are references anyways)

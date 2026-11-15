@@ -728,7 +728,7 @@
 "cH" = (
 /obj/structure/table/wood,
 /obj/item/roguekey/dungeon,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
@@ -4010,8 +4010,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
 "nz" = (
@@ -4142,7 +4142,7 @@
 	},
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/garrison)
 "nU" = (
@@ -4818,9 +4818,6 @@
 /area/rogue/indoors/town)
 "qf" = (
 /obj/structure/roguemachine/steward,
-/obj/structure/disposalpipe/sorting/mail{
-	pixel_y = 32
-	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
 "qg" = (
@@ -6888,7 +6885,7 @@
 /area/rogue/outdoors/town)
 "xC" = (
 /obj/item/roguekey/shop,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/table/wood{
 	dir = 10;
 	icon_state = "largetable"
@@ -9131,10 +9128,6 @@
 	dir = 8;
 	icon_state = "churchslate"
 	},
-/obj/effect/landmark/start/churchling{
-	dir = 8;
-	icon_state = "arrow"
-	},
 /turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "Fy" = (
@@ -9619,9 +9612,6 @@
 /area/rogue/indoors/town/church)
 "Hh" = (
 /obj/item/roguemachine/mastermail,
-/obj/structure/disposalpipe/segment{
-	pixel_y = 48
-	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "Hi" = (
@@ -10016,7 +10006,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,
@@ -11319,7 +11309,7 @@
 /area/rogue/indoors/town/church)
 "ML" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "MM" = (
@@ -11594,13 +11584,6 @@
 "NG" = (
 /obj/effect/landmark/start/priest,
 /turf/open/floor/rogue/churchmarble,
-/area/rogue/indoors/town/church/chapel)
-"NH" = (
-/obj/effect/landmark/start/churchling{
-	dir = 8;
-	icon_state = "arrow"
-	},
-/turf/open/floor/rogue/church,
 /area/rogue/indoors/town/church/chapel)
 "NI" = (
 /obj/effect/landmark/start/monk,
@@ -81821,7 +81804,7 @@ ai
 EW
 Ff
 Fx
-NH
+Fm
 NI
 Ga
 Fm

@@ -303,11 +303,11 @@
 
 	zone_select.update_icon()
 
-	fats = new /atom/movable/screen/rogfat()
-	infodisplay += fats
+	stam = new /atom/movable/screen/stam()
+	infodisplay += stam
 
-	stams = new /atom/movable/screen/rogstam()
-	infodisplay += stams
+	vigor = new /atom/movable/screen/vigor()
+	infodisplay += vigor
 
 	for(var/atom/movable/screen/inventory/inv in (static_inventory + toggleable_inventory))
 		if(inv.slot_id)

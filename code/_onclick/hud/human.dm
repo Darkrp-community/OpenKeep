@@ -28,8 +28,6 @@
 	icon_state = "act_equip"
 
 /atom/movable/screen/human/equip/Click()
-	if(ismecha(usr.loc)) // stops inventory actions in a mech
-		return 1
 	var/mob/living/carbon/human/H = usr
 	H.quick_equip()
 
@@ -391,12 +389,6 @@
 	using.hud = src
 	static_inventory += using
 
-/*
-	healthdoll = new /atom/movable/screen/healthdoll()
-	healthdoll.icon = ui_style
-	healthdoll.hud = src
-	infodisplay += healthdoll
-*/
 	zone_select =  new /atom/movable/screen/zone_sel()
 	zone_select.icon = 'icons/mob/roguehud64.dmi'
 	zone_select.screen_loc = rogueui_targetdoll
@@ -406,11 +398,11 @@
 
 	zone_select.update_icon()
 
-	fats = new /atom/movable/screen/rogfat()
-	infodisplay += fats
+	stam = new /atom/movable/screen/stam()
+	infodisplay += stam
 
-	stams = new /atom/movable/screen/rogstam()
-	infodisplay += stams
+	vigor = new /atom/movable/screen/vigor()
+	infodisplay += vigor
 
 	for(var/atom/movable/screen/inventory/inv in (static_inventory + toggleable_inventory))
 		if(inv.slot_id)

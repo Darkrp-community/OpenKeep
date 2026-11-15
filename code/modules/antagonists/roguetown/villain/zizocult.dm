@@ -208,7 +208,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	if(iszizocultist(user) || iszizolackey(user))
 		to_chat(user, "It is of the [sigil_type] circle.")
 
-/obj/effect/decal/cleanable/sigil/Initialize(mapload, list/datum/disease/diseases)
+/obj/effect/decal/cleanable/sigil/Initialize(mapload)
 	. = ..()
 	if(!LAZYLEN(GLOB.ritualslist))
 		testing("initializing ritualslist")
@@ -562,7 +562,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 		H.verbs |= /mob/living/carbon/human/proc/communicate
 
 		ADD_TRAIT(H, TRAIT_NOMOOD, TRAIT_GENERIC)
-		ADD_TRAIT(H, TRAIT_NOROGSTAM, TRAIT_GENERIC)
+		ADD_TRAIT(H, TRAIT_NOSTAM, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOLIMBDISABLE, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOHUNGER, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_NOBREATH, TRAIT_GENERIC)
@@ -599,7 +599,7 @@ GLOBAL_LIST_EMPTY(ritualslist)
 						return
 					if(istype(HL.wear_neck, /obj/item/clothing/neck/roguetown/psycross))
 						return
-					if(HAS_TRAIT(HL, TRAIT_NOROGSTAM))
+					if(HAS_TRAIT(HL, TRAIT_NOSTAM))
 						return
 					to_chat(HL.mind, "<span class='warning'>I'm so sleepy...</span>")
 					HL.SetSleeping(30)
@@ -615,9 +615,9 @@ GLOBAL_LIST_EMPTY(ritualslist)
 	center_requirement = /mob/living/carbon/human
 
 	n_req = /obj/item/bodypart/head
-	s_req = /obj/item/shard
-	e_req = /obj/item/shard
-	w_req = /obj/item/shard
+	s_req = /obj/item/natural/glass/shard
+	e_req = /obj/item/natural/glass/shard
+	w_req = /obj/item/natural/glass/shard
 
 	function = /proc/falseappearance
 

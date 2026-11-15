@@ -45,9 +45,6 @@
 /turf/open/lava/MakeDry(wet_setting = TURF_WET_WATER)
 	return
 
-/turf/open/lava/airless
-	initial_gas_mix = AIRLESS_ATMOS
-
 /turf/open/lava/Entered(atom/movable/AM)
 	if(!AM.throwing)
 		if(burn_stuff(AM))
@@ -64,7 +61,7 @@
 			if(!islava(newloc) && !L.on_fire)
 				L.update_fire()
 
-/turf/open/lava/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/turf/open/lava/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "crush")
 	if(burn_stuff(AM))
 		START_PROCESSING(SSobj, src)
 		playsound(src, 'sound/misc/lava_death.ogg', 100, FALSE)
@@ -73,29 +70,14 @@
 	if(!burn_stuff())
 		STOP_PROCESSING(SSobj, src)
 
-/turf/open/lava/singularity_act()
-	return
-
-/turf/open/lava/singularity_pull(S, current_size)
-	return
-
 /turf/open/lava/get_smooth_underlay_icon(mutable_appearance/underlay_appearance, turf/asking_turf, adjacency_dir)
 	underlay_appearance.icon = 'icons/turf/floors.dmi'
 	underlay_appearance.icon_state = "basalt"
 	return TRUE
 
-/turf/open/lava/GetHeatCapacity()
-	. = 700000
-
-/turf/open/lava/GetTemperature()
-	. = 5000
-
-/turf/open/lava/TakeTemperature(temp)
-
-
 /turf/open/lava/proc/is_safe()
 	//if anything matching this typecache is found in the lava, we don't burn things
-	var/static/list/lava_safeties_typecache = typecacheof(list(/obj/structure/lattice/catwalk, /obj/structure/stone_tile))
+	var/static/list/lava_safeties_typecache = typecacheof(list(/obj/structure/stone_tile))
 	var/list/found_safeties = typecache_filter_list(contents, lava_safeties_typecache)
 	for(var/obj/structure/stone_tile/S in found_safeties)
 		if(S.fallen)
@@ -175,14 +157,6 @@
 	icon_state = "unsmooth"
 	smooth = SMOOTH_MORE | SMOOTH_BORDER
 	canSmoothWith = list(/turf/open/lava/smooth)
-
-/turf/open/lava/smooth/lava_land_surface
-	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
-	planetary_atmos = TRUE
-	baseturfs = /turf/open/lava/smooth/lava_land_surface
-
-/turf/open/lava/smooth/airless
-	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/lava/acid
 	name = "acid"

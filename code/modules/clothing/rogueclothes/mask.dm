@@ -35,7 +35,7 @@
 
 /obj/item/clothing/mask/rogue/spectacles/Crossed(mob/crosser)
 	if(isliving(crosser) && !obj_broken)
-		take_damage(11, BRUTE, "melee", 1)
+		take_damage(11, BRUTE, "crush", 1)
 	..()
 
 /obj/item/clothing/mask/rogue/equipped(mob/user, slot)
@@ -253,7 +253,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 80, "slash" = 90, "stab" = 70, "pierce" = 50, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 	blocksound = PLATEHIT
 	flags_inv = HIDEFACE
@@ -276,7 +276,7 @@
 	name = "steel men-yoroi"
 	icon_state = "smenyoroi"
 	max_integrity = 200
-	armor = list("melee" = 80, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_PLATE_BAD
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT, BCLASS_TWIST)
 
 /obj/item/clothing/mask/rogue/kaizoku/menpo/steel/half
@@ -363,7 +363,7 @@
 	break_sound = 'sound/foley/breaksound.ogg'
 	drop_sound = 'sound/foley/dropsound/armor_drop.ogg'
 	resistance_flags = FIRE_PROOF
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 60, "slash" = 60, "stab" = 60, "pierce" = 50, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_BLUNT)
 	flags_inv = HIDEFACE
 	body_parts_covered = EYES | EARS | NOSE //Allows them to use their mouth due to the mouth opening.

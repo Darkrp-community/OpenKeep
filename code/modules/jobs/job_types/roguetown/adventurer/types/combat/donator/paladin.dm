@@ -67,16 +67,16 @@
 		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		backl = /obj/item/rogueweapon/sword/long/judgement
-		H.change_stat("strength", 2)
-		H.change_stat("perception", 2)
-		H.change_stat("intelligence", 2)
-		H.change_stat("constitution", 1)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", -2)
+		H.change_stat(STATKEY_STR, 2)
+		H.change_stat(STATKEY_PER, 2)
+		H.change_stat(STATKEY_INT, 2)
+		H.change_stat(STATKEY_CON, 1)
+		H.change_stat(STATKEY_END, 1)
+		H.change_stat(STATKEY_SPD, -2)
 		if(H.patron != /datum/patron/divine/necra)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/churn)
 		else
-			H.change_stat("fortune", 1)	// instead of duped churn necrans gets more fortune
+			H.change_stat(STATKEY_LCK, 1)	// instead of duped churn necrans gets more fortune
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/knight()

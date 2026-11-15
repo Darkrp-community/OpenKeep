@@ -56,11 +56,11 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/keyring/armorsmith
+		beltr = /obj/item/storage/keyring/armorsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -68,11 +68,11 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/keyring/armorsmith
+		beltr = /obj/item/storage/keyring/armorsmith
 		backl =	/obj/item/rogueweapon/hammer/sledgehammer
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 
 /datum/job/roguetown/weaponsmith
 	title = "Weaponsmith"
@@ -131,12 +131,12 @@
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 		belt = /obj/item/storage/belt/rogue/leather
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/keyring/weaponsmith
+		beltr = /obj/item/storage/keyring/weaponsmith
 		cloak = /obj/item/clothing/cloak/apron/brown
 		backl =	/obj/item/rogueweapon/hammer/sledgehammer
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 	else
 		pants = /obj/item/clothing/under/roguetown/trou
 		armor = /obj/item/clothing/suit/roguetown/shirt/dress/gen/random
@@ -144,10 +144,10 @@
 		belt = /obj/item/storage/belt/rogue/leather
 		cloak = /obj/item/clothing/cloak/apron/brown
 		beltl = /obj/item/storage/belt/rogue/pouch/coins/poor
-		beltr = /obj/item/keyring/weaponsmith
-		H.change_stat("strength", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("speed", -1)
+		beltr = /obj/item/storage/keyring/weaponsmith
+		H.change_stat(STATKEY_STR, 1)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_SPD, -1)
 
 
 /datum/job/roguetown/blacksmith
@@ -210,7 +210,7 @@
 	cloak = /obj/item/clothing/cloak/apron/brown
 	backl =	/obj/item/rogueweapon/hammer/sledgehammer
 	beltl = /obj/item/storage/belt/rogue/pouch/coins/mid
-	beltr = /obj/item/keyring/blacksmith
+	beltr = /obj/item/storage/keyring/blacksmith
 	if(H.gender == MALE)
 		shirt = /obj/item/clothing/suit/roguetown/shirt/shortshirt
 	else
@@ -218,6 +218,6 @@
 	if(H.dna.species.id == "dwarf")
 		H.mind.adjust_skillrank(/datum/skill/craft/weaponsmithing, 1, TRUE)
 		H.cmode_music = 'sound/music/combat_dwarf.ogg'
-	H.change_stat("strength", 1)
-	H.change_stat("endurance", 2)
-	H.change_stat("speed", -1)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_SPD, -1)

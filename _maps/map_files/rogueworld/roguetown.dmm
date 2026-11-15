@@ -774,8 +774,8 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/walls,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/cobble,
 /area/rogue/under/town/basement)
 "cL" = (
@@ -856,7 +856,7 @@
 	},
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/blocks,
 /area/rogue/under/town/basement)
 "cZ" = (
@@ -2147,7 +2147,6 @@
 /area/rogue/indoors/town/bath)
 "hG" = (
 /obj/structure/table/wood,
-/obj/item/roguekey/nightmaiden,
 /turf/open/floor/rogue/blocks/stonered,
 /area/rogue/indoors/town/bath)
 "hH" = (
@@ -4031,10 +4030,6 @@
 /obj/effect/landmark/start/priest,
 /turf/open/floor/rogue/churchrough,
 /area/rogue/indoors/town/church/chapel)
-"nN" = (
-/obj/effect/landmark/start/orphan,
-/turf/open/floor/rogue/church,
-/area/rogue/indoors/town/church/chapel)
 "nO" = (
 /obj/machinery/light/rogue/torchholder/r,
 /obj/effect/landmark/start/guardsman{
@@ -4164,7 +4159,6 @@
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/mason,
 /obj/item/roguekey/mercenary,
-/obj/item/roguekey/nightmaiden,
 /obj/item/roguekey/tavern,
 /obj/item/roguekey/merchant,
 /turf/open/floor/rogue/tile/tilerg,
@@ -4336,10 +4330,6 @@
 /obj/effect/landmark/start/puritan,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
-"oQ" = (
-/obj/effect/landmark/start/churchling,
-/turf/open/floor/rogue/church,
-/area/rogue/indoors/town/church/chapel)
 "oR" = (
 /obj/structure/table/wood{
 	icon_state = "largetable";
@@ -4394,7 +4384,6 @@
 /area/rogue/indoors/town/shop)
 "oY" = (
 /obj/structure/rack/rogue,
-/obj/item/wisp_lantern,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
 "oZ" = (
@@ -4733,9 +4722,6 @@
 /area/rogue/indoors/town)
 "qf" = (
 /obj/structure/roguemachine/steward,
-/obj/structure/disposalpipe/sorting/mail{
-	pixel_y = 32
-	},
 /turf/open/floor/rogue/hexstone,
 /area/rogue/indoors/town)
 "qg" = (
@@ -5883,7 +5869,7 @@
 	icon_state = "tablewood1"
 	},
 /obj/item/roguekey/merchant,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/shop)
 "tV" = (
@@ -6025,7 +6011,6 @@
 	icon_state = "largetable";
 	dir = 10
 	},
-/obj/item/clothing/mask/bandana/black,
 /obj/item/clothing/neck/roguetown/coif,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/shop)
@@ -7112,9 +7097,9 @@
 /obj/item/kitchen/fork,
 /obj/item/kitchen/fork,
 /obj/item/kitchen/fork,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
-/obj/item/kitchen/spoon/plastic,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/spoon,
+/obj/item/kitchen/spoon,
 /turf/open/floor/rogue/ruinedwood{
 	icon_state = "weird1"
 	},
@@ -9693,9 +9678,6 @@
 /area/rogue/indoors/town/church)
 "Hh" = (
 /obj/item/roguemachine/mastermail,
-/obj/structure/disposalpipe/segment{
-	pixel_y = 48
-	},
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town)
 "Hi" = (
@@ -10096,7 +10078,7 @@
 /obj/structure/closet/crate/roguecloset,
 /obj/item/roguekey/dungeon,
 /obj/item/roguekey/walls,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/storage/backpack/rogue/satchel,
 /turf/open/floor/carpet/royalblack,
@@ -10818,12 +10800,6 @@
 /mob/living/carbon/human/species/goblin/skilled/ambush/cave,
 /turf/open/floor/rogue/carpet/lord/right,
 /area/rogue/indoors/town/manor)
-"KS" = (
-/mob/living/carbon/human/species/goblin/npc/hell,
-/turf/open/floor/rogue/tile{
-	icon_state = "bfloorz"
-	},
-/area/rogue/indoors/town/manor)
 "KV" = (
 /obj/item/grown/log/tree/small,
 /turf/open/floor/rogue/blocks/stonered,
@@ -11303,7 +11279,7 @@
 /area/rogue/indoors/town/church)
 "ML" = (
 /obj/structure/table/wood,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /turf/open/floor/rogue/wood,
 /area/rogue/indoors/town/church)
 "MM" = (
@@ -48004,7 +47980,7 @@ ir
 nD
 eS
 hC
-KS
+hC
 hC
 hj
 hC
@@ -80531,7 +80507,7 @@ kR
 Fm
 FG
 Ga
-oQ
+Fm
 ik
 pl
 ik
@@ -80845,7 +80821,7 @@ Fw
 FG
 FQ
 Gb
-nN
+Fm
 oT
 vD
 oT
@@ -81159,7 +81135,7 @@ Fw
 FG
 FS
 Gd
-nN
+Fm
 ik
 pl
 ik
@@ -81473,7 +81449,7 @@ kR
 Fm
 FG
 Ga
-oQ
+Fm
 oT
 vD
 oT
@@ -81787,7 +81763,7 @@ Ff
 Ff
 FP
 Ge
-oQ
+Fm
 Gx
 FG
 FF

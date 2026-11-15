@@ -286,35 +286,6 @@
 	if(L.mobility_flags & MOBILITY_MOVE)
 		return L.resist_fire() //I just want to start a flame in your hearrrrrrtttttt.
 
-//BLOBS
-
-/atom/movable/screen/alert/nofactory
-	name = "No Factory"
-	desc = ""
-	icon_state = "blobbernaut_nofactory"
-	alerttooltipstyle = "blob"
-
-
-//GUARDIANS
-
-/atom/movable/screen/alert/cancharge
-	name = "Charge Ready"
-	desc = ""
-	icon_state = "guardian_charge"
-	alerttooltipstyle = "parasite"
-
-/atom/movable/screen/alert/canstealth
-	name = "Stealth Ready"
-	desc = ""
-	icon_state = "guardian_canstealth"
-	alerttooltipstyle = "parasite"
-
-/atom/movable/screen/alert/instealth
-	name = "In Stealth"
-	desc = ""
-	icon_state = "guardian_instealth"
-	alerttooltipstyle = "parasite"
-
 //Ethereal
 
 /atom/movable/screen/alert/etherealcharge

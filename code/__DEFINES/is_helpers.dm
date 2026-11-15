@@ -15,8 +15,6 @@
 //#define isturf(A) (istype(A, /turf)) This is actually a byond built-in. Added here for completeness sake.
 
 GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
-	/turf/open/space,
-	/turf/open/chasm,
 	/turf/open/lava,
 	/turf/open/water,
 	/turf/open/transparent/openspace
@@ -39,8 +37,6 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define isopenturf(A) (istype(A, /turf/open))
 
 #define isindestructiblefloor(A) (istype(A, /turf/open/indestructible))
-
-#define isspaceturf(A) (istype(A, /turf/open/space))
 
 #define isfloorturf(A) (istype(A, /turf/open/floor))
 
@@ -71,21 +67,7 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define ishuman(A) (istype(A, /mob/living/carbon/human))
 
 //Human sub-species
-#define isabductor(A) (is_species(A, /datum/species/abductor))
-#define isgolem(A) (is_species(A, /datum/species/golem))
-#define islizard(A) (is_species(A, /datum/species/lizard))
-#define isplasmaman(A) (is_species(A, /datum/species/plasmaman))
-#define ispodperson(A) (is_species(A, /datum/species/pod))
-#define isflyperson(A) (is_species(A, /datum/species/fly))
-#define isjellyperson(A) (is_species(A, /datum/species/jelly))
-#define isslimeperson(A) (is_species(A, /datum/species/jelly/slime))
-#define isluminescent(A) (is_species(A, /datum/species/jelly/luminescent))
-#define iszombie(A) (is_species(A, /datum/species/zombie))
-#define isskeleton(A) (is_species(A, /datum/species/skeleton))
-#define ismoth(A) (is_species(A, /datum/species/moth))
 #define ishumanbasic(A) (is_species(A, /datum/species/human))
-#define isfelinid(A) (is_species(A, /datum/species/human/felinid))
-#define isethereal(A) (is_species(A, /datum/species/ethereal))
 #define isvampire(A) (is_species(A,/datum/species/vampire))
 
 //RT species
@@ -110,17 +92,11 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 //Simple animals
 #define isanimal(A) (istype(A, /mob/living/simple_animal))
 
-#define isrevenant(A) (istype(A, /mob/living/simple_animal/revenant))
-
 #define isshade(A) (istype(A, /mob/living/simple_animal/shade))
 
 #define ismouse(A) (istype(A, /mob/living/simple_animal/mouse))
 
 #define iscow(A) (istype(A, /mob/living/simple_animal/cow))
-
-#define isslime(A) (istype(A, /mob/living/simple_animal/slime))
-
-#define isdrone(A) (istype(A, /mob/living/simple_animal/drone))
 
 #define iscat(A) (istype(A, /mob/living/simple_animal/pet/cat))
 
@@ -129,14 +105,6 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 #define iscorgi(A) (istype(A, /mob/living/simple_animal/pet/dog/corgi))
 
 #define ishostile(A) (istype(A, /mob/living/simple_animal/hostile))
-
-#define isswarmer(A) (istype(A, /mob/living/simple_animal/hostile/swarmer))
-
-#define isguardian(A) (istype(A, /mob/living/simple_animal/hostile/guardian))
-
-#define isconstruct(A) (istype(A, /mob/living/simple_animal/hostile/construct))
-
-#define ismegafauna(A) (istype(A, /mob/living/simple_animal/hostile/megafauna))
 
 #define isclown(A) (istype(A, /mob/living/simple_animal/hostile/retaliate/clown))
 
@@ -173,12 +141,9 @@ GLOBAL_LIST_INIT(our_forest_sex, typecacheof(list(
 
 #define isclothing(A) (istype(A, /obj/item/clothing))
 
-#define iscash(A) (istype(A, /obj/item/coin) || istype(A, /obj/item/stack/spacecash) || istype(A, /obj/item/holochip))
+#define iscash(A) (istype(A, /obj/item/stack/spacecash) || istype(A, /obj/item/holochip))
 
 GLOBAL_LIST_INIT(pointed_types, typecacheof(list(
-	/obj/item/pen,
-	/obj/item/screwdriver,
-	/obj/item/reagent_containers/syringe,
 	/obj/item/kitchen/fork)))
 
 #define is_pointed(W) (is_type_in_typecache(W, GLOB.pointed_types))
@@ -198,21 +163,10 @@ GLOBAL_LIST_INIT(pointed_types, typecacheof(list(
 
 #define issignaler(O) (istype(O, /obj/item/assembly/signaler))
 
-GLOBAL_LIST_INIT(glass_sheet_types, typecacheof(list(
-	/obj/item/stack/sheet/glass,
-	/obj/item/stack/sheet/rglass,
-	/obj/item/stack/sheet/plasmaglass,
-	/obj/item/stack/sheet/plasmarglass,
-	/obj/item/stack/sheet/titaniumglass,
-	/obj/item/stack/sheet/plastitaniumglass)))
-
-#define is_glass_sheet(O) (is_type_in_typecache(O, GLOB.glass_sheet_types))
 
 #define iseffect(O) (istype(O, /obj/effect))
 
 #define isblobmonster(O) (istype(O, /mob/living/simple_animal/hostile/blob))
-
-#define isshuttleturf(T) (length(T.baseturfs) && (/turf/baseturf_skipover/shuttle in T.baseturfs))
 
 GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 	/obj/item/reagent_containers/food/snacks/smallrat,

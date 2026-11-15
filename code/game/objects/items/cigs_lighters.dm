@@ -136,6 +136,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	icon = 'icons/roguetown/items/lighting.dmi'
 	heat = 1000
 	spitoutmouth = FALSE
+
+	grid_width = 32
+	grid_height = 32
+
 	var/dragtime = 100
 	var/nextdragtime = 0
 	var/lit = FALSE
@@ -367,9 +371,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	desc = ""
 	list_reagents = list(/datum/reagent/drug/nicotine = 15, /datum/reagent/toxin/lipolicide = 4, /datum/reagent/ammonia = 2, /datum/reagent/toxin/plantbgone = 1, /datum/reagent/toxin = 1.5)
 
-/obj/item/clothing/mask/cigarette/xeno
-	desc = ""
-	list_reagents = list (/datum/reagent/drug/nicotine = 20, /datum/reagent/medicine/regen_jelly = 15, /datum/reagent/drug/krokodil = 4)
 
 // Rollies.
 
@@ -404,23 +405,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/clothing/mask/cigarette/rollie/mindbreaker
 	list_reagents = list(/datum/reagent/toxin/mindbreaker = 35, /datum/reagent/toxin/lipolicide = 15)
-
-/obj/item/clothing/mask/cigarette/candy
-	name = "Little Timmy's candy cigarette"
-	desc = ""
-	smoketime = 120
-	icon_on = "candyon"
-	icon_off = "candyoff" //make sure to add positional sprites in icons/obj/cigarettes.dmi if you add more.
-	item_state = "candyoff"
-	icon_state = "candyoff"
-	type_butt = /obj/item/reagent_containers/food/snacks/candy_trash
-	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/caramel = 10)
-
-/obj/item/clothing/mask/cigarette/candy/nicotine
-	desc = ""
-	type_butt = /obj/item/reagent_containers/food/snacks/candy_trash/nicotine
-	list_reagents = list(/datum/reagent/consumable/sugar = 10, /datum/reagent/consumable/caramel = 10, /datum/reagent/drug/nicotine = 20) //oh no!
-	smoke_all = TRUE //timmy's not getting out of this one
 
 /obj/item/cigbutt/roach
 	name = "roach"
@@ -794,16 +778,6 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 /obj/item/lighter/greyscale/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
 		. = "<span class='notice'>After some fiddling, [user] manages to light [A] with [src].</span>"
-
-
-/obj/item/lighter/slime
-	name = "slime zippo"
-	desc = ""
-	icon_state = "slighter"
-	heat = 3000 //Blue flame!
-	light_color = LIGHT_COLOR_CYAN
-	overlay_state = "slime"
-	grind_results = list(/datum/reagent/iron = 1, /datum/reagent/fuel = 5, /datum/reagent/medicine/pyroxadone = 5)
 
 
 ///////////

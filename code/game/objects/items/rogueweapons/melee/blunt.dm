@@ -53,6 +53,7 @@
 	swingdelay = 0
 	icon_state = "instrike"
 	misscost = 5
+	item_damage_type = "crush"
 
 /datum/intent/mace/strike/wood
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
@@ -77,6 +78,7 @@
 	swingdelay = 0
 	icon_state = "insmash"
 	misscost = 5
+	item_damage_type = "crush"
 
 /datum/intent/mace/smash/wood
 	hitsound = list('sound/combat/hits/blunt/woodblunt (1).ogg', 'sound/combat/hits/blunt/woodblunt (2).ogg')
@@ -106,7 +108,7 @@
 	penfactor = 40
 	swingdelay = 1
 	misscost = 15
-
+	item_damage_type = "crush"
 
 //................ Bell ringer ............... //
 /obj/item/rogueweapon/mace/church

@@ -150,18 +150,6 @@
 	results = list(/datum/reagent/consumable/ethanol/toxins_special = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 2, /datum/reagent/consumable/ethanol/vermouth = 1, /datum/reagent/toxin/plasma = 2)
 
-/datum/chemical_reaction/beepsky_smash
-	name = "Beepksy Smash"
-	id = "beepksysmash"
-	results = list(/datum/reagent/consumable/ethanol/beepsky_smash = 5)
-	required_reagents = list(/datum/reagent/consumable/limejuice = 2, /datum/reagent/consumable/ethanol/quadruple_sec = 2, /datum/reagent/iron = 1)
-
-/datum/chemical_reaction/doctor_delight
-	name = "The Doctor's Delight"
-	id = "doctordelight"
-	results = list(/datum/reagent/consumable/doctor_delight = 5)
-	required_reagents = list(/datum/reagent/consumable/limejuice = 1, /datum/reagent/consumable/tomatojuice = 1, /datum/reagent/consumable/orangejuice = 1, /datum/reagent/consumable/cream = 1, /datum/reagent/medicine/cryoxadone = 1)
-
 /datum/chemical_reaction/irish_cream
 	name = "Irish Cream"
 	id = /datum/reagent/consumable/ethanol/irish_cream
@@ -376,12 +364,6 @@
 	id = /datum/reagent/consumable/ethanol/andalusia
 	results = list(/datum/reagent/consumable/ethanol/andalusia = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/rum = 1, /datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/lemonjuice = 1)
-
-/datum/chemical_reaction/neurotoxin
-	name = "Neurotoxin"
-	id = /datum/reagent/consumable/ethanol/neurotoxin
-	results = list(/datum/reagent/consumable/ethanol/neurotoxin = 2)
-	required_reagents = list(/datum/reagent/consumable/ethanol/gargle_blaster = 1, /datum/reagent/medicine/morphine = 1)
 
 /datum/chemical_reaction/snowwhite
 	name = "Snow White"
@@ -678,18 +660,6 @@
 	required_reagents = list(/datum/reagent/consumable/ethanol/fernet = 1, /datum/reagent/consumable/space_cola = 1)
 
 
-/datum/chemical_reaction/fanciulli
-	name = "Fanciulli"
-	id = /datum/reagent/consumable/ethanol/fanciulli
-	results = list(/datum/reagent/consumable/ethanol/fanciulli = 2)
-	required_reagents = list(/datum/reagent/consumable/ethanol/manhattan = 1, /datum/reagent/consumable/ethanol/fernet = 1)
-
-/datum/chemical_reaction/branca_menta
-	name = "Branca Menta"
-	id = /datum/reagent/consumable/ethanol/branca_menta
-	results = list(/datum/reagent/consumable/ethanol/branca_menta = 3)
-	required_reagents = list(/datum/reagent/consumable/ethanol/fernet = 1, /datum/reagent/consumable/ethanol/creme_de_menthe = 1, /datum/reagent/consumable/ice = 1)
-
 /datum/chemical_reaction/blank_paper
 	name = "Blank Paper"
 	id = /datum/reagent/consumable/ethanol/blank_paper
@@ -705,27 +675,12 @@
 	mix_message = "The beverage starts to froth with an almost mystical zeal!"
 	mix_sound = 'sound/blank.ogg'
 
-
-/datum/chemical_reaction/bug_spray
-	name = "Bug Spray"
-	id = /datum/reagent/consumable/ethanol/bug_spray
-	results = list(/datum/reagent/consumable/ethanol/bug_spray = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/triple_sec = 2, /datum/reagent/consumable/lemon_lime = 1, /datum/reagent/consumable/ethanol/rum = 2, /datum/reagent/consumable/ethanol/vodka = 1)
-	mix_message = "The faint aroma of summer camping trips wafts through the air; but what's that buzzing noise?"
-	mix_sound = 'sound/blank.ogg'
-
 /datum/chemical_reaction/jack_rose
 	name = "Jack Rose"
 	id = /datum/reagent/consumable/ethanol/jack_rose
 	results = list(/datum/reagent/consumable/ethanol/jack_rose = 4)
 	required_reagents = list(/datum/reagent/consumable/grenadine = 1, /datum/reagent/consumable/ethanol/applejack = 2, /datum/reagent/consumable/limejuice = 1)
 	mix_message = "As the grenadine incorporates, the beverage takes on a mellow, red-orange glow."
-
-/datum/chemical_reaction/turbo
-	name = "Turbo"
-	id = /datum/reagent/consumable/ethanol/turbo
-	results = list(/datum/reagent/consumable/ethanol/turbo = 5)
-	required_reagents = list(/datum/reagent/consumable/ethanol/moonshine = 2, /datum/reagent/nitrous_oxide = 1, /datum/reagent/consumable/ethanol/sugar_rush = 1, /datum/reagent/consumable/pwr_game = 1)
 
 /datum/chemical_reaction/rubberneck
 	name = "Rubberneck"

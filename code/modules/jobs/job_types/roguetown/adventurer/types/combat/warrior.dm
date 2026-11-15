@@ -103,8 +103,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, pick(0,1), TRUE)
 
-	H.change_stat("strength", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("constitution", 1)
+	H.change_stat(STATKEY_STR, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_CON, 1)
 
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC) // MEDIUM armor training only, this is not a rare drifter, they shouldn't have more armor training than a garrison guard

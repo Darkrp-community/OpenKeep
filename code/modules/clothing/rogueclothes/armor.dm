@@ -26,6 +26,8 @@
 	sellprice = VALUE_COMMON_GOODS
 	armor = ARMOR_MINIMAL
 	body_parts_covered = CHEST
+	grid_width = 64
+	grid_height = 96
 
 /obj/item/clothing/suit/roguetown/armor/medium	// Template, not for use
 	name = "Medium armor template"
@@ -220,7 +222,7 @@
 	sleevetype = null
 	sleeved = null
 
-	armor = ARMOR_LEATHER_WORST
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = COVERAGE_VEST
 	prevent_crits = CUT_AND_MINOR_CRITS
 
@@ -264,17 +266,12 @@
 	icon_state = "leatherjacketo"
 	desc = "A heavy leather jacket with wooden buttons, favored by workers who can afford it."
 
-	armor = ARMOR_LEATHER_WORST
+	armor = ARMOR_LEATHER_BAD
 	body_parts_covered = COVERAGE_SHIRT
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/storage/concrete)
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	if(STR)
-		STR.max_combined_w_class = 2
-		STR.max_w_class = WEIGHT_CLASS_NORMAL
-		STR.max_items = 1
+	AddComponent(/datum/component/storage/concrete/roguetown/cloak)
 
 /obj/item/clothing/suit/roguetown/armor/leather/jacket/dropped(mob/living/carbon/human/user)
 	..()
@@ -510,6 +507,7 @@
 	icon_state = "scale"
 	sellprice = VALUE_STEEL_ARMOR_FINE
 
+	armor_class = ARMOR_SCALE
 	body_parts_covered = COVERAGE_ALL_BUT_ARMS
 	prevent_crits = ALL_CRITICAL_HITS
 	max_integrity = INTEGRITY_STRONG
@@ -647,6 +645,7 @@
 	smeltresult = /obj/item/ingot/iron
 	sellprice = VALUE_IRON_ARMOR/2
 
+	armor = ARMOR_PLATE_BAD
 	max_integrity = INTEGRITY_STRONG
 
 
@@ -981,7 +980,7 @@
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
 	icon_state = "imirrorarmor"
 	max_integrity = 200
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 80, "slash" = 60, "stab" = 0,"pierce" = 0, "fire" = 0, "acid" = 0)
 	smeltresult = /obj/item/ingot/iron
 	armor_class = AC_MEDIUM
 	sellprice = 20
@@ -1315,7 +1314,7 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 60, "slash" = 50, "stab" = 0, "pierce" = 0, "fire" = 0, "acid" = 0)
 	blocksound = SOFTHIT
 	blade_dulling = DULLING_BASHCHOP
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -1337,7 +1336,7 @@
 	prevent_crits = list(BCLASS_CUT, BCLASS_CHOP, BCLASS_STAB) // Bones are ceramic-like. These are horrible against blunt.
 	blade_dulling = DULLING_BASHCHOP
 	body_parts_covered = CHEST|VITALS|ARMS|GROIN //Protects an acceptable large range of places for such relatively cost-y armor. I hope.
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 20, "slash" = 60, "stab" = 0,"pierce" = 0, "fire" = 0, "acid" = 0)
 	max_integrity = 250
 	equip_delay_self = 40
 	armor_class = AC_MEDIUM
@@ -1348,7 +1347,7 @@
 	icon = 'icons/roguetown/kaizoku/clothingicon/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/armor.dmi'
 	sleeved = 'icons/roguetown/kaizoku/helpers/sleeves_armor.dmi'
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 40, "slash" = 30, "stab" = 0,"pierce" = 0, "fire" = 0, "acid" = 0)
 	icon_state = "ivory_coverings"
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
 	blocksound = SOFTHIT

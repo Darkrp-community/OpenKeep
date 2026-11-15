@@ -167,7 +167,7 @@
 	taste_sensitivity = 10 // LIZARDS ARE ALIENS CONFIRMED
 	modifies_speech = TRUE // not really, they just hiss
 	var/static/list/languages_possible_alien = typecacheof(list(
-		/datum/language/xenocommon,
+
 		/datum/language/common,
 		/datum/language/draconic,
 		/datum/language/monkey))

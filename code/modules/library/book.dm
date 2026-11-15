@@ -13,6 +13,8 @@
 	w_class = WEIGHT_CLASS_NORMAL		 //upped to three because books are, y'know, pretty big. (and you could hide them inside eachother recursively forever)
 	attack_verb = list("bashed", "whacked", "educated")
 	resistance_flags = FLAMMABLE
+	grid_width = 32
+	grid_height = 64
 	drop_sound = 'sound/blank.ogg'
 	pickup_sound =  'sound/blank.ogg'
 	var/dat				//Actual page content

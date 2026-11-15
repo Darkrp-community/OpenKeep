@@ -30,6 +30,7 @@ GLOBAL_VAR_INIT(mobids, 1)
 	GLOB.alive_mob_list -= src
 	GLOB.mob_directory -= tag
 	focus = null
+
 	for (var/alert in alerts)
 		clear_alert(alert, TRUE)
 	if(observers && observers.len)
@@ -113,27 +114,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 				hud_list[hud] = I
 
 /**
- * Some kind of debug verb that gives atmosphere environment details
- */
-/mob/proc/Cell()
-	set category = "Admin"
-	set hidden = 1
-
-	if(!loc)
-		return 0
-
-	var/datum/gas_mixture/environment = loc.return_air()
-
-	var/t =	"<span class='notice'>Coordinates: [x],[y] \n</span>"
-	t +=	"<span class='danger'>Temperature: [environment.temperature] \n</span>"
-	for(var/id in environment.gases)
-		var/gas = environment.gases[id]
-		if(gas[MOLES])
-			t+="<span class='notice'>[gas[GAS_META][META_GAS_NAME]]: [gas[MOLES]] \n</span>"
-
-	to_chat(usr, t)
-
-/**
  * Show a message to this mob (visual or audible)
  */
 /mob/proc/show_message(msg, type, alt_msg, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
@@ -182,7 +162,7 @@ GLOBAL_VAR_INIT(mobids, 1)
  * * vision_distance (optional) define how many tiles away the message can be seen.
  * * ignored_mob (optional) doesn't show any message to a given mob if TRUE.
  */
-/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs)
+/atom/proc/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, runechat_message = null, log_seen = NONE, log_seen_msg = null)
 	var/turf/T = get_turf(src)
 	if(!T)
 		return
@@ -199,16 +179,16 @@ GLOBAL_VAR_INIT(mobids, 1)
 		var/msg = message
 		if(M.see_invisible < invisibility)//if src is invisible to M
 			msg = blind_message
-		else if(T != loc && T != src) //if src is inside something and not a turf.
-			msg = blind_message
 //		else if(T.lighting_object && T.lighting_object.invisibility <= M.see_invisible && T.is_softly_lit()) //if it is too dark.
 //			msg = blind_message
 		if(!msg)
 			continue
 		M.show_message(msg, MSG_VISUAL, blind_message, MSG_AUDIBLE)
+		if(runechat_message && M.can_hear())
+			M.create_chat_message(src, raw_message = runechat_message, spans = list("emote"))
 
 ///Adds the functionality to self_message.
-/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs)
+/mob/visible_message(message, self_message, blind_message, vision_distance = DEFAULT_MESSAGE_RANGE, list/ignored_mobs, runechat_message = null, log_seen = NONE, log_seen_msg = null)
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_VISUAL, blind_message, MSG_AUDIBLE)
@@ -223,12 +203,14 @@ GLOBAL_VAR_INIT(mobids, 1)
  * * deaf_message (optional) is what deaf people will see.
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  */
-/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message)
+/atom/proc/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, runechat_message = null)
 	var/list/hearers = get_hearers_in_view(hearing_distance, src)
 	if(self_message)
 		hearers -= src
 	for(var/mob/M in hearers)
 		M.show_message(message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
+		if(runechat_message && M.can_see_runechat(src) && M.can_hear())
+			M.create_chat_message(src, raw_message = runechat_message, spans = list("emote"))
 
 /**
  * Show a message to all mobs in earshot of this one
@@ -241,7 +223,7 @@ GLOBAL_VAR_INIT(mobids, 1)
  * * deaf_message (optional) is what deaf people will see.
  * * hearing_distance (optional) is the range, how many tiles away the message can be heard.
  */
-/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message)
+/mob/audible_message(message, deaf_message, hearing_distance = DEFAULT_MESSAGE_RANGE, self_message, runechat_message = null)
 	. = ..()
 	if(self_message)
 		show_message(self_message, MSG_AUDIBLE, deaf_message, MSG_VISUAL)
@@ -532,9 +514,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 	set hidden = 1
 	set src = usr
 
-	if(ismecha(loc))
-		return
-
 	if(incapacitated())
 		return
 
@@ -733,16 +712,12 @@ GLOBAL_VAR_INIT(mobids, 1)
 			if(cached)
 				stat(null, "Next Map: [cached.map_name]")
 			stat(null, "Round ID: [GLOB.rogue_round_id ? GLOB.rogue_round_id : "NULL"]")
-//			stat(null, "Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]")
 			stat(null, "Round Time: [gameTimestamp("hh:mm:ss", world.time - SSticker.round_start_time)] [world.time - SSticker.round_start_time]")
 			stat(null, "Round TrueTime: [worldtime2text()] [world.time]")
 			stat(null, "TimeOfDay: [GLOB.tod]")
 			stat(null, "IC Time: [station_time_timestamp()] [station_time()]")
 			stat(null, "Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)")
-			if(SSshuttle.emergency)
-				var/ETA = SSshuttle.emergency.getModeStr()
-				if(ETA)
-					stat(null, "[ETA] [SSshuttle.emergency.getTimerStr()]")
+
 	if(client)
 		if(statpanel("RoundInfo"))
 			stat("Round ID: [GLOB.rogue_round_id]")
@@ -911,9 +886,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 /mob/proc/activate_hand(selhand)
 	return
 
-/mob/proc/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null) //For sec bot threat assessment
-	return 0
-
 ///Get the ghost of this mob (from the mind)
 /mob/proc/get_ghost(even_if_they_cant_reenter, ghosts_with_clients)
 	if(mind)
@@ -1077,9 +1049,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 		//update the datacore records! This is goig to be a bit costly.
 		replace_records_name(oldname,newname)
 
-		//update our pda and id if we have them on our person
-		replace_identification_name(oldname,newname)
-
 		for(var/datum/mind/T in SSticker.minds)
 			for(var/datum/objective/obj in T.get_all_objectives())
 				// Only update if this player is a target
@@ -1090,24 +1059,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 ///Updates GLOB.data_core records with new name , see mob/living/carbon/human
 /mob/proc/replace_records_name(oldname,newname)
 	return
-
-///update the ID name of this mob
-/mob/proc/replace_identification_name(oldname,newname)
-	var/list/searching = GetAllContents()
-	var/search_id = 1
-	var/search_pda = 1
-
-	for(var/A in searching)
-		if( search_id && istype(A, /obj/item/card/id) )
-			var/obj/item/card/id/ID = A
-			if(ID.registered_name == oldname)
-				ID.registered_name = newname
-				ID.update_label()
-				if(ID.registered_account?.account_holder == oldname)
-					ID.registered_account.account_holder = newname
-				if(!search_pda)
-					break
-				search_id = 0
 
 /mob/proc/update_stat()
 	return
@@ -1140,10 +1091,6 @@ GLOBAL_VAR_INIT(mobids, 1)
 	if(!client.charging && !atkswinging)
 		if(examine_cursor_icon && client.keys_held["Shift"]) //mouse shit is hardcoded, make this non hard-coded once we make mouse modifiers bindable
 			client.mouse_pointer_icon = examine_cursor_icon
-	else if (istype(loc, /obj/vehicle/sealed))
-		var/obj/vehicle/sealed/E = loc
-		if(E.mouse_pointer)
-			client.mouse_pointer_icon = E.mouse_pointer
 
 
 ///This mob is abile to read books
@@ -1182,12 +1129,10 @@ GLOBAL_VAR_INIT(mobids, 1)
 	VV_DROPDOWN_OPTION(VV_HK_GIB, "Gib")
 	VV_DROPDOWN_OPTION(VV_HK_GIVE_SPELL, "Give Spell")
 	VV_DROPDOWN_OPTION(VV_HK_REMOVE_SPELL, "Remove Spell")
-	VV_DROPDOWN_OPTION(VV_HK_GIVE_DISEASE, "Give Disease")
 	VV_DROPDOWN_OPTION(VV_HK_GODMODE, "Toggle Godmode")
 	VV_DROPDOWN_OPTION(VV_HK_DROP_ALL, "Drop Everything")
 	VV_DROPDOWN_OPTION(VV_HK_REGEN_ICONS, "Regenerate Icons")
 	VV_DROPDOWN_OPTION(VV_HK_PLAYER_PANEL, "Show player panel")
-	VV_DROPDOWN_OPTION(VV_HK_BUILDMODE, "Toggle Buildmode")
 	VV_DROPDOWN_OPTION(VV_HK_DIRECT_CONTROL, "Assume Direct Control")
 	VV_DROPDOWN_OPTION(VV_HK_OFFER_GHOSTS, "Offer Control to Ghosts")
 
@@ -1213,18 +1158,10 @@ GLOBAL_VAR_INIT(mobids, 1)
 		if(!check_rights(NONE))
 			return
 		usr.client.remove_spell(src)
-	if(href_list[VV_HK_GIVE_DISEASE])
-		if(!check_rights(NONE))
-			return
-		usr.client.give_disease(src)
 	if(href_list[VV_HK_GIB])
 		if(!check_rights(R_FUN))
 			return
 		usr.client.cmd_admin_gib(src)
-	if(href_list[VV_HK_BUILDMODE])
-		if(!check_rights(R_BUILD))
-			return
-		togglebuildmode(src)
 	if(href_list[VV_HK_DROP_ALL])
 		if(!check_rights(NONE))
 			return

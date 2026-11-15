@@ -208,7 +208,7 @@
 /obj/structure/roguewindow/openclose{
 	dir = 4
 	},
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "aJ" = (
@@ -961,10 +961,10 @@
 /area/rogue/indoors/town/tavern)
 "dL" = (
 /obj/structure/table/wood/plain,
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/apartments/apartment1,
 /obj/item/roguekey/apartments/apartment2,
 /obj/item/roguekey/apartments/apartment3,
@@ -1066,7 +1066,7 @@
 /area/rogue/outdoors/town)
 "ee" = (
 /obj/structure/table/wood/fine,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/merchant,
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/shop)
@@ -1746,7 +1746,6 @@
 /area/rogue/indoors/town/garrison)
 "gB" = (
 /obj/structure/table/wood/plain,
-/obj/item/reagent_containers/food/snacks/grown/garlic,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
 "gC" = (
@@ -2386,7 +2385,7 @@
 /turf/open/floor/rogue/herringbone,
 /area/rogue/indoors/town/church)
 "ja" = (
-/obj/structure/barricade/wooden/rogue,
+/obj/structure/barricade/rogue,
 /turf/open/floor/rogue/dirt/road,
 /area/rogue/indoors/town)
 "jb" = (
@@ -3475,7 +3474,6 @@
 /obj/machinery/light/rogue/torchholder/l,
 /obj/structure/rack/rogue/shelf/biggest,
 /obj/item/clothing/neck/roguetown/coif,
-/obj/item/clothing/mask/bandana/black,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/shop)
 "nj" = (
@@ -5317,7 +5315,7 @@
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/under/town/basement)
 "un" = (
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/structure/closet/crate/chest/neu,
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/sewer)
@@ -5574,7 +5572,7 @@
 /turf/open/floor/rogue/ruinedwood,
 /area/rogue/indoors/town/church)
 "vo" = (
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/dungeon,
 /obj/structure/closet/crate/chest/neu_iron,
@@ -5705,9 +5703,6 @@
 /area/rogue/indoors/town)
 "vM" = (
 /obj/structure/closet/crate/roguecloset,
-/obj/item/clothing/suit/bio_suit/plaguedoctorsuit,
-/obj/item/clothing/mask/gas/plaguedoctor,
-/obj/item/clothing/head/plaguedoctorhat,
 /obj/item/roguekey/apothecary,
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/indoors/town/apothecary)
@@ -5876,10 +5871,6 @@
 	dir = 4
 	},
 /area/rogue/outdoors/river)
-"ww" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/town)
 "wx" = (
 /turf/closed/wall/mineral/rogue/stonebrick,
 /area/rogue/indoors/town/manor)
@@ -6578,7 +6569,7 @@
 	},
 /area/rogue/outdoors/town/roofs)
 "zg" = (
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue/crude,
 /turf/closed/wall/mineral/rogue/wooddark/window,
 /area/rogue/indoors/town)
 "zi" = (
@@ -7976,7 +7967,7 @@
 "EB" = (
 /obj/structure/closet/crate/roguecloset,
 /obj/item/rogueweapon/polearm/woodstaff/aries,
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/inquisition,
 /obj/item/roguekey/monastery,
 /obj/item/roguekey/church,
@@ -8789,10 +8780,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/outdoors/town)
-"HI" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/ruinedwood/turned,
-/area/rogue/indoors/town)
 "HJ" = (
 /turf/closed/wall/mineral/rogue/wooddark/end{
 	dir = 8
@@ -9554,10 +9541,6 @@
 "Kr" = (
 /turf/open/transparent/openspace,
 /area/rogue/outdoors/exposed/manorgarri)
-"Kt" = (
-/obj/structure/chair/stool/rogue,
-/turf/open/floor/rogue/wood,
-/area/rogue/indoors/town/tavern)
 "Ku" = (
 /obj/effect/spawner/roguemap/treeorstump,
 /turf/open/floor/rogue/dirt/road,
@@ -10495,15 +10478,6 @@
 	},
 /turf/open/floor/rogue/ruinedwood/turned,
 /area/rogue/indoors/town/dwarfin)
-"Oe" = (
-/obj/effect/portal/wormhole{
-	icon = 'icons/roguetown/misc/structure.dmi';
-	icon_state = "shitportal";
-	name = "Portal";
-	teleport_channel = "wizard"
-	},
-/turf/open/floor/carpet/purple,
-/area/rogue/indoors/town/magician)
 "Of" = (
 /obj/structure/rack/rogue,
 /obj/item/rogueweapon/mace/woodclub,
@@ -11223,9 +11197,9 @@
 /obj/structure/closet/crate/roguecloset/lord{
 	name = "Spare Keys"
 	},
-/obj/item/keyring,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/roguekey/manor,
 /obj/item/roguekey/manor,
@@ -11276,7 +11250,6 @@
 /turf/closed/wall/mineral/rogue/stone,
 /area/rogue/outdoors/town)
 "QW" = (
-/turf/open/space/basic,
 /area/rogue/outdoors/town)
 "QX" = (
 /turf/open/floor/rogue/church,
@@ -11563,7 +11536,7 @@
 /turf/open/floor/rogue/concrete,
 /area/rogue/under/town/basement)
 "RZ" = (
-/obj/item/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/manor,
 /obj/item/roguekey/walls,
 /obj/item/roguekey/dungeon,
@@ -11686,15 +11659,6 @@
 /obj/structure/fluff/clock,
 /turf/open/floor/carpet/purple,
 /area/rogue/indoors/town/magician)
-"Sy" = (
-/obj/effect/portal/wormhole{
-	icon = 'icons/roguetown/misc/structure.dmi';
-	icon_state = "shitportal";
-	name = "Portal";
-	teleport_channel = "wizard"
-	},
-/turf/open/floor/rogue/herringbone,
-/area/rogue/indoors/town/manor)
 "Sz" = (
 /obj/machinery/light/rogue/torchholder/r,
 /turf/open/floor/rogue/dirt/road,
@@ -13314,7 +13278,7 @@
 /area/rogue/indoors/town)
 "YG" = (
 /obj/structure/roguewindow/openclose,
-/obj/structure/barricade/wooden/rogue/crude,
+/obj/structure/barricade/rogue/crude,
 /turf/open/floor/rogue/blocks,
 /area/rogue/indoors/town/dwarfin)
 "YH" = (
@@ -13446,8 +13410,8 @@
 /area/rogue/indoors/town/church)
 "Ze" = (
 /obj/structure/table/wood/plain,
-/obj/item/keyring,
-/obj/item/keyring,
+/obj/item/storage/keyring,
+/obj/item/storage/keyring,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/garrison,
 /obj/item/roguekey/walls,
@@ -51021,7 +50985,7 @@ ik
 Wl
 tk
 tk
-ww
+cY
 tk
 tk
 Wl
@@ -51177,9 +51141,9 @@ ej
 ej
 FR
 tk
-HI
+cY
 nl
-HI
+cY
 Cc
 Wl
 ps
@@ -73285,7 +73249,7 @@ rw
 sI
 Gw
 sI
-Kt
+Vy
 BG
 jf
 nS
@@ -101178,7 +101142,7 @@ Wa
 uw
 wx
 Pl
-Sy
+lq
 lq
 CL
 VR
@@ -102105,7 +102069,7 @@ GI
 Sx
 eg
 eg
-Oe
+ch
 ch
 GI
 GI

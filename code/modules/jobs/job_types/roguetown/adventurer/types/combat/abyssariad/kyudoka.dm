@@ -50,7 +50,7 @@
 	beltr = /obj/item/flashlight/flare/torch/lantern
 	backpack_contents = list(/obj/item/bait = 1, /obj/item/rogueweapon/knife/kaizoku/kunai = 1)
 	beltl = /obj/item/quiver/arrows
-	H.change_stat("perception", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("speed", 1)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_SPD, 1)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

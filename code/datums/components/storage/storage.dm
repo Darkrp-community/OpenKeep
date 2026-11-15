@@ -29,8 +29,8 @@
 	var/locked = FALSE								//when locked nothing can see inside or use it.
 
 	var/max_w_class = WEIGHT_CLASS_SMALL			//max size of objects that will fit.
-	var/max_combined_w_class = 14					//max combined sizes of objects that will fit.
-	var/max_items = 7								//max number of objects that will fit.
+	var/max_combined_w_class = 1000				//max combined sizes of objects that will fit.
+	var/max_items = 1000				//max number of objects that will fit.
 
 	var/emp_shielded = FALSE
 
@@ -40,10 +40,11 @@
 	var/allow_quick_empty = FALSE					//allow empty verb which allows dumping on the floor of everything inside quickly.
 	var/allow_quick_gather = FALSE					//allow toggle mob verb which toggles collecting all items from a tile.
 
-	var/allow_dump_out = FALSE
+	var/allow_dump_out = FALSE					//allow dumping out contents via LMB click-dragging
 
 	var/collection_mode = COLLECT_EVERYTHING
 
+	var/insert_verb = "tuck"						//you "tuck" things into a bag
 	var/insert_preposition = "in"					//you put things "in" a bag, but "on" a tray.
 
 	var/display_numerical_stacking = FALSE			//stack things of the same type and show as a single object with a number.
@@ -101,7 +102,6 @@
 
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(on_attack_hand))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_PAW, PROC_REF(on_attack_hand))
-	RegisterSignal(parent, COMSIG_ATOM_EMP_ACT, PROC_REF(emp_act))
 	RegisterSignal(parent, COMSIG_ATOM_ATTACK_GHOST, PROC_REF(show_to_ghost))
 	RegisterSignal(parent, COMSIG_ATOM_ENTERED, PROC_REF(refresh_mob_views))
 	RegisterSignal(parent, COMSIG_ATOM_EXITED, PROC_REF(_remove_and_refresh))
@@ -430,7 +430,7 @@
 				cy++
 				if(cy - screen_start_y >= rows)
 					break
-	closer.screen_loc = "[screen_start_x + cols]:[screen_pixel_x],[screen_start_y]:[screen_pixel_y]"
+	closer.screen_loc = "[screen_start_x]:[screen_pixel_x],[screen_start_y+rows]:[screen_pixel_y]"
 
 /datum/component/storage/proc/show_to(mob/M)
 	if(!M.client)
@@ -470,12 +470,6 @@
 	for(var/mob/M in can_see_contents())
 		close(M)
 		. = TRUE //returns TRUE if any mobs actually got a close(M) call
-
-/datum/component/storage/proc/emp_act(datum/source, severity)
-	if(emp_shielded)
-		return
-	var/datum/component/storage/concrete/master = master()
-	master.emp_act(source, severity)
 
 //This proc draws out the inventory and places the items on it. tx and ty are the upper left tile and mx, my are the bottm right.
 //The numbers are calculated from the bottom-left The bottom-left slot being 1,1.
@@ -551,11 +545,7 @@
 
 //This proc is called when you want to place an item into the storage item.
 /datum/component/storage/proc/attackby(datum/source, obj/item/I, mob/M, params)
-	if(istype(I, /obj/item/hand_labeler))
-		var/obj/item/hand_labeler/labeler = I
-		if(labeler.mode)
-			return FALSE
-//	. = TRUE //no afterattack
+
 	if(!can_be_inserted(I, FALSE, M))
 		var/atom/real_location = real_location()
 		if(real_location.contents.len >= max_items) //don't use items on the backpack if they don't fit
@@ -596,8 +586,6 @@
 	if(!ismob(M))
 		return
 	if(!over_object)
-		return
-	if(ismecha(M.loc)) // stops inventory actions in a mech
 		return
 	if(M.incapacitated() || !M.canUseStorage())
 		return
@@ -659,7 +647,7 @@
 /datum/component/storage/proc/mousedrop_receive(datum/source, atom/movable/O, mob/M)
 	if(isitem(O))
 		var/obj/item/I = O
-		if(iscarbon(M) || isdrone(M))
+		if(iscarbon(M))
 			var/mob/living/L = M
 			if(!L.incapacitated() && I == L.get_active_held_item())
 				if(!SEND_SIGNAL(I, COMSIG_CONTAINS_STORAGE) && can_be_inserted(I, FALSE))	//If it has storage it should be trying to dump, not insert.
@@ -762,11 +750,11 @@
 		playsound(parent, "rustle", 50, TRUE, -5)
 	for(var/mob/viewing in viewers(user, null))
 		if(M == viewing)
-			to_chat(usr, "<span class='notice'>I tuck [I] [insert_preposition]to [parent].</span>")
+			to_chat(usr, "<span class='notice'>I [insert_verb] [I] [insert_preposition]to [parent].</span>")
 		else if(in_range(M, viewing)) //If someone is standing close enough, they can tell what it is...
-			viewing.show_message("<span class='notice'>[M] tucks [I] [insert_preposition]to [parent].</span>", MSG_VISUAL)
+			viewing.show_message("<span class='notice'>[M] [insert_verb]s [I] [insert_preposition]to [parent].</span>", MSG_VISUAL)
 		else
-			viewing.show_message("<span class='notice'>[M] tucks something [insert_preposition]to [parent].</span>", MSG_VISUAL)
+			viewing.show_message("<span class='notice'>[M] [insert_verb]s something [insert_preposition]to [parent].</span>", MSG_VISUAL)
 
 /datum/component/storage/proc/update_icon()
 	if(isobj(parent))

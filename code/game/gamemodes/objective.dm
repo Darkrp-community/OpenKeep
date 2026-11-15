@@ -52,8 +52,6 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 /datum/objective/proc/considered_escaped(datum/mind/M)
 	if(!considered_alive(M))
 		return FALSE
-	if(considered_exiled(M))
-		return FALSE
 	if(M.force_escaped)
 		return TRUE
 	var/area/A = get_area(M.current)
@@ -205,7 +203,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	..()
 
 /datum/objective/mutiny/check_completion()
-	if(!target || !considered_alive(target) || considered_afk(target) || considered_exiled(target))
+	if(!target || !considered_alive(target) || considered_afk(target))
 		return TRUE
 	var/turf/T = get_turf(target.current)
 	return !T || !is_station_level(T.z)
@@ -228,7 +226,7 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	..()
 
 /datum/objective/maroon/check_completion()
-	return !target || !considered_alive(target) || (!target.current.onCentCom() && !target.current.onSyndieBase())
+	return !target || !considered_alive(target) || (!target.current.onCentCom())
 
 /datum/objective/maroon/update_explanation_text()
 	if(target && target.current)
@@ -320,22 +318,6 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 			return FALSE
 	return TRUE
 
-/datum/objective/escape/boat
-	name = "escape"
-	explanation_text = "Escape on the last boat out of ROGUETOWN."
-	team_explanation_text = "Escape on the last boat out of ROGUETOWN."
-
-/datum/objective/escape/boat/check_completion()
-	if(SSshuttle.emergency.mode != SHUTTLE_ENDGAME)
-		return FALSE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!considered_escaped(M) || !SSshuttle.emergency.shuttle_areas[get_area(M.current)])
-			return FALSE
-	return TRUE
-
-
-
 /datum/objective/dungeoneer
 	name = "protect"
 	explanation_text = "Keep the prisoner alive and in their cell."
@@ -346,47 +328,6 @@ GLOBAL_LIST(admin_objective_list) //Prefilled admin assignable objective list
 	// Require all owners escape safely.
 	if(prisoner)
 		return TRUE
-
-
-/datum/objective/escape/escape_with_identity
-	name = "escape with identity"
-	var/target_real_name // Has to be stored because the target's real_name can change over the course of the round
-	var/target_missing_id
-
-/datum/objective/escape/escape_with_identity/find_target(dupe_search_range)
-	target = ..()
-	update_explanation_text()
-
-/datum/objective/escape/escape_with_identity/update_explanation_text()
-	if(target && target.current)
-		target_real_name = target.current.real_name
-		explanation_text = "Escape on the shuttle or an escape pod with the identity of [target_real_name], the [target.assigned_role]"
-		var/mob/living/carbon/human/H
-		if(ishuman(target.current))
-			H = target.current
-		if(H && H.get_id_name() != target_real_name)
-			target_missing_id = 1
-		else
-			explanation_text += " while wearing their identification card"
-		explanation_text += "." //Proper punctuation is important!
-
-	else
-		explanation_text = "Free Objective."
-
-/datum/objective/escape/escape_with_identity/check_completion()
-	if(!target || !target_real_name)
-		return TRUE
-	var/list/datum/mind/owners = get_owners()
-	for(var/datum/mind/M in owners)
-		if(!ishuman(M.current) || !considered_escaped(M))
-			continue
-		var/mob/living/carbon/human/H = M.current
-		if(H.dna.real_name == target_real_name && (H.get_id_name() == target_real_name || target_missing_id))
-			return TRUE
-	return FALSE
-
-/datum/objective/escape/escape_with_identity/admin_edit(mob/admin)
-	admin_simple_target_pick(admin)
 
 /datum/objective/survive
 	name = "survive"
@@ -517,62 +458,6 @@ GLOBAL_LIST_EMPTY(possible_items)
 					return TRUE
 	return FALSE
 
-GLOBAL_LIST_EMPTY(possible_items_special)
-/datum/objective/steal/special //ninjas are so special they get their own subtype good for them
-	name = "steal special"
-
-/datum/objective/steal/special/New()
-	..()
-	if(!GLOB.possible_items_special.len)
-		for(var/I in subtypesof(/datum/objective_item/special) + subtypesof(/datum/objective_item/stack))
-			new I
-
-/datum/objective/steal/special/find_target(dupe_search_range)
-	return set_target(pick(GLOB.possible_items_special))
-
-/datum/objective/steal/exchange
-	name = "exchange"
-	martyr_compatible = 0
-
-/datum/objective/steal/exchange/admin_edit(mob/admin)
-	return
-
-/datum/objective/steal/exchange/proc/set_faction(faction,otheragent)
-	target = otheragent
-	if(faction == "red")
-		targetinfo = new/datum/objective_item/unique/docs_blue
-	else if(faction == "blue")
-		targetinfo = new/datum/objective_item/unique/docs_red
-	explanation_text = "Acquire [targetinfo.name] held by [target.current.real_name], the [target.assigned_role] and syndicate agent"
-	steal_target = targetinfo.targetitem
-
-
-/datum/objective/steal/exchange/update_explanation_text()
-	..()
-	if(target && target.current)
-		explanation_text = "Acquire [targetinfo.name] held by [target.name], the [target.assigned_role] and syndicate agent"
-	else
-		explanation_text = "Free Objective"
-
-
-/datum/objective/steal/exchange/backstab
-	name = "prevent exchange"
-
-/datum/objective/steal/exchange/backstab/set_faction(faction)
-	if(faction == "red")
-		targetinfo = new/datum/objective_item/unique/docs_red
-	else if(faction == "blue")
-		targetinfo = new/datum/objective_item/unique/docs_blue
-	explanation_text = "Do not give up or lose [targetinfo.name]."
-	steal_target = targetinfo.targetitem
-
-
-/datum/objective/download/admin_edit(mob/admin)
-	var/count = input(admin,"How many nodes ?","Nodes",target_amount) as num|null
-	if(count)
-		target_amount = count
-	update_explanation_text()
-
 /datum/objective/capture
 	name = "capture"
 
@@ -647,36 +532,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 				stolen_count++
 	return stolen_count >= 5
 
-/datum/objective/steal_five_of_type/summon_guns
-	name = "steal guns"
-	explanation_text = "Steal at least five guns!"
-	wanted_items = list(/obj/item/gun)
-
-/datum/objective/steal_five_of_type/summon_magic
-	name = "steal magic"
-	explanation_text = "Steal at least five magical artefacts!"
-	wanted_items = list()
-
-/datum/objective/steal_five_of_type/summon_magic/New()
-	wanted_items = GLOB.summoned_magic_objectives
-	..()
-
-/datum/objective/steal_five_of_type/summon_magic/check_completion()
-	var/list/datum/mind/owners = get_owners()
-	var/stolen_count = 0
-	for(var/datum/mind/M in owners)
-		if(!isliving(M.current))
-			continue
-		var/list/all_items = M.current.GetAllContents()	//this should get things in cheesewheels, books, etc.
-		for(var/obj/I in all_items) //Check for wanted items
-			if(istype(I, /obj/item/book/granter/spell))
-				var/obj/item/book/granter/spell/spellbook = I
-				if(!spellbook.used || !spellbook.oneuse) //if the book still has powers...
-					stolen_count++ //it counts. nice.
-			else if(is_type_in_typecache(I, wanted_items))
-				stolen_count++
-	return stolen_count >= 5
-
 //Created by admin tools
 /datum/objective/custom
 	name = "custom"
@@ -712,7 +567,6 @@ GLOBAL_LIST_EMPTY(possible_items_special)
 		/datum/objective/survive,
 		/datum/objective/martyr,
 		/datum/objective/steal,
-		/datum/objective/download,
 		/datum/objective/capture,
 		/datum/objective/custom
 	),/proc/cmp_typepaths_asc)

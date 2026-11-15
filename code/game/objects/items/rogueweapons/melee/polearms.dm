@@ -52,12 +52,14 @@
 	penfactor = AP_POLEARM_THRUST
 	swingdelay = 1
 	misscost = 10
+	item_damage_type = "stab"
 
 /datum/intent/polearm/thrust/poke
 	name = "poke"
 	penfactor = AP_SPEAR_POKE
 	chargetime = 0
 	misscost = 7
+	item_damage_type = "stab"
 
 /datum/intent/polearm/thrust/spear
 	penfactor = AP_POLEARM_THRUST-10
@@ -75,6 +77,7 @@
 	damfactor = 0.8 //Bashing with a weapon not meant for it.
 	swingdelay = 1
 	misscost = 5
+	item_damage_type = "crush"
 
 /*-------------\
 | Swing intent |
@@ -86,6 +89,7 @@
 	damfactor = 1 //Full-power, charged 2-range swings. The gimmick intent of quarterstaffs.
 	reach = 2
 	chargetime = 1
+	item_damage_type = "crush"
 
 /*-----------\
 | Cut intent |
@@ -100,7 +104,7 @@
 	reach = 2
 	swingdelay = 1
 	misscost = 10
-
+	item_damage_type = "slash"
 /*------------\
 | Chop intent |
 \------------*/
@@ -117,6 +121,7 @@
 	swingdelay = 2
 	misscost = 20
 	warnie = "mobwarning"
+	item_damage_type = "slash"
 
 /*-----------\
 | Mancatching |
@@ -137,6 +142,7 @@
 	penfactor = 100
 	swingdelay = 1
 	misscost = 10
+	item_damage_type = "stab"
 
 //................ Wooden Staff ............... //
 /obj/item/rogueweapon/polearm/woodstaff

@@ -67,6 +67,7 @@
 	icon_state = "inbash"
 	hitsound = list('sound/combat/shieldbash_wood.ogg')
 	chargetime = 0
+	item_damage_type = "crush"
 
 /datum/intent/shield/bash/metal
 	hitsound = list('sound/combat/shieldbash_metal.ogg')
@@ -79,6 +80,7 @@
 	chargetime = 5
 	hitsound = list('sound/combat/shieldbash_wood.ogg')
 	warnie = "shieldwarn"
+	item_damage_type = "crush"
 
 /datum/intent/shield/block/metal
 	hitsound = list('sound/combat/shieldbash_metal.ogg')
@@ -138,6 +140,7 @@
 			update_icon()
 		else
 			return
+
 
 /obj/item/rogueweapon/shield/tower
 	name = "tower shield"

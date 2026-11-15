@@ -44,7 +44,7 @@
 	cloak = /obj/item/clothing/cloak/stabard/guard
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/guard
+	beltl = /obj/item/storage/keyring/guard
 	beltr = /obj/item/quiver/arrows
 	wrists = /obj/item/clothing/wrists/roguetown/bracers/leather
 	backpack_contents = list(/obj/item/rogueweapon/knife/dagger/steel/special = 1)
@@ -67,9 +67,9 @@
 		H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE) // For rapier use
 		H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
-		H.change_stat("intelligence", 1)
-		H.change_stat("perception", 2)
-		H.change_stat("endurance", 1)
-		H.change_stat("speed", 2)
+		H.change_stat(STATKEY_INT, 1)
+		H.change_stat(STATKEY_PER, 2)
+		H.change_stat(STATKEY_END, 1)
+		H.change_stat(STATKEY_SPD, 2)
 		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 		ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)

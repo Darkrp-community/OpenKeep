@@ -54,7 +54,7 @@
 		return
 	return TRUE
 
-/mob/living/carbon/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
+/mob/living/carbon/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum, damage_type = "crush")
 	if(!skipcatch)	//ugly, but easy
 		if(can_catch_item())
 			if(istype(AM, /obj/item))
@@ -239,9 +239,6 @@
 			playsound(get_turf(src), I.get_dismember_sound(), 80, TRUE)
 		return TRUE //successful attack
 
-/mob/living/carbon/attack_drone(mob/living/simple_animal/drone/user)
-	return //so we don't call the carbon's attack_hand().
-
 //ATTACK HAND IGNORING PARENT RETURN VALUE
 /mob/living/carbon/attack_hand(mob/living/carbon/human/user)
 	if(!lying_attack_check(user))
@@ -250,16 +247,6 @@
 	if(!get_bodypart(check_zone(user.zone_selected)))
 		to_chat(user, "<span class='warning'>[src] is missing that.</span>")
 		return FALSE
-
-	for(var/thing in diseases)
-		var/datum/disease/D = thing
-		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-			user.ContactContractDisease(D)
-
-	for(var/thing in user.diseases)
-		var/datum/disease/D = thing
-		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-			ContactContractDisease(D)
 
 	if(!user.cmode)
 		var/try_to_fail = !istype(user.rmb_intent, /datum/rmb_intent/weak)
@@ -289,51 +276,14 @@
 	*/
 	return FALSE
 
-
 /mob/living/carbon/attack_paw(mob/living/carbon/monkey/M)
-	if(can_inject(M, TRUE))
-		for(var/thing in diseases)
-			var/datum/disease/D = thing
-			if((D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN) && prob(85))
-				M.ContactContractDisease(D)
-
-	for(var/thing in M.diseases)
-		var/datum/disease/D = thing
-		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
-			ContactContractDisease(D)
-
 	if(M.used_intent.type == INTENT_HELP)
 		help_shake_act(M)
 		return 0
 
 	if(..()) //successful monkey bite.
-		for(var/thing in M.diseases)
-			var/datum/disease/D = thing
-			ForceContractDisease(D)
 		return 1
 
-
-/mob/living/carbon/attack_slime(mob/living/simple_animal/slime/M)
-	if(..()) //successful slime attack
-		if(M.powerlevel > 0)
-			var/stunprob = M.powerlevel * 7 + 10  // 17 at level 1, 80 at level 10
-			if(prob(stunprob))
-				M.powerlevel -= 3
-				if(M.powerlevel < 0)
-					M.powerlevel = 0
-
-				visible_message("<span class='danger'>The [M.name] has shocked [src]!</span>", \
-				"<span class='danger'>The [M.name] has shocked you!</span>")
-
-				do_sparks(5, TRUE, src)
-				var/power = M.powerlevel + rand(0,3)
-				Paralyze(power*20)
-				if(stuttering < power)
-					stuttering = power
-				if (prob(stunprob) && M.powerlevel >= 8)
-					adjustFireLoss(M.powerlevel * rand(6,10))
-					updatehealth()
-		return 1
 
 /mob/living/carbon/proc/dismembering_strike(mob/living/attacker, dam_zone)
 	if(!attacker.limb_destroyer)
@@ -357,13 +307,6 @@
 		return affecting.body_zone
 	return dam_zone
 
-
-/mob/living/carbon/blob_act(obj/structure/blob/B)
-	if (stat == DEAD)
-		return
-	else
-		show_message("<span class='danger'>The blob attacks!</span>")
-		adjustBruteLoss(10)
 
 /mob/living/carbon/emp_act(severity)
 	. = ..()
@@ -434,12 +377,6 @@
 				"<span class='notice'>I shake [src] to get [p_their()] attention.</span>")
 	shake_camera(src, 2, 1)
 	SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
-	if(HAS_TRAIT(M, TRAIT_FRIENDLY))
-		var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)
-		if (mood.sanity >= SANITY_GREAT)
-			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/besthug, M)
-		else if (mood.sanity >= SANITY_DISTURBED)
-			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "friendly_hug", /datum/mood_event/betterhug, M)
 	for(var/datum/brain_trauma/trauma in M.get_traumas())
 		trauma.on_hug(M, src)
 	AdjustStun(-60)
@@ -495,14 +432,10 @@
 
 			else
 				to_chat(src, "<span class='warning'>My eyes are really starting to hurt. This can't be good for you!</span>")
-		if(has_bane(BANE_LIGHT))
-			mind.disrupt_spells(-500)
 		return 1
 	else if(damage == 0) // just enough protection
 		if(prob(20))
 			to_chat(src, "<span class='notice'>Something bright flashes in the corner of my vision!</span>")
-		if(has_bane(BANE_LIGHT))
-			mind.disrupt_spells(0)
 
 
 /mob/living/carbon/soundbang_act(intensity = 1, stun_pwr = 20, damage_pwr = 5, deafen_pwr = 15)

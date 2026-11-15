@@ -59,9 +59,9 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 
-	H.change_stat("perception", 2)
-	H.change_stat("endurance", 1)
-	H.change_stat("speed", 1)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_SPD, 1)
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 

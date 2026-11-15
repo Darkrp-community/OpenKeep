@@ -19,6 +19,8 @@
 	var/list/hitsound = list('sound/combat/hits/blunt/bluntsmall (1).ogg', 'sound/combat/hits/blunt/bluntsmall (2).ogg')
 	var/canparry = TRUE
 	var/candodge = TRUE
+	var/iparrybonus = 0
+	var/idodgebonus = 0
 	var/chargetime = 0 //if above 0, this attack must be charged to reach full damage
 	var/chargedrain = 0 //how mcuh fatigue is removed every second when at max charge
 	var/releasedrain = 1 //drain when we go off, regardless
@@ -46,11 +48,15 @@
 	var/miss_text //THESE ARE FOR UNARMED MISSING ATTACKS
 	var/miss_sound //THESE ARE FOR UNARMED MISSING ATTACKS
 
+	var/item_damage_type = "crush"
+
 /datum/intent/Destroy()
 	if(chargedloop)
 		chargedloop.stop()
 	if(mastermob.curplaying == src)
 		mastermob.curplaying = null
+	mastermob = null
+	masteritem = null
 	return ..()
 
 /datum/intent/proc/examine(mob/user)
@@ -117,9 +123,13 @@
 
 /datum/intent/proc/afterchange()
 	if(masteritem)
+		masteritem.damage_type = item_damage_type
 		var/list/benis = hitsound
 		if(benis)
 			masteritem.hitsound = benis
+	if(istype(mastermob, /mob/living/simple_animal))
+		var/mob/living/simple_animal/master = mastermob
+		master.damage_type = item_damage_type
 	return
 
 /datum/intent/proc/height2limb(height as num)
@@ -179,6 +189,7 @@
 	no_attack = TRUE
 	releasedrain = 0
 	blade_class = BCLASS_PUNCH
+	item_damage_type = "crush"
 
 /datum/intent/kick
 	name = "kick"
@@ -192,6 +203,7 @@
 	unarmed = TRUE
 	animname = "cut"
 	pointer = 'icons/effects/mousemice/human_kick.dmi'
+	item_damage_type = "crush"
 
 /datum/intent/bite
 	name = "bite"
@@ -203,6 +215,7 @@
 	unarmed = TRUE
 	noaa = FALSE
 	attack_verb = list("bites")
+	item_damage_type = "stab"
 
 /datum/intent/jump
 	name = "jump"
@@ -273,6 +286,7 @@
 	icon_state = "instrike"
 	attack_verb = list("hit", "strike")
 	chargetime = 0
+	item_damage_type = "crush"
 	swingdelay = 0
 
 /datum/intent/stab
@@ -282,6 +296,7 @@
 	hitsound = list('sound/combat/hits/bladed/genstab (1).ogg', 'sound/combat/hits/bladed/genstab (2).ogg', 'sound/combat/hits/bladed/genstab (3).ogg')
 	animname = "stab"
 	blade_class = BCLASS_STAB
+	item_damage_type = "stab"
 	chargetime = 0
 	swingdelay = 0
 
@@ -292,6 +307,7 @@
 	warnie = "aimwarn"
 	chargetime = 0.1
 	no_early_release = FALSE
+	item_damage_type = "stab"
 	noaa = TRUE
 	charging_slowdown = 2
 	warnoffset = 20
@@ -307,6 +323,7 @@
 	warnie = "aimwarn"
 	chargetime = 0
 	no_early_release = FALSE
+	item_damage_type = "crush"
 	noaa = TRUE
 	charging_slowdown = 3
 	warnoffset = 20
@@ -340,6 +357,7 @@
 	blade_class = BCLASS_PUNCH
 	miss_text = "swings a fist at the air!"
 	miss_sound = "punchwoosh"
+	item_damage_type = "crush"
 
 /datum/intent/unarmed/punch/rmb_ranged(atom/target, mob/user)
 	if(ismob(target))
@@ -364,6 +382,7 @@
 	rmb_ranged = TRUE
 	misscost = 5
 	releasedrain = 10
+	item_damage_type = "crush"
 
 /datum/intent/unarmed/shove/rmb_ranged(atom/target, mob/user)
 	if(ismob(target))
@@ -388,6 +407,7 @@
 	misscost = 5
 	candodge = TRUE
 	canparry = FALSE
+	item_damage_type = "crush"
 
 /datum/intent/unarmed/grab/rmb_ranged(atom/target, mob/user)
 	if(ismob(target))
@@ -433,6 +453,9 @@
 	swingdelay = 0
 	candodge = TRUE
 	canparry = TRUE
+	item_damage_type = "crush"
+	miss_text = "thrusts their head at nothing!"
+	miss_sound = PUNCHWOOSH
 
 /datum/intent/simple/claw
 	name = "claw"
@@ -447,6 +470,7 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "slashes the air!"
+	item_damage_type = "slash"
 
 /datum/intent/simple/peck
 	name = "peck"
@@ -461,6 +485,7 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "pecks the air!"
+	item_damage_type = "stab"
 
 /datum/intent/simple/bite
 	name = "bite"
@@ -474,6 +499,7 @@
 	swingdelay = 1
 	candodge = TRUE
 	canparry = TRUE
+	item_damage_type = "stab"
 
 //Applies no wounds.
 /datum/intent/simple/touch
@@ -506,6 +532,7 @@
 	releasedrain = 5
 	swingdelay = 0
 	rmb_ranged = TRUE
+	item_damage_type = "slash"
 
 /datum/intent/unarmed/wwolf
 	name = "claw"
@@ -519,6 +546,7 @@
 	canparry = TRUE
 	miss_text = "slashes the air!"
 	miss_sound = "bluntwooshlarge"
+	item_damage_type = "slash"
 
 /datum/intent/unarmed/ascendedclaw
 	name = "claw"
@@ -533,6 +561,7 @@
 	canparry = TRUE
 	miss_text = "slashes the air!"
 	miss_sound = "bluntwooshlarge"
+	item_damage_type = "slash"
 
 /datum/intent/simple/sting
 	name = "sting"
@@ -547,6 +576,7 @@
 	candodge = FALSE
 	canparry = FALSE
 	miss_text = "stings the air!"
+	item_damage_type = "stab"
 
 /datum/intent/simple/bigbite
 	name = "big bite"
@@ -560,6 +590,7 @@
 	swingdelay = 1
 	candodge = TRUE
 	canparry = TRUE
+	item_damage_type = "stab"
 
 /datum/intent/simple/stab
 	name = "stab"
@@ -574,6 +605,7 @@
 	candodge = TRUE
 	canparry = TRUE
 	miss_text = "stabs the air!"
+	item_damage_type = "stab"
 
 /datum/intent/simple/axe
 	name = "hack"
@@ -587,7 +619,7 @@
 	swingdelay = 3
 	candodge = TRUE
 	canparry = TRUE
-//	item_damage_type = "slash"
+	item_damage_type = "slash"
 
 /datum/intent/simple/spear
 	name = "spear"
@@ -601,4 +633,4 @@
 	swingdelay = 3
 	candodge = TRUE
 	canparry = TRUE
-//	item_damage_type = "stab"
+	item_damage_type = "stab"

@@ -19,7 +19,6 @@
 	icon = 'icons/turf/newwater.dmi'
 	icon_state = "together"
 	baseturfs = /turf/open/water
-	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	slowdown = 20
 	var/obj/effect/overlay/water/water_overlay
 	var/obj/effect/overlay/water/top/water_top_overlay
@@ -104,11 +103,11 @@
 //				drained += (user.checkwornweight()*2)
 				if(!user.check_armor_skill())
 					drained += 40
-				if(!user.rogfat_add(drained))
+				if(!user.adjust_stam(drained))
 					user.Immobilize(30)
 					addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, Knockdown), 30), 10)
 
-/turf/open/water/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/turf/open/water/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "crush")
 	..()
 	playsound(src, pick('sound/foley/water_land1.ogg','sound/foley/water_land2.ogg','sound/foley/water_land3.ogg'), 100, FALSE)
 
@@ -247,7 +246,7 @@
 	if(water_top_overlay)
 		QDEL_NULL(water_top_overlay)
 
-/turf/open/water/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
+/turf/open/water/hitby(atom/movable/AM, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum, damage_type = "crush")
 	if(isobj(AM))
 		var/obj/O = AM
 		O.extinguish()

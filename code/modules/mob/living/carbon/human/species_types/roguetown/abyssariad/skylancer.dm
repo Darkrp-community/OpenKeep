@@ -32,7 +32,7 @@
 	default_features = list("mcolor" = "FFF", "ears" = "TenguS", "tail_human" = "TenguV")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor's will - they suffer severe dementia after some decades.
-	skinned_type = /obj/item/stack/sheet/animalhide/human
+	skinned_type = /obj/item/stack/sheets/hides/human
 	disliked_food = NONE
 	liked_food = NONE
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT

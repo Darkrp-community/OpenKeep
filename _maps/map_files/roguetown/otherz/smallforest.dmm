@@ -59,12 +59,6 @@
 /obj/structure/flora/roguegrass/water,
 /turf/open/water/river,
 /area/rogue/outdoors/river)
-"aq" = (
-/turf/open/water/river{
-	dir = 4;
-	icon_state = "rockwd"
-	},
-/area/rogue/outdoors/river)
 "ar" = (
 /obj/structure/roguerock,
 /turf/open/water/river,
@@ -80,12 +74,6 @@
 "au" = (
 /obj/structure/flora/roguetree,
 /turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/river)
-"av" = (
-/turf/open/water/river{
-	dir = 8;
-	icon_state = "rockwd"
-	},
 /area/rogue/outdoors/river)
 "aw" = (
 /obj/structure/flora/newtree,
@@ -155,9 +143,6 @@
 /obj/structure/fluff/statue/gargoyle/moss,
 /turf/open/floor/rogue/dirt,
 /area/rogue/outdoors/woods)
-"aO" = (
-/turf/open/chasm/jungle,
-/area/rogue/outdoors/woods)
 "aP" = (
 /obj/structure/chair/bench/ancientlog,
 /turf/open/floor/rogue/dirt,
@@ -208,12 +193,6 @@
 "fk" = (
 /turf/closed/wall/mineral/rogue/wooddark,
 /area/rogue/outdoors/river)
-"fA" = (
-/turf/open/water/river{
-	dir = 4;
-	icon_state = "rockwd"
-	},
-/area/rogue/outdoors/woods)
 "fB" = (
 /obj/structure/fluff/railing/fence{
 	dir = 8
@@ -1612,8 +1591,8 @@ ap
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ae
 ao
@@ -1742,8 +1721,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ae
 ag
@@ -1872,8 +1851,8 @@ ag
 ag
 ag
 ac
-aq
-aq
+ad
+ad
 ac
 ae
 ag
@@ -2002,8 +1981,8 @@ ag
 ag
 ag
 ag
-aq
-aq
+ad
+ad
 ac
 ae
 ae
@@ -2132,8 +2111,8 @@ ac
 ag
 ag
 ag
-aq
-aq
+ad
+ad
 ac
 ac
 ac
@@ -2264,8 +2243,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ac
 ac
@@ -2394,8 +2373,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ac
 ac
@@ -2524,8 +2503,8 @@ ad
 ad
 ar
 ad
-aq
-aq
+ad
+ad
 ad
 ad
 ad
@@ -2537,8 +2516,8 @@ ar
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ae
 ag
@@ -2667,8 +2646,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ae
 ae
@@ -2797,8 +2776,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ac
 ac
@@ -2933,7 +2912,7 @@ ad
 ad
 ad
 ad
-aq
+ad
 ac
 am
 ae
@@ -3063,9 +3042,9 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
 ac
 ac
 ac
@@ -3168,8 +3147,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ae
 ag
@@ -3194,12 +3173,12 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
-aq
-aq
-aq
+ad
+ad
+ad
 ac
 ac
 aB
@@ -3298,8 +3277,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ae
 ae
@@ -3325,12 +3304,12 @@ ac
 ad
 ad
 ad
-aq
+ad
 ac
-aq
-aq
-aq
-aq
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -3428,8 +3407,8 @@ ad
 ad
 ad
 ad
-aq
-aq
+ad
+ad
 ac
 ac
 ac
@@ -3528,9 +3507,9 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
 aF
 aF
 aF
@@ -3560,10 +3539,10 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
-aq
+ad
+ad
+ad
+ad
 ae
 ae
 ae
@@ -3658,9 +3637,9 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
 ag
 ag
 aF
@@ -3690,10 +3669,10 @@ ac
 ad
 ad
 ad
-aq
-aq
-aq
-aq
+ad
+ad
+ad
+ad
 ad
 ad
 ad
@@ -3788,9 +3767,9 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
 aB
 au
 ac
@@ -3820,8 +3799,6 @@ ak
 ag
 ar
 ad
-aq
-aq
 ad
 ad
 ad
@@ -3920,14 +3897,16 @@ ad
 ad
 ad
 ad
-aq
 ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
+ad
+ad
+ad
 ae
 ae
 "}
@@ -3974,8 +3953,8 @@ ad
 ad
 ad
 ad
-av
-av
+ad
+ad
 ac
 ac
 ac
@@ -4055,9 +4034,9 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
 ac
 ac
 "}
@@ -4103,9 +4082,9 @@ ad
 ad
 ad
 ad
-av
-av
-av
+ad
+ad
+ad
 ac
 IW
 IW
@@ -4185,9 +4164,9 @@ ad
 ad
 ad
 ad
-aq
-aq
-aq
+ad
+ad
+ad
 ac
 ac
 "}
@@ -4317,7 +4296,7 @@ ad
 ad
 ad
 ad
-aq
+ad
 ad
 ad
 "}
@@ -15090,7 +15069,7 @@ Jc
 sN
 aH
 aN
-aO
+Vh
 Vh
 Vh
 Lu
@@ -16272,7 +16251,7 @@ sN
 sN
 Jc
 Lu
-fA
+Vh
 Lu
 Jc
 ab
@@ -16402,7 +16381,7 @@ sN
 Jc
 Jc
 Lu
-fA
+Vh
 Lu
 ai
 ub
@@ -16532,7 +16511,7 @@ sN
 dI
 dI
 Lu
-fA
+Vh
 Lu
 Jc
 ab
@@ -16663,7 +16642,7 @@ dI
 dI
 dI
 Vh
-fA
+Vh
 Lu
 ub
 ab
@@ -16793,7 +16772,7 @@ dI
 dI
 dI
 Lu
-fA
+Vh
 Lu
 ub
 ab
@@ -16923,7 +16902,7 @@ dI
 dI
 dI
 Lu
-fA
+Vh
 Lu
 ab
 ab
@@ -17053,7 +17032,7 @@ dI
 dI
 dI
 Lu
-fA
+Vh
 Lu
 ab
 ab
@@ -17183,7 +17162,7 @@ dI
 dI
 dI
 Lu
-fA
+Vh
 Lu
 ab
 ab
@@ -17313,7 +17292,7 @@ dI
 dI
 dI
 Lu
-fA
+Vh
 Vz
 PG
 PG

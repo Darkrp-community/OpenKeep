@@ -36,7 +36,7 @@
 	head = /obj/item/clothing/head/roguetown/chaperon/greyscale/chaperonsecondary
 	cloak = /obj/item/clothing/cloak/raincloak/furcloak
 	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
-	beltr = /obj/item/keyring/steward
+	beltr = /obj/item/storage/keyring/steward
 	beltl = /obj/item/rogueweapon/knife/dagger/steel
 	backr = /obj/item/storage/backpack/rogue/satchel
 	backpack_contents = list(/obj/item/storage/belt/rogue/pouch/coins/rich = 1, /obj/item/lockpickring/mundane = 1)
@@ -48,8 +48,8 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 6, TRUE)
-		H.change_stat("strength", -2)
-		H.change_stat("intelligence", 8)
-		H.change_stat("constitution", -2)
-		H.change_stat("speed", -2)
+		H.change_stat(STATKEY_STR, -2)
+		H.change_stat(STATKEY_INT, 8)
+		H.change_stat(STATKEY_CON, -2)
+		H.change_stat(STATKEY_SPD, -2)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)

@@ -508,6 +508,8 @@
 	body_parts_covered = COVERAGE_SKULL
 	prevent_crits = ALL_EXCEPT_STAB
 
+	grid_height = 64
+	grid_width = 64
 
 //................ Nasal Helmet ............... //
 /obj/item/clothing/head/roguetown/helmet/nasal
@@ -1865,7 +1867,7 @@
 	block2add = FOV_RIGHT|FOV_LEFT
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR
 
-	armor = list("melee" = 90, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 60, "slash" = 60, "stab" = 60,"pierce" = 40, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD_EXCEPT_MOUTH
 
 /obj/item/clothing/head/roguetown/helmet/visored/zunari/cursed/Initialize()
@@ -1915,7 +1917,7 @@
 	desc = "The thick, oil-boiled layered leather helmet used by Abyssariads Dustriders \
 	from the arid, steppelands on the heart of the Fog Islands."
 	icon_state = "arisan_duulga"
-	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 60, "slash" = 60, "stab" = 60,"pierce" = 40, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_BLUNT, BCLASS_TWIST)
 	body_parts_covered = HEAD|HAIR|EARS|NOSE|MOUTH
 	resistance_flags = FLAMMABLE // Made of leather
@@ -1934,7 +1936,7 @@
 	desc = "A cheap abyssariad helmet made from stripped, oil boiled rattan and iron. \
 	Used only by militia and the humble LinYou raiders. Less protective, but can be easily repaired."
 	flags_inv = HIDEEARS
-	armor = list("melee" = 60, "bullet" = 40, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 30, "slash" = 60, "stab" = 60, "pierce" = 50, "fire" = 0, "acid" = 0)
 	body_parts_covered = HEAD|HAIR|EARS
 	max_integrity = 125
 	sellprice = 20
@@ -2024,8 +2026,8 @@
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head.dmi'
 	emote_environment = 3
 	block2add = FOV_RIGHT|FOV_LEFT
+	armor = list("crush" = 100, "slash" = 90, "stab" = 90, "pierce" = 60, "fire" = 0, "acid" = 0)
 
-	armor = list("melee" = 100, "bullet" = 80, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/head/roguetown/helmet/heavy/bucket/soheidemon
 	name = "armored sohei cowl"
@@ -2123,7 +2125,6 @@
 	the sons of magma. The asbestos materials excels in resisting the intense heat of dragonfire and wizardry."
 	heat_protection = HEAD|EARS|HAIR|FACE
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	worn_x_dimension = 64
 	worn_y_dimension = 64
@@ -2169,7 +2170,7 @@
 	prevent_crits = list(BCLASS_STAB) //This one is too thin to actually protect someone beyond stabbing wounds. Cut would have too much 'blunt'.
 	resistance_flags = FIRE_PROOF
 	icon_state = "ivory_head"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 15, "slash" = 30, "stab" = 30, "pierce" = 20, "fire" = 0, "acid" = 0)
 	anvilrepair = null
 	smeltresult = /obj/item/ash
 	sewrepair = FALSE
@@ -2188,8 +2189,7 @@
 	flags_inv = HIDEEARS
 	max_integrity = 200
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("melee" = 60, "bullet" = 50, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
-	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'
+	armor = list("crush" = 30, "slash" = 50, "stab" = 50, "pierce" = 50, "fire" = 0, "acid" = 0)
 	mob_overlay_icon = 'icons/roguetown/kaizoku/clothing/head64.dmi'
 	bloody_icon = 'icons/effects/blood64x64.dmi'
 	bloody_icon_state = "helmetblood_big"
@@ -2205,7 +2205,7 @@
 	flags_inv = HIDEEARS
 	max_integrity = 250
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
-	armor = list("melee" = 60, "bullet" = 60, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = list("crush" = 30, "slash" = 60, "stab" = 60, "pierce" = 50, "fire" = 0, "acid" = 0)
 	block2add = FOV_RIGHT|FOV_LEFT
 	bloody_icon_state = null
 	icon = 'icons/roguetown/kaizoku/clothingicon/head.dmi'

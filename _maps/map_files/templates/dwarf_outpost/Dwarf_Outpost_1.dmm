@@ -370,9 +370,6 @@
 "yN" = (
 /obj/structure/closet/crate/chest/old_crate,
 /obj/item/flashlight/flare/torch/lantern,
-/obj/item/reagent_containers/food/snacks/poppypretzel,
-/obj/item/reagent_containers/food/snacks/poppypretzel,
-/obj/item/reagent_containers/food/snacks/poppypretzel,
 /turf/open/floor/rogue/herringbone,
 /area/rogue/under/catacombs/dwarfoutpost/orcy)
 "zg" = (

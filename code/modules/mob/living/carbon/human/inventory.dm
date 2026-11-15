@@ -1,5 +1,5 @@
 /mob/living/carbon/human/can_equip(obj/item/I, slot, disable_warning = FALSE, bypass_equip_delay_self = FALSE)
-	return dna.species.can_equip(I, slot, disable_warning, src, bypass_equip_delay_self)
+	return dna?.species?.can_equip(I, slot, disable_warning, src, bypass_equip_delay_self)
 
 // Return the item currently in the slot ID
 /mob/living/carbon/human/get_item_by_slot(slot_id)
@@ -119,7 +119,6 @@
 			update_inv_belt()
 		if(SLOT_RING)
 			wear_ring = I
-			sec_hud_set_ID()
 			update_inv_wear_id()
 		if(SLOT_WRISTS)
 
@@ -162,7 +161,6 @@
 		if(SLOT_PANTS)
 
 			wear_pants = I
-			update_suit_sensors()
 			update_inv_pants()
 		if(SLOT_SHIRT)
 
@@ -221,7 +219,7 @@
 	//Item is handled and in slot, valid to call callback, for this proc should always be true
 	if(!not_handled)
 		I.equipped(src, slot, initial)
-
+		check_armor_class()
 
 	if(hud_used)
 		hud_used.throw_icon?.update_icon()
@@ -259,12 +257,7 @@
 				dropItemToGround(r_store, TRUE, silent = silent) //Again, makes sense for pockets to drop.
 			if(l_store)
 				dropItemToGround(l_store, TRUE, silent = silent)
-//			if(wear_ring)
-//				dropItemToGround(wear_ring)
-//			if(belt)
-//				dropItemToGround(belt)
 		wear_pants = null
-		update_suit_sensors()
 		if(!QDELETED(src))
 			update_inv_pants()
 	else if(I == gloves)
@@ -305,7 +298,6 @@
 			update_inv_belt()
 	else if(I == wear_ring)
 		wear_ring = null
-		sec_hud_set_ID()
 		if(!QDELETED(src))
 			update_inv_wear_id()
 	else if(I == wear_wrists)
@@ -352,6 +344,7 @@
 		mouth = null
 		if(!QDELETED(src))
 			update_inv_mouth()
+	check_armor_class()
 
 //	if(!QDELETED(src))
 //		if(I.eweight)
@@ -362,12 +355,9 @@
 /mob/living/carbon/human/wear_mask_update(obj/item/I, toggle_off = 1)
 	if((I.flags_inv & (HIDEHAIR|HIDEFACIALHAIR)) || (initial(I.flags_inv) & (HIDEHAIR|HIDEFACIALHAIR)))
 		update_hair()
-	if(toggle_off && internal && !getorganslot(ORGAN_SLOT_BREATHING_TUBE))
-		update_internals_hud_icon(0)
-		internal = null
 	if(I.flags_inv & HIDEEYES)
 		update_inv_glasses()
-	sec_hud_set_security_status()
+	check_armor_class()
 	..()
 
 /mob/living/carbon/human/head_update(obj/item/I, forced)
@@ -381,7 +371,7 @@
 		update_inv_glasses()
 	if(I.flags_inv & HIDEEARS || forced)
 		update_body()
-	sec_hud_set_security_status()
+	check_armor_class()
 	..()
 
 /mob/living/carbon/human/proc/equipOutfit(outfit, visualsOnly = FALSE)

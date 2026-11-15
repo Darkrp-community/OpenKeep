@@ -40,7 +40,7 @@
 	cloak = /obj/item/clothing/cloak/stabard/dungeon
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/whip/antique
-	beltl = /obj/item/keyring/dungeoneer
+	beltl = /obj/item/storage/keyring/dungeoneer
 	backr = /obj/item/storage/backpack/rogue/satchel	// lack of satchel requires dealing with the merchant to correct, which requires entering town; not ideal. N.
 
 	if(H.mind)
@@ -55,12 +55,12 @@
 		H.mind.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/craft/traps, 3, TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("intelligence", -2)
-		H.change_stat("endurance", 2)
-		H.change_stat("constitution", 1)
-		H.change_stat("speed", -1)
-		H.change_stat("perception", -1)
+		H.change_stat(STATKEY_STR, 2)
+		H.change_stat(STATKEY_INT, -2)
+		H.change_stat(STATKEY_END, 2)
+		H.change_stat(STATKEY_CON, 1)
+		H.change_stat(STATKEY_SPD, -1)
+		H.change_stat(STATKEY_PER, -1)
 	if(H.dna?.species)
 		if(H.dna.species.id == "human")
 			H.dna.species.soundpack_m = new /datum/voicepack/male/warrior()

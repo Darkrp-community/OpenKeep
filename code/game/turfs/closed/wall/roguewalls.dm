@@ -7,6 +7,8 @@
 	sheet_type = null
 	baseturfs = list(/turf/open/floor/rogue/dirt/road)
 	wallclimb = TRUE
+	explosion_block = 10
+	damage_deflection = 0
 	icon = 'icons/turf/roguewall.dmi'
 
 /turf/closed/wall/mineral/rogue/examine()
@@ -44,12 +46,14 @@
 	neighborlay = "dirtedge"
 	climbdiff = 1
 	damage_deflection = 10
+	hardness = 3
 
 /turf/closed/wall/mineral/rogue/stone/window
 	name = "stone murder hole"
 	desc = "A wall of stone with convenient small indents on it, perfect to let loose arrows against invaders."
 	opacity = FALSE
 	max_integrity = 800
+	explosion_block = 2
 
 /turf/closed/wall/mineral/rogue/stone/window/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && ((mover.pass_flags & PASSTABLE) || (mover.pass_flags & PASSGRILLE)) )
@@ -107,6 +111,7 @@
 	neighborlay = "dirtedge"
 	climbdiff = 4
 	damage_deflection = 20
+	hardness = 2
 
 /*	..................   Red brick Walls   ................... */
 /turf/closed/wall/mineral/rogue/stonebrick/reddish
@@ -138,6 +143,8 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	explosion_block = 4
+	hardness = 7
 
 /turf/closed/wall/mineral/rogue/wood/window
 	name = "wooden window"
@@ -171,7 +178,8 @@
 	baseturfs = list(/turf/open/floor/rogue/twig)
 	neighborlay = "dirtedge"
 	climbdiff = 1
-
+	explosion_block = 0
+	hardness = 70
 
 /turf/closed/wall/mineral/rogue/tent/OnCrafted(dirin)
 	dir = dirin
@@ -192,6 +200,8 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	explosion_block = 4
+	hardness = 7
 
 /turf/closed/wall/mineral/rogue/wooddark/horizontal
 	name = "wooden wall"
@@ -213,6 +223,7 @@
 	name = "wooden window"
 	icon_state = "subwindow"
 	opacity = FALSE
+	explosion_block = 1
 
 /turf/closed/wall/mineral/rogue/wooddark/window/CanPass(atom/movable/mover, turf/target)
 	if(istype(mover) && ((mover.pass_flags & PASSTABLE) || (mover.pass_flags & PASSGRILLE)) )
@@ -232,6 +243,7 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	hardness = 7
 
 /turf/closed/wall/mineral/rogue/roofwall/center
 	icon_state = "roofTurf_I"
@@ -260,6 +272,8 @@
 	baseturfs = list(/turf/open/floor/rogue/ruinedwood)
 	neighborlay = "dirtedge"
 	climbdiff = 3
+	explosion_block = 4
+	hardness = 7
 
 /turf/closed/wall/mineral/rogue/decowood/Initialize()
 	. = ..()
@@ -284,6 +298,7 @@
 	baseturfs = list(/turf/open/floor/rogue/blocks)
 	neighborlay = "dirtedge"
 	climbdiff = 1
+	hardness = 2
 
 /turf/closed/wall/mineral/rogue/decostone/long
 	icon_state = "decostone-l"
@@ -325,14 +340,16 @@
 	density = TRUE
 	max_integrity = 200
 //	layer = EDGED_TURF_LAYER /ROGTODO make these have borders and smooth
-	temperature = TCMB
 	sheet_type = null
 	attacked_sound = list('sound/combat/hits/onvine/vinehit.ogg')
 	debris = list(/obj/item/grown/log/tree/stick = 1, /obj/item/natural/thorn = 2, /obj/item/natural/fibers = 1)
 	climbdiff = 0
 	above_floor = /turf/open/floor/rogue/shroud
+	explosion_block = 0
+	hardness = 0
 	var/res = 0
 	var/res_replenish
+
 
 /turf/closed/wall/shroud/attack_right(mob/user)
 	if(isliving(user))
@@ -379,6 +396,7 @@
 	baseturfs = list(/turf/open/floor/rogue/concrete)
 	climbdiff = 1
 	damage_deflection = 20
+	hardness = 10
 
 /turf/closed/wall/mineral/rogue/stone/abyssal
 	name = "abyssal ishigaki wall"

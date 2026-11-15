@@ -689,7 +689,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	var/datum/DBQuery/query_get_client_age = SSdbcore.NewQuery(
 		"SELECT firstseen, DATEDIFF(Now(),firstseen), accountjoindate, DATEDIFF(Now(),accountjoindate) FROM [format_table_name("player")] WHERE ckey = :ckey",
 		list("ckey" = ckey)
-	)	
+	)
 	if(!query_get_client_age.Execute())
 		qdel(query_get_client_age)
 		return

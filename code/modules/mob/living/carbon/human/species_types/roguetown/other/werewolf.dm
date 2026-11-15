@@ -15,7 +15,7 @@
 	name = "werewolf"
 	id = "werewolf"
 	species_traits = list(NO_UNDERWEAR,NOEYESPRITES)
-	inherent_traits = list(TRAIT_NOROGSTAM,TRAIT_RESISTHEAT,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_NODISMEMBER)
+	inherent_traits = list(TRAIT_NOSTAM,TRAIT_RESISTHEAT,TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_NODISMEMBER)
 	inherent_biotypes = MOB_HUMANOID
 	armor = 30
 	no_equip = list(SLOT_SHIRT, SLOT_HEAD, SLOT_WEAR_MASK, SLOT_ARMOR, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_CLOAK, SLOT_BELT, SLOT_BACK_R, SLOT_BACK_L, SLOT_S_STORE)
@@ -24,8 +24,8 @@
 	offset_features = list(OFFSET_HANDS = list(0,2), OFFSET_HANDS_F = list(0,2))
 	soundpack_m = /datum/voicepack/werewolf
 	soundpack_f = /datum/voicepack/werewolf
-	specstats = list("strength" = 8, "perception" = 7, "intelligence" = -6, "constitution" = 8, "endurance" = 8, "speed" = 3, "fortune" = 0)
-	specstats_f = list("strength" = 8, "perception" = 7, "intelligence" = -6, "constitution" = 8, "endurance" = 8, "speed" = 3, "fortune" = 0)
+	specstats = list(STATKEY_STR = 8, STATKEY_PER = 7, STATKEY_INT = -6, STATKEY_CON = 8, STATKEY_END = 8, STATKEY_SPD = 3, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 8, STATKEY_PER = 7, STATKEY_INT = -6, STATKEY_CON = 8, STATKEY_END = 8, STATKEY_SPD = 3, STATKEY_LCK = 0)
 	enflamed_icon = "widefire"
 	mutanteyes = /obj/item/organ/eyes/night_vision/werewolf
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT

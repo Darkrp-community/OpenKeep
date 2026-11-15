@@ -333,19 +333,6 @@ block( \
 			return M.current.stat != DEAD
 	return FALSE
 
-/**
- * Exiled check
- *
- * Checks if the current body of the mind has an exile implant and is currently in
- * an away mission. Returns FALSE if any of those conditions aren't met.
- */
-/proc/considered_exiled(datum/mind/M)
-	if(!ishuman(M?.current))
-		return FALSE
-	for(var/obj/item/implant/I in M.current.implants)
-		if(istype(I, /obj/item/implant/exile && M.current.onAwayMission()))
-			return TRUE
-
 /proc/considered_afk(datum/mind/M)
 	return !M || !M.current || !M.current.client || M.current.client.is_afk()
 
@@ -448,7 +435,7 @@ block( \
 			if(!gametypeCheck.age_check(M.client))
 				continue
 		if(jobbanType)
-			if(is_banned_from(M.ckey, list(jobbanType, ROLE_SYNDICATE)) || QDELETED(M))
+			if(is_banned_from(M.ckey, list(jobbanType,)) || QDELETED(M))
 				continue
 
 		showCandidatePollWindow(M, poll_time, Question, result, ignore_category, time_passed, flashwindow)
@@ -521,21 +508,6 @@ block( \
 
 	return A.loc
 
-/proc/AnnounceArrival(mob/living/carbon/human/character, rank)
-	return/*
-	if(!SSticker.IsRoundInProgress() || QDELETED(character))
-		return
-	var/area/A = get_area(character)
-	deadchat_broadcast(" has arrived at the station at <span class='name'>[A.name]</span>.", "<span class='game'><span class='name'>[character.real_name]</span> ([rank])", follow_target = character, message_type=DEADCHAT_ARRIVALRATTLE)
-	if((!GLOB.announcement_systems.len) || (!character.mind))
-		return
-	if((character.mind.assigned_role == "Cyborg") || (character.mind.assigned_role == character.mind.special_role))
-		return
-
-	var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
-	announcer.announce("ARRIVAL", character.real_name, rank, list()) //make the list empty to make it announce it in common
-	*/
-
 /proc/GetRedPart(const/hexa)
 	return hex2num(copytext(hexa, 2, 4))
 
@@ -545,23 +517,6 @@ block( \
 /proc/GetBluePart(const/hexa)
 	return hex2num(copytext(hexa, 6, 8))
 
-/proc/lavaland_equipment_pressure_check(turf/T)
-	. = FALSE
-	if(!istype(T))
-		return
-	var/datum/gas_mixture/environment = T.return_air()
-	if(!istype(environment))
-		return
-	var/pressure = environment.return_pressure()
-	if(pressure <= LAVALAND_EQUIPMENT_EFFECT_PRESSURE)
-		. = TRUE
-
-/proc/ispipewire(item)
-	var/static/list/pire_wire = list(
-		/obj/machinery/atmospherics,
-		/obj/structure/disposalpipe,
-	)
-	return (is_type_in_list(item, pire_wire))
 
 // Find a obstruction free turf that's within the range of the center. Can also condition on if it is of a certain area type.
 /proc/find_obstruction_free_location(range, atom/center, area/specific_area)
@@ -577,9 +532,8 @@ block( \
 			if (!istype(turf_area, specific_area))
 				continue
 
-		if (!isspaceturf(found_turf))
-			if (!is_blocked_turf(found_turf))
-				possible_loc.Add(found_turf)
+		if (!is_blocked_turf(found_turf))
+			possible_loc.Add(found_turf)
 
 	// Need at least one free location.
 	if (possible_loc.len < 1)

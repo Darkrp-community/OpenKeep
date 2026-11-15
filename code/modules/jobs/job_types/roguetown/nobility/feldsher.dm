@@ -39,7 +39,7 @@
 	mask = /obj/item/clothing/mask/rogue/feld
 	neck = /obj/item/clothing/neck/roguetown/feld
 	belt = /obj/item/storage/belt/rogue/leather
-	beltl = /obj/item/keyring/doctor
+	beltl = /obj/item/storage/keyring/doctor
 
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 5, TRUE)
@@ -52,9 +52,9 @@
 		if(H.age == AGE_OLD)
 			H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 	H.mind.AddSpell(new /obj/effect/proc_holder/spell/invoked/diagnose)
-	H.change_stat("strength", -1)
-	H.change_stat("intelligence", 4)
-	H.change_stat("constitution", -1)
+	H.change_stat(STATKEY_STR, -1)
+	H.change_stat(STATKEY_INT, 4)
+	H.change_stat(STATKEY_CON, -1)
 	ADD_TRAIT(H, TRAIT_EMPATH, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_NOSTINK, TRAIT_GENERIC)

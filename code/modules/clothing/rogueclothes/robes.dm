@@ -71,7 +71,7 @@
 	desc = "The sturdy robes of a maker-monk of Malum."
 	icon_state = "malumrobe"
 	sleeved = null
-	armor = list("melee" = 5, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 5, "acid" = 0) // I just wanted to give Malumite robes a tiny bit of fire protection because they're craftspeople.
+	armor = ARMOR_WEAK
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
 	name = "solar vestments"
@@ -115,7 +115,7 @@
 	allowed_race = list("human", "tiefling", "aasimar")
 	sellprice = 150
 
-	armor = list("melee" = 40, "bullet" = 15, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
+	armor = ARMOR_WEAK
 	prevent_crits = list(BCLASS_CUT, BCLASS_TWIST)
 	max_integrity = 200
 

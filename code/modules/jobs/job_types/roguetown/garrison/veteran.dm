@@ -38,7 +38,7 @@
 	armor = /obj/item/clothing/suit/roguetown/armor/medium/scale
 	neck = /obj/item/clothing/neck/roguetown/gorget
 	shoes = /obj/item/clothing/shoes/roguetown/boots
-	beltl = /obj/item/keyring/veteran
+	beltl = /obj/item/storage/keyring/veteran
 	belt = /obj/item/storage/belt/rogue/leather
 	beltr = /obj/item/rogueweapon/sword/arming
 	backl = /obj/item/storage/backpack/rogue/satchel
@@ -60,15 +60,15 @@
 		H.mind.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
 		if(H.age == AGE_OLD)
-			H.change_stat("strength", 3)
-			H.change_stat("perception", 1)
-			H.change_stat("intelligence", 2)
-			H.change_stat("endurance", 2)
-			H.change_stat("speed", 1)
+			H.change_stat(STATKEY_STR, 3)
+			H.change_stat(STATKEY_PER, 1)
+			H.change_stat(STATKEY_INT, 2)
+			H.change_stat(STATKEY_END, 2)
+			H.change_stat(STATKEY_SPD, 1)
 		else
-			H.change_stat("strength", 2)
-			H.change_stat("intelligence", 2)
-			H.change_stat("endurance", 2)
+			H.change_stat(STATKEY_STR, 2)
+			H.change_stat(STATKEY_INT, 2)
+			H.change_stat(STATKEY_END, 2)
 			// Aasimar veterans have higher strength but much lower perception and intelligence bonuses overall
 
 	H.verbs |= /mob/proc/haltyell

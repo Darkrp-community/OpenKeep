@@ -207,47 +207,10 @@
 	. = ..()
 	var/mob/M = usr
 
-	if(ismecha(M.loc)) // stops inventory actions in a mech
-		return
-
 	if(!M.incapacitated() && loc == M && istype(over_object, /atom/movable/screen/inventory/hand))
 		var/atom/movable/screen/inventory/hand/H = over_object
 		if(M.putItemFromInventoryInHandIfPossible(src, H.held_index))
 			add_fingerprint(usr)
-
-/obj/item/reagent_containers/food/snacks/clothing
-	name = "temporary moth clothing snack item"
-	desc = ""
-	list_reagents = list(/datum/reagent/consumable/nutriment = 1)
-	tastes = list("dust" = 1, "lint" = 1)
-	foodtype = CLOTH
-
-/obj/item/clothing/attack(mob/living/M, mob/living/user, def_zone)
-	if(user.used_intent.type != INTENT_HARM && ismoth(M))
-		var/obj/item/reagent_containers/food/snacks/clothing/clothing_as_food = new
-		clothing_as_food.name = name
-		if(clothing_as_food.attack(M, user, def_zone))
-			take_damage(15, sound_effect=FALSE)
-		qdel(clothing_as_food)
-	else if(M.on_fire)
-		if(user == M)
-			return
-		user.changeNext_move(CLICK_CD_MELEE)
-		M.visible_message(span_warning("[user] pats out the flames on [M] with [src]!"))
-		M.adjust_fire_stacks(-2)
-		take_damage(10, BURN, "fire")
-	else
-		return ..()
-
-
-/*	if(damaged_clothes && istype(W, /obj/item/stack/sheet/cloth))
-		var/obj/item/stack/sheet/cloth/C = W
-		C.use(1)
-		update_clothes_damaged_state(FALSE)
-		obj_integrity = max_integrity
-		to_chat(user, "<span class='notice'>I fix the damage on [src] with [C].</span>")
-		return 1*/
-	return ..()
 
 /obj/item/clothing/Destroy()
 	user_vars_remembered = null //Oh god somebody put REFERENCES in here? not to worry, we'll clean it up
@@ -411,11 +374,6 @@ BLIND     // can't see anything
 			if(3)
 				to_chat(usr, "<span class='notice'>My suit will now report my exact vital lifesigns as well as my coordinate position.</span>")
 
-	if(ishuman(loc))
-		var/mob/living/carbon/human/H = loc
-		if(H.wear_pants == src)
-			H.update_suit_sensors()
-
 /obj/item/clothing/under/AltClick(mob/user)
 	if(..())
 		return 1
@@ -486,16 +444,6 @@ BLIND     // can't see anything
 	flags_inv ^= visor_flags_inv
 	flags_cover ^= initial(flags_cover)
 	icon_state = "[initial(icon_state)][up ? "up" : ""]"
-	if(visor_vars_to_toggle & VISOR_FLASHPROTECT)
-		flash_protect ^= initial(flash_protect)
-	if(visor_vars_to_toggle & VISOR_TINT)
-		tint ^= initial(tint)
-
-/obj/item/clothing/head/helmet/space/plasmaman/visor_toggling() //handles all the actual toggling of flags
-	up = !up
-	clothing_flags ^= visor_flags
-	flags_inv ^= visor_flags_inv
-	icon_state = "[initial(icon_state)]"
 	if(visor_vars_to_toggle & VISOR_FLASHPROTECT)
 		flash_protect ^= initial(flash_protect)
 	if(visor_vars_to_toggle & VISOR_TINT)

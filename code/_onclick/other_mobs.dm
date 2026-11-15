@@ -54,7 +54,7 @@
 				var/obj/AM = A
 				if(istype(AM) && !AM.anchored)
 					var/jadded = max(100-(STASTR*10),5)
-					if(rogfat_add(jadded))
+					if(adjust_stam(jadded))
 						visible_message("<span class='info'>[src] pushes [AM].</span>")
 						PushAM(AM, MOVE_FORCE_STRONG)
 					else
@@ -191,7 +191,7 @@
 		if(!affecting.has_wound(/datum/wound/bite))
 			nodmg = TRUE
 	if(!nodmg)
-		var/armor_block = run_armor_check(user.zone_selected, "melee",blade_dulling=BCLASS_BITE)
+		var/armor_block = run_armor_check(user.zone_selected, "stab",blade_dulling=BCLASS_BITE)
 		if(!apply_damage(dam2do, BRUTE, def_zone, armor_block, user))
 			nodmg = TRUE
 			next_attack_msg += " <span class='warning'>Armor stops the damage.</span>"
@@ -345,7 +345,7 @@
 					if(!H.check_armor_skill())
 						jadded += 50
 						jrange = 1
-				if(rogfat_add(min(jadded,100)))
+				if(adjust_stam(min(jadded,100)))
 					if(jextra)
 						throw_at(A, jrange, 1, src, spin = FALSE)
 						while(src.throwing)
@@ -442,7 +442,7 @@
 				if(ranged_ability?.InterceptClickOn(src, params, A))
 					changeNext_move(mmb_intent.clickcd)
 					if(mmb_intent.releasedrain)
-						rogfat_add(mmb_intent.releasedrain)
+						adjust_stam(mmb_intent.releasedrain)
 				return
 
 //Return TRUE to cancel other attack hand effects that respect it.
@@ -546,7 +546,7 @@
 			var/obj/structure/AM = A
 			if(istype(AM) && !AM.anchored)
 				var/jadded = max(100-(STASTR*10),5)
-				if(rogfat_add(jadded))
+				if(adjust_stam(jadded))
 					visible_message("<span class='info'>[src] pushes [AM].</span>")
 					PushAM(AM, MOVE_FORCE_STRONG)
 				else
@@ -592,7 +592,7 @@
 		if(ishuman(ML))
 			var/mob/living/carbon/human/H = ML
 			affecting = H.get_bodypart(ran_zone(dam_zone))
-		var/armor = ML.run_armor_check(affecting, "melee")
+		var/armor = ML.run_armor_check(affecting, "stab")
 		if(prob(75))
 			ML.apply_damage(rand(1,3), BRUTE, affecting, armor)
 			ML.visible_message("<span class='danger'>[name] bites [ML]!</span>", \
@@ -600,38 +600,11 @@
 			to_chat(name, "<span class='danger'>I bite [ML]!</span>")
 			if(armor >= 2)
 				return
-			for(var/thing in diseases)
-				var/datum/disease/D = thing
-				ML.ForceContractDisease(D)
 		else
 			ML.visible_message("<span class='danger'>[src]'s bite misses [ML]!</span>", \
 							"<span class='danger'>I avoid [src]'s bite!</span>", "<span class='hear'>I hear jaws snapping shut!</span>", COMBAT_MESSAGE_RANGE, src)
 			to_chat(src, "<span class='danger'>My bite misses [ML]!</span>")
 
-
-/*
-	Slimes
-	Nothing happening here
-*/
-/mob/living/simple_animal/slime/UnarmedAttack(atom/A)
-	A.attack_slime(src)
-/atom/proc/attack_slime(mob/user)
-	return
-/mob/living/simple_animal/slime/RestrainedClickOn(atom/A)
-	return
-
-
-/*
-	Drones
-*/
-/mob/living/simple_animal/drone/UnarmedAttack(atom/A)
-	A.attack_drone(src)
-
-/atom/proc/attack_drone(mob/living/simple_animal/drone/user)
-	attack_hand(user) //defaults to attack_hand. Override it when you don't want drones to do same stuff as humans.
-
-/mob/living/simple_animal/slime/RestrainedClickOn(atom/A)
-	return
 
 
 /*
@@ -647,15 +620,6 @@
 
 /mob/living/brain/UnarmedAttack(atom/A)//Stops runtimes due to attack_animal being the default
 	return
-
-
-/*
-	pAI
-*/
-
-/mob/living/silicon/pai/UnarmedAttack(atom/A)//Stops runtimes due to attack_animal being the default
-	return
-
 
 /*
 	Simple animals
@@ -678,7 +642,7 @@
 	if(dextrous && !ismob(A))
 		..()
 	else
-		AttackingTarget()
+		AttackingTarget(A)
 
 
 

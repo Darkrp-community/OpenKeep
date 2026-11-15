@@ -13,6 +13,9 @@
 	var/lockid = null
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH|ITEM_SLOT_NECK
 
+	grid_height = 64
+	grid_width = 32
+
 /obj/item/roguekey/Initialize()
 	. = ..()
 	if(lockid)
@@ -40,6 +43,9 @@
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH|ITEM_SLOT_NECK
 	destroy_sound = 'sound/items/pickbreak.ogg'
 
+	grid_width = 32
+	grid_height = 64
+
 /obj/item/roguekey/lord
 	name = "master key"
 	desc = "The Lord's key."
@@ -56,18 +62,6 @@
 		var/obj/structure/mineral_door/D = target
 		if(D.masterkey)
 			lockhash = D.lockhash
-
-/obj/item/roguekey/lord/pre_attack_right(target, user, params)
-	. = ..()
-	if(istype(target, /obj/structure/closet))
-		var/obj/structure/closet/C = target
-		if(C.masterkey)
-			lockhash = C.lockhash
-	if(istype(target, /obj/structure/mineral_door))
-		var/obj/structure/mineral_door/D = target
-		if(D.masterkey)
-			lockhash = D.lockhash
-
 
 /obj/item/roguekey/lord/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()

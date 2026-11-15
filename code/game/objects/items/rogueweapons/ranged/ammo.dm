@@ -36,7 +36,7 @@
 	embedchance = 100
 	armor_penetration = BOLT_PENETRATION
 	woundclass = BCLASS_STAB
-	flag = "bullet"
+	flag = "pierce"
 	speed = 0.3
 	accuracy = 85 //Crossbows have higher accuracy
 
@@ -168,7 +168,7 @@
 	embedchance = 100
 	armor_penetration = ARROW_PENETRATION
 	woundclass = BCLASS_STAB
-	flag = "bullet"
+	flag = "pierce"
 	speed = 0.4
 
 //................ Stone Arrow ............... //
@@ -306,7 +306,7 @@
 	embedchance = 100
 	woundclass = BCLASS_SHOT
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
-	flag = "bullet"
+	flag = "pierce"
 	armor_penetration = BULLET_PENETRATION
 	speed = 0.3
 	accuracy = 50 //Lower accuracy than an arrow.
@@ -325,7 +325,7 @@
 	icon_state = "musketball_proj"
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/cball/grapeshot
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
-	flag = "bullet"
+	flag = "pierce"
 	armor_penetration = BULLET_PENETRATION
 	speed = 0.5
 
@@ -359,7 +359,7 @@
 	spread = 0
 	woundclass = BCLASS_SMASH
 	impact_effect_type = /obj/effect/temp_visual/impact_effect
-	flag = "bullet"
+	flag = "pierce"
 	hitscan = FALSE
 	armor_penetration = BULLET_PENETRATION
 	speed = 0.8

@@ -53,13 +53,6 @@
 /obj/structure/flora/newtree,
 /turf/closed/wall/mineral/rogue/wooddark/vertical,
 /area/rogue/outdoors/rtfield)
-"an" = (
-/obj/structure/flora/newtree,
-/mob/living/simple_animal/hostile/retaliate/rogue/saigabuck{
-	tame = 1
-	},
-/turf/open/floor/rogue/dirt/road,
-/area/rogue/outdoors/rtfield)
 "ao" = (
 /obj/structure/fluff/railing/fence,
 /turf/open/floor/rogue/dirt,
@@ -126,7 +119,6 @@
 /turf/open/water/swamp,
 /area/rogue/outdoors/woods)
 "aQ" = (
-/turf/closed/indestructible/riveted/boss,
 /area/rogue/outdoors/woods)
 "aR" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/mole,
@@ -8879,7 +8871,7 @@ sN
 ak
 ak
 ak
-an
+ak
 ak
 am
 sN

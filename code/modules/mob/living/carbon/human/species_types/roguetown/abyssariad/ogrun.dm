@@ -34,7 +34,7 @@
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, Onis are the newest ones on the fold, and they become Orcs mentally if they stray away from Abyssor.
 	max_age = 430 //The year Onis became part of the Abyssariads. Roughly after the Blood Apotheosis
-	skinned_type = /obj/item/stack/sheet/animalhide/human
+	skinned_type = /obj/item/stack/sheets/hides/human
 	disliked_food = NONE
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT

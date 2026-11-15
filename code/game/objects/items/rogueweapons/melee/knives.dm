@@ -26,6 +26,13 @@
 	sharpness = IS_SHARP
 	sellprice = 30
 
+	grid_height = 64
+	grid_width = 32
+
+/obj/item/rogueweapon/knife/Initialize()
+	. = ..()
+	AddElement(/datum/element/tipped_item)
+
 /obj/item/rogueweapon/knife/getonmobprop(tag)
 	. = ..()
 	if(tag)
@@ -52,6 +59,7 @@
 	chargetime = 0
 	swingdelay = 1
 	clickcd = 10	// between normal and fast
+	item_damage_type = "slash"
 
 /*------------\
 | Stab intent |	good AP, fast
@@ -67,10 +75,12 @@
 	chargetime = 0
 	clickcd = CLICK_CD_FAST
 	swingdelay = 1
+	item_damage_type = "stab"
 
 /*------------\
 | Pick intent |	great AP. Not actually used anywhere.
 \------------*/
+
 /datum/intent/dagger/thrust/pick
 	name = "thrust"
 	attack_verb = list("stabs", "impales")
@@ -94,6 +104,7 @@
 	damfactor = 1.5
 	swingdelay = 1
 	clickcd = CLICK_CD_MELEE
+	item_damage_type = "slash"
 
 /datum/intent/dagger/chop/cleaver
 	hitsound = list('sound/combat/hits/bladed/genchop (1).ogg', 'sound/combat/hits/bladed/genchop (2).ogg', 'sound/combat/hits/bladed/genchop (3).ogg')

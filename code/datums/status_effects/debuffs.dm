@@ -66,10 +66,6 @@
 	id = "unconscious"
 	needs_update_stat = TRUE
 
-/datum/status_effect/incapacitating/unconscious/tick()
-	if(owner.getStaminaLoss())
-		owner.adjustStaminaLoss(-0.3) //reduce stamina loss by 0.3 per tick, 6 per 2 seconds
-
 //SLEEPING
 /datum/status_effect/incapacitating/sleeping
 	id = "sleeping"
@@ -128,7 +124,6 @@
 			owner.adjustBruteLoss(healing)
 			owner.adjustFireLoss(healing)
 			owner.adjustToxLoss(healing * 0.5, TRUE, TRUE)
-		owner.adjustStaminaLoss(healing)
 	if(human_owner && human_owner.drunkenness)
 		human_owner.drunkenness *= 0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
 	if(prob(20))
@@ -246,59 +241,6 @@
 /datum/status_effect/pacify/on_remove()
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "status_effect")
 
-/datum/status_effect/his_wrath //does minor damage over time unless holding His Grace
-	id = "his_wrath"
-	duration = -1
-	tick_interval = 4
-	alert_type = /atom/movable/screen/alert/status_effect/his_wrath
-
-/atom/movable/screen/alert/status_effect/his_wrath
-	name = "His Wrath"
-	desc = ""
-	icon_state = "his_grace"
-	alerttooltipstyle = "hisgrace"
-
-/datum/status_effect/his_wrath/tick()
-	for(var/obj/item/his_grace/HG in owner.held_items)
-		qdel(src)
-		return
-	owner.adjustBruteLoss(0.1)
-	owner.adjustFireLoss(0.1)
-	owner.adjustToxLoss(0.2, TRUE, TRUE)
-
-/datum/status_effect/crusher_mark
-	id = "crusher_mark"
-	duration = 300 //if you leave for 30 seconds you lose the mark, deal with it
-	status_type = STATUS_EFFECT_REPLACE
-	alert_type = null
-	var/mutable_appearance/marked_underlay
-	var/obj/item/twohanded/kinetic_crusher/hammer_synced
-
-/datum/status_effect/crusher_mark/on_creation(mob/living/new_owner, obj/item/twohanded/kinetic_crusher/new_hammer_synced)
-	. = ..()
-	if(.)
-		hammer_synced = new_hammer_synced
-
-/datum/status_effect/crusher_mark/on_apply()
-	if(owner.mob_size >= MOB_SIZE_LARGE)
-		marked_underlay = mutable_appearance('icons/effects/effects.dmi', "shield2")
-		marked_underlay.pixel_x = -owner.pixel_x
-		marked_underlay.pixel_y = -owner.pixel_y
-		owner.underlays += marked_underlay
-		return TRUE
-	return FALSE
-
-/datum/status_effect/crusher_mark/Destroy()
-	hammer_synced = null
-	if(owner)
-		owner.underlays -= marked_underlay
-	QDEL_NULL(marked_underlay)
-	return ..()
-
-/datum/status_effect/crusher_mark/be_replaced()
-	owner.underlays -= marked_underlay //if this is being called, we should have an owner at this point.
-	..()
-
 /datum/status_effect/stacking/saw_bleed
 	id = "saw_bleed"
 	tick_interval = 6
@@ -335,92 +277,6 @@
 	if(prob(10))
 		H.emote(pick("gasp", "gag", "choke"))
 
-/mob/living/proc/apply_necropolis_curse(set_curse)
-	var/datum/status_effect/necropolis_curse/C = has_status_effect(STATUS_EFFECT_NECROPOLIS_CURSE)
-	if(!set_curse)
-		set_curse = pick(CURSE_BLINDING, CURSE_SPAWNING, CURSE_WASTING, CURSE_GRASPING)
-	if(QDELETED(C))
-		apply_status_effect(STATUS_EFFECT_NECROPOLIS_CURSE, set_curse)
-	else
-		C.apply_curse(set_curse)
-		C.duration += 3000 //time added by additional curses
-	return C
-
-/datum/status_effect/necropolis_curse
-	id = "necrocurse"
-	duration = 6000 //you're cursed for 10 minutes have fun
-	tick_interval = 50
-	alert_type = null
-	var/curse_flags = NONE
-	var/effect_last_activation = 0
-	var/effect_cooldown = 100
-	var/obj/effect/temp_visual/curse/wasting_effect = new
-
-/datum/status_effect/necropolis_curse/hivemind
-	id = "hivecurse"
-	duration = 600
-
-/datum/status_effect/necropolis_curse/on_creation(mob/living/new_owner, set_curse)
-	. = ..()
-	if(.)
-		apply_curse(set_curse)
-
-/datum/status_effect/necropolis_curse/Destroy()
-	if(!QDELETED(wasting_effect))
-		qdel(wasting_effect)
-		wasting_effect = null
-	return ..()
-
-/datum/status_effect/necropolis_curse/on_remove()
-	remove_curse(curse_flags)
-
-/datum/status_effect/necropolis_curse/proc/apply_curse(set_curse)
-	curse_flags |= set_curse
-	if(curse_flags & CURSE_BLINDING)
-		owner.overlay_fullscreen("curse", /atom/movable/screen/fullscreen/curse, 1)
-
-/datum/status_effect/necropolis_curse/proc/remove_curse(remove_curse)
-	if(remove_curse & CURSE_BLINDING)
-		owner.clear_fullscreen("curse", 50)
-	curse_flags &= ~remove_curse
-
-/datum/status_effect/necropolis_curse/tick()
-	if(owner.stat == DEAD)
-		return
-	if(curse_flags & CURSE_WASTING)
-		wasting_effect.forceMove(owner.loc)
-		wasting_effect.setDir(owner.dir)
-		wasting_effect.transform = owner.transform //if the owner has been stunned the overlay should inherit that position
-		wasting_effect.alpha = 255
-		animate(wasting_effect, alpha = 0, time = 32)
-		playsound(owner, 'sound/blank.ogg', 20, TRUE, -1)
-		owner.adjustFireLoss(0.75)
-	if(effect_last_activation <= world.time)
-		effect_last_activation = world.time + effect_cooldown
-		if(curse_flags & CURSE_SPAWNING)
-			var/turf/spawn_turf
-			var/sanity = 10
-			while(!spawn_turf && sanity)
-				spawn_turf = locate(owner.x + pick(rand(10, 15), rand(-10, -15)), owner.y + pick(rand(10, 15), rand(-10, -15)), owner.z)
-				sanity--
-			if(spawn_turf)
-				var/mob/living/simple_animal/hostile/asteroid/curseblob/C = new (spawn_turf)
-				C.set_target = owner
-				C.GiveTarget()
-		if(curse_flags & CURSE_GRASPING)
-			var/grab_dir = turn(owner.dir, pick(-90, 90, 180, 180)) //grab them from a random direction other than the one faced, favoring grabbing from behind
-			var/turf/spawn_turf = get_ranged_target_turf(owner, grab_dir, 5)
-			if(spawn_turf)
-				grasp(spawn_turf)
-
-/datum/status_effect/necropolis_curse/proc/grasp(turf/spawn_turf)
-	set waitfor = FALSE
-	new/obj/effect/temp_visual/dir_setting/curse/grasp_portal(spawn_turf, owner.dir)
-	playsound(spawn_turf, 'sound/blank.ogg', 80, TRUE, -1)
-	var/turf/ownerloc = get_turf(owner)
-	var/obj/projectile/curse_hand/C = new (spawn_turf)
-	C.preparePixelProjectile(ownerloc, spawn_turf)
-	C.fire()
 
 /obj/effect/temp_visual/curse
 	icon_state = "curse"
@@ -428,25 +284,6 @@
 /obj/effect/temp_visual/curse/Initialize()
 	. = ..()
 	deltimer(timerid)
-
-
-/datum/status_effect/gonbolaPacify
-	id = "gonbolaPacify"
-	status_type = STATUS_EFFECT_MULTIPLE
-	tick_interval = -1
-	alert_type = null
-
-/datum/status_effect/gonbolaPacify/on_apply()
-	ADD_TRAIT(owner, TRAIT_PACIFISM, "gonbolaPacify")
-	ADD_TRAIT(owner, TRAIT_MUTE, "gonbolaMute")
-	ADD_TRAIT(owner, TRAIT_JOLLY, "gonbolaJolly")
-	to_chat(owner, "<span class='notice'>I suddenly feel at peace and feel no need to make any sudden or rash actions...</span>")
-	return ..()
-
-/datum/status_effect/gonbolaPacify/on_remove()
-	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "gonbolaPacify")
-	REMOVE_TRAIT(owner, TRAIT_MUTE, "gonbolaMute")
-	REMOVE_TRAIT(owner, TRAIT_JOLLY, "gonbolaJolly")
 
 /datum/status_effect/trance
 	id = "trance"
@@ -555,29 +392,6 @@
 					to_chat(owner, "<span class='warning'>My arm spasms!</span>")
 					owner.log_message("threw [I] due to a Muscle Spasm", LOG_ATTACK)
 					owner.throw_item(pick(targets))
-
-/datum/status_effect/dna_melt
-	id = "dna_melt"
-	duration = 600
-	status_type = STATUS_EFFECT_REPLACE
-	alert_type = /atom/movable/screen/alert/status_effect/dna_melt
-	var/kill_either_way = FALSE //no amount of removing mutations is gonna save you now
-
-/datum/status_effect/dna_melt/on_creation(mob/living/new_owner, set_duration, updating_canmove)
-	. = ..()
-	to_chat(new_owner, "<span class='boldwarning'>My body can't handle the mutations! I need to get my mutations removed fast!</span>")
-
-/datum/status_effect/dna_melt/on_remove()
-	if(!ishuman(owner))
-		owner.gib() //fuck you in particular
-		return
-	var/mob/living/carbon/human/H = owner
-	H.something_horrible(kill_either_way)
-
-/atom/movable/screen/alert/status_effect/dna_melt
-	name = "Genetic Breakdown"
-	desc = ""
-	icon_state = "dna_melt"
 
 /datum/status_effect/go_away
 	id = "go_away"

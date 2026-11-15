@@ -113,7 +113,6 @@
 #define INIT_ORDER_JOBS				65
 #define INIT_ORDER_ROLE_CLASS_HANDLER 66
 #define INIT_ORDER_TRIUMPHS			67
-#define INIT_ORDER_QUIRKS			60
 #define INIT_ORDER_AI_MOVEMENT 		56 //We need the movement setup
 #define INIT_ORDER_AI_CONTROLLERS 	55 //So the controller can get the ref
 #define INIT_ORDER_TICKER			55
@@ -135,7 +134,6 @@
 #define INIT_ORDER_STICKY_BAN		-10
 #define INIT_ORDER_LIGHTING			-20
 #define INIT_ORDER_OUTDOOR_EFFECTS  -21
-#define INIT_ORDER_SHUTTLE			-22
 #define INIT_ORDER_MINOR_MAPPING	-40
 #define INIT_ORDER_PATH				-50
 #define INIT_ORDER_DISCORD			-60
@@ -145,6 +143,7 @@
 // Subsystem fire priority, from lowest to highest priority
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
 
+#define FIRE_PRIORITY_ENCHANTMENT 10
 #define FIRE_PRIORITY_ROLE_CLASS_HANDLER 10
 #define FIRE_PRIORITY_PING			10
 #define FIRE_PRIORITY_WET_FLOORS	10

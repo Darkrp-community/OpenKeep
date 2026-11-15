@@ -2,6 +2,7 @@
 	var/name = "intent"
 	var/desc = ""
 	var/icon_state = ""
+	var/def_bonus = 0
 
 /datum/rmb_intent/proc/special_attack(mob/living/user, atom/target)
 	if(!isliving(target))
@@ -29,8 +30,6 @@
 		perc += (ourskill - theirskill)*15 	//skill is of the essence
 		perc += (user.STAINT - L.STAINT)*10	//but it's also mostly a mindgame
 		perc += (user.STASPD - L.STASPD)*5 	//yet a speedy feint is hard to counter
-	if(L.d_intent == INTENT_DODGE)
-		perc = 0
 	if(!L.cmode)
 		perc = 0
 	if(L.has_status_effect(/datum/status_effect/debuff/feinted))
@@ -60,11 +59,13 @@
 	name = "aimed"
 	desc = "Your attacks are more precise but have a longer recovery time. Higher critrate with precise attacks."
 	icon_state = "rmbaimed"
+	def_bonus = -20
 
 /datum/rmb_intent/strong
 	name = "strong"
 	desc = "Your attacks have +1 strength but use more stamina. Higher critrate with brutal attacks."
 	icon_state = "rmbstrong"
+	def_bonus =  -20
 
 /datum/rmb_intent/swift
 	name = "swift"
@@ -80,6 +81,7 @@
 	name = "feint"
 	desc = "(RMB WHILE DEFENSE IS ACTIVE) A deceptive half-attack with no follow-through, meant to force your opponent to open their guard. Useless against someone who is dodging."
 	icon_state = "rmbfeint"
+	def_bonus = 10
 
 /datum/status_effect/debuff/feinted
 	id = "nofeint"
@@ -108,6 +110,7 @@
 	name = "defend"
 	desc = "No delay between dodge and parry rolls."
 	icon_state = "rmbdef"
+	def_bonus = 20
 
 /datum/rmb_intent/guard
 	name = "guarde"
