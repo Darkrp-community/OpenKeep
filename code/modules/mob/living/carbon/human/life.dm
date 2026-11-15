@@ -123,14 +123,14 @@
 	. = ..()
 	name = get_visible_name()
 
-/mob/living/carbon/human/proc/on_daypass()
-	if(stat < 3) //not dead
-		if(dna?.species)
-			if(STUBBLE in dna.species.species_traits)
-				if(gender == MALE)
-					if(prob(50))
-						has_stubble = TRUE
-						update_hair()
+///mob/living/carbon/human/proc/on_daypass()
+//	if(stat < 3) //not dead
+//		if(dna?.species)
+//			if(STUBBLE in dna.species.species_traits)
+//				if(gender == MALE)
+//					if(prob(50))
+//						has_stubble = TRUE
+//						update_hair()
 
 
 
