@@ -72,6 +72,10 @@
 		belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho/random
 		H.cmode_music = list('sound/music/kaizoku/combat/combat_changeling.ogg','sound/music/kaizoku/combat/combat_stormwarrior.ogg','sound/music/kaizoku/combat/combat_searaider.ogg','sound/music/kaizoku/combat/combat_oldtides.ogg','sound/music/kaizoku/combat/combat_decapitator.ogg','sound/music/kaizoku/combat/combat_emperor.ogg','sound/music/kaizoku/combat/combat_traditional.ogg','sound/music/kaizoku/combat/combat_navalretainers.ogg','sound/music/kaizoku/combat/combat_kyudo.ogg')
 
+/datum/outfit/job/roguetown/guardsman/pre_equip(mob/living/carbon/human/H, visualsOnly)
+	. = ..()
+	if(aspect_chosen(/datum/round_aspect/drunkgarrison))
+		H.reagents.add_reagent(/datum/reagent/consumable/ethanol/beer, 72) // 3 goblets worth
 
 /* ! ! ! Class Selection Section Below ! ! !
 Design philosphy:
