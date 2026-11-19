@@ -74,6 +74,15 @@
 	H.change_stat(STATKEY_INT, -3)
 	H.change_stat(STATKEY_CON, -2)
 	H.change_stat(STATKEY_END, -2)
+	if(aspect_chosen(/datum/round_aspect/strongbums))
+		H.change_stat(STATKEY_STR, 5)
+		H.change_stat(STATKEY_INT, -2)
+	/*
+	if(aspect_chosen(/datum/round_aspect/crippledbeggars))
+		var/datum/brain_trauma/severe/paralysis/paraplegic/T = new()
+		H.change_stat("strength", 6)
+		H.gain_trauma(T, TRAUMA_RESILIENCE_ABSOLUTE)
+	*/
 	if(H.dna.species?.id == "abyssariad")
 		mask = /obj/item/clothing/mask/rogue/kaizoku/facemask/dishonor
 		to_chat(H, "<span class='userdanger'>In failure I forfeited my honor and values of the Abyssal Tide. If I am to claim the essence of an Abyssariad once more, I must prove myself worthy.</span>")

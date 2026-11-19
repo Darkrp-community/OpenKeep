@@ -19,6 +19,8 @@ SUBSYSTEM_DEF(ticker)
 
 	var/hide_mode = 0
 	var/datum/game_mode/mode = null
+	var/datum/round_aspect/round_aspect = null
+	var/forcing_aspect = FALSE
 
 	var/login_music							//music played in pregame lobby
 	var/round_end_sound						//music/jingle played when the world reboots
@@ -313,6 +315,16 @@ SUBSYSTEM_DEF(ticker)
 	var/isroguefight = FALSE
 	var/isrogueworld = FALSE
 
+/datum/controller/subsystem/ticker/proc/pickaspect()
+	if(!forcing_aspect)
+		var/list/possibilities = list()
+		for(var/thing in subtypesof(/datum/round_aspect))//Populate possible aspects list.
+			var/datum/round_aspect/A = thing
+			possibilities += A
+		var/chosen = pick(possibilities)
+		round_aspect = new chosen
+		round_aspect.apply()
+
 /datum/controller/subsystem/ticker/proc/setup()
 	message_admins("<span class='boldannounce'>Starting game...</span>")
 	var/init_start = world.timeofday
@@ -451,9 +463,26 @@ SUBSYSTEM_DEF(ticker)
 	round_start_time = world.time
 	round_start_irl = REALTIMEOFDAY
 
+	CHECK_TICK
+
 	SSdbcore.SetRoundStart()
 
-	message_admins("<span class='notice'><B>Welcome to [station_name()], enjoy your stay!</B></span>")
+	pickaspect()
+
+	// if(end_party)
+	// 	to_chat(world, "<span class='notice'><B>THIS IS THE FINAL STRUGGLE. DON'T LET THOSE BASTARDS WIN! IT'S NOW OR NEVER!!!</B></span>")
+	// if(oneteammode)
+	// 	to_chat(world, "<span class='notice'><B>This time you can only play as the Grenzelhofts.</B></span>")
+	// if(deathmatch)
+	// 	to_chat(world, "<span class='notice'><B>It's a civil war! Grenzelhofts fight Grenzelhofts... Madness! KILL THEM ALL! DON'T LET THEM BECOME THE NEW KING! Heartfelts watch in awe and laughter, their enemy is hilarious!</B></span>")
+	to_chat(world, "<span class='notice'>♔ Praise the Crown! ♔</span>")
+	spawn(10)
+		if(round_aspect.sekrit)
+			to_chat(world, "<span class='notice'>This round's aspect is: Nothing!</span>")
+			to_chat(world, "<span class='info'>Normality above all.</span>")
+		else
+			to_chat(world, "<span class='notice'>This round's aspect is: [round_aspect.name]</span>")
+			to_chat(world, "<span class='info'>[round_aspect.description]</span>")
 
 	for(var/client/C in GLOB.clients)
 		if(C.mob == SSticker.rulermob)

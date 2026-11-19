@@ -14,6 +14,7 @@
 	var/listening = TRUE
 	var/speaking = TRUE
 	var/dictating = FALSE
+	var/faulty = TRUE
 
 /obj/structure/roguemachine/scomm/r
 	pixel_y = 0
@@ -128,6 +129,11 @@
 		if(lowertext(raw_message) == "say laws")
 			dictate_laws()
 			return
+		if(aspect_chosen(/datum/round_aspect/faulty))
+			if(prob(22))
+				faulty = TRUE
+			if(faulty)
+				raw_message = stars(raw_message)
 		for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
 			S.repeat_message(raw_message, src, usedcolor, message_language)
 		for(var/obj/item/scomstone/S in SSroguemachine.scomm_machines)
