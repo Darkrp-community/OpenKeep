@@ -414,16 +414,19 @@
 
 /obj/structure/mineral_door/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
-	var/obj/item = user.get_active_held_item()
-	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/storage/keyring))
-		if(locked)
-			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
-			door_rattle()
-			return
-		trykeylock(item, user)
-		return
-	else
+
+	// Special handling for deadbolt and shutter doors - preserve their custom behavior
+	if(istype(src, /obj/structure/mineral_door/wood/deadbolt) || istype(src, /obj/structure/mineral_door/wood/deadbolt/shutter))
 		return ..()
+
+	// Check if user has a key in hand or belt slots
+	var/obj/item/key_item = find_key_for_door(user)
+	if(key_item)
+		trykeylock(key_item, user)
+		return
+
+	// If no key found, fall back to parent behavior
+	return ..()
 
 /obj/structure/mineral_door/proc/repairdoor(obj/item/I, mob/user)
 	if(brokenstate)
@@ -819,15 +822,19 @@
 
 /obj/structure/mineral_door/wood/donjon/stone/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
-	var/obj/item = user.get_active_held_item()
-	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/storage/keyring))
-		if(locked)
-			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
-			door_rattle()
-			return
-		trykeylock(item, user)
+
+	// Special handling for deadbolt and shutter doors - preserve their custom behavior
+	if(istype(src, /obj/structure/mineral_door/wood/deadbolt) || istype(src, /obj/structure/mineral_door/wood/deadbolt/shutter))
+		return ..()
+
+	// Check if user has a key in hand or belt slots
+	var/obj/item/key_item = find_key_for_door(user)
+	if(key_item)
+		trykeylock(key_item, user)
 		return
-	return
+
+	// If no key found, fall back to parent behavior
+	return ..()
 
 /obj/structure/mineral_door/wood/donjon/stone/view_toggle(mob/user)
 	return
@@ -839,24 +846,19 @@
 
 /obj/structure/mineral_door/wood/donjon/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
-	var/obj/item = user.get_active_held_item()
-	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/storage/keyring))
-		if(locked)
-			to_chat(user, span_warning("It won't turn this way. Try turning to the left."))
-			door_rattle()
-			return
-		trykeylock(item, user)
+
+	// Special handling for deadbolt and shutter doors - preserve their custom behavior
+	if(istype(src, /obj/structure/mineral_door/wood/deadbolt) || istype(src, /obj/structure/mineral_door/wood/deadbolt/shutter))
+		return ..()
+
+	// Check if user has a key in hand or belt slots
+	var/obj/item/key_item = find_key_for_door(user)
+	if(key_item)
+		trykeylock(key_item, user)
 		return
-	if(door_opened || isSwitchingStates)
-		return
-	if(brokenstate)
-		to_chat(user, span_warning("There isn't much left of this door."))
-		return
-	if(get_dir(src,user) == viewportdir)
-		view_toggle(user)
-	else
-		to_chat(user, span_warning("The viewport doesn't toggle from this side."))
-		return
+
+	// If no key found, fall back to parent behavior
+	return ..()
 
 /obj/structure/mineral_door/wood/donjon/proc/view_toggle(mob/user)
 	if(door_opened)
@@ -870,7 +872,72 @@
 		opacity = TRUE
 		playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 
+/obj/structure/mineral_door/proc/find_key_for_door(mob/user)
+	if(!user || !keylock)
+		return null
 
+	// Check hand first
+	var/obj/item/W = user.get_active_held_item()
+	if(W && (istype(W, /obj/item/roguekey) || istype(W, /obj/item/storage/keyring)))
+		if(istype(W, /obj/item/roguekey))
+			var/obj/item/roguekey/K = W
+			if(K.lockhash == lockhash || istype(K, /obj/item/roguekey/lord))
+				return W
+		if(istype(W, /obj/item/storage/keyring))
+			if(keyring_has_matching_key(W))
+				return W
+
+	// Check belt slots if human
+	if(ishuman(user))
+		var/mob/living/carbon/human/H = user
+		var/list/belt_slots = list(
+			H.get_item_by_slot(SLOT_BELT),
+			H.get_item_by_slot(SLOT_BELT_L),
+			H.get_item_by_slot(SLOT_BELT_R),
+			H.get_item_by_slot(SLOT_WRISTS),
+			H.get_item_by_slot(SLOT_NECK)
+		)
+
+		for(var/obj/item/I in belt_slots)
+			if(!I) continue
+
+			// Check if the belt item itself is a key or keyring
+			if(istype(I, /obj/item/roguekey))
+				var/obj/item/roguekey/K = I
+				if(K.lockhash == lockhash || istype(K, /obj/item/roguekey/lord))
+					return I
+			if(istype(I, /obj/item/storage/keyring))
+				if(keyring_has_matching_key(I))
+					return I
+
+			// Check inside the belt item if it has contents (storage belts, etc.)
+			if(I.contents && I.contents.len)
+				for(var/obj/item/contained_item in I.contents)
+					if(istype(contained_item, /obj/item/roguekey))
+						var/obj/item/roguekey/K = contained_item
+						if(K.lockhash == lockhash || istype(K, /obj/item/roguekey/lord))
+							return contained_item // Return the belt item that contains the key
+					if(istype(contained_item, /obj/item/storage/keyring))
+						if(keyring_has_matching_key(contained_item))
+							return contained_item // Return the belt item that contains the keyring
+
+	return null
+
+// Helper proc to check if a keyring contains a matching key
+/obj/structure/mineral_door/proc/keyring_has_matching_key(obj/item/storage/keyring/keyring)
+	if(!keyring || !istype(keyring, /obj/item/storage/keyring))
+		return FALSE
+
+	for(var/obj/item/I in keyring.contents)
+		if(istype(I, /obj/item/roguekey))
+			var/obj/item/roguekey/K = I
+			if(K.lockhash == lockhash)
+				return TRUE
+		if(istype(I, /obj/item/storage/keyring))
+			if(keyring_has_matching_key(I))
+				return TRUE
+
+	return FALSE
 
 /obj/structure/mineral_door/bars
 	name = "iron door"
