@@ -9,9 +9,9 @@ on:
       - main
 
 env:
-  BYOND_MAJOR: 515
-  BYOND_MINOR: 1636
-  SPACEMAN_DMM_VERSION: suite-1.9
+  BYOND_MAJOR: 516
+  BYOND_MINOR: 1689
+  SPACEMAN_DMM_VERSION: suite-1.12
 
 jobs:
   run-linters:
