@@ -1,7 +1,7 @@
 /datum/advclass/combat/mage
 	name = "Mage"
 	tutorial = "Mages are usually grown-up apprentices of wizards. They are seeking adventure, using their arcyne knowledge to aid other adventurers."
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE,FEMALE)
 	allowed_races = list(
 		"Humen",
 		"Elf",
@@ -14,10 +14,7 @@
 	outfit = /datum/outfit/job/roguetown/adventurer/mage
 	category_tags = list(CTAG_ADVENTURER)
 	min_pq = 0
-	maximum_possible_slots = 2
-
-/datum/outfit/job/roguetown/adventurer/mage
-	allowed_patrons = list(/datum/patron/divine/noc)
+	maximum_possible_slots = 4
 
 /datum/outfit/job/roguetown/adventurer/mage/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -47,9 +44,9 @@
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
 		H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
 
-	H.change_stat(STATKEY_STR, -2)
+	H.change_stat(STATKEY_STR, -1)
 	H.change_stat(STATKEY_INT, 3)
-	H.change_stat(STATKEY_CON, -2)
+	H.change_stat(STATKEY_CON, -1)
 	H.change_stat(STATKEY_END, -1)
 	H.change_stat(STATKEY_SPD, -2)
 
