@@ -6,19 +6,16 @@ if [ -z "${BYOND_MAJOR+x}" ]; then
   source dependencies.sh
 fi
 
-if [ -d "$HOME/BYOND/byond/bin" ] && grep -Fxq "${BYOND_MAJOR}.${BYOND_MINOR}" $HOME/BYOND/version.txt;
+if [ -f "$HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/DreamMaker" ];
 then
   echo "Using cached directory."
 else
   echo "Setting up BYOND."
-  rm -rf "$HOME/BYOND"
-  mkdir -p "$HOME/BYOND"
-  cd "$HOME/BYOND"
-  curl "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -o byond.zip
-  unzip byond.zip
-  rm byond.zip
+  mkdir -p "$HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}"
+  cd "$HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}"
+  echo "Installing DreamMaker to $PWD"
+  curl -fL "http://www.byond.com/download/build/${BYOND_MAJOR}/${BYOND_MAJOR}.${BYOND_MINOR}_byond_linux.zip" -H "User-Agent: StoneKeep" -o byond.zip
+  unzip -o byond.zip
   cd byond
   make here
-  echo "$BYOND_MAJOR.$BYOND_MINOR" > "$HOME/BYOND/version.txt"
-  cd ~/
 fi

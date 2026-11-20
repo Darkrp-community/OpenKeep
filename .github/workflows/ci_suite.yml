@@ -17,7 +17,7 @@ jobs:
   run-linters:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: Run Linters
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -35,9 +35,16 @@ jobs:
           key: ${{ runner.os }}-rust-${{ hashFiles('tools/ci/ci_dependencies.sh')}}
           restore-keys: |
             ${{ runner.os }}-rust-
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
       - name: Install Tools
         run: |
-          pip3 install setuptools
+          sudo apt-get update
+          sudo apt-get install -y libgit2-dev
+          python -m pip install PyYAML
+          python -m pip install setuptools
           bash tools/ci/install_spaceman_dmm.sh dreamchecker
           bash tools/ci/install_ripgrep.sh
           tools/bootstrap/python -c ''
@@ -59,25 +66,30 @@ jobs:
   compile_all_maps:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: Compile Maps
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup cache
         uses: actions/cache@v4
         with:
-          path: ~/BYOND
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
+          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
+      - name: Install BYOND dependencies
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y libcurl4:i386
       - name: Compile All Maps
         run: |
           bash tools/ci/install_byond.sh
-          source $HOME/BYOND/byond/bin/byondsetup
+          source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
           python3 tools/ci/template_dm_generator.py
           DreamMaker -DCIBUILDING -DCITESTING -DALL_MAPS stonekeep.dme
   run_all_tests:
     if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     name: Integration Tests
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     timeout-minutes: 30
     services:
       mysql:
@@ -93,8 +105,8 @@ jobs:
       - name: Restore BYOND cache
         uses: actions/cache@v4
         with:
-          path: ~/BYOND
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+          path: $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}
+          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
       - name: Setup database
         run: |
           sudo systemctl start mysql
@@ -108,10 +120,15 @@ jobs:
           sudo apt update || true
           sudo apt install zlib1g-dev:i386
           bash tools/ci/install_rust_g.sh
+      - name: Install BYOND dependencies
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y libcurl4:i386
       - name: Compile and run tests
         run: |
           bash tools/ci/install_byond.sh
-          source $HOME/BYOND/byond/bin/byondsetup
+          source $HOME/BYOND-${BYOND_MAJOR}.${BYOND_MINOR}/byond/bin/byondsetup
           DreamMaker -DCIBUILDING stonekeep.dme
           bash tools/ci/run_server.sh roguetest
   test_windows:
@@ -124,7 +141,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: C:\\byond
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+          key: ${{ runner.os }}-byond-${{ env.BYOND_MAJOR }}-${{ env.BYOND_MINOR }}
           restore-keys: |
             ${{ runner.os }}-build-${{ secrets.CACHE_PURGE_KEY }}-
             ${{ runner.os }}-build-
