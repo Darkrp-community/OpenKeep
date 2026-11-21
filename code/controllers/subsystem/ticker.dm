@@ -320,8 +320,11 @@ SUBSYSTEM_DEF(ticker)
 		var/list/possibilities = list()
 		for(var/thing in subtypesof(/datum/round_aspect))//Populate possible aspects list.
 			var/datum/round_aspect/A = thing
-			possibilities += A
-		var/chosen = pick(subtypesof(/datum/round_aspect))
+			if(!A.adminonly)
+				possibilities += A
+				possibilities[A] = A.weight
+				//to_chat(world, "[A.name] [possibilities[A]]")
+		var/chosen = pickweight(possibilities)
 		round_aspect = new chosen
 		round_aspect.apply()
 
