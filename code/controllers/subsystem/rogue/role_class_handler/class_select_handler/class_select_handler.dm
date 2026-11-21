@@ -192,10 +192,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<html>
 		<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 			<style>
 				@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 				@import url("https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap");
+
 			</style>
 			<link rel='stylesheet' type='text/css' href='slop_menustyle2.css'>
 		</head>
@@ -207,6 +210,7 @@
 	//Class href fill-in
 	data += "<div id='top_handwriting'> The stars align... </div>"
 	data += "<div id='class_select_box_div'>"
+
 	var/mob/living/carbon/human/H = linked_client.mob
 	if(!H.job)
 		return
@@ -274,6 +278,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 			<style>
 				@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 				@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
@@ -282,10 +288,10 @@
 			<link rel='stylesheet' type='text/css' href='slop_menustyle2.css'>
 		</head>
 		<body>
-			<div id="button_div">
+            <div id="top_bloc">
 				<span class="title_shit">Class Name:</span> <span class="post_title_shit">[cur_picked_class]</span><br>
-				<span class="title_shit">Description:</span> <span class="post_title_shit">[cur_picked_class.tutorial]</span>
-			</div>
+				<span class="title_shit">Description:</span> <span class="post_title_shit">[cur_picked_class.tutorial]</span>"}
+	data += {"</div>
 				<div id='button_div'>
 					<a class='class_desc_YES_LINK' href='?src=\ref[src];yes_to_class_select=1;special_class=0;'>This is my background</a><br>
 					<a class='bottom_buttons' href='?src=\ref[src];no_to_class_select=1'>I reject this background</a>
@@ -294,8 +300,7 @@
 		</body>
 	</html>
 	"}
-
-	linked_client << browse(data, "window=class_select_yea;size=610x300;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0;border=0")
+	linked_client << browse(data, "window=class_select_yea;size=610x405;can_close=0;can_minimize=0;can_maximize=0;can_resize=0;titlebar=0")
 
 /datum/class_select_handler/Topic(href, href_list)
 	. = ..()
