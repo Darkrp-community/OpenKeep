@@ -328,6 +328,16 @@ SUBSYSTEM_DEF(ticker)
 		round_aspect = new chosen
 		round_aspect.apply()
 
+/datum/controller/subsystem/ticker/proc/announce_aspect()
+	if(!round_aspect)
+		return
+	if(round_aspect.sekrit)
+		to_chat(world, "<span class='notice'>This round's aspect is: Nothing!</span>")
+		to_chat(world, "<span class='info'>Normality above all.</span>")
+	else
+		to_chat(world, "<span class='notice'>This round's aspect is: [round_aspect.name]</span>")
+		to_chat(world, "<span class='info'>[round_aspect.description]</span>")
+
 /datum/controller/subsystem/ticker/proc/setup()
 	message_admins("<span class='boldannounce'>Starting game...</span>")
 	var/init_start = world.timeofday
@@ -472,20 +482,8 @@ SUBSYSTEM_DEF(ticker)
 
 	pickaspect()
 
-	// if(end_party)
-	// 	to_chat(world, "<span class='notice'><B>THIS IS THE FINAL STRUGGLE. DON'T LET THOSE BASTARDS WIN! IT'S NOW OR NEVER!!!</B></span>")
-	// if(oneteammode)
-	// 	to_chat(world, "<span class='notice'><B>This time you can only play as the Grenzelhofts.</B></span>")
-	// if(deathmatch)
-	// 	to_chat(world, "<span class='notice'><B>It's a civil war! Grenzelhofts fight Grenzelhofts... Madness! KILL THEM ALL! DON'T LET THEM BECOME THE NEW KING! Heartfelts watch in awe and laughter, their enemy is hilarious!</B></span>")
 	to_chat(world, "<span class='notice'>♔ Praise the Crown! ♔</span>")
-	spawn(10)
-		if(round_aspect.sekrit)
-			to_chat(world, "<span class='notice'>This round's aspect is: Nothing!</span>")
-			to_chat(world, "<span class='info'>Normality above all.</span>")
-		else
-			to_chat(world, "<span class='notice'>This round's aspect is: [round_aspect.name]</span>")
-			to_chat(world, "<span class='info'>[round_aspect.description]</span>")
+	addtimer(CALLBACK(src, PROC_REF(announce_aspect)), 10)
 
 	for(var/client/C in GLOB.clients)
 		if(C.mob == SSticker.rulermob)
