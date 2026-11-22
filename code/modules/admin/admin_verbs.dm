@@ -720,10 +720,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!holder)
 		return
 
-	var/list/possibilities = list()
-	for(var/thing in subtypesof(/datum/round_aspect))//Populate possible aspects list.
-		var/datum/round_aspect/A = thing
-		possibilities += A
 	var/chosen = input(usr, "Choose", "STONEMONGERS") as null|anything in subtypesof(/datum/round_aspect)
 	if(chosen)
 		SSticker.round_aspect = new chosen
