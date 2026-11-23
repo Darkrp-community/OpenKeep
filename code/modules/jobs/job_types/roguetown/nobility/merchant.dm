@@ -27,6 +27,11 @@
 	min_pq = 0
 	selection_color = "#61679d"
 
+/datum/job/roguetown/merchant/after_spawn(mob/living/H, mob/M, latejoin)
+	if(aspect_chosen(/datum/round_aspect/merchanthoarder))
+		give_bank_account = 250
+	. = ..()
+
 /datum/outfit/job/roguetown/merchant/pre_equip(mob/living/carbon/human/H)
 	..()
 
@@ -66,3 +71,4 @@
 		H.mind.adjust_skillrank(/datum/skill/labor/mathematics, 4, TRUE) // Literally unused skill
 		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 2, TRUE)
+
