@@ -15,7 +15,7 @@
 	var/obj/item/to_grind
 
 /obj/item/mortar/attack_right(mob/user)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(to_grind)
 		var/obj/item/N = to_grind
 		N.loc = src.loc

@@ -306,7 +306,7 @@
 /obj/structure/flora/roguegrass/bush/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_FAST)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
@@ -455,7 +455,7 @@
 /obj/structure/flora/roguegrass/pyroclasticflowers/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_FAST)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
@@ -513,7 +513,7 @@
 /obj/structure/flora/roguegrass/pyroclasticflowers/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_FAST)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
@@ -542,7 +542,7 @@
 /obj/structure/flora/roguegrass/swampweed/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_FAST)
 		playsound(src.loc, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(1,5), target = src))
 #ifndef MATURESERVER
@@ -705,7 +705,7 @@
 
 /obj/structure/flora/roguegrass/thorn_bush/attack_hand(mob/living/user)
 	var/mob/living/L = user
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	playsound(src.loc, "plantcross", 80, FALSE, -1)
 	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
 	user.visible_message(span_noticesmall("[user] searches through [src]."))
@@ -843,7 +843,7 @@
 
 /obj/structure/flora/roguegrass/bush_meagre/attack_hand(mob/living/user)
 	var/mob/living/L = user
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	playsound(src.loc, "plantcross", 80, FALSE, -1)
 	prob2findstuff = prob2findstuff + ( user.STAPER * 4 )
 	prob2findgoodie = prob2findgoodie + ( user.STALUC * 2 ) + ( user.STAPER * 2 )

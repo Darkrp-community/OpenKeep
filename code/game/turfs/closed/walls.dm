@@ -93,7 +93,7 @@
 	. = ..()
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	to_chat(user, "<span class='notice'>I push the wall but nothing happens!</span>")
 	playsound(src, 'sound/blank.ogg', 25, TRUE)
 	add_fingerprint(user)
