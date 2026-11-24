@@ -151,6 +151,9 @@
 
 	rot_type = /datum/component/rot/corpse
 
+	/// Our humans special. NULLABLE!
+	var/datum/special/special = null
+
 //Checking the highest armor class worn
 //Limb armors use the second highest armor class
 /mob/living/carbon/human/proc/check_armor_class()

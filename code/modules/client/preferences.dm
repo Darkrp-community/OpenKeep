@@ -143,6 +143,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/list/preference_message_list = list()
 
+	/// The special that may be applied after roundstart (TYPE)! NULLABLE!
+	var/datum/special/picked_special = null
+
 
 /datum/preferences/New(client/C)
 	parent = C
@@ -2291,6 +2294,11 @@ Slots: [job.spawn_positions]</span>
 					if (href_list["tab"])
 						current_tab = text2num(href_list["tab"])
 
+				if("pickspecial")
+					if(!picked_special)
+						picked_special = SSspecials.pick_special()
+						to_chat(user, "<span><b>Your character is now special!</b><br>[SSspecials[picked_special].description]</span>")
+
 	ShowChoices(user)
 	return 1
 
@@ -2404,6 +2412,9 @@ Slots: [job.spawn_positions]</span>
 
 	character.familytree_pref = family
 	character.setspouse = setspouse
+
+	if(picked_special)
+		SSspecials.try_apply_special(character, picked_special)
 
 /datum/preferences/proc/get_default_name(name_id)
 	switch(name_id)
