@@ -55,6 +55,9 @@
 		var/datum/roguestock/D = locate(href_list["import"]) in SStreasury.stockpile_datums
 		if(!D)
 			return
+		if(SStreasury.embargoed)
+			say("NO! EMBARGO!")
+			return
 		if(SStreasury.treasury_value < D.get_import_price())
 			say("Insufficient mammon.")
 			return
@@ -67,6 +70,9 @@
 	if(href_list["export"])
 		var/datum/roguestock/D = locate(href_list["export"]) in SStreasury.stockpile_datums
 		if(!D)
+			return
+		if(SStreasury.embargoed)
+			say("NO! EMBARGO!")
 			return
 		if(D.held_items < D.importexport_amt)
 			say("Insufficient stock.")
@@ -141,6 +147,9 @@
 	if(href_list["fineaccount"])
 		var/X = locate(href_list["fineaccount"])
 		if(!X)
+			return
+		if(SStreasury.embargoed)
+			say("NO! EMBARGO!")
 			return
 		for(var/mob/living/A in SStreasury.bank_accounts)
 			if(A == X)

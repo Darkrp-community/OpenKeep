@@ -212,11 +212,20 @@
 			options += "Enable Paying Taxes"
 		else
 			options += "Stop Paying Taxes"
+		if(SStreasury.embargoed)
+			options += "Lift Embargo"
+		else
+			options += "Declare Embargo"
 		var/select = input(usr, "Please select an option.", "", null) as null|anything in options
 		if(!select)
 			return
 		if(!usr.canUseTopic(src, BE_CLOSE) || locked)
 			return
+		if(select == "Declare Embargo" || select == "Lift Embargo")
+			if(SStreasury.last_embargo && world.time < SStreasury.last_embargo + 1 MINUTES)
+				say("The Guild CANNOT change its mind so soon.") // Makes embargo the Merchant Nuclear option
+				return
+			SStreasury.last_embargo = world.time
 		switch(select)
 			if("Enable Paying Taxes")
 				upgrade_flags &= ~UPGRADE_NOTAX
@@ -224,6 +233,14 @@
 			if("Stop Paying Taxes")
 				upgrade_flags |= UPGRADE_NOTAX
 				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+			if("Declare Embargo")
+				SStreasury.embargoed = TRUE
+				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+				priority_announce("The  Mercator Guild has declared an EMBARGO!", title = "EMBARGO!", sound = 'sound/misc/embargo.ogg')
+			if("Lift Embargo")
+				SStreasury.embargoed = FALSE
+				playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
+				priority_announce("The Mercator Guild has lifted the EMBARGO!", title = "EMBARGO LIFTED!", sound = 'sound/misc/embargo.ogg')
 	return attack_hand(usr)
 
 /obj/structure/roguemachine/merchantvend/attack_hand(mob/living/user)

@@ -136,7 +136,7 @@
 	to_chat(player, span_notice("You are the <b>[title]</b>"))
 	if(tutorial)
 		to_chat(player, span_notice("*-----------------*"))
-		to_chat(player, span_notice(tutorial))
+		to_chat(player, span_info(tutorial))
 
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
