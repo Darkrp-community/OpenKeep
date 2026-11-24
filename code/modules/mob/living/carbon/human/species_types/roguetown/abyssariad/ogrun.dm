@@ -56,13 +56,10 @@
 	OFFSET_FACE_F = list(0,1), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,1), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	specstats = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
-	specstats_f = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
+	specstats = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = 1, "perception" = -1, "intelligence" = -1, "constitution" = 2, "endurance" = 1, "speed" = 0, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
 	minrace_pq = 0
-// 1(str)-0.5-0.5+1+1+0(spd)+0 = 2 = 2.0 specstats. Balance adjusted.
-//statsvalue reference by Dova
-//Strength and Speed are 1, everything else is .5, all races are +2 or +3 except Humen. So we keeping it as +2 for balance reasons.
 
 
 	customizers = list(

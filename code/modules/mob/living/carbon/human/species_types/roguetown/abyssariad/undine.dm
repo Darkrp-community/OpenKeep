@@ -56,8 +56,8 @@
 	OFFSET_FACE_F = list(0,-2), OFFSET_BELT_F = list(0,-1), OFFSET_BACK_F = list(0,-2), \
 	OFFSET_NECK_F = list(0,-2), OFFSET_MOUTH_F = list(0,-2), OFFSET_PANTS_F = list(0,-1), \
 	OFFSET_SHIRT_F = list(0,-1), OFFSET_ARMOR_F = list(0,-1), OFFSET_UNDIES_F = list(0,-1))
-	specstats = list("strength" = 0, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
-	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = 0, "constitution" = 2, "endurance" = 2, "speed" = 1, "fortune" = 0)
+	specstats = list("strength" = -1, "perception" = 0, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
+	specstats_f = list("strength" = -1, "perception" = 0, "intelligence" = -1, "constitution" = 2, "endurance" = 2, "speed" = 0, "fortune" = 0)
 	enflamed_icon = "widefire"
 	// Usual 0+0+0+1+1+0+0 = 2, switching only strength for speed, so they are balanced alike the abyssariads.
 
