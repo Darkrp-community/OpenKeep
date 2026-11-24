@@ -73,7 +73,7 @@ This is a filter that blocks use of the machine for that role. Could be expanded
 		user.visible_message("<span class='notice'>These cursed local contraptions confound me.")
 		return
 This is a filter that blocks use of the machine for that role. Could be expanded, made more complex, made for races or whatever.*/
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents = "<center>SUBMISSION HOLE<BR>"
@@ -144,7 +144,7 @@ GLOBAL_VAR(feeding_hole_reset_timer)
 	. = ..()
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents = "<center>FEEDING HOLE<BR>"

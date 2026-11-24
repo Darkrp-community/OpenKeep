@@ -97,7 +97,7 @@
 	. += "<span class='notice'>[msg]</span>"
 
 /obj/item/bath/soap/attack(mob/living/carbon/human/target, mob/living/carbon/user)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	var/turf/bathspot = get_turf(target)				// Checks for being in a bath and being undressed
 	if(!istype(bathspot, /turf/open/water/bath))
 		to_chat(user, span_warning("They must be in the bath water!"))

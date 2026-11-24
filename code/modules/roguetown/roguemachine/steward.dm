@@ -210,7 +210,7 @@
 	if(locked)
 		to_chat(user, "<span class='warning'>It's locked. Of course.</span>")
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	playsound(loc, 'sound/misc/keyboard_enter.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents

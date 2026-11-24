@@ -426,7 +426,7 @@
 		return
 	if(!(user.mobility_flags & MOBILITY_STAND) && get_dist(src, user) > 0)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	toggle(user)
 
 /obj/structure/closet/attack_paw(mob/user)
