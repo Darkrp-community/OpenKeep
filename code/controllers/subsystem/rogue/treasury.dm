@@ -36,6 +36,8 @@ SUBSYSTEM_DEF(treasury)
 	var/tax_value = 0.11
 	var/queens_tax = 0.15
 	var/treasury_value = 0
+	var/embargoed = FALSE
+	var/last_embargo = 0
 	var/list/bank_accounts = list()
 	var/list/stockpile_datums = list()
 	var/next_treasury_check = 0
@@ -91,10 +93,14 @@ SUBSYSTEM_DEF(treasury)
 		*/
 		amt_to_generate = amt_to_generate - (amt_to_generate * queens_tax)
 		amt_to_generate = round(amt_to_generate)
-		give_money_treasury(amt_to_generate, "wealth horde")
+		if(!embargoed)
+			give_money_treasury(amt_to_generate, "wealth horde")
 		for(var/mob/living/carbon/human/X in GLOB.human_list)
 			if(X.job == "King" || X.job == "Queen")
-				send_ooc_note("Income from wealth horde: +[amt_to_generate]", name = X.real_name)
+				if(embargoed)
+					send_ooc_note("EMBARGO! Income from wealth horde: +0", name = X.real_name)
+				else
+					send_ooc_note("Income from wealth horde: +[amt_to_generate]", name = X.real_name)
 				return
 
 /*
