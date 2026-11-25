@@ -354,7 +354,7 @@
 /turf/closed/wall/shroud/attack_right(mob/user)
 	if(isliving(user))
 		var/mob/living/L = user
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_FAST)
 		playsound(src, "plantcross", 80, FALSE, -1)
 		if(do_after(L, rand(5,10), target = src))
 			if(!res && world.time > res_replenish)

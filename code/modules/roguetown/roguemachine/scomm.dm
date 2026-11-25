@@ -46,7 +46,7 @@
 	. = ..()
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking
@@ -56,7 +56,7 @@
 /obj/structure/roguemachine/scomm/attack_right(mob/user)
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents
@@ -186,7 +186,7 @@
 	sellprice = 35
 //wip
 /obj/item/scomstone/attack_right(mob/user)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	var/input_text = input(user, "Enter your message:", "Message")
 	if(input_text)
 		for(var/obj/structure/roguemachine/scomm/S in SSroguemachine.scomm_machines)
@@ -197,7 +197,7 @@
 /obj/item/scomstone/MiddleClick(mob/user)
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	listening = !listening
 	speaking = !speaking

@@ -112,7 +112,7 @@
 	. = ..()
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	var/turf/T = get_turf(src)
 	if(T)
 		for(var/atom/movable/AM in stuff_shit)

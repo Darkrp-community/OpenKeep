@@ -1738,7 +1738,7 @@
 		return
 	if(!can_look_up())
 		return
-	changeNext_move(CLICK_CD_MELEE)
+	changeNext_move(CLICK_CD_FAST)
 	if(m_intent != MOVE_INTENT_SNEAK)
 		visible_message("<span class='info'>[src] looks up.</span>")
 	var/turf/ceiling = get_step_multiz(src, UP)
@@ -1843,7 +1843,7 @@
 	if(!do_after(src, ttime, target = src))
 		return
 
-	changeNext_move(CLICK_CD_MELEE)
+	changeNext_move(CLICK_CD_FAST)
 	reset_perspective(OS)
 	update_cone_show()
 //	RegisterSignal(src, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(stop_looking))
