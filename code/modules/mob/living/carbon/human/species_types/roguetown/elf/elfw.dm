@@ -15,7 +15,7 @@
 	//More physically capable elves that are less intelligent. Better night vision.
 	mutanteyes = /obj/item/organ/eyes/elf
 	specstats = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = -1, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
-	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = 0, STATKEY_CON = -1, STATKEY_END = 0, STATKEY_SPD = 2, STATKEY_LCK = 0)
+	specstats_f = list(STATKEY_STR = 0, STATKEY_PER = 2, STATKEY_INT = -1, STATKEY_CON = 0, STATKEY_END = 1, STATKEY_SPD = 1, STATKEY_LCK = 0)
 	inherent_traits = list(TRAIT_NOMOBSWAP,TRAIT_INHUMENCAMP)
 
 /datum/species/elf/snow/wood/check_roundstart_eligible()

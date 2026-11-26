@@ -55,8 +55,8 @@
 	OFFSET_FACE_F = list(0,-1), OFFSET_BELT_F = list(0,0), OFFSET_BACK_F = list(0,-1), \
 	OFFSET_NECK_F = list(0,-1), OFFSET_MOUTH_F = list(0,-1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,0), OFFSET_ARMOR_F = list(0,0), OFFSET_UNDIES_F = list(0,0))
-	specstats = list("strength" = -1, "perception" = 2, "intelligence" = 0, "constitution" = -2, "endurance" = 2, "speed" = 2, "fortune" = 0)
-	specstats_f = list("strength" = -1, "perception" = 2, "intelligence" = 0, "constitution" = -2, "endurance" = 2, "speed" = 2, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
+	specstats = list("strength" = -1, "perception" = 1, "intelligence" = 0, "constitution" = -2, "endurance" = 2, "speed" = 2, "fortune" = 0)
+	specstats_f = list("strength" = -1, "perception" = 1, "intelligence" = 0, "constitution" = -2, "endurance" = 2, "speed" = 2, "fortune" = 0) // Don't even bother making each gender different. Abyssariads are equals in championage.
 	enflamed_icon = "widefire"
 	mutanteyes = /obj/item/organ/eyes/rogue/tengu
 	minrace_pq = 0

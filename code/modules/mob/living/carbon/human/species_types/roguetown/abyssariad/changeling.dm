@@ -72,9 +72,6 @@ Future plan:
 	enflamed_icon = "widefire"
 	mutanttongue = /obj/item/organ/tongue/kitsune
 	minrace_pq = 0
-	// 1(str)-1+1-0.5+0.5+1(spd)+0 = 2 specstats. Balance adjusted.
-	//statsvalue reference by Dova
-	//Strength and Speed are 1, everything else is .5, all races are +2 or +3 except Humen
 	customizers = list(
 		/datum/customizer/organ/eyes/humanoid,
 		/datum/customizer/bodypart_feature/hair/head/humanoid,
