@@ -82,7 +82,7 @@
 	bundletype = /obj/item/natural/bundle/plank
 
 /obj/item/natural/plank/attackby(obj/item/I, mob/living/user, params)		// remake to use /datum/intent/axe/cut or TO DO never do maybe
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_FAST)
 	if(istype(I, /obj/item/rogueweapon/axe))
 		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
 		if(do_after(user, 8 SECONDS))

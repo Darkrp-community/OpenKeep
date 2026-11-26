@@ -24,7 +24,7 @@
 		user.dropItemToGround(src, TRUE)
 
 /obj/item/natural/stone/attackby(obj/item/W, mob/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(istype(W, /obj/item/natural/stone))
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
 		user.visible_message("<span class='info'>[user] strikes the stones together.</span>")
@@ -100,7 +100,7 @@
 				S.start()
 
 /obj/item/natural/rock/attackby(obj/item/W, mob/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(istype(W, /obj/item/natural/stone))
 		user.visible_message("<span class='info'>[user] strikes the stone against the rock.</span>")
 		playsound(src.loc, 'sound/items/stonestone.ogg', 100)

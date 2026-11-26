@@ -71,7 +71,7 @@
 /obj/structure/guillotine/attack_right(mob/user)
 	if(.)
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	add_fingerprint(user)
 
 	// Currently being used by something

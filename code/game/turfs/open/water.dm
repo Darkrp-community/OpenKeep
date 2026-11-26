@@ -161,7 +161,7 @@
 			if(notake)
 				return
 			if(do_after(user, 8, target = src))
-				user.changeNext_move(CLICK_CD_MELEE)
+				user.changeNext_move(CLICK_CD_FAST)
 				playsound(user, 'sound/foley/drawwater.ogg', 100, FALSE)
 				if(!mapped && C.reagents.add_reagent(water_reagent, 10))
 					water_volume = water_volume - 10
@@ -177,7 +177,7 @@
 				to_chat(user, "<span class='warning'>\The [src] is full.</span>")
 				return
 			if(do_after(user, 8, target = src))
-				user.changeNext_move(CLICK_CD_MELEE)
+				user.changeNext_move(CLICK_CD_FAST)
 				playsound(user, 'sound/foley/drawwater.ogg', 100, FALSE)
 				if(!mapped && C.reagents.remove_reagent(water_reagent,  C.reagents.total_volume))
 					water_volume = clamp(water_volume + C.reagents.total_volume, 1, water_maximum)

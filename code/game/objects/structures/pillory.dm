@@ -72,7 +72,7 @@
 				return attack_hand(user)
 
 /obj/structure/pillory/proc/togglelatch(mob/living/user, silent)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(latched)
 		user.visible_message(span_warning("[user] unlatches [src]."), \
 			span_notice("I unlatch [src]."))
@@ -85,7 +85,7 @@
 		latched = TRUE
 
 /obj/structure/pillory/proc/togglelock(mob/living/user, silent)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if (!latched)
 		to_chat(user, span_warning("\The [src] is not latched shut."))
 	if(locked)

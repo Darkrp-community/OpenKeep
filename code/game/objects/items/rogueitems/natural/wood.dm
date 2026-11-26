@@ -56,7 +56,7 @@
 	smeltresult = /obj/item/rogueore/coal
 
 /obj/item/grown/log/tree/small/attackby(obj/item/I, mob/living/user, params)		// remake to use /datum/intent/axe/cut or TO DO never do maybe
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(istype(I, /obj/item/rogueweapon/axe))
 		playsound(get_turf(src.loc), 'sound/items/wood_cutting.ogg', 100)
 		if(do_after(user, 10 SECONDS))
@@ -127,7 +127,7 @@
 
 /obj/item/grown/log/tree/stick/attackby(obj/item/I, mob/living/user, params)
 	var/mob/living/carbon/human/H = user
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(user.used_intent?.blade_class == BCLASS_CUT)
 		playsound(get_turf(src.loc), 'sound/items/wood_sharpen.ogg', 100)
 		if(do_after(user, 20))

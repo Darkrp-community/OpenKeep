@@ -193,7 +193,7 @@
 		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
 		return
 	if(in_range(user, src) || isobserver(user))
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_BASIC)
 		var/m
 		var/list/verses = world.file2list("strings/bibble.txt")
 		m = pick(verses)
@@ -676,7 +676,7 @@ ____________End of Example*/
 		user.mind.adjust_experience(/datum/skill/misc/reading, 4, FALSE)
 		return
 	if(in_range(user, src) || isobserver(user))
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_BASIC)
 		var/m
 		var/list/verses = world.file2list("strings/psybibble.txt")
 		m = pick(verses)

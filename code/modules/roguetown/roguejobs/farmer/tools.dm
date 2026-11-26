@@ -25,7 +25,7 @@
 
 
 /obj/item/rogueweapon/sickle/attack_turf(turf/T, mob/living/user)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	if(istype(T, /turf/open/floor/rogue/dirt))
 		var/turf/open/floor/rogue/dirt/D = T
 		if(D.planted_crop)
@@ -70,7 +70,7 @@
 
 /obj/item/rogueweapon/hoe/attack_turf(turf/T, mob/living/user)
 	if(user.used_intent.type == /datum/intent/till)
-		user.changeNext_move(CLICK_CD_MELEE)
+		user.changeNext_move(CLICK_CD_BASIC)
 		if(istype(T, /turf/open/floor/rogue/grass))
 			playsound(T,'sound/items/dig_shovel.ogg', 100, TRUE)
 			if (do_after(user, 3 SECONDS, target = src))

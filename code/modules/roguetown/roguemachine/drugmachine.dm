@@ -23,7 +23,7 @@
 /obj/item/roguemachine/drugtrade/attack_hand(mob/living/user)
 	if(!anchored)
 		return ..()
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 
 	var/contents
 
@@ -227,7 +227,7 @@
 	if(locked)
 		to_chat(user, "<span class='warning'>It's locked. Of course.</span>")
 		return
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(CLICK_CD_BASIC)
 	playsound(loc, 'sound/misc/beep.ogg', 100, FALSE, -1)
 	var/canread = user.can_read(src, TRUE)
 	var/contents
